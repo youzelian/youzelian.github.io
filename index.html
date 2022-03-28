@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,26 +5,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>230寝室</title>
+    <title>web课堂全体作业</title>
     <style>
-        /*  *{
+        * {
             padding: 0;
             margin: 0;
-        } */
-        .class1 {
-            font: 60px 微软雅黑, 楷体, 黑体;
+        }
+
+        body {
+            background-image: url(images/)
+        }
+
+        h1 {
+            font: 60px 微软雅黑, 楷体;
+            text-align: center;
             color: #9696fa;
             text-shadow: 3px 3px gray;
+        }
+
+        table {
+            margin: 100px auto 300px auto;
+            box-shadow: 5px 5px gray;
+            border-radius: 30px;
+            border: 3px solid black;
             text-align: center;
         }
 
-        .class2 {
-            font-size: 30px;
-            font-family: 微软雅黑, 黑体;
-            float: right;
+        select {
+            width: 110px;
+            height: 30px;
+            box-shadow: 6px 6px 3px gray;
+            border-radius: 15px;
+            text-align: center;
         }
 
-        .class3 {
+        .class1 {
             height: 60px;
             font-size: 35px;
             line-height: 60px;
@@ -34,143 +48,201 @@
             background-color: #808080;
             text-align: center;
         }
-
-        input {
-            font-size: 30px;
-            width: 50px;
-            height: 50px;
-        }
-
-        table {
-            margin: 160px auto;
-            box-shadow: 5px 5px gray;
-            border-radius: 30px;
-            border: 3px solid black;
-        }
-
-        th,
-        td {
-            text-align: center;
-            font-size: 25px;
-        }
-
-        td a {
-            text-decoration: none;
-        }
-
-        td a:link {
-            color: black;
-        }
-
-        td a:visited {
-            color: purple;
-        }
-
-        td a:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 
 <body>
-    <div class="class1">230寝室web文化课堂</div>
-    <p class="class2"> 第<input type="text" value="3" id="work">次作业 &LessLess;--输入组号</p>
+    <h1>web课堂全体作业</h1>
     <table cellpadding="0" cellspacing="0" width="600px" height="300px">
         <thead>
             <tr>
-                <th>学号</th>
-                <th>姓名</th>
-                <th>性别</th>
-                <th>作业</th>
+                <th>计科一班</th>
+                <th>计科二班</th>
+                <th>计科三班</th>
             </tr>
         </thead>
         <tbody>
-            <tr id="1">
-                <td>20213611</td>
-                <td>桂祺</td>
-                <td>男</td>
-                <td><a href="230web作业/第三次作业/20213611-3.html" target="_blank">作业链接</a></td>
-            </tr id="2">
             <tr>
-                <td>20213613</td>
-                <td>刘可汉</td>
-                <td>男</td>
-                <td><a href="230web作业/第三次作业/20213613-3.html" target="_blank">作业链接</a></td>
+                <td>
+                    <select onchange="window.location=this.value;">
+                        <option value="none" selected disabled hidden>请选择选项</option>
+                        <option value="周星驰简历.html">20213607-1.html</option>
+                        <option value="https://www.bilibili.com/">哔哩哔哩</option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="window.location=this.value;">
+                        <option value="none" selected disabled hidden>请选择选项</option>
+                        <option value="王者荣耀.html">王者</option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="window.location=this.value;">
+                        <option value="none" selected disabled hidden>请选择选项</option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                    </select>
+                </td>
             </tr>
-            <tr id="3">
-                <td>20213609</td>
-                <td>刘子欣</td>
-                <td>男</td>
-                <td><a href="230web作业/第三次作业/20213609-3.html" target="_blank">作业链接</a></td>
+            <tr>
+                <td>
+                    <select onchange="window.location=this.value;">
+                        <option value="none" selected disabled hidden>请选择选项</option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="window.location=this.value;">
+                        <option value="none" selected disabled hidden>请选择选项</option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="window.location=this.value;">
+                        <option value="none" selected disabled hidden>请选择选项</option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                    </select>
+                </td>
+
             </tr>
-            <tr id="4">
-                <td>20213610</td>
-                <td>徐韬飞</td>
-                <td>男</td>
-                <td><a href="230web作业/第三次作业/20213610-3.html" target="_blank">作业链接</a></td>
+            <tr>
+                <td>
+                    <select onchange="window.location=this.value;">
+                        <option value="none" selected disabled hidden>请选择选项</option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="window.location=this.value;">
+                        <option value="none" selected disabled hidden>请选择选项</option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="window.location=this.value;">
+                        <option value="none" selected disabled hidden>请选择选项</option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                    </select>
+                </td>
             </tr>
-            <tr id="5">
-                <td>20213607</td>
-                <td>余泽亮</td>
-                <td>男</td>
-                <td><a href="230web作业/第三次作业/20213607-3.html" target="_blank">作业链接</a></td>
+            <tr>
+                <td>
+                    <select onchange="window.location=this.value;">
+                        <option value="none" selected disabled hidden>请选择选项</option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="window.location=this.value;">
+                        <option value="none" selected disabled hidden>请选择选项</option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="window.location=this.value;">
+                        <option value="none" selected disabled hidden>请选择选项</option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                    </select>
+                </td>
+
             </tr>
-            <tr id="6">
-                <td>20213614</td>
-                <td>张子然</td>
-                <td>男</td>
-                <td><a href="230web作业/第三次作业/20213614-3.html" target="_blank">作业链接</a></td>
+            <tr>
+                <td>
+                    <select onchange="window.location=this.value;">
+                        <option value="none" selected disabled hidden>请选择选项</option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="window.location=this.value;">
+                        <option value="none" selected disabled hidden>请选择选项</option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                    </select>
+                </td>
+                <td>
+                    <select onchange="window.location=this.value;">
+                        <option value="none" selected disabled hidden>请选择选项</option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                    </select>
+                </td>
             </tr>
         </tbody>
     </table>
-    <div class="class3">CopyRight Belongs to 尤泽利安</div>
+    <div class="class1">CopyRight Belongs to 尤泽利安</div>
     <script>
-        var yu = document.getElementById("work").value;
-        var a = document.getElementById("1");
-        var b = document.getElementById("2");
-        var c = document.getElementById("3");
-        var d = document.getElementById("4");
-        var e = document.getElementById("5");
-        var f = document.getElementById("6");
-        ze.onclick = function () {
-            switch (yu) {
-                case 1:
-                    a.href = "https://fanyi.baidu.com/"; break;
-                    b.href = ""; break;
-                    c.href = ""; break;
-                    d.href = ""; break;
-                    e.href = ""; break;
-                    f.href = ""; break;
-                case 2:
-                    a.href = ""; break;
-                    b.href = ""; break;
-                    c.href = ""; break;
-                    d.href = ""; break;
-                    e.href = ""; break;
-                    f.href = ""; break;
-                case 3:
-                    a.href = ""; break;
-                    b.href = ""; break;
-                    c.href = ""; break;
-                    d.href = ""; break;
-                    e.href = ""; break;
-                    f.href = ""; break;
-                case 4:
-                    a.href = ""; break;
-                    b.href = ""; break;
-                    c.href = ""; break;
-                    d.href = ""; break;
-                    e.href = ""; break;
-                    f.href = ""; break;
-                case 5:
-                    a.href = ""; break;
-                    b.href = ""; break;
-                    c.href = ""; break;
-                    d.href = ""; break;
-                    e.href = ""; break;
-                    f.href = ""; break;
-            }
-        }
     </script>
 </body>
 
