@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+ <style
+ type="text/css">
+body{font-size:30px;}
+
+h1{
+    font-size:80px;
+	color:blue;
+	text-align:center;
+	font-style:italic;
+    text-align:center;
+	border:7px solid red;
+
+}
+h2{
+    font-size:60px;
+	color:green;
+	text-align:center;
+	font-style:italic;
+    text-align:center;
+	border:7px solid yellow;
+}
+h3{
+    font-size:60px;
+	color:black;
+	text-align:center;
+	font-style:italic;
+    text-align:center;
+	border:7px solid orange;
+}
+ 
+  </style>
+ </head>
+ <body>
+ <input type="button" value="第一首" id="c1">
+ <input type="button" value="第二首" id="c2">
+ <input type="button" value="第三首" id="c3">
+ <h1> </h1>
+ <h2> </h2>
+ <h3> </h3>
+<script>
+        var a1 = document.querySelector("h1");
+        var b1 = document.getElementById("c1");
+        var a2 = document.querySelector("h2");
+        var b2 = document.getElementById("c2");
+        var a3 = document.querySelector("h3");
+        var b3 = document.getElementById("c3");
+        var a4 = document.querySelector("h1");
+      
+        var a5 = document.querySelector("h2");
+       
+        var a6 = document.querySelector("h3");
+        
+        var a7 = document.querySelector("h1");
+        
+        var a8 = document.querySelector("h2");
+       
+        var a9 = document.querySelector("h3");
+        
+       
+        b1.onclick = function () {
+            a3.textContent = "鸣筝金粟柱，素手玉房前。";
+            a2.textContent = "欲得周郎顾，时时误拂弦。";
+            a1.textContent = "听筝";
+        }
+        b2.onclick = function () {
+            a6.textContent = "红豆生南国，春来发几枝。";
+            a5.textContent = "愿君多采撷，此物最相思。";
+            a4.textContent = "相思";
+        }
+        b3.onclick = function () {
+            a9.textContent = "空山不见人，但闻人语响。";
+            a8.textContent = "返景入深林，复照青苔上。";
+            a7.textContent = "鹿柴";
+        }
+        
+    </script>
+ </body>
+</html>

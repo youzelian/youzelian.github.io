@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>诗三首</title>
+    <style type="text/css">
+        body{font-family: serif;
+            text-align: center;
+            background-color: aliceblue;
+            background-repeat: no-repeat;
+            background-size:100%;}
+        h1{font-size: 50px;
+            color: rgb(253, 7, 130);}
+        p{font-size:35px;}
+        div{width: 230px;
+            margin:2em auto;
+            line-height: 4em;
+            text-align: center;}
+    </style>
+</head>
+<body>
+    <input id="xs" type="button" value="《相思》">
+    <input id="ym" type="button" value="《咏梅》">
+    <input id="cw" type="button" value="《春望》">
+    <h1></h1>
+    <h2></h2>
+    <div>   
+        <p></p>
+    </div>
+    <script>
+        var headline1=document.querySelector("h1");
+        var headline2=document.querySelector("h2");
+        var headline3=document.querySelector("p");
+        xs.onclick=function(){
+        headline1.textContent="相思"
+        headline2.textContent="王维"
+        headline3.textContent="红豆生南国，春来发几枝？愿君多采撷，此物最相思。"
+        document.body.style.background = "url(https://tse1-mm.cn.bing.net/th/id/R-C.5855d0819cd9505eb9f643fc2accb0a4?rik=Teq9f%2fwilFR8Mw&riu=http%3a%2f%2fforbes.ivideocloud.cn%2fwp-content%2fuploads%2f2020%2f07%2fwtqrhcrhx.jpeg&ehk=o%2fToj%2bXnH%2ffih16EEZUP5KH13Rz722%2bdN%2fZaQxZREeI%3d&risl=&pid=ImgRaw&r=0) no-repeat"
+        document.body.style.backgroundSize = "100%"}
+        ym.onclick=function(){
+        headline1.textContent="咏梅"
+        headline2.textContent="王安石"
+        headline3.textContent="墙角数枝梅，凌寒独自开。遥知不是雪，为有暗香来。"
+        document.body.style.background = "url(https://tse1-mm.cn.bing.net/th/id/R-C.674a31b7dc5fde77c13be32662a1476b?rik=kyqnTyB%2fPZ8xDw&riu=http%3a%2f%2fimg.xker.com%2fxkerfiles%2fallimg%2f1705%2f23134MC8-0.jpg&ehk=CvD%2bB7QU3meVzQnuX%2fHipKq8vfwjSH7b0HFzMjbsUz4%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1) no-repeat"
+        document.body.style.backgroundSize = "100%"}
+        cw.onclick=function(){
+        headline1.textContent="春望"
+        headline2.textContent="杜甫"
+        headline3.textContent="国破山河在，城春草木胜。感时花溅泪，恨别鸟惊心。烽火连三月，家书抵万金。白头搔更短，浑欲不胜簪。"
+        document.body.style.background = "url(https://tse1-mm.cn.bing.net/th/id/R-C.7203916025042ff871b9faba0972ffea?rik=VwoDG%2fQNyR%2fQIQ&riu=http%3a%2f%2f5b0988e595225.cdn.sohucs.com%2fimages%2f20190710%2fe1e18ce141fc475d996e5474de76a005.jpeg&ehk=8VuQfT5faxIKOlBPcKPQE503J1qkZtte3UfgyiXDwJg%3d&risl=&pid=ImgRaw&r=0) no-repeat"
+        document.body.style.backgroundSize = "100%"}
+    </script>
+</body>
+</html>
