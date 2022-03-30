@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 150px;
+            width: 200px;
+            border: 2px solid green;
+            animation-direction: alternate;
+            animation-duration: 8s;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+            animation-name: move;
+        }
+        
+        body {
+            background-image: url(https://p5.ssl.qhimgs1.com/sdr/400__/t01d8d124f7ab13a435.png);
+        }
+        
+        h1 {
+            font-size: 45px;
+        }
+        
+        h5 {
+            font-size: 15px;
+        }
+        
+        h3 {
+            font-size: 40px;
+        }
+        
+        h2 {
+            font-size: 40px;
+        }
+        
+        @keyframes move {
+            0% {
+                transform: translate(0px, 0px);
+            }
+            25% {
+                transform: translate(1300px, 0px);
+            }
+            50% {
+                transform: translate(1300px, 500px);
+            }
+            75% {
+                transform: translate(0px, 500px);
+            }
+            100% {
+                transform: translate(0px, 0px);
+            }
+        }
+        
+        div:hover {
+            animation-play-state: paused;
+        }
+        
+        input:hover {
+            transform: translateY(5px);
+        }
+    </style>
+</head>
+
+<body id="bg">
+    <div>
+        <ul>
+            <li><input type="button" id="button2" value="<鹿柴>"></li>
+            <li><input type="button" id="button3" value="<行宫>"></li>
+            <li><input type="button" id="button4" value="<送别>"></li>
+            <li><input type="button" id="button1" value="<杂诗三首·其二>"></li>
+            <li><input type="button" id="button5" value="点击此处返回开始页面"></li>
+        </ul>
+    </div>
+    <center>
+        <h1></h1>
+        <h5></h5>
+        <h2></h2>
+        <h3></h3>
+    </center>
+    <script>
+        var headline1 = document.querySelector("h1")
+        var headline2 = document.querySelector("h5")
+        var headline3 = document.querySelector("h2")
+        var headline4 = document.querySelector("h3")
+            /*var images = document.querySelector("body")*/
+        document.getElementById("button1").onclick = function() {
+            document.body.style.background = "url(https://p0.ssl.qhimgs1.com/sdr/400__/t018d9eeaa3b2e4b4b4.jpg) no-repeat";
+            document.body.style.backgroundSize = "1530px";
+            headline1.textContent = "<杂诗三首·其二>";
+            headline2.textContent = "王维 〔唐代〕";
+            headline3.textContent = "君自故乡来，应知故乡事。";
+            headline4.textContent = "来日绮窗前，寒梅著花未？";
+        }
+    </script>
+    <script>
+        var headline1 = document.querySelector("h1")
+        var headline2 = document.querySelector("h5")
+        var headline3 = document.querySelector("h2")
+        var headline4 = document.querySelector("h3")
+        document.getElementById("button2").onclick = function() {
+            document.body.style.background = "url(https://p2.ssl.qhimgs1.com/t014463928a97ecf468.jpg) no-repeat";
+            document.body.style.backgroundSize = "1530px";
+            headline1.textContent = "<鹿柴>";
+            headline2.textContent = "王维 〔唐代〕";
+            headline3.textContent = "空山不见人，但闻人语响。";
+            headline4.textContent = "返景入深林，复照青苔上。";
+        }
+    </script>
+    <script>
+        var headline1 = document.querySelector("h1")
+        var headline2 = document.querySelector("h5")
+        var headline3 = document.querySelector("h2")
+        var headline4 = document.querySelector("h3")
+        document.getElementById("button3").onclick = function() {
+            document.body.style.background = "url(https://p2.ssl.qhimgs1.com/sdr/400__/t019864ffabc7e4ace8.jpg) no-repeat";
+            document.body.style.backgroundSize = "1550px";
+            headline1.textContent = "<行宫>";
+            headline2.textContent = "元稹 〔唐代〕";
+            headline3.textContent = "寥落古行宫，宫花寂寞红。";
+            headline4.textContent = "白头宫女在，闲坐说玄宗。";
+        }
+    </script>
+    <script>
+        var headline1 = document.querySelector("h1")
+        var headline2 = document.querySelector("h5")
+        var headline3 = document.querySelector("h2")
+        var headline4 = document.querySelector("h3")
+        document.getElementById("button4").onclick = function() {
+            document.body.style.background = "url(https://p0.ssl.qhimgs1.com/sdr/400__/t010ad16e9e088eacba.jpg) no-repeat";
+            document.body.style.backgroundSize = "1530px";
+            headline1.textContent = "<送别>";
+            headline2.textContent = "王维 〔唐代〕";
+            headline3.textContent = "山中相送罢，日暮掩柴扉。";
+            headline4.textContent = "春草明年绿，王孙归不归？";
+        }
+    </script>
+    <script>
+        var headline1 = document.querySelector("h1")
+        var headline2 = document.querySelector("h5")
+        var headline3 = document.querySelector("h2")
+        var headline4 = document.querySelector("h3")
+        document.getElementById("button5").onclick = function() {
+            document.body.style.background = "url(https://p5.ssl.qhimgs1.com/sdr/400__/t01d8d124f7ab13a435.png)";
+            headline1.textContent = "";
+            headline2.textContent = "";
+            headline3.textContent = "";
+            headline4.textContent = "";
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

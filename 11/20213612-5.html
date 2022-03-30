@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>作业</title>
+   <style type="text/css">
+    body{font-size:30px;
+	background:url("https://pic2.zhimg.com/v2-c13c92d61b8416a6c56f9a09734d1960_r.jpg?source=1940ef5c");
+	background-size: cover;
+	}
+	nav{
+		margin:2px auto;
+		text-align:center;
+		background-color:rgba(250,250,230,0.5);
+		border:2px black solid ;
+		line-height:50px;
+		}
+
+		a:link{
+			font-size:1em;
+			text-decoration: none;
+			text-align:center;
+			border:3px black dashed;
+			color:gray;
+			border-radius:2em;
+			padding:5px;
+			background-color:rgba(230,230,230,1);
+		}
+		a:visited{
+			font-size:1em;
+			text-decoration: none;
+			text-align:center;
+			border:2px black dashed;
+			color:black;
+			border-radius:2em;
+			background-color:rgba(230,230,230,1);
+		}
+		a:hover{
+			font-size:1em;
+			color:black;
+			border:3px black solid;
+			background-color:rgba(250,250,250,1);
+			border-radius:2em;
+		}
+		a:active{
+			font-size:1.1em;
+			color:red;
+			border-radius:2em;
+			background-color:rgba(230,230,230,1);
+		}
+	div{
+		width:650px;
+		text-align:center;
+		line-height:1.5em;
+		 }
+    div#box1
+	{
+		font-size:0.9em;
+		position:fixed ;
+		left:50px;
+		line-height:1.3em;
+	    }
+	div#box2
+		{position:relative;
+		 width:600px;
+		 border:2px solid ;
+		 border-radius:2em;
+		 padding:0.5em;
+		 padding-bottom:1.5em;
+		 text-align:center;
+		 font-family:楷体;
+		 right:-800px;
+		 background-color:rgba(245,245,220,0.2);
+		 top:50px;
+			}
+	div#box3{
+		position:fixed;
+		font-size:0.8em;
+		text-align:center;
+		top:570px;
+		left:50px;
+		width:1400px;
+		}
+    h1{
+	border-radius:1em;
+	letter-spacing:0.2em;
+	line-height:1.3em;
+	font-size:35px;
+	width:540px;
+	margin:10px auto;
+	}
+	h2{	border:5px solid ;
+	font-size:2em;
+	background-color:black;
+	color:white;
+	line-height:55px;
+	}
+	h3{
+	font-family:宋体;
+	font-size:25px;
+	border:2px dashed;
+	background-color:rgba(250,235,215,0.7);
+	}
+	input{
+	font-size:20px;
+	font-family:楷体;
+	}
+  </style>
+    <script>
+	   function bt1(){
+		 var headline = document.querySelector("h1");
+		headline.textContent = "床前明月光，疑是地上霜。举头望明月，低头思故乡。" ;
+	   }
+	   function bt2(){
+		var headline = document.querySelector("h1");
+		headline.textContent = "众鸟高飞尽，孤云独去闲。相看两不厌，只有敬亭山。";
+	   }
+	   function bt3(){
+		var headline = document.querySelector("h1");
+		headline.textContent = "危楼高百尺，手可摘星辰。不敢高声语，恐惊天上人。" ;
+	   }
+	   function bt4(){
+		var headline = document.querySelector("h1");
+		headline.textContent = "吾爱孟夫子，风流天下闻。红颜弃轩冕，白首卧松云。醉月频中圣，迷花不事君。高山安可仰，徒此揖清芬。" ;
+	   }
+  </script>
+  </head>
+ <body>
+	<div id="box1">
+		<h3>
+		<img src="https://tse1-mm.cn.bing.net/th/id/R-C.d8ed537e0e2a128f01613c28f8a0b914?rik=LYYm8qldBPTEdQ&riu=http%3a%2f%2f5b0988e595225.cdn.sohucs.com%2fimages%2f20181227%2f8205c74b4b7149e7a725b5a762006bfc.jpeg&ehk=Jj48v4k1y3SRpelQnQCrwbCQRip1NaUYq5fFKLvgs5w%3d&risl=&pid=ImgRaw&r=0" align="left" width="250px" height="270px">
+		李白（701－762），字太白，号青莲居士，唐朝浪漫主义诗人，被后人誉为“诗仙”。与杜甫并称为“李杜”。汉族，祖籍陇西成纪。一说出生于碎叶城（当时属唐朝领土，今属吉尔吉斯斯坦），4岁时跟随父亲迁至剑南道绵州。一说即出生于绵州昌隆（今四川江油）。李白存世诗文千余篇，有《李太白集》传世。762年病逝，享年61岁。其墓在今安徽当涂，四川江油、湖北安陆有纪念馆。 李白深受黄老列庄思想影响，有《李太白集》传世，诗作中多以醉时写的，代表作有《望庐山瀑布》、《行路难》、《蜀道难》、《将进酒》、《梁甫吟》、《早发白帝城》等多首。
+		</h3>
+	</div>
+	<div id="box2">
+		<h2>李白诗节选</h2>
+		<input type="button" value="静夜思" onclick="bt1();">
+		<input type="button" value="独坐敬亭山" onclick="bt2();">
+		<input type="button" value="夜宿山寺" onclick="bt3();">
+		<input type="button" value="赠孟浩然" onclick="bt4();">
+		<h1> </h1>
+		
+		</div>
+	<div id="box3">
+		<nav>
+		<a href="20213615-5.html" title="魏雨浛" target="_BLANK">20213615</a>
+		<a href="20213618-5.html" title="梁港莎" target="_BLANK">20213618</a>
+		<a href="20213628-5.html" title="彭丽娟" target="_BLANK">20213628</a>
+		<a href="20213634-5.html" title="聂雨欣" target="_BLANK">20213634</a>
+		<a href="20213636-5.html" title="周晏茹" target="_BLANK">20213636</a></nav>
+	</div>
+ </body>
+</html>

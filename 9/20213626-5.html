@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>诗三首</title>
+    <style type="text/css">
+        body{font-family: serif;
+            text-align: center;
+            background-color:lightblue;
+            background-repeat: no-repeat;
+            background-size:100%;}
+        h1{font-size: 50px;
+            color: rgb(253, 7, 130);}
+        p{font-size:35px;}
+        div{width: 230px;
+            margin:2em auto;
+            line-height: 4em;
+            text-align: center;}                                                                                 
+	</style>		
+  <title></title>
+ </head>
+ <body>
+ <li><input id="a" type="button" value="《春晓》"></li>
+    <li><input id="b" type="button" value="《鸟鸣涧》"></li>
+   <li><input id="c" type="button" value="《咏梅》"></li>
+    <div>
+	<h1></h1>
+    <h2></h2>
+	<p></p>
+    </div>
+    <script>
+        var headline1=document.querySelector("h1");
+        var headline2=document.querySelector("h2");
+        var headline3=document.querySelector("p");
+        a.onclick=function(){
+        headline1.textContent="春晓"
+        headline2.textContent="孟浩然（唐）"
+        headline3.textContent="春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少。"
+        document.body.style.background = "url(https://tse1-mm.cn.bing.net/th/id/R-C.f33a7a7915256ab749d8546e8919b4df?rik=550zgf3j9Y41OQ&riu=http%3a%2f%2fwww.xxjxsj.cn%2farticle%2fUploadPic%2f2009-11%2f2009111316163927274.jpg&ehk=RP8leTShZLHbJRwZVtk4pQn%2fjb5YhBx%2fpFTDcgn9034%3d&risl=&pid=ImgRaw&r=0) no-repeat"
+        document.body.style.backgroundSize = "100%"}
+        b.onclick=function(){
+        headline1.textContent="鸟鸣涧"
+        headline2.textContent="王维（唐）"
+        headline3.textContent="人闲桂花落，夜静春山空。月出惊山鸟，时鸣春涧中。"
+        document.body.style.background = "url(https://img.zcool.cn/community/01cb2555d6d9196ac7251df88afeb6.jpg@2o.jpg) no-repeat"
+        document.body.style.backgroundSize = "100%"}
+        c.onclick=function(){
+        headline1.textContent="咏梅"
+        headline2.textContent="王安石"
+        headline3.textContent="墙角数枝梅，凌寒独自开。遥知不是雪，为有暗香来。"
+        document.body.style.background = "url(https://tse1-mm.cn.bing.net/th/id/R-C.674a31b7dc5fde77c13be32662a1476b?rik=kyqnTyB%2fPZ8xDw&riu=http%3a%2f%2fimg.xker.com%2fxkerfiles%2fallimg%2f1705%2f23134MC8-0.jpg&ehk=CvD%2bB7QU3meVzQnuX%2fHipKq8vfwjSH7b0HFzMjbsUz4%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1) no-repeat"
+        document.body.style.backgroundSize = "100%"}
+    </script>
+ </body>
+</html>
