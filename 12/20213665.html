@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>20213665.5</title>
+ </head>
+ <style type="text/css">
+ body
+{
+text-align:center;
+font-family:楷体;
+ font-size:40px;
+ color:pink;
+}
+h1,h2,h3,h4{
+ font-family:楷体;
+ font-size:30px;
+ margin:30px;
+ letter-spacing:0.6em;
+}
+	
+#var1,
+#var2,
+#var3,
+#var4,
+
+
+ </style>
+ 
+<body>
+    <p>请欣赏《新嫁娘词》</p>
+    <input type="button" value="1" id="var1">
+    <input type="button" value="2" id="var2">
+    <input type="button" value="3" id="var3">
+    <input type="button" value="4" id="var4">
+    
+    <h1></h1>
+	<h2></h2>
+	<h3></h3>
+	<h4></h4>
+
+    <script>
+        var z1 = document.querySelector("h1");
+        var j1 = document.getElementById("var1");
+        var z2 = document.querySelector("h2");
+        var j2 = document.getElementById("var2");
+        var z3 = document.querySelector("h3");
+        var j3 = document.getElementById("var3");
+        var z4 = document.querySelector("h4");
+        var j4 = document.getElementById("var4");
+        
+        j1.onclick = function () {
+            z1.textContent = "新嫁娘词";
+        }
+        j2.onclick = function () {
+            z2.textContent = "王建 〔唐代〕";
+        }
+        j3.onclick = function () {
+            z3.textContent = "三日入厨下，洗手作羹汤。";
+        }
+        j4.onclick = function () {
+            z4.textContent = "未谙姑食性，先遣小姑尝。";
+        }
+        
+    </script>
+</body>
+</html>

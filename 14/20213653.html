@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>21计科三班陈雨键</title>
+ </head>
+ <style type="text/css">
+ 
+body
+{
+text-align:center;
+font-family:宋体;
+}
+p
+ {
+ font-size:40px;
+ }
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6
+ {
+
+ font-size:30px;
+ margin:30px;
+ letter-spacing:0.6em;
+ }
+
+	
+#jing1,
+#jing2,
+#jing3,
+#jing4,
+#jing5,
+#jing6
+{
+transition-duration: 0.4s;
+background-color:#779b31;
+display: inline-block;
+width: 90px;
+height: 90px;
+font-size: 20px;
+border-radius: 10px;/*允许为元素添加圆角边框*/
+}
+
+
+#jing1:hover
+{
+    background-color:   #486d5a;
+    color: rgb(187, 62, 62);
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#jing2:hover
+{
+    background-color: #3bcf85;
+    color: rgb(161, 97, 97);
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#jing3:hover
+{
+    background-color: #4d6e5e;
+    color: rgb(182, 0, 0);
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#jing4:hover
+{
+    background-color: #b2e2ca;
+    color: rgb(117, 4, 4);
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#jing5:hover
+{
+    background-color: #66cc99;
+    color: rgb(218, 90, 90);
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#jing6:hover
+{
+    background-color: #66cc99;
+    color: rgb(255, 113, 113);
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#jing1:active
+{
+  background-color: #5d815e;
+  box-shadow: 0 5px rgb(58, 33, 33);
+  transform: translateY(4px);/*通过给定Y方向的数目指定一个translation*/
+}
+#jing2:active
+{
+  background-color: #74ff79;
+  box-shadow: 0 5px rgb(211, 163, 163);
+  transform: translateY(4px);
+}
+#jing3:active
+{
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+#jing4:active
+{
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+#jing5:active
+{
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+#jing6:active
+{
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+
+ </style>
+ 
+<body>
+<font  color="#ff33ff">
+
+</font>
+    <input type="button" value="1" id="jing1">
+    <input type="button" value="2" id="jing2">
+    <input type="button" value="3" id="jing3">
+    <input type="button" value="4" id="jing4">
+    <input type="button" value="5" id="jing5">
+    <input type="button" value="6" id="jing6">
+    <h1></h1>
+    <h2></h2>
+    <h3></h3>
+    <h4></h4>
+    <h5></h5>
+    <h6></h6>
+    <script>
+        var z1 = document.querySelector("h1");
+        var j1 = document.getElementById("jing1");
+        var z2 = document.querySelector("h2");
+        var j2 = document.getElementById("jing2");
+        var z3 = document.querySelector("h3");
+        var j3 = document.getElementById("jing3");
+        var z4 = document.querySelector("h4");
+        var j4 = document.getElementById("jing4");
+        var z5 = document.querySelector("h5");
+        var j5 = document.getElementById("jing5");
+        var z6 = document.querySelector("h6");
+        var j6 = document.getElementById("jing6");
+
+        j1.onclick = function () {
+            z1.textContent = "望庐山瀑布";
+        }
+        j2.onclick = function () {
+            z2.textContent = "唐·李白";
+        }
+        j3.onclick = function () {
+            z3.textContent = "日照香炉生紫烟，";
+        }
+        j4.onclick = function () {
+            z4.textContent = "遥看瀑布挂前川。";
+        }
+        j5.onclick = function () {
+            z5.textContent = "飞流直下三千尺，";
+        }
+        j6.onclick = function () {
+            z6.textContent = "疑是银河落九天。";
+        }
+    </script>
+	<div>
+	<p align="left">
+译文：<br>
+太阳照耀香炉峰生出袅袅紫烟，<br>
+远远望去瀑布像长河悬挂山前。<br>
+仿佛三干尺水流飞奔直冲而下，<br>
+莫非是银河从九天垂落山崖间。<br>	
+	</p>
+	</div>
+</body>
+</html>
