@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <style>     
+  h1{
+    font-size:40px;
+	color:red;
+	text-align:center;
+	width:1000px;
+	font-family:黑体;
+	font-style:italic;
+	font-weight:bolder;
+    }
+table{
+  font-size:45px;
+  text-align:center;
+  width:560px;
+  margin:auto;
+  border:2px solid black;
+  }
+#headline{
+    font-size:40px;
+    text-align:center;
+	width:1000px;
+	font-family:宋体;
+	}
+	#content{font-size:40px;
+	color:red;
+	text-align:center;
+	width:1000px;
+	font-family:黑体;
+	font-style:italic;
+	font-weight:bolder;}
+   body{
+	background-color:rgba(250,200,225,0.7)
+	}
+
+ </style> 
+  <title>Document</title>
+ </head>
+ <body>
+
+  </nav>
+ <div id="headline"><h1>李白：夜泊牛渚怀古</h1></div>
+<div id="content">
+牛渚西江夜，青天无片云。<br>
+登舟望秋月，空忆谢将军。<br>
+余亦能高咏，斯人不可闻。<br>
+明朝挂帆席，枫叶落纷纷。<br>
+</div>
+<hr>
+<input type="button" value="夜泊牛渚怀古" id="begin">
+<input type="button" value="春望" id="first">
+<input type="button" value="春宿左省" id="second">
+<input type="button" value="有悲往事" id="third">
+<hr>
+  <script>
+    var button0 = document.getElementById("begin");
+	var button1 = document.getElementById("first");
+    var button2 = document.getElementById("second");
+	var button3 = document.getElementById("third");
+    var p0 = document.getElementById("headline");
+	var p1= document.getElementById("content");
+
+
+
+button0.onclick = function(){
+		p0.textContent =  "李白：夜泊牛渚怀古"
+		p1.textContent = "牛渚西江夜，青天无片云。"+
+		                "登舟望秋月，空忆谢将军。"+
+						"余亦能高咏，斯人不可闻。"+
+						"明朝挂帆席，枫叶落纷纷。";
+						};
+
+button1.onclick = function(){
+		p0.textContent =  "杜甫；春望"
+		p1.textContent = "国破山河在，城春草木深。"+
+		                 "感时花溅泪，恨别鸟惊心。"+
+						"烽火连三月，家书抵万金。"+
+						"白头搔更短，浑欲不胜簪。";
+						};
+button2.onclick = function(){
+		p0.textContent =  "杜甫：春宿左省"
+		p1.textContent = "花隐掖垣暮，啾啾栖鸟过。"+
+		                 "星临万户动，月傍九霄多。"+
+						"不寝听金钥，因风想玉珂。"+
+						"明朝有封事，数问夜如何？";
+						};
+button3.onclick = function(){
+		p0.textContent =  "杜甫：有悲往事。"
+		p1.textContent = "此道昔归顺，西郊胡正繁。"+
+		                 "至今残破胆，应有未招魂。"+
+						"近得归京邑，移官岂至尊？"+
+						"无才日衰老，驻马望千门。";
+						};
+  </script>
+ </body>

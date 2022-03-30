@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>虞美人</title>
+    <style>
+        body {
+            text-align: center;
+            background-repeat: no-repeat;
+        }
+
+        p {
+            font-size: 30px;
+            font-family:楷体;
+        }
+
+        #liang1,
+        #liang2,
+        #liang3,
+        #liang4,
+        #liang5,
+        #liang6 {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            font-size: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px gray;
+        }
+
+        h1,
+        h2,
+        h3,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 30px;
+            font-family:楷体;
+            margin: 30px;
+        }
+
+        .yu {
+            height: 60px;
+            font-size: 35px;
+            line-height: 60px;
+            font-family: 楷体;
+            color: #fadcdc;
+            background-color: #808080;
+            text-align: center;
+            margin: 300px auto 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <p>敬请欣赏虞美人</p>
+    <input type="button" value="1" id="liang1">
+    <input type="button" value="2" id="liang2">
+    <input type="button" value="3" id="liang3">
+    <input type="button" value="4" id="liang4">
+    <input type="button" value="5" id="liang5">
+    <input type="button" value="6" id="liang6">
+    <h1></h1>
+    <h2></h2>
+    <h3></h3>
+    <h4></h4>
+    <h5></h5>
+    <h6></h6>
+    
+    <script>
+        var yu1 = document.querySelector("h1");
+        var ze1 = document.getElementById("liang1");
+        var yu2 = document.querySelector("h2");
+        var ze2 = document.getElementById("liang2");
+        var yu3 = document.querySelector("h3");
+        var ze3 = document.getElementById("liang3");
+        var yu4 = document.querySelector("h4");
+        var ze4 = document.getElementById("liang4");
+        var yu5 = document.querySelector("h5");
+        var ze5 = document.getElementById("liang5");
+        var yu6 = document.querySelector("h6");
+        var ze6 = document.getElementById("liang6");
+
+        ze1.onclick = function () {
+            yu1.textContent = "《虞美人·春花秋月何时了》";
+        }
+        ze2.onclick = function () {
+            yu2.textContent = "-----【后唐】李煜";
+        }
+        ze3.onclick = function () {
+            yu3.textContent = "春花秋月何时了，往事知多少。";
+        }
+        ze4.onclick = function () {
+            yu4.textContent = "小楼昨夜又东风，故国不堪回首月明中。";
+        }
+        ze5.onclick = function () {
+            yu5.textContent = "雕栏玉砌应犹在，只是朱颜改。";
+        }
+        ze6.onclick = function () {
+            yu6.textContent = "问君能有几多愁，恰似一江春水向东流。";
+        }
+    </script>
+</body>
+
+</html>

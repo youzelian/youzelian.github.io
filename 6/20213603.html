@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>作业05</title>
+  <style>
+h1 {text-align:center;
+    color:red;
+	}
+p {color:white;
+   letter-spacing:2.5em;
+   }
+div
+{
+    background-color:black;
+</style>
+
+
+
+
+ </head>
+ <body>
+
+ <h1>用按钮出现不同情况</h1>
+
+<P>点击下列按钮显示不同内容</p>
+
+
+<p id="demo"></p>
+
+<hr style="height:4px">
+<button onclick="showone();">古诗1</button>
+
+<button onclick="showtwo();">古诗2</button>
+
+
+<div style="display:none" id="div1">
+<p>下马饮君酒，问君何所之。</p>
+<p>君言不得意，归卧南山陲。</p>
+<p>但去莫复闻，白云无尽时。</p>
+</div>
+<div style="display:none" id="div2">
+<p>夕阳度西岭，群壑倏已暝。</p>
+<p>松月生夜凉，风泉满清听</p>
+<p>樵人归欲尽，烟鸟栖初定。</p>
+<p>之子期宿来，孤琴候萝径。</p>
+</div>
+
+
+<script>
+
+function showone(){
+    document.getElementById("div1").style.display="block";
+    document.getElementById("div2").style.display="none";
+};
+function showtwo()
+{
+   document.getElementById("div2").style.display="block";
+   document.getElementById("div1").style.display="none";
+}
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+ </body>
+</html>

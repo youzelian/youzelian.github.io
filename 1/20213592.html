@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+
+    <!--以下为css精细化处理-->
+    <style type="text/css">
+      <!--此css处理使得设置参数px适应所有浏览器-->
+      *{
+           margin:100%;
+           padding:100%;
+      }
+        div#mei{
+            width: 300px ;
+            background-color:blanchedalmond;
+            position: absolute;
+            left: 500px; 
+        }
+        div#song{ 
+            width: 300px;
+            background-color: blanchedalmond;
+            position: absolute;
+            right: 420px;
+        }
+        div#xiang{
+            background-color: aliceblue;
+        }
+        <!--对a标签进行处理但处理无效,下划线始终无法去除-->
+       a#zero{
+           text-decoration: none; 
+           text-decoration-line: none;
+           border:solid 1px;
+           color: black;
+       }
+       a#one{
+           text-decoration:none;
+           color: black;
+       }
+      a#two{
+           text-decoration: none;
+       }
+       <!--对伸缩进行处理-->
+       details{
+           border: 2px solid black;
+           margin-right: 30%;
+       }
+    </style>
+
+    <!--以下为javascript动态化处理-->
+    <script language="JavaScript">
+    var a="you have agree the powers and rules"
+     alert("您已同意相应权限  "+"\n"+a);
+    </script>
+
+    <!--以下为主体html结构-->
+    <body>
+    <div id="mei">  
+    <form>    <!--登录界面-->
+      <fieldset>
+      <legen>--登录--</legen><br/>
+      <label>username:</label>
+      <input type="text" placeholder="watch caps"/><br/>
+      <label>passwords:</label>
+      <input type="password" placeholder="in hider" value=""/><br/>
+      <label>gender:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      <input type="checkbox"/><span>male</span>
+      <input type="checkbox"/><span>female</span><br/>
+      <input type="button" value="submit" onclick="window.alert('sorry your username is wrong');"/>
+      </fieldset>    
+    </form>         
+   <div id="xiang">
+    <fonter>
+    <details>
+        <summary>more imformation</summary>
+        <menu>
+            <li><a id="one" href="http://www.lijianhong.top/webBasic">partner</a></li>
+            <li><a id="two" >team</a></li>
+        </menu>
+    </details> 
+    <select>
+            <option>servers
+            <option>signon
+            <option>signin
+            <option>reback
+    </select>
+    </fonter>
+    </div>
+    </div>
+    <script>
+         function submi(){
+            alert("congratulations!you already have been one of us! ");
+        }
+    </script>
+    <div id="song">
+        <form>    <!--注册-->
+            <fieldset id="20213592-4">
+             <legen>--注册--</legen><br/>
+             <label>username:</label>
+             <input type="text" placeholder="watch caps"><br/>
+             <label>passwords:</label>
+             <input type="password" placeholder="no hider"><br/>
+             <input type="button" value="submit" onclick="submi();" >
+            </fieldset>
+          </form>
+    </div> 
+  </body> 
+</html>
