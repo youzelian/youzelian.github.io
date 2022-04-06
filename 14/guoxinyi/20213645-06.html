@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>第五次作业</title>
+ </head>
+ <style type="text/css">
+ 
+body
+{
+text-align:center;
+font-family:宋体;
+}
+p
+ {
+ font-size:40px;
+ }
+
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6
+ {
+ text-shadow:2px 2px #999;
+ font-size:30px;
+ margin:30px;
+ letter-spacing:0.6em;
+ }
+
+	
+
+{
+transition-duration: 0.4s; /* 检索或设置对象过渡的持续时间 */
+background-color:#ccffff;
+display: inline-block;
+width: 90px;
+height: 90px;
+font-size: 20px;
+border-radius: 10px;/*允许为元素添加圆角边框*/
+}
+
+
+
+ </style>
+ 
+<body>
+    <p>阅读望月有感</p>
+</font>
+    <input type="button" value="1" id="jing1">
+    <input type="button" value="2" id="jing2">
+    <input type="button" value="3" id="jing3">
+    <input type="button" value="4" id="jing4">
+    <input type="button" value="5" id="jing5">
+    <input type="button" value="6" id="jing6">
+    <h1></h1>
+    <h2></h2>
+    <h3></h3>
+    <h4></h4>
+    <h5></h5>
+    <h6></h6>
+    <script>
+        var z1 = document.querySelector("h1");
+        var j1 = document.getElementById("jing1");
+        var z2 = document.querySelector("h2");
+        var j2 = document.getElementById("jing2");
+        var z3 = document.querySelector("h3");
+        var j3 = document.getElementById("jing3");
+        var z4 = document.querySelector("h4");
+        var j4 = document.getElementById("jing4");
+        var z5 = document.querySelector("h5");
+        var j5 = document.getElementById("jing5");
+        var z6 = document.querySelector("h6");
+        var j6 = document.getElementById("jing6");
+
+        j1.onclick = function () {
+            z1.textContent = "望月有感";
+        }
+        j2.onclick = function () {
+            z2.textContent = "唐·王维";
+        }
+        j3.onclick = function () {
+            z3.textContent = "时难年荒世业空，弟兄羁旅各西东。";
+        }
+        j4.onclick = function () {
+            z4.textContent = "田园寥落干戈后，骨肉流离道路中。";
+        }
+        j5.onclick = function () {
+            z5.textContent = "吊影分为千里雁，辞根散作九秋蓬。";
+        }
+        j6.onclick = function () {
+            z6.textContent = "共看明月应垂泪，一夜乡心五处同。";
+        }
+    </script>
+	<div>
+	<p align="left">
+译文：<br>
+战乱灾荒祖先产业荡然空，弟兄漂泊寄居他乡各西东。<br>
+战乱过后田园荒芜寥落，逃亡途中骨肉同胞流落离散。<br>
+顾影自怜好像离群的旅雁，行踪不定酷似无根的秋蓬。<br>
+同看明月，分散的亲人都会伤心落泪，一夜思乡心情五地相同。<br>	
+	</p>
+	</div>
+</body>
+</html>
