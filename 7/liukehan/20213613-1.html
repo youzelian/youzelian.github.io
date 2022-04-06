@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+ <head>
+<meta charset="UTF-8">
+<script>
+	alert("即将进入");
+</script>
+
+<style>
+body{background-image:url("晚霞.jpeg");
+background-size:100% 100%;
+background-attachment: fixed;
+ text-align:center;}
+
+  h1{text-align:center;
+  font-family:arial;
+  font-size:50px;
+ font-family:仿宋 }
+
+  h5{font-size:30px;
+  color:red;}
+p{font-size:50px;
+	color:black;
+	font-family:仿宋}
+  </style>
+ </head>
+ <body>
+  <h1>
+  《雁门太守行》
+  </h1>
+  <h5>
+  [唐]李贺
+  </h5>
+  <p>
+黑云压城城欲摧，甲光向日金鳞开。<br/>
+              <br/>
+角声满天秋色里，塞上燕脂凝夜紫。<br/>
+              <br/>
+半卷红旗临易水，霜重鼓寒声不起。<br/>
+             <br/>
+报君黄金台上意，提携玉龙为君死。<br/>
+            <br/>
+<img src="雁门.jpeg" width="1080" height="810" border="0" alt="">
+<p  style="font-size: 19px; font-weight: bold;">单击按钮，生成观看链接</p>
+		<button onclick="Fun()">点击这里</button>
+		<p id="DOWN" style="color: green; font-size: 24px; font-weight: bold;"></p>
+		<script>
+			var el_down = document.getElementById("DOWN");
+			function Fun() {
+				var a = document.createElement('a');
+				var link = document.createTextNode("点击观看！");
+				a.appendChild(link);
+				a.title = "点击观看！";
+				a.href = "https://www.bilibili.com/video/BV1eb4y1y7m1";
+				document.body.appendChild(a);
+			}
+		</script>
+ </body>
+</html>
