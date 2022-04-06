@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>作业</title>
+   <style type="text/css">
+    body{
+		font-size:30px;/*默认字体大小*/
+		background:url("https://pic2.zhimg.com/v2-c13c92d61b8416a6c56f9a09734d1960_r.jpg?source=1940ef5c");/*背景图*/
+		background-size: cover;/*让背景图自适应屏幕*/
+		}
+	nav{/*导航栏*/
+		margin:2px auto;/**/
+		text-align:center;/*文字居中*/
+		background-color:rgba(250,250,230,0.5);/*导航栏背景颜色设置rgba代表红绿蓝透明度*/
+		border:2px black solid ;/*边框的大小 颜色 样式*/
+		line-height:50px;/*行高，提高行距*/
+		}
+		a{
+			font-size:1em;/*超链接字的大小*/
+			text-align:center;
+			border:3px black solid;	
+			border-radius:2em;
+			background-color:rgba(230,230,230,1);
+			}
+			a:link{/*超链接未被访问前*/
+				text-decoration: none;/*取消下划线*/
+				color:gray;/*字体颜色*/
+				padding:5px;/*内边距为5px*/
+				}
+			a:visited{/*超链接已经被访问后*/
+				text-decoration: none;
+				border:2px black dashed;/*为防止抖动故用2px*/
+				color:black;
+					}
+			a:hover{/*鼠标在其上*/
+				color:black;
+				background-color:rgba(250,250,250,1);
+					}
+			a:active{/*鼠标点击时刻*/
+				font-size:1.1em;
+				color:red;
+					}
+	div{/*盒子的默认属性*/
+		width:650px;/*盒子的默认宽度*/
+		text-align:center;
+		line-height:1.5em;
+		 }
+		div#box1/*盒子的id*/
+		{
+			font-size:0.9em;
+			position:fixed ;
+			left:50px;/*调整盒子的位置距离页面左边50像素*/
+			line-height:1.3em;
+			}
+		div#box2
+			{position:relative;
+			 width:600px;
+			 border:2px solid ;
+			 border-radius:2em;/*实现圆角边框*/
+			 padding:0.5em;
+			 padding-bottom:1.5em;/*设置元素下内边距的宽度*/
+			 text-align:center;
+			 font-family:楷体;/*字体*/
+			 right:-800px;
+			 background-color:rgba(245,245,220,0.2);
+			 top:50px;/*距离页面最上方50像素*/
+				}
+		div#box3{
+			position:fixed;
+			font-size:0.8em;
+			text-align:center;
+			top:570px;
+			left:50px;
+			width:1400px;/*盒子的宽度*/
+			}
+    p{
+		border-radius:1em;
+		letter-spacing:0.2em;/*增加和减少字符间距*/
+		font-size:35px;
+		width:540px;
+		margin:10px auto;/*外边距依次分别为上下 左右*/
+		}
+	h1{
+		line-height:1.15em;
+		font-size:40px;
+		text-shadow:3px 2px 2px gray;/*阴影依次分别为水平，垂直，模糊半径，颜色*/
+		}
+	h2{
+		border:5px solid ;
+		font-size:2em;
+		background-color:black;
+		color:white;
+		line-height:58px;
+		}
+	h3{
+		font-family:宋体;
+		font-size:25px;
+		border:2px dashed;
+		background-color:rgba(250,235,215,0.7);
+		}
+	input{
+		font-size:20px;
+		font-family:楷体;
+		}
+  </style>
+    <script>
+	var libai=[];/*定义一个字符串*/
+		libai[0]="静夜思";/*将内容赋值给字符串*/
+		libai[1]="床前明月光，疑是地上霜。举头望明月，低头思故乡。";
+		libai[2]="独坐敬亭山";
+		libai[3]="众鸟高飞尽，孤云独去闲。相看两不厌，只有敬亭山。";
+		libai[4]="夜宿山寺";
+		libai[5]="危楼高百尺，手可摘星辰。不敢高声语，恐惊天上人。";
+		libai[6]="赠孟浩然";
+		libai[7]="吾爱孟夫子，风流天下闻。红颜弃轩冕，白首卧松云。醉月频中圣，迷花不事君。高山安可仰，徒此揖清芬。";
+		libai[8]="送友人";
+		libai[9]="青山横北郭，白水绕东城。此地一为别，孤蓬万里征。浮云游子意，落日故人情。挥手自兹去，萧萧班马鸣。";
+		libai[10]="春思";
+		libai[11]="燕草如碧丝，秦桑低绿枝。当君怀归日，是妾断肠时。春风不相识，何事入罗帏？";
+		libai[12]="友人会宿";
+		libai[13]="涤荡千古愁，留连百壶饮。良宵宜清谈，皓月未能寝。醉来卧空山，天地即衾枕。";
+		libai[14]="到头啦，点击上一页回去吧";
+	var i=-2;/*定义一个变量i，i的值为-2*/
+	function pre(){
+		 i=i-2;/*当函数执行时变量-2*/
+		 var headline = document.querySelector("h1");/*获取文档中 class="h1" 的第一个元素并取名为headline*/
+		 var text = document.querySelector("p");/*获取文档中 class="p" 的第一个元素并取名为text*/
+		 headline.textContent = libai[i] ;/*将字符串的内容赋值给headline*/
+		 text.textContent = libai[i+1] ;/*将字符串的内容赋值给text*/
+	   }
+	 function next(){
+		 i=i+2;
+		 var headline = document.querySelector("h1");
+		 var text = document.querySelector("p");
+		 headline.textContent = libai[i] ;
+		 text.textContent = libai[i+1] ;
+	   }
+
+  </script>
+  </head>
+ <body>
+	<div id="box1">
+		<h3>
+		<img src="https://tse1-mm.cn.bing.net/th/id/R-C.d8ed537e0e2a128f01613c28f8a0b914?rik=LYYm8qldBPTEdQ&riu=http%3a%2f%2f5b0988e595225.cdn.sohucs.com%2fimages%2f20181227%2f8205c74b4b7149e7a725b5a762006bfc.jpeg&ehk=Jj48v4k1y3SRpelQnQCrwbCQRip1NaUYq5fFKLvgs5w%3d&risl=&pid=ImgRaw&r=0" align="left" width="250px" height="270px">
+		李白（701－762），字太白，号青莲居士，唐朝浪漫主义诗人，被后人誉为“诗仙”。与杜甫并称为“李杜”。汉族，祖籍陇西成纪。一说出生于碎叶城（当时属唐朝领土，今属吉尔吉斯斯坦），4岁时跟随父亲迁至剑南道绵州。一说即出生于绵州昌隆（今四川江油）。李白存世诗文千余篇，有《李太白集》传世。762年病逝，享年61岁。其墓在今安徽当涂，四川江油、湖北安陆有纪念馆。 李白深受黄老列庄思想影响，有《李太白集》传世，诗作中多以醉时写的，代表作有《望庐山瀑布》、《行路难》、《蜀道难》、《将进酒》、《梁甫吟》、《早发白帝城》等多首。
+		</h3>
+		</div>
+	<div id="box2">
+		<h2>李白诗节选</h2>
+		<input type="button" value="上一页" onclick="pre();">
+		<input type="button" value="下一页" onclick="next();">
+		<h1>快去点击下一页翻页吧！</h1>
+		<p> </p>
+		</div>
+	<div id="box3">
+		<nav>
+		<a href="../weiyuhan/20213615-6.html" title="魏雨浛" target="_BLANK">20213615</a>
+		<a href="../lianggangsha/20213618-6.html" title="梁港莎" target="_BLANK">20213618</a>
+		<a href="../penglijuan/20213628-6.html" title="彭丽娟" target="_BLANK">20213628</a>
+		<a href="../nieyuxin/20213634-6.html" title="聂雨欣" target="_BLANK">20213634</a>
+		<a href="../zhouyanru/20213636-6.html" title="周晏茹" target="_BLANK">20213636</a></nav>
+		</div>
+ </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SIXTH-HOMEWORK</title>
+	<style type="text/css">
+	body{
+		background:url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.pptjia.com%2Fimage%2F20181227%2F08c1ad4a692d8b5cdcfd5795d650584d.jpg&refer=http%3A%2F%2Fimg.pptjia.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1649404976&t=4c4677a70aa11613fb5a944d093a2cde) no-repeat center top;
+		background-size:cover;
+		text-align:center;
+		font-family:华文新魏;
+		font-size:40px;
+	 }
+	p{
+		font-size:60px;
+		height-line:50px;
+		width:360px;
+		margin:auto;
+		
+	 }
+	 
+	 	
+	h1{
+		font-size:100px;
+		text-shadow: 1px 1px rgba(197, 223, 248,0.8),2px 2px rgba(197, 223, 248,0.8),3px 3px rgba(197, 223, 248,0.8),4px 4px rgba(197, 223, 248,0.8),5px 5px rgba(197, 223, 248,0.8);
+
+	}
+	
+	 
+	input{
+		font-size:30px;
+		display:inline-block;
+		with:100px;
+		hight:80px;
+		border-radius:5px;
+		box-shadow:5px 5px red;
+		margin:20px;
+	}
+
+	</style>
+</head>
+<body>
+<br><br>
+	<h1>元稹:行宫</h1>
+	<p> 	
+	寥落古行宫，宫花寂寞红。白头宫女在，闲坐说玄宗。
+	</p>
+	<input id="prevBt" type="button" value="上一页">
+	<input id="nextBt" type="button" value="下一页">
+	<script>
+
+	var xinggong=[];
+		xinggong[0]="王维：行宫";
+		xinggong[1]="寥落古行宫，";
+		xinggong[2]="宫花寂寞红。";
+		xinggong[3]="白头宫女在，";
+		xinggong[4]="白头宫女在，闲坐说玄宗。";
+
+	var xiangsi=[];
+	xiangsi[0]="王维：相思";
+	xiangsi[1]="红豆生南国，";
+	xiangsi[2]="春来发几枝。";
+	xiangsi[3]="愿君多采撷，";
+	xiangsi[4]="此物最相思。";
+	
+	var zhuliguan=[];
+	zhuliguan[0]="王维：竹里馆";
+	zhuliguan[1]="独坐幽篁里，";
+	zhuliguan[2]="弹琴复长啸。";
+	zhuliguan[3]="深林人不知，";
+	zhuliguan[4]="明月来相照。";
+	
+	var title =document.querySelector("h1");
+	var content =document.querySelector("p");
+	var prevBt = document.getElementById("prevBt");
+	var nextBt = document.getElementById("nextBt");
+	
+	title.textContent = xinggong[0];
+	content.textContent = xinggong[1]+xinggong[2]+xinggong[3]+xinggong[4];
+	title.textContent =zhuliguan[0];
+	
+	prevBt.onclick = function(){
+	content.textContent=zhuliguan[1]+zhuliguan[2]+zhuliguan[3]+zhuliguan[4];
+	title.textContent =zhuliguan[0];
+	}
+	
+	nextBt.onclick = function(){
+	content.textContent=xiangsi[1]+xiangsi[2]+xiangsi[3]+xiangsi[4];
+	title.textContent =xiangsi[0];
+	}
+	</script>
+</body>
+</html>

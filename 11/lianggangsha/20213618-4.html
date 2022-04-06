@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <style type="text/css">
+  body{
+  background:url(https://pic3.zhimg.com/80/v2-50e4db43391d7be5df78f7d66b639cd6_720w.jpg) no-repeat center top;
+  background-size:cover;
+  background-attachment:fixed;
+  font-size:25px;  /*控制字符框的高度*/ 
+  color:cyan;     /*控制边框的颜色*/ 
+  text-align:"center"
+ }
+div{                             /*可以起分割的作用，分开内容进行分段*/
+	 width:600px;         /*控制边框的大小宽度*/   
+	 border:2px solid ;
+	/* border-radius:6em;   /*控制边框的四个圆角的弧度*/
+	 margin:1em auto ;
+	 padding:2em;         /*控制边框的内边距*/
+	 padding-bottom:4em;
+	 text-align:center;
+	 line-height:2em;      /*控制边框的行高 可以将字间的距离拉开*/
+     }
+ div#box1{
+	  font-size:1.5em;
+       border-radius: 30%;
+       box-shadow: 30px 10px  10px rgba(0, 0, 0, 0.6);
+	  	}
+div#box2{
+	  font-size:1.5em;
+       border-radius: 60%;
+       box-shadow: 15px 10px 10px 10px rgba(0, 0, 0, 0.6) inset; /* 阴影水平向右偏移10px，垂直向下偏移10px 边缘模糊半径10px  阴影向外扩展10px 内阴影 */
+
+	  	}
+.greenFont{color:green;
+           background-color: LightCyan; }
+    .greyFont{color:grey}           /*可以控制各个段落的颜色*/
+        .blueFont{color:navy}
+		    .indigoFont{color:indigo;}
+	#special{color:MidnightBlue;
+	         background-color:Lavender }
+p{
+     font-size:50px;
+     font-family:黑体;
+	 font-style:仿宋;
+     align="center"
+    
+    }
+
+ h1
+  {  text-shadow:5px 5px 5px grey;
+     font-size:40px;
+	 font-family:黑体;
+     font-style:宋体;
+     align="center"
+	}
+  </style>
+</head>
+<body>
+ <div id="box1">    
+   <h1 id="special" >
+《兰亭诗二首·其一<br>
+               ——王安石<br>
+</h1>
+<p class="greyFont"  >
+ 代谢鳞次，忽焉以周。 <br>
+</p>
+<p class="greenFont"  >
+ 欣此暮春，和气载柔。<br>
+</p>
+<p  class="blueFont" >
+ 咏彼舞雩，异世同流。<br>
+</p>
+<p  class="indigoFont" >
+ 迤携齐契，散怀一丘。<br>
+</p>
+ </div> 
+  <div id="box2">   
+    <p text-align:center id="special" ;>
+  	《小巷》 /顾城
+	</p>
+    <p class="greenFont" >
+	小巷<br>
+	又弯又长<br>
+    没有门<br>
+	没有锁<br>
+	我拿把旧钥匙<br>
+	敲着厚厚的墙<br>
+    </p>
+  </div>
+ </body>
+</html>

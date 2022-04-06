@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>20213615-05</title>
+  <style>
+   body{
+    font-size:30px;
+    background:url("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fspider.ws.126.net%2F101b1b0a6f602cd7d46b7b7dff089bd0.jpeg&refer=http%3A%2F%2Fspider.ws.126.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1651222111&t=e70e87cdc5bc5a076e5871bc127f2103") ;
+    background-attachment:fixed;
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+	}
+  h1{
+    border-radius:1em;
+	letter-spacing:0.2em;
+	text-shadow:0.05em 0.02em rgb(250,100,0) ; 
+    font-size:50px;
+	font-family:华文新魏;
+	text-align:center;}
+  p{
+    border-radius:1em;
+	letter-spacing:0.2em;
+	text-shadow:0.05em 0.02em rgb(250,100,0) ; 
+    font-size:50px;
+	font-family:华文新魏;
+	text-align:center;}
+  input{
+    font-size:50px;
+    color:blue;}
+</style>
+ </head>
+ <br><br>
+	<h1>王维：送别</h1>
+	<p> 	
+	下马饮君酒，问君何所之。君言不得意，归卧南山陲。但去莫复闻，白云无尽时。
+	</p>
+	<input id="prevBt" type="button" value="上一页">
+	<input id="nextBt" type="button" value="下一页">
+	<script>
+
+	var songbie=[];
+		songbie[0]="王维：送别";
+		songbie[1]="下马饮君酒，问君何所之。";
+		songbie[2]="君言不得意，归卧南山陲。";
+		songbie[3]="但去莫复闻，白云无尽时。，";
+
+	var xiju=[];
+	xiju[0]="柳宗元：溪居";
+	xiju[1]="久为簪组累，幸此南夷谪。";
+	xiju[2]="闲依农圃邻，偶似山林客。";
+	xiju[3]="晓耕翻露草，夜榜响溪石。";
+	xiju[4]="来往不逢人，长歌楚天碧。";
+	
+	var youziyin=[];
+	youziyin[0]="孟郊：游子吟";
+	youziyin[1]="慈母手中线，游子身上衣。";
+	youziyin[2]="临行密密缝，意恐迟迟归。";
+	youziyin[3]="谁言寸草心，报得三春辉？";
+	
+	var title =document.querySelector("h1");
+	var content =document.querySelector("p");
+	var prevBt = document.getElementById("prevBt");
+	var nextBt = document.getElementById("nextBt");
+	
+	title.textContent = songbie[0];
+	content.textContent = songbie[1]+songbie[2]+songbie[3];
+	title.textContent =youziyin[0];
+	
+	prevBt.onclick = function(){
+	content.textContent=youziyin[1]+youziyin[2]+youziyin[3]+youziyin[4];
+	title.textContent =youziyin[0];
+	}
+	
+	nextBt.onclick = function(){
+	content.textContent=xiju[1]+xiju[2]+xiju[3];
+	title.textContent =xiju[0];
+	}
+	</script>
+</body>
+</html>

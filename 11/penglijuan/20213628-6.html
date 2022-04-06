@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  body{ background:url("https://bpic.588ku.com/back_pic/06/00/61/525fbc7513952f7.jpg");
+        text-align:center;
+		background-repeat: no-repeat;
+		background-size:cover;
+		font-family:华文新魏;
+	}
+	h1{   color:gray;
+        font-size:50px;
+		text-shadow:3px 3px 4px black;
+		   }
+	p {  color:gray;
+       font-size:40px;
+	   width:500px ;
+	   margin:auto ;
+	   line-height:55px;
+	   font-family:华文新魏;
+       }
+  img {   background-size:cover;
+		 margin: auto;
+			}
+
+  input {color:gray;
+       font-size:30px;
+	   border-bottom-color:LightSlateGray;
+	   border-radius:2em; 
+	   font-family:华文新魏;}
+  </style>
+  </head>
+<body>
+<br><br>
+	<h1>王维：送别</h1>
+	<p> 下马饮君酒，问君何所之。君言不得意，归卧南山陲。但去莫复闻，白云无尽时。</p>
+	<input id="prevBt" type="button" value="上一页">
+	<input id="nextBt" type="button" value="下一页">
+	<script>
+
+	var wangwei=[];
+		wangwei[0]="王维：送别";
+		wangwei[1]="下马饮君酒，问君何所之。君言不得意，归卧南山陲。但去莫复闻，白云无尽时。";
+
+	var weiyingwu=[];
+	weiyingwu[0]="韦应物：夕次盱眙县";
+	weiyingwu[1]="落帆逗淮镇，停舫临孤驿。浩浩风起波，冥冥日沈夕。人归山郭暗，雁下芦洲白。独夜忆秦关，听钟未眠客。";
+	
+	var liuzhongyuan=[];
+	liuzhongyuan[0]="柳宗元：溪居";
+	liuzhongyuan[1]="久为簪组累，幸此南夷谪。闲依农圃邻，偶似山林客。晓耕翻露草，夜榜响溪石。来往不逢人，长歌楚天碧。";
+	
+	var title =document.querySelector("h1");
+	var content =document.querySelector("p");
+	var prevBt = document.getElementById("prevBt");
+	var nextBt = document.getElementById("nextBt");
+	
+	title.textContent = wangwei[0];
+	content.textContent = wangwei[1];
+	title.textContent =wangwei[0];
+	
+	prevBt.onclick = function(){
+	content.textContent=weiyingwu[1];
+	title.textContent =weiyingwu[0];
+	}
+	
+	nextBt.onclick = function(){
+	content.textContent=liuzhongyuan[1];
+	title.textContent =liuzhongyuan[0];
+	}
+	</script>
+</body>
+</html>

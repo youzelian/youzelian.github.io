@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+ 
+  <title>这里是翻页古诗</title>
+  <style type="text/css">
+  body{
+  background:url(https://pic3.zhimg.com/80/v2-fd50c1766ba92e3d644b7c976cb4c414_720w.jpg?source=1940ef5c) no-repeat center top;
+  background-size:cover;
+  background-attachment:fixed;
+  text-align: center;
+  }
+  h1{   color:Aquamarine;
+        font-size:50px;
+		text-shadow:3px 3px 4px green;
+		   }
+  p {  color:Turquoise;
+       font-size:40px;
+	   width:500px ;
+	   margin:auto ;
+	   line-height:55px;
+       }
+  input {color:darkblue;
+       font-size:30px;
+	   border-bottom-color:LightSlateGray;
+	   border-radius:2em;  }
+  </style>
+  <script type="text/javascript">
+  <!--
+ /* var ts = "《春日忆李白》唐朝·杜甫 白也诗无敌，飘然思不群。清新庾开府，俊逸鲍参军。渭北春天树，江东日暮云。何时一樽酒，重与细论文。";*/
+  var dufu = [];           /*定义数组变量*/
+       dufu[0] = "《春日忆李白》唐朝·杜甫" ; 
+	  dufu[1] = "白也诗无敌，飘然思不群。清新庾开府，俊逸鲍参军。" ;
+      dufu[2] = "渭北春天树，江东日暮云。何时一樽酒，重与细论文。" ;
+      dufu[3] = "渡远荆门外，来从楚国游。山随平野尽，江入大荒流。" ;
+	  dufu[4] = "月下飞天镜，云生结海楼。仍怜故乡水，万里送行舟。" ;
+      dufu[5] = "《渡荆门送别》唐朝·李白" ;
+      dufu[6] = "《留别王维》唐朝·孟浩然" ; 
+	  dufu[7] = "寂寂竟何待，朝朝空自归。欲寻芳草去，惜与故人违。" ;
+      dufu[8] = "当路谁相假，知音世所稀。只应守寂寞，还掩故园扉。" ;
+  //-->
+  </script>
+</head>
+ <body>
+   <input type="button" value="第一首诗" id="prev">
+   <input type="button" value="第二首诗" id="next">
+   <input type="button" value="第三首诗" id="last">
+ <h1></h1>
+ <p></p>
+ <script type="text/javascript">
+ <!--
+  var title = document.querySelector("h1");
+  var content = document.querySelector("p");
+  var prevBt = document.querySelector("input#prev");
+  var nextBt = document.querySelector("input#next"); /*抓住按钮的对象*/
+  var Bt = document.querySelector("input#last");
+  title.textContent = dufu[0] ;
+  content.textContent = dufu[1] + dufu[2] ; /*数组可以相加*/
+
+  prevBt.onclick = function(){
+      title.textContent = dufu[0] ;
+      content.textContent = dufu[1] + dufu[2] ;
+  };
+  nextBt.onclick = function(){
+       title.textContent = dufu[5] ;
+       content.textContent = dufu[3] + dufu[4] ;
+  };
+ Bt.onclick = function(){ 
+       title.textContent = dufu[6] ;
+       content.textContent = dufu[7] + dufu[8] ;
+  };
+  //-->
+  </script>
+ </body>
+</html>
+ 
