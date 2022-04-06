@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>http//:lijialuo.github.io/</title>
+ </head>
+ 
+   <style type="text/css">
+   body{
+   text-align:center;
+   }
+  h1{
+  font-size:20px;
+  color:black;
+  margin:auto;
+  }
+  input{
+  font-size:20px;
+  color:blue;
+  
+  } 
+ 
+  </style>
+
+   
+
+</head>
+<body>
+<input type="button" value="上一页" id="prev">
+<input type="button" value="下一页" id="next">
+<h1></h1>
+<p>
+
+</p>
+
+<script type ="text/javascript">
+   var w=[];
+   w[1]="出塞：王昌龄";
+   w[2]="静夜思";
+   w[3]="春晓";
+   var g =[];
+   g[1]="清时明月汉时关，万里长征人未还。但使龙城飞将在，不叫不马度阴山。"
+   g[2]="床前明月光，疑是地上霜。举头望明月，低头思故乡。"
+   g[3]="春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少。"
+var title1 = document.querySelector("h1");
+var content = document.querySelector("p");
+var prev = document.querySelector("input#prev");
+var next = document.querySelector("input#next");
+title1.textContent =w[i];
+content.textContent = g[i]
+var i =0;
+prevBt.onclick =function(){
+	i--;
+	content.textContent =g[i] ;
+	title1.textContent =w[i];
+	
+
+};
+nextBt.onclick = function(){
+	i++;
+	content.textContent =g[i] ;
+	title1.textContent =w[i];
+
+
+};
+</script> 
+</body>
+</html>

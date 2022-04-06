@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+ <meta charset="UTF-8">
+    <title>主页</title>
+ <body>
+    <p>阅读静夜思</p>
+    <input type="button" value="1" id="1">
+    <input type="button" value="2" id="2">
+    <input type="button" value="3" id="3">
+    <input type="button" value="4" id="4">
+    <input type="button" value="5" id="5">
+    <input type="button" value="6" id="6">
+    <h1></h1>
+    <h2></h2>
+    <h3></h3>
+    <h4></h4>
+    <h5></h5>
+    <h6></h6>
+    <script>
+        var z1 = document.querySelector("h1");
+        var j1 = document.getElementById("1");
+        var z2 = document.querySelector("h2");
+        var j2 = document.getElementById("2");
+        var z3 = document.querySelector("h3");
+        var j3 = document.getElementById("3");
+        var z4 = document.querySelector("h4");
+        var j4 = document.getElementById("4");
+        var z5 = document.querySelector("h5");
+        var j5 = document.getElementById("5");
+        var z6 = document.querySelector("h6");
+        var j6 = document.getElementById("6");
+
+        j1.onclick = function () {
+            z1.textContent = "静夜思";
+        }
+        j2.onclick = function () {
+            z2.textContent = "唐·李白";
+        }
+        j3.onclick = function () {
+            z3.textContent = "床前明月光，";
+        }
+        j4.onclick = function () {
+            z4.textContent = "疑是地上霜。";
+        }
+        j5.onclick = function () {
+            z5.textContent = "举头望明月，";
+        }
+        j6.onclick = function () {
+            z6.textContent = "疑是地上霜。";
+        }
+    </script>
+  </head>
+ </body>
+</html>

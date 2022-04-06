@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>翻页</title> 
+<style>
+h1{
+text-align:center;
+width:500px;
+};
+button
+{text-align:center;};
+</style>
+<script>
+function change1()
+{
+	document.getElementById("0").innerHTML="行路难·其一李白 〔唐代〕金樽清酒斗十千，玉盘珍羞直万钱。(羞 同：馐；直 同：值)停杯投箸不能食，拔剑四顾心茫然。欲渡黄河冰塞川，将登太行雪满山。(雪满山 一作：雪暗天)闲来垂钓碧溪上，忽复乘舟梦日边。(碧 一作：坐)行路难，行路难，多歧路，今安在？长风破浪会有时，直挂云帆济沧海。";
+}
+function change2()
+{
+	document.getElementById("0").innerHTML="将进酒李白 〔唐代〕君不见黄河之水天上来，奔流到海不复回。君不见高堂明镜悲白发，朝如青丝暮成雪。人生得意须尽欢，莫使金樽空对月。天生我材必有用，千金散尽还复来。烹羊宰牛且为乐，会须一饮三百杯。岑夫子，丹丘生，将进酒，杯莫停。与君歌一曲，请君为我倾耳听。(倾耳听 一作：侧耳听)钟鼓馔玉不足贵，但愿长醉不愿醒。(不足贵 一作：何足贵；不愿醒 一作：不复醒)古来圣贤皆寂寞，惟有饮者留其名。(古来 一作：自古；惟 通：唯)陈王昔时宴平乐，斗酒十千恣欢谑。主人何为言少钱，径须沽取对君酌。五花马、千金裘，呼儿将出换美酒，与尔同销万古愁。";
+}
+</script>
+<button onclick="change1()">上一首</button>
+<button onclick="change2()">下一首</button>
+
+</head>
+
+<body>
+
+<h1 id="0">古诗</h1>
+
+</body>
+</html>
