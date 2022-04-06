@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>20213611-桂祺第六周作业</title>
+  <style type="text/css">
+	body{
+	text-align: center;
+	font-family:宋体;
+	font-size:50px;
+	color:red;
+	}
+  </style>
+ </head>
+ <body>
+    <input type="button" value="上一首" id="1">
+	<input type="button" value="下一首" id="2">
+	<h1></h1>
+	<p></p>
+ </body>
+ <script>
+	var b1 = document.getElementById("1");
+	var b2 = document.getElementById("2");
+	var headline= document.querySelector("h1");
+	var gs=[];
+	gs[0]="行宫 元稹 〔唐代〕 寥落古行宫，宫花寂寞红。 白头宫女在，闲坐说玄宗。";
+	gs[1]="相思 王维 〔唐代〕 红豆生南国，春来发几枝。 愿君多采撷，此物最相思。";
+	gs[2]="竹里馆 王维 〔唐代〕 独坐幽篁里，弹琴复长啸。 深林人不知，明月来相照。";
+	gs[3]="哥舒歌 西鄙人 〔唐代〕 北斗七星高，哥舒夜带刀。 至今窥牧马，不敢过临洮。";
+	gs[4]="登乐游原 李商隐 〔唐代〕 向晚意不适，驱车登古原。 夕阳无限好，只是近黄昏。";
+	var i=0;
+	b1.onclick=function()
+	{
+		if (i<=4&&i>=1)
+		{i--;
+		headline.textContent=gs[i];};
+}
+	b2.onclick=function()
+{
+	
+
+	if (i<=3)
+	{
+	i++;
+headline.textContent=gs[i];
+};
+};
+ </script>
+</html>
