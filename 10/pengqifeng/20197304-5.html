@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body.input.div.p{
+            marging:0;
+            padding: 0;
+        }
+        body{
+            font-size: 14px;font-font: 微软雅黑;line-height: 25px;
+        }
+        .content img{float: left;width: 150px;}
+        .r{float: left;width: 400px;}
+        input[name="changeBook"]{
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 14px;
+            font-family: 微软雅黑;
+            margin: 10px 0 10px 0;
+        }
+        input[name="season"]{
+            width: 50px;text-align:center;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+       想看诗：<input name="season"type="text" value="
+	     怒发冲冠，凭阑处、潇潇雨歇。抬望眼，仰天长啸，壮怀激烈。三十功名尘与土，八千里路云和月。莫等闲、白了少年头，空悲切。靖康耻，犹未雪。臣子恨，何时灭。驾长车，踏破贺兰山缺。壮志饥餐胡虏肉，笑谈渴饮匈奴血。待从头、收拾旧山河，朝天阙。"><br>
+        
+        <input name="b1" type="button" value="静夜思" onclick="all_input()">
+        <input name="b2" type="button" value="满江红" onclick="s_input()">
+        <input name="b3" type="button" value="清空页面" onclick="cleanAll()">
+        <p id="replace"></p>
+    </div>
+</div>
+
+</body>
+<script>
+    function all_input(){
+        //点击就展示一段文本内容
+        var st="床前明月光，疑是地上霜。举头望明月，低头思故乡。";
+        document.getElementById("replace").innerHTML=st;
+    }
+    function s_input() {
+        //展示四季的内容
+        var season=document.getElementsByName("season");
+        var strs="";
+        for (var i=0;i<season.length;i++){
+            //season[i].valueOf出现的是乱码
+            //season[i].nodeValue出现的是null空值
+            strs+=season[i].value+" ";
+        }
+        document.getElementById("replace").innerHTML=strs;
+    }
+    function cleanAll() {
+      /*无效代码
+        var str="";
+        document.getElementsById("content").innerHTML=str;
+        */
+
+        //先获取content的div
+        var elem = document.getElementsByClassName('content');
+        //移除所有的子元素
+        elem[0].parentNode.removeChild(elem[0]);
+    }
+</script>
+</html>

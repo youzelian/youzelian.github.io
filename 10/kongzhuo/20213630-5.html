@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>20213630-5</title>
+</head>
+    <style type="text/css">
+	body.input.div.p{
+            marging:0;
+            padding: 0;
+        }
+		body{
+            font-size: 14px;
+			font-font: 微软雅黑;
+			line-height: 25px;
+        }
+        .content img{float: left;
+		width: 150px;
+		}
+        .r{float: left;
+		width: 400px;
+		}
+        input[name="changeBook"]{
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 14px;
+            font-family: 微软雅黑;
+            margin: 10px 0 10px 0;
+        }
+        input[name="season"]{
+            width: 50px;
+			text-align:center;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <img src="Honeyview_OIP-C.jpg" alt="English">
+    <div class="r">
+        <div id="book">书名：English</div>
+        <input name="changeBook" value="换换名称" type="button" onclick="alterBook()"><br>
+        四季名称：<input name="season"type="text" value="春">
+        <input name="season"type="text"value="夏">
+        <input name="season"type="text" value="秋">
+        <input name="season"type="text"value="冬"><br>
+        
+        <input name="b1" type="button" value="input内容" onclick="all_input()">
+        <input name="b2" type="button" value="四季名称" onclick="s_input()">
+        <input name="b3" type="button" value="清空页面" onclick="cleanAll()">
+        <p id="replace"></p>
+    </div>
+</div>
+
+</body>
+<script>
+    function alterBook() {
+        //换掉标题
+        var divObj=document.getElementById("book");
+        divObj.innerHTML="现象级英语畅销书";
+    }
+    function all_input(){
+        //点击就展示一段文本内容
+        var st="xxxxxxxxxxxxxinput内容xxxxxxxxxxxxxxxxxx";
+        document.getElementById("replace").innerHTML=st;
+    }
+    function s_input() {
+        //展示四季的内容
+        var season=document.getElementsByName("season");
+        var strs="";
+        for (var i=0;i<season.length;i++){
+            //season[i].valueOf出现的是乱码
+            //season[i].nodeValue出现的是null空值
+            strs+=season[i].value+" ";
+        }
+        document.getElementById("replace").innerHTML=strs;
+    }
+    function cleanAll() {
+      /*无效代码
+        var str="";
+        document.getElementsById("content").innerHTML=str;
+        */
+
+        //先获取content的div
+        var elem = document.getElementsByClassName('content');
+        //移除所有的子元素
+        elem[0].parentNode.removeChild(elem[0]);
+    }
+</script>
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>杜甫的三首有名的诗</title>
+ </head>
+ <style>
+ a{ 
+ padding:15px;
+ margin:10px;
+ border:1px solid red;
+ font-family:宋体;
+ font-size:40px;
+ color:purple;
+ box-shadow:5px 5px gray;
+ display:inline-block;
+ cursor:pointer;#鼠标指针变化
+ }
+
+ p{
+ font-size:40px;
+ font-family:仿宋体;
+ color:blue;
+ padding:20px;
+ }
+ body{
+ text-align:center;
+ }
+ a:hover{
+ color:red;
+ }
+
+ </style>
+ 
+<body>
+
+<a onclick="con()">
+
+</a>
+  <p>春望 <br>
+  国破山河在，城春草木深。<br>
+  感时花溅泪，恨别鸟惊心。<br>
+  烽火连三月，家书抵万金。<br>
+  白头搔更短，浑欲不胜簪。<br>
+  </p>
+  <p>
+  望岳<br>
+  岱宗夫如何？齐鲁青未了。<br>
+  造化钟神秀，阴阳割昏晓。<br>
+  荡胸生曾云，决眦入归鸟。<br>
+  会当凌绝顶，一览众山小。<br>
+  </p>
+  <p>
+  绝句<br>
+  两个黄鹂鸣翠柳，一行白鹭上青天。<br>
+  窗含西岭千秋雪，门泊东吴万里船。<br>
+  </p>
+  <script>
+    //可以换成切换图片等等
+    flag = 0;
+    pre = 0;
+    function con(){
+      var cons = document.getElementsByTagName("p");
+      document.getElementsByTagName("p")[pre].style.display = "none";
+      document.getElementsByTagName("p")[flag].style.display = "inline";
+      console.log(flag);
+      pre = flag;
+      if(flag == cons.length - 1) { //注意是cons.length-1，因为索引值是从0开始的
+        flag = 0;
+      } else {
+        ++flag;
+      }
+    }
+  </script>
+</body>
+</html>

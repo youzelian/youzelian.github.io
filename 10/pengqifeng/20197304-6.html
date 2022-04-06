@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>峰</title>
+  <style type="text/css">
+   body{
+	text-align: center; 
+	}
+   input
+    {
+	padding:15px;
+	background-color:#FFE4E1;
+	}
+   p{
+    font-size:30px;
+    color:blue;
+	margin: auto;
+	width: 180px;
+	line-height: 100px;
+	}
+  </style>
+ </head> 
+ <body>
+	 
+	 <input type="button"  id="prev" value="上一页">
+	 <input type="button"  id="next" value="下一页">
+	 
+	 <h1>
+	 		标题
+	 </h1>
+	 <p>
+	 		内容
+	 </p>
+	 
+ <script type="text/javascript">
+ 
+  var title = document.querySelector("h1");
+  var content = document.querySelector("p");
+  var prevBt = document.querySelector("input#prev");
+  var nextBt = document.querySelector("input#next");
+  
+  var  ww =[];
+  ww [0] ="《使至塞上》唐·王维";
+  ww [1] ="单车欲问边，属国过居延。";
+  ww [2] ="征蓬出汉塞，归雁入胡天。";
+  ww [3] ="大漠孤烟直，长河落日圆。";
+  ww [4] ="萧关逢候骑，都护在燕然。"; 
+  
+  title.textContent = ww[0];
+  content.textContent = ww[1] + ww[2];
+  
+  var i=0;
+  prevBt.onclick = function(){
+  	  content.textContent = ww[i+1] + ww[i+2];
+	  i--;
+  	  };
+	  
+  nextBt.onclick = function(){
+	  content.textContent = ww[i+3] + ww[i+4];
+	  i++;
+	  };
+
+</script>
+ </body>
+</html>

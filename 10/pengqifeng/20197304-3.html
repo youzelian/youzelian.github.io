@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>absolute定位z-index次序</title>
+  <style type="text/css">
+    body{
+	font-size:16px;
+	/*由于absolute定位脱离了文本流，因此下面定义宽度已经没有意义*/
+	width:600px;
+	background:rgb(100,100,100);
+	color:white;   }
+	div{
+	 color:black;
+	 border:2px solid blue ;
+	 font-size:1.9em;
+	 margin:10px auto;
+	 padding:1em;
+	 text-align:center;
+	 line-height:2em;
+	  width:200px;
+	  
+     }
+    div>p{
+	font-size:0.8em;
+	font-weight:bold;
+		}
+    div#abs1{
+	 position:absolute ;
+	 left:1em;
+	 top:2em;
+	 background:rgb(200,250,200);
+	 z-index:3 ;
+		 
+	}
+	div#abs2{
+	 position:absolute ;
+	 left:6em;
+	 top:6em;
+	 background:rgb(200,200,250);
+	 z-index:2 ;
+	 opacity:0.3;
+	}
+	div#abs3{
+	 position:absolute ;
+	 left:10em;
+	 top:10em;
+	 background:rgb(250,200,200);	
+	 z-index:1 ;
+	}
+  </style>
+ </head>
+ <body>
+  <div  id="abs1">
+	<p>
+  	abs1,z-index:3
+	</p>
+	空山不见人，
+	但闻人语响。
+	返景入深林，
+	复照青苔上。
+  </div>
+  <div id="abs2">
+    <p>
+	abs2,z-index:2
+	</p>
+	独坐幽篁里，
+	弹琴复长啸。
+	深林人不知，
+	明月来相照。
+  </div>
+    <div  id="abs3">
+	<p>
+  	abs3,z-index:1
+	</p>
+	空山不见人，
+	但闻人语响。
+	返景入深林，
+	复照青苔上。
+  </div>
+ 
+ </body>
+ <!--对比发现，box元素不设position，相当于把position设为static-->
+</html>

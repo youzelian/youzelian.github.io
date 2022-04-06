@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+<title>李晨</title>
+<style type="text/css">
+body{
+    color:blue;
+	text-align:center;
+	   }
+  h1{
+   color:blue;
+   font-size:50px;
+   
+   }
+  input{
+   font-size:50px;
+   color:red;
+ 
+   }
+  p{display:none;
+    color:gray;
+	font-size:40px;
+	font-family:宋体;
+	
+	line-height:110px;
+	letter-spacing:10px;
+	border:5px solid green;
+	margin:20px;
+    box-shadow: 5px 5px gray;	        
+            font-size: 20px;
+            border-radius: 10px;
+            
+	}
+	li{
+	   list-style:circle;
+
+	   font-size:100px;
+	  }
+	  
+</style>
+  <!-- 
+   list-style用于列表前的特殊符号
+    border-radius用于边框种类
+  -->
+ </head>
+ <body>
+ <h1>来读诗</h1>
+<input type="button" value="唐诗两首"id="one" ><br><br>
+ <input type="button" value="第一页"id="prev" >
+ <input type="button" value="下一页"id="next" >
+<p id="p1">
+请翻页
+
+</p>
+<script>
+var title = document.querySelector("h1");
+var content = document.querySelector("p");
+var prevBt = document.querySelector("input#prev");
+var nextBt = document.querySelector("input#next");
+var sanBt = document.querySelector("input#san");
+var siBt = document.querySelector("input#si");
+var s=[];
+s[0]="静夜思";
+s[1]="床前明月光，疑是地上霜。";
+s[2]="举头望明月，低头思故乡。";
+s[3]="春望";
+s[4]="国破山河在，城春草木深。感时花溅泪，恨别鸟惊心。";
+s[5]="烽火连三月，家书抵万金。白头搔更短，浑欲不胜簪。";
+var i=0 ;i<5;
+prevBt.onclick=function(){
+content.textContent=s[i];
+--i;
+};
+nextBt.onclick=function(){
+content.textContent=s[i+1];
+++i;
+};
+one.onclick=function(){
+								     p1.style.display="table"
+}
+ 
+
+
+ </script>
+ </body>
+</html>

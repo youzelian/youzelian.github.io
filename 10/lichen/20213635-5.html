@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+<title>点点点</title>
+<style type="text/css">
+body{
+    color:blue;
+	text-align:center;
+	   }
+  h1{
+   color:blue;
+   font-size:50px;
+   
+   }
+  input{
+   font-size:50px;
+   color:red;
+ 
+   }
+  p{display:none;
+    color:gray;
+	font-size:40px;
+	font-family:宋体;
+	
+	line-height:110px;
+	letter-spacing:10px;
+	border:5px solid green;
+	margin:20px;
+    box-shadow: 5px 5px gray;	        
+            font-size: 20px;
+            border-radius: 10px;
+            
+	}
+	li{
+	   list-style:circle;
+
+	   font-size:100px;
+	  }
+	  
+</style>
+  <!-- 
+   list-style用于列表前的特殊符号
+    border-radius用于边框种类
+  -->
+ </head>
+ <body>
+ <h1>有空来读读诗吧</h1>
+<ul>
+			<li>
+			<input type="button" value="静夜思"id="one" >
+            <input type="button" value="春望" id="two">
+            <input type="button" value="点绛唇·送李琴泉"id="three" >
+			</li>
+	</u1>
+
+<p id="p1">
+床前明月光，疑是地上霜。<br>举头望明月，低头思故乡<br>
+
+</p>
+  <p id="p2">
+  国破山河在，城春草木深。<br>
+感时花溅泪，恨别鸟惊心。<br>
+烽火连三月，家书抵万金。<br>
+白头搔更短，浑欲不胜簪。<br>
+  </p>
+ <p id="p3">
+江上旗亭，送君还是逢君处。酒阑呼渡。云压沙鸥暮。<br>
+漠漠萧萧，香冻梨花雨。添愁绪。断肠柔橹。相逐寒潮去。<br>
+</p>
+
+<script>
+ 
+one.onclick=function(){
+								     p1.style.display="table"
+                                    p2.style.display="none"
+									p3.style.display="none"
+}
+ two.onclick=function(){
+								    p2.style.display="table"
+                                    p1.style.display="none"
+									p3.style.display="none"
+}
+//table使点击第二个按钮时将p2内容展示出，而none使点击其他按钮时的效果消失
+  three.onclick=function(){
+								    p3.style.display="table"
+                                    p1.style.display="none"
+									p2.style.display="none"
+}
+
+ </script>
+ </body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>20213630-6</title>
+  <style type="text/css">
+   input{
+	  padding: 15px;
+	  background-color: #FFE4E1;
+	  font-weight: 1000;
+  }
+   body{
+	   text-align: center; 
+	}
+   p{
+	   font-size:30px;
+	   color:red;
+	   margin: auto;
+	   width: 300px;
+	   line-height: 55px;
+	   color: red;
+	   }
+  </style>
+ </head> 
+<body>
+	 
+	 <input type="button"  id="prev" value="上一页">
+	 <input type="button"  id="next" value="下一页">
+	 
+	 <h1>
+	 		
+	 </h1>
+	 <p>
+	 		
+	 </p>
+	 
+ <script type="text/javascript">
+ 
+  var title = document.querySelector("h1");
+  var content = document.querySelector("p");
+  var prevBt = document.querySelector("input#prev");
+  var nextBt = document.querySelector("input#next");
+
+  var  ww =[];
+  ww [0] ="关雎";
+  ww [1] ="关关雎鸠，在河之洲。";
+  ww [2] ="窈窕淑女，君子好逑。";
+  ww [3] ="参差荇菜，左右流之。";
+  ww [4] ="窈窕淑女，寤寐求之。"; 
+  ww [5] ="求之不得，寤寐思服。"; 
+  ww [6] ="悠哉悠哉，辗转反侧。"; 
+  ww [7] ="参差荇菜，左右采之。"; 
+  ww [8] ="窈窕淑女，琴瑟友之。"; 
+  ww [9] ="参差荇菜，左右芼之。"; 
+  ww [10] ="窈窕淑女，钟鼓乐之。"; 
+  
+  title.textContent = ww[0];
+  content.textContent = ww[1] + ww[2];
+  
+  var i=0;
+  prevBt.onclick = function(){
+  	  content.textContent = ww[i+1] + ww[i+2];
+	  i--;
+  	  };
+	  
+  nextBt.onclick = function(){
+	  content.textContent = ww[i+3] + ww[i+4];
+	  i++;
+	  };
+
+</script>
+</body>
+</html>
+
