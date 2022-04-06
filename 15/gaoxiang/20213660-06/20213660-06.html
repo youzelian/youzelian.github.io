@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第六周作业</title>
+    <style type="text/javascript">
+        body{
+            text-align: center;
+            font-family: cursive;
+        }
+        p{
+            line-height: 40px;
+            font-size: 30px;
+            width: 240px;
+            margin: auto;
+        }
+    </style>
+    <script type="text/javascript">
+        var libai = [];
+        var lb = [];
+        libai[0] = "静夜思";
+        lb[0] = "床前明月光，疑是地上霜。举头望明月，低头思故乡。";
+        libai[1] = "早发白帝城";
+        lb[1] = "朝辞白帝彩云间，千里江陵一日还。两岸猿声啼不尽，轻舟已过万重山。";
+        libai[2] = "望庐山瀑布";
+        lb[2] = "日照香炉生紫烟，遥看瀑布挂前川。飞流直下三千尺，疑是银河落九天。";
+    </script>
+</head>
+<body>
+    <input type="button" value="上一首" id="prev">
+    <input type="button" value="下一首" id="next">
+    <h1></h1>
+    <p></p>
+    <script type="text/javascript">
+        var title = document.querySelector("h1");
+        var content = document.querySelector("p");
+        var prevBt = document.querySelector("input#prev");
+        var nextBt = document.querySelector("input#next");
+        var i = 0;
+        title.textContent = libai[0];
+        content.textContent = lb[0]; 
+        prevBt.onclick = function(){
+            if (i<=0){
+                i = 2;
+            }
+            else{
+                i--;
+            }
+            title.textContent = libai[i];
+            content.textContent = lb[i];         
+        };
+        nextBt.onclick = function(){
+            if (i>=2){
+                i = 0;
+            }
+            else{
+                i++;
+            }
+            title.textContent = libai[i];
+            content.textContent = lb[i];
+        };
+    </Script>
+</body>
+</html>

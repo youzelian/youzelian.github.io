@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body{
+            text-align: center;
+            width:180px;
+            margin:auto;
+        }
+        p{
+            font-size: 30px;
+        }
+    </style>
+    <script type="text/javascript">
+        var ts ="江雪：柳宗元Enter千山鸟飞绝，Enter万径人踪灭。Enter孤舟蓑笠翁，Enter独钓寒江雪。" ;
+        var wangwei = [];
+        wangwei[0] = "江雪:柳宗元";
+        wangwei[1] = "千山鸟飞绝，万径人踪灭。";
+        wangwei[2] = "孤舟蓑笠翁，独钓寒江雪。";
+        wangwei[3] = "春晓:孟浩然";
+        wangwei[4] = "春眠不觉晓，处处闻啼鸟。";
+        wangwei[5] = "夜来风雨声，花落知多少。";
+    </script>
+</head>
+<body>
+    <input type="button" value="上一页" id="prev">
+    <input type="button" value="下一页" id="next">
+    <h1></h1>
+    <p></p>
+
+    <script type="text/javascript">
+        var title = document.querySelector("h1");
+        var content = document.querySelector("p");
+        var prevBt = document.querySelector("input#prev");
+        var nextBt = document.querySelector("input#next");
+        title.textContent = wangwei[0];
+            content.textContent = wangwei[1]+wangwei[2];
+        prevBt.onclick = function(){
+            title.textContent = wangwei[0];
+            content.textContent = wangwei[1]+wangwei[2];
+        };
+        nextBt.onclick = function(){
+            title.textContent = wangwei[3] ;
+            content.textContent = wangwei[4]+wangwei[5] ;
+        }; 
+    </script>
+</body>
+</html>

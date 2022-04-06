@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        h1{
+            font-size:40px;
+            color:blue;
+        }
+        input{
+            font-size:40px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="点击">
+    <h1>相思</h1>
+
+
+    <script >
+        var headline = document.querySelector("h1");
+        var button = document.querySelector("input");
+        button.onclick = function(){
+        headline.textContent = "红豆生南国，春来发几枝。愿君多采撷，此物最相思。";
+        };
+    </script>
+</body>
+</html>
