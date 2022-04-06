@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style type="text/css"> 
+        body
+        {
+         text-align:center;
+        }
+        h1
+          { 
+        font-family:微软黑体;
+        font-weight: 800;
+        font-size:180px; 
+        color:#f80303; 
+       } 
+       h1, h2, h3, h4, h5, h6 
+        { 
+          
+          margin:30px;
+          font:normal 700 35px 微软雅黑;
+         }
+            #jing1,#jing2,#jing3,#jing4,#jing5,#jing6
+            {
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+                 font-size: 20px;
+                  border-radius: 10px;
+                   box-shadow: 5px 5px rgb(241, 136, 245);
+             }
+                        </style>
+        <body>   
+    <h1>杂诗三首·其三</h1> 
+    <input type="button" value="一" id="jing1"> 
+    <input type="button" value="二" id="jing2">   
+    <input type="button" value="三" id="jing3">  
+    <input type="button" value="四" id="jing4">  
+    <input type="button" value="五" id="jing5"> 
+    <input type="button" value="六" id="jing6"> 
+    <h1></h1>  
+    <h2></h2>  
+    <h3></h3> 
+    <h4></h4>    
+    <h5></h5> 
+    <h6></h6> 
+    <script>     
+    var z1 = document.querySelector("h1"); 
+    var j1 = document.getElementById("jing1"); 
+    var z2 = document.querySelector("h2"); 
+    var j2 = document.getElementById("jing2");        
+    var z3 = document.querySelector("h3");        
+    var j3 = document.getElementById("jing3");        
+    var z4 = document.querySelector("h4");        
+    var j4 = document.getElementById("jing4");        
+    var z5 = document.querySelector("h5");        
+    var j5 = document.getElementById("jing5");        
+    var z6 = document.querySelector("h6");        
+    var j6 = document.getElementById("jing6");        
+    j1.onclick = function () 
+    {            
+        z1.textContent = "杂诗三首·其三";        
+        }        
+    j2.onclick = function () 
+    {            
+        z2.textContent = "沈佺期.唐代";        
+        }        
+    j3.onclick = function () 
+    {            
+        z3.textContent = "闻道黄龙戍，频年不解兵。";        
+        }        
+    j4.onclick = function () 
+    {            
+        z4.textContent = "可怜闺里月，长在汉家营。";        
+        }       
+    j5.onclick = function () 
+    {            
+        z5.textContent = "少妇今春意，良人昨夜情。";       
+        }        
+    j6.onclick = function () 
+        {
+        z6.textContent = "谁能将旗鼓，一为取龙城。";        
+        }
+</script>  
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>20213663-4</title>
+</head>
+<style type="text/css">
+    div
+    {
+        font-size: 30px;
+        color: blue;
+    }
+    a
+    {
+        border: 1.5px solid gray;
+        text-decoration: none;
+        margin: 10px;
+    }
+    a:link
+    {
+        color: blue;
+    }
+    a:visited
+    {
+        color:black;
+    }
+    a:hover
+    {
+        font-size: 25px;
+        color: rgb(255, 0, 255);
+    }
+    a:active
+    {
+        color: greenyellow;
+    }
+    body
+    {
+        background-color: rgba(0,250,10,0.1);
+    }
+    h5
+    {
+        font-size: 1px;
+    }
+</style>
+<body>
+    <h1>健康码查询</h1>
+    <div class="showTime">当前时间：2022年3月20-20时35分16秒</div>
+    <script>
+     var t = null
+     t = setTimeout(time, 1000); //開始运行
+      function time() 
+      {
+          clearTimeout(t); //清除定时器
+          dt = new Date();
+          var y = dt.getFullYear();
+          var mt = dt.getMonth() + 1;
+          var day = dt.getDate();
+          var h = dt.getHours(); //获取时
+          var m = dt.getMinutes(); //获取分
+          var s = dt.getSeconds(); //获取秒
+          document.querySelector(".showTime").innerHTML =
+          "当前时间：" +
+           y +
+           "年" +
+            mt +
+            "月" +
+            day +
+            "-" +
+            h +
+            "时" +
+            m +
+            "分" +
+            s +
+            "秒";
+            t = setTimeout(time, 1000); //以上内容为网页获取
+      }
+    </script>
+    <h3><form action="" >
+        <label>姓名：</label><input type="text" placeholder="请输入姓名"><br>
+        <label>身份证号：</label><input type="text" placeholder="请输入身份证号"><br>
+        <p><a href="">进行人脸识别</a></p>
+        <h3>你的健康码如下：</h3>
+        <h4><img src="" alt="图片加载出现异常"></h4>
+        <h5 >1.凭此码可以在南昌市公共场所通行，请您主动出示，配合检查</h5>
+        <h5>2.请您妥善保管，切勿转借他人使用</h5><br>
+    </h3>
+    <h1>核酸检测查询</h1>
+    <h3><form action="" >
+        <label>姓名：</label><input type="text" placeholder="请输入姓名"><br>
+        <label>身份证号：</label><input type="text" placeholder="请输入身份证号"><br>
+        <label>手机号：</label><input type="password" placeholder="请输入手机号"><br>
+        <label>验证码:</label><input type="text"><br>
+        <h4> <img src="" alt="图片加载出现异常"></h4>
+        <h4><a href="http://bmfw.www.gov.cn/hsjcjgcx/index.html">点击查询结果</a></h4>
+    </h3>
+</body>
+</html>

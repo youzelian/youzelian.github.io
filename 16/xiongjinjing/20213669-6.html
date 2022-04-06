@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body {
+            text-align: center;
+            background-color: rgba(255, 118, 180, 0.1);
+        }
+
+        input {
+            border-radius: 20px;
+            font-size: 35px;
+            background-color: green;
+            margin: 10px 10px 20px;
+        }
+
+        #az {
+            font-size: 70px;
+            font-family: 楷体;
+            font-weight: 700;
+        }
+
+        #bz {
+            font-size: 35px;
+        }
+
+        #cz {
+            font-size: 25px;
+            . text-indent: 2em;
+        }
+    </style>
+    <input type="button" value="上一页" id="prev">
+    <input type="button" value="首页" id="sy">
+    <input type="button" value="第二页" id="er">
+    <input type="button" value="第三页" id="three">
+    <input type="button" value="尾页" id="wy">
+    <input type="button" value="下一页" id="next">
+    <div id="az"></div>
+    <div id="bz"></div>
+    <div id="cz"></div>
+    <script>
+        var div0 = document.getElementById("az");
+        var div1 = document.getElementById("bz");
+        var div2 = document.getElementById("cz");
+        var button0 = document.getElementById("prev");
+        button0.onclick = function () {
+            div0.textContent = "放逐之刃";
+            div1.textContent = "“刀剑映出了战士的心。而我的心，漆黑且残破。”——锐雯";
+            div2.textContent = "度担任诺克萨斯军队剑士长的锐雯，曾通过自己信念的力量和野蛮的行事风格在军中不断晋升，因此获得了一把传奇的符文之刃和自己的战团作为奖赏——然而在艾欧尼亚的前线上，锐雯对祖国的信仰遭到了考验，并最终粉碎。";
+        };
+        var button1 = document.getElementById("sy");
+        button1.onclick = function () {
+            div0.textContent = "圣锤之毅 ";
+            div1.textContent = "“我不是什么英雄。我只是个拿锤子的约德尔人。”——波比";
+            div2.textContent = "符文之地从来都不缺勇敢的英雄，但很少有谁能像波比一样坚毅。她一直带着奥伦的传奇圣锤，哪怕锤柄立起来有两个她那么高。这位意志坚决的约德尔人在无数个岁月中一直都在秘密地寻找“德玛西亚的英雄”，也就是传说中这把战锤的最合适的主人。在找到他之前，波比肩负起战斗的使命，用旋风般的攻击打退王国的敌人 。";
+        };
+        var button2 = document.getElementById("er");
+        button2.onclick = function () {
+            div0.textContent = "德邦总管 ";
+            div1.textContent = "“人之死，难免也。可免者，唯败也。”——赵信";
+            div2.textContent = "信是效忠于德玛西亚皇室家族的坚毅勇士。他曾经沦落于诺克萨斯的角斗场，在无数次角斗中得以幸存。直到他在战场上面对过嘉文三世，才决定放弃自己曾经的人生，并为更加荣耀的大业效力。";
+        };
+        var button3 = document.getElementById("three");
+        button3.onclick = function () {
+            div0.textContent = "封魔剑魂";
+            div1.textContent = "“它们眼中的我，只有面具。我眼中的它们，只有惶恐。”—— 永恩";
+            div2.textContent = "生前，他是永恩，是亚索同母异父的哥哥，是故乡剑术道场的知名弟子。但当他死在弟弟手下以后，却发现自己被精神领域中的恶毒灵体所侵扰，不得不用它自己的刀剑将它弑杀。 ，亦担任巴西国家男子足球队队长 ";
+        };
+        var button4 = document.getElementById("wy");
+        button4.onclick = function () {
+            div0.textContent = "荣耀行刑官";
+            div1.textContent = "“‘做到最牛’就是我所订下的每日标准，不管到哪儿都是。”——德莱文";
+            div2.textContent = "在诺克萨斯，有一种战士被称为“清算人”。他们在竞技场里互相厮杀，以鲜血作为赌注进行力量的考验，不过没有任何人能像德莱文那样受人追捧。";
+        };
+        var button5 = document.getElementById("next");
+        button5.onclick = function () {
+            div0.textContent = "疾风剑豪";
+            div1.textContent = "“死亡如风，常伴吾身。”——亚索";
+            div2.textContent = "亚索是一个百折不屈的艾欧尼亚人，也是一名身手敏捷的御风剑客。这位生性自负的年轻人，被误认为杀害长老的凶手——由于无法证明自己的清白，他出于自卫而杀死了自己的哥哥。";
+        };
+    </script>
+</body>
+
+</html>

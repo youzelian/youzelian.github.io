@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        #biaoti{
+            padding: 30px;
+            font-family: 楷体;
+            font-size: 40px;
+        }
+        #benti{
+            font-size: 25px;
+            font-family: 楷体;
+        }
+        .item{
+            margin: 20px 20px 10px 10px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="上一页" id="pre" class="item">
+    <input type="button" value="下一页" id="next" class="item">
+    <div id="biaoti"></div>
+    <div id="benti"></div>
+    <script>
+        var i = 0;
+        var titles=[];
+        titles[1]="静夜思";
+        titles[2]="春夜洛城闻笛";
+        titles[3]="送孟浩然之广陵";
+        var gushi = [];
+        gushi[1]="床前明月光，疑是地上霜。举头望明月，低头思故乡。";
+        gushi[2]="谁家玉笛暗飞声，散入春风满洛城。此夜曲中闻折柳，何人不起故人情";
+        gushi[3]="故人西辞黄鹤楼，烟花三月下扬州。孤帆远影碧山尽，唯见长江天际流。";
+        var prebtn=document.getElementById("pre");
+        var nextbtn=document.getElementById("next");
+        var title1=document.getElementById("biaoti");
+        var content=document.getElementById("benti");
+        nextbtn.onclick=function(){
+            i++;
+            title1.textContent=titles[i];
+            content.textContent=gushi[i];
+            
+        };
+        prebtn.onclick=function(){
+            i--;
+            title1.textConetnt= titles[i];
+            content.textContent=gushi[i];
+            
+        };
+        
+    </script>
+</body>
+</html>

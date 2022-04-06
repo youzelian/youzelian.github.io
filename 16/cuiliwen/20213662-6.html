@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        input{
+            color: brown;
+            font-size: 50px;
+        }
+        h1{
+            color: blue;
+            font-size: 60px;
+        }
+        p{
+            color: blue;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="上一页" id="prev">
+    <input type="button" value="下一页" id="next">
+    <h1>《青玉案·元夕》</h1>
+    <p id="p1">辛弃疾</p>
+    <p id="p2">东风夜放花千树，更吹落、星如雨。宝马雕车香满路。凤箫声动，玉壶光转，一夜鱼龙舞。</p>
+    <p id="p3">蛾儿雪柳黄金缕。笑语盈盈暗香去。众里寻他千百度。蓦然回首，那人却在，灯火阑珊处。</p>
+    <script>
+        var h1 = document.querySelector("h1");
+        var p1 = document.querySelector("#p1");
+        var p2 = document.querySelector("#p2");
+        var p3 = document.querySelector("#p3");
+        var prevBt = document.querySelector("input#prev");
+        var nextBt = document.querySelector("input#next");
+
+        prevBt.onclick = function(){
+            h1.textContent="《青玉案·元夕》"
+            p1.textContent="辛弃疾"
+            p2.textContent="东风夜放花千树，更吹落、星如雨。宝马雕车香满路。凤箫声动，玉壶光转，一夜鱼龙舞。"
+            p3.textContent="蛾儿雪柳黄金缕。笑语盈盈暗香去。众里寻他千百度。蓦然回首，那人却在，灯火阑珊处。"
+        }
+        nextBt.onclick = function(){
+            h1.textContent="清平调 其一"
+            p1.textContent="李白"
+            p2.textContent="云想衣裳花想容，春风拂栅露华浓。"
+            p3.textContent="若非群玉山头见，会向瑶台月下逢。"
+        }
+    </script>
+</body>
+</html>
