@@ -1,0 +1,57 @@
+<!doctype html>
+<html >
+	<head>
+		<meta charset="utf-8">
+		<title>div导航栏</title>
+		<style type="text/css">	
+		body{background-color:gray;
+		background-image:url("https://img.zcool.cn/community/01c8f15aeac135a801207fa16836ae.jpg@1280w_1l_2o_100sh.jpg");
+		background-size:cover;
+        background-repeat:no-repeat;
+		}
+			*{border: 0;margin: 0; padding: 0;}
+			ul li{list-style: none;}
+			.nav ul{
+				width:1500px; 
+				margin:0 auto;
+				overflow: hidden; /*注意因为ul设置为了li设置为了float，为了ul能显示，需要加这句话*/
+				color:rgba(0,0,0); 
+			}
+			.nav ul li {
+				float: left;			
+			}
+			.nav ul li a{
+				color:red;
+				text-decoration: none;
+				width: 185px;
+				height: 60px;
+				display: block;
+				line-height: 60px;
+				text-align: center;
+				border-right: 2px white solid;
+				font-family:黑体;
+			}
+			.nav ul li a:hover{
+				background-color: blue;	
+			}
+			.nav ul li a.last{
+				border-right: none;
+			}
+			/*暂时想不到其他，先就这样*/
+		</style>
+	</head>
+	<body>	
+		<div class="nav">
+			<ul>
+				<li><a href="https://www.baidu.com/?tn=02003390_5_hao_pg">百度</a></li>
+				<li><a href="https://vip.iqiyi.com/cps_pc.html">爱奇艺</a></li>
+				<li><a href="https://v.qq.com/">腾讯</a></li>
+				<li><a href="https://passport.weibo.com/visitor/visitor?entry=miniblog&a=enter&url=https%3A%2F%2Fweibo.com%2F&domain=.weibo.com&sudaref=https%3A%2F%2Fntp.msn.cn%2F&ua=php-sso_sdk_client-0.6.36&_rand=1648041900.9617">微博</a></li>
+				<li><a href="https://www.douban.com/">豆瓣</a></li>
+				<li><a href="https://www.zhihu.com/signin?next=%2F">知乎</a></li>
+				<li><a href="https://www.bilibili.com/">哔哩哔哩</a></li>
+				<li><a href="http://www.people.com.cn/" class="last">人民网</a></li>		
+			</ul>	
+		</div>
+	</body>
+</html>

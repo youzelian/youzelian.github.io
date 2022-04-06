@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>诗四首</title>
+  <style>
+	  body{
+		  text-align:center;
+		  font-family:楷体;
+		  }
+	  h1{
+        font-size:45px;
+	  }
+	  h2{
+        font-size:30px;
+	  }
+	  p{
+        font-size:40px;
+		width:1500px;
+	  }
+  </style>
+ </head>
+ <body>
+ <h1>
+ </h1>
+ <h2>
+ </h2>
+ <p>
+ </p>
+ <input id="sy" type="button" value="上一页"> 
+ <input id="xy" type="button" value="下一页">
+ <input id="ks" type="button" value="开始赏析">
+ <script>
+   var bt=document.querySelector("h1");
+   var sr=document.querySelector("h2");
+   var nr=document.querySelector("p");   
+   var title=new Array ("《游山西村》","《钱塘湖春行》","《锦瑟》");
+   var author=new Array ("陆游（宋）","白居易（唐）","李商隐（唐）");
+   var content=[];
+       content[0]= "莫笑农家腊酒浑，丰年留客足鸡豚。山重水复疑无路，柳暗花明又一村。萧鼓追随春社近，衣冠简朴古风存。从今若许闲乘月，拄杖无时夜叩门。";
+       content[1]= "孤山寺北贾亭西，水面初平云脚低。几处早莺争暖树，谁家新燕啄春泥。乱花渐欲迷人眼，浅草才能没马蹄。最爱湖东行不足，绿杨阴里白沙堤。";
+       content[2]= "锦瑟无端五十弦，一弦一柱思华年。庄生晓梦迷蝴蝶，望帝春心托杜鹃。沧海月明珠有泪，蓝田日暖玉生烟。此情可待成追忆，只是当时已惘然。";
+   var i=0;
+   document.getElementById("sy").onclick=function(){
+													 i--;
+                                                     bt.textContent=title[i];
+													 sr.textContent=author[i];
+													 nr.textContent=content[i];						 if(i==-1)
+	                                                 {
+													 i=0;
+													 bt.textContent=title[i];
+													 sr.textContent=author[i];
+													 nr.textContent=content[i];
+													 alert("已经到顶了")}
+   }
+   document.getElementById("xy").onclick=function(){
+													 i++;
+                                                     bt.textContent=title[i];
+													 sr.textContent=author[i];
+													 nr.textContent=content[i];
+													 if(i==3)
+	                                                 {
+													 i=2;
+													 bt.textContent=title[i];
+													 sr.textContent=author[i];
+													 nr.textContent=content[i];					alert("已经到底了")} 
+   }
+   document.getElementById("sy").style.display="none";
+   document.getElementById("xy").style.display="none";
+   document.getElementById("ks").onclick=function(){
+	                                                 bt.textContent=title[i];
+													 sr.textContent=author[i];
+													 nr.textContent=content[i];
+												     document.getElementById("sy").style.display="block";
+                                                     document.getElementById("xy").style.display="block";
+												    document.getElementById("ks").style.display="none";
+   }
+ </script>
+ <body>
+</html>

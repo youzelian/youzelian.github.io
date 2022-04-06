@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style type="text/css">
+button{
+float: left;
+
+}
+div{
+position: absolute;
+top: 40px;
+width: 260px;
+height: 110px;
+border: 1px solid red;
+text-align: center;
+}
+#div1{
+background-color: darkgray;
+
+}
+#div2{
+background-color: darksalmon;
+
+}
+#div3{
+background-color: darkseagreen;
+
+}
+</style>
+</head>
+<body>
+<input type="button" value="《游山西村》" onclick="showDiv('div1')">
+<input type="button" value="《钱塘湖春行》" onclick="showDiv('div2')">
+<input type="button" value="《锦瑟》" onclick="showDiv('div3')">
+
+
+
+<div id="div1">
+           陆游（宋）<br/>
+莫笑农家腊酒浑，丰年留客足鸡豚。<br/>
+山重水复疑无路，柳暗花明又一村。<br/>
+萧鼓追随春社近，衣冠简朴古风存。<br/>
+从今若许闲乘月，拄杖无时夜叩门。<br/>
+</div>
+<div id="div2">
+         白居易（唐）<br/>
+孤山寺北贾亭西，水面初平云脚低。<br/>
+几处早莺争暖树，谁家新燕啄春泥。<br/>
+乱花渐欲迷人眼，浅草才能没马蹄。<br/>
+最爱湖东行不足，绿杨阴里白沙堤。<br/>
+</div>
+<div id="div3">
+         李商隐（唐）<br/>
+锦瑟无端五十弦，一弦一柱思华年。<br/>
+庄生晓梦迷蝴蝶，望帝春心托杜鹃。<br/>
+沧海月明珠有泪，蓝田日暖玉生烟。<br/>
+此情可待成追忆，只是当时已惘然。<br/>
+</div>
+<script>
+let divs=document.querySelectorAll('div');//返回
+let showDiv=(str)=>{
+for(let div of divs){
+div.style.display="none";//隐藏
+}
+document.getElementById(str).style.display = "block";
+}
+</script>
+</body>
+</html>
+

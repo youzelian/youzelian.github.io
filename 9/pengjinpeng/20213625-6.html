@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+            font-size: 50px;
+        }
+        
+        h2 {
+            text-align: center;
+            font-size: 20px;
+            top: 20px;
+        }
+        
+        body {
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-image: url("https://img2.baidu.com/it/u=2992713810,3367328338&fm=253&fmt=auto&app=138&f=JPEG?w=639&h=500");
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        
+        div {
+            margin-top: 100px;
+        }
+        
+        p {
+            width: 220px;
+            font-size: 35px;
+            font-family: 楷体;
+            margin: auto;
+            line-height: 50px;
+        }
+        
+        input {
+            width: 150px;
+            font-size: 40px;
+            position: center;
+            margin: 20px;
+            padding: 0%;
+            background: rgba(255, 255, 255, 0.7);
+            opacity: 0.7;
+        }
+        
+        input:hover {
+            position: relative;
+            padding: 20px 40px;
+            font-size: 1.4rem;
+            transition: all ease 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="position:absolute;width:100px;">
+        <input type="button" value="上一首" id="prev">
+    </div>
+    <div style="position:absolute;width:100px;margin-left: 1250px;">
+        <input type="button" value="下一首" id="next">
+    </div>
+    <div>
+        <h1>王维四首</h1>
+        <h2></h2>
+        <p></p>
+    </div>
+    <script>
+        var prevBt1 = document.querySelector("h1");
+        var nextBt1 = document.querySelector("h1");
+        var prevBt2 = document.querySelector("h2");
+        var nextBt2 = document.querySelector("h2");
+        var prevBt3 = document.querySelector("p");
+        var nextBt3 = document.querySelector("p");
+        var i = -1;
+        var bt = new Array('相思', '使至塞上', '山居秋暝', '鸟鸣涧');
+        var zz = new Array('王维', '王维', '王维', '王维');
+        var gs = new Array('红豆生南国， 春来发几枝。愿君多采撷， 此物最相思', '单车欲问边，属国过居延。征蓬出汉塞， 归雁入胡天。 大漠孤烟直， 长河落日圆。 萧关逢候骑， 都护在燕然。', '空山新雨后， 天气晚来秋。 明月松间照， 清泉石上流。竹喧归浣女， 莲动下渔舟。 随意春芳歇， 王孙自可留。', '人闲桂花落， 夜静春山空。 月出惊山鸟， 时鸣春涧中。');
+        document.getElementById("prev").onclick = function() {
+            i = i - 1;
+            if (i > -1 && i < 4) {
+                prevBt1.textContent = bt[i];
+                prevBt2.textContent = zz[i];
+                prevBt3.textContent = gs[i];
+            }
+            if (i == -1) {
+                alert("请点击下一首");
+                i = 0;
+            }
+        }
+        document.getElementById("next").onclick = function() {
+            i = i + 1;
+            if (i > -1 && i <
+                4) {
+                nextBt1.textContent = bt[i];
+                nextBt2.textContent = zz[i];
+                nextBt3.textContent = gs[i];
+            }
+            if (i == 4) {
+                alert("请点击上一首");
+                i = 3;
+            }
+        }
+    </script>
+</body>
+
+</html>

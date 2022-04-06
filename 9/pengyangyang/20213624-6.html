@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        
+        @keyframes move {
+            0% {
+                transform: translate(0px, 0px);
+            }
+            25% {
+                transform: translate(1300px, 500px);
+            }
+            50% {
+                transform: translate(1300px, 0px);
+            }
+            75% {
+                transform: translate(0px, 500px);
+            }
+            100% {
+                transform: translate(0px, 0px);
+            }
+        }
+        
+        @keyframes m {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 310px;
+                ;
+            }
+        }
+        
+        @keyframes w {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 400px;
+                ;
+            }
+        }
+        
+        @keyframes k {
+            0% {
+                height: 20px;
+                width: 0;
+            }
+            100% {
+                height: 20px;
+                width: 100%;
+                ;
+            }
+        }
+        
+        @keyframes l {
+            0% {
+                width: 180px;
+            }
+            100% {
+                width: 0;
+                ;
+            }
+        }
+        
+        @keyframes o {
+            0% {
+                width: 0;
+                height: 44px;
+            }
+            100% {
+                width: 210px;
+                height: 44px;
+            }
+        }
+        
+        h1 {
+            animation: m 6s steps(12) forwards;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        
+        h2 {
+            font-size: 40px;
+            width: 240px;
+        }
+        
+        h5 {
+            font-size: 20px;
+            animation: w 5s steps(5) forwards;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        
+        div[id="hezi"] {
+            display: none;
+            height: 110px;
+            width: 160px;
+            border: 2px solid green;
+            animation-direction: alternate;
+            animation-duration: 8s;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+            animation-name: move;
+        }
+        
+        p[id="jzz"] {
+            animation: l 1ms forwards;
+            animation-delay: 4.4s;
+            overflow: hidden;
+            white-space: nowrap;
+            font-size: 30px;
+        }
+        
+        div[id="jiazaiwanc"],
+        [id="ksyd"] {
+            width: 0;
+            animation: o 1ms forwards;
+            animation-delay: 4.8s;
+            overflow: hidden;
+            white-space: nowrap;
+            font-size: 30px;
+        }
+        
+        div:hover {
+            animation-play-state: paused;
+        }
+        
+        div[id="b"] {
+            animation: k 4s steps(10) forwards;
+            background-color: pink;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        
+        input:hover {
+            transform: translateY(5px);
+        }
+    </style>
+
+    <script>
+        var bcolor = [];
+        bcolor[0] = "rgba(241, 216, 169, 0.425)";
+        bcolor[1] = "rgba(247, 108, 205, 0.411)";
+        bcolor[2] = "rgba(84, 58, 133, 0.829)";
+        bcolor[3] = "rgba(146, 194, 162, 0.952)";
+        bcolor[4] = "rgba(179, 138, 49, 0.952)";
+        var xhsz = ["第一首", "第二首", "第三首", "第四首", "第五首", ]
+        var st = [];
+        st[0] = "《登鹳雀楼》";
+        st[1] = "《相思》";
+        st[2] = "《寻隐者不遇》";
+        st[3] = "《鸟鸣涧》";
+        st[4] = "《送杜少府之任蜀州》";
+        var mz = ["唐·王之涣", "唐·王维", "唐·贾岛", "唐·王维", "唐·王勃"];
+        var sj = [];
+        sj[0] = "白日依山尽，黄河入海流。欲穷千里目，更上一层楼。";
+        sj[1] = "红豆生南国，春来发几枝。愿君多采撷，此物最相思。";
+        sj[2] = "松下问童子，言师采药去。只在此山中，云深不知处。";
+        sj[3] = "人闲桂花落，夜静春山空。月出惊山鸟，时鸣春涧中。";
+        sj[4] = "城阙辅三秦，风烟望五津。与君离别意，同是宦游人。海内存知己，天涯若比邻。无为在岐路，儿女共沾巾。";
+    </script>
+
+</head>
+
+<body>
+    <p id="jzz">。。。页面加载中。。。</p>
+    <div id="b"></div>
+    <center>
+        <div id="jiazaiwanc">加载完成(o-o)!!</div>
+        <div id="ksyd"><input type="button" id="start" value="开始阅读"></div>
+    </center>
+
+    <div id="hezi">
+        <ul>
+            <li><input type="button" id="p" value="上一首"></li>
+            <li><input type="button" id="n" value="下一首"></li>
+        </ul>
+    </div>
+
+    <center>
+        <h3></h3>
+        <h1></h1>
+        <h5></h5>
+        <h2></h2>
+    </center>
+
+    <script>
+        var kb2 = document.querySelector("#jiazaiwanc");
+        var kb1 = document.querySelector("#b");
+        var hz = document.querySelector("#hezi");
+        var pBt = document.querySelector("#p");
+        var nBt = document.querySelector("#n");
+        var sBt = document.querySelector("#start");
+        var xh = document.querySelector("h3");
+        var title = document.querySelector("h1");
+        var sname = document.querySelector("h5");
+        var content = document.querySelector("h2");
+        var i = 0;
+        var j = 0;
+        sBt.onclick = function() {
+            kb2.textContent = " ";
+            document.body.style.backgroundColor = bcolor[i];
+            xh.textContent = xhsz[i];
+            title.textContent = st[i];
+            sname.textContent = mz[i];
+            content.textContent = sj[i];
+            sBt.style.display = "none";
+            hz.style.display = "block";
+        }
+        pBt.onclick = function() {
+            i = i - 1;
+            document.body.style.backgroundColor = bcolor[i];
+            xh.textContent = xhsz[i];
+            title.textContent = st[i];
+            sname.textContent = mz[i];
+            content.textContent = sj[i];
+            if (i == -1) {
+                alert("已经到顶了,不要再点击上一首!!!!!");
+                i = 0;
+                xh.textContent = xhsz[i];
+                title.textContent = st[i];
+                sname.textContent = mz[i];
+                content.textContent = sj[i];
+            }
+        }
+
+        nBt.onclick = function() {
+            i = i + 1;
+            document.body.style.backgroundColor = bcolor[i];
+            xh.textContent = xhsz[i];
+            title.textContent = st[i];
+            sname.textContent = mz[i];
+            content.textContent = sj[i];
+            if (i == 5) {
+                alert("已经到底了,不要再点击下一首!!!!!");
+                i = 4;
+                xh.textContent = xhsz[i];
+                title.textContent = st[i];
+                sname.textContent = mz[i];
+                content.textContent = sj[i];
+            }
+        }
+    </script>
+
+</body>
+
+</html>

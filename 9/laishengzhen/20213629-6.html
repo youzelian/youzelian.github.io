@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>诗三首</title>
+    <style type="text/css">
+        body {
+            font-family: serif;
+            text-align: center;
+            background-image: url("https://tse1-mm.cn.bing.net/th/id/R-C.fc789dbbc1993ff65ef4cd6fc35df50a?rik=baR%2ff5uqzJPIug&riu=http%3a%2f%2fpic.5tu.cn%2fuploads%2fallimg%2f2011%2fpic_5tu_big_2020110100842185350.jpg&ehk=ZFqSOrhjNnL4vebkeK9Va414ZZoVHQwRA5s32G7dQTA%3d&risl=&pid=ImgRaw&r=0");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        
+        h1 {
+            font-size: 50px;
+            color: rgb(253, 7, 130);
+        }
+        
+        p {
+            font-size: 35px;
+        }
+        
+        div {
+            width: 230px;
+            margin: 2em auto;
+            line-height: 4em;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <input id="prev" type="button" value="上一首">
+    <input id="next" type="button" value="下一首">
+    <input id="read" type="button" value="阅读">
+    <h1></h1>
+    <h2></h2>
+    <div>
+        <p></p>
+    </div>
+    <script>
+        var st = [];
+        st[0] = "相思";
+        st[1] = "咏梅";
+        st[2] = "春望";
+        var zz = [];
+        zz[0] = "王维";
+        zz[1] = "王安石";
+        zz[2] = "杜甫";
+        var sj = [];
+        sj[0] = "红豆生南国，春来发几枝？愿君多采撷，此物最相思。";
+        sj[1] = "墙角数枝梅，凌寒独自开。遥知不是雪，为有暗香来。";
+        sj[2] = "国破山河在，城春草木胜。感时花溅泪，恨别鸟惊心。烽火连三月，家书抵万金。白头搔更短，浑欲不胜簪。";
+        var bg = [];
+        bg[0] = "url(https://tse1-mm.cn.bing.net/th/id/R-C.5855d0819cd9505eb9f643fc2accb0a4?rik=Teq9f%2fwilFR8Mw&riu=http%3a%2f%2fforbes.ivideocloud.cn%2fwp-content%2fuploads%2f2020%2f07%2fwtqrhcrhx.jpeg&ehk=o%2fToj%2bXnH%2ffih16EEZUP5KH13Rz722%2bdN%2fZaQxZREeI%3d&risl=&pid=ImgRaw&r=0) no-repeat"
+        bg[1] = "url(https://tse1-mm.cn.bing.net/th/id/R-C.674a31b7dc5fde77c13be32662a1476b?rik=kyqnTyB%2fPZ8xDw&riu=http%3a%2f%2fimg.xker.com%2fxkerfiles%2fallimg%2f1705%2f23134MC8-0.jpg&ehk=CvD%2bB7QU3meVzQnuX%2fHipKq8vfwjSH7b0HFzMjbsUz4%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1) no-repeat"
+        bg[2] = "url(https://tse1-mm.cn.bing.net/th/id/R-C.7203916025042ff871b9faba0972ffea?rik=VwoDG%2fQNyR%2fQIQ&riu=http%3a%2f%2f5b0988e595225.cdn.sohucs.com%2fimages%2f20190710%2fe1e18ce141fc475d996e5474de76a005.jpeg&ehk=8VuQfT5faxIKOlBPcKPQE503J1qkZtte3UfgyiXDwJg%3d&risl=&pid=ImgRaw&r=0) no-repeat"
+        var readBt = document.querySelector("input#read");
+        var prevBt = document.querySelector("input#prev");
+        var nextBt = document.querySelector("input#next");
+        var title = document.querySelector("h1");
+        var sname = document.querySelector("h2");
+        var content = document.querySelector("p");
+        var i = 0;
+        prevBt.onclick = function() {
+            i = i - 1;
+            title.textContent = st[i];
+            sname.textContent = zz[i];
+            content.textContent = sj[i];
+            document.body.style.background = bg[i];
+            document.body.style.backgroundSize = "100%";
+            if (i == -1) {
+                alert("已经是第一首，请点击下一首");
+                i = 0;
+                title.textContent = st[0];
+                sname.textContent = zz[0];
+                content.textContent = sj[0];
+                document.body.style.background = bg[0];
+                document.body.style.backgroundSize = "100%";
+            }
+        }
+        nextBt.onclick = function() {
+            i = i + 1;
+            title.textContent = st[i];
+            sname.textContent = zz[i];
+            content.textContent = sj[i];
+            document.body.style.background = bg[i];
+            document.body.style.backgroundSize = "100%";
+            if (i == 3) {
+                alert("已经是最后一首，请点击上一首");
+                i = 2;
+                title.textContent = st[2];
+                sname.textContent = zz[2];
+                content.textContent = sj[2];
+                document.body.style.background = bg[2];
+                document.body.style.backgroundSize = "100%";
+            }
+        }
+        prevBt.style.display = "none";
+        nextBt.style.display = "none";
+        readBt.onclick = function() {
+            title.textContent = st[i];
+            sname.textContent = zz[i];
+            content.textContent = sj[i];
+            document.body.style.background = bg[i];
+            prevBt.style.display = "block";
+            nextBt.style.display = "block";
+            readBt.style.display = "none";
+        };
+    </script>
+</body>
+
+</html>

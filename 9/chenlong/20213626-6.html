@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+            font-size: 50px;
+        }
+        
+        h2 {
+            text-align: center;
+            font-size: 20px;
+            top: 20px;
+        }
+        
+        body {text-align:center;
+        }
+        
+        div {
+            margin-top: 100px;
+        }
+        
+        p {
+            width: 220px;
+            font-size: 35px;
+            font-family: 黑体;
+            margin: auto;
+            line-height: 50px;
+        }
+       
+        
+    </style>
+</head>
+
+<body>
+        <input type="button" value="上一首" id="prev">
+        <input type="button" value="下一首" id="next">
+        <h1></h1>
+        <h2></h2>
+        <p></p>
+    <script>
+        var prevBt1 = document.querySelector("h1");
+        var nextBt1 = document.querySelector("h1");
+        var prevBt2 = document.querySelector("h2");
+        var nextBt2 = document.querySelector("h2");
+        var prevBt3 = document.querySelector("p");
+        var nextBt3 = document.querySelector("p");
+        var i = -1;
+        var bt = new Array('春晓', '鸟鸣涧', '咏梅');
+        var zz = new Array('孟浩然', '王维', '王安石');
+        var sw = new Array('春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少。', '人闲桂花落，夜静春山空。月出惊山鸟，时鸣春涧中。', '墙角数枝梅，凌寒独自开。遥知不是雪，为有暗香来。');
+        document.getElementById("prev").onclick = function() {
+            i = i - 1;
+            if (i > -1 && i < 3) {
+                prevBt1.textContent = bt[i];
+                prevBt2.textContent = zz[i];
+                prevBt3.textContent = sw[i];
+            }
+            if (i == -1) {
+                alert("请点击下一首");
+                i = 0;
+            }
+        }
+        document.getElementById("next").onclick = function() {
+            i = i + 1;
+            if (i > -1 && i <
+                3) {
+                nextBt1.textContent = bt[i];
+                nextBt2.textContent = zz[i];
+                nextBt3.textContent = sw[i];
+            }
+            if (i == 3) {
+                alert("请点击上一首");
+                i = 2;
+            }
+        }
+    </script>
+</body>
+
+</html>
