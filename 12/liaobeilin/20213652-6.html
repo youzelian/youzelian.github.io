@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  
+  <title>第六次作业</title>
+  <style>
+  body{
+    text-align:center;
+	background-color:green;
+		
+  }
+
+  h1{
+  font-size:45px;
+  }
+
+  p{
+    font-family:微软雅黑;
+    font-size:30px;
+	color:orange;
+	width:250px;
+	margin:auto;
+  }
+
+  input{
+     font-size:2em;
+  }
+     
+ </style>
+ </script>
+ <script type="text/javascript">
+ 
+    var Ctitle="黄鹤楼  崔颢〔唐代〕";
+
+    var Dtitle="锦瑟  李商隐 〔唐代〕";
+
+	 C="昔人已乘黄鹤去，此地空余黄鹤楼。黄鹤一去不复返，白云千载空悠悠。晴川历历汉阳树，芳草萋萋鹦鹉洲。日暮乡关何处是？烟波江上使人愁。";
+
+      D="锦瑟无端五十弦，一弦一柱思华年。庄生晓梦迷蝴蝶，望帝春心托杜鹃。沧海月明珠有泪，蓝田日暖玉生烟。此情可待成追忆，只是当时已惘然。";
+    
+
+ 
+ </script>
+ </head>
+ <body>
+  <input type="button" value="上一首" id="prev" >
+  <input type="button" value="下一首" id="next" >
+  <h1></h1>
+  <p></p>
+
+
+<script type="text/javascript">
+
+	var title=document.querySelector("h1");
+	
+    var content=document.querySelector("p");
+	
+    var prevBt=document.querySelector("input#prev");
+    var nextBt=document.querySelector("input#next");
+	
+	/*Atitle.textContent=Ctitle;
+	Acontent.textContent=hhl;	
+	Btitle.textContent=Dtitle;
+	Bcontent.textContent=lsy;*/
+    
+
+    prevBt.onclick=function(){
+       title.textContent=Ctitle;
+	content.textContent=C;	
+	};
+    nextBt.onclick=function(){
+     title.textContent=Dtitle;
+	content.textContent=D;
+    
+	};
+
+</script>
+	
+
+
+ </body>
+</html>
+
+
+

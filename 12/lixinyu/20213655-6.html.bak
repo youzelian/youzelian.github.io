@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+    <title>古诗</title> 
+    <style>
+        body{
+            background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwx3.sinaimg.cn%2Flarge%2F006YgNWKly1g429ua13djj30es08b0y6.jpg&refer=http%3A%2F%2Fwx3.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1651732808&t=fe5392fdd4bda6e3595db42e5d96f845); 
+            background-size: cover;
+            text-align: center;
+            font-family: 宋体;
+            color: black;
+        }   
+        p{
+            width: 500px;
+            font-size: 30px;
+            line-height: 60px;
+            margin: auto;
+            text-align: center;
+        }
+        input{
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            text-align: center;   
+            text-decoration: none;
+            outline: none;
+            color: palevioletred;
+            background-color: black;
+            border-radius: 7px;
+        }
+        input:hover {
+            background-color: wheat;
+        }
+        input:active {
+            background-color: wheat;
+            transform: translateY(4px);
+        }
+    </style>
+	<script type="text/javascript">
+        var titleBt="古诗";
+        var contentBt="点击";
+        var ltitle="《清平调》";
+        var xtitle="《赠汪伦》";
+         l="云想衣裳花想容，    春风拂槛露华浓。   若非群玉山头见，    会向瑶台月下逢。";
+         x="李白乘舟将欲行，忽闻岸上踏歌声。    桃花潭水深千尺，不及汪伦送我情。"    
+	</script>
+</head>
+<body>
+	<input type="button" value="上一首" id="prev">
+    <input type="button" value="下一首" id="next">
+    <h1></h1>
+    <p></p>
+	<script type="text/javascript">
+	var title=document.querySelector("h1");
+    var content=document.querySelector("p");
+	var prevBt=document.querySelector("input#prev");
+	var nextBt=document.querySelector("input#next");
+    title.textContent=titleBt;
+    content.textContent=contentBt;
+    prevBt.onclick=function(){
+        title.textContent=ltitle;
+		content.textContent= l;
+	};
+	nextBt.onclick=function(){
+        title.textContent=xtitle;
+	    content.textContent=x;
+	};
+	</script>
+</body>
+</html>

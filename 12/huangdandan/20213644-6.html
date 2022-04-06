@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>20213644-6</title>
+    <style type="text/css">
+        body {
+            text-align: center;
+
+        }
+
+        p {
+            font-size: 30px;
+            line-height: 50px;
+            width: 180 px;
+        }
+
+        input {
+            font-size: 2em;
+            margin: 20px;
+            cursor: pointer;
+        }
+    </style>
+    <input type="button" value="上一页" id="preview">
+    <input type="button" value="下一页" id="next">
+
+    <script type="text/javascript">
+        var hanyuefu = "王湾：《次北固山下》Enter客路青山外，行舟绿水前。Enter潮平两岸阔，风正一帆悬。Enter海日生残夜，江春入旧年。Enter乡书何处达？归雁洛阳边。";
+        var hanyuefu = [];
+        hanyuefu[0] = "王湾：《次北固山下》";
+        hanyuefu[1] = "客路青山外，行舟绿水前。 ";
+        hanyuefu[2] = "潮平两岸阔，风正一帆悬。 ";
+        hanyuefu[3] = "海日生残夜， 江春入旧年。";
+        hanyuefu[4] = "乡书何处达？归雁洛阳边。";
+        hanyuefu[5] = "王维:《鹿柴》";
+        hanyuefu[6] = "空山不见人，但闻人语响。";
+        hanyuefu[7] = "繁景入深林，复照青苔上。";
+        hanyuefu[8] = "杜甫:《绝句》";
+        hanyuefu[9] = "池日江山丽，春风花草香。";
+        hanyuefu[10] = "泥融飞燕子，沙暖睡鸳鸯。";
+    </script>
+
+</head>
+
+<body>
+    <h1> </h1>
+    <p></p>
+    <script type="text/javascript">
+        var title = document.querySelector("h1");
+        var content = document.querySelector("p");
+        var previewBt = document.querySelector("input#preview");
+        var nextBt = document.querySelector("input#next");
+        title.textContent = hanyuefu[0];
+        content.textContent = hanyuefu[1] + hanyuefu[2] + hanyuefu[3] + hanyuefu[4];
+
+        previewBt.onclick = function() {
+            title.textContent = hanyuefu[5];
+            content.textContent = hanyuefu[6] + hanyuefu[7];
+
+        };
+
+        nextBt.onclick = function() {
+            title.textContent = hanyuefu[8];
+            content.textContent = hanyuefu[9] + hanyuefu[10];
+
+        };
+    </script>
+    <br><br>
+
+</body>
+
+</html>

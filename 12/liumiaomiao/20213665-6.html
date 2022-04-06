@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>20213665-6</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: pink;
+           
+        }
+        p{
+            font-size: 30px;
+            width: 250px;
+            margin: auto;
+            line-height: 2em;
+        }
+        input{
+            font-size:2em;
+
+        }
+
+    </style>
+    <script type = "text/javascript">
+        var yc="瑶池阿母绮窗开，黄竹歌声动地哀。八骏日行三万里，穆王何事不重来。";
+        yctitle="《瑶池》";
+        cetitle="《嫦娥》";
+        cecontent="云母屏风烛影深，长河渐落晓星沉。嫦娥应悔偷灵药，碧海青天夜夜心。";
+        ymtitle="一起来欣赏古诗";
+        ymcontent="《瑶池》和《嫦娥》";
+    </script>
+</head>
+<body>
+    
+    <input type="button" value = "上一页" id = "prev">
+    <input type="button" value = "下一页" id = "next">
+    <h1></h1>
+    <p></p>
+    <script type = "text/javascript">
+        var title = document.querySelector("h1");
+        var content = document.querySelector("p");
+        var prveBt = document.querySelector("input#prev");
+        var nextBt = document.querySelector("input#next");
+         title.textContent = ymtitle;
+        content.textContent =ymcontent;
+        prveBt.onclick = function(){
+            title.textContent=yctitle;
+            content.textContent=yc;
+        };
+
+        nextBt.onclick = function(){
+            title.textContent=cetitle;
+            content.textContent = cecontent;
+        };
+
+    </script>
+</body>
+</html>

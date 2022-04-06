@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+    <title>七言律诗</title> 
+    <style>
+        p{
+            width: 320px;
+            font-size: 40px;
+            line-height: 60px;
+            margin: auto;
+        }
+        body{
+            background-image: url(https://wx3.sinaimg.cn/mw2000/003s4wfWgy1guwiwvswmjj61860x4qge02.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed; 
+            background-size: cover;
+            text-align: center;
+            font-family: 楷体;
+            color: #ffffff;
+        }   
+        input{
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            text-align: center;   
+            text-decoration: none;
+            outline: none;
+            color: #FFA500;
+            background-color: #ffffff;
+            border: 2px solid  rgb(255, 165, 0);
+            border-radius: 8px;
+            box-shadow: 0 9px rgb(0, 87, 55);
+            margin: 20px;
+        }
+        input:hover {
+            background-color: #ffffff;
+        }
+        input:active {
+            background-color: #ffffff;
+            box-shadow: 0 5px rgb(0, 87, 55);
+            transform: translateY(4px);
+        }
+    </style>
+	<script type="text/javascript">
+        var titleBt="七言律诗鉴赏";
+        //开始页面的标题
+        var contentBt="点击切换上下首";
+        //开始页面的内容
+        var hhltitle="《黄鹤楼》";
+        //“上一首”页面的标题
+        var jstitle="《锦瑟》";
+        //“下一首”页面的标题
+         hhl="昔人已乘黄鹤去，此地空余黄鹤楼。    黄鹤一去不复返，白云千载空悠悠。    晴川历历汉阳树，芳草凄凄鹦鹉洲。    日暮乡关何处是，烟波江上使人愁。";
+         //“上一首”页面的内容
+         js="锦瑟无端五十弦，一弦一柱思华年。    庄生晓梦迷蝴蝶，望帝春心托杜鹃。    沧海月明珠有泪，蓝田日暖玉生烟。    此情可待成追忆，只是当时已惘然。";
+         //“下一首”页面的内容
+	</script>
+</head>
+<body>
+	<input type="button" value="上一首" id="prev">
+    <input type="button" value="下一首" id="next">
+    <!--定义两个按钮，一个叫上一首一个叫下一首-->
+    <h1></h1>
+    <p></p>
+	<script type="text/javascript">
+	var title=document.querySelector("h1");
+    var content=document.querySelector("p");
+	var prevBt=document.querySelector("input#prev");
+	var nextBt=document.querySelector("input#next");
+    //寻找到相应的标签，定义一些名称来代替标签里的内容
+    title.textContent=titleBt;
+    content.textContent=contentBt;
+    //titleBt,contentBt分别替代title和content的内容
+    prevBt.onclick=function(){
+        title.textContent=hhltitle;
+		content.textContent= hhl;
+	};//点击id为prev的按钮，则hhltitle里的内容替换掉title的内容，hhl的内容替换掉content的内容
+	nextBt.onclick=function(){
+        title.textContent=jstitle;
+	    content.textContent=js;
+	};//点击id为nextBt的按钮，则jstitle里的内容替换掉title的内容，js的内容替换掉content的内容
+	</script>
+</body>
+</html>

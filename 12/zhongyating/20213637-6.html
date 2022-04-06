@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>20213637-6</title>
+    <style>/*css调试*/
+        body{
+            text-align: center;
+            background-color: #497491;
+           
+        }
+        p{
+            font-size: 30px;
+            width: 180px;
+            margin: auto;
+            line-height: 2em;
+        }
+        input{
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            text-align: center;   
+            text-decoration: none;
+            outline: none;
+            color: #a77b49;
+            background-color: #497491;
+            border: 2px solid  #875e8f;
+            border-radius: 8px;
+            box-shadow: 0 9px #2f185a;
+
+        }
+
+    </style>
+    <script type = "text/javascript">/*对两首诗的名称和内容进行定义赋值*/
+        var qx="言入黄花川，每逐清溪水。随山将万转，趣途无百里。声喧乱石中，色静深松里。漾漾泛菱荇，澄澄映葭苇。我心素已闲，清川詹如此。请留盘石上，垂钓将已矣。";
+        qxtitle="《清溪》";
+        jystitle="《静夜思》";
+        jyscontent="床前明月光，疑似地上霜。举头望明月，低头思故乡。";
+        ymtitle="一起来欣赏古诗";
+        ymcontent="《清溪》和《静夜思》";
+    </script>
+</head>
+<body>
+    
+    <input type="button" value = "上一页" id = "prev">
+    <input type="button" value = "下一页" id = "next">
+    <h1></h1>
+    <p></p>
+    <script type = "text/javascript">/*用标题和内容分别代替h1,p*/
+        var title = document.querySelector("h1");
+        var content = document.querySelector("p");
+        var prveBt = document.querySelector("input#prev");
+        var nextBt = document.querySelector("input#next");
+        title.textContent = ymtitle;
+        content.textContent =ymcontent;
+        prveBt.onclick = function(){
+            title.textContent=qxtitle;/*上一页功能的实现*/
+            content.textContent=qx;
+        };
+
+        nextBt.onclick = function(){
+            title.textContent=jystitle;/*下一页功能的实现*/
+            content.textContent = jyscontent;
+        };
+
+    </script>
+</body>
+</html>
