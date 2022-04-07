@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>古诗翻页</title>
+    <style type="text/css">
+        body{
+            text-align:center;
+        }
+        p{
+            font-size:30px;
+            width: 180px;
+            margin:auto;
+            line-height:50px;
+        }
+        input{
+            font-size:2em;
+        }
+    </style>
+    <script type="text/javascript">
+    var title =["韦应物：寄全椒山中道士","韦应物：长安遇冯著","韦应物：夕次盱眙县"];
+    var poem = ["今朝郡斋冷，忽念山中客。涧底束荆薪，归来煮白石。欲持一瓢酒，远慰风雨夕。落叶满空山，何处寻行迹。","客从东方来，衣上灞陵雨。问客何为来，采山因买斧。冥冥花正开，扬扬燕新乳。昨别今已春，鬓丝生几缕。","落帆逗淮镇，停舫临孤驿。浩浩风起波，冥冥日沈夕。人归山郭暗，雁下芦洲白。独夜忆秦关，听钟未眠客。"];
+    </script>
+</head>
+<body>
+    <input type="button" value="上一页" id="prev">
+    <input type="button" value="下一页" id="next">
+    <h1>韦应物：长安遇冯著</h1>
+    <p>客从东方来，衣上灞陵雨。
+        问客何为来，采山因买斧。
+        冥冥花正开，扬扬燕新乳。
+        昨别今已春，鬓丝生几缕。
+    </p>
+
+    <script type="text/javascript">
+        var head = document.querySelector("h1");
+        var content = document.querySelector("p");
+        var prevBt = document.querySelector("input#prev");
+        var nextBt = document.querySelector("input#next");
+
+       head.textContent = title[1];
+       content.textContent = poem[1];
+       var i = 1;
+
+        prevBt.onclick = function(){
+            if(i==0){;}
+            else if(i==1){
+            head.textContent =  title[0];
+            content.textContent = poem[0];
+            i = 0;
+        }
+        else {
+                head.textContent =  title[1];
+                content.textContent = poem[1];
+                i = 1;
+            }
+        }
+
+        nextBt.onclick = function(){
+            if(i==2){;}
+            else if(i==0){
+            head.textContent =  title[1];
+            content.textContent =  poem[1];
+            i = 1;
+        }
+        else{
+            head.textContent =  title[2];
+            content.textContent =  poem[2];
+            i = 2;
+        }
+    }
+    </script>
+</body>
+</html>

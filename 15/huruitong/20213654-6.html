@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<meta charset="utf-8" />
+
+<head>
+	<style>
+		h1 {
+			color: rgb(243, 12, 12);
+			font-weight: bold;
+			font-size: 60px;
+			padding: 20px;
+			text-align: center;
+		}
+
+		h4 {
+			color: rgb(255, 0, 0);
+			font-weight: bold;
+			font-size: 20px;
+			text-align: right;
+		}
+
+		p {
+			color: rgb(42, 175, 42);
+			width: 650px;
+			font-size: 40px;
+			margin: auto;
+		}
+
+		input {
+			color: rgb(255, 0, 0);
+			width: 100px;
+			height: 50px;
+			text-align: center;
+			font-size: 25px;
+			line-height: 50px;
+		}
+
+		input:hover {
+			color: azure;
+			background-color: rgb(243, 71, 71);
+		}
+
+		div {
+			text-align: right;
+		}
+		a{
+			color:red;
+		}
+		a:hover{
+			color: black;
+	</style>
+
+</head>
+
+<body background="唐诗.jpg">
+
+	<h1>《赠汪伦》</h1>
+	<h4> ——李白</h4>
+	<p>李白乘舟将欲行，忽闻岸上踏歌声。桃花潭水深千尺，不及汪伦送我情。</p>
+
+	<div><input type="button" value="下一首"></div>
+	<script>
+		var a = document.querySelector("h1");
+		var bt = document.querySelector("input");
+		var b = document.querySelector("p");
+		bt.onclick = function () {
+			a.textContent = "《望庐山瀑布》";
+			b.textContent = "日照香炉生紫烟，遥看瀑布挂前川。 飞流直下三千尺，疑是银河落九天。"
+		}
+	</script>
+	<a href="https://www.shicimingju.com/chaxun/zuozhe/1.html">查看更多</a>
+
+</body>
+
+</html>
