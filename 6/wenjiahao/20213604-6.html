@@ -1,0 +1,76 @@
+<!doctype html>  
+ <html lang="en">  
+ <head>  
+ <meta charset="UTF-8">  
+ <title>优美古诗鉴赏</title>  
+ <style>
+input{
+      font-size:30px;
+      box-shadow:5px 5px 0.2px rgb(150,150,100) ;
+      cursor:pointer;
+      border-radius:450px;
+      color:hsl(200,60%,50%);
+      margin:1.5em;
+}
+h1{
+   letter-spacing:0.7em;
+   color:rgb(0, 180, 200);
+   font-size:40px;
+}
+p{
+   width:180px;
+   font-size:30px;
+   line-height:2em;
+   margin:auto;
+}
+ body{
+     text-align:center;
+
+ }
+ </style>
+ <script type = "text/javascript">  
+ var de = "王湾：次北固山下 客路青山外，行舟绿水前。潮平两岸阔，风正一帆悬。海日生残夜，江春入旧年。乡书何处达？归雁洛阳边。王维：送别 下马饮君酒，问君何所之。君言不得意，归卧南山陲。但去莫复闻，白云无尽时。王昌龄：塞下曲 饮马渡秋水，水寒风似刀。平沙日未没，黯黯见临洮。昔日长城战，咸言意气高。黄尘足今古，白骨乱蓬蒿。"  
+ var wang = [];  
+ var poetry = [];  
+ wang[1] = "王湾：次北固山下" ;  
+ wang[2] = "王维：送别" ;  
+ wang[3] = "王昌龄：塞下曲" ;  
+ poetry[1] = "客路青山外，行舟绿水前。潮平两岸阔，风正一帆悬。海日生残夜，江春入旧年。乡书何处达？归雁洛阳边。" ;  
+ poetry[2] = " 下马饮君酒，问君何所之。君言不得意，归卧南山陲。但去莫复闻，白云无尽时。" ;  
+ poetry[3] = " 饮马渡秋水，水寒风似刀。平沙日未没，黯黯见临洮。昔日长城战，咸言意气高。黄尘足今古，白骨乱蓬蒿。" ;  
+ </script>  
+ </head>  
+ <body>  
+ <input type = "button" value = "上一篇" id ="s1" >  
+ <input type = "button" value = "下一篇" id ="s2">  
+ <h1></h1>  
+ <p></p >  
+ <script type="text/javascript" >  
+ var title = document.querySelector("h1") ;  
+ var content = document.querySelector("p") ;  
+ var prew = document.querySelector("input#s1") ;  
+ var next = document.querySelector("input#s2") ;  
+     title.textContent = wang[1] ;  
+     content.textContent = poetry[1] ; 
+ var i = 2;  
+     next.onclick = function(){  
+                               title.textContent = wang[i] ;  
+                               content.textContent = poetry[i] ;  
+                               i++ ; 
+  if(i>=4){  
+           i=0;  
+           i++;                              
+           }                               
+	 }
+ prew.onclick = function(){ 
+                           title.textContent = wang[i] ;  
+                           content.textContent = poetry[i] ;  
+                           i-- ; 
+ if(i<1){  
+         i=4;  
+         i--;  
+ }  
+ }  
+ </script>  
+ </body>  
+ </html>  

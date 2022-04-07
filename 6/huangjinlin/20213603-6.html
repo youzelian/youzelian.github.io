@@ -1,0 +1,77 @@
+<!doctype html>  
+ <html lang="en">  
+ <head>  
+ <meta charset="UTF-8">  
+ <title>优美古诗鉴赏</title>
+ <style>
+        input {
+            width: 80px;
+            height: 80px;
+            margin: 0 20px;
+            border-radius: 45px;
+            font-size: 25px;
+            box-shadow: 6px 6px 3px cyan;
+        }
+        body {
+            background-color: #e1e0c8;
+            text-align: center;
+            font-family: 楷体;
+        }
+        h2 {
+            margin: 20px;
+            font-size: 70px;
+            font-weight: 590;
+            font-family: 楷体;
+			color:biue
+        }
+        p {
+            font-size: 25px;
+            font-family: 楷体;
+            line-height: 50px;
+        }
+
+  </style>
+ <script type = "text/javascript">  
+ var de="李白：将进酒 君不见黄河之水天上来，奔流到海不复回。君不见高堂明镜悲白发，朝如青丝暮成雪。人生得意须尽欢，莫使金樽空对月。天生我材必有用，千金散尽还复来。烹羊宰牛且为乐，会须一饮三百杯。岑夫子，丹丘生，将进酒，杯莫停。与君歌一曲，请君为我倾耳听。古来圣贤皆寂寞，惟有饮者留其名。陈王昔时宴平乐，斗酒十千恣欢谑。主人何为言少钱，径须沽取对君酌。五花马，千金裘，呼儿将出换美酒，与尔同销万古愁。花非花白居易；花非花，雾非雾。夜半来，天明去。来如春梦几多时，去似朝云无觅处。行路难-其一作者：李白金樽清酒斗十千，玉盘珍羞直万钱。停杯投箸不能食，拔剑四顾心茫然。欲渡黄河冰塞川，将登太行雪满山。闲来垂钓碧溪上，忽复乘舟梦日边。行路难！行路难！多歧路，今安在？长风破浪会有时，直挂云帆济沧海。" 
+ var wang = [];  
+ var poetry = [];  
+ wang[1] = "李白:将进酒" ;  
+ wang[2] = "白居易；花非花 ";  
+ wang[3] = "行路难-其一作者：李白" ;  
+ poetry[1] = "君不见黄河之水天上来，奔流到海不复回。君不见高堂明镜悲白发，朝如青丝暮成雪。人生得意须尽欢，莫使金樽空对月。天生我材必有用，千金散尽还复来。烹羊宰牛且为乐，会须一饮三百杯。岑夫子，丹丘生，将进酒，杯莫停。与君歌一曲，请君为我倾耳听。钟鼓馔玉不足贵，但愿长醉不复醒。陈王昔时宴平乐，斗酒十千恣欢谑。主人何为言少钱，径须沽取对君酌。五花马，千金裘，呼儿将出换美酒，与尔同销万古愁" ;  
+ poetry[2] = "花非花，雾非雾。夜半来，天明去。来如春梦几多时，去似朝云无觅处 。" ;  
+ poetry[3] = "金樽清酒斗十千，玉盘珍羞直万钱。停杯投箸不能食，拔剑四顾心茫然。欲渡黄河冰塞川，将登太行雪满山。闲来垂钓碧溪上，忽复乘舟梦日边。行路难！行路难！多歧路，今安在？长风破浪会有时，直挂云帆济沧海。" ;  
+ </script>  
+ </head>  
+ <body>  
+ <input type = "button" value = "上一篇" id ="s1" >  
+ <input type = "button" value = "下一篇" id ="s2">  
+ <h1></h1>  
+ <p></p >  
+ <script type="text/javascript" >  
+ var title = document.querySelector("h1") ;  
+ var content = document.querySelector("p") ;  
+ var prew = document.querySelector("input#s1") ;  
+ var next = document.querySelector("input#s2") ;  
+ var i = 1;  
+ next.onclick = function(){  
+ title.textContent = wang[i] ;  
+ content.textContent = poetry[i] ;  
+ i++ ;  
+ if(i>=4){  
+ i=0;  
+ i++;  
+ }  
+ }  
+ prew.onclick = function(){  
+ title.textContent = wang[i] ;  
+ content.textContent = poetry[i] ;  
+ i-- ;  
+ if(i<1){  
+ i=4;  
+ i--;  
+ }  
+ }  
+ </script>  
+ </body>  
+ </html>  
