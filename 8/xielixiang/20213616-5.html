@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>20213616</title>
+  <style type="text/css">
+  body{font-size:30px;}
+  }
+    div{
+     display:inline;
+       }
+    p{
+	 font-size:40px;
+	 font-family:微软雅黑;
+	 text-shadow:3px 3px gray;
+	 }
+    body{
+	    
+	    }
+    h1{
+	   font-size:20px;
+	   color:blue;
+	  }
+    h2{
+       font-size:50px;
+	   color:red;
+	   text-align:center;
+	   font-style:italic;
+       text-align:center;
+}
+    h3{
+       font-size:50px;
+	   color:red;
+	   text-align:center;
+	   font-style:italic;
+       text-align:center;
+	   }
+	 h4{
+       font-size:50px;
+	   color:red;
+	   text-align:center;
+	   font-style:italic;
+       text-align:center;
+	   }
+    input{
+	   font-size:30px;
+	   color:blue;
+	   border:3px solid blue;
+	   height:50px;
+	   width:150px;
+	   border-radius:50px 0px;
+	   }
+  </style>
+ </head>
+ <body>
+ <p>杜甫</p>
+ <h1>在我国古代有许多的诗词，他们或豪放，或婉约，或悲壮，或慷慨激昂，而今天我们一起来品一品现实主义诗人杜甫的诗吧。</h1>
+  <input type="button" value="《绝句》"id="a">
+  <input type="button" value="《登高》"id="b">
+  <input type="button" value="《春望》"id="c">
+  <h2> </h2>
+  <h3> </h3>
+  <h4> </h4>
+  <script>
+    var y1 =document.querySelector("h2");
+    var t1 =document.getElementById("a");
+    var y2 =document.querySelector("h2");
+    var t2 =document.getElementById("b");
+	var y3 =document.querySelector("h2");
+    var t3 =document.getElementById("c");
+    t1.onclick = function () {
+            y1.textContent = "两个黄鹂鸣翠柳，一行白鹭上青天。窗含西岭千秋雪，门泊东吴万里船。";
+	};
+	t2.onclick = function () {
+            y2.textContent = "风急天高猿啸哀，渚清沙白鸟飞回。无边落木萧萧下，不尽长江滚滚来。万里悲秋常作客，百年多病独登台。艰难苦恨繁霜鬓，潦倒新停浊酒杯。";
+	};
+	t3.onclick = function () {
+            y3.textContent = "国破山河在，城春草木深。感时花溅泪，恨别鸟惊心。烽火连三月，家书抵万金。白头搔更短，浑欲不胜簪。";
+	};
+  </script>
+ </body>
+</html>

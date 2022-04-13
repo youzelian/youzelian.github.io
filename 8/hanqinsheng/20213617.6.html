@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+h1{
+    font-size:70px;
+	color:red;
+	text-align:center;
+	font-style:italic;
+    text-align:center;
+	border:5px solid green;
+}
+h2{
+    font-size:50px;
+	color:green;
+	text-align:center;
+	font-style:italic;
+    text-align:center;
+	border:5px solid green;
+}
+h3{
+    font-size:50px;
+	color:green;
+	text-align:center;
+	font-style:italic;
+    text-align:center;
+	border:5px solid green;
+}
+</style>
+  <script  type="text/javascript">
+  <!--
+    var timu = [];
+	timu[1]="静夜思"
+	timu[2]="赋得古原草送别"
+	timu[3]="行宫"
+    var one = [];
+	one[1]="床前明月光，疑是地上霜。"
+	one[2]="离离原上草，一岁一枯荣。"
+	one[3]="寥落古行宫，宫花寂寞红。"
+    var two = [];
+	two[1]="举头望明月，低头思故乡。"
+	two[2]="野火烧不尽，春风吹又生。"
+	two[3]="寥落古行宫，宫花寂寞红。"
+ </script>
+ </head>
+ <body>
+ <h1></h1>
+ <h2></h2>
+ <h3></h3>
+   <input type="button" value="上一页" id="prev">
+   <input type="button" value="下一页" id="next">
+<script>
+        var title = document.querySelector("h1");
+        var content1 = document.querySelector("h2");
+        var content2 = document.querySelector("h3");
+        var prev = document.querySelector("input#prev");
+        var next = document.querySelector("input#next");
+		var i=1;
+        prev.onclick = function () {
+			title.textContent = timu[i];
+            content1.textContent = one[i];
+            content2.textContent = two[i];
+			i--;
+			}
+		next.onclick = function () {
+			title.textContent = timu[i];
+            content1.textContent = one[i];
+            content2.textContent = two[i];
+			i++;
+			}
+</script>
+ </body>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Web作业</title>
+  <style>
+body{undefined;
+     margin:0;
+	 padding:0;
+     line-height:1.5em;
+	 font-family:'Times New Roman',Times,serif;
+	 font-size:14px;
+	 color:#000000;
+    }
+p{
+   font-family:黑体;
+   font-size:90px;    
+   color:black;
+   text-align:center;
+   font-size:italic;
+ }
+h1{
+    font-size:70px;
+	color:red;
+	text-align:center;
+	font-style:italic;
+}
+h2{
+    font-size:50px;
+	color:green;
+	text-align:center;
+	font-style:italic;
+}
+h3{
+    font-size:50px;
+	color:green;
+	text-align:center;
+	font-style:italic;
+}
+</style>
+  <script  type="text/javascript">
+  <!--
+    var timu = [];
+	timu[1]="静夜思"
+	timu[2]="赋得古原草送别"
+	timu[3]="行宫"
+	timu[4]="登鹳雀楼"
+	timu[5]="鹿柴"
+	timu[6]="送别"
+    var one = [];
+	one[1]="床前明月光，疑是地上霜。"
+	one[2]="离离原上草，一岁一枯荣。"
+	one[3]="寥落古行宫，宫花寂寞红。"
+	one[4]="白日依山尽，黄河入海流。"
+	one[5]="空山不见人，但闻人语响。"
+	one[6]="山中相送罢，日暮掩柴扉。"
+    var two = [];
+	two[1]="举头望明月，低头思故乡。"
+	two[2]="野火烧不尽，春风吹又生。"
+	two[3]="寥落古行宫，宫花寂寞红。"
+	two[4]="欲穷千里目，更上一层楼。"
+	two[5]="返景入深林，复照青苔上。"
+	two[6]="春草明年绿，王孙归不归？"
+ </script>
+ </head>
+ <body>
+ <p><i>五言绝句大赏--李白分赏</i></p>
+ <h1></h1>
+ <h2></h2>
+ <h3></h3>
+   <input type="button" value="上一页" id="prev">
+   <input type="button" value="下一页" id="next">
+<script>
+        var title = document.querySelector("h1");
+        var content1 = document.querySelector("h2");
+        var content2 = document.querySelector("h3");
+        var prev = document.querySelector("input#prev");
+        var next = document.querySelector("input#next");
+		var i=1;
+        prev.onclick = function () {
+			title.textContent = timu[i];
+            content1.textContent = one[i];
+            content2.textContent = two[i];
+			i--;
+			}
+		next.onclick = function () {
+			title.textContent = timu[i];
+            content1.textContent = one[i];
+            content2.textContent = two[i];
+			i++;
+			}
+</script>
+ </body>
+</html>

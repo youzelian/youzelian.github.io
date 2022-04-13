@@ -1,0 +1,74 @@
+
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Web作业</title>
+  <style type="text/css">
+  *{
+     text-align: center;
+	 font-style: italic;
+   }
+h1#timu{
+    font-size:70px;
+	color:red;
+	text-align:center;
+	font-style:italic;
+    text-align:center;
+	border:5px solid green;
+
+}
+p#tsContent{
+    font-size:50px;
+	color:green;
+	text-align:center;
+	font-style:italic;
+    text-align:center;
+	border:5px solid green;
+}
+</style>
+  <script  type="text/javascript">
+  <!--
+    var timu = [];
+	timu[1]="静夜思"
+	timu[2]="赋得古原草送别"
+	timu[3]="行宫"
+	timu[4]="登鹳雀楼"
+	timu[5]="鹿柴"
+	timu[6]="送别"
+    var tsContent = ["床前明月光，疑是地上霜。举头望明月，低头思故乡。","离离原上草，一岁一枯荣。野火烧不尽，春风吹又生。","寥落古行宫，宫花寂寞红。白头宫女在，闲坐说玄宗。","白日依山尽，黄河入海流。欲穷千里目，更上一层楼。","空山不见人，但闻人语响。空山不见人，但闻人语响。","山中相送罢，日暮掩柴扉。春草明年绿，王孙归不归？"];
+  -->
+ </script>
+ </head>
+ <body>
+ <h1 id="timu"></h1>
+ <p id="tsContent"></p>
+ <div id=""class="">
+   <input type="button" value="上一页" id="prev">
+   <input type="button" value="下一页" id="next">
+ </div>
+ <script  type="text/javascript">
+  <!--
+    var h1Dom = document.querySelector("h1#timu");
+	var pDom = document.querySelector("p#tsContent");
+	var i= 0 ;
+	document.querySelector("input#next").onclick = function(){
+      h1Dom.textContent = timu[i];
+      pDom.textContent = tsContent[i];
+	  if (i < timu.length-1)
+	  {
+		 i++;
+	  }
+    };
+	document.querySelector("input#prev").onclick = function(){
+		if (i > 0)
+	  {
+		 i--;
+	  }
+      h1Dom.textContent = timu[i];
+      pDom.textContent = tsContent[i];
+	};
+  -->
+ </script>
+ </body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>作业</title>
+ </head>
+  <style type="text/css">
+  *{
+     text-align: center;
+	 font-style: italic;
+   }
+p#tsContent{
+   font-size:50px;    
+   color: green;
+   text-align: center;
+   
+   margin: auto;
+ }
+h1#timu{
+    font-size:70px;
+	color: red;
+	text-align: center;
+	font-style: italic;
+}
+</style>
+  <script  type="text/javascript">
+  <!--
+    var timu = [];
+	timu[0]="静夜思"
+	timu[1]="望庐山瀑布"
+	timu[2]="赠汪伦"
+	timu[3]="黄鹤楼送孟浩然"
+	timu[4]="长门怨二首"
+	timu[5]="早发白帝城"
+    var tsContent = ["床前明月光，疑是地上霜。举头望明月，低头思故乡。","日照香炉生紫烟，遥看瀑布挂前川。飞流直下三千尺，疑是银河落九天。","李白乘舟将欲行，忽闻岸上踏歌声。桃花潭水深千尺，不及汪伦送我情。","故人西辞黄鹤楼，烟花三月下扬州。孤帆远影碧空尽，唯见长江天际流。","天回北斗挂西楼，金屋无人萤火流。月光欲到长门殿，别作深宫一段愁。桂殿长愁不记春，黄金四屋起秋尘。夜悬明镜青天上，独照长门宫里人。","朝辞白帝彩云间，千里江陵一日还。两岸猿声啼不住，轻舟已过万重山。"];
+  -->
+ </script>
+ </head>
+ <body>
+ <h1 id="timu">
+ <i>诗词大赏--李白</i>
+ </h1>
+ <p id="tsContent">
+ </p>
+ <div id=""class="">
+   <input type="button" value="上一页" id="prev">
+   <input type="button" value="下一页" id="next">
+ </div>
+ <script  type="text/javascript">
+  <!--
+    var h1Dom = document.querySelector("h1#timu");
+	var pDom = document.querySelector("p#tsContent");
+
+	var i= 0 ;
+	document.querySelector("input#next").onclick = function(){
+      h1Dom.textContent = timu[i];
+      pDom.textContent = tsContent[i];
+	  if (i < timu.length-1)
+	  {
+		 i++;
+	  }
+	} ;
+	document.querySelector("input#prev").onclick = function(){
+		if (i > 0)
+	  {
+		 i--;
+	  }
+      h1Dom.textContent = timu[i];
+      pDom.textContent = tsContent[i];
+	} ;
+  -->
+ </script>
+  
+ </body>
+</html>
