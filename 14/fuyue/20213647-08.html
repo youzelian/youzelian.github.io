@@ -1,0 +1,113 @@
+
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>第七次作业</title>
+ </head>
+ <style type="text/css">
+body
+{
+text-align:center;
+font-family:楷体;
+}
+input
+{
+cursor:pointer;
+transition-duration: 0.4s; /* 检索或设置对象过渡的持续时间 */
+background-color:#ccffff;
+display: inline-block;
+width: 90px;
+height: 90px;
+font-size: 20px;
+border-radius: 10px;/*允许为元素添加圆角边框*/
+}
+h1,
+h2
+{
+font-size:40px;
+ color:#3399ff;
+ margin:35px;
+}
+p
+{
+text-shadow:2px 2px #999;
+ font-size:30px;
+ margin:auto;
+ letter-spacing:0.6em;
+ width:350px;
+
+}
+#prev:hover
+{
+    background-color: #66cc99;
+    color: white;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#next:hover
+{
+    background-color: #66cc99;
+    color: white;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#prev:active
+{
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);/*通过给定Y方向的数目指定一个translation*/
+}
+#next:active
+{
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+ </style>
+ <body>
+ 
+ <input type="button" value="上一首" id="prev">
+ <input type="button" value="下一首" id="next">
+ <h1 id="tsTitle"></h1>
+ <p id="tsContent"></p>
+
+  <script> 
+
+	var tsTitle = [];
+	    tsTitle[0] = ["李白：春景"];
+	    tsTitle[1] = ["李白：夏景"];
+	    tsTitle[2] = ["李白：秋景"];
+		tsTitle[3] = ["李白：冬景"];
+    var tsContent=["门对鹤溪流水，云连雁宕仙家。谁解幽人幽意，惯看山鸟山花。","竹簟高人睡觉，水亭野客狂登。帘外熏风燕语，庭前绿树蝉鸣。","昨夜西风忽转，惊看雁度平林。诗兴正当幽寂，推敲韵落寒帧。","动笔新诗懒写，寒炉美酒时温。醉看墨花雪白，恍疑雪落前村。"]
+
+    var h1Dom = document.querySelector("h1#tsTitle") ;
+    var pDom =  document.querySelector("p#tsContent");
+	var prevBt = document.querySelector("input#prev");
+    var nextBt = document.querySelector("input#next");
+
+         h1Dom.textContent = tsTitle[0] ;
+         pDom.textContent = tsContent[0] ;
+       var i= 0 ;
+       document.querySelector("input#next").onclick = function(){
+        if (i< tsTitle.length-1) {
+          i++ ;
+		 }
+		 else
+		   {i=i-3;}
+         h1Dom.textContent = tsTitle[i] ;
+         pDom.textContent = tsContent[i] ;
+		
+		   } ;
+	   document.querySelector("input#prev").onclick = function(){
+		 if (i > 0) {
+          i-- ;
+		 }
+		 else
+		   {i=3;}
+         h1Dom.textContent = tsTitle[i] ;
+         pDom.textContent = tsContent[i] ;
+	   } ;
+
+	
+  </script>
+ </body>
+</html>
+

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>第八次作业</title>
+  <style>
+    body{
+   font-family: 宋体;
+	 text-align: center;
+	 font-size: 40px ;
+	}
+  	h1#tsTitle{
+	 font-size: 30px;
+	}
+  	p#tsContent{
+	 font-size: 40px;
+	 width: 600px ;
+	 margin: auto ;
+   line-height: 60px;
+	}
+    input{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #000000;
+    background-color: #ffffff;
+    border: 5px solid  rgb(0, 0, 0);
+    border-radius: 10px;
+    box-shadow: 0 9px rgb(0, 0, 0);
+    margin: 20px;
+  }
+    input:active {
+    background-color: #ffffff;
+    box-shadow: 0 5px rgb(0, 0, 0);
+    transform: translateY(4px);
+  }
+  </style>
+  <script type="text/javascript">
+  
+    var tsTitle =[];
+    tsTitle[1] = "《瑶池》" ;
+	  tsTitle[2] = "《征怨》" ;
+    tsTitle[3] = "《寄人》" ;
+    //定义一个数组，里面是标题组1，2，3
+    var tstitle=[];
+    tstitle[1]="李商隐 ";
+    tstitle[2]="柳中庸 ";
+    tstitle[3]="张泌";
+    //定义一个数组，里面是小标题组1，2，3
+   	var tsContent = [ "请按下一首","瑶池阿母绮窗开，黄竹歌声动地哀。八骏日行三万里，穆王何事不重来。"," 岁岁金河复玉关，朝朝马策与刀环。三春白雪归青冢，万里黄河绕黑山。","别梦依依到谢家，小廊回合曲阑斜。 多情只有春庭月，犹为离人照落花。"] ;
+  //定义另一个数组，里面是内容组0，1，2，3
+  </script>
+ </head>
+ <body>
+	<input type="button" value="上一首" id="prev">
+	<input type="button" value="下一首" id="next">
+  <!--定义两个按钮-->
+  <h1 id="tsTitle">标题</h1>
+  <h2 id="tstitle">作者</h2>
+  <p id="tsContent">内容</p>
+  <script type="text/javascript">
+   var h1Dom = document.querySelector("h1#tsTitle");
+   var h2Dom = document.querySelector("h2#tstitle");
+   var pDom =  document.querySelector("p#tsContent");
+   //寻找到相应的标签，定义一些名称来代替标签里的内容
+   var i= 0 ;
+   document.querySelector("input#next").onclick = function(){
+     if (i < tsTitle.length-1) {
+        i++ ;
+		    }
+         h1Dom.textContent = tsTitle[i] ;
+         h2Dom.textContent = tstitle[i] ;
+         pDom.textContent = tsContent[i] ;
+        // 点击id为next的按钮，则tsTitle[i]里的内容替换掉h1Dom的内容，tstitle[i]的内容替换掉h2Dom的内容,tsContent[i]的内容替换掉pDom的内容
+		   };
+	 document.querySelector("input#prev").onclick = function(){
+		 if (i > 0) {
+          i-- ;
+		   }
+         h1Dom.textContent = tsTitle[i] ;
+         h2Dom.textContent = tstitle[i] ;
+         pDom.textContent = tsContent[i] ;
+        // 点击id为prev的按钮，则tsTitle[i]里的内容替换掉h1Dom的内容，tstitle[i]的内容替换掉h2Dom的内容,tsContent[i]的内容替换掉pDom的内容
+	   } ;
+  </script>
+ </body>
+</html>
