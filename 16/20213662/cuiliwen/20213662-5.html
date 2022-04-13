@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            color: brown;
+            font-size: 50px;
+        }
+        h1{
+            color: blue;
+            font-size: 60px;
+        }
+        h2{
+            color: brown;
+            font-size: 50px;
+        }
+        h3{
+            color: blue;
+            font-size: 55px;
+        }
+        h4{
+            color: blue;
+            font-size: 55px;
+        }
+
+    </style>
+</head>
+<body>
+    <input type="button" value="古诗">
+    <h1> </h1>
+    <h2> </h2>
+    <h3> </h3>
+    <h4> </h4>
+    <script> 
+        var h1=document.querySelector("h1");
+        var h2=document.querySelector("h2");
+        var h3=document.querySelector("h3");
+        var h4=document.querySelector("h4");
+        var button=document.querySelector("input");
+        button.onclick=function(){
+            h1.textContent="《青玉案·元夕》"
+            h2.textContent="辛弃疾"
+            h3.textContent="东风夜放花千树，更吹落、星如雨。宝马雕车香满路。凤箫声动，玉壶光转，一夜鱼龙舞。"
+            h4.textContent="蛾儿雪柳黄金缕。笑语盈盈暗香去。众里寻他千百度。蓦然回首，那人却在，灯火阑珊处。"
+        }
+    </script>
+</body>
+</html>

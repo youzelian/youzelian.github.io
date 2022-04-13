@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        h1{
+            font-size:80px;
+            color:red;
+            text-align:center;
+           
+        }
+        h2{
+            font-size:45px;
+            color:rgb(208, 255, 0);
+            text-align:right;
+            font-family:楷体;
+        }
+        p{
+            font-size:60px;
+            color:rgb(4, 0, 255);
+            text-align:center;
+            font-family:仿宋;
+        }
+        body{
+            background-color:rgb(0, 225, 255) ;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="上一首" id="cylcwd">
+    <input type="button" value="下一首" id="zfbdc">
+    <div id="st"></div>
+    <div id="nd"></div>
+    <div id="rd"></div>
+    <script>
+        var div0=document.getElementById("st");
+        var div1=document.getElementById("nd");
+        var div2=document.getElementById("rd");
+        var button2=document.getElementById("cylcwd");
+        button2.onclick=function()
+        {
+            div0.textContent="登幽州台歌";
+            div1.textContent="前不见古人，后不见来者。";
+            div2.textContent="念天地之悠悠，独怆然而涕下！";
+        };
+        var button3=document.getElementById("zfbdc")
+        button3.onclick=function()
+        {
+            div0.textContent="竹里馆";
+            div1.textContent="独坐幽篁里，弹琴复长啸";
+            div2.textContent="深林人不知，明月来相照";
+        };
+    </script>
+</body>
+</html>

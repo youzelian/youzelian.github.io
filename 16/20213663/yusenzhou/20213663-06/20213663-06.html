@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body
+        {
+            text-align: center;
+            background-color:  rgba(0,250,10,0.1); 
+        }
+        input
+        {
+            border-radius: 50px;
+            font-size: 35px;
+            background-color: aqua;
+            margin: 10px 10px 20px;
+        }
+        #az
+        {
+            font-size: 50px;
+            font-family: 仿宋;
+        }
+        #bz
+        {
+            font-size: 25px;
+        }
+        #cz
+        {
+            font-size: 35px;
+        }
+    </style>
+    <input type="button" value="上一页" id="prev">
+    <input type="button" value="首页" id="sy">
+    <input type="button" value="第二页" id="er">
+    <input type="button" value="第三页" id="three">
+    <input type="button" value="尾页" id="wy">
+    <input type="button" value="下一页" id="next">
+    <div id="az" ></div>
+    <div id="bz" ></div>
+    <div id="cz" ></div>
+    <script>
+        var div0=document.getElementById("az");
+        var div1=document.getElementById("bz");
+        var div2=document.getElementById("cz");
+        var button0=document.getElementById("prev");
+        button0.onclick=function()
+        {
+            div0.textContent="克里斯蒂亚诺·罗纳尔多";
+            div1.textContent="（葡萄牙职业足球运动员）";
+            div2.textContent="1985年2月5日出生于葡萄牙马德拉岛丰沙尔，葡萄牙职业足球运动员，司职边锋／中锋，现效力于英超的曼彻斯特联足球俱乐部，亦担任葡萄牙国家男子足球队队长";
+        };
+        var button1=document.getElementById("sy");
+        button1.onclick=function(){
+            div0.textContent="克里斯蒂亚诺·罗纳尔多 ";
+            div1.textContent="（葡萄牙职业足球运动员）";
+            div2.textContent="1985年2月5日出生于葡萄牙马德拉岛丰沙尔，葡萄牙职业足球运动员，司职边锋／中锋，现效力于英超的曼彻斯特联足球俱乐部，亦担任葡萄牙国家男子足球队队长";
+        };
+        var button2=document.getElementById("er");
+        button2.onclick=function()
+        {
+            div0.textContent="利昂内尔·梅西 ";
+            div1.textContent="（阿根廷职业足球运动员）";
+            div2.textContent="1987年6月24日出生于阿根廷圣菲省罗萨里奥，阿根廷足球运动员，司职前锋，现效力于法国足球甲级联赛的巴黎圣日耳曼足球俱乐部，亦担任阿根廷国家男子足球队队长";
+        };
+        var button3=document.getElementById("three");
+        button3.onclick=function()
+        {
+            div0.textContent="内马尔·达·席尔瓦·桑托斯·儒尼奥尔";
+            div1.textContent="（巴西职业足球运动员）";
+            div2.textContent="1992年2月5日出生于巴西圣保罗州，巴西足球运动员，司职前锋，现效力于法国的巴黎圣日耳曼足球俱乐部 ，亦担任巴西国家男子足球队队长 ";
+        };
+        var button4=document.getElementById("wy");
+        button4.onclick=function()
+        {
+            div0.textContent="卢卡·莫德里奇";
+            div1.textContent="（克罗地亚职业足球运动员）";
+            div2.textContent="1985年9月9日出生于克罗地亚扎达尔，克罗地亚足球运动员，司职中场，绰号“魔笛”，现效力于西甲皇家马德里足球俱乐部，亦担任克罗地亚国家男子足球队队长";
+        };
+        var button5=document.getElementById("next");
+        button5.onclick=function()
+        {
+            div0.textContent="卢卡·莫德里奇";
+            div1.textContent="（克罗地亚职业足球运动员）";
+            div2.textContent="1985年9月9日出生于克罗地亚扎达尔，克罗地亚足球运动员，司职中场，绰号“魔笛”，现效力于西甲皇家马德里足球俱乐部，亦担任克罗地亚国家男子足球队队长";
+        };
+    </script>
+</body>
+</html>

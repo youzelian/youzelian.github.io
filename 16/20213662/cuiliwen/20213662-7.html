@@ -1,0 +1,66 @@
+
+<!doctype html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <title></title>
+  <style type="text/css">
+    body{
+        margin: 0;
+        padding: 0;
+	    text-align: center;
+	    font-size: 16 px ;
+	}
+	h1#tsTitle{
+        font-family: 楷体;
+        font-size: 3em;
+        color: red;
+	}
+	p#tsContent{
+	    font-size: 2em;
+        font-family: 宋体;
+        white-space: pre-line;
+	    margin: auto ;
+        color: rebeccapurple;
+	}
+   input{
+       margin: 1em 0.5em 1em;
+       font-size: 1.5em;
+       border-radius: 1em;
+       box-shadow: 6px 6px 3px gray;
+   }
+  </style>
+ </head>
+<body>
+    <div>
+	<input type="button" value="上一页" id="prev">
+	<input type="button" value="下一页" id="next">
+    </div>
+    <h1 id="tsTitle"></h1>
+    <p id="tsContent"></p>
+
+    <script type="text/javascript">
+    var tsTitle =["《侠客行》","《关山月》","《夜宿山寺》","《玉阶怨》","《古意》"];
+	  var tsContent = ["赵客缦胡缨，吴钩霜雪明。\n银鞍照白马，飒沓如流星。\n十步杀一人，千里不留行。\n事了拂衣去，深藏身与名。\n闲过信陵饮，脱剑膝前横。\n将炙啖朱亥，持觞劝侯嬴。\n三杯吐然诺，五岳倒为轻。\n眼花耳热后，意气素霓生。\n救赵挥金槌，邯郸先震惊。\n千秋二壮士，烜赫大梁城。\n纵死侠骨香，不惭世上英。\n谁能书阁下，白首太玄经。","明月出天山，苍茫云海间。\n长风几万里，吹度玉门关。\n汉下白登道，胡窥青海湾。\n由来征战地，不见有人还。\n戍客望边色，思归多苦颜。\n高楼当此夜，叹息未应闲。","危楼高百尺，手可摘星辰。\n不敢高声语，恐惊天上人。","玉阶生白露，夜久侵罗袜。\n却下水晶帘，玲珑望秋月。","君为女萝草，妾作菟丝花。\n轻条不自引，为逐春风斜。\n百丈托远松，缠绵成一家。\n谁言会面易，各在青山崖。\n女萝发馨香，兔丝断人肠。\n枝枝相纠结，叶叶竞飘扬。\n生子不知根，因谁共芬芳。\n中巢双翡翠，上宿紫鸳鸯。\n若识二草心，海潮亦可量。"] ;
+    var h1Dom = document.querySelector("#tsTitle") ;
+    var pDom =  document.querySelector("#tsContent");
+        h1Dom.textContent= tsTitle[0];
+        pDom.textContent= tsContent[0];
+      var i= 0 ;
+      document.querySelector("input#next").onclick = function(){
+        if (i < tsTitle.length-1) {
+          i++ ;
+		    }
+        h1Dom.textContent = tsTitle[i] ;
+        pDom.textContent = tsContent[i] ;
+		  } ;
+	    document.querySelector("input#prev").onclick = function(){
+		    if (i > 0) {
+          i-- ;
+		    }
+        h1Dom.textContent = tsTitle[i] ;
+        pDom.textContent = tsContent[i] ;
+	    } ;
+  </script>
+</body>
+</html>

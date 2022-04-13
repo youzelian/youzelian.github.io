@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20213663-05</title>
+</head>
+<body>
+    <style>
+        body
+        {
+            text-align: center;
+            background-color: rgba(0,250,10,0.1);
+        }
+        input
+        {
+            font-size: 40px;
+            border-radius: 50px;
+            margin: 10px 10px 20px;
+        }
+        #az
+        {
+            font-size: 40PX;
+        }
+        #bz
+        {
+            font-size: 25px;
+            font-family: 仿宋;
+        }
+        #cz,#dz
+        {
+            font-size: 30px;
+        }
+        #ez
+        {
+            font-size: 40px;
+        }
+        #fz
+        {
+            font-size: 25px;
+            font-family: 仿宋;
+            text-align: center;
+        }
+        
+    </style>
+    <input type="button" value="诗文" id="sw">
+    <input type="button" value="译文" id="yw">
+    <input type="button" value="赏析" id="sx">
+    <div id="az"></div>
+    <div id="bz"></div>
+    <div id="cz"></div>
+    <div id="dz"></div>
+    <div id="ez"></div>
+    <div id="fz"></div>
+    <script>
+        var div0=document.getElementById("az");
+        var div1=document.getElementById("bz");
+        var div2=document.getElementById("cz");
+        var div3=document.getElementById("dz");
+        var div4=document.getElementById("ez");
+        var div5=document.getElementById("fz");
+        var button1=document.getElementById("sw");
+        button1.onclick=function(){
+            div0.textContent="饮湖上初晴后雨";
+            div1.textContent="苏轼 〔宋代〕";
+            div2.textContent="水光潋滟晴方好，山色空蒙雨亦奇。";
+            div3.textContent="欲把西湖比西子，淡妆浓抹总相宜。";
+        };
+        var button2=document.getElementById("yw");
+        button2.onclick=function()
+        {
+            div4.textContent="译文";
+            div5.textContent="在灿烂的阳光照耀下，西湖水微波粼粼，波光艳丽，看起来很美；雨天时，在雨幕的笼罩下，西湖周围的群山迷迷茫茫，若有若无，也显得非常奇妙。若把西湖比作美人西施，淡妆浓抹都是那么得十分适宜。";
+        };
+        var button3=document.getElementById("sx")
+        button3.onclick=function()
+        {
+            div4.textContent="赏析";
+            div5.textContent="　这是一首赞美西湖美景的诗。此诗不是描写西湖的一处之景、一时之景，而是对西湖美景的全面描写概括品评，尤其是后二句，被认为是对西湖的恰当评语。作者畅游西湖，从早到晚，一边欣赏美丽的湖光山色，一边饮酒构思，意笃八极，神游万仞。于是乎写就了这首传诵一时的佳作。";
+        };
+    </script>
+</body>
+</html>

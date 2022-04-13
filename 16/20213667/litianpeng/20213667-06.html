@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>第六次作业</title>
+ </head>
+
+ <body>
+ 
+ <input type="button" value="上一首" id="prev">
+ <input type="button" value="下一首" id="next">
+ <h1></h1>
+ <p></p>
+
+  <script>
+
+    var lb1,lb2;
+	var headline1,headline2;
+	  headline1 = ["李白：静夜思"];
+	  headline2 = ["孟浩然：春晓"];
+	  lb1 = ["床前明月光，疑是地上霜。举头望明月，低头思故乡"];
+	  lb2 = ["春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少。"];
+	var title = document.querySelector("h1") ;
+	var content = document.querySelector("p") ;
+	var prevBt = document.querySelector("input#prev");
+    var nextBt = document.querySelector("input#next");
+
+	prevBt.onclick = function(){
+		title.textContent = headline1;
+		content.textContent = lb1;
+	};
+	nextBt.onclick = function(){
+		title.textContent = headline2;
+		content.textContent = lb2;
+	};
+
+	
+  </script>
+ </body>
+</html>
