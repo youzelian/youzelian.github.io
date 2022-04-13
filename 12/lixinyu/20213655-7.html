@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+
+  <title>古诗</title>
+  <style type="text/css">
+    body{
+	 text-align: center;
+	 font-size: 18px ;
+     background-image: url(https://img1.baidu.com/it/u=2918054672,173735016&fm=26&fmt=auto);
+     background-size: cover;
+     margin: 200px;
+	}
+	h1#lTitle{
+	 font-size:3em;
+	 font-family:楷体;
+	}
+	p#lContent{
+	 font-size: 2em;
+	 width: 600px ;
+	 margin: auto ;
+     font-family: 楷体;
+	}
+   input{
+    font-size: 1.5em;
+    background-color: black;
+    color: aqua;
+   }
+  </style>
+  <script type="text/javascript">
+  
+    var lTitle =[];
+    lTitle[0] = "《望庐山瀑布》" ;
+	lTitle[1] = "《早发白帝城》" ;
+    lTitle[2] = "《送孟浩然之广陵》" ;
+    lTitle[3] = "《赠汪伦》";
+	var lContent = ["日照香炉生紫烟, \n遥看瀑布挂前川。\n飞流直下三千尺, 疑是银河落九天。\n","朝辞白帝彩云间, 千里江陵一日还。\n两岸猿声啼不住, 轻舟已过万重山。\n"," 故人西辞黄鹤楼, 烟花三月下扬州。\n孤帆远影碧空尽, 唯见长江天际流。","李白乘舟将欲行, 忽闻岸上踏歌声。\n桃花潭水深千尺, 不及汪伦送我情。"] ;
+
+  </script>
+ </head>
+ <body>
+  <h1 id="lTitle">
+   标题
+  </h1>
+  <p id="lContent">
+  内容
+  </p>
+  <div id="" class="">
+	<input type="button" value="Prev" id="prev">
+	<input type="button" value="Next" id="next">
+  </div>
+  <script type="text/javascript">
+   var h1Dom = document.querySelector("h1#lTitle") ;
+   var pDom =  document.querySelector("p#lContent");;
+       var i= 0 ;
+       document.querySelector("input#next").onclick = function(){
+        if (i < lTitle.length-1) {
+          i++ ;
+		 }
+         h1Dom.textContent = lTitle[i] ;
+         pDom.textContent = lContent[i] ;
+		   } ;
+	   document.querySelector("input#prev").onclick = function(){
+		 if (i > 0) {
+          i-- ;
+		 }
+         h1Dom.textContent = lTitle[i] ;
+         pDom.textContent = lContent[i] ;
+	   } ;
+  
+  </script>
+ </body>
+</html>

@@ -57,7 +57,8 @@
     var content=document.querySelector("p");
 	var prevBt=document.querySelector("input#prev");
 	var nextBt=document.querySelector("input#next");
-   
+    title.textContent=titleBt;
+    content.textContent=contentBt;
     prevBt.onclick=function(){
         title.textContent=ltitle;
 		content.textContent= l;

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        body {
+            text-align: center;
+            font-size: 16px;
+        }
+
+        h1#tsTitle {
+            font-size: 2em;
+            text-shadow: 5px 3px 4px grey;
+        }
+
+        p#tsContent {
+            font-size: 1.5em;
+            width: 12em;
+            height: 0.5em;
+            margin: auto;
+            font-family: 楷体;
+        }
+
+        input {
+            font-size: 2em;
+        }
+    </style>
+    <script type="text/javascript">
+        var tsTitle = [];
+        tsTitle[0] = "《山居秋暝》唐代·王维";
+        tsTitle[1] = "《乐游原 / 登乐游原》唐代·李商隐";
+        tsTitle[2] = "《子夜吴歌·秋歌》唐代·李白";
+
+        var tsContent = ["空山新雨后，天气晚来秋。\n明月松间照，清泉石上流。\n竹喧归浣女，莲动下渔舟。\n随意春芳歇，王孙自可留。", "向晚意不适，驱车登古原。\n夕阳无限好，只是近黄昏。", "长安一片月，万户捣衣声。\n秋风吹不尽，总是玉关情。\n何日平胡虏，良人罢远征。"];
+    </script>
+</head>
+
+<body>
+    <h1 id="tsTitle">
+
+    </h1>
+
+    <p id="tsContent">
+
+    </p>
+    <br><br><br><br><br><br>
+    <div>
+        <input type="button" value="上一页" id="prev">
+        <input type="button" value="下一页" id="next">
+    </div>
+    <script type="text/javascript">
+        var h1Dom = document.querySelector("h1#tsTitle");
+        var pDom = document.querySelector("p#tsContent");
+        h1Dom.textContent = tsTitle[0];
+        pDom.textContent = tsContent[0];
+        var i = 0;
+        document.querySelector("input#next").onclick = function() {
+            h1Dom.textContent = tsTitle[i];
+            pDom.textContent = tsContent[i];
+            if (i < tsTitle.length - 1) {
+                i++;
+            }
+        };
+        document.querySelector("input#prev").onclick = function() {
+            if (i > 0) {
+                i--;
+            }
+            h1Dom.textContent = tsTitle[i];
+            pDom.textContent = tsContent[i];
+        };
+    </script>
+
+</body>
+
+</html>

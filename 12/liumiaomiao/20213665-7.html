@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>20213665-7</title>
+  </head>
+  <style type="text/css">
+    body{
+	 text-align:center;
+     font-family:楷体;
+	 font-size:50px;
+     color:purple;
+	}
+  </style>
+ <body>
+    <input type="button" value="上一首" id="prev">
+	<input type="button" value="下一首" id="next">
+    <h1 id="tsTitle">
+    </h1>
+    <p id="tsContent">
+    </p>
+<script> 
+    var tsTitle =[];
+    tsTitle[0] =["王维:《相思》"];
+	tsTitle[1] =["王维:《画》"];
+    tsTitle[2] =["王维：《山中》"];
+
+	var tsContent = [
+	"红豆生南国，春来发几枝。愿君多采撷，此物最相思。","远看山有色，近听水无声。春去花还在，人来鸟不惊。","荆溪白石出，天寒红叶稀。山路元无雨，空翠湿人衣。"] ;
+   var h1Dom = document.querySelector("h1#tsTitle") ;
+    var pDom =  document.querySelector("p#tsContent");
+	var prevBt = document.querySelector("input#prev");
+    var nextBt = document.querySelector("input#next");
+
+         h1Dom.textContent = tsTitle[0] ;
+         pDom.textContent = tsContent[0] ;
+       var i= 0 ;
+       document.querySelector("input#next").onclick = function(){
+        if (i< tsTitle.length-1) {
+          i++ ;
+		 }
+		 else
+		   {i=i-2;}
+         h1Dom.textContent = tsTitle[i] ;
+         pDom.textContent = tsContent[i] ;
+		
+		   } ;
+	   document.querySelector("input#prev").onclick = function(){
+		 if (i > 0) {
+          i-- ;
+		 }
+		 else
+		   {i=2;}
+         h1Dom.textContent = tsTitle[i] ;
+         pDom.textContent = tsContent[i] ;
+	   } ;
+
+	
+  </script>
+ </body>
+</html>

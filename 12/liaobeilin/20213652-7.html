@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>第七次作业:五行绝句</title>
+  <style type="text/css">
+	 body{
+	  text-align:center;
+	  background-color:green;
+	 
+	 }
+
+	 h1{
+	  font-size:45px;
+	  color:red;
+
+	 }
+
+	 p{
+	 font-family:微软雅黑;
+     font-size:30px;
+	 color:orange;
+	 width:200px;
+	 margin:auto;
+	 }
+
+	 input{
+	    font-size:2em;
+	 }
+  </style>
+
+<script type="text/javascript">
+
+  var ts=["行宫(元稹)","登鹳雀楼(王之涣)","新嫁娘词(王建)","相思(王维)","杂诗(王维)"];
+      
+
+  var sj=["寥落古行宫，宫花寂寞红。白头宫女在，闲坐说玄宗。","白日依山尽，黄河入海流。欲穷千里目，更上一层楼。","三日入厨下，洗手作羹汤。未谙姑食性，先遣小姑尝。","红豆生南国，春来发几枝。愿君多采撷，此物最相思。","君自故乡来，应知故乡事。来日绮窗前，寒梅著花未？"];
+	
+
+
+</script>
+
+ </head>
+ <body>
+  <input type="button"  value="上一首" id="prev" >
+  <input type="button"  value="下一首" id="next" >
+<h1></h1>
+<p></p>
+
+  <script type="text/javascript">
+ 
+      var title=document.querySelector("h1");
+      var content=document.querySelector("p");
+      var prevBt=document.querySelector("input#prev");
+      var nextBt=document.querySelector("input#next");
+      var i=0;
+
+   /* for(var i=0; i<ts.length; i++);
+     	  {
+     	    prevBt.onclick=function(){
+     			title.textContent=ts[i];
+     			content.textContent=sj[i];
+     			};
+     	    nextBt.onclick=function(){
+     			title.textContent=ts[i+1];
+     	        content.textContent=sj[i+1];
+     	        };
+     	  }     ？？？*/
+		  title.textContent=ts[0];
+     	  content.textContent=sj[0];
+
+
+       prevBt.onclick=function(){
+		  if( i>0){
+		  i--;
+		  }	   
+			title.textContent=ts[i];
+			content.textContent=sj[i];
+			};
+
+       nextBt.onclick=function(){
+	    			if(i<ts.length-1){
+	    			i++;
+	    			}
+	    			title.textContent=ts[i];
+	        content.textContent=sj[i];
+	    	 };
+	  
+
+  </script>
+ </body>
+</html>
+
+
+
+
+
+
+

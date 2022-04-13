@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>20213637</title>
+    <style>
+    body{
+	    text-align: center;
+	    font-size: 16 px ;
+        width: 900px;
+	}
+	h1#tsTitle{
+        text-align: center;
+        width: auto;
+        font-size: 30px;
+        color: chocolate;
+
+	 
+	}
+	p#tsContent{
+        text-align: center;
+	    font-size: 2em;
+	    width: 12em ;
+	    color: darkcyan;
+        margin: auto;
+        width: 550px;
+
+	}
+   input{
+        font-size: 1.5em;
+        background-color: #4CAF50; 
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+   }
+
+    </style>
+    <script>
+    var tsTitle =[];
+    tsTitle[0] = "王维：酬郭给事" ;
+	tsTitle[1] = "李商隐：锦瑟" ;
+    tsTitle[2] = "李商隐：春雨" ;
+    var tsContent = ["洞门高阁霭馀辉，桃李阴阴柳絮飞。\n禁里疏钟官舍晚，省中啼鸟吏人稀。\n晨摇玉佩趋金殿，夕奉天书拜琐闱。\n强欲从君无那老，将因卧病解朝衣。","锦瑟无端五十弦，一弦一柱思华年。\n庄生晓梦迷蝴蝶，望帝春心托杜鹃。\n沧海月明珠有泪，蓝田日暖玉生烟。\n此情可待成追忆，只是当时已惘然。","怅卧新春白袷衣，白门寥落意多违。\n红楼隔雨相望冷，珠箔飘灯独自归。\n远路应悲春晼晚，残宵犹得梦依稀。\n玉珰缄札何由达，万里云罗一雁飞。"];
+    </script>
+</head>
+<body>
+    <h1 id="tsTitle">
+     标题
+    </h1>
+    <p id="tsContent">
+    内容
+    </p>
+    <div id="" class="">
+        <input type="button" value="Prev" id="prev">
+        <input type="button" value="Next" id="next">
+    </div>
+    <script>
+        var h1Dom = document.querySelector("h1#tsTitle") ;
+        var pDom =  document.querySelector("p#tsContent");
+        var i= 0 ;
+        document.querySelector("input#next").onclick = function(){
+        if (i < tsTitle.length-1) {
+          i++ ;
+		 }
+        h1Dom.textContent = tsTitle[i] ;
+        pDom.textContent = tsContent[i] ;
+		   } ;
+	    document.querySelector("input#prev").onclick = function(){
+		if (i > 0) {
+          i-- ;
+		 }
+         h1Dom.textContent = tsTitle[i] ;
+         pDom.textContent = tsContent[i] ;
+	   } ;
+    </script>
+    
+</body>
+</html>
