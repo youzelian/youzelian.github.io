@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>第七次作业</title>
+  <style>
+  body{text-align:center;
+       width:220px;
+	   margin:auto;
+      }
+  p{font-size:40px;
+    font-family:仿宋;
+	color:red;
+   }
+ h1{font-size:30px;
+    font-family:仿宋;
+	color:black;
+   }
+ #next{font-size:40px;
+       font-family:黑体;
+	  }
+ #prev{font-size:40px;
+       font-family:黑体;
+	  }
+</style>
+</head>
+<html>
+<body bgcolor="#E0FFFF">
+<p>
+</p>
+<h1>
+</h1>
+<input type="button" value="上一页" id="prev"><!--设置按钮-->
+<input type="button" value="下一页" id="next">
+<script>
+var title=document.querySelector("p");//获取标题
+var content=document.querySelector("h1");//获取内容
+var prevBt=document.querySelector("input#prev");
+var nextBt=document.querySelector("input#next");
+var i="1";//定义一个i
+var ary=[];//数组定义
+var s=[];
+var p=[];
+var poet="1行宫\n唐\n元稹\n寥落古行宫，\n宫花寂寞红。\n白头宫女在，\n闲坐说玄宗。\n2相思\n唐\n王维\n红豆生南国，\n春来发几枝。\n愿君多采撷，\n此物最相思。\n3听筝\n唐\n李端\n鸣筝金粟柱，\n素手玉房前。\n欲得周郎顾，\n时时误拂弦。\n4鹿柴\n唐\n王维\n空山不见人，\n但闻人语响。\n返景入深林，\n复照青苔上。\n5宫词\n唐\n张祜\n故国三千里，\n深宫二十年。\n一声何满子，\n双泪落君前。\n6春晓\n唐\n孟浩然\n春眠不觉晓，\n处处闻啼鸟。\n夜来风雨声，\n花落知多少。\n7春怨\n唐\n金昌绪\n打起黄莺儿，\n莫教枝上啼。\n啼时惊妾梦，\n不得到辽西。\n8怨情\n唐\n李白\n美人卷珠帘，\n深坐蹙蛾眉。\n但见泪痕湿，\n不知心恨谁。\n9杂诗\n唐\n王维\n君自故乡来，\n应知故乡事。\n来日绮窗前，\n寒梅著花未？\n"
+var j=1;
+var k=1;
+for(j=1;j<9;j++)
+{
+	p[j-1]=poet.search(i);//search查询作用
+	i=i*1+1;//i变为数字
+	i.toString();//i变回字符
+	p[j-1+1]=poet.search(i);
+	s[j-1]=poet.substring(p[j-1],p[j+1-1]);//划定古诗范围
+}
+prev.onclick=function(){
+	if(k==1)
+	{
+		k=9;
+	}
+	if(k>1)
+	{
+		k--;
+	}
+	content.textContent=s[k-1];
+}
+next.onclick=function()
+{
+	if(k==9)
+	{
+		k=1;
+	}
+	if(k>0)
+	{
+		k++;
+	}
+	content.textContent=s[k-2];
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style type="text/css">
+        body{
+		  text-align:center;
+		  background:pink;
+		  }
+		p{
+		  font-size:30px;
+		  width:150px;
+		  margin:auto;
+		  line-height:50px;
+		  color:lightgreen;
+		  }
+		input{
+		  font-size:2em;
+		  color:#E8A317;
+		  }
+	</style>
+	<script type="text/javascript">
+	var wangwei = [] ;
+	wangwei[0] ="王维: 相思";
+	wangwei[1] ="红豆生南国";
+	wangwei[2] ="春来发几枝";
+	wangwei[3] ="愿君多采撷";
+	wangwei[4] ="此物最相思";
+	</script>
+</head>
+<body>
+ <input type="button" value="上一页" id="prev">
+ <input type="button" value="下一页" id="next">
+<h1></h1>
+<p></p>   
+<script type="text/javascript">
+var title = document.querySelector("h1");
+var content = document.querySelector("p");
+var prevBt = document.querySelector("input#prev");
+var nextBt = document.querySelector("input#next");
+title.textContent = wangwei[0];
+content.textContent = wangwei[1] + wangwei[2] + wangwei[3] + wangwei[4];
+
+var i = 0;
+prevBt.onclick = function(){
+	content.textContent = wangwei[1] + wangwei[2];
+	}; 
+nextBt.onclick = function(){
+	content.textContent = wangwei[3] + wangwei[4];
+	i++;
+	};
+</script>
+</body>
+
+</html>

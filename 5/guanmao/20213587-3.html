@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        body {
+            padding-top: 50px;
+            font-family: "宋体";
+            color: rgb(179, 48, 209);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        p {
+            font-size: 16px;
+            color: #000099;
+            font-family: "楷体";
+            text-indent: 10px;
+            margin: 15px auto;
+            width: 350px;
+            line-height: 2em;
+            border: 2px solid black;
+        }
+        /***********************
+	下面代码是2022年第三周设计，用来实现超链接个性化
+	***********************/
+        
+        nav {
+            border: 2px solid white;
+            margin: 20px;
+            padding: 10px;
+        }
+        
+        a {
+            font-size: 20px;
+            color: rgb(175, 225, 245);
+            text-decoration: underline;
+            /*无文本修饰*/
+            margin: 10px;
+            /*设置边页空白*/
+            padding: 5px;
+            /*设置填充*/
+            width: 200px;
+            /*设置块级元素的宽*/
+            height: 25px;
+            /*设置块级元素的高*/
+            display: inline-block;
+            /*它是结合了inline和block并保留了它们的特性。所以设置了inline-block属性的元素既具有block元素可以设置width和height属性的特性，又保持了inline元素不换行的特性。*/
+        }
+        /*当一段文本为链接时的属性*/
+        
+        a:link {
+            border: 1px solid green;
+            background-color: white;
+        }
+        /*这段文本被点击之后的属性*/
+        
+        a:visited {
+            border: 1px solid rgb(238, 74, 74);
+            background-color: rgb(72, 173, 224);
+        }
+        /*鼠标指针放在这个链接上时的属性。*/
+        
+        a:hover {
+            border: 1px solid;
+            background-color: rgb(224, 91, 91) yellow;
+        }
+        /*鼠标按下时一瞬间的属性。*/
+        
+        a:active {
+            border: 1px solid;
+            background-color: pink;
+            font-size: 25px;
+        }
+        
+        h1 {
+            font-size: 30px;
+            padding-bottom: 20px;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body background="back.jpg">
+    <h1 id="titlename"></h1>
+    <p>青春不是年华，而是心境；青春不是桃面、丹唇、柔膝，而是深沉的意志，恢宏的想象，炙热的恋情；青春是生命的深泉在涌流。</p>
+    <p>青春气贯长虹，勇锐盖过怯弱，进取压倒苟安。如此锐气，二十后生而有之，六旬男子则更多见。年岁有加，并非垂老，理想丢弃，方堕暮年。</p>
+    <p>途径的光阴里，每一程都有意外欢喜，而没有一种后悔；在未发生之前，唯有珍惜所有时间里的美好存在，才不辜负命运的善意编排。</p>
+    <p>
+        任何事和人<br> 时间终会给我们答案
+        <br> 在细水长流的日子里
+        <br> 我们不说永远 只说珍惜<br>
+    </p>
+    </div>
+    </h3>
+    <a href="https://y.qq.com/n/ryqq/songDetail/4819407">
+歌曲《光阴的故事》
+</a>
+    <a href="https://www.kugou.com/song-36/6yffc3.html?from_360#hash=06A511AAB8C0DAEBF5E70E8A3C7DFB84&album_id=978337">
+歌曲《我不想长大》
+</a>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById("titlename").innerHTML = "青春感想";
+        }
+    </script>
+</body>
+
+</html>

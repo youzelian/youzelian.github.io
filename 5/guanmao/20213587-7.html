@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    body {
+        text-align: center;
+        font-size: 15px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    
+    h1#tsTitle {
+        color: rgb(151, 244, 244);
+        text-shadow: 0 0 4px rgb(44, 166, 169), 0 -5px 4px rgb(40, 153, 194), 2px -10px 6px rgb(10, 115, 134), -2px -15px 11px rgb(4, 73, 98), 2px 15px 18px rgb(15, 81, 203);
+    }
+    
+    p#tsContent {
+        font-size: 2em;
+        width: 12em;
+        margin: auto;
+        color: rgb(177, 56, 13);
+    }
+    
+    input {
+        font-size: 1.5em;
+        box-shadow: rgb(134, 59, 203);
+        color: rgb(77, 68, 142);
+    }
+</style>
+<script type="text/javascript">
+    var tsTitle = [];
+    tsTitle[0] = "王维：送綦毋潜落第还乡";
+    tsTitle[1] = "杜甫：梦李白二首之一";
+    tsTitle[2] = "孟浩然：秋登兰山寄张五";
+    tsTitle[3] = "邱为：寻西山隐者不遇";
+    tsTitle[4] = "綦毋潜：春泛若耶溪";
+    tsTitle[5] = "岑参：与高适薛据登慈恩寺浮图";
+
+    var tsContent = ["圣代无隐者，英灵尽来归。\n遂令东山客，不得顾采薇。\n既至金门远，孰云吾道非？\n江淮度寒食，京洛缝春衣。\n置酒长安道，同心与我违。\n行当浮桂棹，未几拂荆扉。\n远树带行客，孤城当落晖。\n吾谋适不用，勿谓知音稀。\n", "死别已吞声，生别常恻恻。\n江南瘴疠地，逐客无消息。\n故人入我梦，明我长相忆。\n君今在罗网，何以有羽翼？\n恐非平生魂，路远不可测。\n魂来枫林青，魂返关塞黑。\n落月满屋梁，犹疑照颜色。\n水深波浪阔，无使蛟龙得。", "北山白云里，隐者自怡悦。\n相望始登高，心随雁飞灭。\n愁因薄暮起，兴是清秋发。\n时见归村人，沙行渡头歇。\n天边树若荠，江畔洲如月。\n何当载酒来，共醉重阳节。", "绝顶一茅茨，直上三十里。\n扣关无僮仆，窥室惟案几。\n若非巾柴车，应是钓秋水。\n差池不相见，黾勉空仰止。\n草色新雨中，松声晚窗里。\n及兹契幽绝，自足荡心耳。\n虽无宾主意，颇得清净理。\n兴尽方下山，何必待之子。", "幽意无断绝，此去随所偶。\n晚风吹行舟，花路入溪口。\n际夜转西壑，隔山望南斗。\n潭烟飞溶溶，林月低向后。\n生事且弥漫，愿为持竿叟。", "塔势如涌出，孤高耸天宫。\n登临出世界，磴道盘虚空。\n突兀压神州，峥嵘如鬼工。\n四角碍白日，七层摩苍穹。\n下窥指高鸟，俯听闻惊风。\n连山若波涛，奔凑如朝东。\n青槐夹驰道，宫馆何玲珑！\n秋色从西来，苍然满关中。\n五陵北原上，万古青蒙蒙。\n净理了可悟，胜因夙所宗。\n誓将挂冠去，觉道资无穷。"];
+</script>
+
+<body>
+    <h1 id="tsTitle">
+        标题
+    </h1>
+    <p id="tsContent">
+        内容
+    </p>
+    <div id="" class="">
+        <input type="button" value="Prev" id="prev">
+        <input type="button" value="Next" id="next" onclick="">
+    </div>
+    <script type="text/javascript">
+        var h1Dom = document.querySelector("h1#tsTitle");
+        var pDom = document.querySelector("p#tsContent");
+        var i = 0;
+        h1Dom.textContent = tsTitle[0];
+        pDom.textContent = tsContent[0];
+        document.querySelector("input#next").onclick = function() {
+            if (i >= tsTitle.length - 1) {
+                i = 0;
+            } else {
+                i++;
+            }
+            h1Dom.textContent = tsTitle[i];
+            pDom.textContent = tsContent[i];
+        };
+        i
+        i
+        document.querySelector("input#prev").onclick = function() {
+            if (i <= 0) {
+                i = tsTitle.length - 1;
+            } else {
+                i--;
+            }
+            h1Dom.textContent = tsTitle[i];
+            pDom.textContent = tsContent[i];
+        };
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  body{
+  text-align:center;
+  }
+  p{
+  font-size:30px;
+  width:180px;
+  margin:auto;
+  line-height:50px;
+  color:pink;
+  }
+  h1{
+  color:cyan;
+  }
+</style>
+  <script type="text/javascript">
+  var wangwei=[];
+  wangwei[0]="王维：鹿柴";
+  wangwei[1]="空山不见人，但闻人语响。";
+  wangwei[2]="返景入深林，复照青苔上。";
+  </script>
+ </head>
+ <body>  
+<input type="button" value="上一页" id="prev">
+ <input type="button" value="下一页" id="next">
+  <h1></h1>
+  <p></p>
+  <script type="text/javascript">
+   var title=document.querySelector("h1"); 
+   var content=document.querySelector("p"); 
+   var prevBt=document.querySelector("input#prev");
+   var nextBt=document.querySelector("input#next");
+
+   title.textContent=wangwei[0];
+   content.textContent=wangwei[1]+wangwei[2];
+   prevBt.onclick=function(){
+	   content.textContent=wangwei[1];
+   };
+   nextBt.onclick=function(){
+	   content.textContent=wangwei[2];
+   };
+  </script>
+ </body>
+</html>

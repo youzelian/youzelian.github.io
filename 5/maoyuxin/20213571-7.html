@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+  body{
+  text-align:center;
+  font-size:16px;
+  }
+  h1#tsTitle{
+
+  }
+  p#tsContent{
+   font-size:2em;
+   width:12em;
+   margin:auto;
+  }
+  input{
+  color:pink;
+  font-size:2em;}
+  </style>
+  <script type="text/javascript">
+  var tsTitle=[];
+  tsTitle[0]="李白：关山月";
+  tsTitle[1]="李白：子夜四时歌：春歌";
+  tsTitle[2]="李白：子夜四时歌：夏歌";
+  var tsContent=["明月出天山，苍茫云海间。\n长风几万里，吹度玉门关。\n汉下白登道，胡窥青海湾。\n由来征战地，不见有人还。\n戍客望边色，思归多苦颜。\n高楼当此夜，叹息未应闲。","秦地罗敷女，采桑绿水边。\n素手青条上，红妆白日鲜。\n蚕饥妾欲去，五马莫留连。","镜湖三百里，菡萏发荷花。\n五月西施采，人看隘若耶。\n回舟不待月，归去越王家。"];
+  </script>
+ </head>
+ <body>
+  <h1 id="tsTitle">
+  标题
+  </h1>
+  <p id="tsContent">
+  内容
+  </P>
+  <div id=""class="">
+  <input type="button" value="Prev" id="prev">
+  <input type="button" value="Next" id="next">
+  </div>
+  <script type="text/javascript">
+  /**
+  for(var i=0;i<tsTitle.length;i++){
+	  var poet=tsTitle[i]+"\n"+tsContent[i];
+	  alert(poet);
+  }
+   **/
+   
+   var h1Dom=document.querySelector("h1#tsTitle");
+   var pDom=document.querySelector("p#tsContent");
+   //h1Dom.textContent=tsTitle[1];
+   //pDom.textContent=tsContent[1];
+   var i=0;
+     document.querySelector("input#next").onclick=function(){
+		 
+		 h1Dom.textContent=tsTitle[i];
+         pDom.textContent=tsContent[i];
+		 if(i<tsTitle.length-1){
+			 i++;
+		 }
+		};
+     document.querySelector("input#prev").onclick=function(){
+        if(i>0){
+			 i--;
+		 }
+		 h1Dom.textContent=tsTitle[i];
+         pDom.textContent=tsContent[i];
+		 
+	 };
+  </script>
+ </body>
+</html>

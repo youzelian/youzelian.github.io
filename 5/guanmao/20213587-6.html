@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        body {
+            padding-top: 50px;
+            font-family: cursive;
+            background-repeat: no-repeat;
+            background-size: 135%;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        h1,
+        h2 {
+            color: rgb(77, 139, 139);
+            text-align: center;
+        }
+        
+        p {
+            font-size: 30px;
+            width: 360px;
+            margin: auto;
+        }
+        
+        input {
+            cursor: pointer;
+            font-size: 15px;
+            width: 50px;
+            height: 50px;
+            margin: 15px auto;
+            border-radius: 10px;
+            box-shadow: rgb(134, 59, 203);
+            color: rgb(77, 68, 142);
+        }
+    </style>
+
+    <script type="text/javascript">
+        var ti = [];
+        var na = [];
+        var a1 = [];
+        var a2 = [];
+        ti[0] = "秋登兰山寄张五";
+        na[0] = "孟浩然"
+        a1[0] = "北山白云里，隐者自怡悦。相望始登高，心随雁飞灭。愁因薄暮起，兴是清秋发。";
+        a2[0] = "时见归村人，沙行渡头歇。天边树若荠，江畔洲如月。何当载酒来，共醉重阳节。";
+        ti[1] = "寻西山隐者不遇";
+        na[1] = "邱为";
+        a1[1] = "绝顶一茅茨，直上三十里。扣关无僮仆，窥室惟案几。若非巾柴车，应是钓秋水。差池不相见，黾勉空仰止。";
+        a2[1] = "草色新雨中，松声晚窗里。及兹契幽绝，自足荡心耳。虽无宾主意，颇得清净理。兴尽方下山，何必待之子。";
+        ti[2] = "郡斋雨中与诸文士燕集";
+        na[2] = "韦应物";
+        a1[2] = "兵卫森画戟，宴寝凝清香。海上风雨至，逍遥池阁凉。烦疴近消散，嘉宾复满堂。自惭居处崇，未睹斯民康。理会是非遣，性达形迹忘。";
+        a2[2] = "鲜肥属时禁，蔬果幸见尝。俯饮一杯酒，仰聆金玉章。神欢体自轻，意欲凌风翔。吴中盛文史，群彦今汪洋。方知大蕃地，岂曰财赋强。";
+    </script>
+
+</head>
+
+<body background="https://img.zcool.cn/community/017d0355c1ed0e6ac7253f36abb243.jpg@1280w_1l_2o_100sh.jpg">
+    <input type="button" value="上" id="prev">
+    <input type="button" value="下" id="next">
+    <h1></h1>
+    <h2></h2>
+    <p></p>
+    <script type="text/javascript">
+        var title = document.querySelector("h1");
+        var topic = document.querySelector("h2");
+        var content = document.querySelector("p");
+        var prevBt = document.querySelector("input#prev");
+        var nextBt = document.querySelector("input#next");
+        var i = 0;
+        title.textContent = ti[0];
+        topic.textContent = na[0];
+        content.textContent = a1[0] + a2[0];
+        prevBt.onclick = function() {
+            if (i <= 0) {
+                i = 2;
+            } else {
+                i--;
+            }
+            title.textContent = ti[i];
+            topic.textContent = na[i];
+            content.textContent = a1[i] + a2[i];
+        };
+        nextBt.onclick = function() {
+            if (i >= 2) {
+                i = 0;
+            } else {
+                i++;;
+            }
+            title.textContent = ti[i];
+            topic.textContent = na[i];
+            content.textContent = a1[i] + a2[i];
+        };
+    </script>
+</body>
+
+</html>

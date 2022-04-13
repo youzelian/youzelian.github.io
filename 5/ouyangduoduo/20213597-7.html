@@ -1,0 +1,100 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>20213597</title>
+<style type="text/css">
+ body{
+     text-align:center;
+	 color:pink;
+	 background:#E0FFFF;
+	 }
+ h1{
+   font-size:50px;
+   text-align:center;
+   }
+ h2{
+   font-size:40px;
+   text-align:center;
+   }
+ input{
+   font-size:50px;
+   color:#6600cc;
+   text-align:center;
+   }
+  p{
+	font-size:40px;
+	font-family:宋体;
+	text-align:center;
+	margin:auto;
+	line-height:110px;
+	letter-spacing:10px;
+	width:300px;
+	}
+</style>
+<script type="text/javascript">
+  <!--
+	var ts1="春晓（孟浩然）春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少？";
+    var ts2="春夜喜雨（杜甫）好雨知时节，当春乃发生。随风潜入夜，润物细无声。";
+	var ts3="使至塞上 王维 唐朝  单车欲问边，属国过居延。征蓬出汉塞，归雁入胡天。大漠孤烟直，长河落日圆。萧关逢候骑，都护在燕然。";
+	var tm=[];
+	var sr=[];
+	var gs=[];
+	tm[0]="春晓  ";
+	sr[0]="孟浩然";
+	gs[0]="春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少？";
+	tm[1]="春夜喜雨 ";
+	sr[1]="杜甫";
+	gs[1]="好雨知时节，当春乃发生。随风潜入夜，润物细无声。";
+	tm[2]="使至塞上";
+	sr[2]="王维";
+	gs[2]="单车欲问边，属国过居延。征蓬出汉塞，归雁入胡天。大漠孤烟直，长河落日圆。萧关逢候骑，都护在燕然。";
+  //-->
+</script>
+</head>	
+<body>
+<input type="button" value="上一首" id="prev">
+<input type="button" value="下一首" id="next">
+<h1>春晓</h1>
+  <h2>孟浩然</h2>
+  <p></p>
+ <script type="text/javascript">
+ <!--
+	var title1 = document.querySelector("h1");
+	var title2 = document.querySelector("h2");
+	var content = document.querySelector("p");
+	var prveBt = document.querySelector("prev");
+	var nextBt = document.querySelector("next");
+	var i=0
+	title1.textContent = tm[0];
+    title2.textContent = sr[0];
+	content.textContent =gs[0];
+    prev.onclick = function(){
+		if (i<=0)
+		{i=2
+		}
+		else
+        i--;
+	    content.textContent=gs[i];
+		title1.textContent=tm[i];
+		title2.textContent=sr[i];
+       
+
+	  };
+   
+	  next.onclick = function(){
+		if (i>=2)
+		{i=0
+		}
+		else
+		i++;
+	    content.textContent = gs[i];
+		title1.textContent=tm[i];
+		title2.textContent=sr[i];
+		
+	  };
+ //-->
+ </script>
+ </body>
+</html>
