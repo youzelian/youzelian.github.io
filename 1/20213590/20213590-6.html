@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style type ="text/css">
+    body{
+        text-align: center;
+        
+    }
+    p{
+        font-size: 30px;
+        width: 480px;
+        margin: auto;
+        
+    }
+    input{
+        font-size:2em
+    }
+</style>
+<script type="text/javascript">
+var dufu =[];
+dufu[0]="杜甫 登高";
+dufu[1]="风急天高猿啸哀，渚清沙白鸟飞回。";
+dufu[2]="无边落木萧萧下，不尽长江滚滚来。";
+dufu[3]="万里悲秋常作客，百年多病独登台。";
+dufu[4]="艰难苦恨繁霜鬓，潦倒新停浊酒杯。";
+dufu[5]="杜甫 望岳";
+dufu[6]="西岳崚嶒竦处尊，诸峰罗立如儿孙。";
+dufu[7]="安得仙人九节杖，拄到玉女洗头盆。";
+dufu[8]="车箱入谷无归路，箭栝通天有一门。";
+dufu[9]="稍待西风凉冷后，高寻白帝问真源。";
+
+
+
+</script>
+</head>
+<body>
+    <input type="button" value="上一页"id=prev>
+    <input type="button" value="下一页"id=next>
+<h1></h1>
+<p></p>
+<script type="text/javascript">
+var title = document.querySelector("h1");
+var content =document.querySelector("p");
+var prevBt =document.querySelector("input#prev");
+var nextBt =document.querySelector("input#next");
+title.textContent=dufu[0];
+content.textContent= dufu[1]+dufu[2]+dufu[3]+dufu[4];
+prevBt.onclick = function(){
+    title.textContent=dufu[0]
+    content.textContent=dufu[1]+dufu[2]+dufu[3]+dufu[4];
+};
+nextBt.onclick =function(){
+    title.textContent=dufu[5];
+    content.textContent =dufu[6]+dufu[7]+dufu[8]+dufu[9];
+};
+
+
+</script>
+
+
+
+</body>
