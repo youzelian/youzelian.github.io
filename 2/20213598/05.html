@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       #text{
+               font-size: 50px;
+               color: rgb(25, 221, 179);
+            }
+        
+        input{
+               font-size: 50px;
+               color: rgb(228, 31, 57);
+               background-color: black;
+             }
+            p{ display: none;
+               font-size: 50px;
+               text-align: center;
+               color: antiquewhite;
+            }
+        .fh a{
+             color: rgb(245, 241, 241);
+              text-decoration: none;
+              font-family: 楷体;
+              font-size: 100px; ;
+             }
+           a:link{font-family: 楷体;} 
+           a:visited{font-family: 楷体;} 
+           a:hover{color: rgb(219, 23, 23);font-family: 楷体;}
+           a:active {color: blue;}
+        body{
+             background-color: black;
+             text-align: center;
+            }           
+    </style> 
+</head>
+<body>
+    <h1 id="text">选一个吧！</h1>
+    <p id="p1">桃夭<br>
+               桃之夭夭，灼灼其华。<br>之子于归，宜其室家。<br>
+               桃之夭夭，有蕡其实。<br>之子于归，宜其家室。<br>
+               桃之夭夭，其叶蓁蓁。<br>之子于归，宜其家人。</p>
+    <p id="p2">无衣<br>
+               岂曰无衣？七兮。<br>不如子之衣，安且吉兮。<br>
+               岂曰无衣？六兮。<br>不如子之衣，安且燠兮。</p>   
+ <input type="button" value="桃夭" id="b1" >
+ <input type="button" value="无衣" id="b2" >   
+ <script>
+     var he=document.querySelector("#text");
+     var p1=document.querySelector("#p1");
+     var p2=document.querySelector("#p2");     
+     var button=document.querySelector("#b1");
+         button.onclick=function(){
+                                    p1.style.display="block"
+                                    p2.style.display="none"
+                                    
+                                  }
+     var button=document.querySelector("#b2");     
+         button.onclick=function(){
+                                    p2.style.display="block"
+                                    p1.style.display="none"
+                                  }       
+ </script>
+ <div class="fh"><a href="..\20213598.html"target="_self" title="返回">返回</a></div>   
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>20213594</title>
+  <style type="text/css">
+	h1{
+       font-size:100px;
+	  }
+	h2{
+       font-size:30px;
+	  }
+    body{
+         text-align:center;
+		 color:skyblue;
+		 background-color:lightpink;
+	    }
+	p{
+      font-size:60px;
+	  width:390px;
+      text-align:center;
+	  margin:auto;
+	  line-height:90px;
+	 }
+	 input{
+	       font-size:2em;
+		   color:#6633cc;
+	      }
+
+  </style>
+  <script type="text/javascript">
+  <!--
+	var ts1="登鹳雀楼  王之涣 〔唐代〕白日依山尽，黄河入海流。欲穷千里目，更上一层楼。";
+    var ts2="相思 王维 〔唐代〕红豆生南国，春来发几枝。愿君多采撷，此物最相思。";
+	var ts3="春晓  孟浩然 〔唐代〕 春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少。";
+	var tm=[];
+	var zz=[];
+	var ts=[];
+	tm[0]="登鹳雀楼  ";
+	zz[0]="王之涣〔唐代〕";
+	ts[0]="白日依山尽，黄河入海流。欲穷千里目，更上一层楼。";
+	tm[1]="相思 ";
+	zz[1]="王维 〔唐代〕";
+	ts[1]="红豆生南国，春来发几枝。愿君多采撷，此物最相思。";
+	tm[2]="春晓";
+	zz[2]="孟浩然 〔唐代〕";
+	ts[2]="春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少。";
+  //-->
+  </script>
+ </head>
+ <body>
+  <input type="button" value="上一首" id="prev">
+  <input type="button" value="下一首" id="next">
+  <h1>登鹳雀楼</h1>
+  <h2>王之涣〔唐代〕</h2>
+  <p></p>
+ <script type="text/javascript">
+ <!--
+	var title1 = document.querySelector("h1");
+	var title2 = document.querySelector("h2");
+	var content = document.querySelector("p");
+	var prveBt = document.querySelector("prev");
+	var nextBt = document.querySelector("next");
+	var i=0
+	title1.textContent = tm[0];
+    title2.textContent = zz[0];
+	content.textContent =ts[0];
+
+    
+	  prev.onclick = function(){
+		if (i<=0)
+		{i=2
+		}
+		else
+        i--;
+	    content.textContent=ts[i];
+		title1.textContent=tm[i];
+		title2.textContent=zz[i];
+       
+
+	  };
+   
+	  next.onclick = function(){
+		if (i>=2)
+		{i=0
+		}
+		else
+		i++;
+	    content.textContent = ts[i];
+		title1.textContent=tm[i];
+		title2.textContent=zz[i];
+		
+	  };
+ //-->
+ </script>
+ </body>
+</html>

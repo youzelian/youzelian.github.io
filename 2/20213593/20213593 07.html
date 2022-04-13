@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<center>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <input type="button" value="上一首" id="prev">
+  <input type="button" value="下一首" id="next">
+  <title>Document</title>
+  <style>
+    h1
+    {
+      font-size: 50px;
+    }
+    p
+    {
+      font-size: 50px;
+      width: 600px;
+    }
+    input
+    {
+      text-align: center;
+            font-size: 30px;
+            background-color: rgb(196, 250, 232);
+            color: rgb(224, 80, 13);
+            height: 60px;
+            width: 130px;
+            margin-inline: 10px;
+            font-family: 楷体
+    }
+    body
+    {
+            background-color: lightpink;
+            text-align: center;
+            font-family: 楷体;
+    }
+  </style>
+</head>
+<body>
+  <h1></h1>
+  <p id="p1"></p>
+  <script>
+    var tit = [];
+    var ts = [];
+    tit[0] = "游子吟 孟郊";
+    tit[1] = "送别 王维";
+    tit[2] = "送杜少府之任蜀州 王勃";
+    ts[0] = "慈母手中线，游子身上衣。临行密密缝，意恐迟迟归。谁言寸草心，报得三春辉？";
+    ts[1] = "城阙辅三秦，风烟望五津。与君离别意，同是宦游人。海内存知己，天涯若比邻。无为在歧路，儿女共沾巾。";
+    ts[2] = "下马饮君酒，问君何所之。君言不得意，归卧南山陲。但去莫复闻，白云无尽时。";
+    var input = document.querySelector("#prev");
+    var input = document.querySelector("#next");
+    var h1 = document.querySelector("h1");
+    var p = document.querySelector("#p1");
+    var i = 0;
+    h1.textContent=tit[0];
+    p1.textContent=ts[0];
+    prev.onclick = function(){
+      if(i>=1&&i<=2){
+        h1.textContent=tit[i-1];
+        p1.textContent=ts[i-1];
+        i--;
+      }
+      else{
+        h1.textContent=tit[2];
+        p1.textContent=ts[2];
+        i=2;
+      }
+    }
+    next.onclick = function(){
+      if(i>=0&&i<=1){
+        h1.textContent=tit[i+1];
+        p1.textContent=ts[i+1];
+        i++;
+      }
+      else{
+        h1.textContent=tit[0];
+        p1.textContent=ts[0];
+        i=0;
+      }
+    }
+  </script>
+</body>
+</center>
+</html>

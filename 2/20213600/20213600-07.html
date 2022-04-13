@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>20213600-6</title>
+  <style type="text/css">
+	input{
+	width:150px;
+	height:60px;
+	border:none;
+	font-size:30px;
+	background:#00ccff;
+	color:white;
+	}
+	div{
+	height:80px;
+	}
+	h1{
+    color:#ff3333;
+    text-align:center;
+    font-family:"楷体";
+    font-size:4.5em;
+    }
+    h2{
+    text-align:center;
+    font-size:3em;
+    }
+    p{
+    color:#3366ff;
+    text-align:center;
+    font-family:"楷体";
+	font-size:50px;
+	width:350px;
+	line-height:58px;
+	margin:auto;
+  }
+  </style>
+ </head>
+ <body>
+  <div>
+   <div style="float:left">
+   <input type="button" value="首页" onclick="" id="o">
+   <input type="button" value="上一首" onclick="" id="m">
+   </div>
+   <div style="float:right">
+    <input type="button" value="下一首" onclick="" id="n">
+	<input type="button" value="尾页" onclick="" id="s">
+   </div>
+ </div>
+ <h1></h1>
+ <h2></h2>
+ <p></p>
+<script type="text/javascript">
+	var a=[];
+	a[1]="送春";
+	a[2]="望庐山瀑布";
+	a[3]="登飞来峰";
+	a[4]="游山西村";
+	a[5]="客至";
+	var b=[];
+	b[1]="王令";
+	b[2]="李白";
+	b[3]="王安石";
+	b[4]="陆游";
+	b[5]="杜甫";
+	var c=[];
+	c[1]="三月残花落更开 小檐日日燕飞来 子规夜半犹啼血 不信东风唤不回";
+	c[2]="日照香炉生紫烟 遥看瀑布挂前川 飞流直下三千尺 疑是银河落九天";
+	c[3]="飞来山上千寻塔 闻说鸡鸣见日升 不畏浮云遮望眼 只缘身在最高层";
+	c[4]="莫笑农家腊酒浑 丰年留客足鸡豚 山重水复疑无路 柳暗花明又一村 萧鼓追随春社近 衣冠简朴古风存 从今若许闲乘月 拄杖无时夜叩门";
+	c[5]="舍南舍北皆春水 但见群鸥日日来 花径不曾缘客扫 蓬门今始为君开 盘飧市远无兼味 樽酒家贫只旧醅 肯与邻翁相对饮 隔篱呼取尽馀杯";
+	var x=0;
+	var q=document.querySelector("h1");
+	var w=document.querySelector("h2");
+	var e=document.querySelector("p");
+	m.onclick=function(){
+    if(x<=1){
+			x=5;			
+			}
+	else{
+		x--;
+		}
+	q.textContent=a[x];
+	w.textContent=b[x];
+	e.textContent=c[x];
+	}
+	n.onclick=function(){
+	if(x>=5){
+			x=1;			
+			}
+	else{
+		x++;
+		}
+	q.textContent=a[x];
+	w.textContent=b[x];
+	e.textContent=c[x];
+	}
+	o.onclick=function(){
+	x=1;
+	q.textContent=a[x];
+	w.textContent=b[x];
+	e.textContent=c[x];
+				         }
+	s.onclick=function(){
+	x=5;
+	q.textContent=a[x];
+	w.textContent=b[x];
+	e.textContent=c[x];
+				         }
+
+</script>
+  
+ </body>
+</html>

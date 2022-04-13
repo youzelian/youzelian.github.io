@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>20213599</title>
+		<style type="text/css">
+			body{
+					
+				}
+			h1{
+				font-size:50px;
+				width:1000px;
+				margin:auto;
+				text-align:center;
+			  }
+			p{
+				font-size:38px;
+				text-align:center;
+				width:490px;
+				line-height:58px;
+				margin:auto;
+			 }
+			 input{
+					font-size:38px
+				  }
+			ul{
+				list-style:none;
+				text-align:center;
+			  }
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>
+			<input id="p1" type="button" value="《上一首》">
+			<input id="p2" type="button" value="《下一首》">
+			</li>
+		</ul>
+		<h1></h1>
+		<p></p>
+		<script type="text/javascript">
+			var n=[];
+			var x=[];
+			n[0]="杜甫：佳人";
+			x[0]="绝代有佳人，幽居在空谷。自云良家子，零落依草木。关中昔丧乱，兄弟遭杀戮。官高何足论，不得收骨肉，世情恶衰歇，万事随转烛。夫婿轻薄儿，新人美如玉。合昏尚知时，鸳鸯不独宿。但见新人笑，那闻旧人哭！在山泉水清，出山泉水浊。侍婢卖珠回，牵萝补茅屋。摘花不插发，采柏动盈掬。天寒翠袖薄，日暮倚修竹。";
+			n[1]="王维：送别";
+			x[1]="下马饮君酒，问君何所之。君言不得意，归卧南山陲。但去莫复闻，白云无尽时。";
+			n[2]="王昌龄：同从弟南斋玩月忆山阴崔少府";
+			x[2]="高卧南斋时，开帷月初吐。清辉淡水木，演漾在窗户。苒苒几盈虚，澄澄变今古。美人清江畔，是夜越吟苦。千里其如何，微风吹兰杜。";
+			var i=0;
+			var m=document.querySelector("h1");
+			var t=document.querySelector("p");
+			m.textContent=n[0];
+			t.textContent=x[0];
+			p1.onclick=function(){
+							if(i<=0){
+								i=2;
+								   }
+							else{
+								i--;
+								}
+								m.textContent=n[i];
+								t.textContent=x[i];
+								 }
+			p2.onclick=function(){
+							if(i>=2){
+									i=0;
+								   }
+							else{
+								i++;
+								}
+							m.textContent=n[i];
+							t.textContent=x[i];
+								 }
+		</script>
+	</body>
+</html>

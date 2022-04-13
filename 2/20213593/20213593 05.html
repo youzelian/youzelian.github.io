@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <input type="button" value="送别" id="b1">
+        <input type="button" value="游子吟" id="b2">
+    <title>古诗两篇</title>
+    <style>
+        h1
+        {
+            font-size: 50px;
+            display: none;
+        } 
+        h2
+        {
+            font-size: 50px;
+            display: none;
+            font-weight: bolder;
+        }
+        #p1
+        {
+            font-size: 30px;
+            display: none;
+        }
+        #p2
+        {
+            font-size: 40px;
+            display: none;
+           
+        }
+        #p3
+        {
+            font-size: 30px;
+            display: none;
+        }
+        #p4
+        {
+            font-size: 40px;
+            display: none;
+           
+        }
+        body
+        {
+            background-color: lightpink;
+            text-align: center;
+            font-family: 楷体;
+            
+        }
+        input
+        {
+            font-size: 30px;
+            background-color: rgb(196, 250, 232);
+            color: rgb(224, 80, 13);
+            height: 60px;
+            width: 120px;
+            margin-inline: 10px;
+            font-family: 楷体
+            
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>
+            送别
+        </h1>
+        <p id="p1">
+            王维
+        </p>
+        <p id="p2">
+            下马饮君酒，问君何所之。<br>君言不得意，归卧南山陲。<br>但去莫复闻，白云无尽时。<br>
+        </p>
+        <h2>
+            游子吟
+        </h2> 
+        <p id="p3">
+            孟郊
+        </p> 
+        <p id="p4">
+            慈母手中线，游子身上衣。<br>临行密密缝，意恐迟迟归。<br>谁言寸草心，报得三春辉？<br>
+        </p>
+        
+        <script>
+            var h1 = document.querySelector("h1");
+            var h2 = document.querySelector("h2");
+            var p1 = document.querySelector("#p1");
+            var p2 = document.querySelector("#p2");
+            var input = document.querySelector("#b1")
+            input.onclick = function()
+            {
+                p1.style.display="table";
+                p2.style.display="table";
+                h1.style.display="table";
+                p3.style.display="none";
+                p4.style.display="none";
+                h2.style.display="none";
+            }
+            var input = document.querySelector("#b2")
+            input.onclick = function()
+            {
+                p3.style.display="table";
+                p4.style.display="table";
+                h2.style.display="table";
+                p1.style.display="none";
+                p2.style.display="none";
+                h1.style.display="none";
+            }
+        </script>
+   </center>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>20213600-05</title>
+  <style type="text/css">
+	ul{
+	   text-align:center;
+	  }
+	h1{
+		text-align:center;
+	    margin:auto;
+		font-family:"楷体";
+		font-size:4.5em;
+	  }
+	h2{
+		text-align:center;
+	    margin:auto;
+		font-size:2.5em;
+		font-family:"楷体";
+	  }
+	p{
+		text-align:center;
+		font-size:2.5em;
+		line-height:58px;
+		margin:auto;
+		font-family:"楷体";
+	  }
+    input{
+	   font-size:38px;
+	   width:300px;
+	   border:2px groove #ffff33;
+	   color:rgba(255,100,0,1);
+	   cursor:pointer;/*手势*/
+	     }
+  </style>
+ </head>
+ <body>
+  <ul>
+   <input type="button" value="《望庐山瀑布》" onclick=""  id="p1">
+   <input type="button" value="《送别》" onclick="" id="p2">
+  </ul>
+  <h1>
+  </h1>
+  <h2>
+  </h2>
+  <p>
+  </p>
+  <script type="text/javascript">
+			var m1="望庐山瀑布";
+			var n1="李白";
+			var x=[];
+				x[1]="日照香炉生紫烟，遥看瀑布挂前川。";
+				x[2]="下马饮君酒，问君何所之。";
+				x[3]="君言不得意，归卧南山陲。";
+			var m2="送别";
+			var n2="王维";
+			var y=[];
+				y[1]="飞流直下三千尺，疑是银河落九天。";	 
+				y[2]="但去莫复闻，白云无尽时。";
+			var m=document.querySelector("h1");
+			var n=document.querySelector("h2");
+			var t=document.querySelector("p");
+			p1.onclick=function(){
+							m.textContent=m1;
+							n.textContent=n1;
+							t.textContent=x[1]+y[1];
+								 }
+			p2.onclick=function(){
+							m.textContent=m2;
+							n.textContent=n2;
+							t.textContent=x[2]+x[3]+y[2];
+								 }
+  </script>
+ </body>
+</html>

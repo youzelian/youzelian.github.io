@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<center>
+<head>
+    <meta charset="UTF-8">
+        <input type="button" value="换一首" id="change">
+    <title>古诗集</title>
+    <style>
+        input
+        {
+            text-align: center;
+            font-size: 30px;
+            background-color: rgb(196, 250, 232);
+            color: rgb(224, 80, 13);
+            height: 60px;
+            width: 120px;
+            margin-inline: 10px;
+            font-family: 楷体
+        }
+        h1
+        {
+            font-size: 50px;
+        } 
+        p
+        {
+            font-size: 30px;
+        }
+        body
+        {
+            background-color: lightpink;
+            text-align: center;
+            font-family: 楷体;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1 id="1">
+
+    </h1>  
+    <p id="2">
+        
+    </p>
+
+    <script type="text/javascript">
+        var input = document.querySelector("#change");
+        var i=0;
+        input.onclick = function(){
+       if(i==0)
+        {
+            document.getElementById("1").innerHTML=" 送别&nbsp;王维";
+            document.getElementById("2").innerHTML="下马饮君酒，问君何所之。<br>君言不得意，归卧南山陲。<br>但去莫复闻，白云无尽时。<br> ";
+        }
+        if(i==1)
+        {
+            document.getElementById("1").innerHTML="游子吟&nbsp;孟郊";
+            document.getElementById("2").innerHTML="慈母手中线，游子身上衣。<br>临行密密缝，意恐迟迟归。<br>谁言寸草心，报得三春辉？<br>";
+        }
+        if(i==2)
+        {
+            document.getElementById("1").innerHTML="送杜少府之任蜀州&nbsp;王勃";
+            document.getElementById("2").innerHTML="城阙辅三秦，风烟望五津。<br>与君离别意，同是宦游人。<br>海内存知己，天涯若比邻。<br>无为在歧路，儿女共沾巾。<br>";
+        }
+        i++;
+        if(i==3)
+        i=0;
+       }
+    </script>
+</body>
+</center>
+</html>

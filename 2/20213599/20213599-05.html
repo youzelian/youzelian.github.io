@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>20213599</title>
+		<style type="text/css">
+			body{
+					border:2px;
+					width:1400px;
+				}
+			h1{
+				font-size:50px;
+				border:2px;
+				margin:20px 30px;
+				padding:20px auto;
+				text-align:center;
+			  }
+			p{
+				font-size:38px;
+				text-align:center;
+				border:2px;
+				margin:30px 450px;
+				padding:20px;
+			 }
+			 input{
+					font-size:38px
+				  }
+			ul{
+				list-style:none;
+				text-align:center;
+				
+			  }
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>
+			<input id="p1" type="button" value="《佳人》">
+			<input id="p2" type="button" value="《送别》">
+			</li>
+		</ul>
+		
+		<h1>
+			标题
+		</h1>
+		<p>
+			内容
+		</p>
+		
+		<script type="text/javascript">
+			var p1=document.getElementById("p1");
+			var p2=document.getElementById("p2");
+			var n1="杜甫：佳人";
+			var x1="绝代有佳人，幽居在空谷。自云良家子，零落依草木。关中昔丧乱，兄弟遭杀戮。官高何足论，不得收骨肉，世情恶衰歇，万事随转烛。夫婿轻薄儿，新人美如玉。合昏尚知时，鸳鸯不独宿。但见新人笑，那闻旧人哭！在山泉水清，出山泉水浊。侍婢卖珠回，牵萝补茅屋。摘花不插发，采柏动盈掬。天寒翠袖薄，日暮倚修竹。";
+			var n2="王维：送别";
+			var x2="下马饮君酒，问君何所之。君言不得意，归卧南山陲。但去莫复闻，白云无尽时。";
+			var m=document.querySelector("h1");
+			var t=document.querySelector("p");
+			p1.onclick=function(){
+							m.textContent=n1;
+							t.textContent=x1;
+								 }
+			p2.onclick=function(){
+							m.textContent=n2;
+							t.textContent=x2;
+								 }
+		</script>
+	</body>
+</html>
