@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+
+  <title>这是有几首古诗大全😅</title>
+  <style type="text/css">
+  body{
+  background:url(https://pic1.zhimg.com/80/v2-59a9765872ba089b64c227f51027428c_720w.jpg?source=1940ef5c) no-repeat center top;
+  background-size:cover;
+  background-attachment:fixed;
+  text-align: center;
+  }
+  h1{   color:Aquamarine;
+        font-size:50px;
+		text-shadow:3px 3px 4px green;
+		   }
+  p {  color:teal;
+       font-size:40px;
+	   width:530px ;
+	   margin:auto ;
+	   line-height:55px;
+       }
+  input {color:darkblue;
+       font-size:40px;
+	   border-bottom-color:LightSlateGray;
+	   border-radius:2em;  }
+  </style>
+  <script type="text/javascript">
+  <!--
+    var tsTitle =[];
+    tsTitle[0] = "杜甫：梦李白二首之一" ;
+	tsTitle[1] = "杜甫：梦李白二首之二" ;
+    tsTitle[2] = "王维：送别" ;
+    tsTitle[3] = "杜甫《春日忆李白》" ;
+    tsTitle[4] = "李白《渡荆门送别》" ;
+    tsTitle[5] = "孟浩然《留别王维》" ;
+    tsTitle[6] = "王昌龄：塞上曲" ;
+    tsTitle[7] = "李白：赠孟浩然" ;
+    tsTitle[8] = "张九龄：望月怀远" ;
+    tsTitle[9] = "沈全期：杂诗" ;
+
+	var tsContent = ["死别已吞声，生别常恻恻。\n江南瘴疠地，逐客无消息。\n故人入我梦，明我长相忆。\n君今在罗网，何以有羽翼？\n恐非平生魂，路远不可测。\n魂来枫林青，魂返关塞黑。\n落月满屋梁，犹疑照颜色。\n水深波浪阔，无使蛟龙得。","浮云终日行，游子久不至。\n三夜频梦君，情亲见君意。\n告归常局促，苦道来不易。\n江湖多风波，舟楫恐失坠。\n出门搔白首，若负平生志。\n冠盖满京华，斯人独憔悴。\n孰云网恢恢，将老身反累。\n千秋万岁名，寂寞身后事。","下马饮君酒，问君何所之。\n君言不得意，归卧南山陲。\n但去莫复闻，白云无尽时。","白也诗无敌，飘然思不群。\n清新庾开府，俊逸鲍参军。\n渭北春天树，江东日暮云。\n何时一樽酒，重与细论文。","渡远荆门外，来从楚国游。\n山随平野尽，江入大荒流。\n月下飞天镜，云生结海楼。\n仍怜故乡水，万里送行舟。","寂寂竟何待，朝朝空自归。\n欲寻芳草去，惜与故人违。\n当路谁相假，知音世所稀。\n只应守寂寞，还掩故园扉。","蝉鸣空桑林，八月萧关道。\n出塞复入塞，处处黄芦草。\n从来幽并客，皆向沙场老。\n莫学游侠儿，矜夸紫骝好。","吾爱孟夫子，风流天下闻。\n红颜弃轩冕，白首卧松云。\n醉月频中圣，迷花不事君。\n高山安可仰，徒此挹清芬。","海上生明月，天涯共此时。\n情人怨遥夜，竟夕起相思！\n灭烛怜光满，披衣觉露滋。\n不堪盈手赠，还寝梦佳期。","闻道黄龙戍，频年不解兵。\n可怜闺里月，长在汉家营。\n少妇今春意，良人昨夜情。\n谁能将旗鼓，一为取龙城？"] ;
+	//-->
+  </script>
+ </head>
+ <body>
+  <h1 id="tsTitle">
+   这里是古诗集
+  </h1>
+  <p id="tsContent">
+ ------ .请点击浏览古诗. ------
+  </p>
+  <div id="" class="">
+	<input type="button" value="Prev" id="prev">
+	<input type="button" value="Next" id="next">
+  </div>
+  <script type="text/javascript">
+  <!--
+
+   var h1Dom = document.querySelector("h1#tsTitle") ;
+   var pDom =  document.querySelector("p#tsContent");
+   h1Dom.textContent =  tsTitle[0] ;
+   pDom.textContent =  tsContent[0] ;
+       var i= 0 ;
+       document.querySelector("input#next").onclick = function(){
+	    
+        if (i < tsTitle.length-1) {
+          i++ ;
+		 }
+		 else{i=0;}
+         h1Dom.textContent = tsTitle[i] ;
+         pDom.textContent = tsContent[i] ;
+		   } ;
+	   document.querySelector("input#prev").onclick = function(){
+	    
+		 if (i > 0) {
+          i-- ;}
+		  else{i=tsTitle.length-1;}
+         h1Dom.textContent = tsTitle[i] ;
+         pDom.textContent = tsContent[i] ;
+	   } ;
+  //-->
+  </script>
+ </body>
+</html>
