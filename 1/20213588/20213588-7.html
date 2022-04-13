@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <style type="text/css">
+    body{
+	 text-align: center;
+	 font-size: 16 px ;
+	}
+	h1#tsTitle{
+	 
+	}
+	p#tsContent{
+	 font-size: 2em;
+	 width: 12em ;
+	 margin: auto ;
+	}
+   input{
+    font-size: 1.5em;
+   }
+  </style>
+  <script type="text/javascript">
+  <!--
+	var poet ="010杜甫:佳人\n绝代有佳人,幽居在空谷。\n自云良家子,零落依草木。\n关中昔丧乱,兄弟遭杀戮。\n官高何足论,不得收骨肉。\n世情恶衰歇,万事随转烛。\n夫婿轻薄儿,新人美如玉。\n合昏尚知时,鸳鸯不独宿。\n但见新人笑,那闻旧人哭!\n在山泉水清,出山泉水浊。\n侍婢卖珠回,牵萝补茅屋。\n摘花不插发,采柏动盈掬。\n天寒翠袖薄,日暮倚修竹。\n011杜甫:梦李白二首之一\n死别已吞声,生别常恻恻。\n江南瘴疠地,逐客无消息。\n故人入我梦,明我长相忆。\n君今在罗网,何以有羽翼?\n恐非平生魂,路远不可测。\n魂来枫林青,魂返关塞黑。\n落月满屋梁,犹疑照颜色。\n水深波浪阔,无使蛟龙得。\n012杜甫:梦李白二首之二\n浮云终日行,游子久不至。\n三夜频梦君,情亲见君意。\n告归常局促,苦道来不易。\n江湖多风波,舟楫恐失坠。\n出门搔白首,若负平生志。\n冠盖满京华,斯人独憔悴。\n孰云网恢恢,将老身反累。\n千秋万岁名,寂寞身后事。\n013王维:送别\n下马饮君酒,问君何所之。\n君言不得意,归卧南山陲。\n但去莫复闻,白云无尽时。\n014王维:送綦毋潜落第还乡\n圣代无隐者,英灵尽来归。\n遂令东山客,不得顾采薇。\n既至金门远,孰云吾道非?\n江淮度寒食,京洛缝春衣。\n置酒长安道,同心与我违。\n行当浮桂棹,未几拂荆扉。\n远树带行客,孤城当落晖。\n吾谋适不用,勿谓知音稀。\n015王维:青溪\n言入黄花川,每逐青溪水。\n随山将万转,趣途无百里。\n声喧乱石中,色静深松里。\n漾漾泛菱荇,澄澄映葭苇。\n我心素已闲,清川澹如此。\n请留盘石上,垂钓将已矣。\n"
+
+    var tsTitle =[];
+    tsTitle[0] = "杜甫：梦李白二首之一" ;
+	tsTitle[1] = "杜甫：梦李白二首之二" ;
+    tsTitle[2] = "王维：送别" ;
+	var tsContent = ["死别已吞声，生别常恻恻。\n江南瘴疠地，逐客无消息。\n故人入我梦，明我长相忆。\n君今在罗网，何以有羽翼？\n恐非平生魂，路远不可测。\n魂来枫林青，魂返关塞黑。\n落月满屋梁，犹疑照颜色。\n水深波浪阔，无使蛟龙得。","浮云终日行，游子久不至。\n三夜频梦君，情亲见君意。\n告归常局促，苦道来不易。\n江湖多风波，舟楫恐失坠。\n出门搔白首，若负平生志。\n冠盖满京华，斯人独憔悴。\n孰云网恢恢，将老身反累。\n千秋万岁名，寂寞身后事。","下马饮君酒，问君何所之。\n君言不得意，归卧南山陲。\n但去莫复闻，白云无尽时。"] ;
+
+  //-->
+  </script>
+ </head>
+ <body>
+  <h1 id="tsTitle">
+   标题
+  </h1>
+  <p id="tsContent">
+  内容
+  </p>
+  <div id="" class="">
+	<input type="button" value="Prev" id="prev">
+	<input type="button" value="Next" id="next">
+  </div>
+  <script type="text/javascript">
+  <!--
+  /**第一阶段
+	for (var i=0 ; i< tsTitle.length ; i++ ){
+      var poet = tsTitle[i] +"\n"+ tsContent[i] ; 
+	  alert(poet) ;
+	}
+	**/
+	//第二阶段
+   var h1Dom = document.querySelector("h1#tsTitle") ;
+   var pDom =  document.querySelector("p#tsContent");
+   h1Dom.textContent =  tsTitle[0] ;
+   pDom.textContent =  tsContent[0] ;
+       var i= 0 ;
+       document.querySelector("input#next").onclick = function(){
+	    //alert(tsTitle[i] +"\n"+ tsContent[i]);
+        if (i < tsTitle.length-1) {
+          i++ ;
+		 }
+		 h1Dom.textContent = tsTitle[i] ;
+         pDom.textContent = tsContent[i] ;
+		 } ;
+	   document.querySelector("input#prev").onclick = function(){
+	    //alert(tsTitle[i] +"\n"+ tsContent[i]);
+		 if (i > 0) {
+          i-- ;
+		 }
+         h1Dom.textContent = tsTitle[i] ;
+         pDom.textContent = tsContent[i] ;
+	   } ;
+  //-->
+  </script>
+ </body>
+</html>

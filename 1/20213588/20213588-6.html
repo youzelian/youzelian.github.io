@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+  body{
+	text-align:center;
+  }
+  p{
+  font-size:30px;
+  width:180px;
+  margin:auto;
+  line-height:50px;
+  }
+  input{
+	font-size:2em;
+  }
+  </style>
+  <script type="text/javascript">
+  var libai=[];
+  libai[0] ="李白：关山月";
+  libai[1] ="明月出天山，苍茫云海间。";
+  libai[2] ="长风几万里，吹度玉门关。";
+  libai[3] ="汉下白登道，胡窥青海湾。";
+  libai[4] ="由来征战地，不见有人还。";
+  </script>
+ </head>
+ <body>
+	<input type="button" value="上一页" id=prev>
+	<input type="button" value="下一页" id=next>
+  <h1></h1>
+  <p></p>
+  <script type="text/javascript">
+	var title=document.querySelector("h1");
+	var content=document.querySelector("p");
+	var prevBt=document.querySelector("input#prev");
+	var nextBt=document.querySelector("input#next");
+	title.textContent = libai[0];
+	content.textContent = libai[1]+libai[2];
+	prevBt.onclick=function(){
+	content.textContent = libai[1]+libai[2];
+ };
+	nextBt.onclick=function(){
+	  content.textContent = libai[3]+libai[4];
+ };
+
+  </script>
+ </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+    <meta charset="utf-8"/>
+        <title>20213592-6</title>
+    </head>
+    <!--css精细化处理-->
+    <style>
+        *{
+           margin: 5px;          
+        }
+     body{
+         position:absolute;
+         left: 35%;
+         background: size 30px;
+         background-color:antiquewhite ;   
+     }
+     footer{
+        text-align: center;
+        background-color: azure;
+     }
+     form{
+         border: solid black;
+     }
+     div{
+         border: solid black;
+     }
+    </style>
+    
+    <body>
+    <div>
+     <input id="mei"  type="button" value="signin"/><!--注册界面-->
+     <script lang="javascript">
+    
+     </script>
+     <input id="song" type="button" value="signon"/><!--登录界面-->
+     <script lang="javascript">
+     
+
+     </script>
+     <input id="xiang" type="button" value="comments"/><!--评论界面-->
+     <script lang="javascript">
+     
+
+     </script>
+     <form>
+        <table>
+            <tr>
+                <th>
+                    <lable>username:</lable>
+                </th>
+                <th>
+                    <input type="text" placeholder="notice">
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <lable>paseword:</lable>
+                </td>
+                <td>
+                    <input type="password"  placeholder="watch out your caps!">
+                </td>
+            </tr>
+        </table>
+        <input type="button" value="submit">
+    </form>
+    <footer>
+       <!--客户可见样式,使创建文本可修改按钮-->
+       <input id="mei1" type="button"  value="江西科技师范大学">
+       <input  id="mei2" type="button" value=" &nbsp&nbsp软件动漫学院&nbsp&nbsp&nbsp">
+       <br>
+       <span></span>
+       <!--添加&nbsp为让按钮对齐样式大小-->
+       <script lang="javascript">
+        var arry1=new Array("这是一所非常棒的大学:...更多","这是一个非常棒的学院:...","hello world更多");
+        var spa=document.querySelector("span");
+        var me=".......";
+        //创建文本内容,以便修改.添加
+        spa.textContent=me;
+        var mei1=document.getElementById("mei1");
+        //创建按钮实现点击可修改文本内容
+        mei1.onclick=function(){
+               spa.textContent=arry1[0]; 
+        }
+        var mei2=document.getElementById("mei2");
+        mei2.onclick=function(){
+            spa.textContent=arry1[1]+arry1[2];
+        }
+       </script>
+    </footer>
+</div>
+</body>
+</html>

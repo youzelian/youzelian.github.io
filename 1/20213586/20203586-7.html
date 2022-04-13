@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style type ="text/css">
+    body{
+        text-align: center;
+        
+    }
+    p{
+        font-size: 30px;
+        width: 400px;
+        margin: auto;
+    }
+    input{
+        font-size:2em
+    }
+</style>
+<script type="text/javascript">
+var poet ="010静夜思\n床前明月光，疑似地上霜。\n举头望明月，低头思故乡。\n011小池\n泉眼无声惜细流，树荫照水爱晴柔。\n小荷才露尖尖角，早有蜻蜓立上头。\n012春日\n胜日寻芳泗水滨，无边光景一时新。\n等闲识得春风面万紫千红总是春。\n013元日\n爆竹声中一岁除，春风送暖入屠苏。\n千门万户曈曈日，总把新桃换旧符。\n014春望\n国破山河在，城春草木深。\n感时花溅泪，恨别鸟惊心。\n烽火连三月，家书抵万金。\n白头搔更短，浑欲不胜簪。\n015清明\n清明时节雨纷纷，路上行人欲断魂。\n借问酒家何处有，牧童遥指杏花村。\n"
+var tsTitle=[];
+tsTitle[0]="静夜思"
+tsTitle[1]="小池"
+tsTitle[2]="春日"
+tsTitle[3]="元日"
+tsTitle[4]="春望"
+tsTitle[5]="清明"
+var tsContent=["床前明月光，疑似地上霜。\n举头望明月，低头思故乡。","\n泉眼无声惜细流，树荫照水爱晴柔。\n小荷才露尖尖角，早有蜻蜓立上头。","\n胜日寻芳泗水滨，无边光景一时新。\n等闲识得春风面,万紫千红总是春。","\n爆竹声中一岁除，春风送暖入屠苏。\n千门万户曈曈日，总把新桃换旧符。","\n国破山河在，城春草木深。\n感时花溅泪，恨别鸟惊心。\n烽火连三月，家书抵万金。\n白头搔更短，浑欲不胜簪。","\n清明时节雨纷纷，路上行人欲断魂。\n借问酒家何处有，牧童遥指杏花村。\n"]
+</script>
+</head>
+<body>
+<h1 id="tsTitle">
+</h1>
+<p id="tsContent">
+</p>
+<div id=""class="">
+ <input type="button"value="Prev"id="prev">
+ <input type="button"value="Next"id="next">
+</div>
+<script type="text/javascript">
+
+
+var h1Dom=document.querySelector("h1#tsTitle");
+var pDom=document.querySelector("p#tsContent");
+    var i=0;
+    document.querySelector("input#next").onclick=function(){
+        if(i<tsTitle.length-1){
+            i++;
+        }
+        h1Dom.textContent =tsTitle[i];
+        pDom.textContent=tsContent[i];
+
+
+
+
+
+    };
+    document.querySelector("input#prev").onclick=function(){
+        if(i>0){
+            i--;
+        }
+        h1Dom.textContent =tsTitle[i];
+        pDom.textContent=tsContent[i];
+
+    }
+</script>
+</body>

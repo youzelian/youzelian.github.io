@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+
+    <!--以下为css精细化处理-->
+    <style type="text/css">
+        *{
+            margin: 100%;
+            padding:100%;
+        }
+       body{
+        position: absolute; left:-100px;
+        margin-left:50%;
+       }
+       <!--对a标签进行处理但处理无效,下划线始终无法去除-->
+       a#zero{
+           text-decoration: none; 
+           text-decoration-line: none;
+           border:solid 1px;
+           color: black;
+       }
+       a#one{
+           text-decoration:none;
+           color: black;
+       }
+      a#two{
+           text-decoration: none;
+       }
+       <!--对伸缩进行处理-->
+       details{
+           border: 2px solid black;
+           margin-right: 30%;
+       }
+    </style>
+
+    <!--以下为javascript动态化处理-->
+    <script language="JavaScript">
+    var a="you have agree the powers and rules"
+     alert("您已同意相应权限  "+"\n"+a);
+    </script>
+
+    <!--以下为主体html结构-->
+    <body>    
+    <form>    <!--登录界面-->
+      <fieldset>
+      <legen>--登录界面--</legen><br/>
+      <label>username:</label>
+      <input type="text" placeholder="watch caps"/><br/>
+      <label>passwords:</label>
+      <input type="password" placeholder="in hider" value=""/><br/>
+      <label>gender:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      <input type="checkbox"/><span>male</span>
+      <input type="checkbox"/><span>female</span><br/>
+      <input type="button" value="submit" onclick="window.alert('sorry your username is wrong');"/>
+      </fieldset>    
+    </form>         
+    </body> 
+    <fonter>
+    <details>
+        <summary>more imformation</summary>
+        <menu>
+            <li><a id="one" href="https://www.lijianhong.top/weBbasic">partner</a></li>
+            <li><a id="two" >team</a></li>
+        </menu>
+    </details> 
+    <select>
+            <option>servers
+            <option>signon
+            <option>signin
+            <option>reback
+    </select>
+    </fonter>
+</html>
