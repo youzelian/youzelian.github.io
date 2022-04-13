@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>第七次作业</title>
+ </head>
+ <style type="text/css">
+body
+{
+background-image:url("https://tse1-mm.cn.bing.net/th/id/R-C.aa33768fc3ce7286c48c6132995a6e90?rik=Y3GpgVXL%2fBCdmQ&riu=http%3a%2f%2fbpic.588ku.com%2fback_pic%2f19%2f04%2f13%2f1067d05b5217017c9253ed94decc373a.jpg!%2ffh%2f300%2fquality%2f90%2funsharp%2ftrue%2fcompress%2ftrue&ehk=cf97Z%2bkO4lTHR4llAkkAdFUP3G0hl3abIO6V%2b7SEBRk%3d&risl=&pid=ImgRaw&r=0") ;
+background-size:cover;
+text-align:center;
+font-family:楷体;
+}
+input
+{
+background-color:#00ffcc;
+display: inline-block;
+width: 100px;
+height: 60px;
+font-size: 20px;
+border-radius: 10px;
+margin:2em;
+}
+h1
+{
+ font-size:40px;
+ color:#3399ff;
+ margin:35px;
+}
+p
+{
+text-shadow:1px 0px;
+ font-size:30px;
+ margin:auto;
+ letter-spacing:0.5em;
+ line-height:2em;
+ width:540px;
+
+}
+ </style>
+ <body>
+ <h1 id="tsTitle"></h1>
+ <p id="tsContent"></p>
+ <input type="button" value="上一首" id="prev">
+ <input type="button" value="下一首" id="next">
+  <script> 
+	var tsTitle = [];
+	    tsTitle[0] = ["李白：赠孟浩然"];
+	    tsTitle[1] = ["李白：渡荆门送别"];
+	    tsTitle[2] = ["李白：送友人"];
+		tsTitle[3] = ["李白：听蜀僧浚弹琴"];
+    var tsContent=["吾爱孟夫子，风流天下闻。红颜弃轩冕，白首卧松云。醉月频中圣，迷花不事君。高山安可仰，徒此挹清芬。","渡远荆门外，来从楚国游。山随平野尽，江入大荒流。月下飞天镜，云生结海楼。仍怜故乡水，万里送行舟。","青山横北郭，白水绕东城。此地一为别，孤蓬万里征。浮云游子意，落日故人情。挥手自兹去，萧萧班马鸣。","蜀僧抱绿绮，西下峨眉峰。为我一挥手，如听万壑松。客心洗流水，馀响入霜钟。不觉碧山暮，秋云暗几重。"]
+
+    var h1 = document.querySelector("h1#tsTitle") ;
+    var p=  document.querySelector("p#tsContent");
+	var prev = document.querySelector("input#prev");
+    var next = document.querySelector("input#next");
+		h1.textContent = tsTitle[0] ;
+        p.textContent = tsContent[0] ;
+	   var i= 0 ;
+       document.querySelector("input#next").onclick = function(){
+        if (i< tsTitle.length-1) {
+          i++ ;
+		 }
+		 else
+		   {i=i-3;}
+         h1.textContent = tsTitle[i] ;
+         p.textContent = tsContent[i] ;
+		
+		   } ;
+	   document.querySelector("input#prev").onclick = function(){
+		 if (i > 0) {
+          i-- ;
+		 }
+		 else
+		   {i=3;}
+         h1.textContent = tsTitle[i] ;
+         p.textContent = tsContent[i] ;
+	   } ;
+
+  </script>
+ </body>
+</html>
