@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head> 
+<meta charset="UTF-8">
+<title>古诗</title>
+<style type="text/css">
+body{
+        text-align:center;
+}
+p{
+   font-size:25px;
+   width:220px;
+   margin:auto;
+   line-height:40px;
+}
+#id{
+      cursor:pointer;
+	  font-size:15px;
+	  box-shadow: 5px 6px blue;
+}
+input{
+     font-size:2em;
+}
+</style>
+<script type="text/javascript">
+<!--
+var ts = "杜牧: 遣怀 ";
+var dumu = [];
+dumu[0]="杜牧: 遣怀";
+dumu[1]="落魄江南载酒行，楚腰肠断掌中轻。";
+dumu[2]="十年一觉扬州梦，赢得青楼薄幸名。";
+var  mm = "白居易: 后宫词";
+var bjy = [];
+bjy[0] = "白居易: 后宫词";
+bjy[1] = "泪湿罗巾梦不成，夜深前殿按歌声。";
+bjy[2] = "红颜未老恩先断，斜倚熏笼坐到明。";
+</script>
+</head> 
+<body>
+<input type="button" value="上一首" id="prev">
+<input type="button" value="下一首" id="next">
+<h1><h1>
+<p></p>
+<script type="text/javascript">
+<!--
+var title = document.querySelector("h1");
+var content = document.querySelector("p");
+var prevBt = document.querySelector("input#prev");
+var nextBt = document.querySelector("input#next");
+title.textContent = dumu[0];
+content.textContent = dumu[1]+dumu[2];
+title.textContent = bjy[0];
+content.textContent = bjy[1]+bjy[2];
+prevBt.onclick = function(){
+   title.textContent = dumu[0];
+  content.textContent = dumu[1]+dumu[2];
+};
+nextBt.onclick = function(){
+        title.textContent = bjy[0];
+     content.textContent = bjy[1]+bjy[2];
+}
+</script>
+</body>
+</html>

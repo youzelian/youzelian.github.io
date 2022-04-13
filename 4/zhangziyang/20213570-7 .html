@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>古诗</title>
+ <style type="text/css">
+ body{
+        text-align:center;
+		font-size:15px;
+		background-size:cover;
+ }
+ h1#tsTitle{
+        font-size:3em;
+ }
+ p#tsContent{
+      font-size:2em;
+	  margin:auto;
+	  width:12em;
+ }
+ input{
+   font-size:1em;
+ }
+ </style>
+ <script type="text/javascript">
+ <!--
+     var tsTitle = [];
+      tsTitle[0] = "元稹:行宫";
+	  tsTitle[1] = "王维:相思"; 
+	  tsTitle[2] = "王维:竹里馆";
+      tsTitle[3] = "西鄙人:哥舒歌";
+	  tsTitle[4] = "李商隐:登乐游原";
+     var tsContent = ["寥落古行宫，宫花寂寞红。白头宫女在，闲坐说玄宗。","红豆生南国，春来发几枝。愿君多采撷，此物最相思。","独坐幽篁里，弹琴复长啸。深林人不知，明月来相照。","北斗七星高，哥舒夜带刀。至今窥牧马，不敢过临洮。","向晚意不适，驱车登古原。夕阳无限好，只是近黄昏。"];
+ </script>
+</head>
+ <body background="https://img.tukuppt.com/ad_preview/00/28/89/5f967919ea674.jpg!/fw/780">
+ <h1 id="tsTitle">
+ 题目
+ </h1>
+ <p id="tsContent">
+ 内容
+ </p>
+ <div id="" class="">
+ <input type ="button" value="上一首" id="prev">
+ <input type ="button" value="下一首" id="next">
+ </div>
+  <script type="text/javascript">
+<!--
+   var h1Dom =document.querySelector("h1#tsTitle");
+   var pDom =document.querySelector("p#tsContent");
+            h1Dom.textContent= tsTitle[0];
+			pDom.textContent= tsContent[0];
+   var i=0;
+   document.querySelector("input#next").onclick = function(){
+            h1Dom.textContent= tsTitle[i];
+			pDom.textContent= tsContent[i];
+			if(i<tsTitle.length-1){
+			i++; }
+			else{
+			i=0;
+		}
+			
+   };
+document.querySelector("input#prev").onclick = function(){
+           if(i>0){
+			i--;}
+			else{
+			i=tsTitle.length-1;
+		}
+			h1Dom.textContent= tsTitle[i];
+			pDom.textContent= tsContent[i];
+		 };	
+</script>
+ </body>
+</html>

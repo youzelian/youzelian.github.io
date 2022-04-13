@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+    <style type="text/css">
+		input{
+		border:5px outset solid;
+		font-size:50px;
+		}
+		body{
+		text-align:center; 
+		background-image: url(https://tse1-mm.cn.bing.net/th/id/OIP-C.GrAzfkSHW__GPqrk8Uwr0QHaFj?w=155&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7);
+            background-repeat: no-repeat;
+            background-size: 90%;
+		}
+		p{
+		font-size:35px;
+		color:blue;
+		}
+		h1{
+		font-size:30px;
+		width:180px;
+		color:blue;
+		margin:auto;
+		line-height:40px;
+		}
+		
+	</style>
+	<script>
+		var shige = ["下马饮君酒，问君何所之。君言不得意，归卧南山陲。但去莫复闻，白云无尽时。","客从东方来，衣上灞陵雨。问客何为来，采山因买斧。冥冥花正开，扬扬燕新乳。昨别今已春，鬓丝生几缕。","蝉鸣空桑林，八月萧关道。出塞复入塞，处处黄芦草。从来幽并客，皆向沙场老。莫学游侠儿，矜夸紫骝好。","饮马渡秋水，水寒风似刀。平沙日未没，黯黯见临洮。昔日长城战，咸言意气高。黄尘足今古，白骨乱蓬蒿。","明月出天山，苍茫云海间。长风几万里，吹度玉门关。汉下白登道，胡窥青海湾。由来征战地，不见有人还。戍客望边色，思归多苦颜。高楼当此夜，叹息未应闲。"]
+		var biaoti = ["王维：送别","韦应物：长安遇冯著","王昌龄：塞上曲","王昌龄：塞下曲","李白：关山月"]	
+	</script>
+ </head>
+ <body>
+	
+	<input type="button" value="上一页" id="prev">
+	<input type="button" value="下一页" id="next">
+	<p></p>
+	<h1></h1>
+	<script>
+	var content = document.querySelector("h1");
+	var title = document.querySelector("p");
+	var prevBt = document.querySelector("input#prev");
+	var nextBt = document.querySelector("input#next");
+	var i=-1;
+	prevBt.onclick = function(){
+		if(i>0){
+			i--;
+		}
+		else{
+			i=biaoti.length-1;
+		}
+		title.textContent = biaoti[i]+" "+"第"+(i+1)+"页";
+		content.textContent = shige[i];	
+	};
+	nextBt.onclick = function(){
+		if(i<biaoti.length-1){
+			i++;
+		}
+		else{
+			i=0;
+		}
+		title.textContent = biaoti[i]+" "+"第"+(i+1)+"页";
+		content.textContent = shige[i];
+	};
+    </script>
+
+	
+ </body>
+</html>

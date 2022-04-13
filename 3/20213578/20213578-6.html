@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <style>     
+  h1{
+    font-size:40px;
+	color:red;
+	text-align:center;
+	width:690px;
+	font-family:黑体;
+	font-style:italic;
+	font-weight:bolder;
+	margin:auto;
+    }
+  p{
+    font-size:40px;
+    text-align:center;
+	width:690px;
+	font-family:宋体;
+	margin:auto;
+	}
+  div{
+    font-size:100px;
+    text-align:center;
+	width:700px;
+	font-family:宋体;
+  }
+  body{
+	  background-color:rgba(200,150,15,0.3)
+	  }
+
+ </style> 
+  <title>Document</title>
+ </head>
+ <body>
+<h1>王昌龄：闺怨<h1>
+<p>
+闺中少妇不知愁，春日凝妆上翠楼。
+忽见陌头杨柳色，悔教夫婿觅封侯。
+</p>
+<div>  
+<input type="button" value="上一首" id="before">
+<input type="button" value="下一首" id="after">
+</div>
+<script>
+var liu=document.querySelector("h1");
+var xin=document.querySelector("p");
+var bt1=document.getElementById("before");
+var bt2=document.getElementById("after");
+var c=1;
+var a=[];
+    a[0]="王昌龄：闺怨";
+    a[1]="王昌龄：芙蓉楼送辛渐";
+	a[2]="贺知章：回乡偶书";
+	a[3]="张旭：桃花溪";
+	a[4]="韦庄：金陵图";
+var b=[];
+    b[0]="闺中少妇不知愁，春日凝妆上翠楼。";
+	b[1]="忽见陌头杨柳色，悔教夫婿觅封侯。";
+	b[2]="寒雨连江夜入吴，平明送客楚山孤。";
+	b[3]="洛阳亲友如相问，一片冰心在玉壶。";
+	b[4]="少小离家老大回，乡音无改鬓毛衰。";
+	b[5]="儿童相见不相识，笑问客从何处来？";
+	b[6]="隐隐飞桥隔野烟，石矶西畔问渔船。";
+	b[7]="桃花尽日随流水，洞在清溪何处边？";
+    b[8]="江雨霏霏江草齐，六朝如梦鸟空啼。";
+	b[9]="无情最是台城柳，依旧烟笼十里堤。";
+
+
+bt1.onclick=function(){
+    if(c==0){
+		    liu.textContent=a[c];
+			xin.textContent=b[c]+b[c+1];
+			c=4;
+			}
+	else if(c==1){
+		    liu.textContent=a[c];
+			xin.textContent=b[c+1]+b[c+2];
+			c=c-1;
+			}
+	
+	else if(c==2){
+		    liu.textContent=a[c];
+			xin.textContent=b[c+4]+b[c+3];
+			c=c-1;
+			}
+	else if(c==3){
+		    liu.textContent=a[c];
+			xin.textContent=b[c+3]+b[c+4];
+			c=c-1;
+			}
+	else if(c==4){
+		    liu.textContent=a[c];
+			xin.textContent=b[c+4]+b[c+5];
+			c=c-1;
+			}
+	}
+bt2.onclick=function(){
+	if(c==0){
+		    liu.textContent=a[c];
+			xin.textContent=b[c]+b[c+1];
+			c=c+1;
+			}
+	else if(c==1){
+		    liu.textContent=a[c];
+			xin.textContent=b[c+1]+b[c+2];
+			c=c+1;
+			}
+	else if(c==2){
+		    liu.textContent=a[c];
+			xin.textContent=b[c+2]+b[c+3];
+			c=c+1;
+			}
+	else if(c==3){
+		    liu.textContent=a[c];
+			xin.textContent=b[c+3]+b[c+4];
+			c=c+1;
+			}
+	else if(c==4){
+		    liu.textContent=a[c];
+			xin.textContent=b[c+4]+b[c+5];
+			c=0;
+			}
+
+}	
+
+</script> 
+</body>

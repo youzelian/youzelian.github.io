@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head> <meta charset="UTF-8">
+<meta name="Generator" content="EditPlus®">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>Document</title>
+</head>
+<style>
+</body>
+h1{
+	font-size:30px;
+	font-family:仿朱;
+  }
+ <style>
+</style>
+<html>
+<body bgcolor="#98FB98">
+<input type="button" value="古诗1"id="古诗1">
+<input type="button" value="古诗2"id="古诗2">
+<input type="button" value="古诗3"id="古诗3">
+<input type="button" value="古诗4"id="古诗4">
+<input type="button" value="古诗5"id="古诗5">
+<input type="button" value="古诗6"id="古诗6">
+<marquee direction="left" scrolldelay="90" scrollamount="6" behavior="scoll" loop="0"style="position:absolute;" id="Marquee1">
+<span style="color:yellow;font-family:仿朱;font-size:45px;">
+ 中国文化博大精深
+ </span>
+ </marquee>
+<h1>
+古诗
+</h1>
+<script>
+var headline = document.querySelector("h1");
+	var bt = document.getElementById("古诗1");
+	bt.onclick=function(){
+		alert("静夜思-李白");
+		headline.textContent ="床前明月光，疑是地上霜。举头望明月，低头思故乡。《静夜思》-李白";};
+var headline = document.querySelector("h1");
+	var bt = document.getElementById("古诗2");
+	bt.onclick=function(){
+		alert("望庐山瀑布-李白");
+		headline.textContent ="日照香炉生紫烟，遥看瀑布挂前川。飞流直下三千尺，疑是银河落九天。《望庐山瀑布》-李白";};
+var headline = document.querySelector("h1");
+	var bt = document.getElementById("古诗3");
+		bt.onclick=function(){
+			alert("赠汪伦-李白");
+			headline.textContent ="李白乘舟将欲行，忽闻岸上踏歌声。桃花潭水深千尺，不及汪伦送我情。《赠汪伦-李白》";};
+var headline = document.querySelector("h1");
+	var bt = document.getElementById("古诗4");
+	bt.onclick=function(){
+		alert("送杜少府之任蜀州-王勃");
+		headline.textContent ="城阙辅三秦，风烟望五津。与君离别意，同是宦游人。海内存知己，天涯若比邻。无为在歧路，儿女共沾巾。《送杜少府之任蜀州》-王勃";};
+var headline = document.querySelector("h1");
+	var bt = document.getElementById("古诗5");
+	bt.onclick=function(){
+		alert("卜算子·我住长江头-李之仪");
+		headline.textContent ="我住长江头，君住长江尾。日日思君不见君，共饮长江水。此水几时休，此恨何时已。只愿君心似我心，定不负相思意。《卜算子·我住长江头》-李之仪";};
+</script>
+ </body>
+</html>

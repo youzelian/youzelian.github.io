@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>第三周作业</title>
+  <style>
+    */*所有标签*/{
+	padding:0;/*内边距 padding用于元素与内容之间的间隔，让内容与元素之间有一段内边距，放生在元素本身内部。*/
+	margin:0;/*外边距 margin是用来隔开元素与元素的间距，发生在元素本身的外部，margin用于布局分开元素使元素与元素互不相干。*/
+	}
+	body{
+	background:#d6d6d6;
+	font-size:30px;
+	}
+	nav{
+	width:100%;
+	height:60px;
+	color:black;
+	}
+	a{
+	text-decoration:none;
+	}
+	#test1,#test2{
+	width:120px;/*从屏幕左边开始横向距离*/
+	line-height:60px;/*行高*/
+	float:left;/*元素向左浮,float使元素脱离标准流,漂浮在标准流之上,此处是漂浮起来靠左排列*/
+	display:inline;/*排成一行*/
+	border:2px solid red;
+	text-align:center;
+	}
+	#list1{
+	text-align:center;
+	position:absolute;/*绝对定位相对于最近position不为static的父级元素来定位*/
+	list-style:none;
+	line-height:60px;
+	width:120px;
+	top:-600px;/*控制绝对位置的位置,此处是将list1往上移动600像素*/
+	background:white;
+	}
+	#test1:hover{
+	cursor:pointer;/*当移到test1时候,鼠标变成手图案*/
+	color:blue;
+	background:red;
+	}
+	#test1:hover ~ #list1/*"~"代表通用选择器,格式为A+“~”+B,表示选择与A元素同级别的所以B元素(B的位置在A后面)*/{
+	top:60px;
+	transition-duration:1s;/*控制下拉菜单持续的时间*/
+	}
+	#list1:hover{
+	top:60px;
+	background:linear-gradient(white,gray);/*控制背景颜色为渐变色*/
+	}
+  </style>
+ </head>
+ <body>
+  <nav>
+  	<ul>
+		<li id="test1">学校概况</li>
+		<li id="test2"><a href="https://www.jxstnu.edu.cn/news-show-325.html">师资队伍</a></li>
+		   <ul id="list1">
+			 <li class="context1"><a href="http://www.jxstnu.edu.cn/news-show-1.html">学校简介</a></li>
+			 <li class="context1"><a href="http://www.jxstnu.edu.cn/news-show-317.html">现任领导</a></li>
+			 <li class="context1"><a href="http://www.jxstnu.edu.cn/news-show-316.html">历史沿革</a></li>
+			 <li class="context1"><a href="http://www.jxstnu.edu.cn/news-show-319.html">历任领导</a></li>
+			 <li class="context1"><a href="http://www.jxstnu.edu.cn/news-show-1.html">学校简介</a></li>
+	</ul>
+  </nav>
+ </body>
+</html>

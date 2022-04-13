@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>2021358205</title>
+  <style type="text/css">
+     body{background-color:#EEE685;}
+     h1{ font-family:华文楷体,黑体;
+	     font-size:60px;
+	     text-align:center;
+	     color:red;
+		 text-shadow:3px 2px 3px rgba(255,48,48,0.5);/*设置阴影,依次为水平 垂直 模糊距离 颜色*/
+		 }
+	  p{font-family:仿宋;
+	    font-size:50px;
+		color:#006400;
+		width:300px;
+		margin:auto;
+		}
+	div{text-align:center;
+	    background-color:rgb(152,245,225);
+		}
+	input{font-size:30px;
+	      margin:10px;
+		  height:50px;
+		  background-color:rgb(0,225,225);
+		  color:white;
+		  /*border:0;去除边缘线*/
+		  }
+  </style>
+ </head>
+ <body>
+ <div>
+   <input type="button" value="返回首页" id="begin">
+   <input type="button" value="夏日南亭怀辛大" id="first">
+   <input type="button" value="宿业师山房待丁大不至" id="second">
+   <input type="button" value="宿王昌龄隐居" id="third">
+   <input type="button" value="初发扬子寄元大校书" id="fourth">
+  </div>
+  <h1>018孟浩然：秋登兰山寄张五</h1>
+  <p>
+    北山白云里，隐者自怡悦。
+    相望始登高，心随雁飞灭。
+    愁因薄暮起，兴是清秋发。
+    时见归村人，沙行渡头歇。
+    天边树若荠，江畔洲如月。
+    何当载酒来，共醉重阳节。
+  </p>
+  <script>
+     var bt0 = document.getElementById("begin"); 
+     var bt1 = document.getElementById("first");
+     var bt2 = document.getElementById("second");
+	 var bt3 = document.getElementById("third");
+     var bt4 = document.getElementById("fourth");
+	 var line = document.querySelector("h1");
+	 var p = document.querySelector("p")
+	   bt0.onclick = function(){
+		   line.textContent="018孟浩然：秋登兰山寄张五";
+		   p.textContent="北山白云里，隐者自怡悦。"+
+                         "相望始登高，心随雁飞灭。"+
+                         "愁因薄暮起，兴是清秋发。"+
+                         "时见归村人，沙行渡头歇。"+
+                         "天边树若荠，江畔洲如月。"+
+                         "何当载酒来，共醉重阳节。";
+	   };
+	   bt1.onclick = function(){
+		   line.textContent="019孟浩然：夏日南亭怀辛大";
+		   p.textContent="山光忽西落，池月渐东上。"+
+                         "散发乘夜凉，开轩卧闲敞。"+
+                         "荷风送香气，竹露滴清响。"+
+                         "欲取鸣琴弹，恨无知音赏。"+
+                         "感此怀故人，中宵劳梦想。";
+		   //line.style.cssText="color:#00CD00;"
+	   };
+      bt2.onclick = function(){
+	      line.textContent="020孟浩然：宿业师山房待丁大不至";
+		  p.textContent="夕阳度西岭，群壑倏已暝。"+
+                        "松月生夜凉，风泉满清听。"+
+                        "樵人归欲尽，烟鸟栖初定。"+
+                        "之子期宿来，孤琴候萝径。";
+	  };
+      bt3.onclick = function(){
+	      line.textContent="024常建：宿王昌龄隐居";
+		  p.textContent="清溪深不测，隐处唯孤云。"+
+                        "松际露微月，清光犹为君。"+
+                        "茅亭宿花影，药院滋苔纹。"+
+                        "余亦谢时去，西山鸾鹤群。";
+	  };
+	  bt4.onclick = function(){
+	      line.textContent="028韦应物：初发扬子寄元大校书";
+		  p.textContent= "凄凄去亲爱，泛泛入烟雾。"+
+                         "归棹洛阳人，残钟广陵树。"+
+                         "今朝为此别，何处还相遇。"+
+                         "世事波上舟，沿洄安得住。";
+	 };
+  </script>
+ </body>
+</html>

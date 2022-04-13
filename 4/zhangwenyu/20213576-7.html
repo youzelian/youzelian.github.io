@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+    <style type="text/css">
+		input{
+		border:5px outset solid;
+		font-size:50px;
+		}
+		body{
+		text-align:center; 
+		background-image: url(https://tse1-mm.cn.bing.net/th/id/OIP-C.GrAzfkSHW__GPqrk8Uwr0QHaFj?w=155&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7);
+            background-repeat: no-repeat;
+            background-size: 90%;
+		}
+		p{
+		font-size:35px;
+		color:blue;
+		}
+		h1{
+		font-size:30px;
+		width:180px;
+		color:blue;
+		margin:auto;
+		line-height:40px;
+		}
+		
+	</style>
+	<script>
+		var shige = ["美人卷珠帘，深坐颦蛾眉。但见泪痕湿，不知心恨谁。","东风扇淑气，水木荣春晖。白日照绿草，落花散且飞。孤云还空山，众鸟各已归。彼物皆有托，吾生独无依。对此石上月，长醉歌芳菲。","庄周梦蝴蝶，蝴蝶为庄周。一体更变易，万事良悠悠。乃知蓬莱水，复作清浅流。青门种瓜人，旧日东陵侯。富贵故如此，营营何所求。","白日何短短，百年苦易满。苍穹浩茫茫，万劫太极长。麻姑垂两鬓，一半已成霜。天公见玉女，大笑亿千场。吾欲揽六龙，回车挂扶桑。北斗酌美酒，劝龙各一觞。富贵非所愿，与人驻颜光。","明月出天山，苍茫云海间。长风几万里，吹度玉门关。汉下白登道，胡窥青海湾。由来征战地，不见有人还。戍客望边色，思归多苦颜。高楼当此夜，叹息未应闲。"]
+		var biaoti = ["怨情","春日独酌二首其一","古风·庄周梦蝴蝶","短歌行","李白：关山月"]	
+	</script>
+ </head>
+ <body>
+	
+	<input type="button" value="上一首" id="prev">
+	<input type="button" value="下一首" id="next">
+	<p></p>
+	<h1></h1>
+	<script>
+	var content = document.querySelector("h1");
+	var title = document.querySelector("p");
+	var prevBt = document.querySelector("input#prev");
+	var nextBt = document.querySelector("input#next");
+	var i=-1;
+	prevBt.onclick = function()
+	{
+		if(i>0)
+		{
+			i--;
+		}
+		else
+		{
+			i=biaoti.length-1;
+		}
+		title.textContent = biaoti[i]+" "+"第"+(i+1)+"页";
+		content.textContent = shige[i];	
+	};
+	nextBt.onclick = function()
+	{
+		if(i<biaoti.length-1)
+		{
+			i++;
+		}
+		else
+		{
+			i=0;
+		}
+		title.textContent = biaoti[i]+" "+"第"+(i+1)+"页";
+		content.textContent = shige[i];
+	};
+    </script>
+
+	
+ </body>
+</html>

@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  *{
+  margin:0;
+  padding:0;
+  }
+  body{
+  background-color:#FFA07A;
+  }
+  h1{
+  font-size:30px;
+  width:400px;
+  margin:auto;
+  text-align:center;
+  text-shadow:5px 5px 5px red;
+  }
+  div{
+  font-size:25px;
+  width:300px;
+  margin:auto;
+  }
+  input{
+  font-size:30px;
+  width:120px;
+  margin:auto;
+  }
+  #bt/*创建一个父类使得按钮能够水平居中*/{
+  text-align:center;
+  }
+  ul{
+  margin:100px auto;
+  }
+  ul,li{
+  width:100px;
+  list-style:none;
+  font-size:20px;
+  border:1px solid black;
+  text-align:center;
+  background-color:#d6d6d6;
+  }
+  /*二级菜单开始*/
+  #one:hover{
+  cursor:pointer;
+  }
+  #two{
+  cursor:pointer;
+  position:absolute;
+  top:-200px;
+  }
+  #one:hover ~ #two/*~作用是查找某一个指定元素的后面的所有兄弟结点。*/{
+  top:210px;
+  }
+  #two:hover{
+  top:210px;
+  }/*二级菜单结束*/
+  a{
+  text-decoration:none;
+  }
+  a:hover{
+  font-size:25px;
+  }
+  a:link{
+  color:maroon;/*栗色*/
+  }
+  </style>
+ </head>
+ <body>
+<h1>杜审言：和晋陵路丞早春游望</h1>
+<div id = "content">
+独有宦游人，偏惊物候新。
+云霞出海曙，梅柳渡江春。
+淑气催黄鸟，晴光转绿苹。
+忽闻歌古调，归思欲沾巾。
+</div>
+<div id="bt">
+<!--放置按钮-->
+<input type="button" value="上一首" id="prev">
+<input type="button" value="下一首" id="next">
+</div>
+<nav>
+	<ul>
+		<li id="one">诗歌简介</li>
+		<ul id="two">
+			<li><a href="https://baike.so.com/doc/6799471-7016287.html" target="_blank">杜审言</a></li>
+			<li><a href="https://baike.so.com/doc/5400268-7405577.html" target="_blank">沈全期</a></li>
+			<li><a href="https://baike.so.com/doc/2850108-3007596.html" target="_blank">王湾</a></li>
+			<li><a href="https://baike.so.com/doc/5035911-5262485.html" target="_blank">孟浩然</a></li>
+		</ul>
+	</ul>
+</nav>
+ </body>
+ <script>
+ var headline = document.querySelector("h1");//获取选择器h1的对象
+ var content = document.querySelector("div");//获取选择器div的对象
+ var bt1 = document.getElementById("prev");//获取Id为prev的对象
+ var bt2 = document.getElementById("next");//获取Id为next的对象
+ var arr = [];//数组
+ var i = 1;
+ var a;//防止点击按钮出错
+ arr[1] = "独有宦游人，偏惊物候新。";
+ arr[2] = "云霞出海曙，梅柳渡江春。";
+ arr[3] = "淑气催黄鸟，晴光转绿苹。";
+ arr[4] = "忽闻歌古调，归思欲沾巾。";
+ bt1.onclick = function (){
+	 	if(a==0){ 
+		headline.textContent = "杜审言：和晋陵路丞早春游望";
+		arr[0] = headline.textContent;
+		arr[1] = "独有宦游人，偏惊物候新。";
+		arr[2] = "云霞出海曙，梅柳渡江春。";
+		arr[3] = "淑气催黄鸟，晴光转绿苹。";
+		arr[4] = "忽闻歌古调，归思欲沾巾。";
+		content.textContent = arr[1] + arr[2] + arr[3] + arr[4];//将诗替换成数组里面的内容
+		i=1;
+	}
+	else if(a==1){
+	headline.textContent = "沈全期：杂诗";
+		arr[5] = headline.textContent;
+		arr[6] = "闻道黄龙戍，频年不解兵。";
+		arr[7] = "可怜闺里月，长在汉家营。";
+		arr[8] = "少妇今春意，良人昨夜情。";
+		arr[9] = "谁能将旗鼓，一为取龙城？";
+		content.textContent = arr[6] + arr[7] + arr[8] + arr[9];//将诗替换成数组里面的内容
+		//控制翻页
+		a--;
+		i--;
+	}
+	else if(a==2){
+		arr[10] = headline.textContent;
+		headline.textContent = "王湾：次北固山下";
+		arr[11] = "客路青山外，行舟绿水前。";
+		arr[12] = "潮平两岸阔，风正一帆悬。";
+		arr[13] = "海日生残夜，江春入旧年。";
+		arr[14] = "乡书何处达？归雁洛阳边。";
+		content.textContent = arr[11] + arr[12] + arr[13] + arr[14];//将诗替换成数组里面的内容	
+		a--;
+	 }
+	
+};
+ bt2.onclick = function (){
+	 if(i==1){
+		arr[5] = headline.textContent;
+		headline.textContent = "沈全期：杂诗";
+		arr[6] = "闻道黄龙戍，频年不解兵。";
+		arr[7] = "可怜闺里月，长在汉家营。";
+		arr[8] = "少妇今春意，良人昨夜情。";
+		arr[9] = "谁能将旗鼓，一为取龙城？";
+		content.textContent = arr[6] + arr[7] + arr[8] + arr[9];//将诗替换成数组里面的内容
+		i++;//控制翻页
+		a=0;
+		}
+
+	else if(i==2){
+		arr[10] = headline.textContent;
+		headline.textContent = "王湾：次北固山下";
+		arr[11] = "客路青山外，行舟绿水前。";
+		arr[12] = "潮平两岸阔，风正一帆悬。";
+		arr[13] = "海日生残夜，江春入旧年。";
+		arr[14] = "乡书何处达？归雁洛阳边。";
+		content.textContent = arr[11] + arr[12] + arr[13] + arr[14];//将诗替换成数组里面的内容
+		i++;
+		a=1;
+	 }
+	 else if(i==3){
+		arr[15] = headline.textContent;
+		headline.textContent = "孟浩然：宿建德江";
+		arr[16] = "移舟泊烟渚，日暮客愁新。";
+		arr[17] = "野旷天低树，江清月近人。";
+		content.textContent = arr[16] + arr[17];//将诗替换成数组里面的内容
+		a=2;
+	 }
+	
+};
+ </script>
+</html>

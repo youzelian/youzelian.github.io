@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>古诗</title>
+    <style type="text/css">
+		p{
+		font-size: 45px;
+        font-family:华文行楷
+		}
+		input{
+		border:5px outset solid;
+		font-size:50px;
+		}
+		body{
+		text-align:center; 
+		background-image: url(https://tse3-mm.cn.bing.net/th/id/OIP-C.A79qUNIL_dbkH3IxS4i0uwHaLG?pid=ImgDet&rs=1);
+            background-repeat: no-repeat;
+            background-size: 90%;
+		}
+		h1{
+		font-size:50px;
+		width:300px;
+		color:black;
+		font-family:华文行楷;
+		margin:auto;
+		line-height:60px;
+		}
+		
+	</style>
+	<script>
+		var shige = ["红豆生南国，春来发几枝。愿君多采撷，此物最相思。 ","千山鸟飞绝，万径人踪灭。孤舟蓑笠翁，独钓寒江雪。","花间一壶酒，独酌无相亲。举杯邀明月，对影成三人。月既不解饮，影徒随我身。暂伴月将影，行乐须及春。我歌月徘徊，我舞影零乱。醒时同交欢，醉后各分散。永结无情游，相期邈云汉。","饮马渡秋水，水寒风似刀。平沙日未没，黯黯见临洮。昔日长城战，咸言意气高。黄尘足今古，白骨乱蓬蒿。","西山白雪三城戍，南浦清江万里桥。海内风尘诸弟隔，天涯涕泪一身遥。惟将迟暮供多病，未有涓埃答圣朝。跨马出郊时极目，不堪人事日萧条。","无"]
+		var biaoti = ["王维：《相思》","柳宗元：《江雪》","李白：《月下独酌·其一》","王昌龄：《塞下曲》","杜甫：《野望》"]
+		
+	</script>
+ </head>
+ <body>
+	
+	<input type="button" value="上一页" id="prev">
+	<input type="button" value="下一页" id="next">
+	<p></p>
+	<h1></h1>
+	<script>
+	var content = document.querySelector("h1");
+	var title = document.querySelector("p");
+	var prevBt = document.querySelector("input#prev");
+	var nextBt = document.querySelector("input#next");
+	var i=-1;
+	prevBt.onclick = function(){
+		if(i>0){
+			i--;
+		}
+		else{
+			i=biaoti.length-1;
+		}
+		title.textContent = biaoti[i]+" "+"第"+(i+1)+"页";
+		content.textContent = shige[i];	
+	};
+	nextBt.onclick = function(){
+		if(i<biaoti.length-1){
+			i++;
+		}
+		else{
+			i=0;
+		}
+		title.textContent = biaoti[i]+" "+"第"+(i+1)+"页";
+		content.textContent = shige[i];
+	};
+    </script>	
+ </body>
+</html>

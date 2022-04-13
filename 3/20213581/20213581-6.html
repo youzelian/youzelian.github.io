@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>第六次作业</title>
+  <style>
+  p{font-size:40px;
+	font-family:仿朱;
+    pdding:5px;
+	margin:auto;
+	text-align:center;
+   }
+ h1{font-size:40px;
+	font-family:黑体;
+	text-align:center;
+	color:red;
+    pdding:5px;
+	margin:auto;
+   }
+#next{font-size:20px;
+	  font-family:黑体;
+	  pdding:5px;
+	  margin:auto;
+	 }
+#prev{font-size:20px;
+	  font-family:黑体;
+	  pdding:5px;
+	  margin:auto;
+	 }
+</style>
+</head>
+<body bgcolor="#98FB98">
+<h1>
+江雪--柳宗元
+</h1>
+<p>
+千山鸟飞绝，万径人踪灭。孤舟蓑笠翁，独钓寒江雪
+</p>
+<div align="center">
+<input type="button" value="上一页" id="prev"><!--设置按钮-->
+<input type="button" value="下一页" id="next">
+</div>
+</body>
+<script>
+var title=document.querySelector("h1");//获取标题
+var content=document.querySelector("p");//获取内容
+var prevBt=document.querySelector("input#prev");
+var nextBt=document.querySelector("input#next");
+var i=0;//定义一个i
+var ary=[];//数组定义
+nextBt.onclick=function (){      /*函数引用*/
+if(i==0)
+{
+ary[0]="泊秦淮--杜牧〔唐代〕";
+ary[1]="烟笼寒水月笼沙，夜泊秦淮近酒家。";
+ary[2]="商女不知亡国恨，隔江犹唱后庭花。";
+title.textContent=ary[0];
+content.textContent=ary[1]+ary[2];
+i++;
+}
+else if(i==1)
+{
+ary[0]="相思--王维〔唐代〕"
+ary[1]="红豆生南国，春来发几枝。"
+ary[2]="愿君多采撷，此物最相思。"
+title.textContent=ary[0];
+content.textContent=ary[1]+ary[2];
+i++;
+}
+else if(i==2)
+{
+ary[0]="春晓--孟浩然〔唐代〕"
+ary[1]="春眠不觉晓，处处闻啼鸟。"
+ary[2]="夜来风雨声，花落知多少。"
+title.textContent=ary[0];
+content.textContent=ary[1]+ary[2];
+i++;
+}
+else
+{
+ary[0]="枫桥夜泊--张继〔唐代〕"
+ary[1]="月落乌啼霜满天，江枫渔火对愁眠。"
+ary[2]="姑苏城外寒山寺，夜半钟声到客船。"
+title.textContent=ary[0];
+content.textContent=ary[1]+ary[2];
+}
+}//按下一页键
+title.textContent="江雪--柳宗元";
+content.textContent="千山鸟飞绝，万径人踪灭。孤舟蓑笠翁，独钓寒江雪。";
+prevBt.onclick=function(){
+if(i==0)
+{
+ary[0]="江雪--柳宗元"
+ary[1]="千山鸟飞绝，万径人踪灭。"
+ary[2]="孤舟蓑笠翁，独钓寒江雪。"
+title.textContent=ary[0];
+content.textContent=ary[1]+ary[2];
+
+}
+if(i==1)
+{
+ary[0]="泊秦淮--杜牧〔唐代〕"
+ary[1]="烟笼寒水月笼沙，夜泊秦淮近酒家。"
+ary[2]="商女不知亡国恨，隔江犹唱后庭花。"
+title.textContent=ary[0];
+content.textContent=ary[1]+ary[2];
+i--;
+}
+if(i==2)
+{
+ary[0]="相思--王维〔唐代〕"
+ary[1]="红豆生南国，春来发几枝。"
+ary[2]="愿君多采撷，此物最相思。"
+title.textContent=ary[0];
+content.textContent=ary[1]+ary[2];
+i--;
+}
+if(i==3)
+{
+ary[0]="春晓--孟浩然〔唐代〕"
+ary[1]="春眠不觉晓，处处闻啼鸟。"
+ary[2]="夜来风雨声，花落知多少。"
+title.textContent=ary[0];
+content.textContent=ary[1]+ary[2];
+i--;
+}
+}//按上一页键
+</script>
+</html>

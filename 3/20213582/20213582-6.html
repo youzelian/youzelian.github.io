@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>2021358206</title>
+  <style type="text/css">
+     body{
+	      background-color:#FFFACD;
+	      }
+	 h1{
+	    font-family:华文楷体,黑体;
+		font-size:60px;
+		color:red;
+        text-shadow:4px 2px 4px rgba(255,48,48,0.5);/*设置阴影,依次为水平 垂直 模糊距离 颜色*/
+		text-align:center;
+	   }
+	 p{
+	   font-family:华文中宋,仿宋;
+	   font-size:45px;
+	   color:#228B22;
+	   width:550px;
+	   margin:auto;
+	   }
+   div{
+       width:600px;
+	   margin:auto;
+	   /*margin:5px 360px;*/
+       text-align:center;
+       }
+  input{
+        margin:20px;
+		height:60px;
+		width:180px;
+		font-size:40px;
+		color:white;
+		background-color:#00FFFF;
+		cursor:pointer;
+        }
+  </style>
+ </head>
+ <body>
+  <h1>宋之问：题大庾岭北驿</h1>
+  <p>
+    阳月南飞雁，传闻至此回。
+    我行殊未已，何日复归来？
+    江静潮初落，林昏瘴不开。
+    明朝望乡处，应见陇头梅。
+  </p>
+  <div>
+	<input type="button" value="上一页" id="last">
+    <input type="button" value="下一页" id="next">
+  </div>
+ </body>
+  <script type="text/javascript">
+  <!--
+	var little=document.querySelector("h1");
+	var ps=document.querySelector("p");
+	var bt1=document.querySelector("#last");
+	var bt2=document.querySelector("#next");
+	var shiti=[];
+	   shiti[0]="宋之问：题大庾岭北驿"
+	   shiti[1]="王湾：次北固山下"
+	   shiti[2]="常建：题破山寺后禅院";
+	   shiti[3]="岑参：寄左省杜拾遗";
+	var gushi=[];
+	    gushi[0]="阳月南飞雁，传闻至此回。";
+		gushi[1]="我行殊未已，何日复归来？";
+		gushi[2]="江静潮初落，林昏瘴不开。";
+		gushi[3]="明朝望乡处，应见陇头梅。";
+		gushi[4]="客路青山外，行舟绿水前。";
+	    gushi[5]="潮平两岸阔，风正一帆悬。";
+		gushi[6]="海日生残夜，江春入旧年。";
+		gushi[7]="乡书何处达？归雁洛阳边。";
+		gushi[8]="清晨入古寺，初日照高林。";
+		gushi[9]="曲径通幽处，禅房花木深。";
+		gushi[10]="山光悦鸟性，潭影空人心。";
+		gushi[11]="万籁此俱寂，惟馀钟磬音。";
+		gushi[12]="联步趋丹陛，分曹限紫微。";
+		gushi[13]="晓随天仗入，暮惹御香归。";
+		gushi[14]="白发悲花落，青云羡鸟飞。";
+		gushi[15]="圣朝无阙事，自觉谏书稀。";
+    var a=0; 
+	var b=3;
+	bt1.onclick = function(){
+		if(a>=1&&b>=7){
+			little.textContent=shiti[a-1];
+		    ps.textContent=gushi[b-7]+gushi[b-6]+gushi[b-5]+gushi[b-4];
+		    a=a-1;
+		    b=b-4;
+			}
+        else{
+			 alert("到顶了哦!");
+		     }
+    };
+	bt2.onclick = function(){
+		if(a<=2&&b<=11){
+			little.textContent=shiti[a+1];
+		    ps.textContent=gushi[b+1]+gushi[b+2]+gushi[b+3]+gushi[b+4];
+		    a=a+1;
+		    b=b+4;
+			}
+		else{
+			 alert("到底了哦!");
+		     }
+	};
+
+   //-->
+  </script>
+</html>

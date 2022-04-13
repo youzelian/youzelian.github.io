@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <style type="text/css">
+	input{   
+			color:blue;
+			font-size:30px;
+			border-radius:5em;
+			letter-spacing:0.2em;
+			text-shadow:0.05em 0.02em rgba(100,100,100,1) ;
+	}
+		button{          <!--   不标准的html中的按钮-->
+			color:blue;
+			font-size:30px;
+			border-radius:5em;
+			letter-spacing:0.2em;
+			text-shadow:0.05em 0.02em rgba(100,100,100,1) ;
+			}
+
+  </style>
+ 
+  <title>20213574-5</title>
+ </head>
+ <body>
+  <h1>Hellow world</h1>
+  
+  <input type="button" value="yesyesyes" onclick="">  
+  <button onclick="p1();">
+      nonono
+  </button>
+  <button onclick="poem1();">
+      杜甫：佳人
+  </button>
+  <script type="text/javascript">
+   function p1(){
+   var headline = document.querySelector("h1");
+   headline.textContent = "It's beautiful to say no" ;
+   }
+   function poem1(){
+   var headline = document.querySelector("h1");
+   headline.textContent = "绝代有佳人，幽居在空谷。自云良家子，零落依草木。关中昔丧乱，兄弟遭杀戮。官高何足论，不得收骨肉。世情恶衰歇，万事随转烛。夫婿轻薄儿，新人美如玉。合昏尚知时，鸳鸯不独宿。但见新人笑，那闻旧人哭！在山泉水清，出山泉水浊。侍婢卖珠回，牵萝补茅屋。摘花不插发，采柏动盈掬。天寒翠袖薄，日暮倚修竹。" ;
+   }
+
+	var headline  = document.querySelector("h1");
+	var bt = document.querySelector("input");
+	bt.onclick = function (){		
+		alert("BIG BANG !")
+		var i=1;
+		var s=" ";sum=0;
+		while (i<100)
+		{
+			i++;
+			s=s +" +"+i;
+			sum+=i;
+	     }
+			sum=sum+1;						//以上为一个算法
+	        headline.textContent="1"+s+"="+sum;			//输出的结果
+	};								//以下为一个算法
+  </script>
+ </body>
+</html>

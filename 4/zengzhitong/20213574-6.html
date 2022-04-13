@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>20213574-6</title>
+  <style type="text/css">
+	input{font-size:2em;
+	}
+  </style>
+ </head>
+ <body>
+ 王维：送綦毋潜落第还乡
+<p></p>
+<input type="button" value="上一页" id = "prev">
+<input type="button" value="下一页" id = "next">
+
+
+  <script type="text/javascript">
+  <!--
+    var poem = [];
+     poem [0] = "王维：送綦毋潜落第还乡";
+     poem [1] = "圣代无隐者，英灵尽来归。";
+     poem [2] = "遂令东山客，不得顾采薇。";
+	 poem [3] = "既至金门远，孰云吾道非？";
+	 poem [4] = "江淮度寒食，京洛缝春衣。";
+	 poem [5] = "置酒长安道，同心与我违。";
+	 poem [6] = "行当浮桂棹，未几拂荆扉。";
+	 poem [7] = "远树带行客，孤城当落晖。";
+	 poem [8] = "吾谋适不用，勿谓知音稀。";
+	var content = document.querySelector("p");
+	var prevBt = document.querySelector("input#prev");
+	var nextBt = document.querySelector("input#next");
+	var i = 1 ;
+	prevBt.onclick = function(){
+		if (i>1)
+		{
+			content.textContent = poem[i];
+		    i--;
+		}
+	};
+
+	nextBt.onclick = function(){
+		if (i<8)
+		{
+			content.textContent = poem[i];	
+			i++;
+		}		
+	};
+  //-->
+  </script>
+ </body>
+</html>
