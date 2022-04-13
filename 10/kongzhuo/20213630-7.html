@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+		<title>20213630-7</title>
+		
+		<style type="text/css">
+			*{
+				text-align: center;
+			}
+			h1#scTitle{
+				font-size: 5em;
+				color: dodgerblue;
+				font-family: 华文行楷;
+				text-shadow: #0000FF;
+			}
+			
+			p#scContent{
+				font-size: 2em;
+				width: 12em;
+				margin: auto;
+			}
+			input{
+				font-size: 1.5em;
+				background-color: #FF0000;
+				color: #FFFFFF;
+			}
+		</style>
+		
+		<script type="text/javascript">
+		
+		var scTitle = []
+		scTitle[0] = "杜甫：佳人"
+		scTitle[1] = "王维：送綦毋潜落第还乡"
+		scTitle[2] = "王维：西施咏"
+		scTitle[3] = "孟浩然：夏日南亭怀辛大"
+		scTitle[4] = "邱为：寻西山隐者不遇"
+		
+		var scContent = ["绝代有佳人，幽居在空谷。\n自云良家子，零落依草木。\n关中昔丧乱，兄弟遭杀戮。\n官高何足论，不得收骨肉。\n世情恶衰歇，万事随转烛。\n夫婿轻薄儿，新人美如玉。\n合昏尚知时，鸳鸯不独宿。\n但见新人笑，那闻旧人哭！\n在山泉水清，出山泉水浊。\n侍婢卖珠回，牵萝补茅屋。\n摘花不插发，采柏动盈掬。\n天寒翠袖薄，日暮倚修竹。","圣代无隐者，英灵尽来归。遂令东山客，不得顾采薇。\n既至金门远，孰云吾道非？\n江淮度寒食，京洛缝春衣。\n置酒长安道，同心与我违。\n行当浮桂棹，未几拂荆扉。\n远树带行客，孤城当落晖。\n吾谋适不用，勿谓知音稀。",
+		"艳色天下重，西施宁久微。\n朝为越溪女，暮作吴宫妃。\n贱日岂殊众，贵来方悟稀。\n邀人傅脂粉，不自著罗衣。\n君宠益娇态，君怜无是非。\n当时浣纱伴，莫得同车归。\n持谢邻家子，效颦安可希！\n","山光忽西落，池月渐东上。\n散发乘夜凉，开轩卧闲敞。\n荷风送香气，竹露滴清响。\n欲取鸣琴弹，恨无知音赏。\n感此怀故人，中宵劳梦想。","绝顶一茅茨，直上三十里。\n扣关无僮仆，窥室惟案几。\n若非巾柴车，应是钓秋水。\n差池不相见，黾勉空仰止。\n草色新雨中，松声晚窗里。\n及兹契幽绝，自足荡心耳。\n虽无宾主意，颇得清净理。\n兴尽方下山，何必待之子。"]
+		</script>
+	</head>
+
+	<body>
+		<h1 id = "scTitle">
+			
+		</h1>
+		<p id = "scContent">
+			
+		</p>
+		<input type="button" value="Prev" id="prev">
+		<input type="button" value="Next" id="next">
+		
+		<script type="text/javascript">
+
+		var	h1Dom = document.querySelector("h1#scTitle"); 
+		var pDom = document.querySelector("p#scContent");
+		
+		h1Dom.textContent = scTitle[0] ;
+		pDom.textContent = scContent[0] ;
+		
+		var i = 0 ;
+		document.querySelector("input#next").onclick = function(){
+			if (i < scTitle.length-1) {
+				i++ ;
+			}else{
+				i = 0 ;
+			}
+
+			h1Dom.textContent = scTitle[i] ;
+			pDom.textContent = scContent[i] ;
+		}
+		document.querySelector("input#prev").onclick = function(){
+
+			if (i > 0) {
+				i-- ;
+			}else{
+				i = scTitle.length-1 ;
+			}
+
+			h1Dom.textContent = scTitle[i] ;
+			pDom.textContent = scContent[i] ;
+		}
+		</script>
+	</body>
+</html>
+	
