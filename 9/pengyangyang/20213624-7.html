@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第7次作业</title>
+    <script>
+        var tscontent = "1《登鹳雀楼》101白日依山尽,黄河入海流。欲穷千里目,更上一层楼。2《相思》102红豆生南国,春来发几枝。愿君多采撷,此物最相思。3《寻隐者不遇》103松下问童子,言师采药去。只在此山中,云深不知处。4《鸟鸣涧》104人闲桂花落,夜静春山空。月出惊山鸟,时鸣春涧中。5《送杜少府之任蜀州》105城阙辅三秦,风烟望五津。与君离别意,同是宦游人。海内存知己,天涯若比邻。无为在岐路,儿女共沾巾。6";
+    </script>
+</head>
+
+<body>
+    <center>
+        <input type="button" id="p" value="上一首">
+        <input type="button" id="n" value="下一首">
+        <h1 id="bt"></h1>
+        <h2 id="sj"></h2>
+    </center>
+
+    <script>
+        var x = 1;
+        var v = 101;
+        var bt = document.querySelector("#bt");
+        var sj = document.querySelector("#sj");
+        var p = document.querySelector("#p");
+        var n = document.querySelector("#n");
+        bt.textContent = tscontent.substring(tscontent.search(x), tscontent.search(v));
+        sj.textContent = tscontent.substring(tscontent.search(v), tscontent.search(x + 1));
+        n.onclick = function() {
+            x = x + 1;
+            v = v + 1;
+            if (x == 6) {
+                alert("已经到顶了,跳回最后一首!!!!!");
+                x = 1;
+                v = 101;
+            }
+            bt.textContent = tscontent.substring(tscontent.search(x), tscontent.search(v));
+            sj.textContent = tscontent.substring(tscontent.search(v), tscontent.search(x + 1));
+
+        }
+        p.onclick = function() {
+            x = x - 1;
+            v = v - 1;
+            if (x == 0) {
+                alert("已经到顶了,跳回最后一首!!!!!");
+                x = 5;
+                v = 105;
+            }
+            bt.textContent = tscontent.substring(tscontent.search(x), tscontent.search(v));
+            sj.textContent = tscontent.substring(tscontent.search(v), tscontent.search(x + 1));
+
+        }
+    </script>
+</body>
+
+</html>

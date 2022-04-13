@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>古诗鉴赏</title>
+  <style type="text/css">
+  body{
+        text-align:center;
+	
+	  }
+	h2{
+	    color:rgb(200,10,30);
+	  }
+    ul{
+	    line-height:0em;
+		text-align:left;
+	  }
+     p{
+        font-size:30px;
+		color:rgb(100,200,30);
+      }
+  </style>
+ </head>
+ <body>
+ <h1>
+ </h1>
+ <h2>
+ </h2>
+ <p>
+ </p>
+ <ul>
+    <li>1.<input id="jx" type="button" value="江雪">
+	<li>2.<input id="jj" type="button" value="绝句">
+	<li>3.<input id="sx" type="button" value="山行">
+	<li>4.<input id="zl" type="button" value="赠李白">
+ </ul>
+ <script>
+     var headline1=document.querySelector("h1");
+	 var headline2=document.querySelector("h2");
+	 var headline3=document.querySelector("p");
+	 document.getElementById("jx").onclick=function(){
+		                    headline1.textContent="江雪"
+							headline2.textContent="柳宗元"
+							headline3.textContent="千山鸟飞绝，万径人踪灭。孤舟蓑笠翁，独钓寒江雪。"
+							document.body.style.backgroundColor="yellow";
+	                      }
+ </script>
+ <script>
+     var headline1=document.querySelector("h1");
+	 var headline2=document.querySelector("h2");
+	 var headline3=document.querySelector("p");
+	 document.getElementById("jj").onclick=function(){
+		                    headline1.textContent="绝句"
+							headline2.textContent="杜甫"
+							headline3.textContent="两个黄鹂鸣翠柳，一行白鹭上青天。窗含西岭千秋雪，门泊东吴万里船。"
+							document.body.style.backgroundColor="blue";
+	                      }
+ </script>
+ <script>
+     var headline1=document.querySelector("h1");
+	 var headline2=document.querySelector("h2");
+	 var headline3=document.querySelector("p");
+     document.getElementById("sx").onclick=function(){
+		                    headline1.textContent="山行"
+							headline2.textContent="杜甫"
+							headline3.textContent="远上寒山石径斜，白云生处有人家。停车坐爱枫林晚，霜叶红于二月花。"
+							document.body.style.backgroundColor="gold";
+	                      }
+ </script>
+ <script>
+     var headline1=document.querySelector("h1");
+	 var headline2=document.querySelector("h2");
+	 var headline3=document.querySelector("p");
+     document.getElementById("zl").onclick=function(){
+		                    headline1.textContent="赠李白"
+							headline2.textContent="杜甫"
+							headline3.textContent="秋来相顾尚飘蓬，未就丹砂愧葛洪。痛饮狂歌空度日，飞扬跋扈为谁雄？" 
+							document.body.style.backgroundColor="orange";
+	                      }
+ </script>
+ </body>
+</html>

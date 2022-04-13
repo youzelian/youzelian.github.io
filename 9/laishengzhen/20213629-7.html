@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>五言律诗合集</title>
+    <style type="text/css">
+        body {
+            font-family: serif;
+            text-align: center;
+            background-image: url("https://tse1-mm.cn.bing.net/th/id/R-C.fc789dbbc1993ff65ef4cd6fc35df50a?rik=baR%2ff5uqzJPIug&riu=http%3a%2f%2fpic.5tu.cn%2fuploads%2fallimg%2f2011%2fpic_5tu_big_2020110100842185350.jpg&ehk=ZFqSOrhjNnL4vebkeK9Va414ZZoVHQwRA5s32G7dQTA%3d&risl=&pid=ImgRaw&r=0");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        
+        h1 {
+            font-size: 50px;
+            color: rgb(253, 7, 130);
+        }
+        
+        p {
+            font-size: 35px;
+        }
+        
+        div {
+            width: 230px;
+            margin: 2em auto;
+            line-height: 4em;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <input id="prev" type="button" value="上一首">
+    <input id="next" type="button" value="下一首">
+    <h1></h1>
+    <div>
+        <p></p>
+    </div>
+    <script>
+        var sj = "001相思：王维\n红豆生南国，\n春来发几枝？\n愿君多采撷，\n此物最相思。\n002咏梅：王安石\n墙角数枝梅，\n凌寒独自开。\n遥知不是雪，\n为有暗香来。\n003春望：杜甫\n国破山河在，\n城春草木胜。\n感时花溅泪，\n恨别鸟惊心。\n烽火连三月，\n家书抵万金。\n白头搔更短，\n浑欲不胜簪。\n004春夜喜雨：杜甫\n好雨知时节，\n当春乃发生。\n随风潜入夜，\n润物细无声。\n野径云俱黑，\n江船火独明。\n晓看红湿处，\n花重锦官城。\n005使至塞上：王维\n单车欲问边，\n属国过居延。\n征蓬出汉塞，\n归雁入胡天。\n大漠孤烟直，\n长河落日圆。\n萧关逢候骑，\n都护在燕然。\n006次北固山下：王湾\n客路青山外，\n行舟绿水前。\n潮平两岸阔，\n风正一帆悬。\n海日生残夜，\n江春入旧年。\n乡书何处达？归雁洛阳边。\n007送杜少府之任蜀州：王勃\n城阙辅三秦，\n风烟望五津。\n与君离别意，\n同是宦游人。\n海内存知己，\n天涯若比邻。\n无为在歧路，\n儿女共沾巾。\n008登岳阳楼：杜甫\n昔闻洞庭水，\n今上岳阳楼。\n吴楚东南坼，\n乾坤日夜浮。\n亲朋无一字，\n老病有孤舟。\n戎马关山北，\n凭轩涕泗流。\n009山居秋暝：王维\n空山新雨后，\n天气晚来秋。\n明月松间照，\n清泉石上流。\n竹喧归浣女，\n莲动下渔舟。\n随意春芳歇，\n王孙自可留。\n010过故人庄：孟浩然\n故人具鸡黍，\n邀我至田家。\n绿树村边合，\n青山郭外斜。\n开轩面场圃，\n把酒话桑麻。\n待到重阳日，\n还来就菊花。\n";
+        var prevBt = document.querySelector("input#prev");
+        var nextBt = document.querySelector("input#next");
+        var title = document.querySelector("h1");
+        var p = document.querySelector("p");
+        var arr = sj.match(/\d+(.\d+)?/g);
+        var i = 0;
+        var content = sj.substring(sj.search(arr[i]), sj.search(arr[i + 1]));
+        var poembreak = content.split("\n");
+        title.textContent = poembreak[0];
+        var Enter = content.search("\n");
+        p.textContent = sj.substring(sj.search(arr[i]), sj.search(arr[i + 1])).substring(Enter, sj.search(arr[i + 1]));
+        prevBt.onclick = function() {
+            if (i == -1) {
+                i = 9;
+            }
+            if (i == 0) {
+                i = 10;
+            }
+            if (i > 0) {
+                i--;
+                content = sj.substring(sj.search(arr[i]), sj.search(arr[i + 1]));
+                poembreak = content.split("\n");
+                title.textContent = poembreak[0];
+                Enter = content.search("\n");
+                p.textContent = sj.substring(sj.search(arr[i]), sj.search(arr[i + 1])).substring(Enter, sj.search(arr[i + 1]));
+            }
+            if (i == 9) {
+                content = sj.substring(sj.search(arr[9]));
+                poembreak = content.split("\n");
+                title.textContent = poembreak[0];
+                Enter = content.search("\n");
+                p.textContent = content.substring(Enter);
+            }
+        }
+        nextBt.onclick = function() {
+            if (i < arr.length - 1) {
+                i++;
+            }
+            content = sj.substring(sj.search(arr[i]), sj.search(arr[i + 1]));
+            poembreak = content.split("\n");
+            title.textContent = poembreak[0];
+            Enter = content.search("\n");
+            p.textContent = content.substring(Enter, sj.search(arr[i + 1]));
+            if (i == 9) {
+                i = -1;
+                content = sj.substring(sj.search(arr[9]));
+                poembreak = content.split("\n");
+                title.textContent = poembreak[0];
+                Enter = content.search("\n");
+                p.textContent = content.substring(Enter);
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>诗四首</title>
+  <style>
+  body{
+        text-align:center;
+      }
+    h2{
+	    color:rgb(200,10,30);
+	  }
+	 p{
+        font-size:30px;
+		color:rgb(100,30,200);
+      }
+  </style>
+ </head>
+ <body>
+ <h1>
+ </h1>
+ <h2>
+ </h2>
+ <p>
+ </p>
+ <input id="sy" type="button" value="上一页">
+ <input id="xy" type="button" value="下一页">
+ <input id="ks" type="button" value="开始赏析">
+ <script>
+ var tm=document.querySelector("h1");
+ var zz=document.querySelector("h2");
+ var nr=document.querySelector("p");
+ var i=0
+ ;
+ var title=new Array("江雪","绝句","山行","赠李白");
+ var author=new Array("柳宗元","杜甫","杜甫","杜甫");
+ var content=[];
+     content[0]="千山鸟飞绝，万径人踪灭。孤舟蓑笠翁，独钓寒江雪。";
+	 content[1]="两个黄鹂鸣翠柳，一行白鹭上青天。窗含西岭千秋雪，门泊东吴万里船。";
+	 content[2]="远上寒山石径斜，白云生处有人家。停车坐爱枫林晚，霜叶红于二月花。";
+	 content[3]="秋来相顾尚飘蓬，未就丹砂愧葛洪。痛饮狂歌空度日，飞扬跋扈为谁雄？";
+ var bg=new Array("rgb(100,200,50)","rgb(100,10,50)","gold","orange");
+ document.getElementById("sy").onclick=function(){ i--;
+                                                   document.body.style.backgroundColor=bg[i];
+	                                               tm.textContent=title[i];
+												   zz.textContent=author[i];
+												   nr.textContent=content[i];
+												   if(i==-1)
+	                                               {i=0;
+												   tm.textContent=title[i];
+												   zz.textContent=author[i];
+												   nr.textContent=content[i];
+												    alert("已经到顶了");}
+   }
+ document.getElementById("xy").onclick=function(){ i++;
+                                                   document.body.style.backgroundColor=bg[i];
+	                                               tm.textContent=title[i];
+												   zz.textContent=author[i];
+												   nr.textContent=content[i];
+												   if(i==4)
+	                                               {i=3;
+												   tm.textContent=title[i];
+												   zz.textContent=author[i];
+												   nr.textContent=content[i];
+												   alert("已经到底了");}
+	                                                
+   }
+ document.getElementById("sy").style.display="none";
+ document.getElementById("xy").style.display="none";
+ document.getElementById("ks").onclick=function(){
+	                                               document.body.style.backgroundColor=bg[i];
+
+                                                   tm.textContent=title[i];
+												   zz.textContent=author[i];
+												   nr.textContent=content[i];
+												   sy.style.display="block";
+												   xy.style.display="block";
+												   ks.style.display="none";
+	                                       
+   }
+ </script>
+  
+ </body>
+</html>
