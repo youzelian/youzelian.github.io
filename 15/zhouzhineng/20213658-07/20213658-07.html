@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>字符串2.0版本</title>
+    <style>
+        body {
+            font-size: 20px;
+            text-align: center;
+        }
+   
+        p {
+            width: 240px;
+            margin: auto;
+            line-height: 50px;
+        }
+
+        input {
+            font-size: 2em;
+            cursor: pointer;
+        }
+
+    </style>
+
+    <script>
+        var title = ["杜甫：佳人","杜甫：梦李白二首之一","杜甫：梦李白二首之二"];
+        var words = ["绝代有佳人，幽居在空谷。自云良家子，零落依草木。关中昔丧乱，兄弟遭杀戮。官高何足论，不得收骨肉。世情恶衰歇，万事随转烛。夫婿轻薄儿，新人美如玉。合昏尚知时，鸳鸯不独宿。但见新人笑，那闻旧人哭。在山泉水清，出山泉水浊。侍婢卖珠回，牵萝补茅屋。摘花不插发，采柏动盈掬。天寒翠袖薄，日暮倚修竹。","死别已吞声，生别常恻恻。江南瘴疠地，逐客无消息。故人入我梦，明我长相忆。君今在罗网，何以有羽翼？恐非平生魂，路远不可测。魂来枫林青，魂返关塞黑。落月满屋梁，犹疑照颜色。水深波浪阔，无使蛟龙得。","浮云终日行，游子久不至。三夜频梦君，情亲见君意。告归常局促，苦道来不易。江湖多风波，舟楫恐失坠。出门搔白首，若负平生志。冠盖满京华，斯人独憔悴。孰云网恢恢，将老身反累。千秋万岁名，寂寞身后事。"];
+    </script>
+    
+
+
+<body>
+
+    
+    <H1>杜甫：佳人</H1>
+    <p> 
+        绝代有佳人，幽居在空谷。
+        自云良家子，零落依草木。
+        关中昔丧乱，兄弟遭杀戮。
+        官高何足论，不得收骨肉。
+        世情恶衰歇，万事随转烛。  
+        夫婿轻薄儿，新人美如玉。
+        合昏尚知时，鸳鸯不独宿。
+        但见新人笑，那闻旧人哭！
+        在山泉水清，出山泉水浊。
+        侍婢卖珠回，牵萝补茅屋。
+        摘花不插发，采柏动盈掬。
+        天寒翠袖薄，日暮倚修竹。
+    </p>
+
+    <input  type = "button" value="上一首" id="prev">
+    <input  type = "button" value="下一首" id="next">
+
+    <script>
+        var head = document.querySelector("h1");
+        var content = document.querySelector("p");
+        var prevBt = document.querySelector("input#prev");
+        var nextBt = document.querySelector("input#next");
+
+        var i = 0;
+        
+        prevBt.onclick = function(){
+            if (i > 0){
+                i--;
+                head.textContent = title[i];
+                content.textContent = words[i];
+            }
+
+        }
+
+        nextBt.onclick = function(){
+            if (i < 2){
+                i++;
+                head.textContent = title[i];
+                content.textContent = words[i];
+            }
+            
+        }
+        
+        
+        
+    </script>
+
+</body>
+
+</html>

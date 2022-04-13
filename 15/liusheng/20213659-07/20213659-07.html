@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<meta charset="utf-8" />
+<head>
+	<style>
+		h1 {
+			color: black;
+			font-weight: bold;
+			font-size: 60px;
+			padding: 20px;
+			text-align: center;
+		}
+
+		h4 {
+			color: rgb(18, 12, 12);
+			font-weight: bold;
+			font-size: 40px;
+            margin: 10px 10px 10px 800px;
+		}
+
+		p {
+			color: rgb(44, 41, 41);
+			width: 500px;
+			font-size: 40px;
+			margin: auto;
+		}
+
+		input {
+			font-size:2em;
+		}
+
+		input:hover {
+			color: azure;
+			background-color: rgb(243, 71, 71);
+		}
+
+		div {
+			text-align: right;
+		}
+		a{
+			color:red;
+		}
+		a:hover{
+			color: black;
+        }
+	</style>
+	<script>
+		var a=[];
+			a[1]="寄全椒山中道士";
+			a[2]="长安遇冯著";
+			a[3]="夕次盱眙县";
+			a[4]="东郊";
+			a[5]="送杨氏女"
+		var b=[];
+			b[1]="今朝郡斋冷，忽念山中客。涧底束荆薪，归来煮白石。欲持一瓢酒，远慰风雨夕。落叶满空山，何处寻行迹。";
+			b[2]="客从东方来，衣上灞陵雨。问客何为来，采山因买斧。冥冥花正开，扬扬燕新乳。昨别今已春，鬓丝生几缕。";
+			b[3]="落帆逗淮镇，停舫临孤驿。浩浩风起波，冥冥日沈夕。人归山郭暗，雁下芦洲白。独夜忆秦关，听钟未眠客。";
+			b[4]="吏舍局终年，出郊旷清曙。杨柳散和风，青山澹吾虑。依丛适自憩，缘涧还复去。微雨霭芳原，春鸠鸣何处？乐幽心屡止，遵事迹犹遽。终罢斯结庐，慕陶真可庶。";
+			b[5]="永日方戚戚，出行复悠悠。女子今有行，大江溯轻舟。尔辈苦无恃，抚念益慈柔。幼为长所育，两别泣不休。对此结中肠，义往难复留！自小阙内训，事姑贻我忧。赖兹托令门，仁恤庶无尤。贫俭诚所尚，资从岂待周? 孝恭遵妇道，容止顺其猷。别离在今晨，见尔当何秋。居闲始自遣，临感忽难收。归来视幼女，零泪缘缨流。";
+	</script>
+
+</head>
+	<h1>寄全椒山中道士</h1>
+	<h4> ——韦应物</h4>
+	<p id="ts">今朝郡斋冷，忽念山中客。涧底束荆薪，归来煮白石。欲持一瓢酒，远慰风雨夕。落叶满空山，何处寻行迹。</p>
+	<div><input type="button" value="上一首" id="bt2"></div>
+	<div ><input type="button" value="下一首" id="bt1"></div>
+	
+	<script>
+
+		var h1 = document.querySelector("h1");
+		var bt1 = document.querySelector("input#bt1");
+		var bt2=document.querySelector("input#bt2")
+		var p= document.querySelector("p#ts");
+		var i=1;
+		bt1.onclick = function () {
+			if(i<a.length-1){
+				i++;
+			}
+			h1.textContent = a[i];
+			p.textContent = b[i];
+		}
+		bt2.onclick=function(){
+			if(i>1){
+				i--;
+			}
+			h1.textContent = a[i];
+			p.textContent = b[i];
+		}
+	</script>
+	<a href="https://www.sogou.com/tx?ie=utf-8&pid=sogou-wsse-7f5a17b792b687fc&query=%E9%9F%A6%E5%BA%94%E7%89%A9%E7%9A%84%E7%AE%80%E4%BB%8B">韦应物简介</a>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>button的使用</title>
+    <style>
+        h1,h2 {
+            text-align: center;
+        }
+
+        p {          
+            font-size: 30px;
+            width: 360px;
+            margin: auto;
+        }
+        
+
+        input {
+            font-size: 20px;
+            font-family: "Micrsort yahei";
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        var ts = "寥落古行宫，宫花寂寞红。白头宫女在，闲坐说玄宗.";
+        var writer = "元稹〔唐代〕";
+    </script>
+</head>
+
+<body>
+    <input type = "button" value = "点击显示古诗">
+    <h1> </h1>
+    <h2> </h2>
+    <p> </p>
+    <script>       
+        var bt = document.querySelector("input") ;   
+        var headline = document.querySelector("h1");
+        var poet = document.querySelector("h2");
+        var content = document.querySelector("p");      
+        bt.onclick = function(){
+            headline.textContent = "行宫" ;
+            poet.textContent = writer;
+            content.textContent = ts;
+        }
+    </script>
+    
+</body>
+
+</html>

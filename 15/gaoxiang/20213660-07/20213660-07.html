@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第七周作业</title>
+</head>
+<style type="text/css">
+    body{
+        text-align: center;
+        font-size: 25px;
+    }
+    p.lbcontent{
+        font-size: 2em;
+        width: 12em;
+        margin: auto;
+    }
+</style>
+<script type="text/javascript">
+    var lbTitle = [];
+    lbTitle[0] = "关山月" ;
+    lbTitle[1] = "月下独酌其一" ;
+    lbTitle[2] = "春夜洛城闻笛" ;
+    var lbContent = ["明月出天山，苍茫云海间。\n长风几万里,吹度玉门关。\n汉下白登道,胡窥青海湾。\n由来征战地,不见有人还。\n戍客望边色,思归多苦颜。\n高楼当此夜,叹息未应闲。\n","花间一壶酒，独酌无相亲。\n举杯邀明月,对影成三人。\n月既不解饮,影徒随我身。\n暂伴月将影,行乐须及春。\n我歌月徘徊,我舞影零乱。\n醒时相交欢,醉后各分散。\n永结无情游,相期邈云汉。\n","谁家玉笛暗飞声，散入春风满洛城。\n此夜曲中闻折柳,何人不起故园情。\n"];
+</script>
+<body>
+    <h1 class="lbTitle">标题</h1>                                       
+    <p class="lbContent">内容</p>
+    <div>
+        <input type="button" value="prev" class = "prev">
+        <input type="button" value="next" class = "next">
+    </div >
+    <script type="text/javascript">
+        var h1Dom = document.querySelector("h1.lbTitle");
+        var pDom = document.querySelector("p.lbContent");
+        var i = 0;
+        h1Dom.textContent = lbTitle[0];
+        pDom.textContent = lbContent[0];                                      
+        document.querySelector("input#next").onclick = function(){
+            if(i>=lbTitle.length - 1){
+                i = 0;
+            }
+            else{
+                i++;
+            }
+            h1Dom.textContent = lbTitle[i];
+            pDom.textContent = lbContent[i];
+        };
+        document.querySelector("input#prev").onclick = function(){
+            if(i<=0){
+                i = lbTitle.length - 1;
+            }
+            else{
+                i--;
+            }
+            h1Dom.textContent = lbTitle[i];
+            pDom.textContent = lbContent[i];
+        }; 
+    </script>  
+</body>
+
+</html>
