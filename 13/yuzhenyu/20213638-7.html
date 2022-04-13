@@ -1,0 +1,91 @@
+
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>第七次作业</title>
+ </head>
+ <style type="text/css">
+body
+{
+text-align:center;
+font-family:楷体;
+}
+input
+{
+cursor:pointer;
+transition-duration: 0.4s; 
+background-color:white;
+display: inline-block;
+width: 90px;
+height: 90px;
+font-size: 20px;
+border-radius: 10px;
+}
+h1,
+h2
+{
+font-size:40px;
+ color:black;
+ margin:35px;
+}
+p
+{
+
+ font-size:30px;
+ margin:auto;
+ letter-spacing:0.6em;
+ width:400px;
+
+}
+
+}
+ </style>
+ <body>
+ 
+ <input type="button" value="上一首" id="prev">
+ <input type="button" value="下一首" id="next">
+ <h1 id="tsTitle"></h1>
+ <p id="tsContent"></p>
+
+  <script> 
+
+	var tsTitle = [];
+	    tsTitle[0] = ["登高"];
+	    tsTitle[1] = ["望岳"];
+	    tsTitle[2] = ["蜀相"];
+		tsTitle[3] = ["春望"];
+    var tsContent=["风急天高猿啸哀，渚清沙白鸟飞回。\n无边落木萧萧下，不尽长江滚滚来。\n万里悲秋常作客，百年多病独登台。\n艰难苦恨繁霜鬓，潦倒新停浊酒杯。","岱宗夫如何？齐鲁青未了。\n造化钟神秀，阴阳割昏晓。\n荡胸生曾云，决眦入归鸟。\n会当凌绝顶，一览众山小。","丞相祠堂何处寻？锦官城外柏森森。\n映阶碧草自春色，隔叶黄鹂空好音。\n三顾频烦天下计，两朝开济老臣心。\n出师未捷身先死，长使英雄泪满襟。","国破山河在，城春草木深。\n感时花溅泪，恨别鸟惊心。\n烽火连三月，家书抵万金。\n白头搔更短，浑欲不胜簪。"]
+
+    var h1Dom = document.querySelector("h1#tsTitle") ;
+    var pDom =  document.querySelector("p#tsContent");
+	var prevBt = document.querySelector("input#prev");
+    var nextBt = document.querySelector("input#next");
+
+         h1Dom.textContent = tsTitle[0] ;
+         pDom.textContent = tsContent[0] ;
+       var i= 0 ;
+       document.querySelector("input#next").onclick = function(){
+        if (i< tsTitle.length-1) {
+          i++ ;
+		 }
+		 else
+		   {i=i-3;}
+         h1Dom.textContent = tsTitle[i] ;
+         pDom.textContent = tsContent[i] ;
+		
+		   } ;
+	   document.	querySelector("input#prev").onclick = function(){
+		 if (i > 0) {
+          i-- ;
+		 }
+		 else
+		   {i=3;}
+         h1Dom.textContent = tsTitle[i] ;
+         pDom.textContent = tsContent[i] ;
+	   } ;
+
+	
+  </script>
+ </body>
+</html>
