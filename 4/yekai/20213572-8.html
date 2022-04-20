@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+    <style type="text/css">
+		input{
+		border:5px outset solid;
+		font-size:50px;
+		}
+		body{
+		text-align:center; 
+		background-image: url(https://tse1-mm.cn.bing.net/th/id/OIP-C.GrAzfkSHW__GPqrk8Uwr0QHaFj?w=155&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7);
+            background-repeat: no-repeat;
+            background-size: 90%;
+		}
+		p{
+		font-size:35px;
+		color:blue;
+		}
+		h1{
+		font-size:30px;
+		width:180px;
+		color:blue;
+		margin:auto;
+		line-height:40px;
+		}
+		
+	</style>
+	<script src = "ts300.js">
+	<!--
+		
+	//-->
+	</script>
+ </head>
+ <body>
+	
+	<input type="button" value="上一页" id="prev">
+	<input type="button" value="下一页" id="next">
+	<p></p>
+	<h1></h1>
+	<script>
+	var content = document.querySelector("h1");
+	var title = document.querySelector("p");
+	var prevBt = document.querySelector("input#prev");
+	var nextBt = document.querySelector("input#next");
+	
+	
+var ts = [] ,
+	    biaoti = [] ,
+	    shige= [] ;
+	var p1 ,
+	    p2 ,
+		BEGIN = 100,
+		i,
+		END = 310 ;
+		//用ts数组表示出100到310首古诗
+    for (i = 0 ;i<END - BEGIN ;i++ ){ 
+		p1 = ts300.search(i+BEGIN);
+		p2 = ts300.search(i+1+BEGIN);
+		ts[i] = ts300.substring(p1,p2);
+    }
+	//用TiTitle[]和TsContent[]两个数组从ts数组中提取标题和古诗内容
+	for (i = 0;i<END - BEGIN ; i++){
+         p1 = 3 ;
+		 p2 = ts[i].search("\n") ;//search查询第一个\n的位置，详细的用法还不清楚注意这里的\n和数字不一样需要加""
+		biaoti[i] = ts[i].substring(p1,p2)
+		 shige[i] = ts[i].substring(p2)//p2表示第一个\n一直到结尾
+    }
+	var i=0;
+		title.textContent = biaoti[i]+" "+"第"+(i+1)+"页";
+		content.textContent = shige[i];
+	prevBt.onclick = function(){
+		if(i>0){
+			i--;
+		}
+		else{
+			i=biaoti.length-1;
+		}
+		title.textContent = biaoti[i]+" "+"第"+(i+1)+"页";
+		content.textContent = shige[i];	
+	};
+	nextBt.onclick = function(){
+		if(i<biaoti.length-1){
+			i++;
+		}
+		else{
+			i=0;
+		}
+		title.textContent = biaoti[i]+" "+"第"+(i+1)+"页";
+		content.textContent = shige[i];
+	};
+    </script>
+
+	
+ </body>
+</html>

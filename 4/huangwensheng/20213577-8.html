@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title></title>
+ <style type="text/css">
+    *{ font-size:20px;
+      }
+    body{
+     text-align: center;
+     width:12em;
+     margin:auto;
+	 background-color:rgb(100,200,300);
+
+    }
+	input{
+	   font-size:1.2em;
+	   background-color:rgb(100,200,100);
+	   }
+	
+
+
+ </style>
+ <script src = "ts300.js">
+ <!--
+	
+ //-->
+ </script>
+ </head>
+<body>
+  <input type="button" value="上一首" id = "p" >
+  <input type="button" value="下一首" id = "n" > 
+  <h1>
+  </h1>
+  <p>
+  </p>
+  <script type="text/javascript">
+<!--
+    var ts = [] ,
+	    tsTitle = [] ,
+	    tsContent = [] ;
+	var p1 ,
+	    p2 ,
+		BEGIN = 100,
+		i,
+		END = 310 ;
+		//用ts数组表示出100到310首古诗
+    for (i = 0 ;i<END - BEGIN ;i++ ){ 
+		p1 = ts300.search(i+BEGIN);
+		p2 = ts300.search(i+1+BEGIN);
+		ts[i] = ts300.substring(p1,p2);
+    }
+	//用TiTitle[]和TsContent[]两个数组从ts数组中提取标题和古诗内容
+	for (i = 0;i<END - BEGIN ; i++){
+         p1 = 0 ;//100中的0处于第三位而这是我的标题的开始
+		 p2 = ts[i].search("\n") ;//search查询第一个\n的位置，详细的用法还不清楚注意这里的\n和数字不一样需要加""
+		 tsTitle[i] = ts[i].substring(p1,p2)
+		 tsContent[i] = ts[i].substring(p2)//p2表示第一个\n一直到结尾
+    }
+    //开始编写DOM(用户界面)
+	    i=0;         
+        showTs(i);
+       var prve = document.getElementById("p")  
+       var next = document.getElementById("n") 
+	   prve.onclick = function(){
+                              if (i>0)
+                              {i--;
+                              }
+                          else{i=END-BEGIN-1;
+                                }
+                               showTs(i)
+                               }
+       next.onclick = function(){
+                                
+                               if (i<END-BEGIN-1)
+                               {i++;
+                               }
+                           else{ i=0; 
+                               }
+                                showTs(i)                              
+     } 
+     function showTs(i){
+        var tsTitleDom = document.querySelector("h1"); 
+        var tsContentDom = document.querySelector("p"); 
+        tsTitleDom.textContent = tsTitle[i];
+        tsContentDom.textContent = tsContent[i] ;    
+        
+    }
+//-->
+</script>
+</body>
+</html>

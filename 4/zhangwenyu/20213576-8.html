@@ -1,0 +1,109 @@
+
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <style type="text/css">
+	*
+	{
+	text-align:center;
+	}
+	input
+	{
+	color:black;
+	font-size:30px;
+	border-radius:5em;
+	letter-spacing:0.2em;
+	text-shadow:0.05em 0.02em rgba(100,100,100,1) ;
+	cursor:pointer;
+	}
+	p
+	{
+	font-size:20px;
+	}
+	.poem
+	{
+	font-size:100px;
+	text-shadow:0.05em 0.02em rgba(200,200,100,1) ;
+	color:black;
+	}
+  </style>
+  <title>震惊！！！</title>
+ <style type="text/css">
+  *
+  {
+  font-size:20px;
+  }
+ </style>
+ <script src = "ts300.js">
+ <!--
+ //-->
+ </script>
+ </head>
+ <body>
+ <div id="" class="poem">
+			古诗100——318
+ </div>
+  <input type="button" value="上一首" id = "prev" >
+  <input type="button" value="下一首" id = "next" >
+  <h1>
+  </h1>
+  <p>
+  </p>
+  <script type="text/javascript">
+<!--
+    var ts = [] ,tsTitle = [] ,tsContent = [] ;
+	var p1 ,END = 319 , p2 ,BEGIN = 100, i ; 
+    for (i = 0 ;i < END - BEGIN ; i++ )
+	{ 
+		p1 = ts300.search(i+BEGIN);
+		p2 = ts300.search(i+1+BEGIN);
+		ts[i] = ts300.substring(p1,p2);
+    }
+	for (i = 0;i< ts.length; i++)
+	{
+        p1 = 0 ;
+		p2 = ts[i].search("\n") ;
+		tsTitle[i] = ts[i].substring(p1,p2);
+		tsContent[i] = ts[i].substring(p2);
+    }
+ 
+	   i=0;         
+       showTs(i);
+       var prveBt = document.querySelector("input#prev")  
+       var nextBt = document.querySelector("input#next") 
+	   prveBt.onclick = function()
+	   {
+			if (i>0)
+			{
+			i--;
+			}
+		    else
+		    {
+			i=END-BEGIN-1;
+		    }
+       showTs(i)
+      }
+       nextBt.onclick = function()
+	   {                               
+		   if (i<END-BEGIN-1)
+		   {
+			   i++;
+		   }
+		   else
+		   { 
+			   i=0; 
+		   }
+      showTs(i)                              
+      } 
+     function showTs(i){
+        var tsTitleDom = document.querySelector("h1"); 
+        var tsContentDom = document.querySelector("p"); 
+        tsTitleDom.textContent = tsTitle[i];
+        tsContentDom.textContent = tsContent[i] ;    
+        
+    }
+//-->
+</script>
+</body>
+</html>

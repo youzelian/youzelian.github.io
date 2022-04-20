@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>唐诗</title>
+  <style type = "text/css">
+  body{
+    font-size:15px;
+      text-align:center;
+  }
+  h1#tsTitle{
+        font-size:3em;
+		color:green;
+ }
+p#tsContent{
+      font-size:2em;
+	  margin:auto;
+	  width:12em;
+	  color:blue;
+ }
+input{
+   font-size:1em;
+   border-right:5px solid  blue;
+   border-top:5px solid  blue;
+   border-bottom:5px solid  blue;
+   border-left:5px solid  blue;
+ }
+ .poem{
+   font-size:40px;
+   color:red;
+ }
+  </style>
+  <script src="ts300.js">
+  <!--
+  </script>
+ </head>
+ <body>
+ <div id="" class="poem">
+     中国唐诗
+	 </div>
+ <input type="button" value="上一页" id="prev">
+ <input type="button" value="下一页" id="next">
+  <h1 id = "tsTitle">
+  </h1>
+  <p id="tsContent">
+  </p>
+<script type="text/javascript">
+<!--
+var ts =[];
+     tsTitle=[];
+	 tsContent=[];
+	var Start =100,
+	END= 250,
+     i,
+	 p1,
+	 p2;
+   for(i=0;i<END - Start;i++){
+        p1 = ts300.search(i+Start);
+		p2 = ts300.search(i+1+Start);
+        ts[i]=ts300.substring(p1,p2);
+   }
+   for(i=0;i<ts.length;i++){
+       p1=3;
+	   p2=ts[i].search("\n");
+       tsTitle[i]=ts[i].substring(p1,p2);
+	   tsContent[i]=ts[i].substring(p2);
+   }
+        i=0;
+		showTs(i);
+		var prevDom=document.getElementById("prev");
+        var nextDom=document.getElementById("next");
+       prevDom.onclick=function(){
+		   if (i>0)
+			{
+			i--;
+			}
+		    else
+		    {
+			i=END-Start-1;
+		    }
+		   showTs(i);
+		   };
+          nextDom.onclick=function(){
+		    if (i<END-Start-1)
+		   {
+			   i++;
+		   }
+		   else
+		   { 
+			   i=0; 
+		   }
+			showTs(i);
+		  }
+            function showTs(i){
+		var tsTitleDom=document.getElementById("tsTitle");
+         var tsContentDom=document.getElementById("tsContent");
+        tsTitleDom.textContent=tsTitle[i];
+        tsContentDom.textContent=tsContent[i];
+			}
+</script>
+ </body>
+</html>
