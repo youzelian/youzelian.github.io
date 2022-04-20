@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body {
+            text-align: center;
+            font-size: 25px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        h1#tsTitle {
+            color: rgb(151, 244, 244);
+            text-shadow: 0 0 4px rgb(44, 166, 169), 0 -5px 4px rgb(40, 153, 194), 2px -10px 6px rgb(10, 115, 134), -2px -15px 11px rgb(4, 73, 98), 2px 15px 18px rgb(15, 81, 203);
+        }
+        
+        #tsContent {
+            font-size: 1em;
+            width: 12em;
+            margin: auto;
+            color: rgb(177, 56, 13);
+        }
+        
+        input {
+            font-size: 1.5em;
+            box-shadow: rgb(134, 59, 203);
+            color: rgb(77, 68, 142);
+        }
+    </style>
+    <script src="ts300.js">
+    </script>
+</head>
+
+<body>
+    <input type="button" value="Prev" id="prev">
+    <input type="button" value="Next" id="next">
+    <h1 id="tsTitle">
+
+    </h1>
+    <p id="tsContent">
+
+    </p>
+    <script type="text/javascript">
+        var ts = [],
+            tsTitle = [],
+            tsContent = [];
+        var begin = 10,
+            end = 321,
+            i,
+            p1,
+            p2;
+        for (i = 0; i < end - begin; i++) {
+            p1 = ts300.search(i + begin);
+            p2 = ts300.search(i + 1 + begin);
+            ts[i] = ts300.substring(p1, p2);
+        }
+        for (i = 0; i < ts.length; i++) {
+            p1 = 0;
+            p2 = ts[i].search("\n");
+            tsTitle[i] = ts[i].substring(p1, p2);
+            tsContent[i] = ts[i].substring(p2, ts[i].length);
+        }
+        //开始写DOM控制代码
+        i = 0;
+        shareTs(i);
+        var prevDom = document.querySelector("#prev");
+        var nextDom = document.querySelector("#next");
+        nextDom.onclick = function() {
+            if (i >= tsTitle.length - 1) {
+                i = 0;
+            } else {
+                i++;
+            }
+            shareTs(i);
+        };
+        prevDom.onclick = function() {
+            if (i <= 0) {
+                i = tsTitle.length - 1;
+            } else {
+                i--;
+            }
+            shareTs(i);
+        };
+
+        function shareTs() {
+            var tsTitleDom = document.querySelector("h1#tsTitle");
+            var tsContentDom = document.querySelector("#tsContent");
+            tsTitleDom.textContent = tsTitle[i];
+            tsContentDom.textContent = tsContent[i];
+        };
+    </script>
+</body>
+
+
+</html>
