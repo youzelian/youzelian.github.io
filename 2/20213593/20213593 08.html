@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<center>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>唐诗三百首</title>
+    <input type="button" value="上一首" id="prev">
+    <input type="button" value="下一首" id="next">
+    
+
+</head>
+<style>
+    h1
+    {
+      font-size: 50px;
+    }
+    p
+    {
+      font-size: 50px;
+      width: 600px;
+    }
+    input
+    {
+      text-align: center;
+            font-size: 30px;
+            background-color: rgb(196, 250, 232);
+            color: rgb(224, 80, 13);
+            height: 60px;
+            width: 130px;
+            margin-inline: 10px;
+            font-family: 楷体
+    }
+    body
+    {
+            background-color: lightpink;
+            text-align: center;
+            font-family: 楷体;
+    }
+  </style>
+<body>
+    <h1 id="tsTitleDom">
+
+    </h1>
+    <p id="tsContentDom">
+    
+    </p>
+    <script src="ts300.js">
+    </script>
+    <script>
+        var ts = [] ;
+        var tsTitle = [];
+        var tsContent = [];
+        var BEGIN = 10,
+            END = 320,
+            i ,
+            p1,
+            p2;
+        for(i=0;i<=END-BEGIN;i++){
+            p1 = ts300.search(i+BEGIN);
+            p2 = ts300.search(i+BEGIN+1);
+            ts[i] = ts300.substring(p1,p2);
+        }
+        for(i=0;i<ts.length ;i++){
+            p1 = 0;
+            p2 = ts[i].search("\n");
+            tsTitle[i] = ts[i].substring(p1,p2);
+            tsContent[i] = ts[i].substring(p2,ts[i].length-1);
+            
+        }
+        i =0;
+        tsTitleDom.textContent=tsTitle[i];
+        tsContentDom.textContent=tsContent[i];
+        var prevDom = document.getElementById("prev");
+        var nextDom = document.getElementById("next");
+        prevDom.onclick = function(){
+            if(i>0&&i<=310){
+                i--;
+                tsTitleDom.textContent=tsTitle[i];
+                tsContentDom.textContent=tsContent[i];
+            }
+            else{
+                i = 310;
+                tsTitleDom.textContent=tsTitle[310];
+                tsContentDom.textContent=tsContent[310];
+            }
+                
+        }
+        nextDom.onclick = function(){
+            if(i>=0&&i<310){
+                i++;
+                tsTitleDom.textContent=tsTitle[i];
+                tsContentDom.textContent=tsContent[i];
+            }
+            else{
+                i=0;
+                tsTitleDom.textContent=tsTitle[0];
+                tsContentDom.textContent=tsContent[0];
+            }
+            
+        }
+        
+            
+        
+    </script>
+</body>
+</center>
+</html>

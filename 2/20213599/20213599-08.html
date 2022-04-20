@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>ts300</title>
+		<script src="../ts300.js" >
+		</script>
+		<style type="text/css">
+			body
+			{
+				background-color:lightblue;
+			}
+			h1
+			{
+				color:;
+				font-size:50px;
+				width:1000px;
+				margin:auto;
+				text-align:center;
+			}
+			p
+			{
+				color:blue;
+				font-size:38px;
+				text-align:center;
+				width:490px;
+				line-height:58px;
+				margin:auto;
+			}
+			input
+			{
+				color:red;
+				background-color:orange;
+				font-size:38px;
+
+			}
+			div
+			{
+				height:50px;
+			}
+		</style>
+	</head>
+	<body id="B">
+		<div>
+			<div style="float:left">
+				<input type="button" value="首页" id="home">
+				<input type="button" value="上一首" id="prev">
+			</div>
+			<div style="float:right">
+				<input type="button" value="下一首" id="next">
+				<input type="button" value="尾页" id="end">
+			</div>
+		</div>
+		<h1 id="tstitledom"></h1>
+		<p id="tscontentdom"></p>
+		<script type="text/javascript">
+			var co=[];
+			var ts=[],
+				tstitle=[],
+				tscontent=[];
+			var BEGIN=10,
+				END=320,
+				i,
+				p1,
+				p2;
+			for(i=0;i<=END-BEGIN;i++)
+			{
+			p1=ts300.search(i+BEGIN);
+			p2=ts300.search(i+1+BEGIN);
+			ts[i]=ts300.substring(p1,p2);
+			}
+			for(i=0;i<=END-BEGIN;i++)
+			{
+			p1=0;
+			p2=ts[i].search("\n");
+			tstitle[i]=ts[i].substring(p1,p2);
+			tscontent[i]=ts[i].substring(p2);
+			}
+			var i=0;
+			tstitledom.textContent=tstitle[0];
+			tscontentdom.textContent=tscontent[0];
+			prev.onclick=function()
+					{
+						if(i<=0)
+							{
+								i=310;
+							}
+						else
+							{
+								i--;
+							}
+						tstitledom.textContent=tstitle[i];
+						tscontentdom.textContent=tscontent[i];
+					}
+			next.onclick=function()
+					{
+						if(i>=310)
+							{
+								i=0;
+							}
+						else
+							{
+								i++;
+							}
+						tstitledom.textContent=tstitle[i];
+						tscontentdom.textContent=tscontent[i];
+					}
+			home.onclick=function()
+					{
+						i=0;
+						tstitledom.textContent=tstitle[i];
+						tscontentdom.textContent=tscontent[i];
+					}
+			end.onclick=function()
+					{
+						i=310;
+						tstitledom.textContent=tstitle[i];
+						tscontentdom.textContent=tscontent[i];
+					}
+		</script>
+	</body>
+</html>

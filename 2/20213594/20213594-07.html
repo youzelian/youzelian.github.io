@@ -49,8 +49,10 @@
   </script>
  </head>
  <body>
+  <input type="button" value="首页" id="home">
   <input type="button" value="上一首" id="prev">
   <input type="button" value="下一首" id="next">
+  <input type="button" value="尾页" id="end">
   <h1>登鹳雀楼</h1>
   <h2>王之涣〔唐代〕</h2>
   <p></p>
@@ -91,6 +93,21 @@
 		title2.textContent=zz[i];
 		
 	  };
+	   home.onclick=function()
+					{
+			        i=0;
+			        content.textContent=ts[i];
+		            title1.textContent=tm[i];
+		            title2.textContent=zz[i];
+       
+					}
+			end.onclick=function()
+					{
+						i=2;
+						content.textContent = ts[i];
+		                title1.textContent=tm[i];
+		                title2.textContent=zz[i];
+					}
  //-->
  </script>
  </body>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <style>
+   body{text-align:center;
+        font-size:30px;}
+   input#problem,#result{margin:auto;
+         width:100px;
+		 height:60px;
+		 font-size:20px;}
+   input#answer{font-size:30px;
+                text-align:center;
+                margin:auto;
+				height:40px;}
+  </style>
+  <title>第八次作业</title>
+ </head>
+ <body>
+  <p id="title">小学生加法训练</p>
+  <input type="button" value="获取题目" id="problem">
+  <input type="button" value="结果" id="result">
+  <p id="pro"></p>
+  <input type="text" id="answer" placeholder="请用阿拉伯数字填写">
+  
+  <script>
+   var i,
+       x,
+	   y,
+       z;
+   var pro1=document.querySelector("p#pro"),
+       fin=document.querySelector('p#fin'),
+       problem=document.querySelector('input#problem'),
+	   result=document.querySelector('input#result')
+	   answer=document.getElementById('answer');
+   answer.style.display="none";
+   problem.onclick=function() {
+       x=Math.floor(Math.random()*100);
+	   y=Math.floor(Math.random()*100);//Math.floor取整函数，Math.random()*max随机函数。
+	   answer.style.display="block";
+	   pro.textContent=x+'+'+y+'=';
+	   }
+   result.onclick=function() {
+	   z=x+y;
+       answer.style.display="none";
+	   if(answer.value==z){
+		   pro.style.cssText="white-space:pre-line";//定义元素内空白如何处理，使\n有效
+		   pro.textContent=x+'+'+y+'='+z+"\n"+"你的答案："+answer.value+"，"+"回答正确。";
+	      }else{pro.textContent="你的答案："+answer.value+"，"+"回答错误。";}
+	   
+	   }
+
+  </script>
+ </body>
+</html>
