@@ -1,0 +1,123 @@
+ <!doctype html>  
+ <html lang="en">  
+ <head>  
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>作业07</title>  
+ 
+ </head>  
+ <body>  
+ <input type = "button" value = "上一篇" id ="prve" >  
+ <input type = "button" value = "下一篇" id ="next">  
+ <hr style="height:3px">
+
+ <h1 id="songTitle"></h1>  
+ <p id="songContent"></p >  
+
+
+ <script type="text/javascript" > 
+ 
+ var song = [];  
+ var lyric = [];  
+ song[1] = "青花瓷" ;  
+ song[2] = "青花瓷" ;  
+ song[3] = "青花瓷" ;  
+ lyric[1] = "素胚勾勒出青花笔锋浓转淡 瓶身描绘的牡丹一如妳初妆 冉冉檀香透过窗心事我了然 宣纸上走笔至此搁一半 釉色渲染仕女图韵味被私藏 而你嫣然的一笑如含苞待放 你的美一缕飘散 去到我去不了的地方";
+ lyric[2] = "天青色等烟雨 而我在等你 月色被打捞起 晕开了结局 如传世的青花瓷自顾自美丽 你眼带笑意 色白花青的锦鲤跃然于碗底 临摹宋体落款时却惦记着你 你隐藏在窑烧里千年的秘密 极细腻犹如绣针落地 篱外芭蕉惹骤雨门环惹铜绿 而我路过那江南小镇惹了你 在泼墨山水画里 你从墨色深处被隐去" ;  
+ lyric[3] = "天青色等烟雨 而我在等你 炊烟袅袅升起 隔江千万里 在瓶底书刻隶仿前朝的飘逸 就当我为遇见你伏笔 天青色等烟雨 而我在等你 月色被打捞起 晕开了结局 如传世的青花瓷自顾自美丽 你眼带笑意 天青色等烟雨 而我在等你 炊烟袅袅升起 隔江千万里 在瓶底书刻隶仿前朝的飘逸 就当我为遇见你伏笔 天青色等烟雨 而我在等你 月色被打捞起 晕开了结局 如传世的青花瓷自顾自美丽 你眼带笑意" ;
+ 
+ 
+ var title = document.querySelector("h1") ;  
+ var content = document.querySelector("p") ;  
+ var prew = document.querySelector("input#prve") ;  
+ var next = document.querySelector("input#next") ;
+ var h1 = document.querySelector("h1#songTitle") ;
+ var p =  document.querySelector("p#songContent");
+    h1.textContent = song[1]
+    p.textContent = lyric[1]
+ 
+
+
+
+ var i = 1;  
+ next.onclick = function(){  
+ title.textContent = song[i] ;  
+ content.textContent = lyric[i] ;  
+ i++ ;  
+ if(i>=4){  
+ i=0;  
+ i++;  
+ }  
+ }  
+ prew.onclick = function(){  
+ title.textContent = song[i] ;  
+ content.textContent = lyric[i] ;  
+ i-- ;  
+ if(i<1){  
+ i=4;  
+ i--;  
+ }  
+ }  
+ </script>  
+
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color:#D0D0D0 ;
+            text-align: center;
+        }
+
+        
+      input {
+            display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;   
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+           }
+           
+            
+            font-size: 25px;
+          
+            box-shadow: 6px 6px 3px gray;
+        }
+
+        h1 {
+            margin: 20px;
+            font-size: 30px;
+            font-weight: 590;
+            font-family: 楷体;
+        }
+
+        p {
+            font-size: 25px;
+            font-family: 楷体;
+            line-height: 50px;
+			text-align: center;
+        }
+
+     
+       
+</style>
+
+
+
+
+
+
+
+ </body>  
+ </html>  
+  

@@ -1,0 +1,83 @@
+<!DOCTYPE<!doctype html>  
+ <html lang="en">  
+ <head>  
+ <meta charset="UTF-8">  
+ <title>优美古诗鉴赏</title>
+ <style>
+        input {
+            width: 80px;
+            height: 80px;
+            margin: 0 20px;
+            border-radius: 45px;
+            font-size: 25px;
+            box-shadow: 6px 6px 3px blue;
+        }
+        body {
+            background-color: #e1e0c8;
+            text-align: center;
+            font-family: 楷体;
+        }
+  h2 {
+            margin: 20px;
+            font-size: 70px;
+            font-weight: 590;
+            font-family: 楷体;
+   color:biue
+        }
+       
+        
+        p {
+            font-size: 25px;
+            font-family: 楷体;
+            line-height: 50px;
+        }
+
+  </style>
+ <script type = "text/javascript">  
+ var de="大风歌:刘邦 大风起兮云飞扬，威加海内兮归故乡，安得猛士兮守四方！江南春:杜牧 千里莺啼绿映红，水村山郭酒旗风。南朝四百八十寺，多少楼台烟雨中。新添声杨柳枝词二首:温庭筠 一尺深红胜曲尘，天生旧物不如新。合欢桃核终堪恨，里许元来别有人。井底点灯深烛伊，共郎长行莫围棋。玲珑骰子安红豆，入骨相思知不知。 约客:赵师秀 黄梅时节家家雨，青草池塘处处蛙。有约不来过夜半，闲敲棋子落灯花。苏溪亭:戴叔伦 苏溪亭上草漫漫，谁倚东风十二阑?燕子不归春事晚，一汀烟雨杏花寒。";
+ var wang = [];  
+ var poetry = [];  
+ wang[1] = "大风歌:刘邦" ;  
+ wang[2] = "江南春:杜牧";  
+ wang[3] = "新添声杨柳枝词二首:温庭筠 " ;  
+ wang[4] = "约客:赵师秀 " ;
+ wang[5] = "苏溪亭:戴叔伦 " ;
+ poetry[1] = "大风起兮云飞扬，威加海内兮归故乡，安得猛士兮守四方！" ;  
+ poetry[2] = "千里莺啼绿映红，水村山郭酒旗风。南朝四百八十寺，多少楼台烟雨中。" ;  
+ poetry[3] = "一尺深红胜曲尘，天生旧物不如新。合欢桃核终堪恨，里许元来别有人。井底点灯深烛伊，共郎长行莫围棋。玲珑骰子安红豆，入骨相思知不知。" ;  
+ poetry[4] = "黄梅时节家家雨，青草池塘处处蛙。有约不来过夜半，闲敲棋子落灯花。" ;
+ poetry[5] = "苏溪亭上草漫漫，谁倚东风十二阑？燕子不归春事晚，一汀烟雨杏花寒。" ;
+ </script>  
+ </head>  
+ <body>  
+ <input type = "button" value = "上一篇" id ="s1" >  
+ <input type = "button" value = "下一篇" id ="s2">  
+ <h1></h1>  
+ <p></p >  
+ <script type="text/javascript" >  
+ var title = document.querySelector("h1") ;  
+ var content = document.querySelector("p") ;  
+ var prew = document.querySelector("input#s1") ;  
+ var next = document.querySelector("input#s2") ;  
+ var i = 1;  
+ next.onclick = function(){  
+ title.textContent = wang[i] ;  
+ content.textContent = poetry[i] ;  
+ i++ ;  
+ if(i>=6){  
+ i=0;  
+ i++;  
+ }  
+ }  
+ prew.onclick = function(){  
+ title.textContent = wang[i] ;  
+ content.textContent = poetry[i] ;  
+ i-- ;  
+ if(i<1){  
+ i=6;  
+ i--;  
+ }  
+ }  
+ </script>  
+ </body>  
+ </html>
