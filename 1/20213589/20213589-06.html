@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>20213589.06</title>
+<style type="text/css">
+body{
+    text-align:center;
+}
+p{
+    font-size: 40px;
+    width: 400px;
+    margin: auto;
+    line-height: 50px;
+}
+input{
+    font-size: 40px;
+}
+</style>
+<script type="text/javascript">
+var wangwei=[];
+wangwei[0]="王维 相思";
+wangwei[1]="红豆生南国，春来发几枝。";
+wangwei[2]="愿君多采撷，此物最相思。";
+wangwei[3]="王维 竹里馆";
+wangwei[4]="独坐幽篁里，弹琴复长啸。";
+wangwei[5]="深林人不知，明月来相照。";
+</script>
+</head>
+<body>
+<input type="button" value="上一页" id=prev>
+<input type="button" value="下一页" id=next>
+<h1></h1>
+<P></P>
+<script type="text/javascript">
+var title = document.querySelector("h1");
+var content = document.querySelector("p");
+var prevBt = document.querySelector("input#prev");
+var nextBt = document.querySelector("input#next");
+title.textContent=wangwei[0];
+content.textContent=wangwei[1]+wangwei[2];
+prevBt.onclick = function(){
+    title.textContent=wangwei[0]
+    content.textContent=wangwei[1]+wangwei[2];
+};
+nextBt.onclick =function(){
+    title.textContent=wangwei[3];
+    content.textContent=wangwei[4]+wangwei[5];
+};
+</script>
+ 
+</body>
+</html>

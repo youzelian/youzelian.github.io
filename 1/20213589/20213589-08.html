@@ -1,0 +1,93 @@
+
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>20213589-08</title>
+  <style>
+  body{text-align:center;
+       margin:auto;
+	   pdding:5px;
+	  }
+  p{font-size:80px;
+    font-family:宋体;
+	color:rgb(89, 202, 165);;
+   }
+ h1{font-size:100px;
+    font-family:宋体;
+   }
+ #prev{font-size:30px;
+      font-family:宋体;
+	 }
+ #next{font-size:30px;
+      font-family:宋体;
+	 }
+ </head>
+</style>
+<html>
+<body bgcolor=Silver>
+<input type="button" value="上一页" id="prev"><!--按钮-->
+<input type="button" value="下一页" id="next">
+<p id="tsTitle">
+</p>
+<h1 id="tsContent">
+</h1>
+<script type="text/javascript">
+var title=document.querySelector("p");//标题
+var content=document.querySelector("h1");//内容
+var prevBt=document.querySelector("input#prev");//按钮
+var nextBt=document.querySelector("input#next");
+var begin=1,//古诗的开始与结束
+    end=6,
+	i,
+	k,
+	p1,
+	p2;
+var ts=[],//定义一些空数组
+    tsTitle=[],
+	tsContent=[];
+var ts06="1李白月下独酌\n花间一壶酒,独酌无相亲。\n举杯邀明月,对影成三人。\n月既不解饮,影徒随我身。\n暂伴月将影,行乐须及春。\n我歌月徘徊,我舞影零乱。\n醒时相交欢,醉后各分散。\n永结无情游,相期邈云汉。\n2李白峨眉山月歌\n峨眉山月半轮秋,影入平羌江水流。\n夜发清溪向三峡,思君不见下渝州。\n3李白春夜洛城闻笛\n谁家玉笛暗飞声,散入春风满洛城。\n此夜曲中闻折柳,何人不起故园情。\n4李白登金陵凤凰台\n凤凰台上凤凰游,凤去台空江自流。\n吴宫花草埋幽径,晋代衣冠成古丘。\n三山半落青天外,二水中分白鹭洲。\n总为浮云能蔽日,长安不见使人愁。\n5李白渡荆门送别\n渡远荆门外,来从楚国游。\n山随平野尽,江入大荒流。\n月下飞天镜,云生结海楼。\n仍怜故乡水,万里送行舟。\n6李白送友人\n青山横北郭,白水绕东城。\n此地一为别,孤蓬万里征。\n浮云游子意,落日故人情。\n挥手自兹去,萧萧班马鸣。\n"
+for (i=0;i<end-begin ;i++ ){			//诗句循环
+	p1=ts06.search(i+begin);
+	p2=ts06.search(i+1+begin);
+	ts[i]=ts06.substring(p1,p2);
+}
+for (i=0;i<ts.length ;i++ ){		//标题和内容分开
+	p1=3;
+	p2=ts[i].search("\n");
+    tsTitle[i]=ts[i].substring(p1,p2);//标题
+    tsContent[i]=ts[i].substring(p2,ts[i].length);//内容
+}
+i=0;
+showTs(i);
+var prevDom=document.getElementById("prev");//导航搜索
+var nextDom=document.getElementById("next");
+prevDom.onclick=function(){					//诗句反向衔接
+		if (i==0)
+		{
+			i=6
+		}
+		i--;
+		showTs(i);
+		}
+nextDom.onclick=function(){		//	诗句正向衔接
+		if (i==6)
+		{
+			i=1;
+		}
+		i++;
+		showTs(i);
+		}
+function showTs(i){			
+	var tsTitleDom=document.getElementById("tsTitle");
+	var tsContentDom=document.getElementById("tsContent");
+		tsTitleDom.textContent=tsTitle[i];
+		tsContentDom.textContent=tsContent[i];
+		}
+</script>
+</body>
+</html>

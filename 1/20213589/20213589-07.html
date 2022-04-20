@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style type ="text/css">
+    body{
+        text-align: center;
+        
+    }
+    p{
+        font-size: 30px;
+        width: 340px;
+        margin: auto;
+    }
+    input{
+        font-size:2em
+    }
+</style>
+<script type="text/javascript">
+var poet ="010李白:月下独酌\n花间一壶酒,独酌无相亲。\n举杯邀明月,对影成三人。\n月既不解饮,影徒随我身。\n暂伴月将影,行乐须及春。\n我歌月徘徊,我舞影零乱。\n醒时相交欢,醉后各分散。\n永结无情游,相期邈云汉。\n011李白:峨眉山月歌\n峨眉山月半轮秋,影入平羌江水流。\n夜发清溪向三峡,思君不见下渝州。\n012李白:春夜洛城闻笛\n谁家玉笛暗飞声,散入春风满洛城。\n此夜曲中闻折柳,何人不起故园情。\n013李白:登金陵凤凰台\n凤凰台上凤凰游,凤去台空江自流。\n吴宫花草埋幽径,晋代衣冠成古丘。\n三山半落青天外,二水中分白鹭洲。\n总为浮云能蔽日,长安不见使人愁。\n014李白:渡荆门送别\n渡远荆门外,来从楚国游。\n山随平野尽,江入大荒流。\n月下飞天镜,云生结海楼。\n仍怜故乡水,万里送行舟。\n015李白:送友人\n青山横北郭,白水绕东城。\n此地一为别,孤蓬万里征。\n浮云游子意,落日故人情。\n挥手自兹去,萧萧班马鸣。\n"
+var LBTitle=[];
+LBTitle[0]="李白:月下独酌"
+LBTitle[1]="李白:峨眉山月歌"
+LBTitle[2]="李白:春夜洛城闻笛"
+LBTitle[3]="李白:登金陵凤凰台"
+LBTitle[4]="李白:渡荆门送别"
+LBTitle[5]="李白:送友人"
+var LBContent=["花间一壶酒,独酌无相亲。\n举杯邀明月,对影成三人。\n月既不解饮,影徒随我身。\n暂伴月将影,行乐须及春。\n我歌月徘徊,我舞影零乱。\n醒时相交欢,醉后各分散。\n永结无情游,相期邈云汉。\n","峨眉山月歌\n峨眉山月半轮秋,影入平羌江水流。\n夜发清溪向三峡,思君不见下渝州。","\n谁家玉笛暗飞声,散入春风满洛城。\n此夜曲中闻折柳,何人不起故园情。","\n凤凰台上凤凰游,凤去台空江自流。\n吴宫花草埋幽径,晋代衣冠成古丘。\n三山半落青天外,二水中分白鹭洲。\n总为浮云能蔽日,长安不见使人愁。","\n渡远荆门外,来从楚国游。\n山随平野尽,江入大荒流。\n月下飞天镜,云生结海楼。\n仍怜故乡水,万里送行舟。","\n青山横北郭,白水绕东城。\n此地一为别,孤蓬万里征。\n浮云游子意,落日故人情。\n挥手自兹去,萧萧班马鸣。\n"]
+</script>
+</head>
+<body>
+<h1 id="LBTitle">
+</h1>
+<p id="LBContent">
+</p>
+<div id=""class="">
+ <input type="button"value="Prev"id="prev">
+ <input type="button"value="Next"id="next">
+</div>
+<script type="text/javascript">
+
+
+var h1Luo=document.querySelector("h1#LBTitle");
+var pLuo=document.querySelector("p#LBContent");
+    var i=0;
+    document.querySelector("input#next").onclick=function(){
+        if(i<LBTitle.length-1){
+            i++;
+        }
+        h1Luo.textContent =LBTitle[i];
+        pLuo.textContent=LBContent[i];
+   };
+    document.querySelector("input#prev").onclick=function(){
+        if(i>0){
+            i--;
+        }
+        h1Luo.textContent =LBTitle[i];
+        pLuo.textContent=LBContent[i];
+    }
+</script>
+
+
+
+
+
+
+
+
+</body>
