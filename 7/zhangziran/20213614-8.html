@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>第七次作业</title>
+<style>
+        body {
+		background-color: #BBFFEE;
+		text-align: center;
+        }
+
+        input {
+                 	font-size:2em;
+		text-decoration: none;
+		border:2px black dashed;
+		border-radius:2em;
+		background-color:#BBFFEE;
+        }
+
+        .gushi {
+		white-space: pre-line;
+		text-shadow:10px 10px 10px grey;
+        }
+
+        h3 {
+		font: 500 50px 楷体, 微软雅黑;
+        }
+
+        p {
+		font: 33px/45px 楷体, 微软雅黑;
+        }
+
+        .yu {
+		 float: right;
+		margin-top: 250px;
+		font-size: 15px;
+        }
+</style>
+<script src="../../ts300.js">
+</script>
+</head>
+<body>
+<input type="button" value="上一首" id="pre">
+ <input type="button" value="下一首" id="next">
+ <div class="gushi">
+        <h3></h3>
+        <p></p>
+</div>
+<script>
+	 var pre = document.getElementById("pre");
+	 var next = document.getElementById("next");
+		//定义标题和内容
+	var h3 = document.querySelector("h3");
+	var p = document.querySelector("p");
+	var ts=[],
+	      tsTitle=[],
+	      tsContent=[];
+	var BEGIN=010,
+	      END=310,
+	      i,
+	      p1,
+	      p2;
+	for(i=0; i<300; i++){
+		p1=poem.search(i+BEGIN);
+	p2=poem.search(i+1+BEGIN);
+	ts[i]=poem.substring(p1,p2);
+}
+	for(i=0;i<ts.length;i++){
+		p1=001;
+		p2=ts[i].search("\n");
+		tsTitle[i]=ts[i].substring(p1,p2);
+		tsContent[i]=ts[i].substring(p2);
+}
+	var z=0;
+	next.onclick=function(){
+		if(z>=0&&z<=300){
+		z++;
+		p.textContent=tsContent[z];
+		h3.textContent=tsTitle[z];
+	}	
+}
+	pre.onclick=function(){
+		if(z>=0&&z<=300){
+		z--;
+		p.textContent=tsContent[z];
+		h3.textContent=tsTitle[z];
+	}
+}
+</script>
+</body>
+</html>

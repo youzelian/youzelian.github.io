@@ -49,7 +49,10 @@
         var arr = poem.match(/\d+(.\d+)?/g);//检索所有的数字(括号中两个/表示开始与结束，g代表全局搜索,\d代表数字，(.\d+)?代表括号里内出现0或1次)，这行代码很关键，目的是为了查询poem里每首古诗标题前面数字所在位置并返回至arr数组中，例如第一首010所在位置为第0位。以便于下面将所有古诗以首为单位分开。
         var i = 0;//为当前所处页面赋值，方便后面实现翻页功能。
         last.onclick = function () {
-			if (i > 0) {
+			if (i == 0)
+			{i=308;
+			};
+				if (i > 0) {
                 i--
             }
             var poemcontent = poem.substring(poem.search(arr[i]), poem.search(arr[i + 1]));//在所有古诗中截取每一首古诗，以首为单位放入poemcontent的数组中。从poem.search(arr[i])开始截取到poem.search(arr[i+1])结束，其中arr[i]指的是某首诗标题前的数字，arr[i+1]指的是下首诗标题前的数字。
@@ -59,7 +62,10 @@
             p.textContent = poem.substring(poem.search(arr[i]), poem.search(arr[i + 1])).substring(x, poem.search(arr[i + 1]));//将截取到的古诗内容植入到p中，这里用了两个substring截取，第一个substring是在全部古诗中截取每首古诗，第二个substring是在截取到的每首古诗中截取标题结束后的那个位置x至下一个标题所在的位置arr[i+1]，截取到的内容正好就是这首古诗的内容。
         }
         next.onclick = function () {
-			if (i < arr.length - 1) {
+			if (i==308)
+			{i=0;
+			};
+				if (i < arr.length - 1) {
                 i++
 				}
             var poemcontent = poem.substring(poem.search(arr[i]), poem.search(arr[i + 1]));//同上
