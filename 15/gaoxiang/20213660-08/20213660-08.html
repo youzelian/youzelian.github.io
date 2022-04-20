@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第八周作业</title>
+    <style type="text/css">
+        body{
+            font-family: fantasy;
+            color: aqua;
+            text-align: center;
+            font-size: 25px;
+        }
+        input{
+            font-size: 2em;
+            color: gold;
+        }
+        p {
+            width: 12em;
+            margin: auto;
+        }
+    </style>
+    <script src="ts300.js">
+    </script>
+</head>
+<body>
+    <input type="button" value="上一首" id="prev">
+    <input type="button" value="下一首" id="next">
+    <h1 id = "tsTitle">唐诗三百首</h1>
+    <p  id = "tsContent"></p>
+    <script type="text/javascript">
+        var ts = [],
+            tsTitle = [],
+            tsContent = [];
+        var BEGIN = 10,
+            END = 320,
+            i,
+            p1,
+            p2;
+        for(i = 0;i < END - BEGIN;i++){
+            p1 = ts300.search(i + BEGIN);
+            p2 = ts300.search(i + 1 + BEGIN);
+            ts[i] = ts300.substring(p1, p2);
+        }
+        for(i = 0; i < ts.length; i++){
+            p1 = 3;
+            p2 = ts[i].search("\n");
+            tsTitle[i] = ts[i].substring(p1, p2);
+            tsContent[i] = ts[i].substring(p2, ts[i].length);
+        }
+        var i = 0;
+        showTs(i);
+        var prevDom = document.getElementById("prev");
+        var nextDom = document.getElementById("next");
+        prevDom.onclick = function(){
+            if(i <= 0){
+                i = tsTitle.length-1;
+            }
+            else{
+                i--;           
+                
+            }
+            showTs(i);
+        }
+        nextDom.onclick = function(){
+            if(i >= tsTitle.length-1){
+                i = 0;
+            }
+            else{
+                i++;
+            }
+            showTs(i);
+            
+        }
+        function showTs(i){
+            var tsTitleDOM = document.getElementById("tsTitle");
+            var tsContentDOM = document.getElementById("tsContent");
+            tsTitleDOM.textContent = tsTitle[i];
+            tsContentDOM.textContent = tsContent[i];
+        }
+    </script>
+</body>
+</html>

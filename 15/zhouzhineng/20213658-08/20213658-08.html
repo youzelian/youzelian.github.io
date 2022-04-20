@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src = "ts300.js">
+              
+    </script>
+
+    <style>
+        body {
+            font-size: 25PX;
+            text-align: center;
+
+        }
+        p {
+            
+            width: 12em;
+            margin: auto;
+            
+        }
+        input {
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <input type = "button" value = "上一首" id = "prev">
+    <input type = "button" value = "下一首" id = "next">
+    <h1 id = "tsTitle">
+        标题
+
+    </h1>
+
+    <P id = "tsContent">
+        内容
+    </P>
+
+    <script>
+        var ts = [];
+        var tsTitle = [];
+        var tsContent = [];
+
+        var BEGIN = 10;
+        var END = 320; 
+        var i;
+        var p1;
+        var p2;
+        for(i = 0 ; i <= END - 10; i++){    /*从三百首诗中截取每一首*/
+            if(i < 90){               
+                p1 = ts300.search(i+BEGIN);
+                p2 = ts300.search(i+1+BEGIN);
+                ts[i] = ts300.substring(p1,p2);
+
+            }
+            else{  
+                if(i == END - 10 ){                           
+                    p1 = ts300.search(i+10);                
+                    ts[i] = ts300.substring(p1,);
+                }
+                else {
+                    p1 = ts300.search(i+BEGIN);
+                    p2 = ts300.search(i+1+BEGIN);
+                    ts[i] = ts300.substring(p1,p2);
+                }
+            
+            }
+          
+        }
+
+        for(i = 0;i < ts.length; i++){  /*将每首诗截成标题和内容*/
+            if(i < 90){
+                p1 = 2;
+                p2 = ts[i].search("\n");
+                tsTitle[i] = ts[i].substring(p1,p2);
+                tsContent[i] = ts[i].substring(p2,ts[i].length-1);
+
+
+            }
+            else{
+                p1 = 3;
+                p2 = ts[i].search("\n");
+                tsTitle[i] = ts[i].substring(p1,p2);
+                tsContent[i] = ts[i].substring(p2,);
+            }       
+     
+        }
+
+       
+        i = 0;
+        showTS(i);
+        
+
+        var prevDOM = document.getElementById("prev");
+        var nextDOM = document.getElementById("next");
+
+        
+        prevDOM.onclick = function(){
+            if (i == 0){
+                i = END - 10;
+                showTS(i);
+            }
+            else {
+                i-- ;
+                showTS(i);
+            }
+        }
+
+        nextDOM.onclick = function(){
+            if(i == END-10){
+                i = 0;
+                showTS(i);         
+            }
+            else { 
+                i++ ;
+                showTS(i);
+                 
+            }
+                 
+        }
+
+        function showTS(i){   /*展示古诗*/
+            var tsTitleDOM = document.getElementById("tsTitle");
+            var tsContentDOM = document.getElementById("tsContent");
+            tsTitleDOM.textContent = tsTitle[i];
+            tsContentDOM.textContent = tsContent[i];
+            
+        }
+
+    </script>
+</body>
+</html>
+  
+    
+    
