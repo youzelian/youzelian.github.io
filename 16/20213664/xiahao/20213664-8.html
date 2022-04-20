@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>唐诗三百首</title>
+    <style type="text/css">
+        body{
+          margin: 0;
+          padding: 0;
+          background-color: #cdccb2;
+          text-align: center;
+          font-size: 16px;
+        }
+        #tsTitle{
+          font-family: 楷体;
+          font-size: 3em;
+        }
+        #tsContent{
+          font-size: 2em;
+        font-family: 宋体;
+        white-space: pre-line;
+          margin: auto ;
+          }
+        input{
+        margin: 1em 0.5em 1em;
+        font-size: 1.5em;
+        border-radius: 1em;
+        box-shadow: 6px 6px 3px gray;
+        }
+        #title{
+          font-family: 黑体;
+          color: #165d96;
+          margin-top:1em;
+          font-size: 2em;
+        }
+        #finish{
+          font-family: 黑体;
+          color: #165d96;
+          margin-top:1em;
+          font-size: 2em;
+        }
+    </style>
+    <script src="../../ts300.js">
+    </script>
+   </head>
+   <body>
+   <div id="title">请欣赏古诗</div>
+    <input type="button" value="上一首" id="prev">  
+    <input type="button" value="下一首" id="next">
+    <div id="ts">
+        <h1 id="tsTitle"></h1>
+        <p id="tsContent"></p>
+    </div>
+    <!-- <div id="finish"></div> -->
+   <script type="text/javascript">
+      var BEGIN = 100;
+      var END = 300;
+      var ts = [];
+      for (var i = BEGIN ; i <= END ; i++){
+          var p1 = ts300.search(i)  ;
+          var p2 = ts300.search(i + 1) ;
+        ts[i - BEGIN] = ts300.substring(p1,p2);
+      }
+  
+      var tsTitle = [],tsContent = [];
+      for (var i=0; i < ts.length; i++){
+        
+          tsTitle[i] = ts[i].substring(3,ts[i].search("\n")); 
+          tsContent[i] = ts[i].substring(ts[i].search("\n"));
+          }
+  
+      var i = 0 ;
+      var tsTitleDOM = document.getElementById("tsTitle");
+      var tsContentDOM = document.getElementById("tsContent");
+      // var finishDOM = document.getElementById("finish");
+      tsTitleDOM.textContent = tsTitle[i];
+      tsContentDOM.textContent = tsContent[i];
+      document.getElementById("prev").onclick = function(){
+        if (i >0 ){
+          i--;
+          }
+        else{
+          i=tsTitle.length-1;
+          }
+        // finishDOM.textContent="";
+         showts(i);
+        };
+      document.getElementById("next").onclick = function(){
+        if (i < tsTitle.length -1){
+            i++;
+            }
+        else{
+            i=0;
+        }
+        showts(i);
+        // if (i == tsTitle.length-1){
+        //     finishDOM.textContent = "已经到尽头了哦！\n感谢欣赏";
+        //     }
+      };
+        function showts(i){
+        var tsTitleDOM = document.getElementById("tsTitle");
+        var tsContentDOM = document.getElementById("tsContent");
+        tsTitleDOM.textContent = tsTitle[i];
+        tsContentDOM.textContent = tsContent[i];
+      }
+   </script>
+   </body>
+  </html>
+  

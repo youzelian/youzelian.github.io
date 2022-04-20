@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+
+  <title></title>
+  <style>
+    {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+    input{
+        font-size: 40px;
+        border-radius: 10px;
+        margin: 10px 10px 20px;
+    }
+    #st{
+        font-size: 65px;
+        margin: 10px 0 40px;
+    }
+    #nd,#rd{
+        font-size: 40px;
+        margin: 10px 0 10px;
+    }
+    a:link
+    {
+        color:red;
+        text-decoration: none;
+        border: 1px solid;
+        text-decoration: none;
+    }
+    a:visited
+    {
+        color: gray;
+    }
+    a:hover
+    {
+        color: blue;
+        font-size: 20px;
+    }
+    a:active
+    {
+        color:aqua;
+        
+    }
+    body
+    {
+        background-color: rgba(0, 255, 255, 0.1);
+    }
+    
+</style>
+  <script src="../../ts300.js">
+  </script>
+ </head>
+ <body>
+ <h1>唐诗三百首</h1>
+  <input type="button" value="上一首" id="prev">  
+  <input type="button" value="下一首" id="next">
+ <div id="ts">
+   <h1 id="tsTitle"></h1>
+   <p id="tsContent"></p>
+ </div>
+ <script type="text/javascript">
+ <!--
+	var BEGIN = 100 ;
+    var END = 300 ;
+	var tsArr = [] ;
+	for (var i = BEGIN ; i <= END ; i++){
+	   var pos1 = ts300.search(i)  ;
+	   var pos2 = ts300.search(i + 1) ;
+       tsArr[i - BEGIN] = ts300.substring(pos1,pos2);
+	}
+	var tsTitle = [] ,
+	    tsContent = [] ;
+    for (var i=0; i < tsArr.length; i++){
+     var sTmp = tsArr[i] ;
+	  tsTitle[i] = sTmp.substring(3,sTmp.search("\n")) ; 
+	  tsContent[i] = sTmp.substring(sTmp.search("\n"));
+    }
+  var i = 0 ;
+  var tsTitleDom = document.querySelector("h1#tsTitle") ;
+  var tsContentDom = document.querySelector("p#tsContent") ;
+  tsTitleDom.textContent = tsTitle[i] ;
+  tsContentDom.textContent = tsContent[i] ;
+   document.querySelector("input#prev").onclick = function(){
+    if (i >0 ){
+		i-- ;
+    }else{
+	    i = tsTitle.length -1 ;
+	}
+     showTs(i);
+   } ;
+   document.querySelector("input#next").onclick = function(){
+    if (i < tsTitle.length -1){
+		i++ ;
+    }else{
+	    i = 0 ;
+	}
+      showTs(i);
+   } ;
+  function showTs(i){
+   var tsTitleDom = document.querySelector("h1#tsTitle") ;
+   var tsContentDom = document.querySelector("p#tsContent") ;
+   tsTitleDom.textContent = tsTitle[i] ;
+   tsContentDom.textContent = tsContent[i] ;
+  }
+ </script>
+ </body>
+</html>

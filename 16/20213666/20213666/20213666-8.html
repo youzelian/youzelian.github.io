@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+
+  <title>唐诗300首</title>
+  <style type="text/css">
+	body{font-size:20px;
+	     margin:auto;
+       text-align:center;
+font-family:楷体; }
+    h1,p{font-size:1.5em;
+      text-align:center;}
+	input{font-size:1.5em;
+	      margin-right:2em;}
+    div#ts{
+	      border:1px solid rgb(0, 255, 170) ;
+	}
+  </style>
+  <script src="../../ts300.js">
+  </script>
+ </head>
+ <body>
+ <h1>唐诗三百首</h1>
+  <input type="button" value="上一首" id="prev">  
+  <input type="button" value="下一首" id="next">
+ <div id="ts">
+   <h1 id="tsTitle"></h1>
+   <p id="tsContent"></p>
+ </div>
+ <script type="text/javascript">
+ <!--
+   /**
+     在Console面板中，研究一下在ts300.js加载的字符串变量ts300 ： 
+	 输入： ts300.substring(0,10)，反馈为：'010杜甫：佳人\n绝'
+	 输入： ts300.substring(ts300.length-50)，反馈为：'北倚阑干。\n320杜秋娘：金缕衣\n劝君莫惜金缕衣，劝君惜取少年时。\n花开堪折直须折，莫待无花空折枝！'
+     得出基本情况，第一首标记开头为 010，然后011 …… 最后一首标记为320，共计311首唐诗。
+	 下面利用字符串技巧，使用js代码将这311首唐诗分离到数组中:    
+   **/
+   //为简化代码，忽略边界问题，我们暂从字符串中，提取出第 100 至 300 的古诗
+	var BEGIN = 100 ;
+    var END = 300 ;
+	var tsArr = [] ;//处理结果，放入唐诗数组中
+	for (var i = BEGIN ; i <= END ; i++){
+	   var pos1 = ts300.search(i)  ;
+	   var pos2 = ts300.search(i + 1) ;
+       tsArr[i - BEGIN] = ts300.substring(pos1,pos2);
+	}
+	/**
+    在Console面板中，验证一下tsArr数组的生成情况：
+	输入：tsArr.length  反馈为：201
+    输入：tsArr[0]  
+	反馈为：'100李白：赠孟浩然\n吾爱孟夫子，风流天下闻。\n红颜弃轩冕，白首卧松云。\n醉月频中圣，迷花不事君。\n高山安可仰，徒此挹清芬。\n'
+	输入： tsArr[ tsArr.length-1 ] 
+	反馈为：'300李商隐：为有\n为有云屏无限娇，凤城寒尽怕春宵。\n无端嫁得金龟婿，辜负香衾事早朝。\n'
+	**/
+
+	/**
+	 将tsArr中的每首唐诗字符串，再次处理分离为标题和诗文，
+	 分别放在tsTitle和tsContent数组中。
+	 **/
+	var tsTitle = [] ,
+	    tsContent = [] ;
+    for (var i=0; i < tsArr.length; i++){
+     var sTmp = tsArr[i] ;
+	  tsTitle[i] = sTmp.substring(3,sTmp.search("\n")) ; 
+  //本条代码语句的中数据 3 是硬编码，在未来成熟的代码中，这点要改变，实现软编码
+	  tsContent[i] = sTmp.substring(sTmp.search("\n"));
+    }
+/**
+    在Console面板中，验证一下tsTitle数组和tsContent数组的生成情况，此处略……
+**/
+ //下面在Web 页面中，显示内存数组的第一首唐诗信息
+  var i = 0 ;
+  var tsTitleDom = document.querySelector("h1#tsTitle") ;
+  var tsContentDom = document.querySelector("p#tsContent") ;
+  tsTitleDom.textContent = tsTitle[i] ;
+  tsContentDom.textContent = tsContent[i] ;
+  //上面几条代码，实现将内存变量输出至Web的元素中，该代码可否定义在函数中，从而实现代码复用？
+
+//下面在按钮中，设置按钮事件处理程序，实现唐诗逐一显示
+   document.querySelector("input#prev").onclick = function(){
+    if (i >0 ){
+		i-- ;
+    }else{
+	    i = tsTitle.length -1 ;
+	}
+     showTs(i);
+   } ;
+   document.querySelector("input#next").onclick = function(){
+    if (i < tsTitle.length -1){
+		i++ ;
+    }else{
+	    i = 0 ;
+	}
+      showTs(i);
+   } ;
+  function showTs(i){
+   var tsTitleDom = document.querySelector("h1#tsTitle") ;
+   var tsContentDom = document.querySelector("p#tsContent") ;
+   tsTitleDom.textContent = tsTitle[i] ;
+   tsContentDom.textContent = tsContent[i] ;
+  }
+ //-->
+ </script>
+ </body>
+</html>
