@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>第八次作业</title>
+  <style>
+	body{
+      width:600px;
+      text-align:center;
+      font-size:25px;
+	    margin:auto;
+      font-family: 楷体;
+      background-color: dodgerblue;
+        }
+    p{font-size:2em;
+      color: plum;  
+     }
+    h1{color: white;
+        font-size: 40px;
+      }    
+    input{
+          padding: 10px 20px;
+          font-size: 18px;
+          text-align: center;   
+          text-decoration: none;
+          outline: none;
+          color: white;
+          background-color: black;
+
+        }
+  </style>
+  <script src="ts300.js">
+  </script>
+ </head>
+ <body>
+  <input type="button" value="上一首" id="prev">  
+  <input type="button" value="下一首" id="next">
+ <div id="ts">
+   <h1 id="tsTitle"></h1>
+   <p id="tsContent"></p>
+ </div>
+ <script >
+	var BEGIN = 100 ;
+        END = 300 ;
+	var tsArr = [] ;
+	for (var i = BEGIN ; i <= END ; i++){
+	   var pos1 = ts300.search(i)  ;
+	   var pos2 = ts300.search(i + 1) ;
+       tsArr[i - BEGIN] = ts300.substring(pos1,pos2);
+	}
+	var tsTitle = [] ,
+	    tsContent = [] ;
+    for (var i=0; i < tsArr.length; i++){
+     var sTmp = tsArr[i] ;
+	  tsTitle[i] = sTmp.substring(3,sTmp.search("\n")) ; 
+	  tsContent[i] = sTmp.substring(sTmp.search("\n"));
+    }
+  var i = 0 ;
+  var tsTitleDom = document.querySelector("h1#tsTitle") ;
+  var tsContentDom = document.querySelector("p#tsContent") ;
+  tsTitleDom.textContent = tsTitle[i] ;
+  tsContentDom.textContent = tsContent[i] ;
+   document.querySelector("input#prev").onclick = function(){
+    if (i >0 ){
+		i-- ;
+    }else{
+	    i = tsTitle.length -1 ;
+	}
+     showTs(i);
+   } ;
+   document.querySelector("input#next").onclick = function(){
+    if (i < tsTitle.length -1){
+		i++ ;
+    }else{
+	    i = 0 ;
+	}
+      showTs(i);
+   } ;
+  function showTs(i){
+   var tsTitleDom = document.querySelector("h1#tsTitle") ;
+   var tsContentDom = document.querySelector("p#tsContent") ;
+   tsTitleDom.textContent = tsTitle[i] ;
+   tsContentDom.textContent = tsContent[i] ;
+  }
+ </script>
+ </body>
+</html>
