@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>这里是古诗节选</title>
+  <style type="text/css">
+    body{
+		background:url(https://pic1.zhimg.com/80/v2-b678555fd1f6bb38c8bc27bda7b6c44f_720w.jpg?source=1940ef5c) no-repeat center top;
+		background-size:cover;
+		text-align: center;
+		
+	}
+	h1{
+		color:navy;
+        font-size:50px;
+		text-shadow:4px 4px 4px gainsboro;
+	}
+	p{
+	   color:maroon;
+       font-size:40px;
+	   width:530px ;
+	   margin:auto ;
+	   line-height:65px;
+	}
+	div#box1
+		{
+		border:2px solid ;
+		border-radius: 30%;
+        box-shadow: 15px 10px 10px 10px rgba(0, 0, 0, 0.6) inset;
+		padding-bottom:1.5em;
+		background-color:rgba(250,250,250,0.6);
+		margin:10px auto;
+		width:700px;
+		}	
+div#box2
+		{
+		border:2px solid ;
+		border-radius: 30%;
+        box-shadow: 20px 10px  10px rgba(0, 0, 0, 0.6);
+		padding-bottom:1.5em;
+		background-color:rgba(250,250,250,0.6);
+		margin:10px auto;
+        width:700px;
+		}	
+    input{
+       color:darkblue;
+       font-size:60px;
+	   border-bottom-color:LightSlateGray;
+	   border-radius:2em; 
+	   display:inline-block;
+	   box-shadow:5px 5px gray;
+	   margin:40px;
+
+	}
+   }
+	</style>
+	<script src="ts300.js">
+	</script>
+	</head>
+	<body>
+		<br>
+		<input type="button" value="prev" id="prev">
+		<input type="button" value="next" id="next">
+		<div id="box1">
+			<h1 id = "tsTitle">
+			这里是古诗集的展示
+			</h1>
+	    </div> 
+       <div id="box2">
+		<p id ="tsContent"> </p>
+	   </div> 
+    <script type="text/javascript">
+		var ts = [] ,
+			tsTitle = [] ,
+			tsContent =[] ;
+		var BEGIN = 100 ,
+			END = 300 ,
+			i  ,
+			p1 ,
+			p2 ;
+		for (i=0 ; i < END - BEGIN ; i++ ){
+			p1 = ts300.search(i+BEGIN) ;
+			p2 = ts300.search(i+1+BEGIN) ;
+			ts[i] = ts300.substring(p1,p2);
+		}
+		for (i=0; i < ts.length ; i++ ){
+			p1 = 3 ;
+			p2 = ts[i].search("\n");
+			tsTitle[i] = ts[i].substring(p1,p2) ;
+			tsContent[i] = ts[i].substring(p2,ts[i].length-1) ;
+		}
+		i=0 ;
+		showTs(i);
+		   var tsTitleDom = document.getElementById("tsTitle");
+		   var tsContentDom = document.getElementById("tsContent");
+			var prevDom = document.getElementById("prev");
+			var nextDom = document.getElementById("next");
+			prevDom.onclick = function(){
+			  i-- ;
+			  if(i<0)
+			  {
+			  i=199;
+			  }
+			  showTs(i);
+			};
+			nextDom.onclick = function(){
+			  i++ ;
+			  if(i>=199)
+			  {
+			  i=1;
+			  }
+			  showTs(i);
+			};
+			function showTs(i){
+			   var tsTitleDom = document.getElementById("tsTitle");
+			   var tsContentDom = document.getElementById("tsContent");
+				tsTitleDom.textContent = tsTitle[i] ;
+				tsContentDom.textContent = tsContent[i] ;
+			}
+	</script>
+ </body>
+</html>

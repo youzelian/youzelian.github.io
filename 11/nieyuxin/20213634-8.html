@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>EIGTH-HOMEWORK</title>
+  <style type="text/css">
+    body{
+		background:url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.pptjia.com%2Fimage%2F20181227%2F08c1ad4a692d8b5cdcfd5795d650584d.jpg&refer=http%3A%2F%2Fimg.pptjia.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1649404976&t=4c4677a70aa11613fb5a944d093a2cde) no-repeat center top;
+		background-size:cover;
+		font-family:华文新魏;
+		text-align: center;
+		font-size:30px ;
+	}
+	h1#tsTitle{
+		text-shadow: 1px 1px rgba(197, 223, 248,0.8),2px 2px rgba(197, 223, 248,0.8),3px 3px rgba(197, 223, 248,0.8),4px 4px rgba(197, 223, 248,0.8),5px 5px rgba(197, 223, 248,0.8);
+	}
+	p#tsContent{
+		font-size: 2em;
+		width: 12em ;
+		margin: auto ;
+	}
+	div#box
+		{
+		border:2px solid ;
+		border-radius:2em;
+		padding-bottom:1.5em;
+		background-color:rgba(250,250,250,0.6);
+		margin:20px auto;
+		width:800px;
+		}	
+    input{
+		font-size: 1.5em;
+		display:inline-block;
+		with:100px;
+		hight:80px;
+		border-radius:5px;
+		box-shadow:5px 5px red;
+		margin:20px;
+	}
+   }
+	</style>
+	<script src="ts300.js">
+	</script>
+	</head>
+	<body>
+		<br>
+		<input type="button" value="上一首" id="prev">
+		<input type="button" value="下一首" id="next">
+		<div id="box">
+			<h1 id = "tsTitle">
+			古诗200首
+			</h1>
+			<p id ="tsContent"> </p>
+		</div>
+    <script type="text/javascript">
+		var ts = [] ,
+			tsTitle = [] ,
+			tsContent =[] ;
+		var BEGIN = 100 ,
+			END = 300 ,
+			i  ,
+			p1 ,
+			p2 ;
+		for (i=0 ; i < END - BEGIN ; i++ ){
+			p1 = ts300.search(i+BEGIN) ;
+			p2 = ts300.search(i+1+BEGIN) ;
+			ts[i] = ts300.substring(p1,p2);
+		}
+		for (i=0; i < ts.length ; i++ ){
+			p1 = 3 ;
+			p2 = ts[i].search("\n");
+			tsTitle[i] = ts[i].substring(p1,p2) ;
+			tsContent[i] = ts[i].substring(p2,ts[i].length-1) ;
+		}
+		i=0 ;
+		showTs(i);
+		   var tsTitleDom = document.getElementById("tsTitle");
+		   var tsContentDom = document.getElementById("tsContent");
+			var prevDom = document.getElementById("prev");
+			var nextDom = document.getElementById("next");
+			prevDom.onclick = function(){
+			  i-- ;
+			  if(i<0)
+			  {
+			  i=199;
+			  }
+			  showTs(i);
+			};
+			nextDom.onclick = function(){
+			  i++ ;
+			  if(i>=199)
+			  {
+			  i=1;
+			  }
+			  showTs(i);
+			};
+			function showTs(i){
+			   var tsTitleDom = document.getElementById("tsTitle");
+			   var tsContentDom = document.getElementById("tsContent");
+				tsTitleDom.textContent = tsTitle[i] ;
+				tsContentDom.textContent = tsContent[i] ;
+			}
+	</script>
+ </body>
+</html>
