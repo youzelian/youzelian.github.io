@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第7次作业</title>
+    <script>
+        var tscontent = "1登鹳雀楼\n白日依山尽,黄河入海流。\n欲穷千里目,更上一层楼。2相思\n红豆生南国,春来发几枝。\n愿君多采撷,此物最相思。3寻隐者不遇\n松下问童子,言师采药去。\n只在此山中,云深不知处。4鸟鸣涧\n人闲桂花落,夜静春山空。\n月出惊山鸟,时鸣春涧中。5送杜少府之任蜀州\n城阙辅三秦,风烟望五津。\n与君离别意,同是宦游人。\n海内存知己,天涯若比邻。\n无为在岐路,儿女共沾巾。\n302李商隐:瑶池\n瑶池阿母绮窗开,黄竹歌声动地哀。\n八骏日行三万里,穆王何事不重来。\n303李商隐:嫦娥\n云母屏风烛影深,长河渐落晓星沈。\n嫦娥应悔偷灵药,碧海青天夜夜心。\n304李商隐:贾生\n宣室求贤访逐臣,贾生才调更无伦。\n可怜夜半虚前席,不问苍生问鬼神。\n305温庭筠:瑶瑟怨\n冰簟银床梦不成,碧天如水夜云轻。\n雁声远过潇湘去,十二楼中月自明。\n306郑畋:马嵬坡\n玄宗回马杨妃死,云雨难忘日月新。\n终是圣明天子事,景阳宫井又何人。\n307韩□:已凉\n碧阑干外绣帘垂,猩色屏风画折枝。\n八尺龙须方锦褥,已凉天气未寒时。\n308韦庄:金陵图\n江雨霏霏江草齐,六朝如梦鸟空啼。\n无情最是台城柳,依旧烟笼十里堤。\n309陈陶:陇西行\n誓扫匈奴不顾身,五千貂锦丧胡尘。\n可怜无定河边骨,犹是深闺梦里人。\n310张泌:寄人\n别梦依依到谢家,小廊回合曲阑斜。\n多情只有春庭月,犹为离人照落花。\n311无名氏:杂诗\n尽寒食雨草萋萋,著麦苗风柳映堤。\n等是有家归未得,杜鹃休向耳边啼。\n312王维:渭城曲\n渭城朝雨[氵邑]轻尘,客舍青青柳色新。\n劝君更尽一杯酒,西出阳关无故人。\n313王维:秋夜曲\n桂魄初生秋露微,轻罗已薄未更衣。\n银筝夜久殷勤弄,心怯空房不忍归。\n314王昌龄:长信怨\n奉帚平明金殿开,且将团扇共徘徊。\n玉颜不及寒鸦色,犹带昭阳日影来。\n315王昌龄:出塞\n秦时明月汉时关,万里长征人未还。\n但使龙城飞将在,不教胡马渡阴山。\n316王之涣:出塞\n黄河远上白云间,一片孤城万仞山。\n羌笛何须怨杨柳。春风不度玉门关。\n317李白:清平调三首之一\n云想衣裳花想容,春风拂槛露华浓。\n若非群玉山头见,会向瑶台月下逢。\n318李白:清平调三首之二\n一枝红艳露凝香,云雨巫山枉断肠。\n借问汉宫谁得似。可怜飞燕倚新妆。\n319李白:清平调三首之三\n名花倾国两相欢,常得君王带笑看。\n解释春风无限恨,沈香亭北倚阑干。\n320杜秋娘:金缕衣\n劝君莫惜金缕衣,劝君惜取少年时。\n花开堪折直须折,莫待无花空折枝。";
+    </script>
+</head>
+
+<body>
+    <center>
+        <input type="button" id="p" value="上一首">
+        <input type="button" id="n" value="下一首">
+        <h1 id="bt"></h1>
+        <p id="sj"></p>
+    </center>
+
+    <script>
+        var i = 0;
+        var v = tscontent.match(/\d+/g);
+        var bt = document.querySelector("#bt");
+        var sj = document.querySelector("#sj");
+        var p = document.querySelector("#p");
+        var n = document.querySelector("#n");
+        var zsj = tscontent.substring(tscontent.search(v[i]), tscontent.search(v[i + 1]));
+        var enter = zsj.match("\n");
+        bt.textContent = zsj.substring(zsj.search(v[i]), zsj.search("\n"));
+        sj.textContent = tscontent.substring(tscontent.search(v[i]), tscontent.search(v[i + 1])).substring(zsj.search("\n"), tscontent.search(v[i + 1]));
+        n.onclick = function() {
+            i = i + 1;
+            if (i == 23) {
+                alert("已经到顶了,跳回最后一首!!!!!");
+                i = 0;
+            }
+            var zsj = tscontent.substring(tscontent.search(v[i]), tscontent.search(v[i + 1]));
+            bt.textContent = zsj.substring(zsj.search(v[i]), zsj.search("\n"));
+            sj.textContent = tscontent.substring(tscontent.search(v[i]), tscontent.search(v[i + 1])).substring(zsj.search("\n"), tscontent.search(v[i + 1]));
+
+        }
+        p.onclick = function() {
+            i = i - 1;
+            if (i == -1) {
+                alert("已经到顶了,跳回最后一首!!!!!");
+                i = 22;
+            }
+            var zsj = tscontent.substring(tscontent.search(v[i]), tscontent.search(v[i + 1]));
+            bt.textContent = zsj.substring(zsj.search(v[i]), zsj.search("\n"));
+            sj.textContent = tscontent.substring(tscontent.search(v[i]), tscontent.search(v[i + 1])).substring(zsj.search(enter), tscontent.search(v[i + 1]));
+
+        }
+    </script>
+</body>
+
+</html>

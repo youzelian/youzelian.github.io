@@ -10,98 +10,154 @@
         body {
             text-align: center;
         }
+        
+        @keyframes k {
+            0% {
+                height: 20px;
+                width: 0;
+            }
+            100% {
+                height: 20px;
+                width: 100%;
+                ;
+            }
+        }
+        
+        @keyframes l {
+            0% {
+                width: 180px;
+            }
+            100% {
+                width: 0;
+                ;
+            }
+        }
+        
+        @keyframes o {
+            0% {
+                width: 0;
+                height: 44px;
+            }
+            100% {
+                width: 210px;
+                height: 44px;
+            }
+        }
+        
+        @keyframes p {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        
+        p[id="jzz"] {
+            animation: l 1ms forwards;
+            animation-delay: 4.4s;
+            overflow: hidden;
+            white-space: nowrap;
+            font-size: 30px;
+        }
+        
+        div[id="b"] {
+            animation: k 4s steps(10) forwards;
+            background-color: pink;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        
+        div[id="jiazaiwanc"],
+        [id="ksyd"] {
+            width: 0;
+            animation: o 1ms forwards;
+            animation-delay: 4.8s;
+            overflow: hidden;
+            white-space: nowrap;
+            font-size: 30px;
+        }
+        
+        div[id="hezi"] {
+            width: 0;
+            animation: p 1ms forwards;
+            animation-delay: 6.4s;
+            overflow: hidden;
+        }
     </style>
 
 </head>
 
 <body>
-    <table align="center" width="30%" border="1" cellpadding="0" cellspacing="0">
-        <tr>
-            <th>姓名</th>
-            <th>学号</th>
-            <th>作业链接</th>
-        </tr>
-        <tr>
-            <td>彭泱旸</td>
-            <td>20213624</td>
-            <td><a href="pengyangyang/20213624-1.html" target="_black">彭泱旸第一次作业</a></td>
-        </tr>
-        <tr>
-            <td>彭泱旸</td>
-            <td>20213624</td>
-            <td><a href="pengyangyang/20213624-2.html" target="_black">彭泱旸第二次作业</a></td>
-        </tr>
-        <tr>
-            <td>彭泱旸</td>
-            <td>20213624</td>
-            <td><a href="pengyangyang/20213624-3.html" target="_black">彭泱旸第三次作业</a></td>
-        </tr>
-        <tr>
-            <td>彭泱旸</td>
-            <td>20213624</td>
-            <td><a href="pengyangyang/20213624-4.HTML" target="_black">彭泱旸第四次作业</a></td>
-        </tr>
-        <tr>
-            <td>彭泱旸</td>
-            <td>20213624</td>
-            <td><a href="pengyangyang/20213624-5.html" target="_black">彭泱旸第五次作业</a></td>
-        </tr>
-        <tr>
-            <td>彭泱旸</td>
-            <td>20213624</td>
-            <td><a href="pengyangyang/20213624-6.html" target="_black">彭泱旸第六次作业</a></td>
-        </tr>
-		<tr>
-            <td>彭泱旸</td>
-            <td>20213624</td>
-            <td><a href="pengyangyang/20213624-7.html" target="_black">彭泱旸第七次作业</a></td>
-        </tr>
-		<tr>
-            <td>彭泱旸</td>
-            <td>20213624</td>
-            <td><a href="pengyangyang/20213624-8.html" target="_black">彭泱旸第八次作业</a></td>
-        </tr>
-		<tr>
-            <td>彭泱旸</td>
-            <td>20213624</td>
-            <td><a href="pengyangyang/20213624-9.html" target="_black">彭泱旸第九次作业</a></td>
-        </tr>
-		<tr>
-            <td>彭泱旸</td>
-            <td>20213624</td>
-            <td><a href="pengyangyang/20213624-10.html" target="_black">彭泱旸第十次作业</a></td>
-        </tr>
-		<tr>
-            <td>彭泱旸</td>
-            <td>20213624</td>
-            <td><a href="pengyangyang/20213624-11.html" target="_black">彭泱旸第十一次作业</a></td>
-        </tr>
-		<tr>
-            <td>彭泱旸</td>
-            <td>20213624</td>
-            <td><a href="pengyangyang/20213624-12.html" target="_black">彭泱旸第十二次作业</a></td>
-        </tr>
-		<tr>
-            <td>彭泱旸</td>
-            <td>20213624</td>
-            <td><a href="pengyangyang/20213624-13.html" target="_black">彭泱旸第十三次作业</a></td>
-        </tr>
-		<tr>
-            <td>彭泱旸</td>
-            <td>20213624</td>
-            <td><a href="pengyangyang/20213624-14.html" target="_black">彭泱旸第十四次作业</a></td>
-        </tr>
-		<tr>
-            <td>彭泱旸</td>
-            <td>20213624</td>
-            <td><a href="pengyangyang/20213624-15.html" target="_black">彭泱旸第十五次作业</a></td>
-        </tr>
-		<tr>
-            <td>彭泱旸</td>
-            <td>20213624</td>
-            <td><a href="pengyangyang/20213624-16.html" target="_black">彭泱旸第十六次作业</a></td>
-        </tr>
-    </table>
+    <center>
+        <h1>彭泱旸的个人主页</h1>
+        <p id="jzz">。。。页面加载中。。。</p>
+    </center>
+    <div id="b"></div>
+    <center>
+        <div id="jiazaiwanc">加载完成(o-o)!!</div>
+        <div id="ksyd"><input type="button" id="start" value="个人主页"></div>
+    </center>
+    <script>
+        var jiazaiwanc = document.querySelector("#jiazaiwanc");
+        var hz = document.querySelector("div#hezi");
+
+        var start = document.querySelector("#start");
+        document.querySelector("#start").onclick = function() {
+            jiazaiwanc.style.display = "none";
+            start.style.display = "none";
+        }
+    </script>
+    <div id="hezi">
+        <table align="center" width="30%" border="1" cellpadding="0" cellspacing="0">
+            <tr>
+                <th>姓名</th>
+                <th>学号</th>
+                <th>作业链接</th>
+            </tr>
+            <tr>
+                <td>彭泱旸</td>
+                <td>20213624</td>
+                <td><a href="pengyangyang/20213624-1.html" target="_black">彭泱旸第一次作业</a></td>
+            </tr>
+            <tr>
+                <td>彭泱旸</td>
+                <td>20213624</td>
+                <td><a href="pengyangyang/20213624-2.html" target="_black">彭泱旸第二次作业</a></td>
+            </tr>
+            <tr>
+                <td>彭泱旸</td>
+                <td>20213624</td>
+                <td><a href="pengyangyang/20213624-3.html" target="_black">彭泱旸第三次作业</a></td>
+            </tr>
+            <tr>
+                <td>彭泱旸</td>
+                <td>20213624</td>
+                <td><a href="pengyangyang/20213624-4.HTML" target="_black">彭泱旸第四次作业</a></td>
+            </tr>
+            <tr>
+                <td>彭泱旸</td>
+                <td>20213624</td>
+                <td><a href="pengyangyang/20213624-5.html" target="_black">彭泱旸第五次作业</a></td>
+            </tr>
+            <tr>
+                <td>彭泱旸</td>
+                <td>20213624</td>
+                <td><a href="pengyangyang/20213624-6.html" target="_black">彭泱旸第六次作业</a></td>
+            </tr>
+            <tr>
+                <td>彭泱旸</td>
+                <td>20213624</td>
+                <td><a href="pengyangyang/20213624-7.html" target="_black">彭泱旸第七次作业</a></td>
+            </tr>
+            <tr>
+                <td>彭泱旸</td>
+                <td>20213624</td>
+                <td><a href="pengyangyang/20213624-8.html" target="_black">彭泱旸第八次作业</a></td>
+            </tr>
+        </table>
+    </div>
 </body>
 
 </html>
