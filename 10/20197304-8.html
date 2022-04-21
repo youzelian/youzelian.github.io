@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第八次作业</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 1;
+        }
+
+        body {
+            background-color: #b284be;
+            text-align: center;
+        }
+
+        input {
+            width: 60px;
+            height: 60px;
+            font-size: 18px;
+            border-radius: 30px;
+			background-color:yellow;
+        }
+
+        .gushi {
+            white-space: pre-line;
+        }
+
+        h3 {
+            font: 500 50px 楷体, 微软雅黑;
+        }
+
+        p {
+            font: 33px/45px 楷体, 微软雅黑;
+        }
+
+        .yu {
+            /* 布局定位属性 */
+            float: right;
+            /* 自身属性 */
+            margin-top: 250px;
+            /* 文本属性 */
+            font-size: 15px;
+        }
+    </style>
+   <script src="../../	ts300.js">
+   </script>
+</head>
+
+<body>
+    <input type="button" value="上一首" id="pre">
+    <input type="button" value="下一首" id="next">
+    <div class="gushi">
+        <h3></h3>
+        <p></p>
+    </div>
+    <script>
+        
+        //定义向前向后的按钮
+        var pre = document.getElementById("pre");
+        var next = document.getElementById("next");
+        //定义标题和内容
+        var h3 = document.querySelector("h3");
+        var p = document.querySelector("p");
+        // 搜索所有的数字
+        var arr = ts300.match(/\d+(.\d+)?/g);
+        var i = 0;
+        var ts300content = ts300.substring(ts300.search(arr[i]), ts300.search(arr[i + 1]));
+        var ts300break = ts300content.split("\n");
+        h3.textContent = ts300break[0];
+        var Enter = ts300content.search("\n");
+        p.textContent = ts300.substring(ts300.search(arr[i]), ts300.search(arr[i + 1])).substring(Enter, ts300.search(arr[i + 1]));
+        pre.onclick = function () {
+            //补全漏洞，当点到319首诗时按下一首320首再按上一首诗
+            if (i == -1) {
+                i = 309;
+            }
+            if (i == 0) {
+                i = 310;
+            }
+            if (i > 0) {
+                i--;
+                //将三百首诗分组以一首一首的形式放入ts300content的数组中
+                ts300content = ts300.substring(ts300.search(arr[i]), ts300.search(arr[i + 1]));
+                //此处是为了将所选的数组内容即古诗又分拆开成另一个数组，目的是为了取出古诗的标题放入h3中
+                ts300break = ts300content.split("\n");
+                //将古诗的标题放入h3中
+                h3.textContent = ts300break[0];
+                //取出分界点Enter（古诗标题与古诗内容的分界点）
+                Enter = ts300content.search("\n");
+                //substing提取古诗字符串中介于Enter和古诗末尾之间的字符
+                p.textContent = ts300.substring(ts300.search(arr[i]), ts300.search(arr[i + 1])).substring(Enter, ts300.search(arr[i + 1]));
+            }
+            //补全漏洞，i=0时点击上一首320首的消失
+            if (i == 309) {
+                ts300content = ts300.substring(ts300.search(arr[309]));
+                ts300break = ts300content.split("\n");
+                h3.textContent = ts300break[0];
+                Enter = ts300content.search("\n");
+                p.textContent = ts300content.substring(Enter);
+            }
+        }
+        next.onclick = function () {
+            if (i < arr.length - 1) {
+                i++;
+            }
+            ts300content = ts300.substring(ts300.search(arr[i]), ts300.search(arr[i + 1]));
+            ts300break = ts300content.split("\n");
+            h3.textContent = ts300break[0];
+            Enter = ts300content.search("\n");
+            p.textContent = ts300content.substring(Enter, ts300.search(arr[i + 1]));
+            if (i == 309) {
+                i = -1;
+                ts300content = ts300.substring(ts300.search(arr[309]));
+                ts300break = ts300content.split("\n");
+                h3.textContent = ts300break[0];
+                Enter = ts300content.search("\n");
+                p.textContent = ts300content.substring(Enter);
+            }
+        }
+    </script>
+</body>
+
+</html>
