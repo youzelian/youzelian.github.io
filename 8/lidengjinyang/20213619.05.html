@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>20213619.05</title>
+    <style>
+	body{
+			text-align:center;
+			font-size:20px;
+			color:red;
+		}
+	h1,h2,h3{font-size:50px;}
+    </style>
+</head>
+
+<body>
+    <input type="button" value="1" id="li1">
+    <input type="button" value="2" id="li2">
+    <input type="button" value="3" id="li3">
+    <h1></h1>
+    <h2></h2>
+    <h3></h3>
+    <h4></h4>
+    <h5></h5>
+    <h6></h6>
+    <script>
+		var shi1 = document.getElementById("li1");
+		var shi2 = document.getElementById("li2");
+		var shi3 = document.getElementById("li3");
+        var gu1 = document.querySelector("h1");
+        var gu2 = document.querySelector("h2");
+        var gu3 = document.querySelector("h3");
+        var gu4 = document.querySelector("h1");
+        var gu5 = document.querySelector("h2");
+        var gu6 = document.querySelector("h3");
+		var gu7 = document.querySelector("h1");
+        var gu8 = document.querySelector("h2");
+        var gu9 = document.querySelector("h3");
+        shi1.onclick = function () {
+            gu1.textContent = "静夜思";
+			gu2.textContent = "床前明月光，疑是地上霜。";
+			gu3.textContent = "举头望明月，低头思故乡。";
+			
+        };
+		gu1.onclick = function(){
+			gu1.textContent += "???";
+		};
+		shi2.onclick = function () {
+            gu4.textContent = "望庐山瀑布";
+			gu5.textContent = "日照香炉生紫烟，遥看瀑布挂前川。";
+			gu6.textContent = "飞流直下三千尺，疑是银河落九天。";
+			
+        };
+		shi3.onclick = function () {
+            gu7.textContent = "赠汪伦";
+			gu8.textContent = "李白乘舟将欲行，忽闻岸上踏歌声。";
+			gu9.textContent = "桃花潭水深千尺，不及汪伦送我情。";
+			
+        };
+    </script>
+</body>
+
+</html>

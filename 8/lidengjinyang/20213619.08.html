@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>20213619</title>
+  <style type="text/css">
+    <style type="text/css">
+  body{
+     text-align: center;
+   }
+  p{
+     font-size:50px; 
+     text-align: center; 
+     margin: auto;
+ }
+  h1{
+     font-size:70px;
+	 color: red;
+	 text-align: center;
+	 font-style: italic;
+}
+  </style>
+  <script src="ts300.js">
+  <!--
+  //-->
+  </script>
+ </head>
+ <body>
+  <input type="button" value="上一首" id="prev">
+  <input type="button" value="下一首" id="next">
+  <h1 id = "tsTitle">
+  </h1>
+  <p id = "tsContent">
+  </p>
+  <script type="text/javascript">
+  <!--
+     var ts = [] ;
+	     tsTitle=[] ;
+		 tsContnet = [] ;
+	 var BEGIN = 010 ,
+	     END = 320 ,
+		 i ,
+		 p1 ,
+		 p2 ;
+	for (i=0 ; i < END-BEGIN ; i++ )
+	{ 
+		p1 = ts300.search(i+BEGIN) ;
+		p2 = ts300.search(i+1+BEGIN) ;
+		ts[i] = ts300.substring(p1,p2) ;
+	}
+	 for (i=0 ; i <ts.length ; i++ )
+	 {
+		 p1 = 1 ;
+		 p2 = ts[i].search("\n") ;
+		 tsTitle[i]= ts[i].substring(p1,p2) ;
+		 tsContent[i]= ts[i].substring(p2) ;
+	 }
+	 i=0 ;
+	 showTs(i) ;
+  //-->
+     var prevDom = document.getElementById("prev") ;
+     var nextDom = document.getElementById("next") ;
+	 if (i > 0)
+	  {
+		 i--;
+	  }
+	 prevDom.onclick = function()
+	 {
+		 if(i>0&&i<310){
+			 i--;
+			 showTs(i);
+		 }
+		 else{
+		 i=309;
+		 showTs(i);
+		 
+		 }
+
+	 };
+     nextDom.onclick = function()
+	 {
+		 if(i>=0&&i<309){
+		 i++;
+		 showTs(i);
+		 }
+		 else{
+		 i=0;
+		 showTs(i);
+		 }
+	 };
+     if (i < ts.length-1)
+	  {
+		 i++;
+	  }
+     function showTs(i)
+	 {
+		 var tsTitleDom =document.getElementById("tsTitle") ;
+	     var tsContentDom =document.getElementById("tsContent") ;
+		 tsTitleDom.textContent = tsTitle[i] ;
+		 tsContentDom.textContent = tsContent[i] ;
+	 }
+  </script>
+ </body>
+</html>
+
