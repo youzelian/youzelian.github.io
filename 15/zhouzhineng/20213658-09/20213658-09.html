@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>唐诗三百首</title>
+
+
+    <style>
+        body {
+            font-size: 25px;
+        }
+
+        h2 {
+            font-size: 50px;
+            color: rgb(167, 6, 6);
+            text-align: center;
+            box-shadow: cadetblue;
+            text-shadow: 2px 2px 5px rgb(0, 98, 255);
+            font-family: "SimSun";
+        }
+
+        P {
+            color: brown;
+            font-size: 40px;
+            text-align: center;
+            margin: auto;
+            font-family: "FangSong";
+            font-weight: bold;
+            width: 13em;
+
+        }
+
+        input {
+            font-size: 1.25em;
+            cursor: pointer;
+        }
+
+        input:hover {
+            color: aliceblue;
+            background-color: rgb(246, 204, 67);
+        }
+
+        #prev {
+            margin-left: 0px;
+        }
+
+        #next {
+            margin-left: 93%;
+            margin-right: 0px;
+        }
+    </style>
+
+    <script src="https://lijianhong19720904.github.io/ts300.js"> /*第一百七十五首缺失*/
+    </script>
+
+
+<body>
+
+    <input type="button" value="上一首" id="prev" class="prev">
+    <input type="button" value="下一首" id="next">
+
+    <h2 id="tsTitle">
+        标题
+    </h2>
+
+    <p id="tsContent">
+        内容
+    </p>
+
+
+    <script>
+        var ts = [], tsTitle = [], tsContent = [];
+        var BEGIN = 10, END = 320;
+        var i, p1, p2;
+
+        for (i = BEGIN; i < END; i++) {    /*从三百首诗中截取每一首*/
+            p1 = ts300.search(tostring(i));
+            p2 = ts300.search(tostring(i + 1));
+            if (p1 != -1 && p2 != -1) { /*175缺失*/
+                ts[i] = ts300.substring(p1, p2);
+            }
+        }
+        /*由于序号175古诗缺失 ts数组下标164、165为undefined 此处删除该数据*/
+        ts.splice(174,2);  /* splice方法 删除数组中元素 第一个数据为起始删除位置 第二个数据为删除数据个数*/
+        ts[i - 2] = ts300.substring(p2); /*最后一首*/
+
+        function tostring(i) {
+            /*由于唐诗序号是从010到320（175缺失） 则第一首至第九十首要将i(整形)变为字符型（序号前加0）*/
+            if (i < 100) {
+                return "0" + i;
+            }
+            else {
+                return i + "";
+            }
+        }
+
+        for (i = BEGIN; i <= END - 2; i++) {
+            p1 = 3;
+            p2 = ts[i].indexOf("\n");
+            tsTitle[i] = ts[i].substring(p1, p2);
+            tsContent[i] = ts[i].substring(p2);
+        }
+
+        i = BEGIN;
+        showTS(i);
+        var prevDOM = document.getElementById("prev");
+        var nextDOM = document.getElementById("next");
+
+
+        prevDOM.onclick = function () {
+            if (i == BEGIN) {
+                i = END - 2;
+                showTS(i);
+            }
+            else {
+                i--;
+                showTS(i);
+            }
+        }
+
+        nextDOM.onclick = function () {
+            if (i == END - BEGIN - 2) {
+                i = 0;
+            }
+            else {
+                i++;
+            }
+            showTS(i);
+
+        }
+
+        function showTS(i) {   /*展示古诗*/
+            var tsTitleDOM = document.getElementById("tsTitle");
+            var tsContentDOM = document.getElementById("tsContent");
+            tsTitleDOM.textContent = tsTitle[i];
+            tsContentDOM.textContent = tsContent[i];
+
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>

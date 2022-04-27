@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head>
@@ -5,13 +6,10 @@
         <title>唐诗三百首</title>
         <style>
             h1{
-                color:rgb(232, 32, 32);
                 text-align: center;
-                font-size:70px;
-                background: rgb(118, 230, 236);
+                font-size:60px;
             }
             p{
-                color:rgb(246, 170, 77);
                 text-align: center;
                 font-size: 40px;
                 width: 12em;
@@ -21,35 +19,31 @@
                 margin-left: 950px;
                 height: 50px;
                 width: 100px;
-                color:rgb(246, 67, 67);
-                background:white;
                 line-height: 50px;
                 font-size: 20px;
-                
             }
             input:hover{
                 color:aliceblue;
-                background-color: rgb(246, 67, 67);
             }
         </style>
-        <script src="ts300.js">
+        <script src="https://lijianhong19720904.github.io/ts300.js">
             
         </script>
     </head>
     <body>
-        <h1 id="tt">
-            唐诗三百首
+        <h1 id="tsTitle">
+            标题
         </h1>
-        <p id="ct">
-           
+        <p id="tsContent">
+           内容
         </p>
         <input type="button" value="上一首" id="prev">
         <input type="button" value="下一首" id="next">
         <script>
             var prev=document.getElementById("prev");
             var next=document.getElementById("next");
-            var tt=document.getElementById("tt");
-            var ct=document.getElementById("ct");
+            var tsTitle=document.getElementById("tsTitle");
+            var tsContent=document.getElementById("tsContent");
             var ts=[],i,j=0,h=(i+j);
             var tit=[],con=[];
             for(i=10;i<100;i++)
@@ -58,7 +52,7 @@
                p2=ts300.search(i+1);
                ts[i]=ts300.substring(p1,p2);
             };
-            for(i=100;i<=320;i++){
+            for(i=100;i<320;i++){
                 p3=ts300.search(i);
                 p4=ts300.search(i+1);
                 ts[i]=ts300.substring(p3,p4);
@@ -70,19 +64,19 @@
                 con[i]=ts[i].substring(p6,ts[i].search("\n0"));
                 con[99]=ts[99].substring(p6);
             }
-            for(i=100;i<=320;i++){
+            
+            for(i=100;i<320;i++){
                 p5=ts[i].search("\n");
                 tit[i]=ts[i].substring(3,p5);
                 con[i]=ts[i].substring(p5);
             }
             i=10;
            
-            
             next.onclick=function(){
-                if(i<320){
+                if(i<319){
                     i++;
                 }
-                else if(i=320){
+                else{
                     i=10;
                 }
                 show(i);
@@ -91,32 +85,15 @@
                 if(i>10){
                     i--;
                 }
-                else if(i=10){
-                    i=320;
+                else{
+                    i=319;
                 }
                 show(i);
             }
             function show(i){
-                tt.textContent=tit[i];
-                ct.textContent=con[i];
-            }z
-
-
-
-
-
-
+                tsTitle.textContent=tit[i];
+                tsContent.textContent=con[i];
+            };
         </script>
-
-
-
-
-
-
-
-
-
-
-
     </body>
 </html>
