@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>20213619</title>
+  <style type="text/css">
+  *{
+     text-align: center;
+   }
+p#ts{
+   font-size:30px;    
+   color: blue;
+   margin: auto;
+ }
+h1#timu{
+    font-size:50px;
+	color: red;
+}
+</style>
+  <script  type="text/javascript">
+  <!--
+    var timu = [];
+	timu[0]="《将进酒·君不见黄河之水天上来》"
+	timu[1]="《静夜思》"
+	timu[2]="《望庐山瀑布》"
+	timu[3]="《赠汪伦》"
+	timu[4]="《望天门山》"
+	timu[5]="《行路难 其一》"
+    var ts = ["君不见黄河之水天上来，奔流到海不复回。君不见高堂明镜悲白发，朝如青丝暮成雪。人生得意须尽欢，莫使金樽空对月。天生我材必有用，千金散尽还复来。烹羊宰牛且为乐，会须一饮三百杯。岑夫子，丹丘生，将进酒，杯莫停。与君歌一曲，请君为我倾耳听。钟鼓馔玉不足贵，但愿长醉不复醒。古来圣贤皆寂寞，惟有饮者留其名。陈王昔时宴平乐，斗酒十千恣欢谑。主人何为言少钱，径须沽取对君酌。五花马，千金裘，呼儿将出换美酒，与尔同销万古愁。","床前明月光，疑是地上霜。举头望明月，低头思故乡。","日照香炉生紫烟，遥看瀑布挂前川。飞流直下三千尺，疑是银河落九天。","李白乘舟将欲行，忽闻岸上踏歌声。桃花潭水深千尺，不及汪伦送我情。","天门中断楚江开，碧水东流至此回。两岸青山相对出，孤帆一片日边来。","金樽清酒斗十千，玉盘珍羞直万钱。停杯投箸不能食，拔剑四顾心茫然。欲渡黄河冰塞川，将登太行雪满山。闲来垂钓碧溪上，忽复乘舟梦日边。行路难，行路难，多歧路，今安在。长风破浪会有时，直挂云帆济沧海。"];
+  -->
+ </script>
+ </head>
+ <body>
+ <h1 id="timu">
+ <i>李白诗词小赏</i>
+ </h1>
+ <p id="ts">
+ </p>
+ <div id=""class="">
+   <input type="button" value="上一页" id="prev">
+   <input type="button" value="下一页" id="next">
+ </div>
+ <script  type="text/javascript">
+  <!--
+    var h1Dom = document.querySelector("h1#timu");
+	var pDom = document.querySelector("p#ts");
+
+	var i= 0 ;
+	document.querySelector("input#next").onclick = function(){
+      h1Dom.textContent = timu[i];
+      pDom.textContent = ts[i];
+	  if (i < timu.length-1)
+	  {
+		 i++;
+	  }
+	} ;
+	document.querySelector("input#prev").onclick = function(){
+		if (i > 0)
+	  {
+		 i--;
+	  }
+      h1Dom.textContent = timu[i];
+      pDom.textContent = ts[i];
+	} ;
+  -->
+ </script>
+ </body>
+</html>
