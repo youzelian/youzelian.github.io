@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <script src="http://lijianhong19720904.github.io/ts300.js">
+  </script>
+  <style>
+   body{text-align:center;
+       background-color:rgb(224,255,255);
+	   color:rgb(205,133,0);
+       }
+  input{width:100px;
+        height:60px;
+        border-radius:10px/10px;
+		border:0px;
+		font-size:25px;
+		background-color:dodgerblue;
+		color:white;
+		}
+   h1{font-size:50px;
+     font-family:楷体;}
+  p{font-size:30px;
+    white-space:pre-line;
+	font-family:楷体;
+	margin:auto;}
+  </style>
+  <title>第九次作业</title>
+ </head>
+ <body>
+  <input type="button" value="上一页" id="prev">
+  <input type="button" value="下一页" id="next">
+  <h1></h1>
+  <p></p>
+  <script>
+   var ts=[],
+      tstitle=[],
+	  tscontent=[];
+  var begin=10,
+      end=320,
+	  i,
+	  p1,
+	  p2;
+  var h1=document.querySelector("h1");
+  var p=document.querySelector("p");
+  var prevbt=document.querySelector("input#prev");
+  var nextbt=document.querySelector("input#next");
+  for(i=0;i<end-begin;i++){
+      p1=ts300.search(i+begin);//搜索字符
+	  p2=ts300.search(i+1+begin);
+	  if(p2==-1){
+		  p2=ts300.search(i+2+begin);}
+      if(p1==-1){
+		  i++;
+		  p1=ts300.search(i+begin);//搜索字符
+	      p2=ts300.search(i+1+begin);}
+	  if(i<100){
+	  ts[i]=ts300.substring(p1,p2-1);//选取字符串
+	  }else{
+		  ts[i]=ts300.substring(p1,p2);}
+	  }
+  ts[ts.length]=ts300.substring(p2);
+  for(i=0;i<=ts.length-1;i++){
+	  if(ts[i]==null){
+		  i++;}
+		  
+		  
+	  if(i<90){
+	  p1=2;}else{p1=3;}
+	  p2=ts[i].search("\n");
+      tstitle[i]=ts[i].substring(p1,p2);
+	  tscontent[i]=ts[i].substring(p2);
+	  
+  }   
+  
+	  i=0;
+    h1.textContent=tstitle[0];
+    p.textContent=tscontent[0];
+	prevbt.onclick=function() {
+          i--;
+	      if(i>=0&&i<=tstitle.length-1){
+			  if(tstitle[i]==null){
+				  i--;}
+			  h1.textContent=tstitle[i];
+		      p.textContent=tscontent[i];}
+		  if(i==-1){ i=tstitle.length-1;
+			    h1.textContent=tstitle[i];
+		        p.textContent=tscontent[i];}
+	}
+   nextbt.onclick=function() {
+          i++;
+	      if(i>=0&&i<=tstitle.length-1){
+			  if(tstitle[i]==null){
+				  i++;}
+			  h1.textContent=tstitle[i];
+		      p.textContent=tscontent[i];}
+		  if(i==ts.length){ i=0;
+			    h1.textContent=tstitle[i];
+		        p.textContent=tscontent[i];
+				}}
+   
+</script>
+ </body>
+</html>

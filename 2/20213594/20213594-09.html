@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">  
+  <title>20213594</title>
+   <style type="text/css">
+    h1
+	    {
+		 color:;
+		 font-size:100px;
+		 white-space:pre-line;
+		 margin:auto;
+		 text-align:center;
+		}
+    body{
+         text-align:center;
+		 color:skyblue;
+		 background-color:lightpink;
+		 font-size:50px;
+		 color:blue;
+	    }
+	p{
+      font-size:60px;
+	  white-space:pre-line;
+      text-align:center;
+	  margin:auto;
+	  line-height:90px;
+	 }
+	 input{
+	       font-size:2em;
+		   color:#6633cc;
+	      }
+   </style>
+   <script src="https://lijianhong19720904.github.io/ts300.js">
+   <!--
+	// var ts 300="";
+   //-->
+   </script>
+ </head>
+ <body>
+   <input type="button" value="首页" id="home">
+   <input type="button" value="上一首" id ="prev">
+   <input type="button" value="下一首" id ="next">
+   <input type="button" value="尾页" id="end">
+   <h1 id = "tsTitleDom">
+
+   </h1>
+   <p id = "tsContentDom">
+
+   </p>
+   <script type="text/javascript">
+   <!--
+	  var ts = [];
+          tsTitle = [],
+		  tsContent = [];
+	  
+	  var BEGIN = 10;
+	  var END = 320,
+          i  ,
+	      p1 ,
+		  k=0,
+	      p2 ;
+	  for (i=0;i<=END-BEGIN ; i++,k++ )
+	      {
+		if(i<90)
+			  {
+		  p1 = ts300.search(i+BEGIN);
+	      p2 = ts300.search(i+1+BEGIN);
+	      ts[k] = ts300.substring(p1,p2-1);
+	      }
+        else
+				{
+					p1=ts300.search(i+BEGIN);
+					p2=ts300.search(i+1+BEGIN);
+	    if(p2==-1)
+				{
+					p2=ts300.search(176);
+					ts[k]=ts300.substring(p1,p2);
+					i++;
+				}
+		else
+			{
+				ts[k]=ts300.substring(p1,p2);
+	  			   }
+				}
+			}
+			p1=ts300.search(320);
+			ts[309]=ts300.substring(p1);
+      for (i=0;i<END-BEGIN;i++)
+          {
+		   p1 = 2;
+		   p2 = ts[i].search("\n");
+	  if(i>=90)
+				{
+					p1=3;
+				}
+			tsTitle[i]=ts[i].substring(p1,p2);
+			tsContent[i]=ts[i].substring(p2);
+			}
+		   i=0;
+	       showTs(i);
+   //-->
+           var prevDom = document.getElementById("prev");
+		   var nextDom = document.getElementById("next");
+		   var i=0;
+		   tsTitleDom.textContent=tsTitle[0];
+		   tsContentDom.textContent=tsContent[0];
+           prevDom.onclick = function()
+		   {
+            if(i<=0)
+							{
+								i=309;
+							}
+						else
+							{
+								i--;
+							}
+						tsTitleDom.textContent=tsTitle[i];
+						tsContentDom.textContent=tsContent[i];
+		   };
+		   nextDom.onclick = function()
+		   {
+          	if(i>=309)
+							{
+								i=0;
+							}
+						else
+							{
+								i++;
+							}
+						tsTitleDom.textContent=tsTitle[i];
+						tsContentDom.textContent=tsContent[i];
+		   };
+		   function showTs(i)
+		   {
+               
+	      
+	            tsTitleDom.textContent = tsTitle[i];
+                tsContentDom.textContent = tsContent[i];
+		   }
+		   home.onclick=function()
+					{
+						i=0;
+						tsTitleDom.textContent=tsTitle[i];
+						tsContentDom.textContent=tsContent[i];
+					}
+			end.onclick=function()
+					{
+						i=309;
+						tsTitleDom.textContent=tsTitle[i];
+						tsContentDom.textContent=tsContent[i];
+					}
+   </script>
+ </body>
+</html>

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>ts300</title>
+		<script src="https://lijianhong19720904.github.io/ts300.js" >
+		</script>
+		<style type="text/css">
+			body
+			{
+				background-color:lightblue;
+			}
+			h1
+			{
+				color:#ff3333;
+				text-align:center;
+				font-family:"楷体";
+				font-size:4em;
+			}
+			p
+			{
+				color:blue;
+				font-size:38px;
+				text-align:center;
+				white-space:pre-line;
+				line-height:58px;
+				margin:auto;
+			}
+			input
+			{
+				width:150px;
+				height:60px;
+				border:none;
+				font-size:30px;
+				background:#00ccff;
+				color:white;
+			}
+			div
+			{
+				height:70px;
+			}
+		</style>
+	</head>
+	<body id="B">
+		<div>
+			<div style="float:left">
+				<input type="button" value="首页" id="home">
+				<input type="button" value="上一首" id="prev">
+			</div>
+			<div style="float:right">
+				<input type="button" value="下一首" id="next">
+				<input type="button" value="尾页" id="end">
+			</div>
+		</div>
+		<h1 id="tstitledom"></h1>
+		<p id="tscontentdom"></p>
+		<script type="text/javascript">
+			var co=[];
+			var ts=[],
+				tstitle=[],
+				tscontent=[];
+			var BEGIN=10,
+				END=320,
+				i,
+				k,
+				p1,
+				p2;
+			for(i=0,k=1;i<END-BEGIN;i++,k++)
+			{
+			if(i<100)
+				{
+					p1=ts300.search(i+BEGIN);
+					p2=ts300.search(i+1+BEGIN);
+					ts[k]=ts300.substring(p1,p2-1);
+				}
+			else
+				{	p1=ts300.search(i+BEGIN);
+					p2=ts300.search(i+1+BEGIN);
+					if(p2==-1)
+						{
+							p1=ts300.search(i+BEGIN);
+							p2=ts300.search(i+2+BEGIN);
+							ts[k]=ts300.substring(p1,p2);
+							i++;
+						}
+					else
+						{
+							ts[k]=ts300.substring(p1,p2);
+						}
+			
+				}
+			}
+			ts[ts.length]=ts300.substring(p2)
+			for(k=1;k<=END-BEGIN;k++)
+			{
+			p1=0;
+			p2=ts[k].search("\n");
+			tstitle[k]=ts[k].substring(p1,p2);
+			tscontent[k]=ts[k].substring(p2);
+			}
+			var k=1;
+			tstitledom.textContent=tstitle[1];
+			tscontentdom.textContent=tscontent[1];
+			prev.onclick=function()
+					{
+						if(k<=1)
+							{
+								k=310;
+							}
+						else
+							{
+								k--;
+							}
+						tstitledom.textContent=tstitle[k];
+						tscontentdom.textContent=tscontent[k];
+					}
+			next.onclick=function()
+					{
+						if(k>=310)
+							{
+								k=1;
+							}
+						else
+							{
+								k++;
+							}
+						tstitledom.textContent=tstitle[k];
+						tscontentdom.textContent=tscontent[k];
+					}
+			home.onclick=function()
+					{
+						k=1;
+						tstitledom.textContent=tstitle[k];
+						tscontentdom.textContent=tscontent[k];
+					}
+			end.onclick=function()
+					{
+						k=166;
+						tstitledom.textContent=tstitle[k];
+						tscontentdom.textContent=tscontent[k];
+					}
+		</script>
+	</body>
+</html>

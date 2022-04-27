@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            font-size: 50px;
+               margin: auto;
+               width: 12em;
+               text-shadow: 0px 5px 3px rgb(0, 0, 0);
+               color: aqua;
+        }
+        h1{
+            font-size: 75px;
+            text-shadow: 0px 5px 3px rgb(244, 7, 7);
+        }
+        input{
+              font-size: 100px;
+              border: 0px;
+              background-color: rgb(141, 144, 232);
+              cursor: pointer;/*改变光标*/
+              text-shadow: 0px 7px 3px rgb(0, 0, 0);
+              color: rgb(255, 0, 0);
+              
+            }
+        body
+        {
+            background-color: 
+            rgb(141, 144, 232);
+            text-align: center;
+        }
+        
+        .fh a{
+             color: rgb(245, 241, 241);
+              text-decoration: none;
+              font-family: 楷体;
+              font-size: 100px; ;
+             }
+           a:link{font-family: 楷体;} 
+           a:visited{font-family: 楷体;} 
+           a:hover{color: rgb(219, 23, 23);font-family: 楷体;}
+           a:active {color: blue;}
+           
+    </style>
+</head>
+<body>
+    
+    <input type="button" value="上一首" id="prev" >   
+    <input type="button" value="开始" id="start" >
+    <input type="button" value="下一首" id="next" >
+    <h1 id="tstitle">
+
+    </h1 >
+    <p id="tscontent">
+
+    </p>
+     
+    <script src="https://lijianhong19720904.github.io/ts300.js">
+
+    </script>
+    <script >
+        var tst=[],
+            tsc=[],
+            ts=[];
+        var begin=10,
+            end  =300,
+            i,
+            p1,
+            p2;
+        for(i=begin;i<end;i++)
+        {
+            p1=ts300.search(toString(i));
+            p2=ts300.search(toString(i+1));
+            if(p1!==-1 && p2!==-1)
+            {
+                ts[i-begin]=ts300.substring(p1,p2);
+            }
+
+        }//分离每一首古诗
+
+        ts[ts.length-1]=ts300.substring(p2);//最后一首古诗
+
+        function toString(i)
+        {
+            if(i<100)
+            {
+                return '0'+i;
+            }
+            else
+            {
+                return i +'';
+            }
+        }//让数字编号变成三位数
+
+        ts[164]=ts[ts.length-1]
+        ts.pop()
+        ts[165]=ts[ts.length-1]
+        ts.pop()
+        //消除数组164和165的下标元素
+        
+        for(i=0;i<ts.length;i++)
+        {
+            p1=3;
+            p2=ts[i].search("\n");
+            tst[i]=ts[i].substring(p1,p2);
+            tsc[i]=ts[i].substring(p2);
+        }//分离标题和内容并去掉数字编号
+
+            
+        
+
+        var prevDom=document.querySelector("input#prev");
+        var nextDom=document.querySelector("input#next");
+        var startDom=document.querySelector("input#start");
+           startDom.onclick=function()
+           {
+               i=0;
+               showts(i);
+           }
+
+
+           nextDom.onclick=function()
+           {
+               
+               if(i==ts.length-1)
+                                       {
+                                         i=0;
+                                         showts(i);
+                                       }
+               else
+               {
+                i++;
+                showts(i);
+               }                                    
+           }
+           prevDom.onclick=function()
+           {
+                  
+               if(i==0)
+                                       {
+                                         i=ts.length-1;
+                                         showts(i);
+                                       }     
+               else
+                    {
+                        i--;
+                        showts(i);
+                    }                   
+                                       
+                                           
+           }
+           function showts(i)
+           {
+               var tstitleDOm=document.querySelector("#tstitle");
+               var tscontentDOm=document.querySelector("#tscontent");
+               tstitleDOm.textContent=tst[i];
+               tscontentDOm.textContent=tsc[i];
+           }
+           i=1000000000000000000;
+    </script>    
+ <div class="fh"><a href="..\20213598.html"target="_self" title="返回">返回</a></div>
+</body>
+</html>
