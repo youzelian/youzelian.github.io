@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>唐诗三百首</title>
+  <script>
+  confirm("Welcome to this page!"); 
+  </script> 
+      <style>
+	  * {
+            margin: 0;
+            padding: 0;
+        }
+		input {
+		    box-shadow:5px 5px 5px;
+            border:0.5px solid #cccccc;
+            padding:0.5em;
+            line-height:1em;
+            border-radius:10px;
+            color:rgb(50,50,100);
+            font-size:1.5em;
+            }
+		body {
+            text-align: center;
+            background-image: url(https://img1.baidu.com/it/u=2048838417,3102813734&fm=253&fmt=auto&app=138&f=JPEG?w=750&h=500);
+            background-repeat: no-repeat;
+            background-size: 100%;}
+		h1{
+            font-size: 60px;
+            font-family:楷体;
+        }
+	    h2 {
+            margin: 20px;
+            font-size: 70px;
+            font-weight: 590;
+            font-family: 楷体;
+        }
+		.gushi {
+            white-space: pre-line;
+        }
+		h3 {
+            font: 500 50px 楷体;
+        }
+         p {
+            font: 33px/45px 楷体;
+        }
+		 
+     </style>
+   <script src="https://youzelian.github.io/ts300.js">
+   </script>
+  </head>
+ <body>
+ <h2>唐诗三百首</h2>  
+ <input type = "button" value = "上一篇" id ="pre">  
+ <input type = "button" value = "下一篇" id ="next">  
+     <div class="gushi">
+        <h3></h3>
+        <p></p>
+    </div>
+  <script>
+        var pre = document.getElementById("pre");
+        var next = document.getElementById("next");
+
+        var h3 = document.querySelector("h3");
+        var p = document.querySelector("p");
+
+        var arr = poem.match(/\d+(.\d+)?/g);
+        var i = 0;
+        var poemall = [];
+        var poemtitle = [];
+        var poemcontent = [];
+        var poem;
+        for (i = 0; i < arr.length; i++) {
+            poemall[i] = poem.substring(poem.search(arr[i]), poem.search(arr[i + 1]));
+            poemtitle[i] = poemall[i].substring(0, poemall[i].search("\n"));
+            poemcontent[i] = poemall[i].substring(poemall[i].search("\n"), poemall[i].length);
+        }
+        i = 0;
+        h3.textContent = poemtitle[i];
+        p.textContent = poemcontent[i];
+        pre.onclick = function () {
+            if (i == 0) {
+                i = arr.length - 2;
+                h3.textContent = poemtitle[i];
+                p.textContent = poemcontent[i];
+            }
+            else {
+                i--;
+                h3.textContent = poemtitle[i];
+                p.textContent = poemcontent[i];
+            }
+        }
+        next.onclick = function () {
+            if (i == 299) {
+                i = 0;
+                h3.textContent = poemtitle[i];
+                p.textContent = poemcontent[i];
+            }
+            else {
+                i++;
+                h3.textContent = poemtitle[i];
+                p.textContent = poemcontent[i];
+            }
+
+        }
+   </script>
+</body>
+
+</html>

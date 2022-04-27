@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>作业09</title>
+  
+  <script src="https://lijianhong19720904.github.io/ts300.js">
+  </script>
+
+ </head>
+ <body>
+  
+  
+  
+  <input type="button" value="上一首" id="prev">
+  <input type="button" value="下一首" id="next">
+  <h1 id = "tsTitle">
+  <hr style="height:3px">
+  </h1>
+  <p id ="tsContent">
+  </p>
+
+
+
+
+
+
+  <script type="text/javascript">
+
+	var ts = [] ,
+	    tsTitle = [] ,
+		tsContent =[] ;
+
+    //将js文件中的古诗分割分别放入相应的数组中
+
+	var BEGIN = 100 ,
+	    END = 300 ,
+		i  ,
+		p1 ,
+		p2 ;
+	for (i=0 ; i < END - BEGIN ; i++ ){
+        p1 = ts300.search(i+BEGIN) ;
+		p2 = ts300.search(i+1+BEGIN) ;
+		ts[i] = ts300.substring(p1,p2);
+	}
+   //分离诗的标题和内容
+	for (i=0; i < ts.length ; i++ ){
+		p1 = 3 ;
+		p2 = ts[i].search("\n");
+        tsTitle[i] = ts[i].substring(p1,p2) ;
+		tsContent[i] = ts[i].substring(p2) ;
+	}
+	//按钮控制代码
+	
+	   i=0 ;
+       showTs(i);
+  
+	   var tsTitleDom = document.getElementById("tsTitle");
+       var tsContentDom = document.getElementById("tsContent");
+  		var prevDom = document.getElementById("prev");
+		var nextDom = document.getElementById("next");
+ 		
+	//按钮点击古诗翻页功能
+    //加入两个if语句对i控制使循化形成闭环
+
+		prevDom.onclick = function(){
+		  i-- ;
+		  if (i < 0)       //当i=0 时使i=200实现从第一首再向前翻变成最后一首
+	  {i = 200;   
+	   i--;
+	  }
+		  showTs(i);
+		};
+		nextDom.onclick = function(){
+		  i++ ;
+		  if (i>=200)    //道理同上
+		  {i = -1;
+		  i++;
+		  }
+		  showTs(i);
+		};
+		function showTs(i){
+		   var tsTitleDom = document.getElementById("tsTitle");
+           var tsContentDom = document.getElementById("tsContent");
+	        tsTitleDom.textContent = tsTitle[i] ;
+		    tsContentDom.textContent = tsContent[i] ;
+		}  
+
+//对ts数组字符串中缺少第175字符，使i循环到174到175之间if条件不能成立处理
+
+
+
+  for (i = BEGIN ; i < END  ;i++ )
+  {p1 = ts300.search(toString(i));
+   p2 = ts300.search(toString(i+1));
+
+   if (p1 !== -1 && p2 !== -1)
+    {ts[i-BEGIN] = ts300.substring(p1,p2);
+
+    }
+  }
+
+ ts[ts.length-1] = ts300.substring(p2);                     //对最后第320首古诗处理
+
+ function toString(i){
+	if (i < 100)
+	{return "0"+1;
+	}
+	else
+	{return i + "";
+	}
+}
+
+console.log(ts.length);
+  for (i = 0;i <ts.length ;i++ )
+  {if (ts[i] ===undefined)
+       {console.log("undefined:"+i);
+       }
+  }
+//第164和165为undefined；清除其下标元素
+    ts[164] = ts[ts.length-1];
+    ts.pop();
+    ts[165] = ts[ts.length-1];
+    ts.pop();
+    console.log(ts.length);
+    for (i = 0;i <ts.length ;i++ )
+    {   if (ts[i].length > 1000)
+       {console.log(i+ts[i]);
+       }
+    }
+	 
+	
+  </script>
+
+
+<style>
+
+   * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color:#D0D0D0 ;
+            text-align: center;
+        }
+
+        
+      input {
+            display: inline-block;
+  padding: 15px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;   
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #7FFFD4;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+           }
+           
+ h1 {
+            margin: 20px;
+            font-size: 30px;
+            font-weight: 590;
+            font-family: 楷体;
+        }
+
+        p {
+            font-size: 25px;
+            font-family: 楷体;
+            line-height: 50px;
+			text-align: center;
+        }
+
+
+</style>
+
+ </body>
+</html>

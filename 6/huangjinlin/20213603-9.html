@@ -1,0 +1,88 @@
+1	<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+   <title>Document</title>
+    <script src= "https://lijianhong19720904.github.io/ts300.js" >            
+    </script>
+	<style>
+ input {
+            width: 80px;
+            height: 80px;
+            margin: 0 20px;
+            border-radius: 45px;
+            font-size: 25px;
+            box-shadow: 6px 6px 3px cyan;
+        }
+        body {
+            background-color: #e1e0c8;
+            text-align: center;
+            font-family: 楷体;
+        }
+        h2 {
+            margin: 20px;
+            font-size: 70px;
+            font-weight: 590;
+            font-family: 楷体;
+			color:biue
+        }
+        p {
+            font-size: 25px;
+            font-family: 楷体;
+            line-height: 50px;
+        }
+  </style>
+ </head>
+ <body>
+  <h1 id= "title">
+  </h1>
+  <p id= "content">
+  </p>
+  <input type = "botton" value = "上一篇" id = "jin1">
+  <input type = "botton" value = "下一篇" id = "jin2">
+ <script type ="text/javascript">
+var i ,
+	p1 ,
+	p2 ,
+    ts = [] ,
+    begin = 100 ,
+    end = 301 ;
+var tstitle = [] ,
+    tscontent =  [] ; 
+for (i=0; i<end-begin ;i++ ){
+                             p1 = ts300.search(i+begin) ;
+					         p2 = ts300.search(i+1+begin) ;
+					         ts[i] = ts300.substring(p1,p2) ;
+}
+for (i=0 ; i<ts.length ; i++ ){
+                                p1 = 3 ;
+								p2 = ts[i].search("\n") ;
+								tstitle[i] = ts[i].substring(p2,p1) ;
+								tscontent[i] = ts[i].substring(p2) ;
+}
+ var tsh1 = document.querySelector("h1#title") ;
+ var tsp = document.querySelector("p#content") ;
+ tsh1.textContent = tstitle[1] ;
+ tsp.textContent = tscontent[1] ;
+ i = 1 ;
+   document.querySelector("input#jin2").onclick = function() {
+    if (i<tstitle.length)
+    { 
+     i++ ;
+    }
+	   tsh1.textContent = tstitle[i] ;
+       tsp.textContent = tscontent[i] ;
+														 
+}
+    document.querySelector("input#jin1").onclick = function() {
+    if (i>0)
+    {
+		i-- ;
+    }                                                       
+      tsh1.textContent = tstitle[i] ;
+      tsp.textContent = tscontent[i] ;
+
+	 }
+ </script>
+</body>
+</html>

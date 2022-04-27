@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+   <title>Document</title>
+    <script src= "https://lijianhong19720904.github.io/ts300.js" >            
+    </script>
+	<style>
+input{
+      font-size:30px;
+      box-shadow:5px 5px 0.2px rgb(150,150,100) ;
+      cursor:pointer;
+      border-radius:450px ;
+      color:white ;
+      margin:1.5em ;
+	  background-color:hsl(200,60%,50%)
+}
+h1{
+   letter-spacing:0.7em;
+   color:rgb(0, 180, 200);
+   font-size:40px ;
+}
+p{
+   width:180px;
+   font-size:30px;
+   line-height:2em;
+   margin:auto;
+}
+ body{
+     text-align:center;
+
+ }
+  </style>
+ </head>
+ <body>
+  <h1 id= "title">
+  </h1>
+  <p id= "content">
+  </p>
+  <input type = "botton" value = "上一篇" id = "s1">
+  <input type = "botton" value = "下一篇" id = "s2">
+ <script type ="text/javascript">
+var i ,
+	p1 ,
+	p2 ,
+    ts = [] ,
+    begin = 100 ,
+    end = 301 ;
+var tstitle = [] ,
+    tscontent =  [] ; 
+for (i=0; i<end-begin ;i++ ){
+                             p1 = ts300.search(i+begin) ;
+					         p2 = ts300.search(i+1+begin) ;
+					         ts[i] = ts300.substring(p1,p2) ;
+}
+for (i=0 ; i<ts.length ; i++ ){
+                                p1 = 3 ;
+								p2 = ts[i].search("\n") ;
+								tstitle[i] = ts[i].substring(p2,p1) ;
+								tscontent[i] = ts[i].substring(p2) ;
+}
+ var tsh1 = document.querySelector("h1#title") ;
+ var tsp = document.querySelector("p#content") ;
+ tsh1.textContent = tstitle[1] ;
+ tsp.textContent = tscontent[1] ;
+ i = 1 ;
+   document.querySelector("input#s2").onclick = function() {
+    if (i<tstitle.length-1)
+    { 
+     i++ ;
+    }else{
+	i = 1
+	}
+	   tsh1.textContent = tstitle[i] ;
+       tsp.textContent = tscontent[i] ;
+														 
+}
+    document.querySelector("input#s1").onclick = function() {
+    if (i>0)
+    {
+		i-- ;
+    } else{
+	i = tstitle.length-1
+	}                                                     
+      tsh1.textContent = tstitle[i] ;
+      tsp.textContent = tscontent[i] ;
+
+	 }
+ </script>
+</body>
+</html>
