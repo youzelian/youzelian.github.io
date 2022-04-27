@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>20213631-8曾阳林</title>
+  <style type="text/css">
+    * {
+    margin: 0;
+    padding: 0;
+        }
+	body{
+	text-align: center;
+	color:blue;
+	background-color:#aaa;
+	}
+	h1{
+	font:50px 楷体;
+	}
+	p {
+    font: 33px 楷体;
+	white-space: pre-line;#要求换行
+        }
+	input {
+	width: 200px;
+    height: 60px;
+    font-size: 36px;
+    border-radius:100px;
+	border:2px solid white;
+	background-color:red;
+	box-shadow:5px 5px gray;
+        }
+  </style>
+ <script src="http://kongzhuoz.github.io/ts300.js">
+
+ </script>
+ </head>
+ <body>
+
+ <input type="button" value="上一首" id = "prev">
+ <input type="button" value="下一首" id = "next">
+
+ <h1 id = "tsTitle">
+
+ </h1>
+
+ <p id = "tsContent">
+
+ </p>
+
+  <script type="text/javascript">
+     
+	var ts = [] ,
+		tsTitle = [] ,
+		tsContent = [] ;
+
+	var BEGIN = 10 ,
+	    END = 321 ,
+		i ,
+		p1 ,
+		p2 ;
+
+	for (i = 0 ; i < END - BEGIN ; i++ ){
+		p1 = ts300.search(i + BEGIN) ;
+		p2 = ts300.search(i + 1 + BEGIN) ;
+		ts[i] = ts300.substring(p1,p2) ;
+	}/*substring截取字符串*/
+	for (i =0 ; i < ts.length ; i++ ){
+		if (i<90){
+			p1 = 2 ;
+		}else
+		p1 = 3;
+		p2 = ts[i].search("\n") ;
+		tsTitle[i] = ts[i].substring(p1,p2) ;
+		tsContent[i] = ts[i].substring(p2) ;
+	}
+
+  i = 0 ;
+  showTs(i);
+      
+       var prevDom = document.getElementById("prev");
+       var nextDom = document.getElementById("next");
+
+  prevDom.onclick = function(){
+	  if (i > 0)
+	  {
+		  i--;
+	  }else
+	  i = END - BEGIN -1;
+	  showTs(i);
+	  
+  };
+
+  nextDom.onclick = function(){
+	  if (i < END - BEGIN - 1)
+	  {
+		  i++;
+	  }else
+	  i = 0;
+	  showTs(i);
+  };
+  function showTs(){
+	  var tsTitleDom = document.getElementById("tsTitle");
+	  var tsContentDom = document.getElementById("tsContent");
+		 tsTitleDom.textContent = tsTitle[i];
+		 tsContentDom.textContent = tsContent[i];
+  }
+
+  </script>
+ </body>
+</html>

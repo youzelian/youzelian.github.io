@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>20213630-9孔卓</title>
+    <style>
+        body{
+            text-align: center;
+            font-size:40px;
+            background-image:url("https://img2.baidu.com/it/u=3710349149,1572464631&fm=253&fmt=auto&app=138&f=JPEG?w=400&h=260");
+	        background-size:100% 100%;
+            background-attachment: fixed;
+            font-family: 仿宋;    
+        }
+        
+        p{  
+            white-space:pre-wrap; 
+            line-height:80px;
+            margin: 0;
+            border:0;
+            padding:0;
+        }
+        h5{
+            font-size:60px;
+            height: 60px;
+            margin: 0;
+        }
+
+        input{
+            width: 80px;
+            height: 40px;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+    </style>
+  <script src = "https://kongzhuoz.github.io/ts300.js">
+	
+  </script>
+ </head>
+ <body>
+
+ <h1>
+ 唐诗三百首
+ </h1>
+
+ <input type="button" value="上一首" id = "prev">
+ <input type="button" value="下一首" id = "next">
+
+ <h3 id = "tsTitle">
+
+ </h3>
+
+ <p id = "tsContent">
+
+ </p>
+
+  <script type="text/javascript">
+	var ts = [] ,
+		tsTitle = [] ,
+		tsContent = [] ;
+
+	var BEGIN = 10 ,
+	    END = 321 ,
+		i ,
+		p1 ,
+		p2 ;
+
+	for (i = 0 ; i < END - BEGIN ; i++ ){
+		p1 = ts300.search(i + BEGIN) ;
+		p2 = ts300.search(i + 1 + BEGIN) ;
+		ts[i] = ts300.substring(p1,p2) ;
+	}
+	for (i =0 ; i < ts.length ; i++ ){
+		if (i<90){
+			p1 = 2 ;
+		}else
+		p1 = 3;
+		p2 = ts[i].search("\n") ;
+		tsTitle[i] = ts[i].substring(p1,p2) ;
+		tsContent[i] = ts[i].substring(p2) ;
+	}
+
+  i = 0 ;
+  showTs(i);
+      
+       var prevDom = document.getElementById("prev");
+       var nextDom = document.getElementById("next");
+
+  prevDom.onclick = function(){
+	  if (i > 0)
+	  {
+		  i--;
+	  }else
+	  i = END - BEGIN -1;
+	  showTs(i);
+	  
+  };
+
+  nextDom.onclick = function(){
+	  if (i < END - BEGIN - 1)
+	  {
+		  i++;
+	  }else
+	  i = 0;
+	  showTs(i);
+  };
+  function showTs(){
+	  var tsTitleDom = document.getElementById("tsTitle");
+	  var tsContentDom = document.getElementById("tsContent");
+		 tsTitleDom.textContent = tsTitle[i];
+		 tsContentDom.textContent = tsContent[i];
+  }
+
+  </script>
+ </body>
+</html>

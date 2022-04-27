@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>20213633曾令昱</title>
+  <style>
+        input {
+            color:yellow;
+			width: 80px;
+            height: 80px;
+            margin: 0 20px;
+            border-radius: 45px;
+            font-size: 25px;
+            box-shadow: 6px 6px 3px gray;
+        }
+        h1 {            
+			margin: 20px;
+            font-size: 70px;
+            font-weight: 600px;
+            font-family: 华文新魏;
+        }
+		body {            
+            text-align: center;
+            font-family: 楷体;
+        }
+        h2 {
+            color:red;
+			margin: 20px;
+            font-size: 70px;
+            font-weight: 600px;
+            font-family: 华文新魏;
+        }
+        p { 
+		    color:blue;
+            font-size: 25px;
+            font-family: 楷体;
+            line-height: 50px;
+        }
+  </style>
+  <script src="../../ts300.js">
+  </script>
+ </head>
+ <body>
+ <h2>唐诗三百首</h2>
+  <input type="button" value="上一首" id="prev">  
+  <input type="button" value="下一首" id="next">
+ <div id="ts">
+   <h1 id="tsTitle"></h1>
+   <p id="tsContent"></p>
+ </div>
+ <script type="text/javascript">
+	var BEGIN = 100 ;
+    var END = 300 ;
+	var tsArr = [] ;//处理结果，放入唐诗数组中
+	for (var i = BEGIN ; i <= END ; i++){
+	   var pos1 = ts300.search(i)  ;
+	   var pos2 = ts300.search(i + 1) ;
+       tsArr[i - BEGIN] = ts300.substring(pos1,pos2);
+	}	
+	var tsTitle = [] ,
+	    tsContent = [] ;
+    for (var i=0; i < tsArr.length; i++){
+     var sTmp = tsArr[i] ;
+	  tsTitle[i] = sTmp.substring(3,sTmp.search("\n")) ; 
+  //本条代码语句的中数据 3 是硬编码，在未来成熟的代码中，这点要改变，实现软编码
+	  tsContent[i] = sTmp.substring(sTmp.search("\n"));
+    }
+  var i = 0 ;
+  var tsTitleDom = document.querySelector("h1#tsTitle") ;
+  var tsContentDom = document.querySelector("p#tsContent") ;
+  tsTitleDom.textContent = tsTitle[i] ;
+  tsContentDom.textContent = tsContent[i] ;
+   document.querySelector("input#prev").onclick = function(){
+    if (i >0 ){
+		i-- ;
+    }else{
+	    i = tsTitle.length -1 ;
+	}
+     showTs(i);
+   } ;
+   document.querySelector("input#next").onclick = function(){
+    if (i < tsTitle.length -1){
+		i++ ;
+    }else{
+	    i = 0 ;
+	}
+      showTs(i);
+   } ;
+  function showTs(i){
+   var tsTitleDom = document.querySelector("h1#tsTitle") ;
+   var tsContentDom = document.querySelector("p#tsContent") ;
+   tsTitleDom.textContent = tsTitle[i] ;
+   tsContentDom.textContent = tsContent[i] ;
+  }
+ //-->
+ </script>
+ </body>
+</html>
