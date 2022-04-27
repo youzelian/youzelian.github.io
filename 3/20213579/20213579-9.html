@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  body{
+  text-align:center;
+  background-color:	#D3D3D3;
+  }
+  
+  #tsContent{
+  font-size:30px;
+  width:360px;
+  margin:auto;
+  }
+  input{
+  font-size:30px;
+  cursor:pointer;
+  }
+  </style>
+ <script src="https://lijianhong19720904.github.io/ts300.js"></script>
+ </head>
+ <body>
+ 
+ <h1>杜甫：佳人</h1>
+ <div id="tsContent">
+绝代有佳人，幽居在空谷。自云良家子，零落依草木。关中昔丧乱，兄弟遭杀戮。官高何足论，不得收骨肉。世情恶衰歇，万事随转烛。夫婿轻薄儿，新人美如玉。合昏尚知时，鸳鸯不独宿。但见新人笑，那闻旧人哭！在山泉水清，出山泉水浊。侍婢卖珠回，牵萝补茅屋。摘花不插发，采柏动盈掬。天寒翠袖薄，日暮倚修竹。
+</div>
+<input type="button" value="上一页" id="prev">
+<input type="button" value="下一页" id="next">
+ </body>
+<script>
+	var h1Dom = document.querySelector("h1");
+	var contentDom = document.querySelector("div#tsContent");
+	var prev = document.getElementById("prev");
+	var next = document.getElementById("next");
+	var p = []; 
+	var s = [];//存放诗并输出的数组
+	var j = 0;//控制数组的多少
+	var k = 0;//控制按钮翻页
+	var i = 10;
+	var sm = [];//存放诗名的数组
+	var sr = [];//存放诗内容的数组
+	for(j=0;j<310;j++,i++)
+	{
+		p[j] = ts300.search(tostring(i));
+		p[j+1] = ts300.search(tostring(i+1));
+		if(i==174)
+		{
+			i=i+2;
+			p[j+1] = ts300.search(tostring(i));
+		    i=i-1;
+		}
+		 s[j] = ts300.substring(p[j],p[j+1]);//将每首诗放到一个数组中
+		 if(i==320)
+		 s[j] = ts300.substring(p[j]);
+	}
+	function tostring(i){
+	if (i<100)
+	{
+		return '0' + i;
+	}
+	else
+	{
+		return i + '' ;
+	}
+	
+	
+	
+	}
+	for(j=0;j<310;j++)
+	{
+		var p1 = 3;
+		var p2;
+        p2 = s[j].search("\n");
+		sm[j] = s[j].substring(p1,p2);//将每首诗放到一个数组中
+		sr[j] = s[j].substring(p2+1,s[j].length)
+}
+	prev.onclick = function(){
+			if(k==0){
+		k=310;//实现诗歌首尾连接
+			}
+			if(k>0)
+		{
+			k--;
+			}
+		
+		h1Dom.textContent = sm[k];
+		
+		contentDom.textContent = sr[k];
+	
+		}
+
+	next.onclick = function(){
+		if(k<s.length-1)
+		{
+			k++;
+			}
+		if(k==309){//309是最后一首诗
+		k=0;//实现诗歌首尾连接
+		}
+		h1Dom.textContent = sm[k];
+		contentDom.textContent = sr[k];
+			}
+
+		
+</script>
+</html>

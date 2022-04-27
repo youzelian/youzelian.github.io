@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>2021358209</title>
+  <style type="text/css">
+	 body
+	{
+		background-color:#FFFACD;
+		text-align:center;
+	}
+	 #bt
+	{
+		text-align:center;
+	}
+    input
+	{
+		height:60px;
+		width:180px;
+		font-size:40px;
+		color:white;
+		background-color:#00FFFF;
+		margin:20px;
+		cursor:pointer;
+	}
+	#title
+	{
+		text-align:center;
+		font-size:55px;
+		font-family:微软雅黑,黑体;
+		color:red;
+		text-shadow:6px 2px 6px rgba(255,48,48,0.5);/*设置阴影,依次为水平 垂直 模糊距离 颜色*/
+	}
+	#content
+	{   
+	    white-space:pre-line;
+		width:1380px;
+		font-size:35px;
+		margin:auto;
+		font-family:华文中宋,仿宋;
+		color:#228B22;
+
+	}
+  </style>
+  <script src="https://lijianhong19720904.github.io/ts300.js">
+  </script>
+ </head>
+ 
+ <body>
+  <div id="bt">
+   <input type="button" value="上一页" id="last" >
+   <input type="button" value="下一页" id="next" >
+  </div>
+   <h1 id="title"></h1>
+   <p id="content"></p>
+ </body>
+ <script type="text/javascript">
+ <!--
+	var ts = [],
+		tstitle = [],
+		tscontent = [];//用于存放古诗，诗题，内容
+	var BEGIN=10,
+	    END=320,
+	    i ,
+		j=0,
+	    p1,
+		p2;
+	for (i = BEGIN ;i < END ;i++ )
+	{
+		p1 = ts300.search(toString(i));
+		p2 = ts300.search(toString(i+1));
+		if (p1 != -1 )
+		{
+			//补上第174首诗
+			if (j==164)
+			{
+				p2 = ts300.search(toString(i+2));
+				ts[j] = ts300.substring(p1,p2);
+				j++;
+			}
+			 else
+			 {
+				ts[j] = ts300.substring(p1,p2);
+				j++;
+			 }
+		}
+	}//中间缺失第175首，将其他诗放一数组里（除175首和最后一首）
+	ts[ts.length] = ts300.substring(p2);//最后一首 
+	function toString(i){
+		//入口参数是数值型，返回为字符型，并对不足三位的i前加0
+		if (i < 100)
+		{
+			return i = "0"+i;
+		}
+		else{
+			return i = i+"";//利用js+运算符，把数字加字符转化为字符
+		}
+	};
+	for ( i = 0 ;i < ts.length ; i++ )
+	{
+		p1 = 3;
+		p2 = ts[i].search("\n");
+		tstitle[i] = ts[i].substring(p1,p2);
+		tscontent[i] = ts[i].substring(p2);
+	}//分离诗题和内容
+	
+	i = 0;
+	showTs(i);
+	//按钮部分
+	var bt1 = document.querySelector("input#last");
+	var bt2 = document.querySelector("input#next");
+	var title = document.querySelector("h1#title");
+	var content = document.querySelector("p#content");
+	//加if为了首位相连
+	bt1.onclick = function(){
+		i--;
+		if (i < 0)
+		{
+			i = 309;
+		}
+		showTs(i);
+	};
+	bt2.onclick = function(){
+		i++;
+		if (i > 309)
+		{
+			i = 0;
+		}
+		showTs(i);
+	};
+	function showTs(i){
+		var title = document.querySelector("h1#title");
+	    var content = document.querySelector("p#content");
+		title.textContent = tstitle[i];
+		content.textContent = tscontent[i];	
+	};
+ //-->
+ </script>
+</html>

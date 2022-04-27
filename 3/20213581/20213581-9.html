@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>第九次作业</title>
+<style>
+body{
+     text-align:center;
+	 pdding:5px;
+	 margin:auto;
+	}
+
+p{
+  font-size:45px;
+  font-weight:bold;
+  font-family:仿朱,宋体;
+  color:red;
+  text-shadow:0px 5px 5px black;/*阴影控制*/
+ }
+
+h1{
+   font-size:35px;
+   font-family:黑体;
+   color:white;
+   text-shadow:0px 5px 5px black;
+  }
+
+#prev{
+      font-size:20px;
+	  font-family:宋体;
+	 }
+
+#next{
+      font-size:20px;
+	  font-family:宋体;
+	 }
+</style>
+<script src="https://lijianhong19720904.github.io/ts300.js">
+var ts300=" ";
+</script>
+</head>
+<html>
+<body bgcolor=Silver>
+<input type ="button" value="上一首" id="prev">
+<input type ="button" value="下一首" id="next">
+<p id="tsTitle">
+</p>
+<h1 id="tsContent">
+</h1>
+<script type="text/javascript">
+var title=document.querySelector("p");
+var content=document.querySelector("h1");
+var prevBt=document.querySelector("input#prev");
+var nextBt=document.querySelector("input#next");
+var begin=10,
+	end=320,
+	i,
+	k,
+	p1,
+	p2;
+var ts=[],
+	tsTitle=[],
+	tsContent=[];
+for (i=0;i<end-begin ;i++ ){			//诗句循环
+	p1=ts300.search(toString(i+begin));//重点查找
+	p2=ts300.search(toString(i+1+begin));
+	ts[i]=ts300.substring(p1,p2);
+}
+function toString(i){			//当i<100时，他为0+数字，所以要特殊限制一下
+		if (i<100)
+		{
+			return '0'+i;
+		}else {
+			return i+'';
+		}
+	}
+	console.log(ts.length);		
+for (i=0;i<ts.length ;i++ ){
+	p1=0;
+	p2=ts[i].search("\n");
+	tsTitle[i]=ts[i].substring(p1,p2);
+	tsContent[i]=ts[i].substring(p2);
+}
+i=0;
+showTs(i);
+var prevDom=document.getElementById("prev");//导航搜索
+var nextDom=document.getElementById("next");
+prevDom.onclick=function(){					//诗句反向衔接
+		if (i==0)
+		{
+			i=309;
+		}else if (i==166)				//跳过那首不存在的诗句
+		{
+			i=164;
+		}
+		i--;
+		showTs(i);
+}
+nextDom.onclick=function(){				//	诗句正向衔接
+		if (i==309)
+		{
+			i=0;
+		}else if (i==163)
+		{
+			i=165;
+		}
+		i++;
+		showTs(i);
+}
+function showTs(i){			
+	var tsTitleDom=document.getElementById("tsTitle");
+	var tsContentDom=document.getElementById("tsContent");
+		tsTitleDom.textContent=tsTitle[i];
+		tsContentDom.textContent=tsContent[i];
+		}
+</script>  
+</body>
+</html>
