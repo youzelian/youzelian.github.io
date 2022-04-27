@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>第六次作业</title>
+	<style>
+	body{
+	background-color: #99FF99;
+	text-align:center;
+	}
+	h1{
+            margin: 20px;
+            font-size: 30px;
+            font-weight: 590;
+            font-family: 楷体;
+	}
+	p {
+            font-size: 25px;
+            font-family: 楷体;
+            line-height: 50px;
+	}
+	input{ 
+	width: 80px;
+	height: 50px;
+	margin: 0 20px;
+          font-size: 25px;
+          box-shadow: 6px 6px 3px gray;
+	background-color: #99FF99;
+	}
+</style>
+</head>
+
+<body>
+	<input type="button" value="上一首" id="pre">
+	<input type="button" value="下一首" id="next">
+	<h1 id="a1"></h1>
+	<p id="a2"></p>
+	<p id="a3"></p>
+	<P id="a4"></p>
+	<p id="a5"></p>
+	<p id="a6"></p>
+	<script>
+		var content1 = document.getElementById("a1");
+		var content2 = document.getElementById("a2");
+		var content3 = document.getElementById("a3");
+		var content4 = document.getElementById("a4");
+		var content5 = document.getElementById("a5");
+		var content6 = document.getElementById("a6");
+		var next = document.getElementById("next");
+		var pre = document.getElementById("pre");
+		var zr = [];
+		zr[0] = "《短歌行》";
+		zr[1] ="曹操 〔两汉〕";
+		zr[2] ="对酒当歌，人生几何。";
+		zr[3] ="譬如朝露，去日苦多。";
+		zr[4] ="慨当以慷，忧思难忘。";
+		zr[5] ="何以解忧？唯有杜康。";
+		zr[6] ="《绝句》";
+		zr[7] ="杜甫";
+		zr[8] ="两个黄鹂鸣翠柳,";
+		zr[9] ="一行白鹭上青天。";
+		zr[10] ="窗含西岭千秋雪,";
+		zr[11] ="门泊东吴万里船。";
+		zr[12] ="《清明》";
+		zr[13] ="（唐）杜牧";
+		zr[14] ="清明时节雨纷纷，";
+		zr[15] ="路上行人欲断魂。";
+		zr[16] ="借问酒家何处有？";
+		zr[17] ="牧童遥指杏花村。";
+		var i = 0;
+		next.onclick = function () {
+		if( i<3){
+			content1.textContent = zr[0 + 6 * i];
+			content2.textContent = zr[1 + 6 * i];
+               		content3.textContent = zr[2 + 6 * i];
+                		content4.textContent = zr[3 + 6 * i];
+                		content5.textContent = zr[4 + 6 * i];
+                		content6.textContent = zr[5 + 6 * i];
+			i++;
+			}
+		}
+		pre.onclick = function () {
+		if(i>0){
+			i--;
+			content1.textContent = zr[0 + 6 * i];
+			content2.textContent = zr[1 + 6 * i];
+               		content3.textContent = zr[2 + 6 * i];
+                		content4.textContent = zr[3 + 6 * i];
+                		content5.textContent = zr[4 + 6 * i];
+                		content6.textContent = zr[5 + 6 * i];
+			}
+		}
+	</script>
+</body>
+</html>
