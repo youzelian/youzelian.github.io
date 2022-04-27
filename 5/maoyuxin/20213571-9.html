@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+  body{
+  text-align:center;
+  color:purple;
+
+  }
+  h1#tsTitle{
+  color:pink;
+  }
+  p#tsContent{
+  color:pink;
+   font-size:2em;
+   width:12em;
+   margin:auto;
+  }
+  input{
+  color:pink;
+  font-size:1.2em;
+  border-radius:15%;
+  box-shadow:4px 4px rgb(200,100,150);
+  }
+  input:hover{
+  box-shadow:8px 8px rgb(100,100,100);
+  border:outset;
+  }
+  input:active{
+  box-shadow:0px 0px rgb(100,100,100);
+  border:inset;
+  }
+  </style>
+  <script src="https://lijianhong19720904.github.io/ts300.js">
+  </script>
+  <html>
+<body bgcolor="#E0FFFF">
+</body>
+</html>
+<script src="ts300.js">
+
+</script>
+ </head>
+ <body>
+ <h1>
+ <input type="button" value="上一首"id="prev">
+ 唐诗三百首
+<input type="button" value="下一首"id="next">
+</h1>
+  <h1 id="tsTitle">
+  
+  </h1>
+  <p id="tsContent">
+
+  </p>
+  <script type="text/javascript">
+   var ts=[],
+       tsTitle=[],
+	   tsContent=[];
+   var BEGIN=10,
+       END=300,
+	  i,
+	  p1,
+	  p2;
+	  for(i=0;i<END-BEGIN;i++){
+		  p1=ts300.search(i+BEGIN);
+		  p2=ts300.search(i+1+BEGIN);
+		  ts[i]=ts300.substring(p1,p2);
+	  }
+	  for(i=0;i<ts.length;i++){
+		  p1=0;
+		  p2=ts[i].search("\n");
+		  tsTitle[i]=ts[i].substring(p1,p2);
+		  tsContent[i]=ts[i].substring(p2,ts[i].length-1);
+	  }
+	  i=0;
+	   showTs(i);
+		 var prevDom=document.getElementById("prev");
+		  var nextDom=document.getElementById("next");
+		  prevDom.onclick=function(){
+			  if(i<=0){
+				  i=tsTitle.length-1;
+			  }else{
+
+           i--;}
+		   showTs(i);
+		  };
+		   nextDom.onclick=function(){
+			   if(i>=tsTitle.length-1){
+				   i=0;
+			   }else{
+           i++;
+			   }
+		   showTs(i);
+		  };
+		  function showTs(i){
+			  var tsTitleDom=document.getElementById("tsTitle");
+	          var tsContentDom=document.getElementById("tsContent");
+              tsTitleDom.textContent=tsTitle[i];
+              tsContentDom.textContent=tsContent[i];
+        }
+		 
+  </script>
+ </body>
+</html>

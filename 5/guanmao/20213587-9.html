@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body {
+            text-align: center;
+            font-size: 25px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        div {
+            background-size: 850px;
+            background-repeat: no-repeat;
+            border: 20px dashed rgb(125, 203, 229);
+            padding: 40px;
+            width: 800px;
+            height: 600px;
+            color: aquamarine;
+            margin: auto;
+        }
+        
+        div.div1 {
+            -moz-background-clip: padding-box;
+            -webkit-background-clip: padding-box;
+            background-clip: padding-box;
+            background-origin: content-box;
+            -moz-background-origin: content-box;
+            -webkit-background-origin: content-box;
+        }
+        
+        h1#tsTitle {
+            color: rgb(151, 244, 244);
+            text-shadow: 0 0 4px rgb(44, 166, 169), 0 -5px 4px rgb(40, 153, 194), 2px -10px 6px rgb(10, 115, 134), -2px -15px 11px rgb(4, 73, 98), 2px 15px 18px rgb(15, 81, 203);
+        }
+        
+        #tsContent {
+            font-size: 1em;
+            width: 12em;
+            margin: auto;
+            color: rgb(177, 56, 13);
+        }
+        
+        input {
+            font-size: 1.5em;
+            box-shadow: rgb(134, 59, 203);
+            color: rgb(77, 68, 142);
+        }
+    </style>
+    <script src="https://lijianhong19720904.github.io/ts300.js">
+    </script>
+</head>
+
+<body>
+    <div class="div1">
+        <input type="button" value="上一首" id="prev">
+        <input type="button" value="下一首" id="next">
+        <h1 id="tsTitle"> </h1>
+        <p id="tsContent"> </p>
+        <script type="text/javascript">
+            var ts = [],
+                tsTitle = [],
+                tsContent = [];
+            var begin = 100,
+                end = 320,
+                i,
+                p1,
+                p2;
+            for (i = 0; i < end - begin && i != 175; i++) {
+                p1 = ts300.search(i + begin);
+                p2 = ts300.search(i + 1 + begin);
+                ts[i] = ts300.substring(p1, p2);
+            }
+            for (i = 0; i < ts.length && i != 175; i++) {
+                p1 = 3;
+                p2 = ts[i].search("\n");
+                tsTitle[i] = ts[i].substring(p1, p2);
+                tsContent[i] = ts[i].substring(p2, ts[i].length);
+            }
+            //开始写DOM控制代码
+            i = 0;
+            shareTs(i);
+            var prevDom = document.querySelector("#prev");
+            var nextDom = document.querySelector("#next");
+            nextDom.onclick = function() {
+                if (i >= tsTitle.length - 1) {
+                    i = 0;
+                } else {
+                    i++;
+                }
+                shareTs(i);
+            };
+            prevDom.onclick = function() {
+                if (i <= 0) {
+                    i = tsTitle.length - 1;
+                } else {
+                    i--;
+                }
+                shareTs(i);
+            };
+
+            function shareTs() {
+                var tsTitleDom = document.querySelector("h1#tsTitle");
+                var tsContentDom = document.querySelector("#tsContent");
+                tsTitleDom.textContent = tsTitle[i];
+                tsContentDom.textContent = tsContent[i];
+            };
+        </script>
+
+    </div>
+</body>
+
+
+</html>
