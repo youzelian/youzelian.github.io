@@ -1,0 +1,82 @@
+ 
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>第九次作业</title>
+	<!-这次作业较第八次没有很大改动，只是将三百首古诗由全部放在代码内改为引用外部文件了-!>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+		input{
+		font-size:60px;
+		background-color: green;
+		font-family:宋体;
+		color:#5C3317 ;
+		}
+
+        body {
+			font-size:30px;
+            background-color: green;
+            text-align: center;
+			height:1000px;
+			background: url(https://img0.baidu.com/it/u=2118242804,1424549909&fm=253&fmt=auto&app=138&f=JPEG?w=650&h=488) no-repeat;
+			background-size: 100% 100%;}
+		h1{
+		font-family:STKaiti;
+		color: #FF6EC7;
+		}
+		p{
+		color: #9F5F9F;
+		font-size:50px;
+		font-family:LiSu;}
+    </style>
+</head>
+	<script src="https://youzelian.github.io/ts300.js">/*定义一个字符串*/
+	</script>
+<body>
+    <input type="button" value="上一首" id="last"><!-上一首的按钮-!>
+    <input type="button" value="下一首" id="next"><!-下一首的按钮-!>
+        <h1></h1>
+        <p></p>
+    <script>
+        var last = document.getElementById("last");//定义向上的按钮
+        var next = document.getElementById("next");//定义向下的按钮
+        var h1 = document.querySelector("h1");//定义标题
+        var p = document.querySelector("p");//定义内容
+        var arr = poem.match(/\d+(.\d+)?/g);//检索所有的数字(括号中两个/表示开始与结束，g代表全局搜索,\d代表数字，(.\d+)?代表括号里内出现0或1次)，这行代码很关键，目的是为了查询poem里每首古诗标题前面数字所在位置并返回至arr数组中，例如第一首010所在位置为第0位。以便于下面将所有古诗以首为单位分开。
+        var i = 0;//为当前所处页面赋值，方便后面实现翻页功能。
+        last.onclick = function () {
+			if (i == 0)
+			{i=300;
+			};
+				if (i > 0) {
+                i--
+            }
+            var poemcontent = poem.substring(poem.search(arr[i]), poem.search(arr[i + 1]));//在所有古诗中截取每一首古诗，以首为单位放入poemcontent的数组中。从poem.search(arr[i])开始截取到poem.search(arr[i+1])结束，其中arr[i]指的是某首诗标题前的数字，arr[i+1]指的是下首诗标题前的数字。
+            var poembreak = poemcontent.split("\n");//将截取到的诗再以\n为参照分割为字符串数组
+            h1.textContent = poembreak[0];//poembreak[0]是poembreak数组的第一位字符串，正好是古诗的标题，将标题植入到h1之中。
+            var x = poemcontent.search("\n");//搜索得到第一个\n所在的位置赋值给x，也就是标题结束后所在的位置。以便于将古诗标题分开输出。
+            p.textContent = poem.substring(poem.search(arr[i]), poem.search(arr[i + 1])).substring(x, poem.search(arr[i + 1]));//将截取到的古诗内容植入到p中，这里用了两个substring截取，第一个substring是在全部古诗中截取每首古诗，第二个substring是在截取到的每首古诗中截取标题结束后的那个位置x至下一个标题所在的位置arr[i+1]，截取到的内容正好就是这首古诗的内容。
+        }
+        next.onclick = function () {
+			if (i==300)
+			{i=0;
+			};
+				if (i < arr.length - 1) {
+                i++
+				}
+            var poemcontent = poem.substring(poem.search(arr[i]), poem.search(arr[i + 1]));//同上
+            var poembreak = poemcontent.split("\n");//同上
+            h1.textContent = poembreak[0];//同上
+            var x = poemcontent.search("\n");//同上
+            p.textContent = poem.substring(poem.search(arr[i]), poem.search(arr[i + 1])).substring(x, poem.search(arr[i + 1]));//同上
+           
+        }//感谢余泽亮同学的指导
+    </script>
+</body>
+
+</html>

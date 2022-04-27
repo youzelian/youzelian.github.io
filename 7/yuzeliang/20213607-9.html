@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第八次作业</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #e1e0c7;
+            text-align: center;
+        }
+
+        input {
+            width: 60px;
+            height: 60px;
+            background-color: #ccffff;
+            border-radius: 30px;
+            border: none;
+            font-size: 18px;
+        }
+
+        input:hover {
+            background-color: #66cc99;
+            color: white;
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .gushi {
+            white-space: pre-line;
+        }
+
+        h3 {
+            font: 500 50px 楷体, 微软雅黑;
+        }
+
+        p {
+            font: 33px/45px 楷体, 微软雅黑;
+        }
+
+        .yu {
+            /* 布局定位属性 */
+            float: right;
+            /* 自身属性 */
+            margin-top: 250px;
+            /* 文本属性 */
+            font-size: 15px;
+        }
+    </style>
+    <!-- 此处poem结尾的字符串补全bug（加一个301）是为了补全字符串处理中poem.search(arr[i]), poem.search(arr[i + 1])的bug，因为如果不加301的话最后一个就会特殊化没有poem.search(arr[i + 1]) -->
+    <script src="https://youzelian.github.io/ts300.js">
+    </script>
+</head>
+
+<body>
+    <input type="button" value="上一首" id="pre">
+    <input type="button" value="下一首" id="next">
+    <div class="gushi">
+        <h3></h3>
+        <p></p>
+    </div>
+    <div class="yu">--copy right to 尤泽利安</div>
+    <script>
+        //定义向前向后的按钮
+        var pre = document.getElementById("pre");
+        var next = document.getElementById("next");
+        //定义标题和内容
+        var h3 = document.querySelector("h3");
+        var p = document.querySelector("p");
+        // 搜索所有的数字
+        var arr = poem.match(/\d+(.\d+)?/g);
+        var i = 0;
+        var poemall = [],
+            poemtitle = [],
+            poemcontent = [],
+            poem;
+        //将字符串分成数组保存
+        for (i = 0; i < arr.length; i++) {
+            poemall[i] = poem.substring(poem.search(arr[i]), poem.search(arr[i + 1]));
+            poemtitle[i] = poemall[i].substring(0, poemall[i].search("\n"));
+            poemcontent[i] = poemall[i].substring(poemall[i].search("\n"), poemall[i].length);
+        }
+        //定义功能show，分开标题和内容
+        function show() {
+            h3.textContent = poemtitle[i];
+            p.textContent = poemcontent[i];
+        }
+        i = 0;
+        show(i);
+        pre.onclick = function () {
+            if (i == 0) {
+                i = arr.length - 2;
+                show(i);
+            }
+            else {
+                i--;
+                show(i);
+            }
+        }
+        next.onclick = function () {
+            if (i == 299) {
+                i = 0;
+                show(i);
+            }
+            else {
+                i++;
+                show(i);
+            }
+        }
+    </script>
+</body>
+
+</html>
