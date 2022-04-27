@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>第九次作业</title>
+	<style type="text/css">
+		*{/*设置全部的属性*/
+			font-size:30px;/*所有文字默认大小为30像素*/
+			margin:auto;/*外边距自适应*/
+			text-align:center;/*文字居中*/
+			font-family:楷体,宋体;/*字体如果不能楷体就宋体*/
+			}
+		body{/*设置body里的属性*/
+			background-color:rgb(255,235,205)/*背景色为rgb格式对于红绿蓝*/
+			}
+		h1{
+			font-size:1.5em;
+			line-height:2em;/*行高为60px*/
+			text-shadow:5px 5px 7px gray,10px 10px 10px white;
+			padding-top:40px;/*设置元素内边距上方的宽度*/
+			}
+		p{
+			line-height:60px;
+			padding:30px;
+			text-shadow:2px 2px 2px white,4px 6px 5px gray;
+			}
+		div#content1{/*设置id为content的盒子属性*/
+			background:url("https://pic.pngbag.com/00/39/67/63ec23fbd2295082.jpg");/*盒子里的背景为该链接的图片*/
+			background-size:100%;/*图片铺满盒子*/
+			border:10px solid black ;/*边框为10px大小 实线 黑色*/
+			width:780px;/*盒子宽度为820像素*/
+			border-radius:5em;/*圆角*/
+			}
+		input{
+			border-radius:2em;
+			box-shadow: 6px 8px 2px rgba(10, 16, 20, 0.5), 8px 0 2px rgba(10, 16, 20, 0.5);
+			line-height:70px;
+			}
+	</style>
+	<script src="https://youzelian.github.io/ts300.js">/*定义一个字符串*/
+	</script>
+</head>
+<body>
+	<input type="button" value="上一首" id="prev">
+	<input type="button" value="下一首" id="next">
+	<div id=content1>
+		<h1></h1>
+		<p></p>
+	</div>
+	<script type="text/javascript">
+	    var arr = poem.match(/\d+(.\d+)?/g); /*查找poem中的数字代码*/
+		var h1Dom = document.querySelector("h1#tsTitle") ;
+		var pDom =  document.querySelector("p#tsContent");
+		var i= -2 ;
+		var gushi=[];
+		var title=[];
+		var content=[];
+		for (i = 0; i < arr.length; i++) {/*循环导入gushi数组中，用substring代码分割从第一个数字到第二个数字的内容*/
+            gushi[i] = poem.substring(poem.search(arr[i]),poem.search(arr[i + 1]));/*用search搜索数字在代码中的位置*/
+            title[i] =gushi[i].substring(0,gushi[i].search("\n"));/*分割标题*/
+            content[i] = gushi[i].substring(gushi[i].search("\n"), gushi[i].length);
+        }
+        document.querySelector("input#prev").onclick = function(){
+			if (i>0) 
+			{i=i-2;/*当函数执行时变量-2*/}
+			else{i=title.length-2;}
+			var headline = document.querySelector("h1");/*获取文档中 class="h1" 的第一个元素并取名为headline*/
+			var text = document.querySelector("p");/*获取文档中 class="p" 的第一个元素并取名为text*/
+			headline.textContent =  title[i] ;/*将字符串的内容赋值给headline*/
+			text.textContent = content[i] ;/*将字符串的内容赋值给text*/}
+		document.querySelector("input#next").onclick = function(){
+			 if (i < title.length-2)
+			 {i=i+2;}
+			 else{i=0;}
+			 var headline = document.querySelector("h1");/*获取文档中 class="h1" 的第一个元素并取名为headline*/
+			 var text = document.querySelector("p");/*获取文档中 class="p" 的第一个元素并取名为text*/
+			 headline.textContent = title[i] ;
+			 text.textContent = content[i]  ;
+			 }
+	</script>
+ </body>
+</html>

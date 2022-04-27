@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>20213615-9</title>
+  <style type="text/css">
+   body{
+    font-size:30px;
+    background:url("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fspider.ws.126.net%2F101b1b0a6f602cd7d46b7b7dff089bd0.jpeg&refer=http%3A%2F%2Fspider.ws.126.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1651222111&t=e70e87cdc5bc5a076e5871bc127f2103") ;
+    background-attachment:fixed;
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+	}
+  h1#tsTitle{
+    border-radius:1em;
+	letter-spacing:0.2em;
+	text-shadow:0.05em 0.02em rgb(250,100,0) ; 
+    font-size:50px;
+	font-family:华文新魏;
+	text-align:center;
+	}
+  p#tsContent{
+    border-radius:1em;
+	letter-spacing:0.2em;
+	text-shadow:0.05em 0.02em rgb(250,100,0) ; 
+    font-size:50px;
+	font-family:华文新魏;
+	text-align:center;
+    margin: auto;}
+  input{
+    font-size:50px;
+    color:blue;
+	margin:20px;}
+</style>
+<script src="https://youzelian.github.io/ts300.js">/*定义一个字符串*/
+	</script>
+</head>
+<body>
+	<input type="button" value="上一首" id="prev">
+	<input type="button" value="下一首" id="next">
+	<div id=content1>
+		<h1></h1>
+		<p></p>
+	</div>
+	<script type="text/javascript">
+	    var arr = poem.match(/\d+(.\d+)?/g); 
+		var h1Dom = document.querySelector("h1#tsTitle") ;
+		var pDom =  document.querySelector("p#tsContent");
+		var i= -2 ;
+		var gushi=[];
+		var title=[];
+		var content=[];
+		for (i = 0; i < arr.length; i++) {
+            gushi[i] = poem.substring(poem.search(arr[i]),poem.search(arr[i + 1]));
+            title[i] =gushi[i].substring(0,gushi[i].search("\n"));
+            content[i] = gushi[i].substring(gushi[i].search("\n"), gushi[i].length);
+        }
+        document.querySelector("input#prev").onclick = function(){
+			if (i>0) 
+			{i=i-2;/*当函数执行时变量-2*/}
+			else{i=title.length-2;}
+			var headline = document.querySelector("h1");/*获取文档中 class="h1" 的第一个元素并取名为headline*/
+			var text = document.querySelector("p");/*获取文档中 class="p" 的第一个元素并取名为text*/
+			headline.textContent =  title[i] ;/*将字符串的内容赋值给headline*/
+			text.textContent = content[i] ;/*将字符串的内容赋值给text*/}
+		document.querySelector("input#next").onclick = function(){
+			 if (i < title.length-2)
+			 {i=i+2;}
+			 else{i=0;}
+			 var headline = document.querySelector("h1");/*获取文档中 class="h1" 的第一个元素并取名为headline*/
+			 var text = document.querySelector("p");/*获取文档中 class="p" 的第一个元素并取名为text*/
+			 headline.textContent = title[i] ;
+			 text.textContent = content[i]  ;
+			 }
+	</script>
+ </body>
+</html>
