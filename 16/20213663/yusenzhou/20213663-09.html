@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>《唐诗三百首》</title>
+    <script src="https://lijianhong19720904.github.io/ts300.js">
+    </script>
+</head>
+<style type="text/css">
+	body
+    {
+        background-color: rgba(0,250,250,0.2);
+        font-size:20px;
+	    margin:auto;
+        text-align: center;
+        width: 450px;
+    }
+    h1
+    {
+        font-size:2em;
+    }
+    p
+    {
+        font-size: 1.8em;
+        font-family: 仿宋;
+    }
+	input{
+        font-size:1.5em;
+        border-radius: 2.0em;
+        box-shadow:  8px 8px rgb(250,100,150);
+        border: outset;
+	    }
+  </style>
+<body>
+    <h1>《唐诗三百首》</h1>
+    <hr>
+    <hr>
+    <input type="button" value="上一首" id="prev">  
+    <input type="button" value="下一首" id="next">
+    <div id="ts">
+        <h1 id="tsTitle"></h1>
+        <p id="tsContent"></p>
+      </div>
+      <script type="text/javascript">
+        var BEGIN = 100 ;
+        var END = 300 ;
+        var tsArr = [] ;//处理结果，放入唐诗数组中
+        for (var i = BEGIN ; i <= END ; i++){
+           var pos1 = ts300.search(i)  ;
+           var pos2 = ts300.search(i + 1) ;
+           tsArr[i - BEGIN] = ts300.substring(pos1,pos2);
+        }
+        
+        var tsTitle = [] ,
+            tsContent = [] ;
+        for (var i=0; i < tsArr.length; i++){
+         var sTmp = tsArr[i] ;
+          tsTitle[i] = sTmp.substring(3,sTmp.search("\n")) ; 
+          tsContent[i] = sTmp.substring(sTmp.search("\n"));
+        }
+      var i = 0 ;
+      var tsTitleDom = document.querySelector("h1#tsTitle") ;
+      var tsContentDom = document.querySelector("p#tsContent") ;
+      tsTitleDom.textContent = tsTitle[i] ;
+      tsContentDom.textContent = tsContent[i] ;
+       document.querySelector("input#prev").onclick = function(){
+        if (i >0 ){
+            i-- ;
+        }else{
+            i = tsTitle.length -1 ;
+        }
+         showTs(i);
+       } ;
+       document.querySelector("input#next").onclick = function(){
+        if (i < tsTitle.length -1){
+            i++ ;
+        }else{
+            i = 0 ;
+        }
+          showTs(i);
+       } ;
+      function showTs(i){
+       var tsTitleDom = document.querySelector("h1#tsTitle") ;
+       var tsContentDom = document.querySelector("p#tsContent") ;
+       tsTitleDom.textContent = tsTitle[i] ;
+       tsContentDom.textContent = tsContent[i] ;
+      }
+     </script>
+     <hr>
+</body>
+</html>
