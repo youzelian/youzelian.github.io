@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            font-size: 45px;
+            text-align: center;
+        }
+        
+        p {
+            white-space: pre-line;
+            font-size: 35px;
+            text-align: center;
+        }
+        
+        input {
+            border: inset;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div style="position:absolute;width: 30px;">
+        <input type="button" value="上一首" id="prev">
+    </div>
+    <div style="position:absolute;width:100px;margin-left: 1350px ">
+        <input type="button" value="下一首" id="next">
+    </div>
+    <h1></h1>
+    <p></p>
+    <script src="https://youzelian.github.io/ts300.js">
+    </script>
+    <script>
+        var poemtitle = [];
+        var ts = [];
+        var h1 = document.querySelector("h1");
+        var p = document.querySelector("p");
+        var poemcontent = [];
+        var begin = 1;
+        var end = 301;
+        var i;
+        var f = poem.match(/\d+/g);
+        var m = 0;
+        for (i = 0; i <
+            end - begin; i++) {
+            ts[i] = poem.substring(poem.search(f[i]), poem.search(f[i + 1]));
+            poemtitle[i] = ts[i].substring(0, ts[i].search('\n'));
+            poemcontent[i] = poem.substring(poem.search(f[i]), poem.search(f[i + 1])).substring(poem.search("\n"), poem.search(f[i + 1]));
+        }
+        h1.textContent = poemtitle[0];
+        p.textContent = poemcontent[0];
+        document.getElementById("next").onclick = function() {
+            m++;
+            if (m == 300) {
+                alert("已经300首了");
+                m = 0;
+            }
+            h1.textContent = poemtitle[m];
+            p.textContent = poemcontent[m];
+        }
+        document.getElementById("prev").onclick = function() {
+            m--;
+            if (m == -1) {
+                alert("没有上一首了");
+                m = 299;
+            }
+            h1.textContent = poemtitle[m];
+            p.textContent = poemcontent[m];
+        }
+    </script>
+</body>
+
+</html>

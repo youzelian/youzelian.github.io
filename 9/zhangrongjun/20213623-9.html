@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第九次作业</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #00ffff;
+            text-align: center;
+        }
+
+        input {
+            width: 60px;
+            height: 60px;
+            font-size: 18px;
+            border-radius: 30px;
+        }
+
+        .gushi {
+            white-space: pre-line;
+        }
+
+        h3 {
+            font: 500 50px 楷体, 微软雅黑;
+        }
+
+        p {
+            font: 33px/45px 楷体, 微软雅黑;
+        }
+
+    </style>
+	<script src="https://youzelian.github.io/ts300.js">
+    </script>
+</head>
+
+<body>
+    <input type="button" value="上一首" id="pre">
+    <input type="button" value="下一首" id="next">
+    <div class="gushi">
+        <h3></h3>
+        <p></p>
+    </div>
+    <script>
+        //定义向前向后的按钮
+        var pre = document.getElementById("pre");
+        var next = document.getElementById("next");
+        //定义标题和内容
+        var h3 = document.querySelector("h3");
+        var p = document.querySelector("p");
+        // 搜索所有的数字
+        var arr = poem.match(/\d+(.\d+)?/g);
+        var i = 0;
+        var poemall = [],
+            poemtitle = [],
+            poemcontent = [],
+            poem;
+        //将字符串分成数组保存
+        for (i = 0; i < arr.length; i++) {
+            poemall[i] = poem.substring(poem.search(arr[i]), poem.search(arr[i + 1]));
+            poemtitle[i] = poemall[i].substring(0, poemall[i].search("\n"));
+            poemcontent[i] = poemall[i].substring(poemall[i].search("\n"), poemall[i].length);
+        }
+        //定义功能show，分开标题和内容
+        function show() {
+            h3.textContent = poemtitle[i];
+            p.textContent = poemcontent[i];
+        }
+        i = 0;
+        show(i);
+        pre.onclick = function () {
+            if (i == 0) {
+                i = arr.length - 2;
+                show(i);
+            }
+            else {
+                i--;
+                show(i);
+            }
+        }
+        next.onclick = function () {
+            if (i == 299) {
+                i = 0;
+                show(i);
+            }
+            else {
+                i++;
+                show(i);
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第九次作业</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        input {
+            width: 60px;
+            height: 60px;
+            font-size: 18px;
+        }
+
+        .gushi {
+            white-space: pre-line;
+        }
+
+        h3 {
+            font: 500 50px 楷体, 微软雅黑;
+        }
+
+        p {
+            font: 33px/45px 楷体, 微软雅黑;
+        }
+
+    </style>
+</head>
+
+<body>
+    <input type="button" value="上一首" id="pre">
+    <input type="button" value="下一首" id="next">
+    <div class="gushi">
+        <h3></h3>
+        <p></p>
+    </div>
+    <script src="https://youzelian.github.io/ts300.js">
+	</script>
+	<script>
+        var pre = document.getElementById("pre");
+        var next = document.getElementById("next");
+        var h3 = document.querySelector("h3");
+        var p = document.querySelector("p");
+        var arr = poem.match(/\d+(.\d+)?/g);
+        var i = 0;
+        var poemcontent = poem.substring(poem.search(arr[i]), poem.search(arr[i + 1]));
+        var poembreak = poemcontent.split("\n");
+        h3.textContent = poembreak[0];
+        var Enter = poemcontent.search("\n");
+        p.textContent = poem.substring(poem.search(arr[i]), poem.search(arr[i + 1])).substring(Enter, poem.search(arr[i + 1]));
+        pre.onclick = function () {
+            if (i == -1) {
+                i = 299;
+            }
+            if (i == 0) {
+                i = 300;
+            }
+            if (i > 0) {
+                i--;
+                poemcontent = poem.substring(poem.search(arr[i]), poem.search(arr[i + 1]));
+                poembreak = poemcontent.split("\n");
+                h3.textContent = poembreak[0];
+                Enter = poemcontent.search("\n");
+                p.textContent = poem.substring(poem.search(arr[i]), poem.search(arr[i + 1])).substring(Enter, poem.search(arr[i + 1]));
+            }
+            if (i == 299) {
+                poemcontent = poem.substring(poem.search(arr[299]));
+                poembreak = poemcontent.split("\n");
+                h3.textContent = poembreak[0];
+                Enter = poemcontent.search("\n");
+                p.textContent = poemcontent.substring(Enter);
+            }
+        }
+        next.onclick = function () {
+            if (i < arr.length - 1) {
+                i++;
+            }
+            poemcontent = poem.substring(poem.search(arr[i]), poem.search(arr[i + 1]));
+            poembreak = poemcontent.split("\n");
+            h3.textContent = poembreak[0];
+            Enter = poemcontent.search("\n");
+            p.textContent = poemcontent.substring(Enter, poem.search(arr[i + 1]));
+            if (i == 299) {
+                i = -1;
+                poemcontent = poem.substring(poem.search(arr[299]));
+                poembreak = poemcontent.split("\n");
+                h3.textContent = poembreak[0];
+                Enter = poemcontent.search("\n");
+                p.textContent = poemcontent.substring(Enter);
+            }
+        }
+    </script>
+</body>
+
+</html>
