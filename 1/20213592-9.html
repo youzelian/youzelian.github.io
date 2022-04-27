@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <style>
+        body{
+            
+            text-align: center;                              /*make all the content in the center*/
+        }
+        span{
+            border: solid 2px;
+            line-height: 40px;
+            background-color: coral;
+            text-shadow:3px 5px 5px #656B79;               /*make a shadow in the poem*/ 
+            white-space: pre-line;
+            letter-spacing:3px;
+        }
+    </style>
+    <body>
+        <span>点击下列按钮开始展示古诗</span>                   <!--display the poemContent!-->
+        </br><!--break a row!-->
+        <input type="button" value="prew" id="prew">          <!--this is a simple button-->
+        <input type="button" value="next" id="next">          <!--this is a simple button--> 
+    </body>
+    <script language="javascript" src="https://youzelian.github.io/ts300.js"></script>
+    <script language="javascript">
+        var i=0,j='001';
+        var poemContent;
+        var span=document.querySelector('span');              //the whole program could display different length of poem!
+        var next=document.querySelector('input#next'); 
+        next.onclick=function(){                              //when it get click,the circle begin to work,make poem begin show up!
+        for(i=3+i;i<=poem.length;i++){
+            if((parseInt)(poem[i])>=0&&(parseInt)(poem[i])<10){
+              console.log(i);                                 //texting it work or not!
+            break;
+            }
+            else 
+            {  span.textContent =poem.substring(poem.search(j),i);
+                                                              //if handle it in a porper way it will show in different ways1
+               console.log();                                //texting the poemContent will show in right ways or not!
+            } 
+            if(i>=poem.length-4)                              //this is a circle sentence,make whole poem could start in beginning!if i>=4 could let program leave out "301" in tne last!
+            {
+                i=0;
+                j='000'                                       //due to the datas only can expian soild number,so 000==0.then we need three modes to deal
+            }
+            } 
+            j++;                                              //if we could make a way ,the j++ could help us change the poem.substring(0,i)!
+        }
+        var prew=document.querySelector('input#prew');        //it is tne same as above in the follows!
+        prew.onclick=function(){
+            for(i=i-3;i>=-4;i--){                             //especially,i-3 make programming can start with words but not number!
+            if((parseInt)(poem[i])>=0&&(parseInt)(poem[i])<10){
+              console.log(i);
+            break;
+            }
+            else if(j<10)
+            {   
+                span.textContent=poem.substring(i-3,poem.search(j)-2);
+            } 
+            else if(j>=10&&j<100)
+           {
+                span.textContent=poem.substring(i-3,poem.search(j)-1);
+           }
+            else
+            {
+                span.textContent=poem.substring(i-3,poem.search(j));
+                console.log(i)
+            }
+            if(i<=3){
+                i=27710;
+                j='301'
+            } 
+            }  
+            j--;
+        }
+    </script>
+</html>
