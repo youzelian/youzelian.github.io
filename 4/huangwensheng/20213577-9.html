@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <style type="text/css">
+    *{font-size:20px;
+	  text-align:center;
+	}
+	body{
+	     width:12em;
+	     margin:auto;
+	      }
+  </style>
+ <script src = "https://lijianhong19720904.github.io/ts300.js">
+ <!--
+ //-->
+ </script>
+  <title>Document</title>
+ </head>
+ <body>
+ <input type="button" value="上一页" id = "p" >
+ <input type="button" value="下一页" id="n">
+ <h1>
+ </h1>
+ <h2>
+ </h2>
+ <p id="content">
+ </p>
+  <script type="text/javascript">
+  <!--
+    var tittleDom = document.querySelector("h1"); 
+	var contentDom = document.querySelector("p"); 
+	var ts = [] ,
+	    tsTittle = [] ,
+		tsContent = [];
+	var i ,
+	    p1 ,
+		p2 ,
+	    BEGIN = 10,
+		END = 320;
+    for (i = BEGIN;i<END ;i++ )
+    { 
+	  p1 = ts300.search(tostring(i));
+	  p2 = ts300.search(tostring(i+1));//i+1是指当i还是数字的时候进行加一例如10+1=11再转化成字符011
+	  if (p1!==-1||p2!==-1)
+	  {ts[i-BEGIN] = ts300.substring(p1,p2);
+	  }	  
+    }   
+	//对古诗题目和内容进行数组处理
+    for (i = 0;i<END-BEGIN ;i++ )
+    { p1 = 3;
+	  p2 = ts[i].search("\n");
+	  tsTittle[i] = ts[i].substring(p1,p2);
+	  tsContent[i] = ts[i].substring(p2);
+    }	
+	i=0; 
+	     var tittleDom =          document.querySelector("h1"); 
+	     var contentDom = document.querySelector("p"); 
+	     tittleDom.textContent = tsTittle[i];
+         contentDom.textContent = tsContent[i]; 
+
+	  var prve = document.getElementById("p")  
+      var next = document.getElementById("n") 
+	  prve.onclick = function(){
+	               if (i>0)
+	               {i--;
+				    tsShow(i)
+	              } else{
+				  i=ts.length-1+i;
+				  tsShow(i);}
+	  }
+	  next.onclick = function(){
+	               if (i>ts.length)
+	               {tsShow(0)
+	               }
+				   else{
+				    i++;
+					tsShow(i);
+				    }
+	  }
+	  function tostring(i){
+		           if (i<100){
+					   return "0" + i;
+				   }
+				   else{
+					   return i ;//变成字符反而会导致100以后p1p2变成-1，为什么
+				   } 
+	               }
+	  function tsShow(i){
+		 var tittleDom = document.querySelector("h1"); 
+	     var contentDom = document.querySelector("p"); 
+	     tittleDom.textContent = tsTittle[i];
+         contentDom.textContent = tsContent[i];    
+					}
+  //-->
+  </script>
+ </body>
+</html>

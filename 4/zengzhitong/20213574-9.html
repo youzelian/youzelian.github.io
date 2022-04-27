@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <style type="text/css">
+		*{text-align:center;
+	}
+	input{	color:red;
+			font-size:30px;
+			border-radius:5em;
+			letter-spacing:0.2em;
+			text-shadow:0.05em 0.02em rgba(100,100,100,1) ;
+			cursor:pointer;
+	}
+	p{font-size:20px;
+	}
+		.poem{font-size:50px;
+		text-shadow:0.05em 0.02em rgba(200,200,100,1) ;
+		color:yellow;
+  </style>
+<script src="https://lijianhong19720904.github.io/ts300.js">
+<!--
+	
+//-->
+</script>
+  <title>Document</title>
+ </head>
+ <body>
+  <div id="" class="poem">
+			古诗10——320
+ </div>
+ <h1></h1>
+ <p></p>
+ <input type="button" value="上一页" id = 'prev'>
+ <input type="button" value="下一页" id = 'next'>
+ <script type="text/javascript">
+ <!--
+	var ts = [] ,
+		tsTitle = [] ,
+		tsContent = [] ;
+	var p1 ,
+		END = 320 , 
+		p2 ,
+		BEGIN = 10, 
+		i ; 
+	for (i=BEGIN ;i < END  ;i++ ){
+		p1 = ts300.search(toString(i));
+		p2 = ts300.search(toString(i+1));
+		if (p1!== -1  && p2 !== -1){
+		ts[i-BEGIN] = ts300.substring(p1,p2);
+		}
+		}
+
+
+//分离标题和诗
+		for (i = 0;i< ts.length; i++){
+        p1 = 0 ;
+		p2 = ts[i].search("\n") ;
+		tsTitle[i] = ts[i].substring(p1+3,p2);
+		tsContent[i] = ts[i].substring(p2);
+    }
+	//dom内容
+	   i=0;         
+       showTs(i);
+       var prveBt = document.querySelector("input#prev")  
+       var nextBt = document.querySelector("input#next") 
+	   prveBt.onclick = function()
+	   {
+			if (i>0){
+				showTs(i)
+				i--;
+			}
+		    else{
+				showTs(i)
+				i=ts.length-1;
+		    }
+			
+      }
+       nextBt.onclick = function(){                               
+		   if (i<ts.length-1){
+			   showTs(i)
+			   i++;
+		   }
+		   else{
+			   showTs(i)
+			   i=0; 
+		   }
+		                                 
+      }
+	 function toString(i){
+		if (i<100){
+			return '0'+i;
+		}else{
+			return i + ' ';
+		}
+		}
+     function showTs(i){
+        var tsTitleDom = document.querySelector("h1"); 
+        var tsContentDom = document.querySelector("p"); 
+        tsTitleDom.textContent = tsTitle[i];
+        tsContentDom.textContent = tsContent[i] ;            
+    }
+
+ //-->
+ </script>
+ </body>
+</html>
