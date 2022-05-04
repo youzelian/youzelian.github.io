@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>唐诗300首</title>
+    <style type="text/css">
+        body {
+            font-size: 20px;
+            text-align: center;
+            font-family: 楷体;
+            font-weight: bold;
+            /*字体粗细*/
+            background-color: black;
+        }
+        
+        h1 {
+            font-size: 2em;
+            color: palevioletred;
+        }
+        
+        p {
+            font-size: 2em;
+            color: rgb(249, 242, 242);
+            line-height: 1.5em;
+            margin: 50px;
+            text-shadow: 4px 4px 4px rgb(85, 85, 238);
+            animation: animate 2s linear infinite;
+            /*实现p内容闪动效果，animation（动画） 属性*/
+        }
+        
+        @keyframes animate {
+            0%,
+            100% {
+                color: rgb(249, 242, 242);
+            }
+            5%,
+            95% {
+                color: palevioletred;
+            }
+        }
+        
+        input {
+            font-size: 1.5em;
+            margin: 20px;
+            padding: 7px;
+            cursor: pointer;
+            border: 3px solid rgb(144, 144, 222);
+            color: black;
+            background-color: cornsilk;
+            border-radius: 15px;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        
+        input:hover {
+            background-color: rgb(144, 144, 222);
+            color: black;
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+        /*鼠标悬停时按钮效果*/
+        
+        input:active {
+            background-color: rgb(144, 144, 222);
+            box-shadow: 0 5px rgb(119, 118, 118);
+            transform: translateY(4px);
+            /*定义转换，只是用 Y 轴的值。*/
+        }
+    </style>
+    <script src="ts300.js">
+    </script>
+</head>
+
+<body>
+
+    <input type="button" value="上一首" id="prev">
+    <input type="button" value="下一首" id="next">
+    <input type="button" value="抽一首&#128512;" id="rand">
+
+    <h1>唐诗三百首</h1>
+    <div id="ts">
+
+        <h1 id="tsTitle"></h1>
+        <span> <p id="tsContent"></p> </span>
+
+    </div>
+    <script type="text/javascript">
+        var BEGIN = 100;
+        var END = 300;
+        var tsArr = []; //处理结果，放入唐诗数组中
+        for (var i = BEGIN; i <= END; i++) {
+            var pos1 = ts300.search(i);
+            var pos2 = ts300.search(i + 1);
+            tsArr[i - BEGIN] = ts300.substring(pos1, pos2);
+        }
+
+        /**
+         将tsArr中的每首唐诗字符串，再次处理分离为标题和诗文，
+         分别放在tsTitle和tsContent数组中。
+         **/
+        var tsTitle = [],
+            tsContent = [];
+        for (var i = 0; i < tsArr.length; i++) {
+            var sTmp = tsArr[i];
+            tsTitle[i] = sTmp.substring(3, sTmp.search("\n"));
+
+            tsContent[i] = sTmp.substring(sTmp.search("\n"));
+        }
+
+        //下面在Web 页面中，显示内存数组的第一首唐诗信息
+        var i = 0;
+        var tsTitleDom = document.querySelector("h1#tsTitle");
+        var tsContentDom = document.querySelector("p#tsContent");
+        tsTitleDom.textContent = tsTitle[i];
+        tsContentDom.textContent = tsContent[i];
+        //实现将内存变量输出至Web的元素中，该代码可否定义在函数中，从而实现代码复用？
+
+        //下面在按钮中，设置按钮事件处理程序，实现唐诗逐一显示
+        document.querySelector("input#prev").onclick = function() {
+            if (i > 0) {
+                i--;
+            } else {
+                i = tsTitle.length - 1;
+            }
+            showTs(i);
+        };
+        document.querySelector("input#next").onclick = function() {
+            if (i < tsTitle.length - 1) {
+                i++;
+            } else {
+                i = 0;
+            }
+            showTs(i);
+        };
+        document.querySelector("input#rand").onclick = function() {
+
+        };
+
+        function showTs(i) {
+            var tsTitleDom = document.querySelector("h1#tsTitle");
+            var tsContentDom = document.querySelector("p#tsContent");
+            tsTitleDom.textContent = tsTitle[i];
+            tsContentDom.textContent = tsContent[i];
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>第十次作业</title>
+  <style>
+	body{width:500px;
+        text-align:center;
+        font-size:20px;
+	    margin:auto;
+        background-color: rgb(147, 154, 134);
+        }
+    p{font-size:2em;
+      color: rgb(209, 118, 21);  
+     }
+    h1{color: rgb(168, 27, 27);
+        font-size: 35px;
+      }    
+    input{font-size:25px;
+          color: #e534d0;
+          background-color: #a1be37;
+          border: 3px solid  #42310d;
+
+        }
+  </style>
+  <script src="ts300.js">
+  </script>
+ </head>
+ <body>
+  <input type="button" value="上一首" id="prev">  
+  <input type="button" value="下一首" id="next">
+  <hr/>
+ <div id="ts">
+   <h1 id="tsTitle"></h1>
+   <p id="tsContent"></p>
+ </div>
+ <script >
+	var BEGIN = 100 ;
+        END = 300 ;
+	var tsArr = [] ;
+	for (var i = BEGIN ; i <= END ; i++){
+	   var pos1 = ts300.search(i)  ;
+	   var pos2 = ts300.search(i + 1) ;
+       tsArr[i - BEGIN] = ts300.substring(pos1,pos2);
+	}
+	var tsTitle = [] ,
+	    tsContent = [] ;
+    for (var i=0; i < tsArr.length; i++){
+     var sTmp = tsArr[i] ;
+	  tsTitle[i] = sTmp.substring(3,sTmp.search("\n")) ; 
+	  tsContent[i] = sTmp.substring(sTmp.search("\n"));
+    }
+  var i = 0 ;
+  var tsTitleDom = document.querySelector("h1#tsTitle") ;
+  var tsContentDom = document.querySelector("p#tsContent") ;
+  tsTitleDom.textContent = tsTitle[i] ;
+  tsContentDom.textContent = tsContent[i] ;
+   document.querySelector("input#prev").onclick = function(){
+    if (i >0 ){
+		i-- ;
+    }else{
+	    i = tsTitle.length -1 ;
+	}
+     showTs(i);
+   } ;
+   document.querySelector("input#next").onclick = function(){
+    if (i < tsTitle.length -1){
+		i++ ;
+    }else{
+	    i = 0 ;
+	}
+      showTs(i);
+   } ;
+  function showTs(i){
+   var tsTitleDom = document.querySelector("h1#tsTitle") ;
+   var tsContentDom = document.querySelector("p#tsContent") ;
+   tsTitleDom.textContent = tsTitle[i] ;
+   tsContentDom.textContent = tsContent[i] ;
+  }
+ </script>
+ </body>
+</html>
