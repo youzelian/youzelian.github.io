@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style type ="text/css">
+		*{	text-align: center;
+
+		}
+	input{	color:red;
+			font-size:30px;
+			border-radius:5em;
+			letter-spacing:0.2em;
+			text-shadow:0.05em 0.02em rgba(100,100,100,1) ;
+			cursor:pointer;
+		}
+	p{
+		font-size: 40px;
+		margin: auto;
+		}
+	.title{text-align: center;
+	       font-size:50px;
+		   color:yellow;
+		}
+</style>
+<script src="https://lijianhong19720904.github.io/ts300.js">
+</script>
+</head>
+<body>
+<div id="" class="title">
+	唐诗三百首
+</div>	
+    <input type="button" value="上一首" id="prev">    
+    <input type="button" value="下一首" id="next">
+    <h1 id="tsTitle">
+    </h1>
+    <p id="tsContent">
+    </p>
+    <script>
+    var ts = [] ,
+		tsTitle = [] ,
+		tsContent = [] ;
+	var BEGIN=10,
+		END=320,
+		i,
+		k,
+		p1,
+		p2;
+		//k是为了保证ts[]数组从0开始
+		for(i=BEGIN,k = 0;i<END;i++,k++){
+				p1=ts300.search(toString(i));
+				p2=ts300.search(toString(i+1));
+				//Debug(i);不知道这个函数怎么搞；就，那个空缺不知道怎么改；
+				ts[k]=ts300.substring(p1,p2);
+			}
+		//最后一首诗的内容
+		Debug(i);
+		ts[ts.length-1]=ts300.substring(p2);
+		//诗，题目和内容分离
+		for(i=0;i<ts.length;i++){
+		p1=0;
+		p2=ts[i].search("\n");
+		tsTitle[i]=ts[i].substring(p1,p2);
+		tsContent[i]=ts[i].substring(p2);
+		}
+		//声明i和showTs(i);需要提前声明
+	i=0;
+	showTs(i);
+	var prevDom = document.getElementById("prev");
+	var nextDom = document.getElementById("next");
+	//prevDom，nextDom函数的功能
+	prevDom.onclick=function(){
+	if(i==0){
+		i=END-BEGIN
+		}
+		i--;
+		showTs(i); 
+	}
+	nextDom.onclick=function(){
+		  if(i==END-BEGIN){
+			  i=0
+			  }
+			i++;
+			showTs(i);
+		}
+	//showTs(i)函数的功能，即，把诗的题目和内容展示出来
+	function showTs(i){			
+		var tsTitleDom=document.getElementById("tsTitle");
+		var tsContentDom=document.getElementById("tsContent");
+		tsTitleDom.textContent=tsTitle[i];
+		tsContentDom.textContent=tsContent[i];
+		}
+	//toString(i)函数的内容，处理字符串
+	function toString(i){
+			if(i<100){
+				return'0'+i;
+			}
+			else{
+				return i;
+			}
+			}
+	function Debug(i){
+		if (i = 164){
+			i = i + 1; 
+		}
+	}
+			
+</script>
+</body>

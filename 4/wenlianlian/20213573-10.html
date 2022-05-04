@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+ <script src = "https://lijianhong19720904.github.io/ts300.js">
+ <!--
+ //-->
+ </script>
+  <title>唐诗300首</title>
+ <style type = "text/css">
+  body{
+    font-size:30px;
+    text-align:center;
+	font-family:华文行楷;
+	background-image: url(https://tse3-mm.cn.bing.net/th/id/OIP-C.A79qUNIL_dbkH3IxS4i0uwHaLG?pid=ImgDet&rs=1);
+    background-repeat: no-repeat;
+    background-size: 90%;
+
+  }
+    h1#tsTitle{
+        font-size:3em;
+		color:black;
+ }
+p#tsContent{
+      font-size:2em;
+	  margin:auto;
+	  width:12em;
+	  color:blue;
+ }
+input{
+   font-size:1em;
+   border-right:5px solid  blue;
+   border-top:5px solid  blue;
+   border-bottom:5px solid  blue;
+   border-left:5px solid  blue;
+ }
+ .poem{
+   font-size:40px;
+   color:red;
+ }
+ </style>
+ </head>
+ <body>
+ <input type="button" value="上一页" id = "p" >
+ <input type="button" value="下一页" id="n">
+ <input type="button" value="抽一首" id="chou">
+ <h1>
+ </h1>
+ <h2>
+ </h2>
+ <p id="content">
+ </p>
+  <script type="text/javascript">
+  <!--
+    var tittleDom = document.querySelector("h1"); 
+	var contentDom = document.querySelector("p"); 
+	var chouBt = document.querySelector("input#chou");
+	var ts = [] ,
+	    tsTittle = [] ,
+		tsContent = [];
+	var i ,
+	    p1 ,
+		p2 ,
+	    BEGIN = 10,
+		END = 320;
+    for (i = BEGIN;i<END ;i++ )
+    { 
+	  p1 = ts300.search(tostring(i));
+	  p2 = ts300.search(tostring(i+1));//i+1是指当i还是数字的时候进行加一例如10+1=11再转化成字符011
+	  if (p1!==-1||p2!==-1)
+	  {ts[i-BEGIN] = ts300.substring(p1,p2);
+	  }	  
+    }   
+	//对古诗题目和内容进行数组处理
+    for (i = 0;i<END-BEGIN ;i++ )
+    { p1 = 3;
+	  p2 = ts[i].search("\n");
+	  tsTittle[i] = ts[i].substring(p1,p2);
+	  tsContent[i] = ts[i].substring(p2);
+    }	
+	i=0; 
+	     var tittleDom =          document.querySelector("h1"); 
+	     var contentDom = document.querySelector("p"); 
+	     tittleDom.textContent = tsTittle[i];
+         contentDom.textContent = tsContent[i]; 
+
+	  var prve = document.getElementById("p")  
+      var next = document.getElementById("n") 
+	  prve.onclick = function(){
+	               if (i>0)
+	               {i--;
+				    tsShow(i)
+	              } else{
+				  i=ts.length-1+i;
+				  tsShow(i);}
+	  }
+	  next.onclick = function(){
+	               if (i>ts.length)
+	               {tsShow(0)
+	               }
+				   else{
+				    i++;
+					tsShow(i);
+				    }
+	  }
+	  function tostring(i){
+		           if (i<100){
+					   return "0" + i;
+				   }
+				   else{
+					   return i ;//变成字符反而会导致100以后p1p2变成-1，为什么
+				   } 
+	               }
+	  function tsShow(i){
+		 var tittleDom = document.querySelector("h1"); 
+	     var contentDom = document.querySelector("p"); 
+	     tittleDom.textContent = tsTittle[i];
+         contentDom.textContent = tsContent[i];    
+					}
+	 function tostring(i){
+		           if (i<100){
+					   return "0" + i;
+				   }
+				   else{
+					   return i+"" ;//变成字符；
+				   } 
+	               }//定义函数
+	chouBt.onclick = function(){
+		var rand = Math.random()*(ts.length+1);
+		i=Math.floor(rand);
+		tsShow(i)
+	};//抽函数
+  //-->
+  </script>
+ </body>
+</html>

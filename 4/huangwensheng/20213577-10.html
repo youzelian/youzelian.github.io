@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+   <style type="text/css">
+	body{
+	     font-size:20px;
+		 text-align:center;
+	     background-color:rgb(100,200,300);}
+     p{ 
+	   margin:auto;
+	   width:12em;
+	   }
+	 div#menu input{
+	     font-size:1.5em;
+		  border-color:green;
+		  box-shadow:10px 10px 5px #888888;
+		  border-radius:15%;
+	}
+   </style>
+  <script src = "https://lijianhong19720904.github.io/ts300.js">
+  <!--
+  //-->
+  </script>
+  <title>20213577-10</title>
+ </head>
+ <body>
+  <div id="menu" >
+  <input type="button" value="上一页" id="prve" >
+  <input type="button" value="下一页" id="next">
+  <input type="button" value="抽一页" id="choose">
+  </div>
+  <h1 id="tsTitle">
+  </h1>
+  <p id="tsContent">
+  </p>
+  <script type="text/javascript">
+  <!--
+	var ts=[],
+	    tsTitle=[],
+		tsContent=[];
+	var i,
+	    p1,
+		p2,
+		BEGIN=10,
+		END=320;
+	for (i=BEGIN;i<END-BEGIN ;i++ )
+	{p1 = ts300.search(tostring(i));
+	 p2 = ts300.search(tostring(i+1))
+	 if (p1!==-1||p2!==-1)//&&会导致我43行search找不到实在想不出为什么会怎样
+	 {ts[i-BEGIN]=ts300.substring(p1,p2);
+	 }	 
+	 } 
+	 for (i=BEGIN;i<END-BEGIN ;i++ )
+	 {p1=0;
+	  p2=ts[i-BEGIN].search("\n");
+	  tsTitle[i-BEGIN]=ts[i-BEGIN].substring(p1,p2); 
+	  tsContent[i-BEGIN]=ts[i-BEGIN].substring(p2);
+	  }
+	  //开始抓取h1,p
+	  var DomtsTitle = document.getElementById("tsTitle");
+	  var DomtsContent = document.getElementById("tsContent");
+	  var Domprve = document.getElementById("prve");
+      var Domnext = document.getElementById("next");
+	  var Domchoose = document.getElementById("choose");
+	  i=0;
+	  tsShow(0);
+	  Domprve.onclick=function(){
+	       if (i>0)
+	       {i--;
+		    tsShow(i);
+	       }
+		   else{
+			i=ts.length-1+i;
+			tsShow(i);
+		   }
+		   }
+	  Domnext.onclick=function(){
+	        if (i>ts.length)
+	        {tsShow(0);
+	        }
+			else{
+			   i++;
+			   tsShow(i);
+			   }
+		   }
+	Domchoose.onclick=function(){
+		var n = Math.random()*(ts.length+1);
+		i=Math.floor(n);
+		tsShow(i);
+	}
+	   function tostring(i){
+		           if (i<100){
+					   return "0" + i;
+				   }
+				   else{
+					   return i ;
+				   }
+	   }//变成字符反而会导致100以后p1p2变成-1，为什么
+  //-->
+        function tsShow(i){
+		  var DomtsTitle = document.getElementById("tsTitle");
+	      var DomtsContent = document.getElementById("tsContent");
+		   DomtsTitle.textContent=tsTitle[i]
+	       DomtsContent.textContent=tsContent[i]}
+  </script>
+ </body>
+</html>
