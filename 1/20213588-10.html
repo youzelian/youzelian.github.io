@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style type ="text/css">
+input{    
+    background-color: #C0EBD4;
+    font-size: 16px;
+    color: #000000;
+    padding: 20px;
+    cursor: pointer;/*鼠标指针成手形*/
+    text-decoration: none;
+}
+body{        
+        background-color:#A0EBD4;
+        background-repeat:no-repeat;
+    }
+input:hover{
+	box-shadow: 8px 8px rgb(100.100.100);
+	border:outset;/*边框突出*/
+	}
+input:active{
+	box-shadow: 0px 0px rgb(100.100.100);
+	border:inset;/*边框凹进*/
+	}
+h1{
+    text-align: center;
+
+}
+p{
+    font-size: 40px;
+    width: 320px;
+    margin: auto;
+}
+</style>
+<script src="https://youzelian.github.io/ts300.js">
+</script>
+</head>
+<body>
+    <center>
+    <input type="button" value="上一首" id="prev">
+    唐诗三百首
+    <input type="button" value="下一首" id="next">
+    </center>
+    <h1 id="tsTitle">
+    </h1>
+    <p id="tsContent">
+    </p>
+    <script>
+    var ts = [] ,
+    tsTitle = [] ,
+    tsContent = [] ;
+	var Begin=1,
+	End=302,
+	i,
+	p1,
+	p2;
+		for(i=0;i<End-Begin;i++)
+    {
+		p1=poem.search(toString(i));/*查找记下第i首诗的位置*/
+		p2=poem.search(toString(i+1));/*查找记下第i+1首诗的位置*/
+		ts[i]=poem.substring(p1,p2);/*截取第i首诗记入数组*/
+	}
+ts[ts.length-1]=poem.substring(p2);/*截取最后一首诗记入数组*/
+function toString(i){
+    if(i<10){
+        return'0'+'0'+i;
+    }
+    else if(i>9&&i<100){
+        return '0'+i;
+    }else{
+        return i+'';
+    }
+}/*将数字转换成字符,并换成指示诗是第几首的数的格式*/
+for(i=0;i<ts.length;i++){
+p1=3;
+p2=ts[i].search("\n");
+tsTitle[i]=ts[i].substring(p1,p2);/*将数组ts中的题目记入tsTitle*/
+tsContent[i]=ts[i].substring(p2);/*将数组ts中的内容记入tsContent*/
+}
+i=1;
+showTs(i);
+	var prevDom = document.getElementById("prev");
+	var nextDom = document.getElementById("next");
+	prevDom.onclick=function(){
+	if(i==0){
+      i=300
+	}
+i--;
+showTs(i); 
+}
+nextDom.onclick=function(){
+  if(i==300){
+      i=0
+  }
+i++;
+showTs(i);
+};
+function showTs(i){			
+	var tsTitleDom=document.getElementById("tsTitle");
+	var tsContentDom=document.getElementById("tsContent");
+    tsTitleDom.textContent=tsTitle[i];
+    tsContentDom.textContent=tsContent[i];
+}/*显示诗的题目与内容*/
+</script>
+</body>

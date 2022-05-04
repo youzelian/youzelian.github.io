@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <script lang="javascript" src="https://youzelian.github.io/ts300.js">
+    </script>
+    <style>
+        *{                                                                     /*to make whole programming regulate all explortions*/
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            text-align: center;
+            margin: 40px;
+        }
+        input{
+            margin-inline: 40px;
+            font-size: large;
+        }
+        input:hover{
+            text-shadow: 10px 15px 15px red;
+            cursor:grab;
+        }
+        span{ 
+            border: solid 2px;                                                  /*set a border*/
+            line-height: 80px;                                                  /*set a line-height at 40px*/
+            background-color: coral;                                          /*set a coral backgroundcolor*/
+            text-shadow:3px 5px 5px #656B79;                                  /*set a text showdow in gray*/
+            white-space: pre-line;                                              /*make poem know when to change the line*/
+            letter-spacing:3px;                                                 /*set a 3px space between two letters*/
+        }
+    </style>
+    <body>
+        <input type="button" value="prew" id="prew">                            <!--the button charge of poem go to a preview poem-->          
+        <input type="button" value="next" id="next">                            <!--the button charge of porm go to a next poem-->
+        <input type="button" value="random" id="random">                        <!--the button charge of poem go to a random poem-->
+    </br>                                                                       <!--tag makes change to next line-->
+        <span>点击按钮开始展示古诗</span>                                         <!--set a tag to show poem content-->
+    </body>
+    <script lang="javascript">
+        var i=0,j='000';
+        var poemContent;
+        var span=document.querySelector('span');                                 //the whole program could display different length of poem!
+        var next=document.querySelector('input#next');
+        next.onclick=function(){                                                 //when it get click,the circle begin to work,make poem begin show up!
+            ++j; 
+        for(i=3+i;i<=poem.length;i++){
+            if((parseInt)(poem[i])>=0&&(parseInt)(poem[i])<10){
+              console.log(i);                                                     //texting it work or not!
+            break;
+            }
+            else 
+            {  span.textContent =poem.substring(poem.search(j),i);
+                                                                                //if handle it in a porper way it will show in different ways1
+               console.log();                                                   //texting the poemContent will show in right ways or not!
+            } 
+            if(i>=poem.length-4)                                                 //this is a circle sentence,make whole poem could start in beginning!if i>=4 could let program leave out "301" in tne last!
+            {
+                i=0;
+                j='000';                                                          //due to the datas only can expian soild number,so 000==0.then we need three modes to deal
+            }
+            }         
+        }
+        var prew=document.querySelector('input#prew');                           //it is tne same as above in the follows!
+        prew.onclick=function(){
+            --j;
+            for(i=i-3;i>=-4;i--){                                                //especially,i-3 make programming can start with words but not number!
+            if((parseInt)(poem[i])>=0&&(parseInt)(poem[i])<10){                  //it will show "/n" becase of i--,so we should use --i  will more better!
+              console.log(i);
+            break;
+            }
+            else if(j<10)
+            {   
+                span.textContent=poem.substring(i-3,poem.search(j)-2);
+            } 
+            else if(j>=10&&j<100)
+           {
+                span.textContent=poem.substring(i-3,poem.search(j)-1);
+           }
+            else
+            {
+                span.textContent=poem.substring(i-3,poem.search(j));
+                console.log(i)
+            }
+            if(i<=3){
+                i=27711;
+                j='301'
+            } 
+            }
+        }
+        var random=document.querySelector('input#random');                     //random function!
+        var k;
+        random.onclick=function(){
+            k=Math.round(Math.random()*300)+1;
+            console.log(k)
+            span.textContent=poem.substring(poem.search(k),poem.search((k+1))-3);
+        }
+    </script>
+</html>
