@@ -13,40 +13,23 @@
             font-family: 'Courier New', Courier, monospace;
         }
         
-        h1,
-        p {
-            font-size: 2em;
-        }
-        
-        div {
-            background-size: 850px;
-            background-repeat: no-repeat;
-            border: 20px dashed rgb(125, 203, 229);
-            padding: 40px;
-            width: 800px;
-            height: 600px;
-            color: aquamarine;
+        div#div1,
+        div#tsTitle,
+        div#tsContent {
+            border: 1px solid rgb(200, 200, 200);
             margin: 0.5em auto;
         }
         
-        div.div1 {
-            -moz-background-clip: padding-box;
-            -webkit-background-clip: padding-box;
-            background-clip: padding-box;
-            background-origin: content-box;
-            -moz-background-origin: content-box;
-            -webkit-background-origin: content-box;
-        }
-        
-        h1#tsTitle {
+        div#tsTitle {
+            font-size: 2em;
             color: rgb(151, 244, 244);
             text-shadow: 0 0 4px rgb(44, 166, 169), 0 -5px 4px rgb(40, 153, 194), 2px -10px 6px rgb(10, 115, 134), -2px -15px 11px rgb(4, 73, 98), 2px 15px 18px rgb(15, 81, 203);
             font-weight: bold;
         }
         
         #tsContent {
-            font-size: 1.5em;
-            width: 12em;
+            font-size: 1.2em;
+            width: 60em;
             margin: auto;
             color: rgb(177, 56, 13);
         }
@@ -57,6 +40,7 @@
             margin: 0.5em 1em;
             box-shadow: 4px 4px rgb(94, 181, 235);
             cursor: pointer;
+            border: outset;
         }
         
         input:hover {
@@ -78,8 +62,9 @@
     <div class="div1">
         <input type="button" value="上一首" id="prev">
         <input type="button" value="下一首" id="next">
-        <h1 id="tsTitle"> </h1>
-        <p id="tsContent"> </p>
+        <input type="button" value="抽一首" id="rand">
+        <div id="tsTitle"> </div>
+        <div id="tsContent"> </div>
         <script type="text/javascript">
             var ts = [],
                 tsTitle = [],
@@ -156,13 +141,49 @@
                 }
                 shareTs(i);
             };
+            randDom.onclick = function() {
+                var rand = Math.random() * (tsTitle.length + 1)
+                i = Math.floor(rand);
+                shareTs(i);
+            };
 
             function shareTs(i) {
-                var tsTitleDom = document.querySelector("h1#tsTitle");
+                console.log('第' + (i + 1) + '首');
+                var tsTitleDom = document.querySelector("#tsTitle");
                 var tsContentDom = document.querySelector("#tsContent");
                 tsTitleDom.textContent = tsTitle[i];
-                tsContentDom.textContent = tsContent[i];
-            };
+                var tsLines = [];
+                tsLines = tsContent[i].split("\n");
+                //通过console.log(tsLines);发现每首诗的tsLines[0]和tsLines[tslines.length-1]都是空字符，正好利用Array的第二个API、pop和shift,对这两个元素给予删除
+                tsLines.shift();
+                //shift对应数据结构中队列中元素的删除
+                tsLines.pop();
+                //pop对应数据结构中间中元素的删除
+
+                //tsLines=mySplit(tsContent[i],'\n'); 此条可替换上述四条语句，为建议尝试语句，可慢慢领悟。
+                tsContentDom.textContent = "";
+                for (var i = 0; i < tsLines.length; i++) {
+                    var pDom = document.createElement('p');
+                    pDom.textContent = tsLines[i];
+                    tsContentDom.appendChild(pDom);
+                }
+            }
+
+            /* function mySplit(s, ch) {
+                 var arr = [],
+                     p = 0,
+                     s1 = '';
+                 p = s.search(ch);
+                 while (p !== -1) {
+                     s1 = s.substring(0, p);
+                     if (s1 !== '') {
+                         arr[arr.length] = s1;
+                     }
+                     s = s.substring(p + 1);
+                     p = s.search(ch);
+                 }
+                 return arr;
+             } */ //end of mySplit(s,ch)
         </script>
 
     </div>
