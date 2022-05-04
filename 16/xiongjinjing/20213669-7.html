@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        body {
+            background-color: rgb(240, 210, 215);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-size: 16 px;
+        }
+
+        h1#tsTitle {
+            font-family: 微软雅黑;
+            font-size: 4em;
+        }
+
+        p#tsContent {
+            font-size: 2em;
+            font-family: 楷体;
+            white-space: pre-line;
+            margin: auto;
+        }
+
+        input {
+            margin: 1em 0.5em 1em;
+            font-size: 1.5em;
+            border-radius: 1em;
+            box-shadow: 6px 6px 3px rgb(188, 187, 187);
+        }
+
+        #finish {
+            white-space: pre-line;
+            font-size: 2em;
+            font-family: 楷体;
+            margin-top: 3em;
+            ;
+            color: rgb(140, 171, 0);
+            font-weight: 700;
+        }
+
+        #num {
+            font-family: 楷体;
+            color: rgba(14, 170, 48, 0.995);
+            margin-top: 0.5em;
+            font-size: 3.5em;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id="num">古诗鉴赏</div>
+        <input type="button" value="prev" id="prev">
+        <input type="button" value="next" id="next">
+    </div>
+    <h2 id="tsTitle">精选古诗五首</h2>
+    <p id="tsContent"></p>
+    <div id="finish"></div>
+
+    <script type="text/javascript">
+        var tsTitle = ["相思", "江南逢李龟年", "客至", "蜀相", "春宫怨"];
+        var tsContent = ["红豆生南国，春来发几枝。\n愿君多采撷，此物最相思。", "岐王宅里寻常见，崔九堂前几度闻。\n正是江南好风景，落花时节又逢君。", "舍南舍北皆春水，但见群鸥日日来。\n花径不曾缘客扫，蓬门今始为君开。\n盘飧市远无兼味，樽酒家贫只旧醅。\n肯与邻翁相对饮，隔篱呼取尽馀杯。", "丞相祠堂何处寻，锦官城外柏森森。\n映阶碧草自春色，隔叶黄鹂空好音。\n三顾频烦天下计，两朝开济老臣心。\n出师未捷身先死，长使英雄泪满襟。", "早被婵娟误，欲妆临镜慵。\n承恩不在貌，教妾若为容。\n风暖鸟声碎，日高花影重。\n年年越溪女，相忆采芙蓉。"];
+        var h1Dom = document.querySelector("#tsTitle");
+        var pDom = document.querySelector("#tsContent");
+        var finishDom = document.querySelector("#finish")
+
+        var i = 0;
+        document.querySelector("input#next").onclick = function () {
+            if (i < tsTitle.length - 1) {
+                i++;
+            }
+            h1Dom.textContent = tsTitle[i];
+            pDom.textContent = tsContent[i];
+
+            if (i == tsTitle.length - 1) {
+                finishDom.textContent = "感谢欣赏!";
+            }
+        };
+        document.querySelector("input#prev").onclick = function () {
+            if (i > 0) {
+                i--;
+            }
+            finishDom.textContent = "";
+            h1Dom.textContent = tsTitle[i];
+            pDom.textContent = tsContent[i];
+        };
+    </script>
+</body>
+
+</html>

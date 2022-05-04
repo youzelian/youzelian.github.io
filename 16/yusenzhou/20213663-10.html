@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>唐诗三百首</title>
+    <style type="text/css">
+        body{
+          margin: 0;
+          padding: 0;/*清除浏览器默认内外边距*/
+          background-color: rgba(0,250,250,0.2);
+          text-align: center;
+          font-size: 16px;
+        }
+        #tsTitle{
+          font-family: 华文新魏，仿宋;
+          font-size: 3em;
+        }
+        #tsContent{
+          font-size: 2em;
+          font-family: 宋体;
+          white-space: pre-line;/* 使浏览器能识别代码中的换行符并进行换行 */
+          margin: auto ;
+          }
+        input{
+          margin: 1em 0.5em 1em;
+          font-size: 1.5em;
+          border-radius: 1em;/* 使按钮呈现圆角 */
+          box-shadow:  8px 8px rgb(250,100,150);/* 阴影效果 */
+          border: outset;
+        }
+        #title{
+          font-family: 黑体;
+          color: #165d96;
+          margin-top:1em;/*使上外边距为两个字体长度*/
+          font-size: 2em;
+        }
+        #finish{
+          font-family: 黑体;
+          color: #165d96;
+          margin-top:1em;
+          font-size: 2em;
+        }
+        input:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        input:active {
+            background-color: rgba(0, 0, 0, 0.5);
+            transform: translateY(4px);
+            /*给予一个Y轴上的移动*/
+        }
+    </style>
+    <script src="https://lijianhong19720904.github.io/ts300.js">
+    </script>
+   </head>
+   <body>
+   <div id="title">《唐诗三百首》</div>
+    <input type="button" value="上一首" id="prev"> 
+    <input type="button" value="下一首" id="next">
+    <div><input type="button" value="抽一首" id="random"></div>
+    <div id="ts">
+        <h1 id="tsTitle"></h1>
+        <p id="tsContent"></p>
+    </div>
+   <script type="text/javascript">
+      var BEGIN = 100;//从字符串中取出第100-300的古诗
+      var END = 300;
+      var ts = [];//将取出的古诗放入数组中
+      for (var i = BEGIN ; i <= END ; i++){
+          var p1 = ts300.search(i)  ;
+          var p2 = ts300.search(i + 1) ;
+        ts[i - BEGIN] = ts300.substring(p1,p2);
+      }
+      //将唐诗的标题和内容分离，分别存入tsTitle和tsContent数组中
+      var tsTitle = [],tsContent = [];
+      for (var i=0; i < ts.length; i++){
+        
+          tsTitle[i] = ts[i].substring(3,ts[i].search("\n")); 
+          tsContent[i] = ts[i].substring(ts[i].search("\n"));
+          }
+  
+      var i = 0 ;
+      showts(i);
+      document.getElementById("prev").onclick = function(){//定义id为prev的按钮按下去的效果
+        if (i >0 ){//通过限定条件使按钮能正确发挥功能
+          i--;
+          }
+        else{
+          i=tsTitle.length-1;//将古诗收尾相连，形成循环
+          }
+         showts(i);
+        };
+      document.getElementById("next").onclick = function(){//定义id为next6的按钮按下去的效果
+        if (i < tsTitle.length -1){
+            i++;
+            }
+        else{
+            i=0;
+        }
+        showts(i);
+      };
+      //抽一首功能
+      document.getElementById("random").onclick = function(){
+        var rand = Math.random() * (tsTitle.length+1);//返回一个大于零，小于等于tsTitle.length的数值
+        i = Math.floor(rand);//使i=不大于rand的最大整数
+        showts(i);
+      };
+      //展示唐诗的函数
+      function showts(i){
+        var tsTitleDOM = document.getElementById("tsTitle");//将id为tsTitle的元素匹配给tsTitleDOM
+        var tsContentDOM = document.getElementById("tsContent");//将id为tsContent的元素匹配给tsContentDOM
+        tsTitleDOM.textContent = tsTitle[i];//将数组中的元素赋给该节点
+        tsContentDOM.textContent = tsContent[i];
+      };
+   </script>
+   </body>
+  </html>

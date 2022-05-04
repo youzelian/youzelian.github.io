@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <title></title>
+  <style type="text/css">
+    body{
+        background-color: #cdccb2;
+        margin: 0;
+        padding: 0;
+	    text-align: center;
+	    font-size: 16 px ;
+	}
+	h1#tsTitle{
+        font-family: 楷体;
+        font-size: 3em;
+	}
+	p#tsContent{
+	    font-size: 2em;
+      font-family: 宋体;
+      white-space: pre-line;
+	    margin: auto ;
+	}
+   input{
+       margin: 1em 0.5em 1em;
+       font-size: 1.5em;
+       border-radius: 1em;
+       box-shadow: 6px 6px 3px gray;
+   }
+   #finish{
+        white-space: pre-line;
+        font-size: 2em;
+        font-family:仿宋 ;
+        margin-top: 1em; ;
+        color: red;
+        font-weight: bolder;
+   }
+   #num{
+        font-family: 黑体;
+        color: #165d96;
+        margin-top:1em;
+        font-size: 2em;
+   }
+  </style>
+ </head>
+<body>
+    <div>
+      <div id="num">请欣赏古诗</div>
+	    <input type="button" value="上一页" id="prev">
+	    <input type="button" value="下一页" id="next">
+    </div>
+    <h1 id="tsTitle">请点击下一页来翻阅古诗</h1>
+    <p id="tsContent"></p>
+    <div id="finish"></div>
+
+    <script type="text/javascript">
+    var tsTitle =["静夜思","春夜洛城闻笛","送孟浩然之广陵","侠客行","渡荆门送别"];
+	  var tsContent = ["床前明月光，疑是地上霜。\n举头望明月，低头思故乡。","谁家玉笛暗飞声，散入春风满洛城。\n此夜曲中闻折柳，何人不起故人情。","故人西辞黄鹤楼，烟花三月下扬州。\n孤帆远影碧山尽，唯见长江天际流。","赵客缦胡缨，吴钩霜雪明。\n银鞍照白马，飒沓如流星。\n十步杀一人，千里不留行。\n事了拂衣去，深藏身与名。\n闲过信陵饮，脱剑膝前横。\n将炙啖朱亥，持觞劝侯嬴。\n三杯吐然诺，五岳倒为轻。\n眼花耳热后，意气素霓生。\n救赵挥金槌，邯郸先震惊。\n千秋二壮士，烜赫大梁城。\n纵死侠骨香，不惭世上英。\n谁能书阁下，白首太玄经。","渡远荆门外，来从楚国游。\n山随平野尽，江入大荒流。\n月下飞天镜，云生结海楼。\n仍怜故乡水，万里送行舟。"] ;
+    var h1Dom = document.querySelector("#tsTitle") ;
+    var pDom =  document.querySelector("#tsContent");
+    var finishDom = document.querySelector("#finish");
+
+      var i= 0 ;
+      document.querySelector("input#next").onclick = function(){
+        if (i < tsTitle.length-1) {
+          i++ ;
+		    }
+        h1Dom.textContent = tsTitle[i] ;
+        pDom.textContent = tsContent[i] ;
+        
+        if (i == tsTitle.length-1){
+        finishDom.textContent = "已经到尽头了哦！\n感谢欣赏";
+        }
+		  } ;
+	    document.querySelector("input#prev").onclick = function(){
+		    if (i > 0) {
+          i-- ;
+		    }
+        finishDom.textContent="";
+        h1Dom.textContent = tsTitle[i] ;
+        pDom.textContent = tsContent[i] ;
+	    } ;
+  </script>
+</body>
+</html>
