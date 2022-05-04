@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>第十次作业</title>
+<style>
+
+        body {
+		background-color: #BBFFEE;
+		text-align: center;
+        }
+
+        input {
+                 	font-size:2em;
+		text-decoration: none;
+		border:2px black dashed;
+		border-radius:2em;
+		background-color:#BBFFEE;
+        }
+
+        .gushi {
+		white-space: pre-line;
+		text-shadow:10px 10px 10px grey;
+        }
+
+        h3 {
+		font: 500 50px 楷体, 微软雅黑;
+        }
+
+        p {
+		font: 33px/45px 楷体, 微软雅黑;
+        }
+
+        .yu {
+		 float: right;
+		margin-top: 250px;
+		font-size: 15px;
+        }
+</style>
+<script src="https://lijianhong19720904.github.io/ts300.js">
+</script>
+</head>
+<body>
+	<input type="button" value="上一首" id="pre">
+	<input type="button" value="下一首" id="next">
+	<input type="button" value="抽一首" id="rand">
+ <div class="gushi">
+        <p></p>
+</div>
+</body>
+<script>
+	var pre = document.getElementById("pre");
+	var next = document.getElementById("next");
+	var pre = document.getElementById("pre");
+	var next = document.getElementById("next");
+	var h3 = document.querySelector("h3");
+	var p = document.querySelector("p")
+	var ts=[];
+	var BEGIN=10,
+	      END=320,
+	      i,
+	      p1,
+	      p2;
+	for(i=BEGIN; i<END; i++){
+	p1=ts300.search(toString(i));
+	p2=ts300.search(toString(i+1));
+	if(p1!==-1&&p2!==-1){
+	ts[i-BEGIN]=ts300.substring(p1,p2);
+	}
+	}
+	ts[ts.length-1]=ts300.substring(p2);
+	function toString(i){
+	 if (i < 100) {
+		return '0' + i;
+		}
+		else {
+              return i + '';
+            }
+	}
+	next.onclick = function () {
+		if (i >= 0 && i < 310) {
+                i++;
+                p.textContent = ts[i];
+            }
+            else {
+                i = 0;
+                p.textContent = ts[i];
+            }
+
+        }
+        pre.onclick = function () {
+            if (i >= 0 && i < 310) {
+                i--;
+                p.textContent = ts[i];
+            }
+            else {
+                i = 309;
+                p.textContent = ts[i];
+            }
+        } 
+	rand.onclick = function () {
+           var num=Math.floor(Math.random()*310+1);
+	p.textContent =ts[num];
+	}
+</script>
+</body>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>第九次作业</title>
+    <title>第八次作业</title>
     <style>
         * {
             margin: 0;
@@ -79,13 +79,13 @@
             poemtitle = [],
             poemcontent = [],
             poem;
-        //将字符串分成数组保存
+        //将字符串分成数组保存，分开标题和内容
         for (i = 0; i < arr.length; i++) {
             poemall[i] = poem.substring(poem.search(arr[i]), poem.search(arr[i + 1]));
             poemtitle[i] = poemall[i].substring(0, poemall[i].search("\n"));
             poemcontent[i] = poemall[i].substring(poemall[i].search("\n"), poemall[i].length);
         }
-        //定义功能show，分开标题和内容
+        //定义功能show
         function show() {
             h3.textContent = poemtitle[i];
             p.textContent = poemcontent[i];

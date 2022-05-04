@@ -1,0 +1,145 @@
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第十次作业</title>
+    <style>
+        body{
+            text-align: center;
+            font-size:40px;
+            background-image:url("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.pptjia.com%2Fimage%2F20190814%2F17c65b1ed8ad2a8666fa7e1d284e9154.JPG&refer=http%3A%2F%2Fimg.pptjia.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1650626925&t=14a19302b96b5f60c5d8069f6ce5ccf0");
+	        background-size:100% 100%;
+            background-attachment: fixed;
+            font-family: 仿宋;    
+        }
+        
+        p{  
+            white-space:pre-wrap; 
+            line-height:80px;
+            margin: 0;
+            border:0;
+            padding:0;
+        }
+       
+        h1{
+            color:brown;
+        }
+
+        h5{
+            font-size:60px;
+            height: 60px;
+            margin-bottom: 100px;
+        }
+
+        input{
+            width: 80px;
+            height: 40px;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="上一首" id="last">
+    <input type="button" value="下一首" id="next">
+    <input type="button" value="抽一首" id="random">
+    <h1>
+        唐诗300首
+    </h1>
+    <h5></h5>   
+    <div>
+       <p></p>
+    </div>
+</body>
+<script src="https://lijianhong19720904.github.io/ts300.js">
+</script>
+<script>
+    var begin=10;
+    var end=320;
+    var p=document.querySelector("p");
+    var h5=document.querySelector("h5");
+    var i=10;
+    var num=10;
+    var ts=[];
+    var tstitle=[];
+    var tsbody=[];
+    var everyline=[];
+    var p1;
+    var p2;
+
+    for(i=begin;i<end;i++){
+        p1=ts300.search(lkhdsg(i));
+        p2=ts300.search(lkhdsg(i+1));
+        ts[i]=ts300.substring(p1, p2);
+    }
+    ts[320]="320杜秋娘：金缕衣\n劝君莫惜金缕衣，劝君惜取少年时。\n花开堪折直须折，莫待无花空折枝！\n  ;";
+    function lkhdsg(i){
+        if(i<100){
+            return "0"+i;
+        }
+        else{
+            return ""+i;
+        }
+    }
+    console.log(ts.length);
+
+    for(i=begin;i<ts.length;i++){
+        if(ts[i]===undefined){
+            console.log("undefined:"+i);
+        }
+    }
+
+
+    for(i=begin;i<=end;i++){
+        tstitle[i]=ts[i].substring(3,ts[i].search("\n"));
+        tsbody[i]=ts[i].substring(ts[i].search("\n"),ts.length-1);
+    }
+    tstitle[320]="杜秋娘：金缕衣";
+    tsbody[320]="劝君莫惜金缕衣，劝君惜取少年时。\n花开堪折直须折，莫待无花空折枝！\n"
+
+    p.textContent=tsbody[10];
+    h5.textContent=tstitle[10];
+
+    function showts(num){
+        var element,
+        pElements = document.getElementsByTagName('p');
+        while (pElements.length > 0) {
+            element = pElements[0];
+            element.parentElement.removeChild(element);
+            }
+        var tsbodyDom=document.getElementById("tsbody");
+        everyline=tsbody[num].split("\n");
+        everyline.splice(0, 1);
+        everyline.splice(everyline.length - 1, 1);
+        h5.textContent=tstitle[num];
+        for(var i=0;i<=everyline.length;i++){
+            var pDom=document.createElement("p");
+            pDom.textContent=everyline[i];
+            document.body.appendChild(pDom);
+        }
+    }
+    
+    next.onclick=function() {
+        if(num>=begin&&num<=end-1){
+            num++;
+            showts(num);}
+        else{
+            num=begin;
+            showts(num);
+        }
+
+    }
+    last.onclick=function() {
+        if(num>begin&&num<=end){
+            num--;
+            showts(num);}
+        else{
+            num=end
+            showts(num);}
+    } 
+
+    random.onclick=function(){
+            num= Math.floor(Math.random()*end+1);
+            showts(num);
+    }
+</script>
