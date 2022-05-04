@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>第十次作业</title>
+  <style type="text/css">
+body{
+font-size:25px;
+text-align:center;
+font-family:楷体;
+}
+ #tsTitle{
+    font-size: 3em;
+ }       
+ #tsContent{
+    font-size: 2em;
+    white-space: pre-line;
+    margin: auto ;
+}	
+input
+{
+cursor:pointer;
+transition-duration: 0.4s; /* 检索或设置对象过渡的持续时间 */
+background-color:#ccffff;
+display: inline-block;
+width: 90px;
+height: 90px;
+font-size: 20px;
+border-radius: 10px;/*允许为元素添加圆角边框*/
+}
+h1,
+h2
+{
+font-size:40px;
+ color:#3399ff;
+ margin:35px;
+}
+
+}
+#prev:hover
+{
+    background-color: #66cc99;
+    color: white;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#next:hover
+{
+    background-color: #66cc99;
+    color: white;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#prev:active
+{
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);/*通过给定Y方向的数目指定一个translation*/
+}
+#next:active
+{
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+  </style>
+
+  <script src="https://lijianhong19720904.github.io/ts300.js">
+    var ts300 = "  ";
+  </script>
+  </head> 
+  <body>
+  <input type="button" value="上一首" id="prev">
+  <input type="button" value="下一首" id="next">
+  <input type="button" value="抽一首" id="rand">
+  <h1 id="tsTitle">
+  </h1>
+  <p id="tsContent">
+  </p>
+  <script type="text/javascript">
+	var Begin = 100;
+      var End = 300;
+      var ts = [];
+      for (var i = Begin ; i <= End ; i++){
+          var p1 = ts300.search(i)  ;
+          var p2 = ts300.search(i + 1) ;
+        ts[i - Begin] = ts300.substring(p1,p2);
+      }
+      var tsTitle = [];
+	  var tsContent = [];
+      for (var i=0; i < ts.length; i++){
+          tsTitle[i] = ts[i].substring(3,ts[i].search("\n")); 
+          tsContent[i] = ts[i].substring(ts[i].search("\n"));
+          }
+      var i = 0 ;
+      var tsTitleDom = document.getElementById("tsTitle");
+      var tsContentDom = document.getElementById("tsContent");
+	  var randDom = document.getElementById("rand");
+      tsTitleDom.textContent = tsTitle[i];
+      tsContentDom.textContent = tsContent[i];
+      document.getElementById("prev").onclick = function(){
+        if (i >0 ){
+          i--;
+          }
+        else{
+          i=tsTitle.length-1;
+          }
+         showts(i);
+        };
+      document.getElementById("next").onclick = function(){
+        if (i < tsTitle.length -1){
+            i++;
+            }
+        else{
+            i=0;
+        }
+        showts(i);
+        
+      };
+	  randDom.onclick = function(){
+		  var rand = Math.random()*(tsTitle.length+1)
+		  i = Math.floor( rand );
+		  showts(i);
+	  };
+        function showts(i){
+        var tsTitleDom = document.getElementById("tsTitle");
+        var tsContentDom = document.getElementById("tsContent");
+		var randDom = document.getElementById("rand");
+        tsTitleDom.textContent = tsTitle[i];
+        tsContentDom.textContent = tsContent[i];
+      }
+  </script>
+ </body>
+</html>
