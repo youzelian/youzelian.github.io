@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+<script src = "https://lijianhong19720904.github.io/ts300.js">
+</script>
+  <title>Document</title>
+ </head>
+ <style type="text/css">
+	input {
+	      cursor:pointer;
+	      box-shadow:5px 10px  rgb(150,150,100);
+	      font-size:25px ;
+	      margin:0.5em ;
+          border-radius:50% ;
+	      color:rgb(100 , 150 , 200) ;
+	}
+	input:hover{
+	           border:outset ; 
+			   box-shadow:rgb(200 , 180 , 250)
+	}
+	input:active{
+	             border:inset ;
+                 color:yellow ;
+	}
+	#s3{
+	    font-size :35px ;
+		 position:absolute ;
+		  top:120px ;
+		  left:300px ;
+	}
+	/*将按钮设置为绝对位置，并设置位置的参数*/
+	#s2{
+	     position:absolute ;
+		  top:200px ;
+		  left:300px ;
+	}
+	/*将按钮设置为绝对位置，并设置位置的参数*/
+	#s1{
+	     position:absolute ;
+		  top:60px ;
+		  left:300px ;
+	}
+	/*将按钮设置为绝对位置，并设置位置的参数*/
+	h1 {
+	   text-align:center ;
+	   font-size:40px ;
+       letter-spacing:0.4em;
+	}
+	p{
+	   width:360px ;
+	   line-height:2em ;
+       font-size:30px ;
+	   margin:auto ;
+	   color:rgba(0 ,180, 250,2);
+	}
+ </style>
+ <body>
+ <h1 id = "title"></h1>
+ <p id = "content"></p>
+ <input type="button" value="上一篇" id = "s1" >
+ <input type="button" value="抽一首" id ="s3">
+ <input type="button" value="下一篇" id = "s2">
+  <script type="text/javascript">
+  var i ,
+      p1 ,
+	  p2 ,
+	  begin = 10 ,
+	  end = 300 ;
+  var ts= [] ,
+      tstitle= [] ,
+	  tscontent = [] ;
+	 for (i = begin;i< end ; i++ )
+	 {
+       p1 = ts300.search (tostring(i)) ;
+	   p2 = ts300.search (tostring(i+1)) ;
+	   ts[i-begin] = ts300.substring(p1,p2) ; //将古诗分开并截取为一首一首古诗的形式
+	 }
+	 function tostring(i){
+	 if (i<100 && i>9)
+	 {
+		 return '0' + i ;
+	 }else{        
+	     return '' + i ;
+	 }
+	
+	 /*10~100以内的数设置为三个数即010类似的形式将100以后的数不变*/
+	 }
+	 for (i=0;i< ts.length ; i++ )
+	 {
+		 p1 = 3 ;
+		 p2 = ts[i].search ("\n") ;
+		 tstitle[i] = ts[i].substring(p2,p1) ;
+		 tscontent[i] = ts[i].substring(p2) ;
+	 }
+  var tsh1 = document.querySelector("h1#title") ;
+  var tsp = document.querySelector("p#content") ;
+   tsh1.textContent = tstitle[1] ; 
+   tsp.textContent = tscontent[1] ;
+   /*定义变量tsh1和tsp并获取title和content然后赋给tsh1和tsp*/
+   var i =1 ;
+document.querySelector("input#s2").onclick = function(){
+   if (i<tstitle.length-1)
+   {
+	   i++ ;
+   }else{
+     i = 1 ;
+   }
+   tsh1.textContent = tstitle[i] ;
+   tsp.textContent = tscontent[i] ;
+}
+document.querySelector("input#s1").onclick = function(){
+   if (i>0)
+   {
+	   i-- ;
+   }else{
+    i = tstitle.length-1 ;
+   }
+   tsh1.textContent = tstitle[i] ;
+   tsp.textContent = tscontent[i] ;
+}
+document.querySelector("input#s3").onclick = function(){
+    var rand = Math.random() * (tstitle.length+1) ;
+	i = Math.floor(rand) ;
+	tsh1.textContent = tstitle[i] ;
+	tsp.textContent = tscontent[i] ;
+}
+  </script>
+ </body>
+</html>

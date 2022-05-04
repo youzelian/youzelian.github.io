@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<style type ="text/css">
+input{
+    position: relative;
+            background-color: yellow);
+            border: none;
+            font-size: 14px;
+            color: black;
+            padding: 20px;
+            transition-duration: 0.6s;
+            text-decoration: none;
+            overflow: hidden;
+            cursor: pointer;
+
+}
+body{
+        
+        background-color:#F0ECD6;
+        background-position:top;
+        background-repeat:repeat-x;
+    }
+h1{
+    text-align: center;
+
+}
+p{
+    font-size: 30px;
+    width: 340px;
+    margin: auto;
+}
+</style>
+<script src="https://youzelian.github.io/ts300.js">
+
+</script>
+</head>
+<body>
+    <center>
+    <input type="button" value="上一首" id="prev">
+    唐诗三百首
+    <input type="button" value="下一首" id="next">
+    </center>
+    <h1 id="tsTitle">
+
+    </h1>
+    <p id="tsContent">
+
+    </p>
+
+
+    <script>
+    var ts = [] ,
+    tsTitle = [] ,
+    tsContent = [] ;
+
+
+var Begin=1,
+End=302,
+i,
+p1,
+p2;
+for(i=0;i<End-Begin;i++)//查找300首古诗//
+    {
+
+p1=poem.search(toString(i));
+p2=poem.search(toString(i+1));
+ts[i]=poem.substring(p1,p2);
+}
+ts[ts.length-1]=poem.substring(p2);
+function toString(i){   //利用函数将古诗查询顺序符合文本文件内//
+    if(i<10){
+        return'0'+'0'+i; 
+    }
+    else if(i>9&&i<100){
+        return '0'+i;
+    }else{
+        return i+'';//转换为字符串//
+    }
+}
+for(i=0;i<ts.length;i++){//除去古诗前面的序号 提取一首古诗的内容
+p1=3;
+p2=ts[i].search("\n");
+tsTitle[i]=ts[i].substring(p1,p2);
+tsContent[i]=ts[i].substring(p2);
+}
+/*
+function getQuote() {
+    var quoteArr = [
+        '远看山有色',
+        '近听水无声',
+        '春去花还在',
+        '人来鸟不惊'
+    ] // 可以通过改变数组内容，对名言或诗词进行增删
+    return quoteArr[Math.floor(Math.random() * quoteArr.length)] // 数组中随机取一个元素   
+     
+}
+*/
+
+
+i=1;
+showTs(i);//主要内容输出//
+
+//dom//
+var prevDom = document.getElementById("prev");//获取prev的id//
+var nextDom = document.getElementById("next");//获取next的id//
+prevDom.onclick=function(){//上一首循环//
+  if(i==0){
+      i=300
+  }
+
+i--;
+showTs(i); 
+
+}
+
+nextDom.onclick=function(){//下一首循环//
+  if(i==300){
+      i=0
+  }
+i++;
+showTs(i);
+
+};
+function showTs(i){			
+var tsTitleDom=document.getElementById("tsTitle");//使DOM获取tsTitle的id//
+var tsContentDom=document.getElementById("tsContent");//使DOM获取tsTitle的id//
+
+  tsTitleDom.textContent=tsTitle[i];//获取tsTitle中的内容//
+  tsContentDom.textContent=tsContent[i];//获取tsContent中的内容//
+  
+
+
+
+}
+</script>
+
+
+
+</body>
