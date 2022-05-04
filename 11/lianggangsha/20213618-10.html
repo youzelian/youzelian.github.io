@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>第八次作业</title>
+	<style type="text/css">
+		body{
+		background:url(https://pic2.zhimg.com/80/v2-ee146ac39299424363347290280340a0_720w.jpg?source=1940ef5c) no-repeat center top;
+		background-size:cover;
+		text-align: center;
+		
+	}
+		h1{
+		color:navy;
+        font-size:50px;
+		text-shadow:4px 4px 4px gainsboro;
+	}
+	p{
+	   color:maroon;
+       font-size:40px;
+	   width:630px ;
+	   margin:auto ;
+	   line-height:65px;
+	}
+		div#box1
+		{
+		border:2px solid ;
+		border-radius: 30%;
+        box-shadow: 15px 10px 10px 10px rgba(0, 0, 0, 0.6) inset;
+		padding-bottom:1.5em;
+		background-color:rgba(250,250,250,0.6);
+		margin:10px auto;
+		width:700px;
+		}	
+        div#box2
+		{
+		border:2px solid ;
+		border-radius: 30%;
+        box-shadow: 20px 10px  10px rgba(0, 0, 0, 0.6);
+		padding-bottom:1.5em;
+		background-color:rgba(250,250,250,0.6);
+		margin:10px auto;
+        width:800px;
+		}	
+		input{
+       color:darkblue;
+       font-size:60px;
+	   border-bottom-color:LightSlateGray;
+	   border-radius:2em; 
+	   display:inline-block;
+	   box-shadow:5px 5px gray;
+	   margin:40px;
+
+	}
+	</style>
+	<script src="https://youzelian.github.io/ts300.js">/*定义一个字符串*/
+	</script>
+</head>
+	<body>
+		<br>
+		<input type="button" value="prev" id="prev">
+		<input type="button" value="next" id="next">
+		<div id="box1">
+			<h1 id = "tsTitle">
+			这里是古诗集的展示
+			</h1>
+	    </div> 
+       <div id="box2">
+		<p id ="tsContent"> </p>
+	   </div> 
+	<script type="text/javascript">
+	    var arr = poem.match(/\d+(.\d+)?/g); 
+		var h1Dom = document.querySelector("h1#tsTitle") ;
+		var pDom =  document.querySelector("p#tsContent");
+		var i= -2 ;
+		var gushi=[];
+		var title=[];
+		var content=[];
+		for (i = 0; i < arr.length; i++) {
+            gushi[i] = poem.substring(poem.search(arr[i]),poem.search(arr[i + 1]));
+            title[i] =gushi[i].substring(0,gushi[i].search("\n"));
+            content[i] = gushi[i].substring(gushi[i].search("\n"), gushi[i].length);
+        }
+        document.querySelector("input#prev").onclick = function(){
+			if (i>0) 
+			{i=i-2;/*当函数执行时变量-2*/}
+			else{i=title.length-2;}
+			var headline = document.querySelector("h1");/*获取文档中 class="h1" 的第一个元素并取名为headline*/
+			var text = document.querySelector("p");/*获取文档中 class="p" 的第一个元素并取名为text*/
+			headline.textContent =  title[i] ;/*将字符串的内容赋值给headline*/
+			text.textContent = content[i] ;/*将字符串的内容赋值给text*/}
+		document.querySelector("input#next").onclick = function(){
+			 if (i < title.length-2)
+			 {i=i+2;}
+			 else{i=0;}
+			 var headline = document.querySelector("h1");/*获取文档中 class="h1" 的第一个元素并取名为headline*/
+			 var text = document.querySelector("p");/*获取文档中 class="p" 的第一个元素并取名为text*/
+			 headline.textContent = title[i] ;
+			 text.textContent = content[i]  ;
+			 }
+	</script>
+ </body>
+</html>
