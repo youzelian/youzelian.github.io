@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>唐诗三百首</title>
+
+
+    <style>
+        body {
+            font-size: 20px;
+            text-align: center;
+            background-color: rgb(215, 216, 106);
+        }
+
+        h2 {
+            font-size: 50px;
+            font-family: "楷体";/*字体格式*/
+        }
+
+        P {
+            font-size: 40px;
+            font-family: "仿宋";
+            font-weight: bold;/*字体加粗*/
+        }
+
+        div#menu input {
+            font-size: 2em;
+            margin: 2px 2em;
+            box-shadow: 4px 4px rgb(51, 49, 55);
+            cursor: pointer;
+            border: outset;  /*按钮成凸起状*/
+            border-radius: 15%;/* 设置圆角边框 */
+        }
+
+        div#menu input:hover {
+            box-shadow: 4px 4px rgba(168, 12, 12, 0.297);/*阴影部分颜色*/
+            background-color: rgb(237, 13, 13);/*按钮颜色*/
+            border: outset; /*按钮成凸起状*/
+
+        }
+
+        div#menu input:active {
+            box-shadow: none;
+            border: inset;/*按钮成凹下状*/
+        }
+    </style>
+
+    <script src="https://lijianhong19720904.github.io/ts300.js"> 
+    </script>
+
+
+<body>
+
+    <div id="menu">
+        <input type="button" value="上一首" id="prev">
+        <input type="button" value="下一首" id="next">
+        <input type="button" value="抽一首" id="rand">
+    </div>
+
+    <h2 id="tsTitle">
+    </h2>
+
+    <p id="tsContent">
+    </p>
+
+
+    <script>
+        var ts = [], tsTitle = [], tsContent = [];
+        var BEGIN = 10, END = 320;
+        var i, p1, p2;
+
+        for (i = BEGIN; i < END; i++) {    /*从三百首诗中截取每一首*/
+            p1 = ts300.search(tostring(i));
+            p2 = ts300.search(tostring(i + 1));
+            if (p1 != -1 && p2 != -1) { 
+                ts[i] = ts300.substring(p1, p2);
+            }
+        }
+        ts.splice(174, 2);  /* splice方法 删除数组中元素 第一个数据为起始删除位置 第二个数据为删除数据个数*/
+        ts[i - 2] = ts300.substring(p2); /*最后一首*/
+
+        function tostring(i) {
+            /*由于唐诗序号是从010到320（175缺失） 则第一首至第九十首要将i(整形)变为字符型（序号前加0）*/
+            if (i < 100) {
+                return "0" + i;
+            }
+            else {
+                return i + "";
+            }
+        }
+
+        for (i = BEGIN; i <= END - 2; i++) {
+            p1 = 3;
+            p2 = ts[i].indexOf("\n");
+            tsTitle[i] = ts[i].substring(p1, p2);
+            tsContent[i] = ts[i].substring(p2);
+        }
+
+        i = BEGIN;
+        showTS(i);
+        var prevDOM = document.getElementById("prev");
+        var nextDOM = document.getElementById("next");
+        var randDOM = document.getElementById("rand");
+
+
+        prevDOM.onclick = function () {
+            if (i == BEGIN) {
+                i = END - 2;
+                showTS(i);
+            }
+            else {
+                i--;
+                showTS(i);
+            }
+        }
+
+        nextDOM.onclick = function () {
+            if (i == END - BEGIN - 2) {
+                i = 0;
+            }
+            else {
+                i++;
+            }
+            showTS(i);
+
+        }
+
+        randDOM.onclick = function () {
+            /* 抽一首功能 Math.rand() 生成0~1之间的随机数 Math.floor() 向下取整 */
+            var rand = Math.random() * tsTitle.length + 1; /* 生成1~ts.length之间的随机数 */
+            i = Math.floor(rand);
+            if (i >= 10) { /* 由于唐诗从10开始 避免随机数小于10时出现错误*/
+                showTS(i);
+            }
+
+        }
+
+        function showTS(i) {   /*展示古诗*/
+            var tsTitleDOM = document.getElementById("tsTitle");
+            var tsContentDOM = document.getElementById("tsContent");
+            tsTitleDOM.textContent = tsTitle[i];
+
+            var tslines = [];
+            tslines = tsContent[i].split("\n");   /* split方法用于把一个字符串分割成字符串数组. */
+            tslines.shift(); /*删去第一个元素 标题和内容之间有个\n split之后成空字符*/
+            tslines.pop(); /*删去最后一个元素 内容和下一标题之间有个\n split之后成空字符*/
+
+            
+            tsContentDOM.textContent = ""; /*清空诗句*/
+
+            /* createElement() 方法通过指定名称创建一个元素 */
+            for (i = 0; i < tslines.length ; i++) {
+                var pDOM = document.createElement("p");
+                pDOM.textContent = tslines[i];
+                tsContentDOM.appendChild(pDOM);
+            }
+        }
+    </script>
+</body>
+
+</html>
