@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>唐诗三百首</title>
+    <input type="button" value="首页" id="first">
+    <input type="button" value="上一首" id="prev">
+    <input type="button" value="挑一首" id="random">
+    <input type="button" value="下一首" id="next">
+    <input type="button" value="尾页" id="last">
+</head>
+<style>
+    h1
+    {
+      font-size: 50px;
+    }
+    p
+    {
+      font-size: 50px;
+      white-space: pre-line;
+    }
+    input
+    {
+        text-align: center;
+        font-size: 30px;        
+        background-color: rgb(196, 250, 232);
+        color: rgb(224, 80, 13);
+        height: 60px;
+        width: 130px;
+        margin-inline: 10px;
+        font-family: 楷体
+    }
+    body
+    {
+            background-color: lightpink;
+            text-align: center;
+            font-family: 楷体;
+    }
+  </style>
+<body>
+    <h1 id="tsTitleDom">
+
+    </h1>
+    <p id="tsContentDom">
+    
+    </p>
+    <script src="https://lijianhong19720904.github.io/ts300.js">
+    </script>
+    <script>
+        var ts = [] ;
+        var tsTitle = [];
+        var tsContent = [];
+        var BEGIN = 10,
+            END = 320,
+            i ,
+            p1,
+            k,
+            p2;  
+        for(i=0,k=0;i<=END-BEGIN;i++,k++){
+            p1 = ts300.search(i+BEGIN);
+            p2 = ts300.search(i+BEGIN+1);
+            ts[k] = ts300.substring(p1,p2);
+            if(p2==-1){
+                p2 = ts300.search(i+BEGIN+2);
+                ts[k] = ts300.substring(p1,p2);  
+                i++;
+            }
+        }
+        p2 = ts300.search(320);
+        ts[309] = ts300.substring(p2);
+        
+        
+            for(i=0;i<100 ;i++){
+                p1 = 2;
+                p2 = ts[i].search("\n");
+                tsTitle[i] = ts[i].substring(p1,p2);
+                tsContent[i] = ts[i].substring(p2,ts[i].length-1); 
+            }
+            for(i=90;i<ts.length ;i++){
+                p1 = 3;
+                p2 = ts[i].search("\n");
+                tsTitle[i] = ts[i].substring(p1,p2);
+                tsContent[i] = ts[i].substring(p2,ts[i].length-1); 
+            }
+        i =0;
+        tsTitleDom.textContent=tsTitle[i];
+        tsContentDom.textContent=tsContent[i];
+        var prevDom = document.getElementById("prev");
+        var nextDom = document.getElementById("next");
+        var firstDom = document.getElementById("first");
+        var lastDom = document.getElementById("last");
+        var randomDom = document.getElementById("random");
+        
+        var name=prompt("请输入您的名字","xxx");
+        prevDom.onclick = function(){
+            if(i>0&&i<310){
+                i--;
+                tsTitleDom.textContent=tsTitle[i];
+                tsContentDom.textContent=tsContent[i];
+            }
+           
+            else{
+                i = 309;
+                tsTitleDom.textContent=tsTitle[i];
+                tsContentDom.textContent=tsContent[i];
+            }    
+        }
+        nextDom.onclick = function(){
+            if(i>=0&&i<309){
+                
+                i++;
+                tsTitleDom.textContent=tsTitle[i];
+                tsContentDom.textContent=tsContent[i];
+            }
+            else{
+                i=0;
+                tsTitleDom.textContent=tsTitle[i];
+                tsContentDom.textContent=tsContent[i];
+            }
+        }
+        firstDom.onclick = function(){
+            i = 0;
+            tsTitleDom.textContent=tsTitle[i];
+            tsContentDom.textContent=tsContent[i];
+        }
+        lastDom.onclick = function(){
+            i = 309;
+            tsTitleDom.textContent=tsTitle[i];
+            tsContentDom.textContent=tsContent[i];
+        }
+        randomDom.onclick = function(){
+            i!=175;
+            i=Math.floor(Math.random() * 299)+10;
+            tsTitleDom.textContent=tsTitle[i];
+            tsContentDom.textContent=tsContent[i];
+            
+        }
+        // ts.split("\n")
+    </script>
+</body>
+</html>

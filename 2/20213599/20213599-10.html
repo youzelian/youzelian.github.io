@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>ts300</title>
+		<script src="https://lijianhong19720904.github.io/ts300.js" >
+		</script>
+		<style type="text/css">
+			body
+			{
+				background-color:lightblue;
+			}
+			h1
+			{
+				color:;
+				font-size:50px;
+				margin:auto;
+				text-align:center;
+			}
+			p
+			{
+				color:blue;
+				font-size:38px;
+				text-align:center;
+				white-space:pre-line;/* 换行 */
+				line-height:58px;
+				margin:auto;
+				font-family:楷体;
+			}
+			p#number
+			{
+				font-size:50px;
+				color:red;
+			}
+			input
+			{
+				color:rgba(255,127,80,1);
+				background-color:rgba(255,215,0,0.5);
+				font-size:38px;
+				cursor:pointer;/* 光标 */
+				box-shadow:4px 3px rgba(255,140,0,0.6);/* 阴影 */
+				margin:0px 10px;
+				border-radius:25px;/* 边框半径 */
+				border:inset;/* 边框凹陷 */
+			}
+			input#data
+			{
+				text-align:center;
+			}
+			input:hover
+			{
+				border:outset;/* 边框凸起 */
+				box-shadow:8px 6px rgba(255,140,0,0.8);
+			}
+			input:active
+			{
+				border:inset;/* 边框凹陷 */
+			}
+			div#D
+			{
+				height:80px;
+			}
+			div#chou
+			{
+				text-align:center;
+			}
+		</style>
+	</head>
+	<body id="B">
+		<div id="D">
+			<div style="float:left" id="shang">
+				<input type="button" value="首页" id="home">
+				<input type="button" value="上一首" id="prev">
+			</div>
+			<div style="float:right" id="xia">
+				<input type="button" value="下一首" id="next">
+				<input type="button" value="尾页" id="end">
+			</div>
+			<div id="chou">
+				 <input type="button" value="抽一首" id="rand">
+				 <input type="text" id="data" size="3" value="50">
+				 <input type="submit" value="选择" id="choose">
+			</div>
+		</div>
+		<p id="number"></p>
+		<h1 id="tstitledom"></h1>
+		<p id="tscontentdom"></p>
+		<script type="text/javascript">
+			var co=[];
+			var ts=[],
+				tstitle=[],
+				tscontent=[];
+			var BEGIN=10,
+				END=320,
+				i,
+				n,
+				k=0,
+				p1,
+				p2;
+			for(i=0;i<END-BEGIN;i++,k++)
+			{
+			if(i<100)
+				{
+					p1=ts300.search(i+BEGIN);/* 获取文本位置 */
+					p2=ts300.search(i+1+BEGIN);
+					ts[k]=ts300.substring(p1,p2-1);
+				}
+			else
+				{
+					p1=ts300.search(i+BEGIN);
+					p2=ts300.search(i+1+BEGIN);
+					if(p2==-1)
+						{
+							p2=ts300.search(176);
+							ts[k]=ts300.substring(p1,p2);/* 获取文本位置之间的内容 */
+							i++;
+						}
+					else
+						{
+							ts[k]=ts300.substring(p1,p2);
+						}
+				}
+			}
+			p1=ts300.search(320);
+			ts[309]=ts300.substring(p1);
+			for(i=0;i<END-BEGIN;i++)
+			{
+			p1=2;
+			p2=ts[i].search("\n");
+			if(i>=90)
+				{
+					p1=3;
+				}
+			tstitle[i]=ts[i].substring(p1,p2);
+			tscontent[i]=ts[i].substring(p2);
+			}
+			var i=0;
+			var m=i+1;
+			number.textContent="第1首";
+			tstitledom.textContent=tstitle[0];
+			tscontentdom.textContent=tscontent[0];
+			prev.onclick=function()
+					{
+						if(i<=0)
+							{
+								i=309;
+							}
+						else
+							{
+								i--;
+							}
+						m=i+1;
+						number.textContent="第"+m+"首";
+						tstitledom.textContent=tstitle[i];
+						tscontentdom.textContent=tscontent[i];
+					}
+			next.onclick=function()
+					{
+						if(i>=309)
+							{
+								i=0;
+							}
+						else
+							{
+								i++;
+							}
+						m=i+1;
+						number.textContent="第"+m+"首";
+						tstitledom.textContent=tstitle[i];
+						tscontentdom.textContent=tscontent[i];
+					}
+			home.onclick=function()
+					{
+						i=0;
+						m=i+1;
+						number.textContent="第"+m+"首";
+						tstitledom.textContent=tstitle[i];
+						tscontentdom.textContent=tscontent[i];
+					}
+			end.onclick=function()
+					{
+						i=309;
+						m=i+1;
+						number.textContent="第"+m+"首";
+						tstitledom.textContent=tstitle[i];
+						tscontentdom.textContent=tscontent[i];
+					}
+			rand.onclick=function()
+					{
+						n=i;
+						i=Math.floor(Math.random()*310);/* 随机数 */
+						do
+						{
+							i=Math.floor(Math.random()*310);/* 随机数 */
+						}
+						while (i==n);
+						m=i+1;
+						number.textContent="第"+m+"首";
+						tstitledom.textContent=tstitle[i];
+						tscontentdom.textContent=tscontent[i];
+					}
+			choose.onclick=function()
+					{
+						test(document.getElementById('data').value);
+						i=m;
+					}
+			function test(data)
+					{
+						if(data>0&&data<=310)
+							{
+								var i=parseInt(data);
+								m=i-1;
+								number.textContent="第"+i+"首";
+								tstitledom.textContent=tstitle[m];
+								tscontentdom.textContent=tscontent[m];
+							}
+						else
+							{
+								var i=parseInt(data);
+								m=i-1;
+								number.textContent="";
+								tstitledom.textContent="无内容";
+								tscontentdom.textContent="请重新选择";
+							}
+					}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>ts300</title>
+		<script src="https://lijianhong19720904.github.io/ts300.js" >
+		</script>
+		<style type="text/css">
+			body
+			{
+				background-color:lightblue;
+				text-align:center;
+			}
+			h1
+			{
+				color:#ff3333;
+				text-align:center;
+				font-family:"楷体";
+				font-size:4em;
+			}
+			p
+			{
+				text-align:center;
+				color:blue;
+				font-size:38px;
+				white-space:pre-line;/* 字符串里\n换行 */
+				line-height:58px;
+				margin:auto;
+			}
+			input
+			{
+				width:120px;
+				height:70px ;/* text和button不等高因为button的高度包含边框的高度 */
+				text-align:center;
+				font-size:30px;
+				background:rgba(0,0,0,0);
+				box-shadow:4px 3px rgba(0,0,0,0.6);/* 阴影 */
+				/* margin:2px; */
+				border:inset;/* 边框凹陷 */
+				border-radius:40px;/* 边框半径（椭圆） */
+			}
+			input:hover
+			{
+				border:outset;/* 边框凸起 */
+				box-shadow:8px 6px rgba(0,0,0,0.6);
+			} 
+			input:active
+			{
+				border:inset;/* 边框凹陷 */
+			}
+			div
+			{
+				height:50px;
+				border:2px solid rgba(0,0,0,0); 
+				padding:10px;
+				/* cursor:pointer ；//手势 */
+				/* cursor:wait ；<!-- 手势转圈 --> */
+			}
+			}
+			input#data
+			{
+				height:50px;
+				/* vertical-align:middle; */
+				/* line-height:70px; */
+			} 
+		</style>
+	</head>
+	<body id="B">
+		<div>
+			<div style="float:left">
+				<input type="button" value="首页" id="home" style="cursor:wait">
+				<input type="button" value="上一首" id="prev" style="cursor:pointer">
+			</div>	
+			<div style="float:right">
+				<input type="button" value="下一首" id="next" style="cursor:pointer">
+				<input type="button" value="尾页" id="end" style="cursor:pointer">
+			</div>
+			<div id="shu" class="">
+				<input type="button" value="第" onclick="">
+				<input id="data" type="text">
+				<input type="button" value="首" onclick="" >
+				<input type="submit" value="跳转" style="cursor:pointer" id="choose" onclick="">
+			</div>
+		</div>
+		<h1 id="tstitledom"></h1>
+		<p id="tscontentdom"></p>
+		<script type="text/javascript">
+			var co=[];
+			var ts=[],
+				tstitle=[],
+				tsdom=[],
+				tscontent=[];
+			var BEGIN=10,
+				END=320,
+				i,
+				k,
+				m,
+				w1,
+				w2,
+				p1,
+				p2;
+			for(i=0,k=1;i<END-BEGIN;i++,k++)
+			{
+			if(i<100)
+				{
+					p1=ts300.search(i+BEGIN);
+					p2=ts300.search(i+1+BEGIN);
+					ts[k]=ts300.substring(p1,p2-1);
+				}
+			else
+				{	p1=ts300.search(i+BEGIN);
+					p2=ts300.search(i+1+BEGIN);
+					if(p2==-1)
+						{
+							p1=ts300.search(i+BEGIN);
+							p2=ts300.search(i+2+BEGIN);
+							ts[k]=ts300.substring(p1,p2);
+							i++;
+						}
+					else
+						{
+							ts[k]=ts300.substring(p1,p2);
+						}
+			
+				}
+			}
+			ts[ts.length]=ts300.substring(p2);
+			for(k=1;k<=END-BEGIN;k++)
+			{
+			p1=0;
+			p2=ts[k].search("\n");
+			tstitle[k]=ts[k].substring(p1,p2);
+			tscontent[k]=ts[k].substring(p2);
+			}
+			var k=1;
+			tstitledom.textContent=tstitle[1];
+			tscontentdom.textContent=tscontent[1];
+			prev.onclick=function()
+					{
+						if(k<=1)
+							{
+								k=310;
+							}
+						else
+							{
+								k--;
+							}
+						tstitledom.textContent=tstitle[k];
+						tscontentdom.textContent=tscontent[k];
+					}
+			next.onclick=function()
+					{
+						if(k>=310)
+							{
+								k=1;
+							}
+						else
+							{
+								k++;
+							}
+						tstitledom.textContent=tstitle[k];
+						tscontentdom.textContent=tscontent[k];
+					}
+			home.onclick=function()
+					{
+						k=1;
+						tstitledom.textContent=tstitle[k];
+						tscontentdom.textContent=tscontent[k];
+					}
+			end.onclick=function()
+					{
+						k=166;
+						tstitledom.textContent=tstitle[k];
+						tscontentdom.textContent=tscontent[k];
+					}
+			choose.onclick=function()
+					{
+						test(document.getElementById('data').value);
+						if(k<=165)
+						{k=m-9;}
+						else
+						{k=m-10;}
+					}
+			function test(data)
+					{
+						var i=parseInt(data);
+						m=i;//转跳后能上下首接应
+						//i=data;
+						if(i<100)
+						{
+							w1=ts300.search(i);
+							w2=ts300.search(i+1);
+							tsdom[0]=ts300.substring(w1,w2-1);
+						}
+						else
+						{
+							w1=ts300.search(i);
+							w2=ts300.search(i+1);
+							tsdom[0]=ts300.substring(w1,w2);
+						}
+						w1=0;
+						w2=tsdom[0].search("\n");
+						tstitle[0]=tsdom[0].substring(w1,w2);
+						tscontent[0]=tsdom[0].substring(w2);
+						if((i>=10&&i<175)||(i>175&&i<320))
+						{
+							tstitledom.textContent=tstitle[0];
+							tscontentdom.textContent=tscontent[0];
+						}
+						else if(i==320)
+						{
+							tstitledom.textContent=tstitle[310];
+							tscontentdom.textContent=tscontent[310];
+						}
+						else
+						{
+							tstitledom.textContent="无内容";
+							tscontentdom.textContent="请重新选择";
+						}
+						}
+		</script>
+	</body>
+</html>
