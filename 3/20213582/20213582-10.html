@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>2021358210</title>
+  <style type="text/css">
+	body{
+		text-align:center;
+		font-size:20px;
+		background-color:#FFFACD;
+	}
+	div#bt,div#title,div#content{
+		border:1px solid rgb(200,230,180);
+		margin:0.5em auto;
+	}
+	
+	div#title{
+		font-size:3em;
+		font-family:华文新魏,黑体;
+		color:red;
+		text-shadow:6px 2px 6px rgba(255,48,48,0.5);/*设置阴影,依次为水平 垂直 模糊距离 颜色*/
+	}
+	div#content{
+		font-size:1.5em;
+		font-family:华文中宋,仿宋;
+		color:#228B22;
+	}
+	div#bt input{
+		font-size:2em;
+		border-radius:20%;
+		margin:0.5em 0.75em;
+		box-shadow:4px 4px rgb(150,150,150);
+		cursor:pointer;
+		/*border:outset;*/
+		background-color:#00FFFF;
+	}
+	div#bt input:active{
+		box-shadow:none;
+		border:inset;
+	}
+  </style>
+  <script src="https://lijianhong19720904.github.io/ts300.js">
+  </script>
+ </head>
+ <body>
+  <div id="bt" >
+	<input type="button" value="上一页" id="last">
+	<input type="button" value="下一页" id="next">
+	<input type="button" value="抽一页" id="rand">
+  </div>
+  <div id="title" >
+
+  </div>
+  <div id="content" >
+	
+  </div>
+  <script type="text/javascript">
+  <!--
+	var ts=[],
+	    tstitle=[],
+		tscontent=[];/*存放古诗，诗题，诗文*/
+	var BEGIN=10,
+	    END=320,
+		i,
+		j = 0,
+		p1,
+		p2;
+	for (i = BEGIN ; i < END ; i++ )
+	{
+		p1 = ts300.search(tostring(i));
+		p2 = ts300.search(tostring(i+1));/*找到古诗前的序号*/
+		if (p1!=-1)
+		{
+			if (i == 174)
+			{
+				p2 = ts300.search(tostring(i+2));
+				ts[j] = ts300.substring(p1,p2);
+			}else{
+				ts[j] = ts300.substring(p1,p2);/*将p1，p2之间的古诗放于数组中*/
+				}
+			j++;
+		}		
+	}
+	ts[ts.length] = ts300.substring(p2);//存放最后一首古诗
+	function tostring(i){
+		//入口参数是数值型，返回为字符型，并对不足3位的i前加0
+		if (i < 100 )
+		{
+			return i = "0"+i;
+		}else{
+			return i = i+"";//利用js+运算符，把数字加字符转化为字符
+		} 
+	};
+	for (i = 0 ; i < ts.length ; i++ )
+	{
+		p1 = 3;
+		p2 = ts[i].search("\n");
+		tstitle[i] = ts[i].substring(p1,p2);
+		tscontent[i] = ts[i].substring(p2);
+	}//分离诗题和内容
+	//按钮部分开始
+	i = 0;
+	var bt1 = document.getElementById("last");
+	var bt2 = document.getElementById("next");
+	var bt3 = document.getElementById("rand");
+	var title = document.getElementById("title");
+	var content = document.getElementById("content");
+	showts(i);
+	bt1.onclick = function(){
+		i--;
+		if (i == -1)
+		{
+			i = 309;
+		}
+		showts(i);
+	};
+	bt2.onclick = function(){
+		i++;
+		if (i == 310)
+		{
+			i = 0;
+		}
+		showts(i);
+	};
+	bt3.onclick = function(){
+		var rand = Math.random() * (tstitle.length+1);
+		i = Math.floor(rand);
+		showts(i);
+	};
+	//按钮部分结束
+	function showts(i){
+		console.log('第'+(i+1)+'首');
+		title.textContent = tstitle[i];
+		var tslines = [];
+		tslines = tscontent[i].split("\n");//将诗的内容分开，第一个和最后一个为空
+		tslines.shift();//删除最前面的数组
+		tslines.pop();//删除最后一个数组
+		content.textContent = "";//每次清除诗的内容
+		for ( j = 0; j < tslines.length ; j++ )
+		{
+			var pDom = document.createElement('p');
+			pDom.textContent = tslines[j];
+			content.appendChild(pDom);
+		}
+	};
+  //-->
+  </script>
+ </body>
+</html>

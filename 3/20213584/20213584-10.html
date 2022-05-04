@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang ="en">
+ <head>
+  <meta charset ="UTF-8">
+  <title>Document</title>
+  <style>
+		body{
+		     text-align:center;
+			 background:rgba(144,238,144,0.7);
+		}
+        h1{
+		   font-family:楷体;
+		   font-size:55px;
+		   text-align:center;
+		   text-shadow:5px 5px 10px lightyellow;
+           color:red;
+		}
+		div{
+		    font-family:楷体;
+			font-size:40px;
+			margin:auto;
+			width:500px;
+		}
+		input{
+              padding:10px;
+			  font-size:30px;
+		}
+  
+  </style>
+  <script src="https://lijianhong19720904.github.io/ts300.js">
+  </script>
+ </head>
+ <body>
+  <input type ="button" value ="上一页" id ="past">
+  <input type ="button" value ="抽一首" id ="rand">
+  <input type ="button" value ="下一页" id ="next">
+  <h1 id ="title">杜甫：佳人</h1>
+  <div id ="tsContent">
+       绝代有佳人，幽居在空谷。
+       自云良家子，零落依草木。
+       关中昔丧乱，兄弟遭杀戮。
+       官高何足论，不得收骨肉。
+       世情恶衰歇，万事随转烛。
+       夫婿轻薄儿，新人美如玉。
+       合昏尚知时，鸳鸯不独宿。
+       但见新人笑，那闻旧人哭！
+       在山泉水清，出山泉水浊。
+       侍婢卖珠回，牵萝补茅屋。
+       摘花不插发，采柏动盈掬。
+       天寒翠袖薄，日暮倚修竹。
+  </div>
+ </body>
+ <script>
+        var past = document.querySelector("input#past");/*将input中ID为“past”的对象赋给past*/
+		var next = document.querySelector("input#next");/*将input中ID为“next”的对象赋给next*/
+		var ts = [];/*定义一个存唐诗的数组*/
+		var tsTitle = [];/*定义一个存诗题目的数组*/
+		var tsContent = [];/*定义一个存诗内容的数组*/  
+		var p = [], i = 10, j = 0, k = 0, l = 0, p1, p2;
+		for(j = 0;j < 310;j++,i++){
+		                       p[j] = ts300.search(toString(i));/*查找对应位置的“i”值赋予p*/
+                               p[j+1] = ts300.search(toString(i+1));
+							   if(i==174){
+								          i=i+2;
+                                          p[j+1] = ts300.search(toString(i));
+										  i--;
+							   }
+							   ts[j] = ts300.substring(p[j],p[j+1]);/*找到完整的诗文将其放入唐诗数组中*/
+							   if(i==320){
+								    ts[j] = ts300.substring(p[j]);
+							   }
+		}
+
+		function toString(i){
+			                 if(i<100){
+				                       return '0'+i;
+			                 }
+			                 else{
+				                  return i+'';
+			                 }
+		}
+		for(k = 0;k < ts.length;k++){
+			                         p1 = 3;/*定位到数字后诗文前的位置*/
+									 p2 = ts[k].search("\n");/*找到每首诗题后的“\n”*/
+									 tsTitle[k] = ts[k].substring(p1,p2);/*截取到每首诗的诗题放到tsTitle数组中*/
+									 tsContent[k] = ts[k].substring(p2,ts[k].length);/*截取到每首诗的诗体放到tsContent数组中*/
+		}
+		function showTs(l){
+                           var tsTitleDom = document.getElementById("title");/*将“h1”赋予*/
+						   var tsContentDom = document.getElementById("tsContent");/*将“div”赋予*/
+						   tsTitleDom.textContent = tsTitle[l];
+						   tsContentDom.textContent = tsContent[l];
+
+		var tsLines = [];
+		tsLines = tsContent[i].split("\n");
+		tsLines.shift();
+		tsLines.pop();
+		tsContentDom.textContent = "";
+		for(var i=0; i<tslines.length; i++){
+			                                var pDom = document.creatElement("p");
+											pDom.textContent = tsLines[i];
+											tsContentDom.appendChild(pDom);
+		}
+		}/*显示诗文的函数*/
+		past.onclick = function(){/*对按钮“上一页”编辑*/
+			                      if (l == 0){
+									          l = 310;/*实现诗文的首尾相接*/
+								  }
+								  if (l > 0){
+									         l--;
+								  }
+								  showTs(l);
+		}
+		next.onclick = function(){/*对按钮“下一页”编辑*/
+		                          if(l == 309){
+									           l = 0;/*实现诗文的首尾相接*/
+								  }
+								  if(l < ts.length-1){
+									                  l++;
+								  }
+								  showTs(l);
+		}
+		rand.onclick = function(){
+			                      var rand = Math.random()*(tsTitle.length+1)
+								  i = Math.floor(rand);
+								  showTs(i);
+		}
+
+
+ </script>
+</html>

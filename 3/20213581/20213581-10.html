@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>第十次作业</title>
+<style>
+body{
+     text-align:center;/*控制页面主题，字体居中*/
+	 padding:5px;/*内边距*/
+	 margin:auto;/*外边界*/
+	}
+
+p{
+  font-size:45px;
+  font-weight:bold;/*字体加粗*/
+  font-family:仿朱,宋体;
+  color:red;
+  text-shadow:0px 5px 5px black;/*阴影控制:水平方向阴影位置，垂直方向阴影位置，阴影大小，阴影颜色*/
+ }
+
+h1{
+   font-size:35px;
+   font-family:黑体;
+   color:white;
+   text-shadow:0px 5px 5px black;
+  }
+
+#prev{					/*按钮控制*/
+      font-size:20px;
+	  font-family:宋体;
+	 }
+
+#next{
+      font-size:20px;
+	  font-family:宋体;
+	 }
+#rand{font-size:20px;
+	  font-family:宋体;
+	 }
+</style>
+<script src="https://lijianhong19720904.github.io/ts300.js">
+var ts300=" ";
+</script>
+</head>
+<html>
+<body bgcolor=Silver>			<!--背景颜色控制-->
+<input type ="button" value="上一首" id="prev">			<!--设置开关-->
+<input type="button" value="抽一首" id="rand">
+<input type ="button" value="下一首" id="next">
+<p id="tsTitle">		<!--将唐诗的标题与p关联-->
+</p>
+<h1 id="tsContent">		<!--将唐诗的内容与h1关联-->
+</h1>
+<script type="text/javascript">
+var title=document.querySelector("p");		//返回匹配选择器p的第一个元素
+var content=document.querySelector("h1");	//返回匹配选择器h1的第一个元素
+var prevBt=document.querySelector("input#prev");
+var randBt=document.querySelector("input#rand");
+var nextBt=document.querySelector("input#next");
+var begin=10,
+	end=320,
+	i,
+	k,
+	p1,
+	p2;
+var ts=[],
+	tsTitle=[],
+	tsContent=[];
+for (i=0;i<end-begin ;i++ ){			//诗句循环
+	p1=ts300.search(toString(i+begin));//seach查找作用，toString是将括号里面的东西转化为字符串
+	p2=ts300.search(toString(i+1+begin));
+	ts[i]=ts300.substring(p1,p2);		//substring是进行切割的作用
+}
+function toString(i){			//当i<100时，他为0+数字，所以要特殊限制一下
+		if (i<100)
+		{
+			return '0'+i;	//转化为字符串
+		}else {
+			return i+'';	//转化为字符串
+		}
+	}
+	console.log(ts.length);	//调试作用，在控制台显示出来
+for (i=0;i<ts.length ;i++ ){		//length是获取数组的长度
+	p1=0;
+	p2=ts[i].search("\n");
+	tsTitle[i]=ts[i].substring(p1,p2);
+	tsContent[i]=ts[i].substring(p2);
+}
+i=0;
+showTs(i);
+var prevDom=document.getElementById("prev");//根据id获取元素值，放入prevDom中
+var randDom=document.getElementById("rand");
+var nextDom=document.getElementById("next");
+prevDom.onclick=function(){					//诗句反向衔接.onclick是按钮的属性
+		if (i==0)
+		{
+			i=309;
+		}else if (i==166)				//跳过那首不存在的诗句
+		{
+			i=164;
+		}
+		i--;
+		showTs(i);
+}
+randDom.onclick=function(){
+		var rand=Math.random()*(tsTitle.length+1);//取tsTitle,length+1中的随机数
+		i=Math.floor(rand);//获取一个数的整数部分
+		showTs(i);
+}
+nextDom.onclick=function(){				//	诗句正向衔接
+		if (i==309)
+		{
+			i=0;
+		}else if (i==163)
+		{
+			i=165;
+		}
+		i++;
+		showTs(i);
+}
+function showTs(i){			
+	var tsTitleDom=document.getElementById("tsTitle");
+	var tsContentDom=document.getElementById("tsContent");
+		tsTitleDom.textContent=tsTitle[i];
+		tsContentDom.textContent=tsContent[i];
+		}
+</script>  
+</body>
+</html>

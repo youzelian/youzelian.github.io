@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8"> 
+  <title>Document</title>
+  <style>     
+  h1{
+    font-size:50px;
+	color:red;
+	text-align:center;
+	font-family:黑体;
+	font-style:italic;
+	font-weight:bolder;
+	margin:auto;
+    }
+  p{
+    font-size:40px;
+    text-align:center;
+	width:690px;
+	font-family:宋体;
+	margin:auto;
+	}
+  div{
+    font-size:60px;
+    text-align:center;
+	width:720px;
+	font-family:宋体;
+	margin:auto;
+  }
+  input{font-size:40px;
+       }
+  body{
+	  background-color:rgba(200,150,15,0.3)
+	  }
+ </style> 
+ <script src="https://youzelian.github.io/ts300.js">
+ </script>
+ </head>
+ <body>
+ <div>  
+<input type="button" value="上一首" id="before">
+<input type="button" value="抽一首" id="free">
+<input type="button" value="下一首" id="after">
+</div>
+<h1 id="poemsign">杜甫：佳人</h1>
+  <div id="poemcontent">
+	绝代有佳人，幽居在空谷。
+	自云良家子，零落依草木。
+	关中昔丧乱，兄弟遭杀戮。
+	官高何足论，不得收骨肉。
+	世情恶衰歇，万事随转烛。
+	夫婿轻薄儿，新人美如玉。
+	合昏尚知时，鸳鸯不独宿。
+	但见新人笑，那闻旧人哭！
+	在山泉水清，出山泉水浊。
+	侍婢卖珠回，牵萝补茅屋。
+	摘花不插发，采柏动盈掬。
+	天寒翠袖薄，日暮倚修竹。
+   </div>
+</p>
+
+<script>
+	var before = document.querySelector("input#before");
+	var after  = document.querySelector("input#after");
+    var free = document.querySelector("input#free");
+	var poet = [];//诗
+    var sign = [];//诗题
+	var content = [];//内容
+	var p = [];
+	var a=0;
+	var b=0;
+	var c=3;
+	var d;
+	var l=0;
+	var i="010";
+for(;a<291;a++)
+{
+	p[a]=poem.search(i);
+	i=i*1+1;
+	if(i<100)
+	{
+		i="0"+i;
+	}
+	i.toString();
+	p[a+1]=poem.search(i);
+    poet[a]=poem.substring(p[a],p[a+1]);
+}
+for(;b<291;b++)
+{ 
+	var c=3;
+	d=poet[b].search("\n");
+	sign[b]=poet[b].substring(c,d);
+	content[b]=poet[b].substring(d,poet[b].length);
+}
+	before.onclick=function(){
+			if(l==0){
+			l=291;
+			}
+			if(l>0)
+			{
+				l--;
+			}	
+			displaypoem(l);
+		}
+	after.onclick=function(){
+			if(l<poet.length-1)
+			{
+				l++;
+			}
+			if(l == 290)
+			{
+				l = 0;
+			}
+			displaypoem(l);
+		}
+    free.onclick=function(){
+        var rand = Math.random()*(sign.length+1)
+        l = Math.floor(rand);
+        displaypoem(l);
+    }
+	function displaypoem(l){
+		var signDom = document.getElementById("poemsign");
+		var contentDom= document.getElementById("poemcontent");
+		signDom.textContent = sign[l];
+	   
+        var tsLines = [];
+        tsLines = content[l].split("\n");
+        tsLines.shift();
+        tsLines.pop();
+        contentDom.textContent="";
+        for(var i=0 ; i<tsLines.length ; i++){
+            var pDom = document.createElement('p');
+            pDom.textContent=tsLines[i];
+            contentDom.appendChild(pDom);
+        }
+   
+
+}	
+
+</script> 
+</body>

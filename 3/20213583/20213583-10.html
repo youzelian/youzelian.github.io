@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  *{
+  margin:0px;
+  padding:0px;
+  }
+  body{
+  font-size:20px;
+  text-align:center;
+  background-color: rgb(127,255,212);
+  }
+  div#menu input{/*对div中Id为menu中的input处理*/
+  font-size:2em;
+  border-radius:15%;
+  margin:1em auto;
+  box-shadow: 5px 4px 2px;
+  }
+  div#Title{
+  font-size:1.75em;
+  font-weight: bolder;
+  }
+  div#tsContent{
+      font-size: 1.5em;
+  }
+  div{
+      border: 3px solid rgb(200,200,200);
+  }
+  input:hover{
+      cursor: pointer;
+      border:outset;/*突出*/
+      color:rgb(150,150,150);
+  }
+  input:active{
+      border:inset;/*凹进*/
+      color:rgb(100,100,100);
+  }
+  </style>
+  <script src="https://lijianhong19720904.github.io/ts300.js">//调用外部文件ts300 
+  </script>
+ </head>
+ <body>
+  <div id="menu"> 
+   <input type="button" value="上一页" id="prev">
+   <input type="button" value="下一页" id="next">
+   <input type="button" value="抽一首" id="rand">
+  </div>
+  <div id="Title">
+
+  </div>
+   <div id="tsContent">
+
+   </div>
+ </body>
+  <script>
+  var prev = document.getElementById("prev");
+  var next = document.getElementById("next");
+  var randDom = document.getElementById("rand");
+  var ts = [];//存放每首诗
+  var tsTitle = [];//放诗的标题
+  var tsContent = [];//放诗的内容
+  var TS = [];//暂时存放诗
+  var i,
+	  j,
+	  k = 0,
+      Begin = 10,
+      End = 320;//循环变量，记录没有的诗，起始诗的标题号，末尾诗的标题号
+  var p1,
+	  p2;//放字符的位置
+
+  for(i = Begin; i < End + 1; i++){ 
+	  p1 = ts300.search(toString(i));
+	  p2 = ts300.search(toString(i+1));
+	  if(p2 == -1){
+		   i += 2;//p2 == -1时,此时i = 174,要变成176
+		   p2 = ts300.search(toString(i));//查176的位置
+		   i = i - 2;//i变成174
+	  }
+	 else if(p1 == -1){//175要变成176
+		  i += 1;//p1 == -1时,此时i = 175,要变成176
+		  p1 = ts300.search(toString(i));//查176的位置
+		  p2 = ts300.search(toString(i+1));//查177的位置
+	  }
+	  ts[i - Begin] = ts300.substring(p1,p2);//放诗
+	}//结束循环
+   ts[End - Begin] = ts300.substring(p1);
+
+   for(i = 0;i < 145;i++){
+	  TS[i] = ts[ts.length - 1];//存放176及以后的诗
+	  ts.pop()//弹出最后一首
+	  }
+
+   for(i = 0;i < 145;i++){
+	   ts[i + 164 + 1] = TS[TS.length - 1]
+	   TS.pop();
+	   }
+
+   for(i = 0;i < ts.length;i++){
+	   p1 = 3;
+	   p2 = ts[i].search("\n");
+	   tsTitle[i] = ts[i].substring(p1,p2);
+	   tsContent[i] = ts[i].substring(p2,ts[i].length);
+	}
+
+  function toString(i){
+	  if(i < 100){
+		  return "0" + i;
+		  }
+	  else{
+		  return i + "";
+		  }
+	}
+
+    showTs(k);//显示第一首诗
+
+  prev.onclick = function(){
+	  if(k > 0){
+		  k--;
+		  }else{
+          k = ts.length - 1;
+          }
+	  showTs(k);
+	  }
+
+  next.onclick = function(){
+	  if(k < ts.length - 1){
+		  k++;
+		  }else{
+              k = 0;
+          }	  
+	  showTs(k);
+	  }
+
+	randDom.onclick = function(){
+        var rand = Math.random() * (tsTitle.length+1);//从0~309中随机一个数字
+        k = Math.floor(rand);//将rand转换成整数，并返回该值
+        showTs(k);
+    } 
+
+    function showTs(k){
+        console.log("第" + (k+1) + "首")
+	    var h1 = document.getElementById("Title");
+	    var conTent = document.getElementById("tsContent");
+	    h1.textContent = tsTitle[k];
+        
+        var tsLines = [];
+        conTent.textContent = "";
+        tsLines = tsContent[k].split("\n");//将tsContent以\n拆开成数组放到tslines中
+        tsLines.shift();//因为tslines的第0号数组为空数组,故将其删除
+        tsLines.pop();//因为tslines的最后一个数组为空,故将其删除
+
+        //将诗歌分行
+        for(var k = 0;k < tsLines.length;k++){
+            var pDom = document.createElement("p");//在网页中创建一个p对象,并赋值给pDom
+            pDom.textContent = tsLines[k];//往pDom中放诗的内容
+            conTent.appendChild(pDom);//往conTent中添加pDom的内容
+        }
+	}
+  </script>
+</html>
