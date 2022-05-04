@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>唐诗300首</title>
+    <style>
+        body {
+            font-family: serif;
+            text-align: center;
+            background-image: url("https://tse1-mm.cn.bing.net/th/id/R-C.fc789dbbc1993ff65ef4cd6fc35df50a?rik=baR%2ff5uqzJPIug&riu=http%3a%2f%2fpic.5tu.cn%2fuploads%2fallimg%2f2011%2fpic_5tu_big_2020110100842185350.jpg&ehk=ZFqSOrhjNnL4vebkeK9Va414ZZoVHQwRA5s32G7dQTA%3d&risl=&pid=ImgRaw&r=0");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        
+        h1 {
+            font-size: 50px;
+            color: rgb(253, 7, 130);
+        }
+        
+        p {
+            font-size: 35px;
+            white-space: pre-line;
+        }
+    </style>
+
+</head>
+
+<body>
+    <center>
+        <input type="button" id="p" value="上一首">
+        <input type="button" id="n" value="下一首">
+        <input type="button" id="c" value="随机一首">
+        <h1 id="bt"></h1>
+        <p id="sj"></p>
+    </center>
+    <script src="https://youzelian.github.io/ts300.js">
+    </script>
+    <script>
+        var i = 0;
+        var v = poem.match(/\d+/g);
+        var bt = document.querySelector("#bt");
+        var sj = document.querySelector("#sj");
+        var p = document.querySelector("#p");
+        var n = document.querySelector("#n");
+        var c = document.querySelector("#c");
+        var zsj = poem.substring(poem.search(v[i]), poem.search(v[i + 1]));
+        var enter = zsj.match("\n");
+        bt.textContent = zsj.substring(zsj.search(v[i]), zsj.search("\n"));
+        sj.textContent = poem.substring(poem.search(v[i]), poem.search(v[i + 1])).substring(zsj.search("\n"), poem.search(v[i + 1]));
+        c.onclick = function() {
+            i = Math.floor(Math.random() * (299 + 1 - 0) + 0);
+            var zsj = poem.substring(poem.search(v[i]), poem.search(v[i + 1]));
+            bt.textContent = zsj.substring(zsj.search(v[i]), zsj.search("\n"));
+            sj.textContent = poem.substring(poem.search(v[i]), poem.search(v[i + 1])).substring(zsj.search("\n"), poem.search(v[i + 1]));
+        }
+        n.onclick = function() {
+            i = i + 1;
+            if (i == 300) {
+                i = 0;
+            }
+            var zsj = poem.substring(poem.search(v[i]), poem.search(v[i + 1]));
+            bt.textContent = zsj.substring(zsj.search(v[i]), zsj.search("\n"));
+            sj.textContent = poem.substring(poem.search(v[i]), poem.search(v[i + 1])).substring(zsj.search("\n"), poem.search(v[i + 1]));
+
+        }
+        p.onclick = function() {
+            i = i - 1;
+            if (i == -1) {
+                i = 299;
+            }
+            var zsj = poem.substring(poem.search(v[i]), poem.search(v[i + 1]));
+            bt.textContent = zsj.substring(zsj.search(v[i]), zsj.search("\n"));
+            sj.textContent = poem.substring(poem.search(v[i]), poem.search(v[i + 1])).substring(zsj.search("\n"), poem.search(v[i + 1]));
+
+        }
+    </script>
+</body>
+
+</html>

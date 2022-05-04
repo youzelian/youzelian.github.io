@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第10次作业</title>
+    <script src="https://youzelian.github.io/ts300.js">
+    </script>
+    <style>
+        h1 {
+            font-size: 65px;
+        }
+        
+        p {
+            font-size: 40px;
+            white-space: pre-line;
+        }
+    </style>
+
+</head>
+
+<body>
+    <center>
+        <input type="button" id="p" value="上一首">
+        <input type="button" id="n" value="下一首">
+        <input type="button" id="c" value="抽一首">
+        <h1 id="bt"></h1>
+        <p id="sj"></p>
+    </center>
+
+    <script>
+        var i = 0;
+        var x;
+        var v = poem.match(/\d+/g);
+        var bt = document.querySelector("#bt");
+        var sj = document.querySelector("#sj");
+        var p = document.querySelector("#p");
+        var n = document.querySelector("#n");
+        var zsj = poem.substring(poem.search(v[i]), poem.search(v[i + 1]));
+        bt.textContent = zsj.substring(zsj.search(v[i]), zsj.search("\n"));
+        sj.textContent = poem.substring(poem.search(v[i]), poem.search(v[i + 1])).substring(zsj.search("\n"), poem.search(v[i + 1]));
+        var c = document.querySelector("#c");
+        c.onclick = function() {
+            alert("随机抽了一首!!!!");
+            x = Math.floor(Math.random() * (299 + 1 - 0) + 0);
+            var zsj = poem.substring(poem.search(v[x]), poem.search(v[x + 1]));
+            bt.textContent = zsj.substring(zsj.search(v[x]), zsj.search("\n"));
+            sj.textContent = poem.substring(poem.search(v[x]), poem.search(v[x + 1])).substring(zsj.search("\n"), poem.search(v[x + 1]));
+        }
+        n.onclick = function() {
+            i = i + 1;
+            if (i == 300) {
+                alert("已经到底了,跳回第一首!!!!!");
+                i = 0;
+            }
+            var zsj = poem.substring(poem.search(v[i]), poem.search(v[i + 1]));
+            bt.textContent = zsj.substring(zsj.search(v[i]), zsj.search("\n"));
+            sj.textContent = poem.substring(poem.search(v[i]), poem.search(v[i + 1])).substring(zsj.search("\n"), poem.search(v[i + 1]));
+        }
+        p.onclick = function() {
+            i = i - 1;
+            if (i == -1) {
+                alert("已经到顶了,跳回最后一首!!!!!");
+                i = 299;
+            }
+            var zsj = poem.substring(poem.search(v[i]), poem.search(v[i + 1]));
+            bt.textContent = zsj.substring(zsj.search(v[i]), zsj.search("\n"));
+            sj.textContent = poem.substring(poem.search(v[i]), poem.search(v[i + 1])).substring(zsj.search("\n"), poem.search(v[i + 1]));
+        }
+    </script>
+</body>
+
+</html>
