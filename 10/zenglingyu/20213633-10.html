@@ -2,38 +2,50 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <title>第九次作业</title>
-    <style>
-        body{
+  <title>20213633曾令昱</title>
+  <style>
+        input {            
+			width: 80px;
+            height: 80px;
+            margin: 0 20px;
+            border-radius: 45px;
+            cursor:pointer;
+			font-size: 25px;
+            box-shadow: 6px 6px 3px rgb(90,90,90);
+        }        
+        input:hover { 		    
+			box-shadow: 6px 6px 6px rgb(20,20,20);			
+        } 
+	    input:active { 
+		    border:outset;
+			box-shadow: 8px 8px 5px yellow;			
+        } 
+		h1 {            
+			margin: 20px;
+            font-size: 70px;
+            font-weight: 600px;
+            font-family: 华文新魏;
+        }
+		body {            
             text-align: center;
-            font-size:40px;
-            background-image:url("https://img2.baidu.com/it/u=3710349149,1572464631&fm=253&fmt=auto&app=138&f=JPEG?w=400&h=260");
-	        background-size:100% 100%;
-            background-attachment: fixed;
-            font-family: 仿宋;    
+            font-family: 楷体;
         }
-        
-        p{  
-            white-space:pre-wrap; 
-            line-height:80px;
-            margin: 0;
-            border:0;
-            padding:0;
+        h2 {
+            color:red;
+			margin: 20px;
+            font-size: 70px;
+            font-weight: 600px;
+            font-family: 华文新魏;
         }
-        h5{
-            font-size:60px;
-            height: 60px;
-            margin: 0;
+        p { 
+		    white-space: pre-line;
+			color:blue;
+            font-size: 25px;
+            font-family: 楷体;
+            line-height: 50px;
         }
-
-        input{
-            width: 80px;
-            height: 40px;
-            font-size: 20px;
-            border-radius: 10px;
-        }
-    </style>
-  <script src = "https://kongzhuoz.github.io/ts300.js">
+  </style>
+ <script src = "https://kongzhuoz.github.io/ts300.js">
 	
   </script>
  </head>
@@ -44,6 +56,7 @@
  </h1>
 
  <input type="button" value="上一首" id = "prev">
+ <input type="button" value="抽一首" id = "rand">
  <input type="button" value="下一首" id = "next">
 
  <h3 id = "tsTitle">
@@ -85,6 +98,7 @@
       
        var prevDom = document.getElementById("prev");
        var nextDom = document.getElementById("next");
+	   var randDom = document.getElementById("rand");
 
   prevDom.onclick = function(){
 	  if (i > 0)
@@ -93,7 +107,6 @@
 	  }else
 	  i = END - BEGIN -1;
 	  showTs(i);
-	  
   };
 
   nextDom.onclick = function(){
@@ -104,6 +117,11 @@
 	  i = 0;
 	  showTs(i);
   };
+  randDom.onclick = function(){
+	  i = Math.floor(Math.random()* (END - BEGIN) );
+	  // 返回 0 至 (END - BEGIN -1) 之间的数
+	  showTs(i);
+  }
   function showTs(){
 	  var tsTitleDom = document.getElementById("tsTitle");
 	  var tsContentDom = document.getElementById("tsContent");

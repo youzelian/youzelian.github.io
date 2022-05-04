@@ -2,7 +2,7 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <title>第九次作业</title>
+  <title>第十次作业</title>
     <style>
         body{
             text-align: center;
@@ -15,7 +15,6 @@
         
         p{  
             white-space:pre-wrap; 
-            line-height:80px;
             margin: 0;
             border:0;
             padding:0;
@@ -38,14 +37,15 @@
   </script>
  </head>
  <body>
-
+ 
  <h1>
  唐诗三百首
  </h1>
 
  <input type="button" value="上一首" id = "prev">
  <input type="button" value="下一首" id = "next">
-
+ <input type="button" value="点我" id = "demo">
+ <!-- 添加按钮 -->
  <h3 id = "tsTitle">
 
  </h3>
@@ -85,6 +85,7 @@
       
        var prevDom = document.getElementById("prev");
        var nextDom = document.getElementById("next");
+       var demoDom = document.getElementById("demo");
 
   prevDom.onclick = function(){
 	  if (i > 0)
@@ -104,13 +105,16 @@
 	  i = 0;
 	  showTs(i);
   };
+  demoDom.onclick = function(){
+	  i = Math.floor(Math.random() * (END-BEGIN));
+      showTs(i);
+  };
   function showTs(){
 	  var tsTitleDom = document.getElementById("tsTitle");
 	  var tsContentDom = document.getElementById("tsContent");
 		 tsTitleDom.textContent = tsTitle[i];
 		 tsContentDom.textContent = tsContent[i];
   }
-
   </script>
  </body>
 </html>

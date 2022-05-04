@@ -2,59 +2,53 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <title>第九次作业</title>
-    <style>
-        body{
-            text-align: center;
-            font-size:40px;
-            background-image:url("https://img2.baidu.com/it/u=3710349149,1572464631&fm=253&fmt=auto&app=138&f=JPEG?w=400&h=260");
-	        background-size:100% 100%;
-            background-attachment: fixed;
-            font-family: 仿宋;    
+  <title>20213631-10曾阳林</title>
+  <style type="text/css">
+    * {
+    margin: 0;
+    padding: 0;
         }
-        
-        p{  
-            white-space:pre-wrap; 
-            line-height:80px;
-            margin: 0;
-            border:0;
-            padding:0;
+	body{
+	text-align: center;
+	color:blue;
+	background-color:#aaa;
+	}
+	h1{
+	font:50px 楷体;
+	}
+	p {
+    font: 33px 楷体;
+	white-space: pre-line;#要求换行
         }
-        h5{
-            font-size:60px;
-            height: 60px;
-            margin: 0;
+	input {
+	width: 200px;
+    height: 60px;
+    font-size: 36px;
+    border-radius:100px;
+	border:2px solid white;
+	background-color:red;
+	box-shadow:5px 5px gray;
         }
+  </style>
+ <script src="http://lijianhong19720904.github.io/ts300.js">
 
-        input{
-            width: 80px;
-            height: 40px;
-            font-size: 20px;
-            border-radius: 10px;
-        }
-    </style>
-  <script src = "https://kongzhuoz.github.io/ts300.js">
-	
-  </script>
+ </script>
  </head>
  <body>
 
- <h1>
- 唐诗三百首
- </h1>
-
  <input type="button" value="上一首" id = "prev">
  <input type="button" value="下一首" id = "next">
+ <input type="button" value="抽一首" id = "ran">
+ <h1 id = "tsTitle">
 
- <h3 id = "tsTitle">
-
- </h3>
+ </h1>
 
  <p id = "tsContent">
 
  </p>
 
   <script type="text/javascript">
+     
 	var ts = [] ,
 		tsTitle = [] ,
 		tsContent = [] ;
@@ -69,7 +63,7 @@
 		p1 = ts300.search(i + BEGIN) ;
 		p2 = ts300.search(i + 1 + BEGIN) ;
 		ts[i] = ts300.substring(p1,p2) ;
-	}
+	}/*substring截取字符串*/
 	for (i =0 ; i < ts.length ; i++ ){
 		if (i<90){
 			p1 = 2 ;
@@ -85,7 +79,7 @@
       
        var prevDom = document.getElementById("prev");
        var nextDom = document.getElementById("next");
-
+       var ranDom=document.getElementById("ran");
   prevDom.onclick = function(){
 	  if (i > 0)
 	  {
@@ -104,13 +98,17 @@
 	  i = 0;
 	  showTs(i);
   };
+  ranDom.onclick = function(){
+  i= Math.floor(Math.random()*END-BEGIN);
+  showTs(i);
+  };
   function showTs(){
 	  var tsTitleDom = document.getElementById("tsTitle");
 	  var tsContentDom = document.getElementById("tsContent");
 		 tsTitleDom.textContent = tsTitle[i];
 		 tsContentDom.textContent = tsContent[i];
   }
-
+ 
   </script>
  </body>
 </html>

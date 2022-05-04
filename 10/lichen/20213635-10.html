@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>20213635-10-</title>
+   <style type="text/css">
+    * {
+    margin: 0;
+    padding: 0;
+        }
+	body{
+	 background-color: #e1c7c0;
+            text-align: center;
+	}
+	h1{
+	font:500 85px 楷体, 微软雅黑;
+	color:red;
+	}
+	h3{
+	font:500 50px 楷体, 微软雅黑;
+	}
+	p {
+    font: 33px/45px 楷体, 微软雅黑;
+	white-space: pre-line;
+        }
+	input {
+	width: 70px;
+    height: 60px;
+    font-size: 18px;
+    border-radius: 30px;
+	background-color:blue;
+	color:white;
+        }
+  </style>
+  <script src="https://kongzhuoz.github.io/ts300.js" >
+  </script>
+ </head>
+ <body>
+  <h1>
+  唐诗三百首
+  </h1>
+
+	<input type="button" value="上一页" id="prev">
+	<input type="button" value="下一页"  id="next">
+	<input type="button" value="抽一首" id="rand">
+
+
+<h2 id=tsTitle>
+</h2>
+<p id=tsContent>
+</p>
+
+<script type="text/javascript">
+var ts =[],
+    tsTitle = [],
+    tsContent =[] ;
+
+var BEGIN=10,
+    END=320,
+    i,
+	p1,
+	p2;
+
+
+	for (i = 0 ; i < END - BEGIN ; i++ ){
+		p1 = ts300.search(i + BEGIN) ;
+		p2 = ts300.search(i + 1 + BEGIN) ;
+		ts[i] = ts300.substring(p1,p2) ;
+	}
+	for (i =0 ; i < ts.length ; i++ ){
+		if (i<90){
+			p1 = 2 ;
+		}else
+		p1 = 3;
+		p2 = ts[i].search("\n") ;
+		tsTitle[i] = ts[i].substring(p1,p2) ;
+		tsContent[i] = ts[i].substring(p2) ;
+	}
+
+
+//分离内容
+for (i=0;i<ts.length;i++){
+  p1=3;
+  p2=ts[i].search("\n");
+  tsTitle[i]=ts[i].substring(p1,p2);
+  tsContent[i]=ts[i].substring(p2);
+}
+//dom
+i=0;
+showTs(i);
+
+ var prevDom=document.getElementById("prev");
+ var nextDom=document.getElementById("next");
+ var randDom=document.getElementById("rand");
+
+prevDom.onclick=function(){
+if (i>0){
+	i--;
+}else{ 
+   i= tsTitle.length-1;
+  }
+  showTs(i);
+};
+nextDom.onclick=function(){
+if (i<tsTitle.length-1){
+	i++;
+}else{
+   i=0;
+  }
+  showTs(i);
+};
+ randDom.onclick = function(){
+	  i = Math.floor(Math.random()* (END - BEGIN) );
+	  // 返回 0 至 (END - BEGIN -1) 之间的数
+	  showTs(i);
+  }
+function showTs(i){
+var tsTitleDom = document.getElementById("tsTitle");
+var tsContentDom = document.getElementById("tsContent");
+ tsTitleDom.textContent =tsTitle[i];
+tsContentDom.textContent =tsContent[i];
+
+}
+
+// -->
+</script>
+ </body>
+</html>
