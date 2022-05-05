@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>20213619</title>
+  <style type="text/css">
+  
+  *{
+     text-align: center; 
+  }
+  body{
+	 font-style: 50px;
+      }
+  p{
+     font-size:70px;
+     color: red;
+     margin: auto;
+   }
+  h1,p{font-size:2em;}
+   input{
+	   font-size:2em;
+	   border-radius:15%;
+	   margin:0 1em;
+	   box-shadow:4px 4px rgb(150,150,150);
+	   cursor: pointer ;
+	   color:blue;
+   }
+   input:hover{
+         box-shadow:8px 8px rgb(200,200,200) ;
+		 border:outset;
+   }
+   input:active{
+         box-shadow:8px 8px rgb(150,150,150) ;
+		 border:inset ;
+   }
+   div#ts{
+         border:1px solid blue ;  
+   }
+  </style>
+  <script src="https://lijianhong19720904.github.io/ts300.js">
+  //引入全局变量
+  </script>
+ </head>
+ <body>
+  <input type="button" value="上一首" id="prev">
+  <input type="button" value="下一首" id="next">
+  <h1 id = "tsTitle">
+  </h1>
+  <p id = "tsContent">
+  </p>
+  <script type="text/javascript">
+  <!--
+     var ts = [] ,
+	     tsTitle=[] ,
+		 tsContent = [] ;
+	//定义古诗数组，标题和古诗内容
+	 var BEGIN = 10 ,
+	     END = 320 ,
+		 i ,
+		 p1 ,
+		 p2 ;
+	//定义古诗开始和结尾。i作为变量。
+	for (i=BEGIN ; i < END ; i++ )
+	{ 
+		p1 = ts300.search(toString(i)) ;
+		p2 = ts300.search(toString(i+1)) ;
+		if (p1 !== -1 && p2 !==-1)
+		{
+		ts[i-BEGIN] = ts300.substring(p1,p2) ;
+		}
+	}
+	ts[ts.length-1] = ts300.substring(p2);//最后一首诗
+
+	function toString(i)
+	//入口参数i是二，三位数值型，函数返回为字符型，并且对不足三位的前面加0字符
+	{ 
+		if (i<100)
+		{
+			return'0'+i    ;
+		}
+		else
+		{
+			return i + '';
+		}
+	}//利用js的+运算，吧数字加字符，转换为字符
+	console.log(ts.length);
+	 for (i=0 ; i <ts.length ; i++ ){
+	     if (ts[i]=== undefined)
+	     { 
+			 console.log('undefined:'+i);//解决undefined的元素
+	     }
+	 }
+     //清除ts数组的164和165下标的元素
+	 ts[164] = ts[ts.length-1] ;
+	 ts.pop();
+	 ts[165] = ts[ts.length-1] ;
+	 ts.pop();
+	 console.log(ts.length);
+	 for (i=0 ; i <ts.length ; i++ ){
+		 if (ts[i].length>1000)
+		 {
+			 console.log(i+ ts[i]);
+		 }
+	 }
+
+
+	 //分离诗歌标题和内容
+	 for (i=0 ; i <ts.length ; i++ )
+	 {
+		 p1 = 3 ;
+		 p2 = ts[i].search("\n") ;
+		 tsTitle[i]= ts[i].substring(p1,p2) ;
+		 tsContent[i]= ts[i].substring(p2) ;
+	 }//分离诗歌标题和内容
+
+
+
+	 i=0 ;
+	 showTs(i) ;
+  //-->
+     //定义标题和内容
+     var tsTitleDom =document.getElementById("tsTitle") ;
+	 var tsContentDom =document.getElementById("tsContent") ;
+	 //定义上一首，下一首按键
+     var prevDom = document.getElementById("prev") ;
+     var nextDom = document.getElementById("next") ;
+	 prevDom.onclick = function()
+	 {
+		 if (i > 0)
+	  {
+		 i--;
+	  }
+	  else
+	  {
+         i=tsTitle.length-1;
+	  }
+		 showTs(i);
+	 };
+     nextDom.onclick = function()
+	 {
+     if (i < tsTitle.length-1)
+	  {
+		 i++;
+	  }
+	  else
+	  {
+		  i = 0;
+	  }
+	   showTs(i);
+	 };
+
+
+	 //定义功能show，分开标题和内容
+     function showTs(i)
+	 {
+		 var tsTitleDom =document.getElementById("tsTitle") ;
+	     var tsContentDom =document.getElementById("tsContent") ;
+		 tsTitleDom.textContent = tsTitle[i] ;
+		 tsContentDom.textContent = tsContent[i] ;
+	 }
+  </script>
+ </body>
+</html>
+

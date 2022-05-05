@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>20213622Web作业</title>
+  <style type="text/css">
+  body{
+     text-align: center;
+	 font-style: 50px;
+      }
+  p{ font-family:"楷体";
+     font-size:100px;
+     color: black;
+     text-align: center; 
+     margin: auto;
+   }
+  h1,p{font-size:2em;
+       font-family:"宋体";}
+   input{
+	   font-size:2em;
+	   border-radius:15%;
+	   margin:0 1em;
+	   box-shadow:4px 4px rgb(150,150,150);
+	   cursor: pointer ;
+	   color:blue;
+   }
+   input:hover{
+         box-shadow:8px 8px rgb(100,100,100) ;
+		 border:outset;
+   }
+   input:active{
+         box-shadow:8px 8px rgb(100,100,100) ;
+		 border:inset ;
+   }
+   div#ts{
+         border:1px solid blue ;  
+   }
+  </style>
+  <script src="https://lijianhong19720904.github.io/ts300.js">//引入全局变量
+  </script>
+ </head>
+ <body>
+  <input type="button" value="上一首" id="prev">
+  <input type="button" value="下一首" id="next">
+  <h1 id = "tsTitle">
+  </h1>
+  <p id = "tsContent">
+  </p>
+  <script type="text/javascript">
+  <!--
+     var ts = [] ,
+	     tsTitle=[] ,
+		 tsContent = [] ;//引入全局变量
+	 var BEGIN = 10 ,
+	     END = 320 ,
+		 i ,
+		 p1 ,
+		 p2 ;
+	for (i=BEGIN ; i < END ; i++ )
+	{ 
+		p1 = ts300.search(toString(i)) ;
+		p2 = ts300.search(toString(i+1)) ;
+		if (p1 !== -1 && p2 !==-1)
+		{
+		ts[i-BEGIN] = ts300.substring(p1,p2) ;
+		}
+	}//结束
+	ts[ts.length-1] = ts300.substring(p2);
+	function toString(i)
+	{ 
+		if (i<100)
+		{
+			return'0'+i    ;
+		}
+		else
+		{
+			return i + '';
+		}
+	}//将数字加字符转化为字符
+	console.log(ts.length);
+	//让唐诗在数组中
+	 for (i=0 ; i <ts.length ; i++ ){
+	     if (ts[i]=== undefined)
+	     { 
+			 console.log('undefined:'+i);
+			 //解决undefined的元素
+	     }
+	 }
+	 ts[164] = ts[ts.length-1] ;
+	 ts.pop();
+	 ts[165] = ts[ts.length-1] ;
+	 ts.pop();
+	 console.log(ts.length);
+	 for (i=0 ; i <ts.length ; i++ ){
+		 if (ts[i].length>1000)
+		 {
+			 console.log(i+ ts[i]);
+		 }
+	 }
+	 for (i=0 ; i <ts.length ; i++ )
+	 {
+		 p1 = 3 ;
+		 p2 = ts[i].search("\n") ;
+		 tsTitle[i]= ts[i].substring(p1,p2) ;
+		 tsContent[i]= ts[i].substring(p2) ;
+	 }//分离诗歌标题和内容
+	 //dom控制代码
+	 i=0 ;
+	 showTs(i) ;
+  //-->
+     var tsTitleDom =document.getElementById("tsTitle") ;
+	 var tsContentDom =document.getElementById("tsContent") ;
+     var prevDom = document.getElementById("prev") ;
+     var nextDom = document.getElementById("next") ;
+	 prevDom.onclick = function()
+	 {
+		 if (i > 0)
+	  {
+		 i--;
+	  }
+	  else
+	  {
+         i=tsTitle.length-1;
+	  }
+		 showTs(i);
+	 };
+     nextDom.onclick = function()
+	 {
+     if (i < tsTitle.length-1)
+	  {
+		 i++;
+	  }
+	  else
+	  {
+		  i = 0;
+	  }
+	   showTs(i);
+	 };
+     function showTs(i)
+	 {
+		 var tsTitleDom =document.getElementById("tsTitle") ;
+	     var tsContentDom =document.getElementById("tsContent") ;
+		 tsTitleDom.textContent = tsTitle[i] ;
+		 tsContentDom.textContent = tsContent[i] ;
+	 }
+  </script>
+ </body>
+</html>
+
