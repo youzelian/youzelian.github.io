@@ -6,7 +6,7 @@
   <meta name="Author" content="">
   <meta name="Keywords" content="">
   <meta name="Description" content="">
-  <title>第十次作业</title>
+  <title>第十一次作业</title>
 <style>
 body{
      text-align:center;/*控制页面主题，字体居中*/
@@ -49,7 +49,7 @@ var ts300=" ";
 <html>
 <body bgcolor=Silver>			<!--背景颜色控制-->
 <input type ="button" value="上一首" id="prev">			<!--设置开关-->
-<input type="button" value="抽一首" id="rand">
+<input type ="button" value="抽一首" id="rand">
 <input type ="button" value="下一首" id="next">
 <p id="tsTitle">		<!--将唐诗的标题与p关联-->
 </p>
@@ -107,7 +107,7 @@ prevDom.onclick=function(){					//诗句反向衔接.onclick是按钮的属性
 		showTs(i);
 }
 randDom.onclick=function(){
-		var rand=Math.random()*(tsTitle.length+1);//取tsTitle,length+1中的随机数
+		var rand=Math.random()*(tsTitle.length+1);//取tsTitle.length+1中的随机数
 		i=Math.floor(rand);//获取一个数的整数部分
 		showTs(i);
 }
@@ -122,12 +122,24 @@ nextDom.onclick=function(){				//	诗句正向衔接
 		i++;
 		showTs(i);
 }
-function showTs(i){			
+function showTs(i){	
+	console.log('第'+(i+1)+'首');
 	var tsTitleDom=document.getElementById("tsTitle");
 	var tsContentDom=document.getElementById("tsContent");
 		tsTitleDom.textContent=tsTitle[i];
-		tsContentDom.textContent=tsContent[i];
+		var tsLines=[];
+		tsLines=tsContent[i].split("\n");
+		tsLines.shift();
+		tsLines.pop();
+		tsContentDom.textContent="";
+		for (var i=0;i<tsLines.length ;i++ ){
+			var h1Dom=document.createElement('h1');
+			h1Dom.textContent=tsLines[i];
+			tsContentDom.appendChild(h1Dom);
+
+		}
 		}
 </script>  
 </body>
 </html>
+

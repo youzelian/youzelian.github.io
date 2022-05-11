@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>2021358211</title>
+  <style type="text/css">
+	body
+	{
+		text-align:center;
+	}
+	h1
+	{
+		font-size:60px;
+		font-family:华文新魏,黑体;
+		color:red;
+		/*text-shadow:6px 2px 6px rgba(255,48,48,0.5);/*设置阴影,依次为水平 垂直 模糊距离 颜色*/
+	}
+	input
+	{
+		border:outset 2px solid;
+		width:70px;
+		height:50px;
+		margin:7px;
+		font-size:22px;
+		background-color:rgb(150,230,180);
+		border-radius:10px;/*方框弧度*/
+		cursor:pointer;
+	}
+	input:hover
+	{
+		background-color:rgb(250,150,150);
+	}/*鼠标放上去的样子*/
+	input:active
+	{
+		color:rgba(100,100,250,0.7);
+		border:inset 2px solid;
+	}/*鼠标点击时的样子*/
+	input#content
+	{
+		display:block;
+		width:315px;
+		height:45px;
+		color:blue;
+		margin:auto;
+	}
+
+  </style>
+ </head>
+ <body>
+  <h1>计算器</h1>
+  <input type="text" value="" id="content" ><!--放置一个文本框 -->
+  <script type="text/javascript">
+	var fuhao = 
+	['+','-','*','/','.','0','1','2','3','4','5','6','7','8','9','<-','AC','Enter'];
+	for (var i = 0 ; i < fuhao.length/4 ; i++ )//把数组分成5行
+	{
+		var div = document.createElement('div');//在内存中创建div元素
+		for (var j = 0; j < 4 ; j++ )//每行放4个按钮（每个div中放四个按钮）
+		{
+			if (i*4+j < fuhao.length)//判断是否到数组尾部
+			{
+				var input = document.createElement('input');//在内存中创建一个元素
+					input.type = "button";//该元素类型为按钮
+					input.value = fuhao[i*4+j];
+					input.onclick = function(){ 
+						content.value += this.value ; 
+						};//点击按钮将按钮内容放于文本框中
+				div.appendChild(input);//将按钮放于创建的div中
+			}
+			
+		}
+		document.body.appendChild(div);//将div全部放于body中
+	}
+    var inputs = document.querySelectorAll('input');
+	    inputs[inputs.length -1].style.width = '200px';//对最后一个按钮设置宽度 
+		inputs[inputs.length -2].style.width = '105px';
+	    inputs[inputs.length -3].onclick = function(){ 
+		 var s = content.value ;   
+		     s = s.substring(0, s.length - 1);  
+		     content.value = s ; 
+			}; //倒数第三个按钮实现逐个删除
+		inputs[inputs.length-2].onclick = function(){
+			content.value = '';
+			};//倒数第二个清空内容
+		inputs[inputs.length -1].onclick = function(){  
+			var result ;   
+			try {  result = eval(content.value) ; } 
+			catch (err) {    result = err ; }  
+			content.value = result ;
+			}; //最后一个按钮实现计算	
+	</script> 
+   </body>
+ </html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>第十一次作业</title>
+  <style>
+	input{
+		border:outset 2px solid;/*outset指3D外嵌边框，颜色较浅；solid指无实线*/
+		border-radius:20px;/*实线圆角边框*/
+		width:100px;
+		height:90px;
+		font-size:60px;
+		text-align:center;
+		margin:10px;
+		color:rgb(30,144,255);
+		background-color:rgb(220,220,220);
+		cursor:pointer;		/*这个是让计算机光标呈现为指示链接的指针（一只手）*/
+	}
+
+	input:hover{
+		background-color:rgb(190,190,190);/*鼠标放在按钮上的变化*/
+	}
+	input:active{				/*鼠标按下的变化*/
+		color:rgb(250,250,250);
+		border:inset 2px solid;/*inset指3D内嵌边框，颜色较深*/
+	}
+	input#output{
+		display:block;/*指定对象为块元素*/
+		width:500px;
+	}
+	h1
+	{
+	font-size:70px;
+    font-family:黑体;
+    color:green;
+    text-shadow:0px 5px 5px gray;
+	}
+</style>
+ </head>
+ <html>
+ <body bgcolor=Silver>
+ <h1>
+ 计算器
+ </h1>
+ <input type="text" value="" id="output"><!--input 标签的 value 属性的作用是由 input 标签的 type 属性的值决定的。当 type 的取值为 button、reset、submit 中的其中一个时，此时 value 属性的值表示的是按钮上显示的文本。当 type 的取值为 text、password、hidden 中的其中一个时，此时 value 属性的值表示的是输入框中显示的初始值，此初始值可以更改，并且在提交表单时，value 属性的值会发送给服务器（既是初始值，也是提交给服务器的值）。当 type 的取值为 checkbox、radio 中的其中一个时，此时 value 属性的值表示的是提交给服务器的值。当 type 的取值为 image 时，点击它提交表单后，会将用户的点击位置相对于图像左上角的 x 坐标和 y 坐标提交给服务器-->
+  <script type="text/javascript">
+  var SYMBOL=['+','-','*','/','0','1','2','3','4','5','6','7','8','9','<-','enter'];//定义数组
+  for (var i=0;i<SYMBOL.length/4 ;i++ ){	//限定了选取的元素个数
+	  var div=document.createElement('div');//创造div这个节点元素，并赋值给div这个内存变量
+		for (var j=0;j<4 ;j++ ){
+			if (i*4+j<SYMBOL.length)
+			{
+				var input=document.createElement('input');
+					input.type="button";
+					input.value=SYMBOL[i*4+j];
+				input.onclick=function(){
+					output.value+=this.value;
+				};
+				div.appendChild(input);//向div里面添加一个input
+			}
+		}
+		document.body.appendChild(div);//向body中添加一个div
+  }
+  var inputs=document.querySelectorAll('input');
+  inputs[inputs.length-1].style.width='200px';
+  inputs[inputs.length-2].onclick=function(){
+												var s=output.value;
+												s=s.substring(0,s.length-1);
+												output.value=s;
+												};
+  inputs[inputs.length-1].onclick=function(){
+												var s=output.value;
+												var result;
+												try{
+													result=eval(s);
+													}
+												catch(err){result=err;};
+												output.value=result;};
+  </script>
+  <marquee direction="left" scrolldelay="90" scrollamount="5" loop="0"style="position:absolute;" id="Marquee1">
+<span style="color:white;font-family:仿朱;font-size:60px;">
+ 太难了
+ </span>
+ </marquee>
+ </body>
+</html>
