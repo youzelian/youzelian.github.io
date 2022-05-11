@@ -67,12 +67,15 @@
     var p1;
     var p2;
 
+    //用search方法找地址，并用substring截取子字符串
     for(i=begin;i<end;i++){
         p1=ts300.search(lkhdsg(i));
         p2=ts300.search(lkhdsg(i+1));
         ts[i]=ts300.substring(p1, p2);
     }
     ts[320]="320杜秋娘：金缕衣\n劝君莫惜金缕衣，劝君惜取少年时。\n花开堪折直须折，莫待无花空折枝！\n  ;";
+    
+    //将i传入，在i前加个0并转化为字符串输出，解决前100首诗无法search的问题
     function lkhdsg(i){
         if(i<100){
             return "0"+i;
@@ -81,15 +84,15 @@
             return ""+i;
         }
     }
-    console.log(ts.length);
 
+    console.log(ts.length);//没什么用
     for(i=begin;i<ts.length;i++){
         if(ts[i]===undefined){
             console.log("undefined:"+i);
         }
     }
 
-
+    //将标题与诗歌分开
     for(i=begin;i<=end;i++){
         tstitle[i]=ts[i].substring(3,ts[i].search("\n"));
         tsbody[i]=ts[i].substring(ts[i].search("\n"),ts.length-1);
@@ -100,6 +103,7 @@
     p.textContent=tsbody[10];
     h5.textContent=tstitle[10];
 
+    //
     function showts(num){
         var element,
         pElements = document.getElementsByTagName('p');

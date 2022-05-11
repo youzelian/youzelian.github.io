@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>第11次</title>
+	<meta charset="utf-8"/>
+	<style type="text/css">
+		#is{height: 166px;}
+		.butt{
+			height:52px;
+			width: 60px;
+			background: #ff00ff;
+			border-width: 0;
+			cursor: pointer;
+			color: white;
+			font-size: 30px;
+			border-color: blue;}
+		#end{
+			font-size: 40px;
+			max-width: 316px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;}
+	</style>
+</head>
+<body>
+	<table border="5px" align="center">
+		<tr height="80px"><td width="312px"><div id="end"></div></td></tr>
+	</table>
+	<table border="5px" cellspacing="0" align="center" onclick="show()">	
+		<tr height="54px">
+			<td><button class="butt">7</button></td>
+			<td><button class="butt">8</button></td>
+			<td><button class="butt">9</button></td>
+			<td><button class="butt">+</button></td>
+			<td><button class="butt" onclick="clearly()">C</button></td>
+		</tr>
+		<tr height="54px">
+			<td><button class="butt">4</button></td>
+			<td><button class="butt">5</button></td>
+			<td><button class="butt">6</button></td>
+			<td><button class="butt">-</button></td>
+			<td rowspan="3">
+				<button class="butt" id="is" onclick="Calculate()">=</button>
+			</td>
+		</tr>
+		<tr height="54px">
+			<td><button class="butt">1</button></td>
+			<td><button class="butt">2</button></td>
+			<td><button class="butt">3</button></td>
+			<td><button class="butt">*</button></td>
+		</tr>
+		<tr height="54px">
+			<td><button class="butt">0</button></td>
+			<td><button class="butt">.</button></td>
+			<td><button class="butt">00</button></td>
+			<td><button class="butt">/</button></td>
+		</tr>
+	</table>
+</body>
+</html>
+

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第十一次作业</title>
+    <style>
+        body{
+            text-align: center;
+        }
+
+        P{
+            color: aliceblue;
+        }
+
+        h1{
+            font-size:50px;
+            color: rgb(77, 32, 32)
+        }
+        input{
+            cursor: pointer;
+            font-size: 50px;
+            width: 75px;
+            height: 75px;
+            border-radius: 37.5px;
+            margin: 5px;
+            background-color: rgb(68, 57, 57);
+            color: aliceblue;
+        }
+        input:active{
+            transform: scale(0.97);
+        }
+
+        #num{
+            text-align: center;
+            border:2px solid white; 
+            width: 320px;
+            height: 75px;
+            margin: auto;
+            background-color: black;
+        }
+      
+    </style>
+</head>
+<body>
+    <h1>简易在线计算器</h1>
+    <div id="screen">
+        <input type="text" name="num" id="num">
+    </div>
+
+</body>
+<script>
+    var p=document.querySelector("P");
+    var keyboard=["C","B","(",")","7","8","9","+","4","5","6","-","1","2","3","*",".","0","/","="];
+    var boardname=['C','B','KUOHAO1','KUOHOA2','SEVEN','EIGHT','NINE','JIA','FOUR','FIVE','SXI','JIAN','ONE','TWO','THREE',
+'CHENG','DIAN','ZERO','CHU','ENTRE'];
+    for(var i=0;i<keyboard.length/4;i++){
+        var div=document.createElement("div");
+            for(var j=0;j<4;j++){
+                if(i*4+j<keyboard.length){
+                    var input=document.createElement("input");
+                    input.type="button";
+                    input.value=keyboard[i*4+j];
+                    input.id=boardname[i*4+j];
+                    div.appendChild(input);
+                    input.onclick=function(){
+                        num.value += this.value;
+                    }
+                }
+            }
+        document.body.appendChild(div);
+    }
+
+    C.onclick=function(){
+        num.value="";
+    }
+
+    B.onclick=function(){
+        var lkhdsg=num.value
+        num.value=lkhdsg.substring(0,lkhdsg.length-1)
+    }
+
+    ENTER.onclick=function(){
+        
+    }
+    
+
+
+   
+</script>
+</html>
