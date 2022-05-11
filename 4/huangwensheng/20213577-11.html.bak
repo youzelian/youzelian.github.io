@@ -1,0 +1,62 @@
+
+<!doctype html>
+<html lang="en"> 
+<head> <meta charset="UTF-8">
+<title>我的计算器</title> <style type="text/css"> 
+  input{  border:outset 2px solid ; 
+  border-radius:10px; 
+  width:50px;
+  height:50px;
+  font-size:40px;
+  text-align:center;
+  margin:10px; 
+  color:rgb(50,250,0);
+  background-color:rgb(100,100,100);
+  cursor:pointer; } 
+   input:hover{  
+   background-color:rgb(190,190,190); 
+   } 
+   input:active{  
+    color:rgb(250,250,250);
+	border:inset 2px solid ;
+	}
+   input#output{  
+   display:block; width:280px; 
+   } </style>
+</head> 
+ <body>
+  <h1>用用我的计算器</h1>
+ <!--input元素的text 类型创建基础的单行文本框,这就是为什么计算机点击按钮有文本框显示内容-->
+    <input type="text" value="" id= "output" > 
+	 <script>
+	 //16个按钮
+	 var SYMBOL = ['+','-','*','/','.','0','1','2','3','4','5','6','7','8','9','<-','Enter']; 
+	//抓取 input
+	 var output = document.querySelector('input#output') ;
+	 //确认每行只有四个按钮
+	 for (var i=0; i < SYMBOL.length / 4; i++){
+		 //向页面中创造4个div盒子这个元素
+		 var div = document.createElement('div') ; 
+	       for (var j=0; j<4; j++ ){ 
+			   //j指的就是1到16个字符按钮
+			   if (i * 4 + j < SYMBOL.length) {  
+				   //定义input并向页面中创造16个input
+				   var input = document.createElement('input') ;  
+				   //定义input的属性为按钮
+				   input.type = "button" ;  
+				   //将SYMBOL数组中的字符变为input在页面中显示的内容。例如SYMBOL[0]="+"
+				   input.value = SYMBOL[i * 4 + j] ; 
+					//点击后text即文本框将写入点击的按钮的数值，this.value应该是点击的按钮的数值
+				   input.onclick = function(){ 
+					   output.value += this.value ; 
+					   }; 
+					   //把input内容写入div，这样div和input就存在父子关系
+					   div.appendChild(input) ;   
+				   }  
+				   } 
+				   //body的appendchild是为了将div中的内容显示在body中，即实现内存内容变成页面内容。
+				   document.body.appendChild(div) ;  
+				   } 				   
+    </script>
+ </body>
+</html>

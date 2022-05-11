@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"> 
+<head> <meta charset="UTF-8">
+<title>我的计算器</title> <style type="text/css"> 
+  input{  border:outset 2px solid ; 
+  border-radius:10px; 
+  width:50px;
+  height:50px;
+  font-size:40px;
+  text-align:center;
+  margin:10px; 
+  cursor:pointer; } 
+   input:hover{  
+   background-color:red; 
+   } 
+   input:active{  
+    color:blue;
+	border:inset 2px solid ;
+	}
+   input#output{  
+   display:block; width:280px; 
+   } </style>
+</head> 
+ <body>
+  <h1>用用我的计算器</h1>
+ <!--input元素的text 类型创建基础的单行文本框,这就是为什么计算机点击按钮有文本框显示内容-->
+    <input type="text" value="" id= "output" > 
+	 <script>
+	
+	 var SYMBOL = ['+','-','*','/','.','0','1','2','3','4','5','6','7','8','9','<-','Enter']; 
+	 var output = document.querySelector('input#output') ; 
+	 for (var i=0; i < SYMBOL.length / 4; i++){	
+		 var div = document.createElement('div') ; 
+	       for (var j=0; j<4; j++ ){  
+			   if (i * 4 + j < SYMBOL.length) {  	
+				   var input = document.createElement('input') ;  
+				   input.type = "button" ;  
+				   input.value = SYMBOL[i * 4 + j] ;
+				   input.onclick = function(){ 
+					   output.value += this.value ; 
+					   }; 
+					   div.appendChild(input) ;   
+				   }  
+				   } 
+				   document.body.appendChild(div) ;  
+				   } 				   
+    </script>
+ </body>
+</html>
