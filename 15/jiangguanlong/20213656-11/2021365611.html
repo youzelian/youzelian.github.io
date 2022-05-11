@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>计算器</title>
+        <style>
+            body{
+                background-color: azure;
+            }
+            input{
+                background: rgb(255, 255, 255);
+
+            }
+            input:hover{
+                background-color: rgb(227, 222, 222);
+                
+            }
+            #anniu{
+                width: 100px;
+                height: 50px;
+                font-size: 25px;
+                line-height: 50px;
+            }
+            #output{
+                width: 392px;
+                height: 100px;
+                text-align: right;
+                font-size: 60px;
+            }
+        </style>
+        
+        <script>
+            var symbol=['%','CE','C','<-','1/x','X2','√2','÷','7','8','9','×','4','5','6','-','1','2','3','＋','+/-','0','.','='];
+        </script>
+    </head>
+    <body>
+        <h1>用用我的计算器</h1>
+        <input type="text" id="output" value="0">
+        <script>
+            var output=document.getElementById("output");
+            
+            for(var i=0;i<symbol.length/4;i++){
+                var line=document.createElement("div");
+                for(var j=0;j<4;j++){
+                    var bt=document.createElement("input");
+                    bt.type="button";
+                    bt.id="anniu";
+                    bt.value=symbol[i*4+j];
+                    
+                    bt.onclick=function(){
+                    output.value=bt.value;
+                    
+                }
+
+                    line.appendChild(bt);
+                   
+                    
+
+                    
+                }
+                document.body.appendChild(line);
+                
+            }
+
+
+           
+            
+        </script>
+    </body>
+</html>

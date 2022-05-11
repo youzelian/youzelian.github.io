@@ -20,8 +20,7 @@
             color: rgb(246, 170, 77);
             text-align: center;
             font-size: 40px;
-            width: 12em;
-            margin-left: 500px;
+            
         }
 
         div input {
@@ -73,11 +72,14 @@
             p2 = ts300.search(tostring(i + 1));
             if (p1 != -1 && p2 != -1) {
                 ts[i] = ts300.substring(p1, p2);
+            
+           
             }
-            ts[i]=ts300.substring(p1);
+            
+        }
+        // ts[i]=ts300.substring(p1);
 
-
-        };
+        
 
         function tostring(i) {
             if (i < 100) {
@@ -114,9 +116,17 @@
             var tt = document.getElementById("tt");
             var ct = document.getElementById("ct");
             var random = document.getElementById("random");
-            var abc=document.createElement("p");
+            
             tt.textContent = tit[i];
-            ct.textContent = con[i];
+            ct.textContent = "";
+
+            var tslines=[];
+            tslines=con[i].split("\n");
+            for(j=0;j<=tslines.length;j++){
+                var pp=document.createElement("p");
+                pp.textContent=tslines[j];
+                ct.appendChild(pp);
+            }
             
 
         }
