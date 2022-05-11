@@ -4,51 +4,29 @@
     <meta charset="UTF-8">
     <title>唐诗三百首</title>
     <style type="text/css">
-        body{
-          margin: 0;
-          padding: 0;/*清除浏览器默认内外边距*/
-          background-color: #cdccb2;
-          text-align: center;
-          font-size: 16px;
+      body
+        {
+            background-color: rgba(0,250,250,0.2);
+            font-size:20px;
+          margin:auto;
+            text-align: center;
+            width: 450px;
         }
-        #tsTitle{
-          font-family: 楷体;
-          font-size: 3em;
+        h1
+        {
+            font-size:2em;
         }
-        #tsContent{
-          font-size: 2em;
-          font-family: 宋体;
-          white-space: pre-line;/* 使浏览器能识别代码中的换行符并进行换行 */
-          margin: auto ;
+        p
+        {
+            font-size: 1.8em;
+            font-family: 仿宋;
+        }
+      input{
+            font-size:1.5em;
+            border-radius: 2.0em;
           }
-        input{
-          margin: 1em 0.5em 1em;
-          font-size: 1.5em;
-          border-radius: 1em;/* 使按钮呈现圆角 */
-          box-shadow: 6px 6px 3px gray;/* 阴影效果 */
-        }
-        #title{
-          font-family: 黑体;
-          color: #165d96;
-          margin-top:1em;/*使上外边距为两个字体长度*/
-          font-size: 2em;
-        }
-        #finish{
-          font-family: 黑体;
-          color: #165d96;
-          margin-top:1em;
-          font-size: 2em;
-        }
-        input:hover {
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-        input:active {
-            background-color: rgba(0, 0, 0, 0.5);
-            transform: translateY(4px);
-            /*给予一个Y轴上的移动*/
-        }
-    </style>
-    <script src="https://lijianhong19720904.github.io/ts300.js">
+      </style>
+    <script src="ts300.js">
     </script>
    </head>
    <body>
@@ -79,10 +57,7 @@
           }
   
       var i = 0 ;
-      var tsTitleDOM = document.getElementById("tsTitle");
-      var tsContentDOM = document.getElementById("tsContent");
-      tsTitleDOM.textContent = tsTitle[i];//将数组中的元素赋给该节点
-      tsContentDOM.textContent = tsContent[i];
+      showts(i);
       document.getElementById("prev").onclick = function(){//定义id为prev的按钮按下去的效果
         if (i >0 ){//通过限定条件使按钮能正确发挥功能
           i--;

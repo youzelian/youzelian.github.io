@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        input{
+            border:outset 5px solid;
+            border-radius: 10px;
+            width: 70px; 
+            height: 70px; 
+            font: size 150px; 
+            text-align: center;
+            margin: 25px;
+            color: red;
+            background-color: gray;
+            cursor: pointer;
+        }
+
+        input:hover{
+            background-color: aqua;
+        }
+        input:active{
+            color: black;
+            border: inset 10px solid;
+        }
+        input#output{
+            display: block;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>这是一个计算器</h1>
+    <input type="text" value="" id="output">
+    <script>
+        var SYMBOL = ['+','-','*','/','0','1','2','3','4,','5','6','7','8','9','.','Num','Enter'];
+
+        for(var i=0;i <SYMBOL.length/4;i++){
+            var div=document.createElement('div');
+            for(var j=0;j<4;j++){
+                if(i*4+j<SYMBOL.length){
+                    var input = document.createElement('input');
+                    input.type="button";
+                    input.value=SYMBOL[i*4+j];
+                    div.appendChild(input);
+                }
+            }
+
+         document.body.appendChild(div);
+        }
+    </script>
+</body>
+</html>

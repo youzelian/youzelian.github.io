@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>20213663-11</title>
+		<style type="text/css">
+			*{
+				margin: auto;
+				padding: 0px;
+				text-align: center;
+			}
+            .clear{
+                font-size: 25px;
+            }
+			.content{
+				border-radius: 10%;
+				width: 400px;
+				height: 550px;
+				background-color:rgba(0,250,250,0.2);
+			}
+			.clear{
+				border-radius: 50%;
+				width: 20%;
+				height: 72px;
+				background-color: #FF4500;
+			}
+			#result{
+				margin-top: 24px;
+				font-size: 30px;
+				width: 60%;
+				height: 72px;
+				text-align: left;
+				border-radius: 20px;
+				background-color: #FFE4C4;
+			}
+			.symbol{
+				margin-top: 36px;
+				font-size: 30px;
+				border-radius: 50%;
+				width: 20%;
+				height: 72px;
+				background-color:bisque;
+			}
+			.number{
+				margin-top: 36px;
+				font-size: 30px;
+				border-radius: 50%;
+				width: 20%;
+				height: 72px;
+				background-color:beige;
+			}
+			.calculate{
+				margin-top: 36px;
+				font-size: 30px;
+				border-radius: 50%;
+				width: 20%;
+				height: 72px;
+				background-color: #FF4500;
+			}
+			.content input:hover{
+				box-shadow: 5px 5px 5px #888888;
+			}
+			.content input:active{
+				background-color: #FF0000;
+			}
+		</style>
+		<script type="text/javascript">
+			function clearValue(){
+				document.getElementById("result").value="";
+			}
+			function get(value){
+				document.getElementById("result").value+=value;
+			}
+			function calculate(){
+				var result=0;
+				result=document.getElementById("result").value;
+				document.getElementById("result").value="";
+				document.getElementById("result").value=eval(result);
+			};
+		</script>
+	</head>
+	<body>
+		<div class="banner">
+			<h1>
+				简易计算器
+			</h1>
+		</div>
+			<br />
+		<div class="content">
+			<input type="button" value="AC" class="clear" onclick="clearValue()"/>
+			<input type="text" id="result"  >
+				<br />
+			<input type="button" value="1" class="number" onclick="get(this.value)"/>
+			<input type="button" value="2" class="number" onclick="get(this.value)"/>
+			<input type="button" value="3" class="number" onclick="get(this.value)"/>
+			<input type="button" value="+" class="symbol" onclick="get(this.value)"/>
+				<br />
+			<input type="button" value="4" class="number" onclick="get(this.value)"/>
+			<input type="button" value="5" class="number" onclick="get(this.value)"/>
+			<input type="button" value="6" class="number" onclick="get(this.value)"/>
+			<input type="button" value="-" class="symbol" onclick="get(this.value)"/>
+				<br />
+			<input type="button" value="7" class="number" onclick="get(this.value)"/>
+			<input type="button" value="8" class="number" onclick="get(this.value)"/>
+			<input type="button" value="9" class="number" onclick="get(this.value)"/>
+			<input type="button" value="*" class="symbol" onclick="get(this.value)"/>
+				<br />
+			<input type="button" value="0" class="number" onclick="get(this.value)"/>
+			<input type="button" value="." class="symbol" onclick="get(this.value)"/>
+			<input type="button" value="/" class="symbol" onclick="get(this.value)"/>
+			<input type="button" value="=" class="calculate" onclick="calculate()"/>
+		</div>
+			<br />
+		</div>
+	</body>
+</html>
+

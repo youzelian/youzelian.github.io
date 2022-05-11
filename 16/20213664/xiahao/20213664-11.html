@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算器外观</title>
+    <style>
+        body{
+            margin:0;
+            padding: 0;
+        }
+        input#output{
+            display: block;
+            width: 335px;
+        }
+        input#d{
+            width: 335px;
+        }
+        input{
+            text-align: center;
+            width: 70px;
+            height: 70px;
+            margin: 10px;
+            border-radius: 10px;
+            font-size: 40px;
+        }
+        input:hover{ 
+	        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+        input:active{
+            background-color:gray;
+            box-shadow:0 5px #666;
+            transform: translateY(4px);
+        }
+        h1{
+            margin-left:100px
+        }
+    </style>
+</head>
+<body>
+    <h1>简易计算器</h1>
+    <input type="text" id="output">
+    <script>
+        var SYMBOL=["+","-","*","/",".","0","1","2","3","4","5","6","7","8","9","Del","="] ;
+        var serial=["a","b","c","d"];
+        for(var i = 0;i < SYMBOL.length/4;i++){
+        var div = document.createElement('div');
+        for(var j = 0;j < 4;j++){
+            if( i * 4+j < SYMBOL.length){
+            var input = document.createElement('input');
+            input.type = "button";
+            input.value = SYMBOL[i * 4 + j];
+            input.id = serial[i-1];
+            div.appendChild( input );
+            };
+        };
+        document.body.appendChild(div);
+    };
+    </script>
+</body>
+</html>

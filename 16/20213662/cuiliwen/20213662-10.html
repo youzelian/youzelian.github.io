@@ -7,35 +7,38 @@
         body{
           margin: 0;
           padding: 0;/*清除浏览器默认内外边距*/
-          background-color: #cdccb2;
+          background-color: rgba(227, 201, 52, 0.742);
           text-align: center;
           font-size: 16px;
         }
         #tsTitle{
           font-family: 楷体;
-          font-size: 3em;
+          font-size: 50px;
+          font-weight: bold/*加粗标题*/;
         }
         #tsContent{
-          font-size: 2em;
-          font-family: 宋体;
+          font-size: 40px;
+          font-family: 楷体;
           white-space: pre-line;/* 使浏览器能识别代码中的换行符并进行换行 */
           margin: auto ;
           }
         input{
           margin: 1em 0.5em 1em;
           font-size: 1.5em;
-          border-radius: 1em;/* 使按钮呈现圆角 */
-          box-shadow: 6px 6px 3px gray;/* 阴影效果 */
+          box-shadow: 6px 6px 3px black;/* 阴影效果 */
+          border-radius: 100%;/*框架弯曲角度*/
+          background-color: aqua;/*框内背景颜色*/
+          cursor: pointer;/*使光标改变*/
         }
         #title{
-          font-family: 黑体;
-          color: #165d96;
+          font-family: 楷体;
+          color: blue;
           margin-top:1em;/*使上外边距为两个字体长度*/
-          font-size: 2em;
+          font-size: 50px;
         }
         #finish{
-          font-family: 黑体;
-          color: #165d96;
+          font-family: 楷体;
+          color: green;
           margin-top:1em;
           font-size: 2em;
         }
@@ -47,20 +50,22 @@
             transform: translateY(4px);
             /*给予一个Y轴上的移动*/
         }
+        div#ts{
+          border: 10px solid red;
+        }/*增加一个矩形框架*/
     </style>
     <script src="https://lijianhong19720904.github.io/ts300.js">
     </script>
    </head>
    <body>
-   <div id="title">请欣赏古诗</div>
-    <input type="button" value="上一首" id="prev">
-    <input type="text" id="number" placeholder="&nbsp&nbsp请输入古诗序号"><input type="button" value="前往" id="go">  
-    <input type="button" value="下一首" id="next">
+   <div id="title">唐诗300首</div>
     <div><input type="button" value="抽一首" id="random"></div>
     <div id="ts">
         <h1 id="tsTitle"></h1>
         <p id="tsContent"></p>
     </div>
+    <input type="button" value="上一首" id="prev">  
+    <input type="button" value="下一首" id="next">
    <script type="text/javascript">
       var BEGIN = 100;//从字符串中取出第100-300的古诗
       var END = 300;
@@ -79,10 +84,7 @@
           }
   
       var i = 0 ;
-      var tsTitleDOM = document.getElementById("tsTitle");
-      var tsContentDOM = document.getElementById("tsContent");
-      tsTitleDOM.textContent = tsTitle[i];//将数组中的元素赋给该节点
-      tsContentDOM.textContent = tsContent[i];
+      showts(i);
       document.getElementById("prev").onclick = function(){//定义id为prev的按钮按下去的效果
         if (i >0 ){//通过限定条件使按钮能正确发挥功能
           i--;
@@ -100,18 +102,6 @@
             i=0;
         }
         showts(i);
-      };
-      //前往指定序号古诗功能
-      var text = document.getElementById("number");
-      var buttongo = document.getElementById("go");
-      text.onchange=function(){
-          if(text.value>=1&&text.value<202){//给text的value值限定条件
-              tsTitleDOM.innerHTML=tsTitle[text.value-1];//使web显示内容更改为输入的序号古诗
-              tsContentDOM.innerHTML=tsContent[text.value-1];
-          }
-          else{
-              alert("您输入的序号出错了喔，请再试一次");//弹出预设好的错误警报
-          }
       };
       //抽一首功能
       document.getElementById("random").onclick = function(){
