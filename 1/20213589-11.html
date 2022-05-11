@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20213589-11</title>
+    <style>
+        /* 设置顶部标题栏样式 */
+        #top {
+            width: 450px;
+            height: 50px;
+            margin: auto;
+            background-color: gray;
+            /* border-radius: 10px; */
+            /* border-top-left-radius: 10px; */
+        }
+        #top .point {
+            width: 20px;
+            height: 20px;
+            float: left;
+            margin-left: 10px;
+            margin-top: 15px;
+            border-radius: 10px;
+        }
+        #top .red {
+            background-color: red;
+        }
+        #top .blue {
+            background-color: blue;
+        }
+        #top .green {
+            background-color: green;
+        }
+        #calc-title {
+            font-size: 22px;
+            color: white;
+            float: right;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+
+        /* 设置结果显示栏样式 */
+        #result {
+            width: 446px;
+            height: 50px;
+            margin: auto;
+            text-align: right;/*文本内容右对齐*/
+            background-color: white;
+            border: solid 2px red;
+            font-size: 30px;
+        }
+
+        /* 设置按钮区域的样式 */
+        #button {
+            width: 450px;
+            height: 422px;
+            background-color: gray;
+            margin: auto;
+        }
+
+        #button div {
+            width: 108px;
+            height: 80px;
+            float: left;
+            background-color: #7fffd4;
+            margin: 2px;
+            line-height: 80px;
+            text-align: center;
+            font-size: 26px;
+        }
+
+        /* 使用伪类选择器设置鼠标悬停效果 */
+        #button div:hover {
+            background-color: orangered;
+        }
+
+    </style>
+    <script type="text/javascript">
+        //获取一个元素
+        function aler(){
+        var cal = document.getElementById("calc-title").innerHTML;
+        window.alert(cal);
+        }
+        document.getElementsByClassName("point");
+        //输入数字
+        function num(number){
+        var result = document.getElementById("result")
+        result.innerHTML = result.innerHTML + number 
+        }//这里的result，不是name里面的
+        //输入运算符
+        function oper(operator){
+        var result = document.getElementById("result")
+        result.innerHTML = result.innerHTML + operator
+        }
+        //计算结果
+        function yunsuan(){
+            var result= document.getElementById("result")
+            var expression = result.innerHTML
+            result.innerHTML =eval(expression)//eval是一个可以把里面的字符串当成代码运行，eval可以把字符串转为数字然后执行
+        }
+        function doback(){
+            var result =document.getElementById("result")//这里只是定位到result
+            var len=result.innerHTML.length//这里才是取出result的值并取他的总长度
+            result.innerHTML =result.innerHTML.substr(0,len-1)//把result里面的值处理后重新放到result里面
+            
+        }
+        function qingkong(){
+            var result = document.getElementById("result")
+            result.innerHTML = ""
+
+        }
+    </script>
+</head>
+<body >
+    <div id="top">
+        <div class="point red"></div>
+        <div class="point blue"></div>
+        <div class="point green"></div>
+        <div id="calc-title">计算器</div>
+    </div>
+
+    <div id="result" name="result" ></div>
+
+    <div id="button">
+        <!--当被单击时触发事件-->
+        <!--在<script>里面写函数，下面调用函数，传参-->
+        <div onclick="qingkong()">AC</div>
+        <div>+/-</div>
+        <div onclick="oper('%')">%</div>
+        <div onclick="oper('/')">÷</div>
+        <div onclick="num(7)">7</div>
+        <div onclick="num(8)">8</div>
+        <div onclick="num(9)">9</div>
+        <div onclick="oper('*')">*</div>
+        <div onclick="num(4)">4</div>
+        <div onclick="num(5)">5</div>
+        <div onclick="num(6)">6</div>
+        <div onclick="oper('-')">-</div>
+        <div onclick="num(1)">1</div>
+        <div onclick="num(2)">2</div>
+        <div onclick="num(3)">3</div>
+        <div onclick="oper('+')">+</div>
+        <div onclick="num(0)">0</div>
+        <div onclick="doback()">删除</div>
+        <div onclick="oper('.')">.</div>
+        <div onclick="yunsuan()">=</div>
+    </div>
+
+</body>
+</html>

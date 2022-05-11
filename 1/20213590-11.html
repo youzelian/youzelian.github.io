@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<style type ="text/css">
+    #ins{
+				margin: 15px auto;
+				width: 300px;
+			}
+			#calculator {
+				background-color: cadetblue;
+				margin: 15px auto;
+				width: 300px;
+				height: 480px;
+				border: 1px solid lightblue;
+				padding: 15px;
+			}
+			
+			#input {
+				margin-top: 15px;
+			}
+			
+			.screen {
+				margin-top: 5px;
+				width: 284px;
+				height: 40px;
+				text-align: right;
+				padding-right: 10px;
+				font-size: 20px;
+			}
+			
+			#keys {
+				border: 1px solid lightblue;
+				height: 345px;
+				margin-top: 25px;
+				padding: 8px;
+			}
+			
+			#keys .key {
+				float: left;
+				width: 50px;
+				height: 35px;
+				text-align: center;
+				background-color: lightblue;
+				margin: 5px 10px 20px 10px;
+			}
+			.Text {
+				height: 20px;
+			}
+			
+			.Text .calName {
+				float: left;
+				line-height: 30px;
+			}
+			
+			.Text .calVerson {
+				float: right;
+				line-height: 30px;
+			}
+        </style>
+            </head>
+
+            <body onload="onLoad()">
+		<p id="ins">使用说明：如需使用sin cos tan log四个功能按钮，需先输入被计算对象，
+			然后直接点击该按钮，窗口即得出结果。其他计算需先按好所有操作数，再按“＝”</p>
+		<div id="calculator">
+			<div id="input">
+				<div class="screen">
+					<input type="text" id="Screen" name="Screen" class="screen" value="" onfocus="cal(this)">
+				</div>
+			</div>
+		<div id="keys">
+			<!--第1至第5排的按键 -->
+			<input type="button" id="sin" class="key" onclick="sin()" value="sin" />
+			<input type="button" id="cos" class="key" onclick="cos()" value="cos" />
+			<input type="button" id="tan" class="key" onclick="tan()" value="tan" />
+			<input type="button" id="log" class="key" onclick="log()" value="log" />
+			
+			<input type="button" id="(" class="key" onclick="cal(this.id)" value="(" />
+			<input type="button" id=")" class="key" onclick="cal(this.id)" value=")" />
+			<input type="button" id="Back" class="key" onclick="back()" value="Back" />
+			<input type="button" id="C" class="key" onclick="clearNum()" value="C" />
+
+			<input type="button" id="7" class="key" onclick="cal(this.id)" value="7" />
+			<input type="button" id="8" class="key" onclick="cal(this.id)" value="8" />
+			<input type="button" id="9" class="key" onclick="cal(this.id)" value="9" />
+			<input type="button" id="/" class="key" onclick="cal(this.id)" value="/" />
+
+			<input type="button" id="4" class="key" onclick="cal(this.id)" value="4" />
+			<input type="button" id="5" class="key" onclick="cal(this.id)" value="5" />
+			<input type="button" id="6" class="key" onclick="cal(this.id)" value="6" />
+			<input type="button" id="*" class="key" onclick="cal(this.id)" value="*" />
+
+			<input type="button" id="1" class="key" onclick="cal(this.id)" value="1" />
+			<input type="button" id="2" class="key" onclick="cal(this.id)" value="2" />
+			<input type="button" id="3" class="key" onclick="cal(this.id)" value="3" />
+			<input type="button" id="-" class="key" onclick="cal(this.id)" value="-" />
+
+			<input type="button" id="0" class="key" onclick="cal(this.id)" value="0" />
+			<input type="button" id="." class="key" onclick="cal(this.id)" value="." />
+			<input type="button" id="=" class="key" onclick="eva()" value="=" />
+			<input type="button" id="+" class="key" onclick="cal(this.id)" value="+" />
+	
+			
+		</div>
+    </body>
