@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <style>
+   body{text-align:center;}
+   input{  border:white 2px solid ; 
+		border-radius:40px; 
+		width:110px;  
+		height:80px;  
+		font-size:30px; 
+		text-align:center;  
+		margin:10px;
+		color:red;
+		background-color:rgb(245,245,245); 
+		cursor:pointer;}
+   input:hover{background-color:rgb(248,248,255);} 
+   input:active{background-color:rgb(220,220,220);} 
+   input#output{width:350px;
+               color:blue;}
+  </style>
+  <title>第十一次作业</title>
+ </head>
+ <body>
+  <input type="text" id='output' value="">
+  <script>
+   var bt=[['+','-','*','/'],['0','1','2','3'],['4','5','6','7'],['8','9','.','<-'],['Enter','AC']];
+   var output=document.querySelector('input#output');
+   for(var i=0;i<bt.length;i++){
+	   var div=document.createElement('div');
+	   document.body.appendChild(div);//指定新元素插入的位置
+	   for(var j=0;j<bt[i].length;j++){
+		   var input=document.createElement('input');//创建新元素
+		   div.appendChild(input);
+		   input.type='button';
+		   input.value=bt[i][j];
+        input.onclick=function() {
+	         output.value=output.value+this.value;//this指向的是函数的调用者，而不是函数的声明者
+			 }
+		   }   
+   }
+   
+ </script>
+ </body>
+</html>

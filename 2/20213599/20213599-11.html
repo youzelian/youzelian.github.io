@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+			 <style type="text/css">
+				body
+				{
+					text-align:center;
+				}
+				input
+				{
+					color:red;
+					background-color:orange;
+					font-size:38px;
+					cursor:pointer;/* 光标 */
+					box-shadow:4px 3px rgba(255,140,0,0.6);/* 阴影 */
+					margin:0px 10px;
+					border-radius:25px;/* 边框半径 */
+					width:60px;
+					height:60px;
+					margin:15px;
+				}
+				input:hover
+				{
+					border:outset;/* 边框凸起 */
+					box-shadow:8px 6px rgba(255,140,0,0.8);
+				}
+				input:active
+				{
+					border:inset;/* 边框凹陷 */
+					box-shadow:4px 3px rgba(255,140,0,0.8);
+				}
+				input#output
+				{
+					width:330px;
+					height:40px;
+					border:inset;/* 边框凹陷 */
+					box-shadow:none;
+					text-align:center;
+				}
+			 </style>
+		<title>计算器</title>
+	</head>
+	<body>
+		<input type="text" value="" id="output">
+		<script type="text/javascript">
+			var box=['AC','%','<X','/','7','8','9','*','4','5','6','-','1','2','3','+','00','0','.','='];
+			var i,j;
+			for(i=0;i<box.length/4;i++)
+				{
+					var div=document.createElement('div');
+					for(j=0;j<4;j++)
+						{
+							if(i*4+j<box.length)
+								{
+									var input=document.createElement('input');
+									input.type="button";
+									input.value=box[i*4+j];
+									input.onclick=function()
+											{
+												output.value+=this.value;
+											}
+									div.appendChild(input);
+									document.body.appendChild(div);
+								}
+						}
+				}
+			var inputs=document.querySelectorAll('input');
+			inputs[1].onclick=function()
+					{
+						var a=output.value;
+						a=a.substring(0,0);
+						output.value=a;
+					}
+			inputs[inputs.length-1].onclick=function()
+					{
+						var a=output.value;
+						var result;
+						try
+						{
+							result=eval(a);
+						}
+						catch (err)
+						{
+							result=err;
+						}
+						output.value=result;
+					};
+			inputs[3].onclick=function()
+					{
+						var a=output.value;
+						a=a.substring(0,a.length-1);
+						output.value=a;
+					};
+		</script>
+	</body>
+</html>

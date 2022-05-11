@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>计算器</title>
+  <style type="text/css">
+		body
+		{
+			text-align:center; 
+		}
+		input
+		{ 
+			border:outset 2px solid ;  
+			border-radius:10px; 
+			width:70px;  
+			height:50px; 
+			font-size:40px; 
+			text-align:center; 
+			margin:10px;
+			color:rgb(50,250,0); 
+			background-color:rgb(100,100,100);  
+			cursor:pointer; 
+		}
+		input#jsqput
+		{
+			width:340px;
+		}
+  </style>
+ </head>
+ <body>
+  <input type="text" value="" id= "jsqput" > 
+  <script> 
+	var jsq = ['ac','<-','%','/','7','8','9','*','4','5','6','-','1','2','3','+','0','00','.','='] ;
+	for	(var i=0; i < jsq.length / 4; i++)
+		{  
+			 var div = document.createElement('div') ;    
+			 for (var j=0; j<4; j++ )
+			 { 
+				if (i * 4 + j < jsq.length) 
+				{  
+					var input = document.createElement('input') ;  
+					input.type = "button" ;  
+				    input.value = jsq[i * 4 + j] ;  
+					input.onclick = function()
+					{   
+						jsqput.value += this.value ;
+					}  
+					div.appendChild(input) ;
+				}  
+			 }   
+			 document.body.appendChild(div) ;
+		}
+  </script>
+ </body>
+</html>

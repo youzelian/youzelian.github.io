@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算机</title>
+    <style>
+        input
+            {
+                margin: 10px;
+                text-align: center;
+                font-size: 30px;        
+                background-color: rgb(196, 250, 232);
+                color: rgb(224, 80, 13);
+                height: 60px;
+                width: 130px;
+                margin-inline: 10px;
+                font-family: 楷体
+            }
+        input#output
+            {
+                width: 570px;  
+            }   
+        body{
+            text-align: center;
+            background-color: rgb(239, 177, 203);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>
+            我的计算机
+        </h1>
+        <input type="text" value="" id="output">
+        <script>
+            var SYMBOL = ['+','-','*','/','1','2','3','.','4','5','6','<-','7','8','9','0','enter'];
+            var output = document.querySelector('input#output');
+            for (var i = 0;i <SYMBOL.length/4;i++){
+                var div = document.createElement('div');
+                for(var j=0;j<4;j++){
+                    if(i*4+j<SYMBOL.length){
+                        var input =document.createElement("input");
+                        input.type="button";
+                        input.value = SYMBOL[i*4+j];
+                        input.onclick = function(){
+                            output.value += this.value ;  
+                        }
+                        div.appendChild(input);
+                        document.body.appendChild(div);
+                    }
+                }
+            } 
+            var inputs = document.querySelectorAll('input'); inputs[inputs.length -1].style.width = '570px';
+        </script>
+    </div>
+</body>
+</html>

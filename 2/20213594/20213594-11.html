@@ -1,0 +1,48 @@
+
+
+<!doctype html>
+<html lang="en">
+<head> 
+	<meta charset="UTF-8">
+	<title>我的计算器</title>
+	<style type="text/css">
+		body{
+			text-align:center; 
+		}
+		input{ 
+		border:outset 2px solid ;  
+		border-radius:15px; 
+		width:70px;  
+		height:50px; 
+		font-size:25px; 
+		text-align:center; 
+		margin:10px;
+		color:#6600ff;
+		background-color:lightpink;  
+		cursor:pointer; } 
+		input:hover{  background-color:rgb(190,190,190); } 
+		input:active{  color:rgb(250,250,250);  border:inset 2px solid ; }
+		input#output{   display:block; width:280px; margin:auto; } 
+	</style>
+</head>
+<body> 
+<div id="B" class="">
+<h1>用用我的计算器</h1>
+<input type="text" value="" id= "output" > 
+<script> 
+var SYMBOL = ['归零','删除','%','/','7','8','9','*','4','5','6','-','1','2','3','+','00','0','.','='] ;  
+for (var i=0; i < SYMBOL.length / 4; i++)
+{  var div = document.createElement('div') ;    
+for (var j=0; j<4; j++ )
+{   if (i * 4 + j < SYMBOL.length) 
+{  var input = document.createElement('input') ;  
+input.type = "button" ;  
+input.value = SYMBOL[i * 4 + j] ;  
+input.onclick = function()
+{   output.value += this.value ;  };  
+div.appendChild(input) ;      }  }   
+document.body.appendChild(div) ;  }
+</script>
+</div>
+</body>
+</html>
