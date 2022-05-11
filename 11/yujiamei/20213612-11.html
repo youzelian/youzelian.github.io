@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>计算器</title>
+  <style>
+  *{font-size:40px;
+	font-family:黑体;}/*设置总体属性*/
+  input{/*设置按钮属性*/
+	  text-align:center;/*文字居中*/
+	  width:95%;/*宽度占据表格一格的95%*/
+	  height:95%;/*高度占据表格一格的95%*/
+	  background:rgb(230,220,220);/*按钮的背景色格式为rgb（红，绿，蓝）*/
+	  box-shadow:3px 2px 2px black;/*设置阴影格式为水平半径 垂直半径 模糊半径 颜色*/
+	  border-radius:20px;}/*圆角*/
+    input:hover{/*鼠标放在上面时*/
+	background:red;/*背景色为红色，更明显*/
+	color:white;}/*字体颜色变换*/
+  input#xianshi{/*设置一个class为xianshi的input属性*/
+  text-align:right;/*文字向右对齐*/
+  border:0px;/*边框为0*/
+  height:60px}/*输入框高度为60像素*/
+	table{/*设置表格总体属性*/
+	position:absolute;/*绝对定位，元素的位置通过 “left”, “top”,属性进行规定*/
+	width:500px;
+	height:500px;
+	top:10%;
+	left:30%;
+	}
+	input:active {/*设置点击时的属性*/
+    box-shadow: 0 0 3px 3px yellow;/*设置阴影但可以达到高光的效果*/
+	}
+	p{
+	margin:0px auto;
+	text-align:center;
+	font-weight:bold;/*加粗*/
+	}
+
+</style>
+ </head>
+ <body>
+  <table border="5"><!-- 大边框大小为像素 -->
+  <tr>
+  <td colspan="4">  <p>&#8620✧计算器✧&#8619</p><!-- 在第一行创建一个占据四个格子大小的输入框 -->
+  <input type="text" value="0" id=xianshi>
+  </td>
+  </tr>
+  <tr>
+	<td><input type="button" value="清空"></td>
+	<td><input type="button" value="撤回"></td>
+	<td><input type="button" value=" x² "></td>
+	<td><input type="button" value=" /"></td>
+  </tr>
+  	<td><input type="button" value="7"></td>
+	<td><input type="button" value="8"></td>
+	<td><input type="button" value="9"></td>
+	<td><input type="button" value="*"></td>
+    <tr>
+	<td><input type="button" value="4"></td>
+	<td><input type="button" value="5"></td>
+	<td><input type="button" value="6"></td>
+	<td><input type="button" value="-"></td>
+  </tr>
+    <tr>
+	<td><input type="button" value="1"></td>
+	<td><input type="button" value="2"></td>
+	<td><input type="button" value="3"></td>
+	<td><input type="button" value="+"></td>
+  </tr>
+    <tr>
+	<td><input type="button" value="."></td>
+	<td><input type="button" value="0"></td>
+	<td><input type="button" value="%"></td>
+	<td><input type="button" value="="></td>
+  </tr>
+  </table>
+  <script>
+  var num1=0;
+  var fuhao="";
+  var num2=0;
+  var jieguo=0;
+  function jisuang{
+  var jieguo=document.getElementById("xianshi")
+	  switch(fuhao) 
+	  {			case "+":
+                    jieguo=num1+num2;
+                    break;
+                case "-":
+                    jieguo=num1-num2;
+                    break;
+                case "*":
+                    jieguo=num1*num2;
+                    break;
+                case "/":
+                    jieguo=num1/num2;
+                    break;
+				default:
+					alert("出现错误！");
+					break;
+            }
+			return jieguo;
+  }
+  </script>
+ </body>
+</html>

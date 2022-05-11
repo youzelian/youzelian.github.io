@@ -1,0 +1,76 @@
+<!doctype html>
+	<html lang="en">
+	<head> <meta charset="UTF-8"> 
+	<title>HOMEWORK</title> 
+	<style type="text/css"> 
+	body{
+		background:url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.pptjia.com%2Fimage%2F20181227%2F08c1ad4a692d8b5cdcfd5795d650584d.jpg&refer=http%3A%2F%2Fimg.pptjia.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1649404976&t=4c4677a70aa11613fb5a944d093a2cde) no-repeat center top;
+		background-size:cover;
+		font-family:华文新魏;
+		text-align: center;
+		font-size:30px ;
+		}
+	h1{
+		text-shadow: 1px 1px rgba(197, 223, 248,0.8),2px 2px rgba(197, 223, 248,0.8),3px 3px rgba(197, 223, 248,0.8),4px 4px rgba(197, 223, 248,0.8),5px 5px rgba(197, 223, 248,0.8);
+	}
+    input{  
+		border:outset 2px solid ; 
+        border-radius:10px;  
+        width:50px; 
+        height:50px; 
+        font-size:40px; 
+        text-align:center; 
+        margin:10px; 
+        color:rgb(237,31,40); 
+        background-color:rgb(52,166,231);
+        cursor:pointer;
+		} 
+	input:hover{ 
+		background-color:rgb(200,150,150);
+		} 
+	input:active{  	
+		color:rgb(100,250,250);  
+		border:inset 2px solid ;
+		} 
+	input#output{ 
+		display:block; 
+		width:280px;
+		}
+	</style>
+	</head>
+		<body> 
+		<h1>计算器</h1>
+		<input type="text" value="" id= "output" >
+		<script> 
+		var SYMBOL = ['+','-','*','/','.','0','1','2','3','4','5','6','7','8','9','<-','Enter'] ; 
+		var output = document.querySelector('input#output') ; 
+		for (var i=0; i < SYMBOL.length / 4; i++)
+			{  var div = document.createElement('div') ;  
+		for (var j=0; j<4; j++ )
+			{   if (i * 4 + j < SYMBOL.length) 
+			{  
+			var input = document.createElement('input') ;    
+			input.type = "button" ;    
+			input.value = SYMBOL[i * 4 + j] ; 
+			input.onclick = function()
+			{   
+			output.value += this.value ;  }; 
+			div.appendChild(input) ;      }  }  
+			document.body.appendChild(div) ;  } 
+			var inputs = document.querySelectorAll('input'); 
+			inputs[inputs.length -1].style.width = '200px'; 
+			inputs[inputs.length -2].onclick = function()
+			{ 
+			var s = output.value ; 
+			s = s.substring(0, s.length - 1);  
+			output.value = s ; };
+			inputs[inputs.length -1].onclick = function()
+			{ 
+			var s = output.value ; 
+			var result ;   
+			try {  result = eval(s) ; } 
+			catch (err) {    result = err ; }  
+			output.value = result ; };  
+		</script>
+		</body>
+</html>
