@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>calculator</title>
+	<style>
+*{
+    /* 按键里面的字符无法被选中 */
+    user-select: none;
+}
+
+body{
+    background-color: #60afe4;
+}
+/* 对于 id="cal" 模块*/
+#cal{
+    width: 280px;
+    height: 440px;
+    background-color:#f4f1f4;
+    /* 改变形状 */
+    -webkit-border-radius:10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+
+    margin: 10% auto;
+}
+
+/* 对于 id="kong" 模块*/
+#kong{
+    width: 100%;
+    height: 35px;
+}
+
+/* 对于 id="shuru" 模块*/
+#shuru{
+    width: 100%;
+    height: 65px;
+    background-color: #f4f1f4;
+}
+/* shuru 模块里面的input*/
+#shuru input{
+    margin: 6px;
+    width: 95%;
+    height: 60px;
+    background-color:#e4dae4;
+    /* border: 1px solid #f4f1f4; */
+    text-align: right; 
+    border: none;
+    /* 改变字体 */
+    color:#60afe4;
+    font-size: 30px;
+}
+
+#anniu{
+    width: 100%;
+    height: 330px;
+    /* background-color: cyan; */
+    float: left;
+    /* margin:3%; */
+}
+#anniu li{
+    list-style-type: none;
+    float: left;
+}
+
+#anniu .an1{
+    width: 50px;
+    height: 50px;
+    background-color: #7fc1ee;
+    /* 添加li之间的间隔 */
+    margin: 5px;
+    /* 将形状变成圆形 */
+    -webkit-border-radius:50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    /* 文字居中 */
+    text-align: center;
+    line-height: 50px;
+    /* 改变字体 */
+    color:#f4f1f4;
+    font-size: 25px;
+}
+
+#anniu .center{
+    position: relative;
+    right: 20px;
+}
+
+#anniu .an3{
+    width: 50px;
+    height: 50px;
+    background-color: #60afe4;
+    /* 添加li之间的间隔 */
+    margin: 5px;
+    /* 改变形状 */
+    -webkit-border-radius:50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    /* 文字居中 */
+    text-align: center;
+    line-height: 50px;
+    /* 改变字体颜色 */
+    color:#f4f1f4;
+    font-size: 25px;
+}
+	</style>
+</head>
+<body>
+    <div id="cal">
+            <!-- 输入“div#”就会自己完成基本语法,#后面如果有输入，id就是对应值 -->
+        <div id="kong"></div>
+        <div id="shuru">
+            <input type="text" id="shu">
+        </div>
+        <div id="anniu">
+            <ul class="center">
+                <li class="an3" onclick="clear_num()">C</li>
+                <li class="an3" onclick="show('.')">.</li>
+                <li class="an3" onclick="back_one()">←</li>
+                <li class="an3" onclick="show('/')">÷</li>
+                <li class="an1" onclick="show('1')">1</li>
+                <li class="an1" onclick="show('2')">2</li>
+                <li class="an1" onclick="show('3')">3</li>
+                <li class="an3" onclick="show('*')">×</li>
+                <li class="an1" onclick="show('4')">4</li>
+                <li class="an1" onclick="show('5')">5</li>
+                <li class="an1" onclick="show('6')">6</li>
+                <li class="an3" onclick="show('+')">+</li>
+                <li class="an1" onclick="show('7')">7</li>
+                <li class="an1" onclick="show('8')">8</li>
+                <li class="an1" onclick="show('9')">9</li>
+                <li class="an3" onclick="show('-')">-</li>
+                <li class="an3" onclick="show('(')">(</li>
+                <li class="an1" onclick="show('0')">0</li>
+                <li class="an3" onclick="show(')')">)</li>
+                <li class="an3" onclick="equal()">=</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        function show(num){
+            // value的意思是： 获取输入的值
+            var result=document.getElementById('shu').value;
+            document.getElementById('shu').value +=num;
+
+        }
+
+        function equal(){
+            var shuchu=document.getElementById('shu').value;
+            // eval是js提供的一个 计算表达式的函数
+            var result=eval(shuchu);
+            document.getElementById('shu').value =result;
+        }
+
+        function clear_num(){
+            var result=document.getElementById('shu').value;
+            document.getElementById('shu').value =' ';
+
+        }
+
+        function back_one(){
+            var backone=document.getElementById('shu');
+            // 转换成字符串
+            backone.value=backone.value.substring(0,backone.value.length-1);
+        }
+
+    </script>
+    
+</body>
+</html>
+
+
+

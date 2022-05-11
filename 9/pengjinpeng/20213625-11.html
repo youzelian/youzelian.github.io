@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-size: 18px;
+        }
+        
+        input {
+            border: inset;
+        }
+        
+        #t {
+            width: 334px;
+            height: 20px;
+        }
+        
+        #sjs {
+            border-color: rgb(3, 3, 99);
+            margin-top: 200px;
+            border-width: 2px;
+            border-style: solid;
+        }
+        
+        .number {
+            width: 80px;
+            height: 30px;
+            margin: 2px;
+            background-color: rgb(235, 24, 140);
+            display: block;
+        }
+        
+        .kuohao {
+            width: 80px;
+            height: 30px;
+            margin: 2px;
+            background-color: rgb(21, 219, 219);
+            display: block;
+        }
+        
+        .signs {
+            width: 80px;
+            height: 30px;
+            margin: 2px;
+            background-color: rgb(55, 17, 243);
+            display: block;
+        }
+        
+        .shaw {
+            width: 50px;
+            height: 30px;
+            margin: 2px;
+            background-color: rgb(25, 207, 86);
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="jsj">
+        <table collpadding="0" cellspeacing="0" border="0" align="center">
+            <tr>
+                <td colspan="4">
+                    <input type="text" value="0" id="t">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="number" value="7" onclick="func('7')">
+                    <!--onclick事件会在元素被点击时发生  -->
+                </td>
+                <td>
+                    <input type="button" class="number" value="8" onclick="func('8')">
+                </td>
+                <td>
+                    <input type="button" class="number" value="9" onclick="func('9')">
+                </td>
+                <td>
+                    <input type="button" class="signs" value="/" onclick="func('/')">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="number" value="4" onclick="func('4')">
+                </td>
+                <td>
+                    <input type="button" class="number" value="5" onclick="func('5')">
+                </td>
+                <td>
+                    <input type="button" class="number" value="6" onclick="func('6')">
+                </td>
+                <td>
+                    <input type="button" class="signs" value="*" onclick="func('*')">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="number" value="1" onclick="func('1')">
+                </td>
+                <td>
+                    <input type="button" class="number" value="2" onclick="func('2')">
+                </td>
+                <td>
+                    <input type="button" class="number" value="3" onclick="func('3')">
+                </td>
+                <td>
+                    <input type="button" class="signs" value="-" onclick="func('-')">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="number" value="0" onclick="func('0')">
+                </td>
+                <td>
+                    <input type="button" class="number" value="00" onclick="func('00')">
+                </td>
+                <td>
+                    <input type="button" class="signs" value="." onclick="func('.')">
+                </td>
+                <td>
+                    <input type="button" class="signs" value="+" onclick="func('+')">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" class="kuohao" value="(" onclick="func('(')">
+                </td>
+                <td>
+                    <input type="button" class="kuohao" value=")" onclick="func(')')">
+                </td>
+                <td>
+                    <input type="button" class="signs" value="AC" onclick="AC()">
+                </td>
+                <td>
+                    <input type="button" class="signs" value="=" onclick="equals()">
+                </td>
+            </tr>
+    </div>
+    <script>
+        var n;
+
+        function func(m) {
+            n = document.getElementById(" t ");
+        }
+    </script>
+</body>
+
+</html>
