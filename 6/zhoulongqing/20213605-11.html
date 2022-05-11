@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+
+  <title>作业11</title>
+  
+ </head>
+ <body>
+  <h1>用用我的计算器</h1>
+  <input type="text" value="" id= "output" >
+  <script>
+    var SYMBOL = ['+','-','*','/','.','0','1','2','3','4','5','6','7','8','9','<-','Enter'] ;//定义所有所需的按钮
+    //计算机显示 及答案输出
+	var output =  document.querySelector('input#output') ;
+    for (var i=0; i < SYMBOL.length / 4; i++)
+	{
+	  var div = document.createElement('div') ;
+	      for (var j=0; j<4; j++ )
+		  {
+		    if (i * 4 + j < SYMBOL.length)
+			{
+			var input = document.createElement('input') ;
+			    input.type = "button" ;
+		        input.value = SYMBOL[i * 4 + j] ;
+				input.onclick = function()
+				{
+				  output.value += this.value ;
+				};
+		    div.appendChild(input) ;
+            }
+		  }
+
+        document.body.appendChild(div) ;
+	  }
+//按钮点击输入部分
+	var inputs = document.querySelectorAll('input');
+	inputs[inputs.length -1].style.width = '200px';
+	inputs[inputs.length -2].onclick = function()
+	{
+	 var s = output.value ;
+	     s = s.substring(0, s.length - 1);//将按钮输入的放在s中，让s在output中显示
+     output.value = s ;
+	};
+//enter功能
+	inputs[inputs.length -1].onclick = function()
+	{
+	 var s = output.value ;
+	 var result ;
+    
+	 try {
+	  result = eval(s) ;//将计算的结果放入s中
+	 }
+	 catch (err) {
+       result = err ;
+	 }
+     output.value = result ;
+	};
+  
+  </script>
+  <style type="text/css">
+	input{
+	  <div id="" class="">
+		<div id="" class="">
+			<div id="" class="">
+				
+			</div>
+		</div>
+	  </div>
+	  text-align: center; 
+	  border:outset 2px solid ;
+	  border-radius:10px;
+	  width:50px;
+	  height:50px;
+	  font-size:40px;
+	  text-align:center;
+	  margin:10px;
+	  color:rgb(50,250,0);
+	  background-color:rgb(100,100,100);
+	  cursor:pointer;
+	}
+
+	input:hover{
+	background-color:white; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+	}
+	input:active{
+	  color:white
+	  border:inset 2px solid ;
+	}
+	input#output{
+     display:block;
+	 width:280px;
+	}
+	h1 {
+      margin: 20px;
+      font-size: 30px;
+      font-weight: 590;
+      font-family: 楷体;
+    }
+
+  </style>
+ </body>
+</html>
