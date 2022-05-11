@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+
+  <title>Document</title>
+ </head>
+ <body>
+  <h1>计算器</h1> 
+<input type="text" value="" id= "output" > 
+<script>  var SYMBOL = ['+','-','*','/','1','2','3','4','5','6','7','8','9','0'，'.','<-','Enter'] ;  
+var output = document.querySelector('input#output') ;  
+for (var i=0; i < SYMBOL.length / 4; i++)
+{  
+	var div = document.createElement('div') ;    
+	for (var j=0; j<4; j++ )
+	{   
+		if (i * 4 + j < SYMBOL.length) 
+		{  
+			var input = document.createElement('input') ;
+			input.type = "button" ;
+			input.value = SYMBOL[i * 4 + j] ;
+			input.onclick = function()
+			{   
+				output.value += this.value ;
+			};   
+				div.appendChild(input) ; 
+		} 
+	}    
+	document.body.appendChild(div) ;  
+} 
+ </script>
+ </body>
+</html>
