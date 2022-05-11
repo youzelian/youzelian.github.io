@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>计算器</title>
+  <style type="text/css">
+    body{
+        text-align: center;
+    }
+	h1{
+		color: #1f4393;
+	}
+	input{
+    padding: 10px 20px;
+    font-size: 20px;
+    text-align: center;
+    color: #000000;
+    border: 3px solid   rgb(24, 61, 208);
+    box-shadow: 0 8px  rgb(24, 45, 208);
+    margin: 18px;
+  }
+    input:hover{
+	
+    box-shadow: 0 8px  rgb(24, 67, 208);
+	}
+    input:active {
+    box-shadow: 0 4px  rgb(58, 24, 208);
+    transform: translateY(4px);
+  }
+	input#output{
+	 width:280px;
+	 margin: auto;
+	}
+  </style>
+ </head>
+ <body>
+  <h1>我的计算器</h1>
+  <input type="text" value="" id= "output" >
+  <script>
+    var SYMBOL = ['+','-','*','/','.','0','1','2','3','4','5','6','7','8','9','<-','Enter'] ;
+   
+    for (var i=0; i < SYMBOL.length / 4; i++){
+	  var div = document.createElement('div') ;
+	      for (var j=0; j<4; j++ ){
+		    if (i * 4 + j < SYMBOL.length) {
+			var input = document.createElement('input') ;
+			    input.type = "button" ;
+		        input.value = SYMBOL[i * 4 + j] ;
+				input.onclick=function(){
+					output.value = this.value; //点击按键，将按键上的内容传送到输入框
+				};
+		    div.appendChild(input) ;//将input的内容传送进div
+            }
+		  }
+
+        document.body.appendChild(div) ;//将div的内容传送到body
+	  }
+
+	var inputs = document.querySelectorAll('input');
+	inputs[inputs.length -1].style.width = '350px';
+  </script>
+ </body>
+</html>

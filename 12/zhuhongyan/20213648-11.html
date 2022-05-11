@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>我的计算器</title>
+  <style type="text/css">
+    body{
+        text-align: center;
+    }
+	h1{
+		color: #d0a518;
+	}
+	input{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #000000;
+    background-color: #ffffff;
+    border: 2px solid   rgb(208, 165, 24);
+    border-radius: 8px;
+    box-shadow: 0 9px  rgb(208, 165, 24);
+    margin: 20px;
+  }
+    input:hover{
+	background-color:  #d0a518;
+    box-shadow: 0 9px  rgb(208, 165, 24);
+	}
+    input:active {
+    background-color: #ffffff;
+    box-shadow: 0 5px  rgb(208, 165, 24);
+    transform: translateY(4px);
+  }
+	input#output{
+     display:block;
+	 width:280px;
+	 margin: auto;
+	}
+  </style>
+ </head>
+ <body>
+  <h1>用用我的计算器</h1>
+  <input type="text" value="" id= "output" ><!--定义一个输入框-->
+  <script>
+    var SYMBOL = ['+','-','*','/','.','0','1','2','3','4','5','6','7','8','9','AC','='] ;
+   
+    for (var i=0; i < SYMBOL.length / 4; i++){
+	  var div = document.createElement('div') ;//定义一个对象
+	      for (var j=0; j<4; j++ ){
+		    if (i * 4 + j < SYMBOL.length) {
+			var input = document.createElement('input') ;
+			    input.type = "button" ;
+		        input.value = SYMBOL[i * 4 + j] ;
+				input.onclick=function(){
+					output.value = this.value; //点击按键，则该按键上的内容传送到输入框
+				};
+		    div.appendChild(input) ;//将input的内容传送进div
+            }
+		  }
+
+        document.body.appendChild(div) ;//将div的内容传送到body
+	  }
+
+	var inputs = document.querySelectorAll('input');
+	inputs[inputs.length -1].style.width = '350px';//"="框的大小
+  </script>
+ </body>
+</html>
