@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+  !doctype html>
+<html lang="en"> 
+<head>
+<meta charset="UTF-8">
+<title>我的计算器</title> 
+<style type="text/css"> 
+
+input{ 
+cursor:pointer;
+transition-duration: 0.4s; /* 检索或设置对象过渡的持续时间 */
+background-color:#6699cc;
+display: inline-block;
+width: 60px;
+height: 60px;
+font-size: 40px;
+border-radius: 20px;/*允许为元素添加圆角边框*/
+}
+input:hover{ 
+background-color: #000000;
+    color: white;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+input:active{  
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);/*通过给定Y方向的数目指定一个translation*/
+}
+} 
+input#output{  
+display:block;
+width:280px; 
+} 
+
+</style> 
+</head> 
+<body> 
+<h1>我的计算器</h1>
+<input type="text" id= "output" > 
+
+<script> 
+var Sign = ['+','-','*','/','1','2','3','4','5','6','7','8','9','0','.','Del','='] ; 
+var output = document.querySelector('input#output') ; 
+for (var i=0; i < Sign.length / 4; i++){
+	var div = document.createElement('div') ; 
+for (var j=0; j<4; j++ ){  
+	if (i * 4 + j < Sign.length){ 
+		var input = document.createElement('input') ; 
+  input.type = "button" ;
+   input.value = Sign[i * 4 + j] ;
+    input.onclick = function(){  
+	 output.value += this.value ; 
+	 };  
+ div.appendChild(input) ;    
+  } 
+ }   
+ document.body.appendChild(div) ; 
+}
+ var inputs = document.querySelectorAll('input');
+ inputs[inputs.length -1].style.width = '200px'; 
+ inputs[inputs.length -2].onclick = function(){ 
+	 var s = output.value ; 
+     s = s.substring(0, s.length - 1);
+     output.value = s ; 
+	 }; 
+     inputs[inputs.length -1].onclick = function(){ 
+	 var s = output.value ;
+	 var result ; 
+try {  result = eval(s) ; } 
+ catch (err) {    result = err ; } 
+ output.value = result ; };  
+ </script> 
+ </body>
+ </html>
+ </body>
+</html>
