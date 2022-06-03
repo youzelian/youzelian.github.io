@@ -42,12 +42,14 @@
             right: 0;
             /* width: 10%; */
             height: 80%;
+            z-index: 1;
         }
 
         header p {
             position: absolute;
             bottom: 0;
             right: 1%;
+            z-index: 2;
         }
 
         nav {
@@ -103,9 +105,9 @@
         // 设置body的高度为电脑/手机的高度
         document.body.style.height = window.innerHeight + 'px';
         // 设置header部分的动态生成名人名言进行循环
-        var saying = ['人们说生命是很短促的，我认为是他们自己使生命那样短促的。由于他们不善于利用生命，所以他们反过来抱怨说时间过得太快；\n可是我认为，就他们那种生活来说，时间倒是过得太慢了。——卢梭', '每个人都有一定的理想，这种理想决定着他的努力和判断的方向。在这个意义上，我从来不把安逸和快乐看作是生活目的本身\n——这种伦理基础，我叫它猪栏式的理想。照亮我的道路，并且不断地给我新的勇气去愉快地正视生活的理想，是善、美和真。——爱因斯坦', '人的智慧掌握着三把钥匙，一把开启数字，一把开启字母，一把开启音符。知识、思想、幻想就在其中。——雨果'];
+        var saying = ['人们说生命是很短促的，我认为是他们自己使生命那样短促的。由于他们不善于利用生命，所以他们反过来抱怨说时间过得太快；\n可是我认为，就他们那种生活来说，时间倒是过得太慢了。——卢梭', '每个人都有一定的理想，这种理想决定着他的努力和判断的方向。\n在这个意义上，我从来不把安逸和快乐看作是生活目的本身——这种伦理基础，我叫它猪栏式的理想。\n照亮我的道路，并且不断地给我新的勇气去愉快地正视生活的理想，是善、美和真。——爱因斯坦', '人的智慧掌握着三把钥匙，一把开启数字，一把开启字母，一把开启音符。知识、思想、幻想就在其中。——雨果', '感情有着极大的鼓舞力量，因此，它是一切道德行为的重要前提，\n谁要是没有强烈的志向，也就不能够热烈地把这个志向体现于事业中。——凯洛夫', '错误和挫折教训了我们，使我们比较地聪明起来了，我们的情就办得好一些。\n任何政党，任何个人，错误总是难免的，我们要求犯得少一点。\n犯了错误则要求改正，改正得越迅速，越彻底，越好。——毛泽东', '生活赋予我们一种巨大的和无限高贵的礼品，这就是青春：\n充满着力量，充满着期待志愿，充满着求知和斗争的志向，\n充满着希望信心和青春。——奥斯特洛夫斯基', '要找出时间来考虑一下，一天中作了什么，是正号还是负号，假如是正号很好。\n假如是负号，那就采取措施。——季米特洛夫', '人生的快乐和幸福不在金钱，不在爱情，而在真理。\n即使你想得到的是一种动物式的幸福，生活反正也不会听你一边酗酒，一边幸福的，它会时时刻刻猝不及防地给你打击。——契诃夫', '如果我们选择了最能为人类福利而劳动的职业，\n那么，重担就不能把我们压倒，因为这是为大家而献身；那时我们所感到的就不是可怜的有限的自私的乐趣，我们的幸福将属于千百万人，\n我们的事业将默默地但是永恒发挥作用地存在下去，而面对我们的骨灰，高尚的人们将洒下热泪。——马克思'];
         var header = document.getElementById("Header");
-        var imgsrc = ['https://pic2.zhimg.com/v2-21036a730a29f1dc9c79eb0a3d2778cf_1440w.jpg?source=172ae18b', 'https://tse1-mm.cn.bing.net/th/id/OIP-C.oIy8mQh9JKI-0EQFxNQvywHaLN?pid=ImgDet&rs=1', 'https://pic.baike.soso.com/ugc/baikepic2/2014/cut-20200525113316-196143840_jpg_436_545_26295.jpg/300'];
+        var imgsrc = ['https://pic2.zhimg.com/v2-21036a730a29f1dc9c79eb0a3d2778cf_1440w.jpg?source=172ae18b', 'https://tse1-mm.cn.bing.net/th/id/OIP-C.oIy8mQh9JKI-0EQFxNQvywHaLN?pid=ImgDet&rs=1', 'https://pic.baike.soso.com/ugc/baikepic2/2014/cut-20200525113316-196143840_jpg_436_545_26295.jpg/300', 'https://tse1-mm.cn.bing.net/th/id/R-C.61fe773b2e66cd6427c00401afbcdca2?rik=SbikR%2bGaM3Gunw&riu=http%3a%2f%2fpic.gerenjianli.com%2fmingren_larger%2f1987%2f67443624.jpg&ehk=gKgE8UGOsN9TVMNxOjiK6Ktxz6ENCiJ6ZXnOwqP%2bTn0%3d&risl=&pid=ImgRaw&r=0', 'https://tse1-mm.cn.bing.net/th/id/R-C.7f30afa4b2acbb2f2141814a8f355f4a?rik=mBgL2Bg0y4kpRQ&riu=http%3a%2f%2fimage.hnol.net%2fc%2f2008-01%2f08%2f23%2f2008010823530552347.jpg&ehk=1BdXtKTIyXXiKsWt%2bRy%2fBpO%2bNoLtxvfp5jZTcKYPP60%3d&risl=&pid=ImgRaw&r=0', 'https://tse1-mm.cn.bing.net/th/id/R-C.eacf9eabf8af0697ea2d6f3b4f1eae6c?rik=zmtmvchk31IGAA&riu=http%3a%2f%2fp6.qhimg.com%2fdr%2f250_500_%2ft0109bf5fdf7110f115.jpg&ehk=8%2fIioEIQLEAOAfdT0MlWWJMQrrxmHe9CEb9aXKtThN4%3d&risl=&pid=ImgRaw&r=0', 'https://tse1-mm.cn.bing.net/th/id/R-C.1997e41ba4a5f24ec45d5de98acc3c08?rik=y%2fo96UrvVQjYlQ&riu=http%3a%2f%2fpic.baike.soso.com%2fp%2f20090106%2f20090106120000-100038.jpg&ehk=rdo4DmeVilgWg%2bM%2bV0FXt%2fDPkPumxnUK1cuQT6RdyIg%3d&risl=&pid=ImgRaw&r=0', 'https://p1.ssl.qhmsg.com/t01a7fd227b2d068033.jpg', 'https://tse1-mm.cn.bing.net/th/id/R-C.f5b7364f00bb48deb4facd47db4b60d6?rik=IdkBa%2bu2nEjiEw&riu=http%3a%2f%2fwww.lunwenhz.com%2fuploads%2fallimg%2f191016%2f33-191016095141B4.png&ehk=pEp%2btfoPPdmWBjNaRqJTP5JvlU6wQjMxcruYhT3vgwg%3d&risl=&pid=ImgRaw&r=0'];
         var img = document.getElementById('Img');
         var symbol = ['第一次作业', '第二次作业', '第三次作业', '第四次作业', '第五次作业', '第六次作业', '第七次作业', '第八次作业', '第九次作业', '第十次作业', '第十一次作业', '第十二次作业', '第十三次作业', '第十四次作业', '第十五次作业', '第十六次作业'];
         var nav = document.getElementById('Nav');
