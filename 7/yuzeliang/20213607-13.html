@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>考试测试</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            text-align: center;
+            background-image: url("https://img.tt98.com/d/2020/2020062917009557/5ef9ab0e0f1fd.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+        }
+
+        p {
+            position: absolute;
+            right: 450px;
+        }
+
+        .shuchukuang {
+            width: 280px;
+            height: 80px;
+            margin: 60px auto 5px auto;
+            border: 1px solid gray;
+            border-radius: 20px;
+            font-size: 0px;
+        }
+
+        .shuchukuang .outbefore {
+            width: 280px;
+            height: 30px;
+            border: none;
+            border-radius: 0;
+            font-size: 20px;
+            color: #d0d0d1;
+        }
+
+        .shuchukuang .outafter {
+            width: 280px;
+            height: 50px;
+            border-radius: 0;
+            font-size: 45px;
+            border: none;
+        }
+
+        .gongneng {
+            font-size: 0;
+        }
+
+        input {
+            width: 70px;
+            height: 45px;
+            border-radius: 25px;
+            background-color: #b490b8;
+            outline: none;
+            cursor: pointer;
+        }
+
+        input:hover {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>欢迎使用余泽亮的计算器</h1>
+    <p>---键盘使用也可，shift清零</p>
+    <div class="shuchukuang">
+        <input type="text" class="outbefore" id="shuchukuangbefore" readonly="readonly">
+        <input type="text" class="outafter" id="shuchukuangafter" readonly="readonly">
+    </div>
+    <div class="gongneng">
+        <input type="button" value="平方" id="平方">
+        <input type="button" value="+/-" id="+/-">
+        <input type="button" value="CE" id="CE">
+        <input type="button" value="退格" id="退格">
+    </div>
+    <script>
+        var i, m;
+        // 此处更改symbol值的顺序是为了实现键盘事件，因为键码值的顺序连续
+        var symbol = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "*", "+", "=", "-", ".", "/"];
+        // 外面的for循环动态设置了四个div盒子，分别装有四个不同的按钮
+        for (i = 0; i < symbol.length / 4; i++) {
+            var div = document.createElement("div");
+            // 里面的for循环动态设置了四个不同的按钮
+            for (m = 0; m < symbol.length / 4; m++) {
+                var input = document.createElement("input");
+                input.type = "button";
+                input.value = symbol[i * 4 + m];
+                input.id = i * 4 + m;
+                // 将四个按钮添加给div
+                div.appendChild(input);
+                input.onclick = function () {
+                    // this指的是调用函数的对象，此处指的是input
+                    shuchukuangbefore.value += this.value;
+                }
+                if (input.id == 10 || input.id == 11 || input.id == 13 || input.id == 15) {
+                    input.onclick = function () {
+                        // this指的是调用函数的对象，此处指的是input
+                        if (shuchukuangafter.value != 0) {
+                            shuchukuangbefore.value = shuchukuangafter.value;
+                        }
+                        shuchukuangbefore.value += this.value;
+                    }
+                }
+            }
+            document.body.appendChild(div);
+        }
+        // 定义最后输出内容按钮
+        var results = document.getElementById("12");
+        results.onclick = function () {
+            var result;
+            // 判断程序是否出错，当出错时会出现err错误值
+            try {
+                function isInteger(obj) {
+                    return (obj | 0) === obj
+                }
+                if (isInteger((eval(shuchukuangbefore.value))) == true) {
+                    result = eval(shuchukuangbefore.value);
+                }
+                else {
+                    result = eval(shuchukuangbefore.value).toFixed(2);
+                }
+            }
+            catch (err) {
+                result = err;
+            }
+            shuchukuangbefore.value += "=";
+            shuchukuangafter.value = result;
+        }
+        // 定义清零CE按钮
+        var clear = document.getElementById("CE");
+        clear.onclick = function () {
+            shuchukuangbefore.value = "";
+            shuchukuangafter.value = "";
+        }
+        // 定义退格backspace按钮
+        var Backspace = document.getElementById("退格");
+        Backspace.onclick = function () {
+            var back = shuchukuangbefore.value;
+            var Backed = back.substring(0, back.length - 1);
+            shuchukuangbefore.value = Backed;
+        }
+        // 定义平方按钮
+        var pingfang = document.getElementById("平方");
+        pingfang.onclick = function () {
+            shuchukuangafter.value = Math.pow(shuchukuangbefore.value, 2);
+        }
+        //定义+/-按钮
+        //让符号变反数,当有shuchukuangafter时对输出结果进行正反输出，当shuchukuangafter没有时对shuchukuagnbefore进行正反输出
+        var zhengfan = document.getElementById("+/-");
+        zhengfan.onclick = function () {
+            if (shuchukuangafter.value != 0)
+                shuchukuangafter.value = -shuchukuangafter.value;
+            else {
+                shuchukuangbefore.value = -shuchukuangbefore.value;
+            }
+        }
+        // 定义键盘事件
+        document.body.onkeydown = function (e) {
+            if (e.keyCode == 106 || e.keyCode == 107 || e.keyCode == 109 || e.keyCode == 111) {
+                if (shuchukuangafter.value != 0) {
+                    shuchukuangbefore.value = shuchukuangafter.value;
+                    // var yuzeliang = e.keyCode;
+                    // shuchukuangbefore.value += document.getElementById(yuzeliang - 96).value;
+                }
+            }
+            // 定义十个数字和加减乘除和.的键盘事件，此处i是它们的键码值
+            for (var i = 96; i <= 111; i++) {
+                if (e.keyCode === i) {
+                    shuchukuangbefore.value += document.getElementById(i - 96).value;
+                }
+            }
+            // 定义enter事件，计算出多少数值
+            if (e.keyCode === 13) {
+                try {
+                    function isInteger(obj) {
+                        return (obj | 0) === obj
+                    }
+                    if (isInteger((eval(shuchukuangbefore.value))) == true) {
+                        result = eval(shuchukuangbefore.value);
+                    }
+                    else {
+                        result = eval(shuchukuangbefore.value).toFixed(2);
+                    }
+                }
+                catch (err) {
+                    result = err;
+                }
+                shuchukuangbefore.value += "=";
+                shuchukuangafter.value = result;
+            }
+            // 定义退格backspace事件
+            if (e.keyCode === 8) {
+                var back = shuchukuangbefore.value;
+                var Backed = back.substring(0, back.length - 1);
+                shuchukuangbefore.value = Backed;
+            }
+            //定义清零按钮shift
+            if (e.keyCode === 16) {
+                shuchukuangbefore.value = "";
+                shuchukuangafter.value = "";
+            }
+        }
+    </script>
+</body>
+
+</html>

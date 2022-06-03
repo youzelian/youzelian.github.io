@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>考试测试</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        p {
+            position: absolute;
+            right: 600px;
+        }
+
+        .jishuanqi {
+            width: 280px;
+            height: 45px;
+            font-size: 0px;
+            margin: 60px auto 5px auto;
+        }
+
+        .jishuanqi input {
+            width: 35px;
+            height: 45px;
+        }
+
+        .jishuanqi .out {
+            width: 208px;
+            height: 45px;
+            border: 1px solid #007acc;
+        }
+
+        input {
+            width: 70px;
+            height: 45px;
+            border-radius: 25px;
+            box-shadow: 3px 3px 3px gray;
+            outline: none;
+            cursor: pointer;
+        }
+
+        input:hover {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>欢迎使用余泽亮的计算器</h1>
+    <p>---键盘使用也可，shift清零</p>
+    <div class="jishuanqi">
+        <input type="text" class="out" id="shuchukuang" readonly="readonly">
+        <input type="button" value="CE" id="CE">
+        <input type="button" value="退格" id="退格">
+    </div>
+    <script>
+        var i, m;
+        // 此处更改symbol值的顺序是为了实现键盘事件，因为键码值的顺序连续
+        var symbol = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "*", "+", "=", "-", ".", "/"];
+        // 外面的for循环动态设置了四个div盒子，分别装有四个不同的按钮
+        for (i = 0; i < symbol.length / 4; i++) {
+            var div = document.createElement("div");
+            // 里面的for循环动态设置了四个不同的按钮
+            for (m = 0; m < symbol.length / 4; m++) {
+                var input = document.createElement("input");
+                input.type = "button";
+                input.value = symbol[i * 4 + m];
+                input.id = i * 4 + m;
+                // 将四个按钮添加给div
+                div.appendChild(input);
+                input.onclick = function () {
+                    // this指的是调用函数的对象，此处指的是input
+                    shuchukuang.value += this.value;
+                }
+            }
+            document.body.appendChild(div);
+        }
+        // 定义最后输出内容按钮
+        var results = document.getElementById("12");
+        results.onclick = function () {
+            var result;
+            // 判断程序是否出错，当出错时会出现err错误值
+            try {
+                result =eval(shuchukuang.value);
+            }
+            catch (err) {
+                result = err;
+            }
+            shuchukuang.value = result;
+        }
+        // 定义清零CE按钮
+        var clear = document.getElementById("CE");
+        clear.onclick = function () {
+            shuchukuang.value = "";
+        }
+        // 定义退格backspace按钮
+        var Backspace = document.getElementById("退格");
+        Backspace.onclick = function () {
+            var back = shuchukuang.value;
+            var Backed = back.substring(0, back.length - 1);
+            shuchukuang.value = Backed;
+        }
+        // 键盘事件出现太多重复代码，后期修改，例如设置为几个function再去调用
+        document.body.onkeydown = function (e) {
+            // 定义十个数字和加减乘除和.的键盘事件，此处i是它们的键码值
+            for (var i = 96; i <= 111; i++) {
+                if (e.keyCode === i) {
+                    shuchukuang.value += document.getElementById(i - 96).value;
+                }
+            }
+            // 定义enter事件，计算出多少数值
+            if (e.keyCode === 13) {
+                 var result;
+				// 判断程序是否出错，当出错时会出现err错误值
+				try {
+					result =eval(shuchukuang.value);
+				}
+				catch (err) {
+					result = err;
+				}
+            shuchukuang.value = result;
+            }
+            // 定义退格backspace事件
+            if (e.keyCode === 8) {
+                var back = shuchukuang.value;
+                var Backed = back.substring(0, back.length - 1);
+                shuchukuang.value = Backed;
+            }
+            //定义清零按钮shift
+            if (e.keyCode === 16) {
+                shuchukuang.value = "";
+            }
+        }
+    </script>
+</body>
+
+</html>
