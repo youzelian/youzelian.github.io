@@ -1,141 +1,108 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>华勋的作业</title>
+	<meta name=”viewport” content=”width=device-width, initial-scale=1″/>
+    <title>华勋的主页</title>
 
 </head>
+
+
+<body>
+  
+ 
+    <h1>华勋的主页</h1>
+	<div id = "itd">
+<p>华勋 20213601 QQ：490216112</p>
+	</div>
+	<button onclick="getElementById('demo').innerHTML=Date()">现在的时间是?</button>
+    <p id="demo"></p>
+		<hr>
+    <div id = "bt">
+	<a href="huaxun/20213601-1.html" class="button">第一次作业</a>
+	<a href="huaxun/20213601-2.html" class="button">第二次作业</a>
+	<a href="huaxun/20213601-3.html" class="button">第三次作业</a>
+	<a href="huaxun/20213601-4.html" class="button">第四次作业</a>
+	<a href="huaxun/20213601-5.html" class="button">第五次作业</a>
+	<a href="huaxun/20213601-6.html" class="button">第六次作业</a>
+	<a href="huaxun/20213601-7.html" class="button">第七次作业</a>
+	<a href="huaxun/20213601-8.html" class="button">第八次作业</a>
+	<a href="huaxun/20213601-9.html" class="button">第九次作业</a>
+	<a href="huaxun/20213601-10.html" class="button">第十次作业</a>
+	<a href="huaxun/20213601-11.html" class="button">第十一次作业</a>
+	<a href="huaxun/20213601-12.html" class="button">第十二次作业</a>
+	
+    </div>  
+<script>
+window.onload = function(){
+  let div1=document.createElement("div");
+  let textNode=document.createTextNode("不想后悔，所以要加油啊！");
+  div1.appendChild(textNode);
+  document.body.appendChild(div1);
+}
+</script>
+
 <style>
 
+    
+ a {
+  
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;   
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #7FFFD4;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 3px #999;
+           }
+body{background-color:#E0FFFF;
+     text-align: center;
+}
 h1{
-
-    text-align: center;
-    font-size: 60px
+      margin: 20px;
+      font-size: 30px;
+      font-weight: 590;
+      font-family: 楷体;
 }
 .center{
     text-align: center;
     font-family:楷体;
     font-size: 30px;
 }
-h3{
-    text-align:right;
-}
+
 a:link{
     color: black;
     text-decoration: none;
 }
 a:visited{
-    color:#33FFCC;
+    color:red;
     text-decoration: none;
 }
 a:hover{
-    color:#33FFCC;
+    color: #b84dff;
     text-decoration: none;
 }
 a:active{
     color: rgb(129, 142, 17);
     text-decoration: none;
 }
+#itd{ margin: 20px;
+      font-size: 15px;
+      font-weight: 590;
+      font-family: 楷体;
+}
+#bt{font-size:20px;
+margin:0 auto;
+    width:720px;
+}
 </style>
-
-<body>
-  
-    </div>
-    <h1></h1>
-	
-		<hr>
-    <table border="1" cellpadding="0" cellspacing="0" align="center" width="600px" height="300px">
-        <thead>
-            <tr>
-                <th>姓名</th>
-                <th>学号</th>
-                <th>作业链接</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>华勋</td>
-                <td>20213601</td>
-                <td><a href="huaxun/20213601-1.html">第一次作业</a></td>
-            </tr>
-            <tr>
-                <td>华勋</td>
-                <td>20213601</td>
-                <td><a href="huaxun/20213601-2.html">第二次作业</a></td>
-            </tr>
-            <tr>
-                <td>华勋</td>
-                <td>20213601</td>
-                <td><a href="huaxun/20213601-3.html">第三次作业</a></td>
-            </tr>
-            <tr>
-                <td>华勋</td>
-                <td>20213601</td>
-                <td><a href="huaxun/20213601-4.html">第四次作业</a></td>
-            </tr>
-            <tr>
-                <td>华勋</td>
-                <td>20213601</td>
-                <td><a href="huaxun/20213601-5.html">第五次作业</a></td>
-            </tr>
-			<tr>
-                <td>华勋</td>
-                <td>20213601</td>
-                <td><a href="huaxun/20213601-6.html">第六次作业</a></td>
-            </tr>
-			<tr>
-                <td>华勋</td>
-                <td>20213601</td>
-                <td><a href="huaxun/20213601-7.html">第七次作业</a></td>
-            </tr>
-			<tr>
-                <td>华勋</td>
-                <td>20213601</td>
-                <td><a href="huaxun/20213601-8.html">第八次作业</a></td>
-            </tr>
-			<tr>
-                <td>华勋</td>
-                <td>20213601</td>
-                <td><a href="huaxun/20213601-9.html">第九次作业</a></td>
-            </tr>
-			<tr>
-                <td>华勋</td>
-                <td>20213601</td>
-                <td><a href="huaxun/20213601-10.html">第十次作业</a></td>
-            </tr>
-			<tr>
-                <td>华勋</td>
-                <td>20213601</td>
-                <td><a href="huaxun/20213601-11.html">第十一次作业</a></td>
-            </tr>
-			<tr>
-                <td>华勋</td>
-                <td>20213601</td>
-                <td><a href="huaxun/20213601-12.html">第十二次作业</a></td>
-            </tr>
-			<tr>
-                <td>华勋</td>
-                <td>20213601</td>
-                <td><a href="huaxun/20213601-13.html">第十三次作业</a></td>
-            </tr>
-			<tr>
-                <td>华勋</td>
-                <td>20213601</td>
-                <td><a href="huaxun/20213601-14.html">第十四次作业</a></td>
-            </tr>
-			<tr>
-                <td>华勋</td>
-                <td>20213601</td>
-                <td><a href="huaxun/20213601-15.html">第十五次作业</a></td>
-            </tr>
-			
-
-        </tbody>
-    </table>
-	<div class="center">
-        </audio>       
-        </div>
   </body>
 </html>
