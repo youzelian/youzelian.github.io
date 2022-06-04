@@ -4,47 +4,334 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>20213664</title>
+    <title>夏豪的个人主页</title>
+    <link rel="shotcut icon" href="https://tse3-mm.cn.bing.net/th/id/OIP-C.2hvU0TRA3gTESxwBdsncvAAAAA?pid=ImgDet&rs=1" type="image/x-icon">
     <style>
-        * {
+        body{
             margin: 0;
             padding: 0;
+            background-color: rgb(198, 240, 238);
         }
-        body {
+        #header{
+            border: 1px solid black;
+            height: 20%;
+            padding: 1em;
+            text-align: center;
+            font-family: 楷体;
+            font-size: 25px;
+            font-weight: bolder;
+            color: rgb(125, 98, 10);
+            line-height: 1.5em;
+        }
+        #dateTime{
+            color: black;
+            line-height: 2em;
+        }
+        #nav{
+            border: 1px solid black;
+            height: 40%;
             text-align: center;
         }
-        #title {
-            font-size: 70px;
+        #article{
+            border: 1px solid black;
+            height: 30%;
+            font-size: 3em;
+            color: #d9a5a5;
             font-family: 楷体;
-            color: brown;
         }
-        #tips {
+        #footer{
+            border: 1px solid black;
+            height: 5%;
+            font-family: 楷体;
+            font-size: 25px;
+            color: #fadcdc;
+            background-color: #808080;
+            text-align: center;
+            
+        }
+        input{
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            margin: 15px;
+            border-radius: 10px;
+            font-size: 40px;
 
         }
-        .homeworks {
-            font-size: 30px;
-            margin: 20px 15px 10px;
+        input:hover{ 
+	        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);/* 给予按钮阴影效果 */
+        }
+        input:active{
+            background-color:gray;
+            transform: translateY(4px);/*给予按钮一个y轴上的动态效果*/
         }
     </style>
 </head>
-</body>
-<div id="title">夏豪的个人主页</div>
-<div id="tips">↓点击作业进行传送</div>
-<div><a href="xiahao/20213664-11.html" target="_Blank"><input type="button" value="第一次作业" class="homeworks"></a></div>
-<div><a href="xiahao/20213664-2.html" target="_Blank"><input type="button" value="第二次作业" class="homeworks"></a></div>
-<div><a href="xiahao/20213664-3.html" target="_Blank"><input type="button" value="第三次作业" class="homeworks"></a></div>
-<div><a href="xiahao/20213664-4.html" target="_Blank"><input type="button" value="第四次作业" class="homeworks"></a></div>
-<div><a href="xiahao/20213664-5.html" target="_Blank"><input type="button" value="第五次作业" class="homeworks"></a></div>
-<div><a href="xiahao/20213664-6.html" target="_Blank"><input type="button" value="第六次作业" class="homeworks"></a></div>
-<div><a href="xiahao/20213664-7.html" target="_Blank"><input type="button" value="第七次作业" class="homeworks"></a></div>
-<div><a href="xiahao/20213664-8.html" target="_Blank"><input type="button" value="第八次作业" class="homeworks"></a></div>
-<div><a href="xiahao/20213664-9.html" target="_Blank"><input type="button" value="第九次作业" class="homeworks"></a></div>
-<div><a href="xiahao/20213664-10.html" target="_Blank"><input type="button" value="第十次作业" class="homeworks"></a></div>
-<div><a href="xiahao/20213664-11.html" target="_Blank"><input type="button" value="第十一次作业" class="homeworks"></a></div>
-<div><a href="xiahao/20213664-12.html" target="_Blank"><input type="button" value="第十二次作业" class="homeworks"></a></div>
-<div><a href="xiahao/20213664-13.html" target="_Blank"><input type="button" value="第十三次作业" class="homeworks"></a></div>
-<div><a href="xiahao/20213664-14.html" target="_Blank"><input type="button" value="第十四次作业" class="homeworks"></a></div>
-<div><a href="xiahao/20213664-15.html" target="_Blank"><input type="button" value="第十五次作业" class="homeworks"></a></div>
-<div><a href="xiahao/20213664-16.html" target="_Blank"><input type="button" value="第十六次作业" class="homeworks"></a></div>
+<body>
+    <div id='header'>
+        <div id="dateTime"></div>
+        <div id="says"></div>
+    </div>
+    <div id='nav'></div>
+    <div id='article'></div>
+    <div id='footer'>CopyRight Belongs to 夏豪(学号:20213664,电话:19880041639)</div>
+    <script>
+        document.body.style.height = window.innerHeight - 30 + 'px';//使body高度适应屏幕的大小
+        var i = 0;
+        var Says = ['『世界上最快而又最慢，最长而又最短，最平凡而又最珍贵，最易被忽视而又最令人后悔的就是时间。』——高尔基','『白日去如箭，达者惜今阳。』——朱敦儒','『莫等闲，白了少年头，空悲切。』——岳飞','『长风破浪会有时，直挂云帆济沧海！』——李白'];
+        var SaysDom = document.getElementById('says');//抓取id为header的div
+        showSays();//展示名人名言的函数
+        function showSays(){
+            SaysDom.textContent = Says[i];
+            if (i >= Says.length - 1){//通过判断语句使i闭合
+                i = 0;
+            }
+            else{
+                i++;
+            }
+            window.setTimeout(showSays,4000);//setTimeout使函数每4s执行一次，并实现自循环
+        }
+        //按钮布局
+        var butn = ['一','二','三','四','五','六','七','八','九','十','十一','十二','十三','十四','十五','十六']
+        for(var k = 0;k < butn.length/8;k++){//计算机主要布局（通过for循环，4个一行butn中的内容写入div中）
+        var div = document.createElement('div');//创建一个div节点
+
+            for(var j = 0;j < 8;j++){
+                if( k * 8+j < butn.length){
+                    var input = document.createElement('input');//创建类型为button的input元素
+                    input.type = "button";
+                    input.value = butn[k * 8 + j];
+                    input.id = butn[k * 8 + j];
+                    div.appendChild(input);//给div节点内添加input子节点
+                };
+            };
+            document.getElementById("nav").appendChild(div);//给id为nav节点内添加div子节点
+        };
+        document.getElementById("一").onclick=function(){
+            window.open('https://youzelian.github.io/16/xiahao/20213664-1.html');//在一个新窗口打开指定链接
+        };
+        document.getElementById("二").onclick=function(){
+            window.open('https://youzelian.github.io/16/xiahao/20213664-2.html');
+        };
+        document.getElementById("三").onclick=function(){
+            window.open('https://youzelian.github.io/16/xiahao/20213664-3.html');
+        };
+        document.getElementById("四").onclick=function(){
+            window.open('https://youzelian.github.io/16/xiahao/20213664-4.html');
+        };
+        document.getElementById("五").onclick=function(){
+            window.open('https://youzelian.github.io/16/xiahao/20213664-5.html');
+        };
+        document.getElementById("六").onclick=function(){
+            window.open('https://youzelian.github.io/16/xiahao/20213664-6.html');
+        };
+        document.getElementById("七").onclick=function(){
+            window.open('https://youzelian.github.io/16/xiahao/20213664-7.html');
+        };
+        document.getElementById("八").onclick=function(){
+            window.open('https://youzelian.github.io/16/xiahao/20213664-8.html');
+        };
+        document.getElementById("九").onclick=function(){
+            window.open('https://youzelian.github.io/16/xiahao/20213664-9.html');
+        };
+        document.getElementById("十").onclick=function(){
+            window.open('https://youzelian.github.io/16/xiahao/20213664-10.html');
+        };
+        document.getElementById("十一").onclick=function(){
+            window.open('https://youzelian.github.io/16/xiahao/20213664-11.html');
+        };
+        document.getElementById("十二").onclick=function(){
+            window.open('https://youzelian.github.io/16/xiahao/20213664-12.html');
+        };
+        document.getElementById("十三").onclick=function(){
+            window.open('https://youzelian.github.io/16/xiahao/20213664-13.html');
+        };
+        document.getElementById("十四").onclick=function(){
+            window.open('https://youzelian.github.io/16/xiahao/20213664-14.html');
+        };
+        document.getElementById("十五").onclick=function(){
+            window.open('https://youzelian.github.io/16/xiahao/20213664-15.html');
+        };
+        document.getElementById("十六").onclick=function(){
+            window.open('https://youzelian.github.io/16/xiahao/20213664-16.html');
+        };
+
+        //作业介绍
+        //创建一个作业介绍数组
+        var homeWork = ['一个介绍三体的网页','一个可以链接他人的作业的表格','一个可以链接他人作业的表格PLUS','运用input元素写的表单信息网页','点击按钮即可选择古诗的网页','实现了上/下一首功能的唐诗显示网页','实现了上/下一首功能的唐诗显示网页（修复了上一次作业所产生的BUG）','唐诗三百首用字符串、数组处理，三百首古诗形成闭环。','唐诗3.0（练习字符串和算法），古诗文件通过超链接进行使用','对上一次作业的代码进行重构，并为每句都写了注释，并实现了抽一首和前往功能','实现了计算器的外观与功能并实现了按键响应','暂无','个人主页升级版，能够自适应手机或者电脑的尺寸，并有名言动态生成','暂无','暂无','暂无'];
+        //抓取作业按钮
+        var butn1 = document.getElementById('一');butn2 = document.getElementById('二');butn3 = document.getElementById('三');butn4 = document.getElementById('四');butn5 = document.getElementById('五');butn6 = document.getElementById('六');butn7 = document.getElementById('七');butn8 = document.getElementById('八');butn9 = document.getElementById('九');butn10 = document.getElementById('十');butn11 = document.getElementById('十一');butn12 = document.getElementById('十二');butn13 = document.getElementById('十三');butn14 = document.getElementById('十四');butn15 = document.getElementById('十五');butn16 = document.getElementById('十六');
+        //当鼠标悬浮在该抓取按钮上时，执行以下事件
+        butn1.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[0];
+        };
+        //当鼠标移出该按钮区域时，执行以下事件
+        butn1.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+        butn2.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[1];
+        };
+        butn2.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+        butn3.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[2];
+        };
+        butn3.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+        butn4.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[3];
+        };
+        butn4.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+        butn5.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[4];
+        };
+        butn5.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+        
+        butn6.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[5];
+        };
+        butn6.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+        butn7.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[6];
+        };
+        butn7.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+        butn8.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[7];
+        };
+        butn8.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+        butn9.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[8];
+        };
+        butn9.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+        butn10.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[9];
+        };
+        butn10.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+        butn11.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[10];
+        };
+        butn11.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+        butn12.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[11];
+        };
+        butn12.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+        butn13.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[12];
+        };
+        butn13.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+        butn14.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[13];
+        };
+        butn14.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+        butn15.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[14];
+        };
+        butn15.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+        butn16.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[15];
+        };
+        butn16.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+
+        //显示日期
+        function showDate(){
+            var date = new Date();
+            year = date.getFullYear();//获取当前年份
+            month = date.getMonth() + 1;//获取当前月份，1月返回0，2月返回1，以此类推。
+            day=date.getDate();
+            week=date.getDay();
+            week="日一二三四五六".charAt(week);//charAt函数，根据week得到值返回指定位置的星期
+			week="星期"+week;
+			
+			var hour=date.getHours();//获取当前小时数
+			hour=hour<10?"0"+hour:hour;//三目运算，是时间保持两位数
+			minute=date.getMinutes();//获取当前分数
+			minute=minute<10?"0"+minute:minute;
+			second=date.getSeconds();//获取当前秒数
+			second=second<10?"0"+second:second;
+
+            var result=year+"年"+month+"月"+day+"日"+week+" "+hour+":"+minute+":"+second;
+			document.getElementById("dateTime").innerHTML=result;//抓取id为dateTime的元素，并将result的值替换
+        }
+        showDate();
+		setInterval("showDate()",1000);//没1s调用一次showDate函数
+
+
+    </script>
 </body>
 </html>

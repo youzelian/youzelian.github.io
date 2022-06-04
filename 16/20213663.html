@@ -2,148 +2,312 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>个人网页</title>
-</head>
-<body>
-    <style>
+    <!--网页宽度自动适应手机屏幕宽度-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>俞森洲的个人主页</title>
+    <style type="text/css">
         body
         {
+            margin: 0;
+            padding: 0;
+            background-color: rgba(0,250,150,0.2);
+       
+        }
+        #header
+        {
+            font-size: 40px;
+            font-family: 华文新魏，微软雅黑，楷体;
             text-align: center;
-            background-color: rgba(250,250,0,0.1);
+            border: 1px solid black;
+            height: 20%;
+            float: inline-start;
         }
-        div
+        input
         {
+          margin: 1em 0.5em 1em;
+          font-size: 1.5em;
+          border-radius: 10px;/* 使按钮呈现圆角 */
+          border: outset;
+          width: 125px;
+          height:100px;
+        }
+        #nav{
+            border: 1px solid black;
             text-align: center;
+            float: left;
+            width: 50%;
+            height: 80%;
         }
-        h1,h2
-        {
-            text-align: center;  
-            font-size: 45px;
+        #article{
+            font-size: 3em;
+            color: #d2a5d9;
+            font-family: 楷体;
         }
-        #prev,#next
-        {
-            width: 100px;
-            height: 50px;
-            border-radius: 50px;
-        }
-        h3
-        {
+        #footer{
+            border: 1px solid black;
+            height: 25%;
+            font-family: 楷体;
             font-size: 30px;
-            color: rgba(250,5,250,0.5);
+            color: #fadcdc;
+            background-color: #808080;
+            position:absolute;
+            left:50%;
+            bottom:3.5%;
+            text-align :center;
+            display: flex; 
+            justify-content: center; /*水平居中*/
+            align-items: Center; /*垂直居中*/   
         }
-        a:link
+        input:hover 
         {
-           color:blue;
+            background-color: rgba(0, 0, 0, 0.5);
         }
-        a:visited
+        input:active 
         {
-           color:rgb(233, 0, 250);
+            background-color: rgba(0, 0, 0, 0.5);
         }
-        a:hover
-        {
-           font-size: 20px;
-           color: blue;
-        }
-        a:active
-        {
-           color:black;
-           
-        }
-      
+
     </style>
-    <h1>Welcome To</h1>
-    <h2>俞森洲的个人网页</h2>
-       <input type="button" value="上一页" id="prev">
-       <input type="button" value="下一页" id="next">
-    <div>
-        <table border="1" width="600" height="300" cellspacing="0" cellpadding="0"  align="center">
-            <tr align="center">
-                <td>作业次序</td>
-                <td>作业链接</td>
-                <td>简单介绍</td>
-            </tr>
-            <tr align="center">
-                <td>第一周作业</td>
-                <td><a href="yusenzhou/20213663-1.html">20213663-01</a></td>
-                <td>古诗《春宵》</td>
-            </tr>
-            <tr align="center">
-                <td>第二周作业</td>
-                <td><a href="yusenzhou/20213663-2.html">20213663-02</a></td>
-                <td>《超链接》</td>
-            </tr>
-            <tr align="center">
-                <td>第三周作业</td>
-                <td><a href="yusenzhou/20213663-3.html">20213663-03</a></td>
-                <td>《新闻页面》</td>
-            </tr>
-            <tr align="center">
-                <td>第四周作业</td>
-                <td><a href="yusenzhou/20213663-4.html">20213363-04</a></td>
-                <td>《健康码查询》</td>
-            </tr>
-            <tr align="center">
-                <td>第五周作业</td>
-                <td><a href="yusenzhou/20213663-5.html">20213363-05</a></td>
-                <td>古诗《饮湖上初晴后雨》</td>
-            </tr>
-            <tr align="center">
-                <td>第六周作业</td>
-                <td><a href="yusenzhou/20213663-6.html">20213663-06</a></td>
-                <td>《实现翻页》</td>
-            </tr>
-            <tr align="center">
-                <td>第七周作业</td>
-                <td><a href="yusenzhou/20213663-7.html">20213663-7</a></td>
-                <td></td>
-            </tr>
-            <tr align="center">
-                <td>第八周作业</td>
-                <td><a href="yusenzhou/20213663-8.html">20213663-8</a></td>
-                <td></td>
-            </tr>
-				  <tr>
-		  <td>第九次作业</td>
-		  <td><a href=" yusenzhou/20213663-9.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十次作业</td>
-		  <td><a href=" yusenzhou/20213663-10.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十一次作业</td>
-		  <td><a href=" yusenzhou/20213663-11.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十二次作业</td>
-		  <td><a href=" yusenzhou/20213663-12.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十三次作业</td>
-		  <td><a href=" yusenzhou/20213663-13.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十四次作业</td>
-		  <td><a href=" yusenzhou/20213663-14.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十五次作业</td>
-		  <td><a href=" yusenzhou/20213663-15.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十六次作业</td>
-		  <td><a href=" yusenzhou/20213663-16.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-        </table>
+</head>
+<body>
+    <div id='header'>
+        <div id="fq"></div>
     </div>
-    <h3>CopyRight Belongs to Mr. Yu Sen Zhou</h3>
+    <div id='nav'></div>
+    <div id='article'></div>
+    <div id='footer'>Name:俞森洲  Student ID:20213663 QQ:2102985411 Number&Wechat:15970322741</div>
+    <script>
+         document.body.style.height = window.innerHeight - 30 + 'px';
+         var i=0;
+         var fq=['不要等待，时机永远不会恰到好处。——拿破仑·希尔','真正的人生，只有在经过艰难卓绝的斗争之后才能实现。——塞涅卡','伟大的事业，需要决心，能力，组织和责任感。——易卜生','合理安排时间，就等于节约时间。——培根','敏而好学，不耻下问。——孔子','与有肝胆人共事，从无字句处读书。——周恩来']
+         var fqDom = document.getElementById('fq');
+         showfq();
+         function showfq(){
+            fqDom.textContent = fq[i];
+            if (i >= fq.length - 1){
+                i = 0;
+            }
+            else{
+                i++;
+            }
+            window.setTimeout(showfq,3000);//使呈现的内容进行内部循环并3s更替一次
+        }
+        var a=['第一周','第二周','第三周','第四周','第五周','第六周','第七周','第八周','第九周','第十周','第十一周','第十二周','第十三周','第十四周','第十五周','第十六周']
+        for(var m = 0;m < a.length/4;m++){
+        var div = document.createElement('div');
+        for(var n = 0;n < 4;n++){
+                if( m * 4+n < a.length){
+                    var input = document.createElement('input');
+                    input.type = "button";
+                    input.value = a[m * 4 + n];
+                    input.id = a[m * 4 + n];
+                    div.appendChild(input);
+                };
+            };
+            document.getElementById("nav").appendChild(div);
+        };
+        //在新的网页打开一个窗口
+        document.getElementById("第一周").onclick=function(){
+            window.open('https://youzelian.github.io/16/yusenzhou/20213663-1.html');
+        };
+        document.getElementById("第二周").onclick=function(){
+            window.open('https://youzelian.github.io/16/yusenzhou/20213663-2.html');
+        };
+        document.getElementById("第三周").onclick=function(){
+            window.open('https://youzelian.github.io/16/yusenzhou/20213663-3.html');
+        };
+        document.getElementById("第四周").onclick=function(){
+            window.open('https://youzelian.github.io/16/yusenzhou/20213663-4.html');
+        };
+        document.getElementById("第五周").onclick=function(){
+            window.open('https://youzelian.github.io/16/yusenzhou/20213663-5.html');
+        };
+        document.getElementById("第六周").onclick=function(){
+            window.open('https://youzelian.github.io/16/yusenzhou/20213663-6.html');
+        };
+        document.getElementById("第七周").onclick=function(){
+            window.open('https://youzelian.github.io/16/yusenzhou/20213664-7.html');
+        };
+        document.getElementById("第八周").onclick=function(){
+            window.open('https://youzelian.github.io/16/yusenzhou/20213664-8.html');
+        };
+        document.getElementById("第九周").onclick=function(){
+            window.open('https://youzelian.github.io/16/yusenzhou/20213664-9.html');
+        };
+        document.getElementById("第十周").onclick=function(){
+            window.open('https://youzelian.github.io/16/yusenzhou/20213664-10.html');
+        };
+        document.getElementById("第十一周").onclick=function(){
+            window.open('https://youzelian.github.io/16/yusenzhou/20213664-11.html');
+        };
+        document.getElementById("第十二周").onclick=function(){
+            window.open('https://youzelian.github.io/16/yusenzhou/20213664-12.html');
+        };
+        document.getElementById("第十三周").onclick=function(){
+            window.open('https://youzelian.github.io/16/yusenzhou/20213664-13.html');
+        };
+        document.getElementById("第十四周").onclick=function(){
+            window.open('https://youzelian.github.io/16/yusenzhou/20213664-14.html');
+        };
+        document.getElementById("第十五周").onclick=function(){
+            window.open('https://youzelian.github.io/16/yusenzhou/20213664-15.html');
+        };
+        document.getElementById("第十六周").onclick=function(){
+            window.open('https://youzelian.github.io/16/yusenzhou/20213664-16.html');
+        };
+        //实现对超链接的介绍呈现
+        var homeWork = ['古诗《春宵》','超链接表格','国际足球新闻','简易的《健康码查询系统》','古诗《饮湖上初晴后雨》','实现部分古诗的翻页','对古诗进行翻页的优化','实现对唐诗三百首首尾相连的翻页的功能','对古诗进行循环的实现翻页功能','实现对唐诗三百首进行抽一首','做一个简单的计算器','none','随机生成名人名言','none','none','none'];
+        var butn1 = document.getElementById('第一周');butn2 = document.getElementById('第二周');
+        butn3 = document.getElementById('第三周');butn4 = document.getElementById('第四周');
+        butn5 = document.getElementById('第五周');butn6 = document.getElementById('第六周');
+        butn7 = document.getElementById('第七周');butn8 = document.getElementById('第八周');
+        butn9 = document.getElementById('第九周');butn10 = document.getElementById('第十周');
+        butn11 = document.getElementById('第十一周');butn12 = document.getElementById('第十二周');
+        butn13 = document.getElementById('第十三周');butn14 = document.getElementById('第十四周');
+        butn15 = document.getElementById('第十五周');butn16 = document.getElementById('第十六周');
+        butn1.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[0];
+        };
+        butn1.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+        butn2.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[1];
+        };
+        butn2.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+        butn3.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[2];
+        };
+        butn3.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+        butn4.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[3];
+        };
+        butn4.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+        butn5.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[4];
+        };
+        butn5.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+        
+        butn6.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[5];
+        };
+        butn6.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+        butn7.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[6];
+        };
+        butn7.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+        butn8.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[7];
+        };
+        butn8.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+        butn9.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[8];
+        };
+        butn9.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+        butn10.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[9];
+        };
+        butn10.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+        butn11.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[10];
+        };
+        butn11.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+        butn12.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[11];
+        };
+        butn12.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+        butn13.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[12];
+        };
+        butn13.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+        butn14.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[13];
+        };
+        butn14.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+        butn15.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[14];
+        };
+        butn15.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+
+        butn16.onmouseover = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = homeWork[15];
+        };
+        butn16.onmouseout = function(){
+            var articleDom = document.getElementById('article');
+            articleDom.textContent = ' ';
+        };
+    </script>
 </body>
 </html>

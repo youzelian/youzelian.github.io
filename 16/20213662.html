@@ -1,110 +1,124 @@
 <!doctype html>
 <html lang="en">
- <head>
+<head>
   <meta charset="UTF-8">
   <title>个人首页</title>
- </head>
-
+</head>
 <style type="text/css">
-	body
-	{
-	text-align:center ;
-	font-size:40px ;
-	font-family:楷体 ;
+body{
+	text-align: center;
+	font-size: 50px;
+	font-family: 宋体;
+	height: 50%;
 	}
-table{margin:auto;}
+table{
+	margin:auto;
+	height: 50%;
+		}
 </style>
-
-
- <body>
-  
+<body>
+<div id="header" class="">不等待机会所送礼物的人，就是征服了命运。</div>
+<script type="text/javascript">
+document.body.style.height = window.innerHeight - 30 +'px';
+var kouHao = ['精力充沛的青春，是不怎么容易灭亡的。','错误经不起失败，但是真理却不怕失败。','只要一息尚存，一个人就不应当放弃希望。','不管何人，若是失往了耐心，就失往了灵魂。','越是接近真理，便愈加发现真理的迷人。','我不能选择那最好的。是那最好的选择我。','最可怕的敌人，就是没有坚强的信念。','我所能奉献的，只有热血辛劳汗水与眼泪。','只要我们能善用时间，就永远不愁时间不够用。','青春是一种持续的陶醉，是理智的狂热。'];
+var headerDom = document.querySelector("div#header");
+var i = 0;
+function showHeader(){
+	headerDom.textContent = kouHao[i];
+	if(i<kouHao.length-1){
+		i++;
+	}else{
+		i = 0;
+	}
+	window.setTimeout(showHeader,3000);
+}
+window.setTimeout(showHeader,3000);
+</script>
 <table border = "1">
 <tr>
    <th>作业序号</th>
    <th>作业链接</th>
    <th>作业简介</th>
-</tr>
-
- <tr>
+<tr>
+<tr>
 	<td>第一次作业</td>
-	<td><a href="cuiliwen/20213662-1.html" target=_blank>作业</a></td>
+	<td><a href="https://youzelian.github.io/16/cuiliwen/20213662-1.html" target=_blank>作业</a></td>
 	<td>《清平调·其一》</td>
  <br>
-	
-     <tr>		
-		<td>第二次作业</td>
-		<td><a href="cuiliwen/20213662-2.html" target=_blank>作业</a></td>
-		<td>超链接</td><br>
-	</tr>
-		
-         <tr>
-			<td>第三次作业</td>
-			<td><a href="cuiliwen/20213662-3.html" target=_blank>作业</a></td>
-			<td>《JOJO的奇妙冒险》</td><br>
-	    </tr>
-                 <tr>			
-					<td>第四次作业</td>
-					<td><a href="cuiliwen/20213662-4.html" target=_blank>作业</a></td>
-					<td>《JOJO的奇妙冒险》</td><br>
-				</tr>
-                     <tr>					
-						<td>第五次作业</td>
-						<td><a href="cuiliwen/20213662-5.html" target=_blank>作业</a></td>
-						<td>《青玉案·元夕》</td><br>
-					</tr>
-					<tr>
-					    <td>第六次作业</td>
-						<td><a href="cuiliwen/20213662-6.html" target=_blank>作业</a></td>
-						<td>古诗</td>
-					</tr>
-		 <td>第七次作业</td>
-		  <td><a href=" cuiliwen/20213662-7.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第八次作业</td>
-		  <td><a href=" cuiliwen/20213662-8.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第九次作业</td>
-		  <td><a href=" cuiliwen/20213662-9.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十次作业</td>
-		  <td><a href=" cuiliwen/20213662-10.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十一次作业</td>
-		  <td><a href=" cuiliwen/20213662-11.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十二次作业</td>
-		  <td><a href=" cuiliwen/20213662-12.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十三次作业</td>
-		  <td><a href=" cuiliwen/20213662-13.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十四次作业</td>
-		  <td><a href=" cuiliwen/20213662-14.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十五次作业</td>
-		  <td><a href=" cuiliwen/20213662-15.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十六次作业</td>
-		  <td><a href=" cuiliwen/20213662-16.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
+<tr>		
+	<td>第二次作业</td>
+	<td><a href="https://youzelian.github.io/16/cuiliwen/20213662-2.html" target=_blank>作业</a></td>
+	<td>超链接</td><br>
+<tr>
+<tr>
+	<td>第三次作业</td>
+	<td><a href="https://youzelian.github.io/16/cuiliwen/20213662-3.html" target=_blank>作业</a></td>
+	<td>《JOJO的奇妙冒险》</td><br>
+</tr>
+<tr>			
+	<td>第四次作业</td>
+	<td><a href="https://youzelian.github.io/16/cuiliwen/20213662-4.html" target=_blank>作业</a></td>
+	<td>《JOJO的奇妙冒险》</td><br>
+</tr>
+ <tr>					
+	<td>第五次作业</td>
+	<td><a href="https://youzelian.github.io/16/cuiliwen/20213662-5.html" target=_blank>作业</a></td>
+	<td>《青玉案·元夕》</td><br>
+</tr>
+<tr>
+	<td>第六次作业</td>
+	<td><a href="https://youzelian.github.io/16/cuiliwen/20213662-6.html" target=_blank>作业</a></td>
+	<td>古诗</td>
+</tr>
+<tr>
+	<td>第七次作业</td>
+	<td><a href="https://youzelian.github.io/16/cuiliwen/20213662-7.html" target=_blank>作业</a></td>
+	<td>唐诗五首</td>
+</tr>
+<tr>
+	<td>第八次作业</td>
+	<td><a href="https://youzelian.github.io/16/cuiliwen/20213662-8.html" target=_blank>作业</a></td>
+	<td>唐诗三百首</td>
+</tr>
+<tr>
+	<td>第九次作业</td>
+	<td><a href="https://youzelian.github.io/16/cuiliwen/20213662-9.html" target=_blank>作业</a></td>
+	<td>唐诗三百首</td>
+</tr>
+<tr>
+	<td>第十次作业</td>
+	<td><a href="https://youzelian.github.io/16/cuiliwen/20213662-10.html" target=_blank>作业</a></td>
+	<td>唐诗三百首</td>
+</tr>
+<tr>
+	<td>第十一次作业</td>
+	<td><a href="https://youzelian.github.io/16/cuiliwen/20213662-11.html" target=_blank>作业</a></td>
+	<td>计算机</td>
+</tr>
+<tr>
+	<td>第十二次作业</td>
+	<td><a href="https://youzelian.github.io/16/cuiliwen/20213662-12.html" target=_blank>作业</a></td>
+	<td></td>
+</tr>
+<tr>
+	<td>第十三次作业</td>
+	<td><a href="https://youzelian.github.io/16/cuiliwen/20213662-13.html" target=_blank>作业</a></td>
+	<td></td>
+</tr>
+<tr>
+	<td>第十四次作业</td>
+	<td><a href="https://youzelian.github.io/16/cuiliwen/20213662-14.html" target=_blank>作业</a></td>
+	<td></td>
+</tr>
+<tr>
+	<td>第十五次作业</td>
+	<td><a href="https://youzelian.github.io/16/cuiliwen/20213662-15.html" target=_blank>作业</a></td>
+	<td></td>
+</tr>
+<tr>
+	<td>第十六次作业</td>
+	<td><a href="https://youzelian.github.io/16/cuiliwen/20213662-16.html" target=_blank>作业</a></td>
+	<td></td>
+</tr>
  </body>
 </html>

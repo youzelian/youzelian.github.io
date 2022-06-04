@@ -2,145 +2,257 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<title>个人首页</title>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        body {
+            height: 800px;
+            background: #f29bae;
+        }
+        
+        div#header {
+            height: 15%;
+            color: #f91e1e;
+            font-size: 80px;
+            font-family: 楷体;
+            font-weight: 700;
+            text-align: center;
+            background-color: bisque;
+        }
+        
+        div#time {
+            height: 10%;
+            background-color: bisque;
+            text-align: center;
+            font-size: 35px;
+            font-family: 楷体;
+            font-weight: 500;
+        }
+        
+        div#nav {
+            height: 70%;
+        }
+        
+        div#article {
+            height: 25%;
+            font-size: 50px;
+            font-family: 楷体;
+            font-weight: 500;
+            text-align: center;
+            background-color: bisque;
+        }
+        
+        div#footer {
+            height: 30%;
+            font-size: 35px;
+            color: #c75062;
+            text-align: center;
+        }
+        
+        input {
+            border: 8px solid;
+            border-radius: 20px;
+            width: 200px;
+            height: 90px;
+            font-size: 50px;
+            text-align: center;
+            margin: 20px;
+            color: rgba(119, 126, 73, 0.748);
+            cursor: pointer;
+        }
+    </style>
 </head>
 
-<style type="text/css">
-	div {
-		font-size: 30px;
-		color: rgb(243, 247, 31);
-	}
-
-	a {
-		border: 1.5px solid gray;
-		text-decoration: none;
-		margin: 10px;
-	}
-
-	a:link {
-		color: blue;
-	}
-
-	a:visited {
-		color: black;
-	}
-
-	a:hover {
-		font-size: 25px;
-		color: rgb(255, 0, 255);
-	}
-
-	a:active {
-		color: greenyellow;
-	}
-
-	body {
-		background-color: pink;
-	}
-
-	body {
-		text-align: center;
-		font-size: 40px;
-		font-family: 楷体;
-	}
-
-	table {
-		margin: auto;
-	}
-</style>
-
-
 <body>
-	<h1>熊金菁的个人主页</h1>
-	<table border="1">
-		<tr>
-			<th>作业序号</th>
-			<th>作业链接</th>
-			<th>作业简介</th>
-		</tr>
+    <div id="header"> </div>
+    <div id="nav">
+        <table cellpadding="0" cellspacing="0" align="center">
+            <tr>
+                <td colspan="4">
+                </td>
+            </tr>
+            <tr>
 
-		<tr>
-			<td>第一次作业</td>
-			<td><a href="xiongjinjing/20213669-1.html" target="_blank">作业</a></td>
-			<td>艾青的诗</td>
-			<br>
+                <td><input type="button" title="我爱这片土地" value="1" id="1" onClick="window.location.href='https://youzelian.github.io/16/xiongjinjing/20213669-1.html'"></td>
+                <td><input type="button" title="习总书记重要指示" value="2" id="2" onClick="window.location.href='https://youzelian.github.io/16/xiongjinjing/20213669-2.html'" target="_blank"></td>
+                <td><input type="button" title="我的拿手英雄" value="3" id="3" onClick="window.location.href='https://youzelian.github.io/16/xiongjinjing/20213669-3.html'" target="_blank"></td>
+                <td><input type="button" title="相亲网站" value="4" id="4" onClick="window.location.href='https://youzelian.github.io/16/xiongjinjing/20213669-4.html'" target="_blank"></td>
+            </tr>
+            <tr>
+                <td><input type="button" title="古诗" value="5" id="5" onClick="window.location.href='https://youzelian.github.io/16/xiongjinjing/20213669-5.html'" target="_blank"></td>
+                <td><input type="button" title="古诗抽取" value="6" id="6" onClick="window.location.href='https://youzelian.github.io/16/xiongjinjing/20213669-6.html'" target="_blank"></td>
+                <td><input type="button" title="古诗切换" value="7" id="7" onClick="window.location.href='https://youzelian.github.io/16/xiongjinjing/20213669-7.html'" target="_blank"></td>
+                <td><input type="button" title="古诗切换" value="8" id="8" onClick="window.location.href='https://youzelian.github.io/16/xiongjinjing/20213669-8.html'" target="_blank"></td>
+            </tr>
+            <tr>
+                <td><input type="button" title="古诗切换" value="9" id="9" onClick="window.location.href='https://youzelian.github.io/16/xiongjinjing/20213669-9.html'" target="_blank"></td>
+                <td><input type="button" title="古诗抽取" value="10" id="10" onClick="window.location.href='https://youzelian.github.io/16/xiongjinjing/20213669-10.html'" target="_blank"></td>
+                <td><input type="button" title="计算器外观" value="11" id="11" onClick="window.location.href='https://youzelian.github.io/16/xiongjinjing/20213669-11.html'" target="_blank"></td>
+                <td><input type="button" title="计算器功能" value="12" id="12" onClick="window.location.href='https://youzelian.github.io/16/xiongjinjing/20213669-12.html'" target="_blank" /></td>
+            </tr>
+    </div>
 
-		<tr>
-			<td>第二次作业</td>
-			<td><a href="xiongjinjing/20213669-2.html" target="_blank">作业</a></td>
-			<td>习主席的话</td><br>
-		</tr>
+    <div id="time">
 
-		<tr>
-			<td>第三次作业</td>
-			<td><a href="xiongjinjing/20213669-3.html" target="_blank">作业</a></td>
-			<td>联盟人物</td><br>
-		</tr>
-		<tr>
-			<td>第四次作业</td>
-			<td><a href="xiongjinjing/20213669-4.html" target="_blank">作业</a></td>
-			<td>相亲网站</td><br>
-		</tr>
-		<tr>
-			<td>第五次作业</td>
-			<td><a href="xiongjinjing/20213669-5.html" target="_blank">作业</a></td>
-			<td>杂诗三首</td><br>
-		</tr>
-		<tr>
-			<td>第六次作业</td>
-			<td><a href="xiongjinjing/20213669-6.html" target="_blank">作业</a></td>
-			<td>名人名言</td>
-		</tr>
- <td>第七次作业</td>
-		  <td><a href="xiongjinjing/20213669-7.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第八次作业</td>
-		  <td><a href="xiongjinjing/20213669-8.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第九次作业</td>
-		  <td><a href="xiongjinjing/20213669-9.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十次作业</td>
-		  <td><a href="xiongjinjing/20213669-10.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十一次作业</td>
-		  <td><a href="xiongjinjing/20213669-11.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十二次作业</td>
-		  <td><a href="xiongjinjing/20213669-12.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十三次作业</td>
-		  <td><a href="xiongjinjing/20213669-13.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十四次作业</td>
-		  <td><a href="xiongjinjing/20213669-14.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十五次作业</td>
-		  <td><a href="xiongjinjing/20213669-15.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十六次作业</td>
-		  <td><a href="xiongjinjing/20213669-16.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
+    </div>
+    <script>
+        function show() {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            month = month < 10 ? '0' + month : month;
+            var day = date.getDay();
+            day = day < 10 ? '0' + day : day;
+            var week = date.getDay();
+            week = '日一二三四五六'.charAt(week);
+            week = '星期' + week;
+            var hour = date.getHours();
+            hour = hour < 10 ? '0' + hour : hour;
+            var minute = date.getMinutes();
+            minute = minute < 10 ? '0' + minute : minute;
+            var second = date.getSeconds();
+            second = second < 10 ? '0' + second : second;
+            var result = year + '-' + month + '-' + day + '-' + week + '-' + hour + ':' + minute + ':' + second;
+            document.getElementById('time').innerHTML = result;
+        }
+        show();
+        setInterval('show()', 1000);
+    </script>
+    <div id="article">
+    </div>
+
+    <div id="footer">
+        <img src="https://p23.yuemei.com/postimg/20190413/500_500/190413155832_8de808.jpg" alt="比心" height="100 "> 熊金菁的主页<img src="http://5b0988e595225.cdn.sohucs.com/images/20190903/3958cf9af7414cdba472c5347f7f72a2.jpeg" alt="嘻嘻" height="100 ">
+    </div>
+    <script type="text/javascript">
+        document.body.style.height = window.innerHeader - 30 + 'px';
+        var kouhao = ['欢迎来到熊金菁的个人主页', '这里包含着我辛辛苦苦完成的血汗作业', '请各位随意观看'];
+        var headerDom = document.querySelector("div#header");
+        var i = 0;
+
+        function showHeader() {
+            headerDom.textContent = kouhao[i];
+            if (i < kouhao.length - 1) {
+                i++;
+
+            } else {
+                i = 0;
+
+            }
+            window.setTimeout(showHeader, 1500);
+        }
+        window.setTimeout(showHeader, 1500);
+
+        var homeWorks = ['我爱这片土地', '唐诗三百首可抽选版', '优美五首故事精选', '我写的相亲网站外观', '习总书记重要指示', '古诗抽取', '唐诗三百首', '计算机外观', '联盟部分英雄介绍', '抽古诗', '唐诗三百首翻页版', '计算机功能'];
+        var but1 = document.getElementById("1");
+        but1.onmouseover = function() {
+            var articleDom = document.getElementById("article");
+            articleDom.textContent = homeWorks[0];
+        };
+        but1.onmouseout = function() {
+            var articleDom = document.getElementById("article");
+            articleDom.textContent = '';
+        };
+        var but1 = document.getElementById("10");
+        but1.onmouseover = function() {
+            var articleDom = document.getElementById("article");
+            articleDom.textContent = homeWorks[1];
+        };
+        but1.onmouseout = function() {
+            var articleDom = document.getElementById("article");
+            articleDom.textContent = '';
+        };
+        var but1 = document.getElementById("7");
+        but1.onmouseover = function() {
+            var articleDom = document.getElementById("article");
+            articleDom.textContent = homeWorks[2];
+        };
+        but1.onmouseout = function() {
+            var articleDom = document.getElementById("article");
+            articleDom.textContent = '';
+        };
+        var but1 = document.getElementById("4");
+        but1.onmouseover = function() {
+            var articleDom = document.getElementById("article");
+            articleDom.textContent = homeWorks[3];
+        };
+        but1.onmouseout = function() {
+            var articleDom = document.getElementById("article");
+            articleDom.textContent = '';
+        };
+        var but1 = document.getElementById("2");
+        but1.onmouseover = function() {
+            var articleDom = document.getElementById("article");
+            articleDom.textContent = homeWorks[4];
+        };
+        but1.onmouseout = function() {
+            var articleDom = document.getElementById("article");
+            articleDom.textContent = '';
+        };
+        var but1 = document.getElementById("5");
+        but1.onmouseover = function() {
+            var articleDom = document.getElementById("article");
+            articleDom.textContent = homeWorks[5];
+        };
+        but1.onmouseout = function() {
+            var articleDom = document.getElementById("article");
+            articleDom.textContent = '';
+        };
+        var but1 = document.getElementById("8");
+        but1.onmouseover = function() {
+            var articleDom = document.getElementById("article");
+            articleDom.textContent = homeWorks[6];
+        };
+        but1.onmouseout = function() {
+            var articleDom = document.getElementById("article");
+            articleDom.textContent = '';
+        };
+        var but1 = document.getElementById("11");
+        but1.onmouseover = function() {
+            var articleDom = document.getElementById("article");
+            articleDom.textContent = homeWorks[7];
+        };
+        but1.onmouseout = function() {
+            var articleDom = document.getElementById("article");
+            articleDom.textContent = '';
+        };
+        var but1 = document.getElementById("3");
+        but1.onmouseover = function() {
+            var articleDom = document.getElementById("article");
+            articleDom.textContent = homeWorks[8];
+        };
+        but1.onmouseout = function() {
+            var articleDom = document.getElementById("article");
+            articleDom.textContent = '';
+        };
+        var but1 = document.getElementById("6");
+        but1.onmouseover = function() {
+            var articleDom = document.getElementById("article");
+            articleDom.textContent = homeWorks[9];
+        };
+        but1.onmouseout = function() {
+            var articleDom = document.getElementById("article");
+            articleDom.textContent = '';
+        };
+        var but1 = document.getElementById("9");
+        but1.onmouseover = function() {
+            var articleDom = document.getElementById("article");
+            articleDom.textContent = homeWorks[10];
+        };
+        but1.onmouseout = function() {
+            var articleDom = document.getElementById("article");
+            articleDom.textContent = '';
+        };
+        var but1 = document.getElementById("12");
+        but1.onmouseover = function() {
+            var articleDom = document.getElementById("article");
+            articleDom.textContent = homeWorks[11];
+        };
+        but1.onmouseout = function() {
+            var articleDom = document.getElementById("article");
+            articleDom.textContent = '';
+        };
+    </script>
 </body>
 
 </html>
