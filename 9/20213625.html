@@ -6,146 +6,253 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            border: 2px solid blue;
+            background-image: url("https://img0.baidu.com/it/u=801265122,1322007452&fm=253&fmt=auto&app=120&f=JPEG?w=1280&h=800");
+        }
+        
+        #header {
+            border: 2px solid red;
+            height: 25%;
+            text-align: center;
+            font-size: 35px;
+        }
+        
+        #nev {
+            border: 2px solid rgb(0, 255, 145);
+            height: 15%;
+            text-align: center;
+        }
+        
+        #next {
+            border: 2px solid rgb(72, 0, 255);
+            height: 35%;
+            font-size: 35px;
+            text-align: center;
+        }
+        
+        #end {
+            border: 2px solid rgb(255, 0, 191);
+            height: 23%;
+            text-align: center;
+            font-size: 35px;
+        }
+        
+        #shijian {
+            text-align: center;
+            border: 2px solid rgb(255, 0, 191);
+            text-align: center;
+        }
+        
+        input {
+            width: 150px;
+        }
+    </style>
 </head>
 
 <body>
-    <style>
-        body {
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-image: url("https://img1.baidu.com/it/u=1407750889,3441968730&fm=253&fmt=auto&app=120&f=JPEG?w=1200&h=7994");
-            background-size: 1530px;
-            background-position: center top;
-            background-repeat: no-repeat;
+    <script>
+        document.body.style.height = window.innerHeight - 30 + 'px';
+    </script>
+    <div id="header">
+        <div id="shijian"></div>
+    </div>
+    <script>
+        function showtime() {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            var hour = date.getHours();
+            var minute = date.getMinutes();
+            var second = date.getSeconds();
+            var time = document.getElementById("shijian");
+            time.textContent = year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
         }
-        
-        a {
-            text-decoration: none;
+        setInterval("showtime()", 1000);
+    </script>
+    <div id="shijian"></div>
+    <div id="nev">
+        <center>
+            <table border="1 " style="border-collapse:collapse; ">
+                <tr>
+                    <th>
+                        <input type="button" onclick="window.location.href=('pengjinpeng/20213625-1.html')" title="点击了解详情" target="_blank" value=" 彭锦鹏第一周作业 " id="0"></th>
+                    <th><input type="button" onclick="window.location.href=('pengjinpeng/20213625-2.html')" title="点击了解详情" value="彭锦鹏第二周作业 " id="1"></th>
+                    <th><input type="button" onclick="window.location.href=('pengjinpeng/20213625-3.html')" title="点击了解详情" value="彭锦鹏第三周作业 " id="2"></th>
+                    <th><input type="button" onclick="window.location.href=('pengjinpeng/20213625-4.html')" title="点击了解详情" value="彭锦鹏第四周作业 " id="3"></th>
+                </tr>
+                <tr>
+                    <th><input type="button" onclick="window.location.href=('pengjinpeng/20213625-5.html')" title="点击了解详情" value="彭锦鹏第五周作业 " id="4"></th>
+                    <th><input type="button" onclick="window.location.href=('pengjinpeng/20213625-6.html')" title="点击了解详情" value="彭锦鹏第六周作业 " id="5"></th>
+                    <th><input type="button" onclick="window.location.href=('pengjinpeng/20213625-7.html')" title="点击了解详情" value=" 彭锦鹏第七周作业 " id="6"></th>
+                    <th><input type="button" onclick="window.location.href=('pengjinpeng/20213625-8.html')" title="点击了解详情" value="彭锦鹏第八周作业 " id="7"></th>
+                </tr>
+                <tr>
+                    <th><input type="button" onclick="window.location.href=('pengjinpeng/20213625-9.html')" title="点击了解详情" value="彭锦鹏第九周作业 " id="8"></th>
+                    <th><input type="button" onclick="window.location.href=('pengjinpeng/20213625-10.html')" title="点击了解详情" value="彭锦鹏第十周作业 " id="9"></th>
+                    <th><input type="button" onclick="window.location.href=('pengjinpeng/20213625-11.html')" title="点击了解详情" value="彭锦鹏第十一周作业 " id="10"></th>
+                    <th><input type="button" onclick="window.location.href=('pengjinpeng/20213625-12.html')" title="点击了解详情" value="彭锦鹏第十二周作业 " id="11"></th>
+                </tr>
+                <tr>
+                    <th><input type="button" onclick="window.location.href=('pengjinpeng/20213625-13.html')" title="点击了解详情" value="彭锦鹏第十三周作业 " id="12"></th>
+                    <th><input type="button" onclick="window.location.href=('pengjinpeng/20213625-14.html')" title="点击了解详情" value="彭锦鹏第十四周作业 " id="13"></th>
+                    <th><input type="button" onclick="window.location.href=('pengjinpeng/20213625-15.html')" title="点击了解详情" value="彭锦鹏第十五周作业 " id="14"></th>
+                    <th><input type="button" onclick="window.location.href=('pengjinpeng/20213625-16.html')" title="点击了解详情" value="彭锦鹏第十六周作业 " id="15"></th>
+                </tr>
+            </table>
+    </div>
+    <script>
+        var buts = document.querySelectorAll("input");
+        var xs = ['初步学习html，能够完整呈现李白的静夜思', ' 梦李白二首之一使其能够较好的呈现', '实现超链接简单运用介绍王维', '实现超链接更深层次运用', 'scrip实现文本内容的变化', '加深对js的更深层次的理解', '使用js设置数组同时表达', '链接与js相互结合', '加深对js的理解', '书写函数更好理解函数', '设计简易计算机'];
+        buts[0].onmouseover = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = xs[0];
+        };
+        buts[0].onmouseout = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = '';
+        };
+        buts[1].onmouseover = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = xs[1];
+        };
+        buts[1].onmouseout = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = '';
+        };
+        buts[2].onmouseover = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = xs[2];
+        };
+        buts[2].onmouseout = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = '';
+        };
+        buts[3].onmouseover = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = xs[3];
+        };
+        buts[3].onmouseout = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = '';
+        };
+        buts[4].onmouseover = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = xs[4];
+        };
+        buts[4].onmouseout = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = '';
+        };
+        buts[5].onmouseover = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = xs[5];
+        };
+        buts[5].onmouseout = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = '';
+        };
+        buts[6].onmouseover = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = xs[6];
+        };
+        buts[6].onmouseout = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = '';
+        };
+        buts[7].onmouseover = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = xs[7];
+        };
+        buts[7].onmouseout = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = '';
+        };
+        buts[8].onmouseover = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = xs[8];
+        };
+        buts[8].onmouseout = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = '';
+        };
+        buts[9].onmouseover = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = xs[9];
+        };
+        buts[9].onmouseout = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = '';
+        };
+        buts[10].onmouseover = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = xs[10];
+        };
+        buts[10].onmouseout = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = '';
+        };
+        buts[11].onmouseover = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = xs[11];
+        };
+        buts[11].onmouseout = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = '';
+        };
+        buts[12].onmouseover = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = xs[12];
+        };
+        buts[12].onmouseout = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = '';
+        };
+        buts[13].onmouseover = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = xs[13];
+        };
+        buts[13].onmouseout = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = '';
+        };
+        buts[14].onmouseover = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = xs[14];
+        };
+        buts[14].onmouseout = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = '';
+        };
+        buts[15].onmouseover = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = xs[15];
+        };
+        buts[15].onmouseout = function() {
+            var nextdom = document.querySelector('div#next');
+            nextdom.textContent = '';
+        };
+    </script>
+    <div id="next"></div>
+    <div id="end">学号：20213625 姓名：彭锦鹏</div>
+    <script>
+        var header = document.querySelector("div#header");
+        var i = 0;
+        var mingyan = ["做事有始有终值得开始的事就值得完成。聪明人做事总是有始有终；", "青， 取之于蓝而青于蓝;冰， 水为之而寒于水； ", "业精于勤而荒于嬉， 行成于思而毁于随; ", " 困难像弹簧， 你弱它就强， 你强它就弱； ", "把意念深潜得下， 何理不可得， 把志气奋发起， 何事不可做。 "];
+
+        function showheader() {
+            header.textContent = mingyan[i];
+            if (i < mingyan.length - 1) {
+                i++;
+            } else {
+                i = 0;
+            }
+            window.setTimeout(showheader, 1000);
         }
-        
-        table {
-            font-family: 楷体;
-            font-size: 45px;
-        }
-    </style>
-    <center>
-        <table border="1" style="border-collapse:collapse">
-            <tr>
-                <th>
-                    姓名
-                </th>
-                <th>
-                    学号
-                </th>
-                <th>
-                    作业
-                </th>
-            </tr>
-            <tr>
-                <th>彭锦鹏</th>
-                <th>20213625</th>
-                <th> <a href="pengjinpeng/" target="-blank" title="请点击">彭锦鹏第一周作业</a></th>
-            </tr>
-            <tr>
-                <th>彭锦鹏</th>
-                <th>20213625</th>
-                <th><a href="pengjinpeng/20213625-2.html" target="-blank" title="请点击">彭锦鹏第二周作业</a></th>
-            </tr>
-            <tr>
-                <th>彭锦鹏</th>
-                <th>20213625</th>
-                <th><a href="pengjinpeng/20213625-3.html" target="-blank" title="请点击">彭锦鹏第三周作业</a></th>
-            </tr>
-            <tr>
-                <th>彭锦鹏</th>
-                <th>20213625</th>
-                <th><a href="pengjinpeng/20213625-4.html" target="-blank" title="请点击">彭锦鹏第四周作业</a></th>
-            </tr>
-            <tr>
-                <th>彭锦鹏</th>
-                <th>20213625</th>
-                <th><a href="pengjinpeng/20213625-5.html" target="-blank" title="请点击">彭锦鹏第五周作业</a></th>
-            </tr>
-            <tr>
-                <th>彭锦鹏</th>
-                <th>20213625</th>
-                <th>
-                    <a href="pengjinpeng/20213625-6.html" target="-blank" title="请点击">彭锦鹏第六次作业</a>
-                </th>
-            </tr>
-			 <tr>
-                <th>彭锦鹏</th>
-                <th>20213625</th>
-                <th>
-                    <a href="pengjinpeng/20213625-7.html" target="-blank" title="请点击">彭锦鹏第七次作业</a>
-                </th>
-            </tr>
-			 <tr>
-                <th>彭锦鹏</th>
-                <th>20213625</th>
-                <th>
-                    <a href="pengjinpeng/20213625-8.html" target="-blank" title="请点击">彭锦鹏第八次作业</a>
-                </th>
-            </tr>
-			 <tr>
-                <th>彭锦鹏</th>
-                <th>20213625</th>
-                <th>
-                    <a href="pengjinpeng/20213625-9.html" target="-blank" title="请点击">彭锦鹏第九次作业</a>
-                </th>
-            </tr>
-			 <tr>
-                <th>彭锦鹏</th>
-                <th>20213625</th>
-                <th>
-                    <a href="pengjinpeng/20213625-10.html" target="-blank" title="请点击">彭锦鹏第十次作业</a>
-                </th>
-            </tr>
-			 <tr>
-                <th>彭锦鹏</th>
-                <th>20213625</th>
-                <th>
-                    <a href="pengjinpeng/20213625-11.html" target="-blank" title="请点击">彭锦鹏第十一次作业</a>
-                </th>
-            </tr>
-			 <tr>
-                <th>彭锦鹏</th>
-                <th>20213625</th>
-                <th>
-                    <a href="pengjinpeng/20213625-12.html" target="-blank" title="请点击">彭锦鹏第十二次作业</a>
-                </th>
-            </tr>
-			 <tr>
-                <th>彭锦鹏</th>
-                <th>20213625</th>
-                <th>
-                    <a href="pengjinpeng/20213625-13.html" target="-blank" title="请点击">彭锦鹏第十三次作业</a>
-                </th>
-            </tr>
-			 <tr>
-                <th>彭锦鹏</th>
-                <th>20213625</th>
-                <th>
-                    <a href="pengjinpeng/20213625-14.html" target="-blank" title="请点击">彭锦鹏第十四次作业</a>
-                </th>
-            </tr>
-			 <tr>
-                <th>彭锦鹏</th>
-                <th>20213625</th>
-                <th>
-                    <a href="pengjinpeng/20213625-15.html" target="-blank" title="请点击">彭锦鹏第十五次作业</a>
-                </th>
-            </tr>
-			 <tr>
-                <th>彭锦鹏</th>
-                <th>20213625</th>
-                <th>
-                    <a href="pengjinpeng/20213625-16.html" target="-blank" title="请点击">彭锦鹏第十六次作业</a>
-                </th>
-            </tr>
-        </table>
-    </center>
+        window.setTimeout(showheader, 1000);
+    </script>
 </body>
 
 </html>

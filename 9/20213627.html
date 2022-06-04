@@ -3,79 +3,269 @@
  <head>
   <meta charset="UTF-8">
   <title>Document</title>
-  <style>
-  body{
-        text-align:center;
-      }
+  <style type="text/css">
+        body{
+		      text-align:center;
+			  background-image:url("https://tse1-mm.cn.bing.net/th/id/R-C.009f1afb1ac65c9c5bc3b74aa67b35bd?rik=jhlno0bI9rDwow&riu=http%3a%2f%2fup.bizhizu.com%2fpic_source%2f87%2f3b%2f0f%2f873b0f48c3425ddf2b7c5fba944d20fe.jpg&ehk=HG0%2bSkhx433aawVSB2QluFYNOwNzJ3nRwsGTGULZ9fU%3d&risl=&pid=ImgRaw&r=0");
+		    }
+  div#header{
+              height:25%;
+			  font-size:25px;
+            }
+     div#nav{
+	          height:30%;
+            } 
+ div#article{  
+              height:30%;
+			  font-size:50px;
+            }
+  div#footer{
+              height:15%;
+			  color:red;
+			  font-size:20px;
+            }
+	  input {
+              border-radius: 25px;
+            }
+         .dd{
+		      width: 160px;
+              height: 50px;
+			  border-radius:150px;  
+			}
+	div#time{
+	          font-size:20px;
+	        }
+	      h2{
+		      
+		  
+		    }
+	 
+	
+    
+     
   </style>
  </head>
  <body>
- <table align="center" width="45%" border="1" cellpadding="0" cellspacing="0">
-    <tr>
-	    <th>姓名</th>
-		<th>学号</th>
-		<th>作业链接</th>
-	<tr>
-	    <td>张梓鑫</td>
-		<td>20213627</td>
-		<td><a href="zhangzixin/20213627-1.html" target="_blank">张梓鑫的第一次作业</a></td>
-	<tr>
-	    <td>张梓鑫</td>
-		<td>20213627</td>
-		<td><a href="zhangzixin/20213627-2.html" target="_blank">张梓鑫的第二次作业</a></td>
-    <tr>
-	    <td>张梓鑫</td>
-		<td>20213627</td>
-		<td><a href="zhangzixin/20213627-3.html" target="_blank">张梓鑫的第三次作业</a></td>
-    <tr>
-	    <td>张梓鑫</td>
-		<td>20213627</td>
-		<td><a href="zhangzixin/20213627-4.html" target="_blank">张梓鑫的第四次作业</a></td>
-	<tr>
-	    <td>张梓鑫</td>
-		<td>20213627</td>
-		<td><a href="zhangzixin/20213627-5.html" target="_blank">张梓鑫的第五次作业</a></td>
-	<tr>
-	    <td>张梓鑫</td>
-		<td>20213627</td>
-		<td><a href="zhangzixin/20213627-6.html" target="_blank">张梓鑫的第六次作业</a></td>
-		<tr>
-	    <td>张梓鑫</td>
-		<td>20213627</td>
-		<td><a href="zhangzixin/20213627-7.html" target="_blank">张梓鑫的第七次作业</a></td>
-		<tr>
-	    <td>张梓鑫</td>
-		<td>20213627</td>
-		<td><a href="zhangzixin/20213627-8.html" target="_blank">张梓鑫的第八次作业</a></td>
-		<tr>
-	    <td>张梓鑫</td>
-		<td>20213627</td>
-		<td><a href="zhangzixin/20213627-9.html" target="_blank">张梓鑫的第九次作业</a></td>
-		<tr>
-	    <td>张梓鑫</td>
-		<td>20213627</td>
-		<td><a href="zhangzixin/20213627-10.html" target="_blank">张梓鑫的第十次作业</a></td>
-		<tr>
-	    <td>张梓鑫</td>
-		<td>20213627</td>
-		<td><a href="zhangzixin/20213627-11.html" target="_blank">张梓鑫的第十一次作业</a></td>
-		<tr>
-	    <td>张梓鑫</td>
-		<td>20213627</td>
-		<td><a href="zhangzixin/20213627-12.html" target="_blank">张梓鑫的第十二次作业</a></td><tr>
-	    <td>张梓鑫</td>
-		<td>20213627</td>
-		<td><a href="zhangzixin/20213627-13.html" target="_blank">张梓鑫的第十三次作业</a></td><tr>
-	    <td>张梓鑫</td>
-		<td>20213627</td>
-		<td><a href="zhangzixin/20213627-14.html" target="_blank">张梓鑫的第十四次作业</a></td>
-		<tr>
-	    <td>张梓鑫</td>
-		<td>20213627</td>
-		<td><a href="zhangzixin/20213627-15.html" target="_blank">张梓鑫的第十五次作业</a></td>
-		<tr>
-	    <td>张梓鑫</td>
-		<td>20213627</td>
-		<td><a href="zhangzixin/20213627-16.html" target="_blank">张梓鑫的第十六次作业</a></td>
+ <h1 id="wu">
+ 张梓鑫的个人主页
+ </h1>
+ <h2>
+ 目前作业仅有十二次
+ </h2>
+ <input id="gr" type="button" value="点击展示内容与个人信息" class="dd">
+ <input id="yc" type="button" value="点击隐藏座右铭" class="dd">
+ <div id="time">
+ </div>
+ <div id="header">	
+ </div>
+ <div id="nav">
+ <center>
+ <table border="1 " style="border-collapse:collapse; ">
+                <tr>
+                    <th>
+                        <input type="button" onclick="window.location.href=('zhangzixin/20213627-01.html')" title="点击了解详情" value=" 张梓鑫第一周作业 " id="0"></th>
+                    <th><input type="button" onclick="window.location.href=('zhangzixin/20213627-02.html')" title="点击了解详情" value="张梓鑫第二周作业 " id="1"></th>
+                    <th><input type="button" onclick="window.location.href=('zhangzixin/20213627-03.html')" title="点击了解详情" value="张梓鑫第三周作业 " id="2"></th>
+                    <th><input type="button" onclick="window.location.href=('zhangzixin/20213627-04.html')" title="点击了解详情" value="张梓鑫第四周作业 " id="3"></th>
+                </tr>
+                <tr>
+                    <th><input type="button" onclick="window.location.href=('zhangzixin/20213627-05.html')" title="点击了解详情" value="张梓鑫第五周作业 " id="4"></th>
+                    <th><input type="button" onclick="window.location.href=('zhangzixin/20213627-06.html')" title="点击了解详情" value="张梓鑫第六周作业 " id="5"></th>
+                    <th><input type="button" onclick="window.location.href=('zhangzixin/20213627-07.html')" title="点击了解详情" value=" 张梓鑫第七周作业 " id="6"></th>
+                    <th><input type="button" onclick="window.location.href=('zhangzixin/20213627-08.html')" title="点击了解详情" value="张梓鑫第八周作业 " id="7"></th>
+                </tr>
+                <tr>
+                    <th><input type="button" onclick="window.location.href=('zhangzixin/20213627-09.html')" title="点击了解详情" value="张梓鑫第九周作业 " id="8"></th>
+                    <th><input type="button" onclick="window.location.href=('zhangzixin/20213627-10.html')" title="点击了解详情" value="张梓鑫第十周作业 " id="9"></th>
+                    <th><input type="button" onclick="window.location.href=('zhangzixin/20213627-11.html')" title="点击了解详情" value="张梓鑫第十一周作业 " id="10"></th>
+                    <th><input type="button" onclick="window.location.href=('zhangzixin/20213627-ks.html')" title="点击了解详情" value="张梓鑫第十二周作业 " id="11"></th>
+                </tr>
+				<tr>
+                    <th><input type="button" onclick="window.location.href=('zhangzixin/20213627-13.html')" title="点击了解详情" value="张梓鑫第十三周作业 " id="12"></th>
+                    <th><input type="button" onclick="window.location.href=('zhangzixin/20213627-14.html')" title="点击了解详情" value="张梓鑫第十四周作业 " id="13"></th>
+                    <th><input type="button" onclick="window.location.href=('zhangzixin/20213627-15.html')" title="点击了解详情" value="张梓鑫第十五周作业 " id="14"></th>
+                    <th><input type="button" onclick="window.location.href=('zhangzixin/20213627-16.html')" title="点击了解详情" value="张梓鑫第十六周作业 " id="15"></th>
+                </tr>
+            </table>
+			</center>
+ </div>
+ <div id="article">
+ 
+ </div>
+ <div id="footer">
+ 姓名：张梓鑫  学号：20213627  电话：152******
+ </div>
+ <script>
+ document.body.style.height=window.innerHeight-20+"px";
+ nav.style.display="none";
+ var b=1;
+ document.getElementById("yc").onclick=function(){
+                         if(b%2==0)
+	                       {header.style.display="block";
+						   yc.value="点击隐藏座右铭";
+						   b++;}
+						 else{
+							   header.style.display="none";
+							   yc.value="再次点击展示座右铭";
+							   b++;
+						     }
+                      }
+</script>
+<script>
+ var zym=["1、每天告诉自己一次：我真的很不错。",
+"2、把你的脸迎向阳光,那就不会有阴影。",
+"3、自己选择的路、跪着也要把它走完。",
+"4、不经一翻彻骨寒,怎得梅花扑鼻香。",
+"5、我不能给你幸福,但可以给你舒服！",
+"6、不经巨大的困难,不会有伟大的事业。",
+"7、过了做梦的年纪,就只能往前走。",
+"8、生活的苦,衬托出努力与选择的必要。",
+"9、生活其实很简单,过了今天就是明天。",
+"10、奋斗以求改善生活,是可敬的行为。"
+]
+ var i=0;
+ var header=document.querySelector("div#header");
+ function showheader(){
+	                    header.textContent=zym[i];
+						if(i<zym.length-1){
+							i++;
+						}else{
+							i=0;
+						}
+						window.setTimeout(showheader,1000);
+                      }
+					  window.setTimeout(showheader,1000);
+</script>
+<script>
+ function showtime(){
+	                  var date=new Date();
+					  var year=date.getFullYear();
+					  var month=date.getMonth()+1;
+					  var day=date.getDate();
+					  var hour=date.getHours();
+					  var minute=date.getMinutes();
+					  var second=date.getSeconds();
+					  var time=document.getElementById("time");
+					  time.textContent=year+'-'+month+'-'+day+' '+hour+':'+minute+':'+second;
+  }
+ setInterval("showtime()",1000);
+ </script>
+ <script>
+ var neirong=["初步了解html,写了一首诗","学习了超链接,简单的运用了超链接","完善了对超链接的应用","运用盒子和id简单写了一个人物简介","运用按钮事件交互简单展示了几首诗","运用上下一页实现了几首诗的交互","对上次作业进行了完善修饰，例如按钮装饰和诗的数目","实现了三百首诗的交互","用网址代替了冗长的字符串","完成了抽一首诗的交互","成功做出一个简易计算机","对计算机进行完善，并初步了解算法"]
+  document.getElementById("gr").onclick=function(){
+         gr.style.display="none";
+		 nav.style.display="block";
+ }
+            
+        var buts = document.querySelectorAll("input");
+        buts[2].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[0];
+        };
+        buts[2].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[3].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[1];
+        };
+        buts[3].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[4].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[2];
+        };
+        buts[4].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[5].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[3];
+        };
+        buts[5].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[6].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[4];
+        };
+        buts[6].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[7].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[5];
+        };
+        buts[7].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[8].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[6];
+        };
+        buts[8].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[9].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[7];
+        };
+        buts[9].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[10].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[8];
+        };
+        buts[10].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[11].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[9];
+        };
+        buts[11].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[12].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[10];
+        };
+        buts[12].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[13].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[11];
+        };
+        buts[13].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+ </script>
+<script language="javascript">
+function changeColor(){
+var color="#f00|#0f0|#00f|#880|#808|#088|yellow|green|blue|gray";
+color=color.split("|");
+document.getElementById("wu").style.color=color[parseInt(Math.random() * color.length)];
+}
+setInterval("changeColor()",1300);
+</script> 
+
+           
+
+  
  </body>
 </html>

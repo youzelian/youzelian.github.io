@@ -8,6 +8,7 @@
     <title>Document</title>
     <style>
         body {
+            font-size: 13.49px;
             text-align: center;
         }
         
@@ -50,7 +51,7 @@
             }
             100% {
                 width: 100%;
-                height: 100%;
+                height: 45%;
             }
         }
         
@@ -85,79 +86,270 @@
             animation-delay: 6.4s;
             overflow: hidden;
         }
+        
+        div[id="header"] {
+            border: 1px red solid;
+            height: 37%;
+        }
+        
+        div[id="hezi"] {
+            height: 45%;
+            border: 1px rgb(31, 200, 212) solid;
+            /*             display: none; */
+        }
+        
+        div[id="article"] {
+            font-size: 28px;
+            border: 1px rgb(74, 8, 77) solid;
+            color: brown;
+            height: 10%;
+        }
+        
+        div[id="footer"] {
+            font-size: 23px;
+            border: 1px rgba(181, 163, 163, 0.283) solid;
+            height: 8%;
+            display: none;
+        }
+        
+        div[id="mjz"] {
+            font-size: 30px;
+        }
+        
+        div[id="time"] {
+            font-size: 30px;
+        }
     </style>
 
 </head>
 
 <body>
+    <div id="time"></div>
     <center>
-        <h1>彭泱旸的个人主页</h1>
-        <p id="jzz">。。。页面加载中。。。</p>
-    </center>
-    <div id="b"></div>
-    <center>
-        <div id="jiazaiwanc">加载完成(o-o)!!</div>
-        <div id="ksyd"><input type="button" id="start" value="个人主页"></div>
+        <div id="header">
+            <h1>彭泱旸的个人主页</h1>
+            <p id="jzz">。。。页面加载中。。。</p>
+            <div id="b"></div>
+            <div id="jiazaiwanc">加载完成(o-o)!!</div>
+            <div id="ksyd"><input type="button" id="start" value="个人主页"></div>
+            <div id="mjz"> </div>
+        </div>
     </center>
     <script>
-        var jiazaiwanc = document.querySelector("#jiazaiwanc");
-        var hz = document.querySelector("div#hezi");
+        var neirong = ['学会了链接到网页上的图片作为背景图片，以及父子间的继承关系，写出了一首诗', '学会了文件间的互相链接，做出了室友间作业的互相连接', '学会了链接中可以加好多东西比如，文字.图片(可以是文件中的图片也可以是网上的图片)', '学会了制作表格，表格中的单元格可以合并(可以多重合并)，上下合并，左右合并，设置单元格之间的距离', '学会了隐藏不需要的东西在点击之后又可以显示，简单的动画的制作与运行，实现了点击按钮换一整首诗', '学会了用数组来装诗的标题，诗人的名字，诗的内容，并实现了点击按钮换整首诗(利用数组)', '几首诗为一整段字符串(利用数字和\n来截取一整首诗)，利用截取函数来截取需要的文字(诗的标题，诗人的名字，诗的内容)，并输出', '学会了利用循环结构来切割唐诗300首(很长的一段字符串)，找到诗的标题，诗人的名字，诗的内容，并分别放在不同的数组内，然后输出显示', '学会了不用将唐诗300首放在文件内可以利用链接来实现。', '相比上一次，加了一个抽一首的功能(利用随机生成函数来生成随机数，来识别诗前的数字实现抽一首)', '设计一个计算器只需要有外表，无需设计功能(利用动态来生成想要的元素类型，并利用循环来生成DIV，来装生成的元素类型)从而设计了计算器的外表', '利用循环来给每个函数定义功能，从而使得计算器的功能显现', '无内容', '无内容', '无内容']
+        var juzi = ['穷且益坚，不坠青云之志。——王勃', '天才是永恒的耐心。——米开朗琪罗', '以勇敢的胸膛面对逆境。——贺拉斯', '安全行走的人才能走得远。——格言', '厄运往往能使天才奋发。——奥维德', '没有希望，就没有努力。——约翰逊', '在人生中最艰难的是选择。——莫尔']
 
+        function showtime() {
+            var mytime = new Date();
+            time.textContent = mytime;
+        }
+        setInterval("showtime()", 1000);
+        var jzz = document.querySelector("#jzz");
+        var jiazaiwanc = document.querySelector("#jiazaiwanc");
+        var b = document.querySelector("#b");
+        var hz = document.querySelector("div#hezi");
+        document.body.style.height = window.innerHeight + 'px';
+        var ksyd = document.querySelector("#ksyd");
         var start = document.querySelector("#start");
         document.querySelector("#start").onclick = function() {
             jiazaiwanc.style.display = "none";
-            start.style.display = "none";
+            ksyd.style.display = "none";
+            b.style.display = "none";
+            jzz.style.display = "none";
+            footer.style.display = "block";
         }
+        var i = 0;
+        var headerdom = document.querySelector("div#mjz");
+        window.setTimeout(showHeader, 6400);
+
+        function showHeader() {
+            headerdom.textContent = juzi[i];
+            if (i < juzi.length - 1) {
+                i++;
+            } else {
+                i = 0;
+            }
+            window.setTimeout(showHeader, 2500);
+        };
     </script>
+
     <div id="hezi">
-        <table align="center" width="30%" border="1" cellpadding="0" cellspacing="0">
+        <table align="center" width="15%" border="1" cellpadding="0" cellspacing="0">
             <tr>
-                <th>姓名</th>
-                <th>学号</th>
                 <th>作业链接</th>
             </tr>
             <tr>
-                <td>彭泱旸</td>
-                <td>20213624</td>
-                <td><a href="pengyangyang/20213624-1.html" target="_black">彭泱旸第一次作业</a></td>
+                <td><a href="pengyangyang/20213624-1.html" target="_black" id="but">彭泱旸第一次作业</a></td>
             </tr>
             <tr>
-                <td>彭泱旸</td>
-                <td>20213624</td>
-                <td><a href="pengyangyang/20213624-2.html" target="_black">彭泱旸第二次作业</a></td>
+                <td><a href="pengyangyang/20213624-2.html" target="_black" id="but2">彭泱旸第二次作业</a></td>
             </tr>
             <tr>
-                <td>彭泱旸</td>
-                <td>20213624</td>
-                <td><a href="pengyangyang/20213624-3.html" target="_black">彭泱旸第三次作业</a></td>
+                <td><a href="pengyangyang/20213624-3.html" target="_black" id="but3">彭泱旸第三次作业</a></td>
             </tr>
             <tr>
-                <td>彭泱旸</td>
-                <td>20213624</td>
-                <td><a href="pengyangyang/20213624-4.HTML" target="_black">彭泱旸第四次作业</a></td>
+                <td><a href="pengyangyang/20213624-4.html" target="_black" id="but4">彭泱旸第四次作业</a></td>
             </tr>
             <tr>
-                <td>彭泱旸</td>
-                <td>20213624</td>
-                <td><a href="pengyangyang/20213624-5.html" target="_black">彭泱旸第五次作业</a></td>
+                <td><a href="pengyangyang/20213624-5.html" target="_black" id="but5">彭泱旸第五次作业</a></td>
             </tr>
             <tr>
-                <td>彭泱旸</td>
-                <td>20213624</td>
-                <td><a href="pengyangyang/20213624-6.html" target="_black">彭泱旸第六次作业</a></td>
+                <td><a href="pengyangyang/20213624-6.html" target="_black" id="but6">彭泱旸第六次作业</a></td>
             </tr>
             <tr>
-                <td>彭泱旸</td>
-                <td>20213624</td>
-                <td><a href="pengyangyang/20213624-7.html" target="_black">彭泱旸第七次作业</a></td>
+                <td><a href="pengyangyang/20213624-7.html" target="_black" id="but7">彭泱旸第七次作业</a></td>
             </tr>
             <tr>
-                <td>彭泱旸</td>
-                <td>20213624</td>
-                <td><a href="pengyangyang/20213624-8.html" target="_black">彭泱旸第八次作业</a></td>
+                <td><a href="pengyangyang/20213624-8.html" target="_black" id="but8">彭泱旸第八次作业</a></td>
+            </tr>
+            <tr>
+                <td><a href="pengyangyang/20213624-9.html" target="_black" id="but9">彭泱旸第九次作业</a></td>
+            </tr>
+            <tr>
+                <td><a href="pengyangyang/20213624-10.html" target="_black" id="but10">彭泱旸第十次作业</a></td>
+            </tr>
+            <tr>
+                <td><a href="pengyangyang/20213624-11.html" target="_black" id="but11">彭泱旸第十一次作业</a></td>
+            </tr>
+            <tr>
+                <td><a href="pengyangyang/20213624-12.html" target="_black" id="but12">彭泱旸第十二次作业</a></td>
+            </tr>
+            <tr>
+                <td><a href="pengyangyang/20213624-13.html" target="_black" id="but13">彭泱旸第十三次作业</a></td>
+            </tr>
+            <tr>
+                <td><a href="pengyangyang/20213624-14.html" target="_black" id="but14">彭泱旸第十四次作业</a></td>
+            </tr>
+            <tr>
+                <td><a href="pengyangyang/20213624-15.html" target="_black" id="but15">彭泱旸第十五次作业</a></td>
             </tr>
         </table>
     </div>
+    <script>
+        var buts = document.querySelectorAll('a');
+        buts[0].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[0];
+        };
+        buts[0].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[1].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[1];
+        };
+        buts[1].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[2].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[2];
+        };
+        buts[2].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[3].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[3];
+        };
+        buts[3].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[4].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[4];
+        };
+        buts[4].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[5].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[5];
+        };
+        buts[5].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[6].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[6];
+        };
+        buts[6].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[7].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[7];
+        };
+        buts[7].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[8].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[8];
+        };
+        buts[8].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[9].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[9];
+        };
+        buts[9].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[10].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[10];
+        };
+        buts[10].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[11].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[11];
+        };
+        buts[11].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[12].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[12];
+        };
+        buts[12].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[13].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[13];
+        };
+        buts[13].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[14].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[14];
+        };
+        buts[14].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+    </script>
+    <div id="article"> </div>
+    <div id="footer"> 彭泱旸 身高:176cm 体重:60.5kg 电话号码:159****8867</div>
 </body>
 
 </html>

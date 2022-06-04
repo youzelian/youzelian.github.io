@@ -1,100 +1,316 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <style>
-      body{
-	  text-align:center;
-	  }
-  </style>
- </head>
- <body>
- <table align="center" width="45%" border="1" cellpadding="0" cellspacing="0"> 
-     <tr>
-	     <th>姓名</th>
-		 <th>学号</th>
-		 <th>作业链接</th>
-	 </tr>
-	 <tr>
-	     <td>张荣军</td>
-		 <td>20213623</td>
-		 <td><a href="zhangrongjun/20213623-1.html" target="_blank">张荣军的第一次作业</a></td>
-	 </tr>
-	 <tr>
-	     <td>张荣军</td>
-		 <td>20213623</td>
-		 <td><a href="zhangrongjun/20213623-2.html" target="_blank">张荣军的第二次作业</a></td>
-	 </tr>
-	 <tr>
-	     <td>张荣军</td>
-		 <td>20213623</td>
-		 <td><a href="zhangrongjun/20213623-3.html" target="_blank">张荣军的第三次作业</a></td>
-	 </tr>
-	 <tr>
-	     <td>张荣军</td>
-		 <td>20213623</td>
-		 <td><a href="zhangrongjun/20213623-4.html" target="_blank">张荣军的第四次作业</a></td>
-	 </tr>
-	 <tr>
-	     <td>张荣军</td>
-		 <td>20213623</td>
-		 <td><a href="zhangrongjun/20213623-5.html" target="_blank">张荣军的第五次作业</a></td>
-	 </tr>
-	 <tr>
-	     <td>张荣军</td>
-		 <td>20213623</td>
-		 <td><a href="zhangrongjun/20213623-6.html" target="_blank">张荣军的第六次作业</a></td>
-	 </tr>
-	  <tr>
-	     <td>张荣军</td>
-		 <td>20213623</td>
-		 <td><a href="zhangrongjun/20213623-7.html" target="_blank">张荣军的第七次作业</a></td>
-	 </tr>
-	 <tr>
-	     <td>张荣军</td>
-		 <td>20213623</td>
-		 <td><a href="zhangrongjun/20213623-8.html" target="_blank">张荣军的第八次作业</a></td>
-	 </tr>
-	 <tr>
-	     <td>张荣军</td>
-		 <td>20213623</td>
-		 <td><a href="zhangrongjun/20213623-9.html" target="_blank">张荣军的第九次作业</a></td>
-	 </tr>
-	 <tr>
-	     <td>张荣军</td>
-		 <td>20213623</td>
-		 <td><a href="zhangrongjun/20213623-10.html" target="_blank">张荣军的第十次作业</a></td>
-	 </tr>
-	 <tr>
-	     <td>张荣军</td>
-		 <td>20213623</td>
-		 <td><a href="zhangrongjun/20213623-11.html" target="_blank">张荣军的第十一次作业</a></td>
-	 </tr>
-	 <tr>
-	     <td>张荣军</td>
-		 <td>20213623</td>
-		 <td><a href="zhangrongjun/20213623-12.html" target="_blank">张荣军的第十二次作业</a></td>
-	 </tr>
-	  <tr>
-	     <td>张荣军</td>
-		 <td>20213623</td>
-		 <td><a href="zhangrongjun/20213623-13.html" target="_blank">张荣军的第十三次作业</a></td>
-	 </tr>
-	 <tr>
-	     <td>张荣军</td>
-		 <td>20213623</td>
-		 <td><a href="zhangrongjun/20213623-14.html" target="_blank">张荣军的第十四次作业</a></td>
-	 </tr>
-	 <tr>
-	     <td>张荣军</td>
-		 <td>20213623</td>
-		 <td><a href="zhangrongjun/20213623-15.html" target="_blank">张荣军的第十五次作业</a></td>
-	 </tr>
-	  <tr>
-	     <td>张荣军</td>
-		 <td>20213623</td>
-		 <td><a href="zhangrongjun/20213623-16.html" target="_blank">张荣军的第十六次作业</a></td>
-	 </tr>
- </body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-size: 17px;
+            text-align: center;
+        }
+
+         @keyframes l {
+            0% {
+                width: 180px;
+            }
+            100% {
+                width: 0;
+                ;
+            }
+        }
+              
+        @keyframes k {
+            0% {
+                height: 20px;
+                width: 0;
+            }
+            100% {
+                height: 20px;
+                width: 100%;
+                ;
+            }
+        }        
+ 
+        @keyframes o {
+            0% {
+                width: 0;
+                height: 44px;
+            }
+            100% {
+                width: 210px;
+                height: 44px;
+            }
+        }
+        
+        @keyframes p {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 100%;
+                height: 45%;
+            }
+        }
+        
+        p[id="jzz"] {
+            animation: l 1ms forwards;
+            animation-delay: 4.4s;
+            overflow: hidden;
+            white-space: nowrap;
+            font-size: 30px;
+        }
+        
+        div[id="b"] {
+            animation: k 4s steps(10) forwards;
+            background-color: aqua;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        
+        div[id="jzwc"],
+        [id="ksyd"] {
+            width: 0;
+            animation: o 1ms forwards;
+            animation-delay: 4.8s;
+            overflow: hidden;
+            white-space: nowrap;
+            font-size: 30px;
+        }
+        
+        div[id="hezi"] {
+            width: 0;
+            animation: p 1ms forwards;
+            animation-delay: 6.4s;
+            overflow: hidden;
+        }
+        
+        div[id="header"] {
+            height: 37%;
+        }
+        
+        div[id="hezi"] {
+            height: 45%;
+        }
+        
+        div[id="article"] {
+            font-size: 28px;
+            color: brown;
+            height: 10%;
+        }
+
+        div[id="footer"] {
+            font-size: 23px;
+            height: 8%;
+            display: none;
+        }
+                
+        div[id="my"] {
+            font-size: 30px;
+        }
+        
+        div[id="time"] {
+            font-size: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="time"></div>
+    <center>
+        <div id="header">
+            <h1>张荣军的个人主页</h1>
+            <p id="jzz">。。。页面加载中。。。</p>
+            <div id="b"></div>
+            <div id="jzwc">加载完成!</div>
+            <div id="ksyd"><input type="button" id="start" value="个人主页"></div>
+            <div id="my"> </div>
+        </div>
+    </center>
+    <script>
+        var neirong = ['写出一首诗', '学会了文件间的互相链接，做出了室友间作业的互相连接', '学会了链接中可以加图片', '学会了制作表格，表格中的单元格可以合并(可以多重合并)，上下合并，左右合并，设置单元格之间的距离', '学会了隐藏,在点击之后又可以显示,实现了点击按钮换一整首诗', '学会了点击按钮上下循环换整首诗', '几首诗为一整段字符串(利用数字和\n来截取一整首诗)，利用截取函数来截取需要的文字(诗的标题，诗人的名字，诗的内容)，并输出', '学会了利用循环结构来切割唐诗300首，找到诗的标题，诗人的名字，诗的内容，并分别放在不同的数组内，然后输出显示', '学会了不用将唐诗300首放在文件内可以利用链接来实现。', '相比上一次，加了一个抽一首的功能(利用随机生成函数来生成随机数，来识别诗前的数字实现抽一首)', '设计一个计算器只需要有外表，无需设计功能', '利用循环来给每个函数定义功能，从而使得计算器的功能显现']
+        var juzi = [ '青春没有选择，只有试一试。——刘同','穷且益坚，不坠青云之志。——王勃', '以勇敢的胸膛面对逆境。——贺拉斯', '人最大的无知是不了解自己。——李小龙', '志当存高远。——诸葛亮', '没有希望，就没有努力。——约翰逊', '自己动手，丰衣足食。——毛泽东']
+
+        function showtime() {
+            var mytime = new Date();
+            time.textContent = mytime;
+        }
+        setInterval("showtime()", 1000);
+        var jzz = document.querySelector("#jzz");
+        var jzwc = document.querySelector("#jzwc");
+        var b = document.querySelector("#b");
+        var hz = document.querySelector("div#hezi");
+        document.body.style.height = window.innerHeight + 'px';
+        var ksyd = document.querySelector("#ksyd");
+        var start = document.querySelector("#start");
+        document.querySelector("#start").onclick = function() {
+            jzwc.style.display = "none";
+            ksyd.style.display = "none";
+            b.style.display = "none";
+            jzz.style.display = "none";
+            footer.style.display = "block";
+        }
+        var i = 0;
+        var headerdom = document.querySelector("div#my");
+        window.setTimeout(showHeader, 6400);
+
+        function showHeader() {
+            headerdom.textContent = juzi[i];
+            if (i < juzi.length - 1) {
+                i++;
+            } else {
+                i = 0;
+            }
+            window.setTimeout(showHeader, 2500);
+        };
+    </script>
+
+    <div id="hezi">
+        <table align="center" width="15%" border="1" cellpadding="0" cellspacing="0">
+            <tr>
+                <th>作业链接</th>
+            </tr>
+            <tr>
+                <td><a href="zhangrongjun/20213623-1.html" target="_black" id="but">张荣军第一次作业</a></td>
+            </tr>
+            <tr>
+                <td><a href="zhangrongjun/20213623-2/02.html" target="_black" id="but2">张荣军第二次作业</a></td>
+            </tr>
+            <tr>
+                <td><a href="zhangrongjun/20213623-3.html" target="_black" id="but3">张荣军第三次作业</a></td>
+            </tr>
+            <tr>
+                <td><a href="zhangrongjun/20213623-4.html" target="_black" id="but4">张荣军第四次作业</a></td>
+            </tr>
+            <tr>
+                <td><a href="zhangrongjun/20213623-5.html" target="_black" id="but5">张荣军第五次作业</a></td>
+            </tr>
+            <tr>
+                <td><a href="zhangrongjun/20213623-6.html" target="_black" id="but6">张荣军第六次作业</a></td>
+            </tr>
+            <tr>
+                <td><a href="zhangrongjun/20213623-7.html" target="_black" id="but7">张荣军第七次作业</a></td>
+            </tr>
+            <tr>
+                <td><a href="zhangrongjun/20213623-8.html" target="_black" id="but8">张荣军第八次作业</a></td>
+            </tr>
+            <tr>
+                <td><a href="zhangrongjun/20213623-9.html" target="_black" id="but9">张荣军第九次作业</a></td>
+            </tr>
+            <tr>
+                <td><a href="zhangrongjun/20213623-10.html" target="_black" id="but10">张荣军第十次作业</a></td>
+            </tr>
+            <tr>
+                <td><a href="zhangrongjun/20213623-11.html" target="_black" id="but11">张荣军第十一次作业</a></td>
+            </tr>
+            <tr>
+                <td><a href="zhangrongjun/20213623-12.html" target="_black" id="but12">张荣军第十二次作业</a></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var buts = document.querySelectorAll('a');
+        buts[0].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[0];
+        };
+        buts[0].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[1].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[1];
+        };
+        buts[1].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[2].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[2];
+        };
+        buts[2].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[3].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[3];
+        };
+        buts[3].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[4].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[4];
+        };
+        buts[4].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[5].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[5];
+        };
+        buts[5].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[6].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[6];
+        };
+        buts[6].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[7].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[7];
+        };
+        buts[7].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[8].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[8];
+        };
+        buts[8].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[9].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[9];
+        };
+        buts[9].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[10].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[10];
+        };
+        buts[10].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+        buts[11].onmouseover = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = neirong[11];
+        };
+        buts[11].onmouseout = function() {
+            var articledom = document.querySelector('div#article');
+            articledom.textContent = '';
+        };
+    </script>
+    <div id="article"> </div>
+	<div id="footer"> 张荣军 电话号码：183****1242</div>
+</body>
+
 </html>
