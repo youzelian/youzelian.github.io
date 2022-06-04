@@ -1,89 +1,275 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>20213630</title>
-	</head>
-	<style type="text/css">
-		table{
-			margin: 0 auto;
-			border-spacing:10px;
-			padding:100px;
-			background-color: mistyrose;
-		}
-	</style>
-	
-	<body>
-		<table>
-			<tr>
-				<th>20213630孔卓</th>
-				<th>作业链接</th>
-			</tr>
-			<tr>
-				<td>第一次作业</td>
-				<td><a href="kongzhuo/20213630-1.html" target="_blank"> 20213630-1</a></td>
-			<tr>
-				<td>第二次作业</td>
-				<td><a 	href="kongzhuo/20213630-2.html" target="_blank">20213630-2</a></td>
-			</tr>
-			<tr>
-				<td>第三次作业</td>
-				<td><a href="kongzhuo/20213630-3.html" target="_blank"> 20213630-3</a></td>
-			</tr>
-			<tr>
-				<td>第四次作业</td>
-				<td><a href="kongzhuo/20213630-4.html" target="_blank"> 20213630-4</a></td>
-			</tr>
-			<tr>
-				<td>第五次作业</td>
-				<td><a href="kongzhuo/20213630-5.html" target="_blank"> 20213630-5</a></td>
-			</tr>
-			<tr>
-				<td>第六次作业</td>
-				<td><a href="kongzhuo/20213630-6.html" target="_blank"> 20213630-6</a></td>
-			</tr>
-			<tr>
-				<td>第七次作业</td>
-				<td><a href="kongzhuo/20213630-7.html" target="_blank"> 20213630-7</a></td>
-			</tr>
-			<tr>
-				<td>第八次作业</td>
-				<td><a href="kongzhuo/20213630-8.html" target="_blank"> 20213630-8</a></td>
-			</tr>
-			<tr>
-				<td>第九次作业</td>
-				<td><a href="kongzhuo/20213630-9.html" target="_blank"> 20213630-9</a></td>
-			</tr>
-			<tr>
-				<td>第十次作业</td>
-				<td><a href="kongzhuo/20213630-10.html" target="_blank"> 20213630-10</a></td>
-			</tr>
-			<tr>
-				<td>第十一次作业</td>
-				<td><a href="kongzhuo/20213630-11.html" target="_blank"> 20213630-11</a></td>
-			</tr>
-			<tr>
-				<td>第十二次作业</td>
-				<td><a href="kongzhuo/20213630-12.html" target="_blank"> 20213630-12</a></td>
-			</tr>
-			<tr>
-				<td>第十三次作业</td>
-				<td><a href="kongzhuo/20213630-13.html" target="_blank"> 20213630-13</a></td>
-			</tr>
-			<tr>
-				<td>第十四次作业</td>
-				<td><a href="kongzhuo/20213630-14.html" target="_blank"> 20213630-14</a></td>
-			</tr>
-			<tr>
-				<td>第十五次作业</td>
-				<td><a href="kongzhuo/20213630-15.html" target="_blank"> 20213630-15</a></td>
-			</tr>
-			<tr>
-				<td>第十六次作业</td>
-				<td><a href="kongzhuo/20213630-16.html" target="_blank"> 20213630-16</a></td>
-			</tr>
-		</table>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <!-- 引入图标库 -->
+    <link rel="icon" type="image/x-icon" href="https://kongzhuoz.github.io/jpg/zly.ico">
+    <title>20213630</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+      /* 引入字体 */
+      * {
+        box-sizing: border-box;
+        /* 标准盒子模型 */
+        margin: 0;
+        padding: 0;
+      }
 
-</body>
+      body {
+        font-family: 'Open Sans', sans-serif;
+        /* 使用字体 */
+        height: 100vh;
+        /* 100%窗口高度 */
+      }
+      a:link{
+        text-decoration: none;
+        /* 去除超链接的下划线 */
+        color: rgb(0, 0, 0);
+      }
 
+      .MyHomepage h1{
+        text-align: center;
+        font-size: 75px;
+        font-family: 'Courier New', Courier, monospace;
+      }
+
+      #time{
+        float: right;
+      }
+
+      .foot {
+        text-align: center;
+        padding: 20px;
+      }
+
+      .slider-container {
+        position: relative;
+        /* 相对定位 */
+        overflow: hidden;
+        /* 溢出隐藏 */
+        width: 100vw;
+        height: 100vh;
+      }
+
+      .left-slide {
+        height: 100%;
+        width: 35%;
+        position: absolute;
+        /* 绝对定位 */
+        top: 0;
+        left: 0;
+        transition: transform 0.5s ease-in-out;
+        /* 执行动画 让速度慢一点 */
+      }
+
+      .left-slide > div {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        /* 弹性布局 */
+        flex-direction: column;
+        /* 按照列排序 */
+        align-items: center;
+        /* 水平+垂直居中 */
+        justify-content: center;
+        color: #fff;
+      }
+
+      .left-slide h1 {
+        font-size: 40px;
+        margin-bottom: 10px;
+        /* 距离底部元素 */
+        margin-top: -30px;
+      }
+
+      .right-slide {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 35%;
+        width: 65%;
+        transition: transform 0.5s ease-in-out;
+        /* 执行动画 让速度慢一点 */
+      }
+
+      .right-slide > div {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        height: 100%;
+        width: 100%;
+      }
+
+      button {
+        background-color: #fff;
+        border: none;
+        color: #aaa;
+        cursor: pointer;
+        /* 改变鼠标指针 */
+        font-size: 16px;
+        padding: 15px;
+      }
+
+      button:hover {
+        color: #222;
+      }
+
+      button:focus {
+        outline: none;
+      }
+
+      .slider-container .action-buttons button {
+        position: absolute;
+        left: 35%;
+        top: 50%;
+        z-index: 100;
+      }
+
+      .slider-container .action-buttons .down-button {
+        transform: translateX(-100%);
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+
+      .slider-container .action-buttons .up-button {
+        transform: translateY(-100%);
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="MyHomepage">
+      <h1>孔卓的Web主页</h1>
+      <span id="time"></span>
+    </div>
+    <div class="slider-container">
+      <div class="left-slide">
+        <div style="background-color: #a03a3a">
+          <h1>第一次作业</h1>
+          <p><a href="https://kongzhuoz.github.io/kongzhuo/20213630-1.html" target="_blank"> 20213630-1</a></p>
+        </div>
+        <div style="background-color: #121a1f">
+          <h1>第二次作业</h1>
+          <p><a href="https://kongzhuoz.github.io/kongzhuo/20213630-2.html" target="_blank"> 20213630-2</a></p>
+        </div>
+        <div style="background-color: #55b5e9">
+          <h1>第三次作业</h1>
+          <p><a href="https://kongzhuoz.github.io/kongzhuo/20213630-3.html" target="_blank"> 20213630-3</a></p>
+        </div>
+        <div style="background-color: #878787">
+          <h1>第四次作业</h1>
+          <p><a href="https://kongzhuoz.github.io/kongzhuo/20213630-4.html" target="_blank"> 20213630-4</a></p>
+        </div>
+        <div style="background-color: #515874">
+          <h1>第五次作业</h1>
+          <p><a href="https://kongzhuoz.github.io/kongzhuo/20213630-5.html" target="_blank"> 20213630-5</a></p>
+        </div>
+        <div style="background-color: #3e4151">
+          <h1>第六次作业</h1>
+          <p><a href="https://kongzhuoz.github.io/kongzhuo/20213630-6.html" target="_blank"> 20213630-6</a></p>
+        </div>
+        <div style="background-color: #b6bbbb">
+          <h1>第七次作业</h1>
+          <p><a href="https://kongzhuoz.github.io/kongzhuo/20213630-7.html" target="_blank"> 20213630-7</a></p>
+        </div>
+        <div style="background-color: #414141">
+          <h1>第八次作业</h1>
+          <p><a href="https://kongzhuoz.github.io/kongzhuo/20213630-8.html" target="_blank"> 20213630-8</a></p>
+        </div>
+        <div style="background-color: #a47ea4">
+          <h1>第九次作业</h1>
+          <p><a href="https://kongzhuoz.github.io/kongzhuo/20213630-9.html" target="_blank"> 20213630-9</a></p>
+        </div>
+        <div style="background-color: #463b51">
+          <h1>第十次作业</h1>
+          <p><a href="https://kongzhuoz.github.io/kongzhuo/20213630-10.html" target="_blank"> 20213630-10</a></p>
+        </div>        
+        <div style="background-color: #d0d4cd">
+          <h1>第十一次作业</h1>
+          <p><a href="kongzhuo/20213630-11.html" target="_blank"> 20213630-11</a></p>
+        </div>
+        <div style="background-color: #a8bcc9">
+          <h1>第十二次作业</h1>
+          <p><a href="kongzhuo/20213630-12.html" target="_blank"> 20213630-12</a></p>
+        </div>
+        <div style="background-color: #296492">
+          <h1>期末作业</h1>
+          <p><a href="https://kongzhuoz.github.io/Calculator.html" target="_blank"> 20213630-ks</a></p>
+        </div>
+      </div>
+      <div class="right-slide">
+        <div style="background-image: url('https://kongzhuoz.github.io/jpg/MyHomepage8.png')"></div>
+        <div style="background-image: url('https://kongzhuoz.github.io/jpg/MyHomepage1.png')"></div>
+        <div style="background-image: url('https://kongzhuoz.github.io/jpg/MyHomepage2.png')"></div>
+        <div style="background-image: url('https://kongzhuoz.github.io/jpg/MyHomepage3.png')"></div>
+        <div style="background-image: url('https://kongzhuoz.github.io/jpg/MyHomepage4.png')"></div>
+        <div style="background-image: url('https://kongzhuoz.github.io/jpg/MyHomepage5.png')"></div>
+        <div style="background-image: url('https://kongzhuoz.github.io/jpg/MyHomepage6.png')"></div>
+        <div style="background-image: url('https://kongzhuoz.github.io/jpg/MyHomepage7.png')"></div>
+        <div style="background-image: url('https://kongzhuoz.github.io/jpg/MyHomepage9.png')"></div>
+        <div style="background-image: url('https://kongzhuoz.github.io/jpg/MyHomepage10.png')"></div>
+        <div style="background-image: url('https://kongzhuoz.github.io/jpg/MyHomepage11.png')"></div>
+        <div style="background-image: url('https://kongzhuoz.github.io/jpg/MyHomepage12.png')"></div>
+        <div style="background-image: url('https://kongzhuoz.github.io/jpg/MyHomepage13.png')"></div>
+
+      </div>
+      <div class="action-buttons">
+        <button class="down-button">
+          <i class="fas fa-arrow-down"></i>
+        </button>
+        <button class="up-button">
+          <i class="fas fa-arrow-up"></i>
+        </button>
+      </div>
+    </div>
+    <div>
+      <hr>
+      <div class="foot">
+        <div>power by 21cs孔卓</div>
+        联系作者  <a href="https://mail.qq.com" target="_blank"> 751590281@qq.com</a>
+      </div>
+    </div>
+
+    <script>
+      // 定义获取的html的值
+      var sliderContainer = document.querySelector('.slider-container')
+      var slideRight = document.querySelector('.right-slide')
+      var slideLeft = document.querySelector('.left-slide')
+      var upButton = document.querySelector('.up-button')
+      var downButton = document.querySelector('.down-button')
+      var slidesLength = slideRight.querySelectorAll('div').length
+
+      let activeSlideIndex = 0
+      // 初始化设置0
+
+      slideLeft.style.top = `-${(slidesLength - 1) * 100}vh`
+
+      upButton.addEventListener('click', () => changeSlide('up'))
+      downButton.addEventListener('click', () => changeSlide('down'))
+
+      var changeSlide = (direction) => {
+          var sliderHeight = sliderContainer.clientHeight
+          if(direction === 'up') {
+              activeSlideIndex++
+              if(activeSlideIndex > slidesLength - 1) {
+                  activeSlideIndex = 0
+              }
+          } else if(direction === 'down') {
+              activeSlideIndex--
+              if(activeSlideIndex < 0) {
+                  activeSlideIndex = slidesLength - 1
+              }
+          }
+
+          slideRight.style.transform = `translateY(-${activeSlideIndex * sliderHeight}px)`
+          slideLeft.style.transform = `translateY(${activeSlideIndex * sliderHeight}px)`
+      }
+      setInterval(function(){
+        document.getElementById("time").innerHTML = new Date().toLocaleString();
+      },1000)
+    </script>
+  </body>
 </html>

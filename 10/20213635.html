@@ -1,90 +1,198 @@
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>20213635</title>
-	</head>
-	<style type="text/css">
-		table{
-			margin: 0 auto;
-			border-spacing:10px;
-			padding:100px;
-			background-color: mistyrose;
-		}
-	</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>项目实训</title>
 	
-	<body>
-		<table>
-			<tr>
-				<th>20213635李晨</th>
-				<th>作业链接</th>
-			</tr>
-			<tr>
-				<td>第一次作业</td>
-				<td><a href="lichen/20213635-1.html" target="_blank"> 20213635-1</a></td>
-			<tr>
-				<td>第二次作业</td>
-				<td><a 	href="lichen/20213635-2.html" target="_blank">20213635-2</a></td>
-			</tr>
-			<tr>
-				<td>第三次作业</td>
-				<td><a href="lichen/20213635-3.html" target="_blank"> 20213635-3</a></td>
-			</tr>
-			<tr>
-				<td>第四次作业</td>
-				<td><a href="lichen/20213635-4.html" target="_blank"> 20213635-4</a></td>
-			</tr>
-			<tr>
-				<td>第五次作业</td>
-				<td><a href="lichen/20213635-5.html" target="_blank"> 20213635-5</a></td>
-			</tr>
-			<tr>
-				<td>第六次作业</td>
-				<td><a href="lichen/20213635-6.html" target="_blank"> 20213635-6</a></td>
-			</tr>
-			<tr>
-				<td>第七次作业</td>
-				<td><a href="lichen/20213635-7.html" target="_blank"> 20213635-7</a></td>
-			</tr>
-			<tr>
-				<td>第八次作业</td>
-				<td><a href="lichen/20213635-8.html" target="_blank"> 20213635-8</a></td>
-			</tr>
-			<tr>
-				<td>第九次作业</td>
-				<td><a href="lichen/20213635-9.html" target="_blank"> 20213635-9</a></td>
-			</tr>
-			<tr>
-				<td>第十次作业</td>
-				<td><a href="lichen/20213635-10.html" target="_blank"> 20213635-10</a></td>
-			</tr>
-			<tr>
-				<td>第十一次作业</td>
-				<td><a href="lichen/20213635-11.html" target="_blank"> 20213635-11</a></td>
-			</tr>
-			<tr>
-				<td>第十二次作业</td>
-				<td><a href="lichen/20213635-12.html" target="_blank"> 20213635-12</a></td>
-			</tr>
-			<tr>
-				<td>第十三次作业</td>
-				<td><a href="lichen/20213635-13.html" target="_blank"> 20213635-13</a></td>
-			</tr>
-			<tr>
-				<td>第十四次作业</td>
-				<td><a href="lichen/20213635-14.html" target="_blank"> 20213635-14</a></td>
-			</tr>
-			<tr>
-				<td>第十五次作业</td>
-				<td><a href="lichen/20213635-15.html" target="_blank"> 20213635-15</a></td>
-			</tr>
-			<tr>
-				<td>第十六次作业</td>
-				<td><a href="lichen/20213635-16.html" target="_blank"> 20213635-16</a></td>
-			</tr>
-		</table>
+
+    <style type="text/css">
+		a{
+		font-size:40px;
+		border:1px solid blue;
+		}
+		span{
+		
+		color:red;
+		}
+		body{
+			 background-image:url('https://diamondful.github.io/2.jpg');
+		
+            background-repeat: no-repeat;
+            background-size: 100%;
+		}
+		img{
+			background-repeat: no-repeat;
+            background-size: 10%;
+			position:absolute;
+			left:1200px;
+			top:150px;
+		
+		}
+
+		div{
+		
+		}
+
+		div#header{
+		height:20%;
+		font-size:40px;
+		color:red;
+		}
+		div#nav{
+		height:15%;
+		}
+		div#article{
+		height:50%;
+		font-size:40px;
+		}
+		div#footer{
+		height:15%;
+		font-family:华文琥珀;
+		font-size:40px;
+		}
+
+
+
+
+     
+    </style>
+</head>
+<body >
+<img src='https://diamondful.github.io/6.jpg' width="200" height="300"/>
+<div id="header" class="">					
+	
+</div>
+
+<div id="nav" class="" >
+   
+     <a href="https://diamondful.github.io/1.jpg" id="but1" target="_BLANK">第1周</a>
+	 <a href="https://diamondful.github.io/5.jpg" id="but2" target="_BLANK">第2周</a>
+	 <a href="https://diamondful.github.io/3.jpg" id="but3" target="_BLANK">第3周</a>
+	 <a href="https://diamondful.github.io/4.jpg" id="but4" target="_BLANK">第4周</a>
+</div>
+
+<div id="article" class="">
+	article
+</div>
+<div id="footer" class="">
+	21计科二班李晨
+
+<div id="footer" class="">
+	学号20213635
+
+</div>
+<span id=liveclock style=position:absolute;left:1000px;top:30px;; width: 109px; height: 15px>
+          </span>
+<script type="text/javascript">
+ 
+	setInterval("fun(liveclock)",1);
+	function fun(timeID){ 
+		var date = new Date();  //创建对象  
+		var y = date.getFullYear();     //获取年份  
+		var m =date.getMonth()+1;   //获取月份  返回0-11  
+		var d = date.getDate(); // 获取日  
+		var w = date.getDay();   //获取星期几  返回0-6   (0=星期天) 
+		var ww = ' 星期'+'日一二三四五六'.charAt(new Date().getDay()) ;//星期几
+		var h = date.getHours();  //时
+		var minute = date.getMinutes()  //分
+		var s = date.getSeconds(); //秒
+		var sss = date.getMilliseconds() ; //毫秒
+		if(m<10){
+			m = "0"+m;
+		}
+		if(d<10){
+			d = "0"+d;
+		}
+		if(h<10){
+			h = "0"+h;
+		}
+		
+		
+		if(minute<10){
+			minute = "0"+minute;
+		}
+		
+		
+		if(s<10){
+			s = "0"+s;
+		}
+		
+		if(sss<10){
+			sss = "00"+sss;
+			}else if(sss<100){
+			sss = "0"+sss;
+		}
+		document.getElementById(timeID.id).innerHTML 
+			= y+"-"+m+"-"+d+"   "+h+":"+minute+":"+s+"   "+" "+ww;
+	}
+</script>
+
+<script>
+	document.body.style.height= window.innerHeight -30 + 'px';
+
+	var kouHao =['追求自由','提倡平等','保持公正','遵守法制','热爱祖国','就是我李晨'];
+	var headerDom =document.querySelector("div#header");
+
+	
+	var i=0;
+	function showHeader(){
+		headerDom.textContent =kouHao[i];
+		if(i< kouHao.length -1){		
+			i++;
+		}else{
+			i=0;
+		}
+	window.setTimeout(showHeader,1000);
+	}
+	window.setTimeout(showHeader,1000);
+
+	var homeWorks=['追求自由','提倡平等','保持公正','遵守法制','热爱祖国','就是我李晨'];
+	var but1 =document.querySelector('a#but1');
+	but1.onmouseover =function(){
+		var articleDom= document.querySelector('div#article');
+		articleDom.textContent =homeWorks[0];
+	};
+	but1.onmouseout = function(){
+		var articleDom= document.querySelector('div#article');
+		articleDom.textContent ='';
+	}
+
+	var but2 =document.querySelector('a#but2');
+	but2.onmouseover =function(){
+		var articleDom= document.querySelector('div#article');
+		articleDom.textContent =homeWorks[1];
+	};
+	but2.onmouseout = function(){
+		var articleDom= document.querySelector('div#article');
+		articleDom.textContent ='';
+		}
+
+	var but3 =document.querySelector('a#but3');
+	but3.onmouseover =function(){
+		var articleDom= document.querySelector('div#article');
+		articleDom.textContent =homeWorks[2];
+	};
+	but3.onmouseout = function(){
+		var articleDom= document.querySelector('div#article');
+		articleDom.textContent ='';
+		}
+
+	var but4 =document.querySelector('a#but4');
+	but4.onmouseover =function(){
+		var articleDom= document.querySelector('div#article');
+		articleDom.textContent =homeWorks[3];
+	};
+	but4.onmouseout = function(){
+		var articleDom= document.querySelector('div#article');
+		articleDom.textContent ='';
+
+
+		};
+	
+</script>
 
 </body>
 
+</script>
 </html>
+

@@ -1,89 +1,287 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>20213630</title>
-	</head>
-	<style type="text/css">
-		table{
-			margin: 0 auto;
-			border-spacing:10px;
-			padding:100px;
-			background-color: mistyrose;
-		}
-	</style>
-	
-	<body>
-		<table>
-			<tr>
-				<th>20197304彭起峰</th>
-				<th>作业链接</th>
-			</tr>
-			<tr>
-				<td>第一次作业</td>
-				<td><a href="pengqifeng/20197304-1.html" target="_blank">20197304-1</a></td>
-			<tr>
-				<td>第二次作业</td>
-				<td><a 	href="pengqifeng/20197304-2.html" target="_blank">20197304-2</a></td>
-			</tr>
-			<tr>
-				<td>第三次作业</td>
-				<td><a href="pengqifeng/20197304-3.html" target="_blank"> 20197304-3</a></td>
-			</tr>
-			<tr>
-				<td>第四次作业</td>
-				<td><a href="pengqifeng/20197304-4.html" target="_blank"> 20197304-4</a></td>
-			</tr>
-			<tr>
-				<td>第五次作业</td>
-				<td><a href="pengqifeng/20197304-5.html" target="_blank"> 20197304-5</a></td>
-			</tr>
-			<tr>
-				<td>第六次作业</td>
-				<td><a href="pengqifeng/20197304-6.html" target="_blank"> 20197304-6</a></td>
-			</tr>
-			<tr>
-				<td>第七次作业</td>
-				<td><a href="pengqifeng/20197304-7.html" target="_blank"> 20197304-7</a></td>
-			</tr>
-			<tr>
-				<td>第八次作业</td>
-				<td><a href="pengqifeng/20197304-8.html" target="_blank"> 20197304-8</a></td>
-			</tr>
-			<tr>
-				<td>第九次作业</td>
-				<td><a href="pengqifeng/20197304-9.html" target="_blank">20197304-9</a></td>
-			</tr>
-			<tr>
-				<td>第十次作业</td>
-				<td><a href="pengqifeng/20197304-10.html" target="_blank"> 20197304-10</a></td>
-			</tr>
-			<tr>
-				<td>第十一次作业</td>
-				<td><a href="pengqifeng/20197304-11.html" target="_blank"> 20197304-11</a></td>
-			</tr>
-			<tr>
-				<td>第十二次作业</td>
-				<td><a href="pengqifeng/20197304-12.html" target="_blank"> 20197304-12</a></td>
-			</tr>
-			<tr>
-				<td>第十三次作业</td>
-				<td><a href="pengqifeng/20197304-13.html" target="_blank"> 20197304-13</a></td>
-			</tr>
-			<tr>
-				<td>第十四次作业</td>
-				<td><a href="pengqifeng/20197304-14.html" target="_blank"> 20197304-14</a></td>
-			</tr>
-			<tr>
-				<td>第十五次作业</td>
-				<td><a href="pengqifeng/20197304-15.html" target="_blank"> 20197304-15</a></td>
-			</tr>
-			<tr>
-				<td>第十六次作业</td>
-				<td><a href="pengqifeng/20197304-16.html" target="_blank"> 20197304-16</a></td>
-			</tr>
-		</table>
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>彭起峰的个人主页</title>
+<style>
+* {
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+font-family: 'Courier New', Courier, monospace;
+color: white;
+}
+
+body {
+text-align: center;
+/*background-image: 
+ url("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F4k%2Fs%2F02%2F2109242259192W5-0-lp.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1656902346&t=279f9e6219bd8c7d0d304904715fb39c") */
+;
+background-color:red;
+background-size:100%;
+background-repeat: no-repeat;
+background-position: center;
+}
+
+header,
+nav,
+article,
+footer {
+border: 1px solid gray;
+font-size: 1.8vw;
+}
+
+header {
+position: relative;
+height: 20%;
+white-space: pre-line;
+}
+
+header img {
+position: absolute;
+top: 0;
+right: 0;
+/* width: 10%; */
+height: 80%;
+z-index: 1;
+}
+
+header p {
+position: absolute;
+bottom: 0;
+right: 1%;
+z-index: 2;
+}
+
+nav {
+height: 25%;
+}
+
+article {
+height: 40%;
+font-size: 1.5em;
+}
+
+input {
+width: 6%;
+margin: 6px;
+box-shadow: 2px 2px 2px gray;
+background-color: yellow;
+border: none;
+border-radius: 25px;
+font-size: 0.5em;
+color: blue;
+outline: none;
+cursor: pointer;
+line-height: 250%;
+}
+
+footer {
+height: 15%;
+}
+
+footer p {
+margin-top: 50px;
+}
+</style>
+</head>
+
+<body>
+<header>
+<div id="Header"></div>
+<img src="" id="Img">
+<p id="Time"></p>
+</header>
+<nav id="Nav"></nav>
+<article id="Article"></article>
+<footer id="Footer">
+<p>彭起峰 20197304 </p>
+</footer>
+<script>
+// 设置body的高度为电脑/手机的高度
+document.body.style.height = window.innerHeight + 'px';
+// 设置header部分的动态生成名人名言进行循环
+var saying = ['绝代有佳人，幽居在空谷。', '自云良家子，零落依草木。', '关中昔丧乱，兄弟遭杀戮。'];
+var header = document.getElementById("Header");
+var imgsrc = ['https://tse1-mm.cn.bing.net/th/id/R-C.0a7e4e39da057e6138c981a7245b9c51?rik=ncWk3rpdx8l6lg&riu=http%3a%2f%2fe0.ifengimg.com%2f01%2f2019%2f0402%2fD62D9C2F84D12CB746719A547DAF943BB7F86857_size69_w640_h930.jpeg&ehk=0eM%2f7tB1zs9rV5kGnEjTpW5rYTk6Ww2nsYbO8L8x3qA%3d&risl=&pid=ImgRaw&r=0',
+'https://tse1-mm.cn.bing.net/th/id/R-C.0a7e4e39da057e6138c981a7245b9c51?rik=ncWk3rpdx8l6lg&riu=http%3a%2f%2fe0.ifengimg.com%2f01%2f2019%2f0402%2fD62D9C2F84D12CB746719A547DAF943BB7F86857_size69_w640_h930.jpeg&ehk=0eM%2f7tB1zs9rV5kGnEjTpW5rYTk6Ww2nsYbO8L8x3qA%3d&risl=&pid=ImgRaw&r=0','https://tse1-mm.cn.bing.net/th/id/R-C.0a7e4e39da057e6138c981a7245b9c51?rik=ncWk3rpdx8l6lg&riu=http%3a%2f%2fe0.ifengimg.com%2f01%2f2019%2f0402%2fD62D9C2F84D12CB746719A547DAF943BB7F86857_size69_w640_h930.jpeg&ehk=0eM%2f7tB1zs9rV5kGnEjTpW5rYTk6Ww2nsYbO8L8x3qA%3d&risl=&pid=ImgRaw&r=0','https://tse1-mm.cn.bing.net/th/id/R-C.0a7e4e39da057e6138c981a7245b9c51?rik=ncWk3rpdx8l6lg&riu=http%3a%2f%2fe0.ifengimg.com%2f01%2f2019%2f0402%2fD62D9C2F84D12CB746719A547DAF943BB7F86857_size69_w640_h930.jpeg&ehk=0eM%2f7tB1zs9rV5kGnEjTpW5rYTk6Ww2nsYbO8L8x3qA%3d&risl=&pid=ImgRaw&r=0'];
+var img = document.getElementById('Img');
+var symbol = ['第一次作业', '第二次作业', '第三次作业', '第四次作业', '第五次作业', '第六次作业', '第七次作业', '第八次作业', '第九次作业', '第十次作业', '第十一次作业', '第十二次作业', '第十三次作业', '第十四次作业', '第十五次作业', '第十六次作业'];
+var nav = document.getElementById('Nav');
+var Article = document.getElementById('Article');
+
+var homeworkcontent = ['第一次作业做的是介绍老将行', '第二次作业是古诗的改进，以及超链接', '第三次作业是absolute定位z-index次序', '第四次作业是漂亮的旅游网站', '第五次作业讲的是两首诗，点击可换', '第六次作业是的一首诗，通过按钮点击来实现一句一句诗的呈现，使用了input:button的onclick点击功能', '第七次作业是显示诗经的诗篇', '第八次作业是两个按钮显示300首古诗', '第十次作业是唯美的300首诗，有多少行就有多少p标签。完美解决了300首诗闭合循环。增加新的功能rand随机按钮，点击随机呈现一首古诗', '第十一次作业是计算器', '第十二次是考试，计算器补全了许多bug', '第十三次是计算器的3.0版。'];
+var homeworksrc = ['https://youzelian.github.io/10/pengqifeng/20197304-1.html', 'https://youzelian.github.io/10/pengqifeng/20197304-2.html', 'https://youzelian.github.io/10/pengqifeng/20197304-3.html', 'https://youzelian.github.io/10/pengqifeng/20197304-4.html', 'https://youzelian.github.io/10/pengqifeng/20197304-5.html', 'https://youzelian.github.io/10/pengqifeng/20197304-6.html', 'https://youzelian.github.io/10/pengqifeng/20197304-7.html', 'https://youzelian.github.io/10/pengqifeng/20197304-8.html', 'https://youzelian.github.io/10/pengqifeng/20197304-9.html',
+'https://youzelian.github.io/10/pengqifeng/20197304-10.html',
+'https://youzelian.github.io/10/pengqifeng/20197304-11.html',
+'https://youzelian.github.io/10/pengqifeng/20197304-12.html',
+'https://youzelian.github.io/10/pengqifeng/20197304-13.html',
+'https://youzelian.github.io/10/pengqifeng/20197304-14.html',
+'https://youzelian.github.io/10/pengqifeng/20197304-15.html',
+'https://youzelian.github.io/10/pengqifeng/20197304-16.html',
+];
+function showDom() {
+// 名人名言
+var m = Math.round(Math.random() * (saying.length - 1));
+header.textContent = saying[m];
+// 图片
+img.src = imgsrc[m];
+window.setTimeout(showDom, 1000);
+// 时间
+var d = new Date();
+document.getElementById("Time").innerHTML = d;
+}
+// 此处还要一个window.setTimeout是为了第一次的触发，之后进入循环
+window.setTimeout(showDom, 1000);
+// 动态设置16个按钮
+for (var i = 0; i < 4; i++) {
+var div = document.createElement("div");
+for (var p = 0; p < 4; p++) {
+var input = document.createElement("input");
+input.type = "button";
+input.value = symbol[i * 4 + p];
+input.id = i * 4 + p;
+div.appendChild(input);
+}
+nav.append(div);
+}
+// 定义点击按钮跳转到另一个页面功能和作业介绍,太难了没办法写循环抓取，只能硬编码
+var t0 = document.getElementById(0);
+t0.onclick = function () {
+window.open(homeworksrc[0]);
+}
+t0.onmouseover = function () {
+Article.textContent = homeworkcontent[0];
+}
+t0.onmouseout = function () {
+Article.textContent = '';
+}
+var t1 = document.getElementById(1);
+t1.onclick = function () {
+window.open(homeworksrc[1]);
+}
+t1.onmouseover = function () {
+Article.textContent = homeworkcontent[1];
+}
+t1.onmouseout = function () {
+Article.textContent = '';
+}
+var t2 = document.getElementById(2);
+t2.onclick = function () {
+window.open(homeworksrc[2]);
+}
+t2.onmouseover = function () {
+Article.textContent = homeworkcontent[2];
+}
+t2.onmouseout = function () {
+Article.textContent = '';
+}
+var t3 = document.getElementById(3);
+t3.onclick = function () {
+window.open(homeworksrc[3]);
+}
+t3.onmouseover = function () {
+Article.textContent = homeworkcontent[3];
+}
+t3.onmouseout = function () {
+Article.textContent = '';
+}
+var t4 = document.getElementById(4);
+t4.onclick = function () {
+window.open(homeworksrc[4]);
+}
+t4.onmouseover = function () {
+Article.textContent = homeworkcontent[4];
+}
+t4.onmouseout = function () {
+Article.textContent = '';
+}
+var t5 = document.getElementById(5);
+t5.onclick = function () {
+window.open(homeworksrc[5]);
+}
+t5.onmouseover = function () {
+Article.textContent = homeworkcontent[5];
+}
+t5.onmouseout = function () {
+Article.textContent = '';
+}
+var t6 = document.getElementById(6);
+t6.onclick = function () {
+window.open(homeworksrc[6]);
+}
+t6.onmouseover = function () {
+Article.textContent = homeworkcontent[6];
+}
+t6.onmouseout = function () {
+Article.textContent = '';
+}
+var t7 = document.getElementById(7);
+t7.onclick = function () {
+window.open(homeworksrc[7]);
+}
+t7.onmouseover = function () {
+Article.textContent = homeworkcontent[7];
+}
+t7.onmouseout = function () {
+Article.textContent = '';
+}
+var t8 = document.getElementById(8);
+t8.onclick = function () {
+window.open(homeworksrc[8]);
+}
+t8.onmouseover = function () {
+Article.textContent = homeworkcontent[8];
+}
+t8.onmouseout = function () {
+Article.textContent = '';
+}
+var t9 = document.getElementById(9);
+t9.onclick = function () {
+window.open(homeworksrc[9]);
+}
+t9.onmouseover = function () {
+Article.textContent = homeworkcontent[9];
+}
+t9.onmouseout = function () {
+Article.textContent = '';
+}
+var t10 = document.getElementById(10);
+t10.onclick = function () {
+window.open(homeworksrc[10]);
+}
+t10.onmouseover = function () {
+Article.textContent = homeworkcontent[10];
+}
+t10.onmouseout = function () {
+Article.textContent = '';
+}
+var t11 = document.getElementById(11);
+t11.onclick = function () {
+window.open(homeworksrc[11]);
+}
+t11.onmouseover = function () {
+Article.textContent = homeworkcontent[11];
+}
+t11.onmouseout = function () {
+Article.textContent = '';
+}
+var t12 = document.getElementById(12);
+t12.onclick = function () {
+window.open(homeworksrc[12]);
+}
+t12.onmouseover = function () {
+Article.textContent = homeworkcontent[12];
+}
+t12.onmouseout = function () {
+Article.textContent = '';
+}
+</script>
 </body>
 
 </html>
+

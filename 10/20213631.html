@@ -5,65 +5,155 @@
   <title>主页</title>
  </head>
  <style>
+ *{
+
+ text-align:center;
+ }
+ div#header{
+ height:20%;
+ font-size:40px;
+ 
+ }
+ div#article{
+ height:30%;
+ margin-top:30px;
+ line-height:50px;
+
+ }
+ div#footer{
+ height:30%;
+ font:40px red;
+ }
+ div#ending{
+ height:20%;
+
+ }
  a{
-   font-size:40px;
+   font-size:50px;
    font-family:宋体;
    color:red;
    text-decoration:none;
-   padding:10px;
-   margin:15px;
+ }
+ span{
+ color:blue;
+ }
+ a:visited{
+ color:purple;
+ }
+ a:hover{
+ color:orange;
+ font-size:60px;
  }
  </style>
- <body>
-  <table>
-  <a href="zengyanglin/20213631+01.html" target="_blank">
-  第一次作业<br>
-  </a>
-  <a href="zengyanglin/20213631+02.html" target="_blank"> 
-  第二次作业<br>
-  </a>
-  <a href="zengyanglin/20213631+03.html" target="_blank">
-   第三次作业<br>
-  </a>
-  <a href="zengyanglin/20213631+04.html" target="_blank">
-   第四次作业<br>
-   </a>
-  <a href="zengyanglin/20213631+05.html" target="_blank">
-   第五次作业<br>
-  </a>
-  <a href="zengyanglin/20213631+06.html" target="_blank">
-  第六次作业<br>
-  </a>
-  <a href="zengyanglin/20213631-7.html" target="_blank">
-  第七次作业<br>
-  </a>
-  <a href="zengyanglin/20213631-8.html" target="_blank">
-  第八次作业<br>
-  </a>
-  <a href="zengyanglin/20213631-9.html" target="_blank">
-  第九次作业<br>
-  </a>
-  <a href="zengyanglin/20213631-10.html" target="_blank">
-  第十次作业<br>
-  </a>
-  <a href="zengyanglin/20213631-11.html" target="_blank">
-  第十一次作业<br>
-  </a>
-  <a href="zengyanglin/20213631-12.html" target="_blank">
-  第十二次作业<br>
-  </a>
-  <a href="zengyanglin/20213631-13.html" target="_blank">
-  第十三次作业<br>
-  </a>
-  <a href="zengyanglin/20213631-14.html" target="_blank">
-  第十四次作业<br>
-  </a>
-  <a href="zengyanglin/20213631-15.html" target="_blank">
-  第十五次作业<br>
-  </a>
-  <a href="zengyanglin/20213631-16.html" target="_blank">
-  第十六次作业<br>
-  </a>
-  </table>
+ <body background="1.jpg">
+  <div id="header">
+ 
+  </div>
+  <div id="article">
+	  <a href="20213631-1.html" target="_blank">
+	  <span>1.</span>第1次作业
+	  </a>
+	  <a href="20213631-2.html" target="_blank"> 
+	  <span>2.</span>第2次作业
+	  </a>
+	  <a href="20213631-3.html" target="_blank">
+	  <span>3.</span>第3次作业
+	  </a>
+	  <a href="20213631-4.html" target="_blank">
+	  <span>4.</span>第4次作业<br>
+	  </a>
+	  <a href="20213631-5.html" target="_blank">
+	  <span>5.</span>第5次作业
+	  </a>
+	  <a href="20213631-6.html" target="_blank">
+	  <span>6.</span>第6次作业
+	  </a>
+	  <a href="20213631-7.html" target="_blank">
+	  <span>7.</span>第7次作业
+	  </a>
+	  <a href="20213631-8.html" target="_blank">
+	  <span>8.</span>第8次作业<br>
+	  </a>
+	  <a href="20213631-9.html" target="_blank">
+	  <span>9.</span>第9次作业
+	  </a>
+	  <a href="20213631-10.html" target="_blank">
+	  <span>10.</span>第10次作业
+	  </a>
+	  <a href="20213631-11.html" target="_blank">
+	  <span>11.</span>第11次作业
+	  </a>
+	  <a href="20213631-12.html" target="_blank">
+	  <span>12.</span>第12次作业<br>
+	  </a>
+	  <a href="20213631-13.html" target="_blank">
+	  <span>13.</span>第13次作业
+	  </a>
+	  <a href="20213631-14.html" target="_blank">
+	  <span>14.</span>第14次作业
+	  </a>
+	  <a href="20213631-15.html" target="_blank">
+	  <span>15.</span>第15次作业
+	  </a>
+	  <a href="20213631-16.html" target="_blank">
+	  <span>16.</span>第16次作业
+	  </a>
+     </div>
+  <div id="footer"> 
+
+  </div>
+  <div id="ending">
+
+  </div>
+  <script type="text/javascript">
+    var footerDom = document.querySelector("div#footer");
+	var t = ['富强','文明','民主','和谐'];
+	var i = 0;
+	function show(){
+	 footerDom.textContent = t[i];
+	 if (i < t.length-1){
+	   i++;
+      
+	 }else{
+       i = 0;
+	 }
+	};
+	var y =0;
+    function etime(){
+	 show();
+     window.setTimeout(etime, 3000); 
+	};
+	window.setTimeout(etime, 3000);
+  </script>
  </body>
+ <script type="text/javascript">
+	var t=null;
+        function time() {
+            dt = new Date();
+            var y = dt.getFullYear();
+            var M = dt.getMonth() + 1;
+            var d = dt.getDate();
+            var h = dt.getHours();
+            var m = dt.getMinutes();
+            var s = dt.getSeconds();
+            M=checkTime(M);
+            d=checkTime(d);
+       		h=checkTime(h);
+            m=checkTime(m);
+            s=checkTime(s);
+            document.getElementById("header").innerHTML = "当前时间：" + y + "-" + M + "-" + d + " " + h + ":" + m + ":" + s;
+            t = setTimeout(time, 1000);
+        };
+
+        window.onload = function () {
+            time();
+        };
+        
+        function checkTime(i){
+        if(i<10){
+            i="0"+i;
+        }
+        return i;
+    };
+ </script>
 </html>
