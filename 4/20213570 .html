@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
  <head>
@@ -6,63 +7,61 @@
  </head>
  <style type="text/css">
 body{
-font-size:25px;
-border:16px solid grey;
-height:600px;
+border:3px solid red;
+height:500px;
 }
 div{
-border:2px solid black;
+border:2px solid blue;
 }
 div#header{
-height:20%;
+height:10%;
 text-align:center;
+color:red;
+font-size:30px;
 }
 div#nav{
-height:40%;
-text-align:center;
+height:50%;
+font-size:20px;
 }
 div#article{ 
 height:20%;
-text-align:center;
 }
 div#footer{
 height:20%;
-text-align:center;
 }
  </style>
  <body>
   <div id="header" class="">
   </div>
  <div id="nav" class="">
- <a href="zhangwenyu/20213576-1.html">第一周</a>
-<a href="zhangwenyu/20213576-2.html">第二周</a>
-<a href="zhangwenyu/20213576-3.html">第三周</a>
-<a href="zhangwenyu/20213576-4.html">第四周</a>
-<a href="zhangwenyu/20213576-5.html">第五周</a>
-<a href="zhangwenyu/20213576-6.html">第六周</a>
-<a href="zhangwenyu/20213576-7.html">第七周</a>
-<a href="zhangwenyu/20213576-8.html">第八周</a>
-<div id="nav" class="">
-<a href="zhangwenyu/20213576-9.html">第九周</a>
-<a href="zhangwenyu/20213576-10.html">第十周</a>
-<a href="zhangwenyu/20213576-11.html">第十一周</a>
-<a href="zhangwenyu/20213576-12.html">第十二周</a>
-<a href="zhangwenyu/20213576-13.html">第十三周</a>
-<a href="zhangwenyu/20213576-14.html">第十四周</a>
-<a href="zhangwenyu/20213576-15.html">第十五周</a>
-<a href="zhangwenyu/20213576-16.html">第十六周</a>
+ <a href="zhangziyang/20213570-1.html" id="zy1">第一周
+<a href="zhangziyang/20213570-2.html" id="zy2">第二周
+<a href="zhangziyang/20213570-3.html" id="zy3">第三周
+<a href="zhangziyang/20213570-4.html" id="zy4">第四周
+<a href="zhangziyang/20213570-5.html" id="zy5">第五周
+<a href="zhangziyang/20213570-6.html" id="zy6">第六周
+<a href="zhangziyang/20213570-7.html" id="zy7">第七周
+<a href="zhangziyang/20213570-8.html" id="zy8">第八周
+<a href="zhangziyang/20213570-9.html" id="zy9">第九周
+<a href="zhangziyang/20213570-10.html" id="zy10">第十周
+<a href="zhangziyang/20213570-11.html" id="zy11">第十一周
+<a href="zhangziyang/20213570-12.html" id="zy12">第十二周
+<a href="zhangziyang/20213570-13.html" id="zy13">第十三周
+<a href="zhangziyang/20213570-14.html" id="zy14">第十四周
+<a href="zhangziyang/20213570-15.html" id="zy15">第十五周
+<a href="zhangziyang/20213570-16.html" id="zy16">第十六周
  </div>
  <div id="article" class="">
- 注释
+ hjkk
  </div>
  <div id="footer" class="">
- 张文宇-20213576-电话13177803960
+ 张紫阳-20213570-电话15727506736
  </div>
  </body>
  <script type="text/javascript">
  <!--
  document.body.style.height=window.innerHight -30+'px';
- var yuju=['盛年不重来','一日再难晨',]
+ var yuju=['落红不是无情物','化作春泥更护花','龚自珍']
 var headerDom = document.querySelector("div#header");
 var homeWorks=['第1次作业','第2次作业','第3次作业','第4次作业','第5次作业','第6次作业','第7次作业','第8次作业','第9次作业','第10次作业','第12次作业','第13次作业','第14次作业','第15次作业','第16次作业']
 var i = 0;
@@ -111,7 +110,16 @@ but4.onmouseover = function(){
 articleDom.textContent = homeWorks[3];
 }
 but4.onmouseout = function(){
-articleDom.textContent ='没了';
+articleDom.textContent ='';
+}
+
+var but5 = document.querySelector('a#zy5');
+var articleDom = document.querySelector('div#article');
+but5.onmouseover = function(){
+articleDom.textContent = homeWorks[4];
+}
+but5.onmouseout = function(){
+articleDom.textContent ='上同';
 }
  </script>
 </html>

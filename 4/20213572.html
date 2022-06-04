@@ -1,91 +1,113 @@
 <!doctype html>
 <html lang="en">
  <head>
-  <meta charset="UTF-8"> 
-  <title>document</title>
-	<style> 
-	body{
-
-		background-image:url(https://tse1-mm.cn.bing.net/th/id/OIP-C.GrAzfkSHW__GPqrk8Uwr0QHaFj?w=155&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7);
-	}
-	table{
-	margin:auto;
-	color:blue;
-	font-size:30px;
-	}
-	</style> 
+  <meta charset="UTF-8">
+  <title>主页</title>
  </head>
+ <style type="text/css">
+body{
+font-size:25px;
+border:30px solid red;
+height:600px;
+}
+div{
+border:2px solid blue;
+}
+div#header{
+height:20%;
+text-align:center;
+}
+div#nav{
+height:40%;
+}
+div#article{ 
+height:20%;
+}
+div#footer{
+height:20%;
+}
+ </style>
  <body>
-  <table border="8">
-   <tr>
-    <th>name</th>
-	<th>作业链接</th>
-   </tr>
-   <tr>
-    <th>叶凯</th>
-	<th><a href="yekai/20213572-1.html">20213572-1.html</a></th>
-   </tr>
-   <tr>
-    <th>叶凯</th>
-	<th><a href="yekai/20213572-2.html">20213572-2.html</a></th>
-   </tr>
-   <tr>
-    <th>叶凯</th>
-	<th><a href="yekai/20213572-3.html">20213572-3.html</a></th>
-   </tr>
-   <tr>
-    <th>叶凯</th>
-	<th><a href="yekai/20213572-4.html">20213572-4.html</a></th>
-   </tr>
-   <tr>
-    <th>叶凯</th>
-	<th><a href="yekai/20213572-5.html">20213572-5.html</a></th>
-   </tr>
-   <tr>
-    <th>叶凯</th>
-	<th><a href="yekai/20213572-6.html">20213572-6.html</a></th>
-   </tr>
-   <tr>
-    <th>叶凯</th>
-	<th><a href="yekai/20213572-7.html">20213572-7.html</a></th>
-   </tr>
-   <tr>
-    <th>叶凯</th>
-	<th><a href="yekai/20213572-8.html">20213572-8.html</a></th>
-   </tr>
-   <tr>
-    <th>叶凯</th>
-	<th><a href="yekai/20213572-9.html">20213572-9.html</a></th>
-   </tr>
-   <tr>
-    <th>叶凯</th>
-	<th><a href="yekai/20213572-10.html">20213572-10.html</a></th>
-   </tr>
-   <tr>
-    <th>叶凯</th>
-	<th><a href="yekai/20213572-11.html">20213572-11.html</a></th>
-   </tr>
-   <tr>
-    <th>叶凯</th>
-	<th><a href="yekai/20213572-12.html">20213572-12.html</a></th>
-   </tr>
-   <tr>
-    <th>叶凯</th>
-	<th><a href="yekai/20213572-13.html">20213572-13.html</a></th>
-   </tr>
-   <tr>
-    <th>叶凯</th>
-	<th><a href="yekai/20213572-14.html">20213572-14.html</a></th>
-   </tr>
-   <tr>
-    <th>叶凯</th>
-	<th><a href="yekai/20213572-15.html">20213572-15.html</a></th>
-   </tr>
-   <tr>
-    <th>叶凯</th>
-	<th><a href="yekai/20213572-16.html">20213572-16.html</a></th>
-   </tr>
-  </table>
-  
+  <div id="header" class="">
+  </div>
+ <div id="nav" class="">
+ <a href="yekai/20213572-1.html" id="zy1">第一周
+<a href="yekai/20213572-2.html" id="zy2">第二周
+<a href="yekai/20213572-3.html" id="zy3">第三周
+<a href="yekai/20213572-4.html" id="zy4">第四周
+<a href="yekai/20213572-5.html" id="zy5">第五周
+<a href="yekai/20213572-6.html" id="zy6">第六周
+<a href="yekai/20213572-7.html" id="zy7">第七周
+<a href="yekai/20213572-8.html" id="zy8">第八周
+<a href="yekai/20213572-9.html" id="zy9">第九周
+<a href="yekai/20213572-10.html" id="zy10">第十周
+<a href="yekai/20213572-11.html" id="zy11">第十一周
+<a href="yekai/20213572-12.html" id="zy12">第十二周
+<a href="yekai/20213572-13.html" id="zy13">第十三周
+<a href="yekai/20213572-14.html" id="zy14">第十四周
+<a href="yekai/20213572-15.html" id="zy15">第十五周
+<a href="yekai/20213572-16.html" id="zy16">第十六周
+ </div>
+ <div id="article" class="">
+ 注释
+ </div>
+ <div id="footer" class="">
+ 叶凯-20213572-电话110
+ </div>
  </body>
+ <script type="text/javascript">
+ <!--
+ document.body.style.height=window.innerHight -30+'px';
+ var yuju=['一寸光阴一寸金','寸金难买寸光阴','王贞白']
+var headerDom = document.querySelector("div#header");
+var homeWorks=['第1次作业','第2次作业','第3次作业','第4次作业','第5次作业','第6次作业','第7次作业','第8次作业','第9次作业','第10次作业','第12次作业','第13次作业','第14次作业','第15次作业','第16次作业']
+var i = 0;
+function showHeader(){
+headerDom.textContent = yuju[i];
+if (i <yuju.length-1){
+i++;
+}
+else{
+i=0;
+}
+window.setTimeout(showHeader,1000);
+}
+window.setTimeout(showHeader,1000);
+var but1 = document.querySelector('a#zy1');
+var articleDom = document.querySelector('div#article');
+but1.onmouseover = function(){
+articleDom.textContent = homeWorks[0];
+}
+but1.onmouseout = function(){
+
+articleDom.textContent ='';
+}
+
+var but2 = document.querySelector('a#zy2');
+var articleDom = document.querySelector('div#article');
+but2.onmouseover = function(){
+articleDom.textContent = homeWorks[1];
+}
+but2.onmouseout = function(){
+articleDom.textContent ='';
+}
+
+var but3 = document.querySelector('a#zy3');
+var articleDom = document.querySelector('div#article');
+but3.onmouseover = function(){
+articleDom.textContent = homeWorks[2];
+}
+but3.onmouseout = function(){
+articleDom.textContent ='';
+}
+
+var but4 = document.querySelector('a#zy4');
+var articleDom = document.querySelector('div#article');
+but4.onmouseover = function(){
+articleDom.textContent = homeWorks[3];
+}
+but4.onmouseout = function(){
+articleDom.textContent ='没了';
+}
+ </script>
 </html>

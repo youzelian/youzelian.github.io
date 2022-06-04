@@ -1,80 +1,124 @@
+
 <!doctype html>
 <html lang="en">
  <head>
   <meta charset="UTF-8">
- <style type="text/css">
-	    a:link {
-            color: black;
-        }
-        
-        a:visited {
-            color: purple;
-        }
-
-        a:hover {
-            color: blue;
-            text-decoration: underline;
-        }
- </style>
-  <title>震惊！！！！！</title>
+  <title>主页</title>
  </head>
+ <style type="text/css">
+body{
+font-size:50px;
+border:30px solid yellow;
+height:600px;
+}
+div{
+border:2px solid blue;
+}
+div#header{
+height:20%;
+text-align:center;
+}
+div#nav{
+height:40%;
+}
+div#article{ 
+height:20%;
+}
+div#footer{
+height:20%;
+}
+ </style>
  <body>
-      <table>
-        <thead>
-            <tr>
-                <th>作业链接</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><a href="20213574-1.html">作业1</a></td>
-            </tr>
-            <tr>
-                <td><a href="20213574-2.html">作业2</a></td>
-            </tr>
-            <tr>
-                <td><a href="20213574-3.html">作业3</a></td
-            </tr>
-            <tr>
-                <td><a href="20213574-4.html">作业4</a></td>
-            </tr>
-            <tr>
-                <td><a href="20213574-5.html">作业5</a></td>
-            </tr>
-			<tr>
-                <td><a href="20213574-6.html">作业6</a></td>
-            </tr>
-			<tr>
-                <td><a href="20213574-7.html">作业7</a></td>
-            </tr>
-			<tr>
-                <td><a href="20213574-8.html">作业8</a></td>
-            </tr>
-			<tr>
-                <td><a href="20213574-9.html">作业9</a></td>
-            </tr>
-			<tr>
-                <td><a href="20213574-10.html">作业10</a></td>
-            </tr>
-			<tr>
-                <td><a href="20213574-11.html">作业11</a></td>
-            </tr>
-			<tr>
-                <td><a href="20213574-12.html">作业12</a></td>
-            </tr>
-			<tr>
-                <td><a href="20213574-13.html">作业13</a></td>
-            </tr>
-			<tr>
-                <td><a href="20213574-14.html">作业14</a></td>
-            </tr>
-			<tr>
-                <td><a href="20213574-15.html">作业15</a></td>
-            </tr>
-			<tr>
-                <td><a href="20213574-16.html">作业16</a></td>
-            </tr>
-        </tbody>
-    </table>
+  <div id="header" class="">
+  </div>
+ <div id="nav" class="">
+<a href="20213574-1.html" id="zy1">第一周
+<a href="20213574-2.html" id="zy2">第二周
+<a href="20213574-3.html" id="zy3">第三周
+<a href="20213574-4.html" id="zy4">第四周
+<a href="20213574-5.html" id="zy5">第五周
+<a href="20213574-6.html" id="zy6">第六周
+<a href="" id="zy7">第七周
+<a href="" id="zy8">第八周
+<a href="" id="zy9">第九周
+<a href="" id="zy10">第十周
+<a href="" id="zy11">第十一周
+<a href="" id="zy12">第十二周
+<a href="" id="zy13">第十三周
+<a href="" id="zy14">第十四周
+<a href="" id="zy15">第十五周
+<a href="" id="zy16">第十六周
+ </div>
+ <div id="article" class="">
+ article
+ </div>
+ <div id="footer" class="">
+ 曾志彤-20213574-电话911
+ </div>
  </body>
+ <script type="text/javascript">
+ <!--
+ document.body.style.height=window.innerHight -30+'px';
+ var yuju=['一生清贫怎敢入繁华','两袖清风怎敢入佳人']
+var headerDom = document.querySelector("div#header");
+var homeWorks=['第1次作业','第2次作业','第3次作业','第4次作业','第5次作业','第6次作业','第7次作业','第8次作业','第9次作业','第10次作业','第12次作业','第13次作业','第14次作业','第15次作业','第16次作业']
+var i = 0;
+function showHeader(){
+headerDom.textContent = yuju[i];
+if (i <yuju.length-1){
+i++;
+}
+else{
+i=0;
+}
+window.setTimeout(showHeader,1000);
+}
+window.setTimeout(showHeader,1000);
+s
+var but1 = document.querySelector('a#zy1');
+var articleDom = document.querySelector('div#article');
+but1.onmouseover = function(){
+articleDom.textContent = homeWorks[0];
+}
+but1.onmouseout = function(){
+
+articleDom.textContent ='';
+}
+
+var but2 = document.querySelector('a#zy2');
+var articleDom = document.querySelector('div#article');
+but2.onmouseover = function(){
+articleDom.textContent = homeWorks[1];
+}
+but2.onmouseout = function(){
+articleDom.textContent ='';
+}
+
+var but3 = document.querySelector('a#zy3');
+var articleDom = document.querySelector('div#article');
+but3.onmouseover = function(){
+articleDom.textContent = homeWorks[2];
+}
+but3.onmouseout = function(){
+articleDom.textContent ='';
+}
+
+var but4 = document.querySelector('a#zy4');
+var articleDom = document.querySelector('div#article');
+but4.onmouseover = function(){
+articleDom.textContent = homeWorks[3];
+}
+but4.onmouseout = function(){
+articleDom.textContent ='';
+}
+
+var but5 = document.querySelector('a#zy5');
+var articleDom = document.querySelector('div#article');
+but5.onmouseover = function(){
+articleDom.textContent = homeWorks[4];
+}
+but5.onmouseout = function(){
+articleDom.textContent ='';
+}
+ </script>
 </html>

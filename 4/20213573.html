@@ -1,140 +1,174 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>个人主页</title>
+ </head>
+ <style type="text/css">
+body{
+font-family:华文行楷;
+font-size:25px;
+border:30px solid yellow;
+height:600px;
+}
+div{
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人主页</title>
-    <style>
-        body {
-            text-align: center;
-			color:blue;
-        }
+border:2px solid blue;
+}
+div#header{
 
-        table {
-            /* width: */
-            margin: 50px auto 30px auto;
-        }
+height:20%;
+text-align:center;
+}
+div#nav{
+height:40%;
+}
+div#article{ 
+text-align:center;
+height:20%;
+}
+div#footer{
+text-align:center;
+height:20%;
+}
+ </style>
+ <body>
+  <div id="header" class="">
+  </div>
+ <div id="nav" class="">
+ <a href="wenlianlian/20213573-1.html" id="zy1">第一周
+<a href="wenlianlian/20213573-2.html" id="zy2">第二周
+<a href="wenlianlian/20213573-3.html" id="zy3">第三周
+<a href="wenlianlian/20213573-4.html" id="zy4">第四周
+<a href="wenlianlian/20213573-5.html" id="zy5">第五周
+<a href="wenlianlian/20213573-6.html" id="zy6">第六周
+<a href="wenlianlian/20213573-7.html" id="zy7">第七周
+<a href="wenlianlian/20213573-8.html" id="zy8">第八周
+<a href="wenlianlian/20213573-9.html" id="zy9">第九周
+<a href="wenlianlian/20213573-10.html" id="zy10">第十周
+<a href="wenlianlian/20213573-11.html" id="zy11">第十一周
+<a href="wenlianlian/20213573-12.html" id="zy12">第十二周
+<a href="wenlianlian/20213573-13.html" id="zy13">第十三周
+<a href="wenlianlian/20213573-14.html" id="zy14">第十四周
+<a href="wenlianlian/20213573-15.html" id="zy15">第十五周
+<a href="wenlianlian/20213573-16.html" id="zy16">第十六周
+ </div>
+ <div id="article" class="">
+ 注释
+ </div>
+ <div id="footer" class="">
+ 温链链-学号20213573-电话18070215447
+ </div>
+ </body>
+ <script type="text/javascript">
+ <!--
+ document.body.style.height=window.innerHight -30+'px';
+ var yuju=['为中华之崛起而读书','周恩来']
+var headerDom = document.querySelector("div#header");
+var homeWorks=['第1次作业','第2次作业','第3次作业','第4次作业','第5次作业','第6次作业','第7次作业','第8次作业','第9次作业','第10次作业','第12次作业','第13次作业','第14次作业','第15次作业','第16次作业']
+var i = 0;
+function showHeader(){
+headerDom.textContent = yuju[i];
+if (i <yuju.length-1){
+i++;
+}
+else{
+i=0;
+}
+window.setTimeout(showHeader,1000);
+}
+window.setTimeout(showHeader,1000);
+var but1 = document.querySelector('a#zy1');
+var articleDom = document.querySelector('div#article');
+but1.onmouseover = function(){
+articleDom.textContent = homeWorks[0];
+}
+but1.onmouseout = function(){
 
-        table tr {
-            font-size: 18px;
-        }
+articleDom.textContent ='';
+}
 
-        a:link {
-            color:red;
-            text-decoration: none;
-        }
+var but2 = document.querySelector('a#zy2');
+var articleDom = document.querySelector('div#article');
+but2.onmouseover = function(){
+articleDom.textContent = homeWorks[1];
+}
+but2.onmouseout = function(){
+articleDom.textContent ='';
+}
 
-        a:visited {
-            color: purple;
-        }
+var but3 = document.querySelector('a#zy3');
+var articleDom = document.querySelector('div#article');
+but3.onmouseover = function(){
+articleDom.textContent = homeWorks[2];
+}
+but3.onmouseout = function(){
+articleDom.textContent ='';
+}
 
-        a:hover {
-            color: blue;
-            text-decoration: underline;
-        }
-
-        h1 {
-            color: #708090;
-            font-size: 60px;
-        }
-
-        
-    </style>
-</head>
-
-<body>
-    <h1>温链链的个人主页</h1>
-    <table border="1" cellpadding="0" cellspacing="0" width="350px" height="350px">
-        <thead>
-            <tr>
-                <th>作业次序</th>
-                <th>链接</th>
-                <th>简单介绍</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>第一次作业</td>
-                <td><a href="wenlianlian/20213573-1.html" target="_blank">作业</a></td>
-                <td>1</td>
-            </tr>
-            <tr>
-                <td>第二次作业</td>
-                <td><a href="wenlianlian/20213573-2.html" target="_blank">作业</a></td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>第三次作业</td>
-                <td><a href="wenlianlian/20213573-3.html" target="_blank">作业</a></td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>第四次作业</td>
-                <td><a href="wenlianlian/20213573-4.html" target="_blank">作业</a></td>
-                <td>4</td>
-            </tr>
-            <tr>
-                <td>第五次作业</td>
-                <td><a href="wenlianlian/20213573-5.html" target="_blank">作业</a></td>
-                <td>5</td>
-            </tr>
-			<tr>
-                <td>第六次作业</td>
-                <td><a href="wenlianlian/20213573-6.html" target="_blank">作业</a></td>
-                <td>6</td>
-            </tr>
-			<tr>
-                <td>第七次作业</td>
-                <td><a href="wenlianlian/20213573-7.html" target="_blank">作业</a></td>
-                <td>7</td>
-            </tr>
-			<tr>
-                <td>第八次作业</td>
-                <td><a href="wenlianlian/20213573-8.html" target="_blank">作业</a></td>
-                <td>8</td>
-            </tr>
-			<tr>
-                <td>第九次作业</td>
-                <td><a href="wenlianlian/20213573-9.html" target="_blank">作业</a></td>
-                <td>9</td>
-            </tr>
-			<tr>
-                <td>第十次作业</td>
-                <td><a href="wenlianlian/20213573-10.html" target="_blank">作业</a></td>
-                <td>10</td>
-            </tr>
-			<tr>
-                <td>第十一次作业</td>
-                <td><a href="wenlianlian/20213573-11.html" target="_blank">作业</a></td>
-                <td>11</td>
-            </tr>
-			<tr>
-                <td>第十二次作业</td>
-                <td><a href="wenlianlian/20213573-12.html" target="_blank">作业</a></td>
-                <td>12</td>
-            </tr>
-			<tr>
-                <td>第十三次作业</td>
-                <td><a href="wenlianlian/20213573-13.html" target="_blank">作业</a></td>
-                <td>13</td>
-            </tr>
-			<tr>
-                <td>第十四次作业</td>
-                <td><a href="wenlianlian/20213573-14.html" target="_blank">作业</a></td>
-                <td>14</td>
-            </tr>
-			<tr>
-                <td>第十五次作业</td>
-                <td><a href="wenlianlian/20213573-15.html" target="_blank">作业</a></td>
-                <td>15</td>
-            </tr>
-			<tr>
-                <td>第十六次作业</td>
-                <td><a href="wenlianlian/20213573-16.html" target="_blank">作业</a></td>
-                <td>16</td>
-            </tr>
-        </tbody>
-    </table>
-</body>
+var but4 = document.querySelector('a#zy4');
+var articleDom = document.querySelector('div#article');
+but4.onmouseover = function(){
+articleDom.textContent = homeWorks[3];
+}
+but4.onmouseout = function(){
+articleDom.textContent ='';
+}
+var but5 = document.querySelector('a#zy5');
+var articleDom = document.querySelector('div#article');
+but5.onmouseover = function(){
+articleDom.textContent = homeWorks[4];
+}
+but5.onmouseout = function(){
+articleDom.textContent ='';
+}
+var but6 = document.querySelector('a#zy6');
+var articleDom = document.querySelector('div#article');
+but6.onmouseover = function(){
+articleDom.textContent = homeWorks[5];
+}
+but6.onmouseout = function(){
+articleDom.textContent ='';
+}
+var but7 = document.querySelector('a#zy7');
+var articleDom = document.querySelector('div#article');
+but7.onmouseover = function(){
+articleDom.textContent = homeWorks[6];
+}
+but7.onmouseout = function(){
+articleDom.textContent ='';
+}
+var but8 = document.querySelector('a#zy8');
+var articleDom = document.querySelector('div#article');
+but8.onmouseover = function(){
+articleDom.textContent = homeWorks[7];
+}
+but8.onmouseout = function(){
+articleDom.textContent ='';
+}
+var but9 = document.querySelector('a#zy9');
+var articleDom = document.querySelector('div#article');
+but9.onmouseover = function(){
+articleDom.textContent = homeWorks[8];
+}
+but9.onmouseout = function(){
+articleDom.textContent ='';
+}
+var but10 = document.querySelector('a#zy10');
+var articleDom = document.querySelector('div#article');
+but10.onmouseover = function(){
+articleDom.textContent = homeWorks[9];
+}
+but10.onmouseout = function(){
+articleDom.textContent ='';
+}
+var but11 = document.querySelector('a#zy11');
+var articleDom = document.querySelector('div#article');
+but11.onmouseover = function(){
+articleDom.textContent = homeWorks[10];
+}
+but11.onmouseout = function(){
+articleDom.textContent ='';
+}
+ </script>
+</html>

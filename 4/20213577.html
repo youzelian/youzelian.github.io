@@ -1,92 +1,223 @@
 <!doctype html>
 <html lang="en">
  <head>
-  <meta charset="UTF-8"> 
-  <title>黄文胜的个人网页</title>
+  <meta charset="UTF-8">
+  <title>黄文胜的个人主义</title>
   <style type="text/css">
-  a{
-  text-decoration: none;
-  }
-	table{
-        font-size:40px;
-		margin:auto;
-		width:1000px;		
+	body{font-size:30px;
+	border:2px solid red;}
+	div{text-align:center;
+	border:2px solid blue;}
+	div#head{height:20%;
+	}
+	div#nav{height:40%;
+	}
+	div#article{height:30%;
+	}
+	div#footer{height:10%;
+	}
+	a{font-size:0.95em;
 	}
   </style>
+
  </head>
  <body>
-  <table border="1" cellspacing="0">
-   <tr>
-    <th>name</th>
-	<th>作业链接</th>
-   </tr>
-   <tr>
-    <th>黄文胜</th>
-	<th><a href="huangwensheng/20213577-16.html ">20213577-16.html</a>
-   </tr>
-   <tr>
-    <th>黄文胜</th>
-	<th><a href="huangwensheng/20213577-15.html ">20213577-15.html</a>
-   </tr>
-   <tr>
-    <th>黄文胜</th>
-	<th><a href="huangwensheng/20213577-15.html">20213577-15.html</a>
-   </tr>
-   <tr>
-    <th>黄文胜</th>
-	<th><a href="huangwensheng/20213577-13.html ">20213577-13.html</a>
-   </tr>
-   <tr>
-    <th>黄文胜</th>
-	<th><a href="huangwensheng/20213577-12.html ">20213577-12.html</a>
-   </tr>
-   <tr>
-    <th>黄文胜</th>
-	<th><a href="huangwensheng/20213577-11.html ">20213577-11.html</a>
-   </tr>
-   <tr>
-    <th>黄文胜</th>
-	<th><a href="huangwensheng/20213577-10.html ">20213577-10.html</a>
-   </tr>
-   <tr>
-    <th>黄文胜</th>
-	<th><a href="huangwensheng/20213577-9.html ">20213577-9.html</a>
-   </tr>
-   <tr>
-    <th>黄文胜</th>
-	<th><a href="huangwensheng/20213577-8.html ">20213577-8.html</a>
-   </tr>
-   <tr>
-    <th>黄文胜</th>
-	<th><a href="huangwensheng/20213577-7.html ">20213577-7.html </a>
-   </tr>
-   <tr>
-    <th>黄文胜</th>
-	<th><a href="huangwensheng/20213577-6.html ">20213577-6.html</a>
-   </tr>
-   <tr>
-   <tr>
-    <th>黄文胜</th>
-	<th><a href="huangwensheng/20213577-5.html ">20213577-5.html </a>
-   </tr>
-   <tr>
-    <th>黄文胜</th>
-	<th><a href="huangwensheng/20213577-4.html">20213577-4.html</a>
-   </tr>
-   <tr>
-    <th>黄文胜</th>
-	<th><a href="huangwensheng/20213577-3.html">20213577-3.html</a>
-   </tr>
-   <tr>
-    <th>黄文胜</th>
-	<th><a href="huangwensheng/20213577-2.html">20213577-2.html</a>
-   </tr>
-   <tr>
-    <th>黄文胜</th>
-	<th><a href="huangwensheng/20213577-1.html">20213577-1.html</a>
-   </tr>
+ <div id="head" class="">
+	
+ </div>
+ <div id="nav" class="">
+	<a href="huangwensheng/20213577-16.html" id='z16'>第16次作业</a>
+	<a href="huangwensheng/20213577-15.html" id='z15'>第15次作业</a>
+	<a href="huangwensheng/20213577-14.html" id='z14'>第14次作业</a>
+	<a href="huangwensheng/20213577-13.html" id='z13'>第13次作业</a>
+	<a href="huangwensheng/20213577-12.html" id='z12'>第12次作业</a>
+	<a href="huangwensheng/20213577-11.html" id='z11'>第11次作业</a>
+	<a href="huangwensheng/20213577-10.html" id='z10'>第10次作业</a>
+	<a href="huangwensheng/20213577-9.html" id='z9'>第9次作业</a>
+	<a href="huangwensheng/20213577-8.html" id='z8'>第8次作业</a>
+	<a href="huangwensheng/20213577-7.html" id='z7'>第7次作业</a>
+	<a href="huangwensheng/20213577-6.html" id='z6'>第6次作业</a>
+	<a href="huangwensheng/20213577-5.html" id='z5'>第5次作业</a>
+	<a href="huangwensheng/20213577-4.html" id='z4'>第4次作业</a>
+	<a href="huangwensheng/20213577-3.html" id='z3'>第3次作业</a>
+	<a href="huangwensheng/20213577-2.html" id='z2'>第2次作业</a>
+	<a href="huangwensheng/20213577-1.html" id='z1'>第1次作业</a>
+ </div>
+ <div id="article" class="">
+	
+ </div>
+ <div id="footer" class="">
+	黄文胜20213577 电话17370151216
+ </div>
+  <script type="text/javascript">
+  <!--
+	////设置页面的高度
+	document.body.style.height = window.innerHeight -25 + "px" ;//jian25是为了全屏显示不用上下滑动
 
-  </table>
-  
+	//实现head区域内容动态变化
+    var GoodWord = ["世界上最快而又最慢,最长而又最短,最平凡而又最珍贵,最易被忽视而又最令人后悔的就是时间。——高尔基",'选择机会，就是节省时间。——培根','明日复明日，明日何其多！日日待明日，万事成蹉跎。世人皆被明日累，明日无穷老将至。晨昏滚滚水东流。今古悠悠日西坠。百年明日能几何？请君听我《明日歌》。——文嘉','任何问题都有解决的办法，无法可想的事是没有的。——爱迪生','浪费时间是所有支出中最奢侈及最昂贵的。——富兰克林','劝君着意惜芳菲，莫待行人攀折荆。','莫等闲，白了少年头，空悲切。——岳飞','浪费时间叫虚度，剥用时间叫生活。——扬格'] ;
+	var headDom = document.querySelector("div#head") ;
+	var j = 0 ;
+	function showhead(){
+		headDom.textContent = GoodWord[j] ;
+	    if (j<GoodWord.length-1)
+	    {j++ ;
+	    }else{j=0 ;
+	    }window.setTimeout(showhead,1000);
+	    }
+	window.setTimeout(showhead,1000);//1每秒head中的文字将会进行一次改变
+
+	//对nav循环生成16次作业并且实现超链接
+
+
+	//对article区域进行处理实现鼠标箭头指向nav中的超链接时该区域显示相应内容
+	var homeWork = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16'] ;
+    var but1 = document.querySelector('a#z1');
+	but1.onmouseover = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = homeWork[0];
+	}
+	but1.onmouseout = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = '';
+	}
+	var but2 = document.querySelector('a#z2');
+	but2.onmouseover = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = homeWork[1];
+	}
+	but2.onmouseout = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = '';
+	}
+	var but3 = document.querySelector('a#z3');
+	but3.onmouseover = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = homeWork[2];
+	}
+	but3.onmouseout = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = '';
+	}
+    var but4 = document.querySelector('a#z4');
+	but4.onmouseover = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = homeWork[3];
+	}
+	but4.onmouseout = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = '';
+	}
+    var but5 = document.querySelector('a#z5');
+	but5.onmouseover = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = homeWork[4];
+	}
+	but5.onmouseout = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = '';
+	}
+	var but6 = document.querySelector('a#z6');
+	but6.onmouseover = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = homeWork[5];
+	}
+	but6.onmouseout = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = '';
+	}
+	var but7 = document.querySelector('a#z7');
+	but7.onmouseover = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = homeWork[6];
+	}
+	but7.onmouseout = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = '';
+	}
+	var but8 = document.querySelector('a#z8');
+	but8.onmouseover = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = homeWork[7];
+	}
+	but8.onmouseout = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = '';
+	}
+	var but9 = document.querySelector('a#z9');
+	but9.onmouseover = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = homeWork[8];
+	}
+	but9.onmouseout = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = '';
+	}
+	var but10 = document.querySelector('a#z10');
+	but10.onmouseover = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = homeWork[9];
+	}
+	but10.onmouseout = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = '';
+	}
+	var but11 = document.querySelector('a#z11');
+	but11.onmouseover = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = homeWork[10];
+	}
+	but11.onmouseout = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = '';
+	}
+	var but12 = document.querySelector('a#z12');
+	but12.onmouseover = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = homeWork[11];
+	}
+	but12.onmouseout = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = '';
+	}
+	var but13 = document.querySelector('a#z13');
+	but13.onmouseover = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = homeWork[12];
+	}
+	but13.onmouseout = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = '';
+	}
+	var but14 = document.querySelector('a#z14');
+	but14.onmouseover = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = homeWork[13];
+	}
+	but14.onmouseout = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = '';
+	}
+	var but15 = document.querySelector('a#z15');
+	but15.onmouseover = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = homeWork[14];
+	}
+	but15.onmouseout = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = '';
+	}
+	var but16 = document.querySelector('a#z16');
+	but16.onmouseover = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = homeWork[15];
+	}
+	but16.onmouseout = function(){
+	        var articleDom = document.querySelector('div#article') ;
+             articleDom.textContent = '';
+	}
+
+  //-->
+  </script>
  </body>
 </html>
