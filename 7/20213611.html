@@ -1,101 +1,268 @@
+
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="UTF-8">
- 
-  <title>Document</title>
- </head>
- <body>
-  <table border="1" cellpadding="0" cellspacing="1" align="center" width="600px" height="300px">
-        <thead>
-            <tr>
-                <th>姓名</th>
-                <th>学号</th>
-                <th>作业链接</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td align="center">桂祺</td>
-                <td align="center">20213611</td>
-				<td align="center"><a href="guiqi/20213611-1.html" target="_blank">桂祺第一周作业</a></td>
-            </tr>
-            <tr>
-                <td align="center">桂祺</td>
-                <td align="center">20213611</td>
-                <td align="center"><a href="guiqi/20213611-2.html" target="_blank">桂祺第二周作业</a></td>
-            </tr>
-            <tr>
-                <td align="center">桂祺</td>
-                <td align="center">20213611</td>
-                <td align="center"><a href="guiqi/20213611-3.html" target="_blank">桂祺第三周作业</a></td>
-            </tr>
-            <tr>
-                <td align="center">桂祺</td>
-                <td align="center">20213611</td>
-                <td align="center"><a href="guiqi/20213611-4.html" target="_blank">桂祺第四周作业</a></td>
-            </tr>
-            <tr>
-                <td align="center">桂祺</td>
-                <td align="center">20213611</td>
-                <td align="center"><a href="guiqi/20213611-5.html" target="_blank">桂祺第五周作业</a></td>
-            </tr>
-			<tr>
-                <td align="center">桂祺</td>
-                <td align="center">20213611</td>
-                <td align="center"><a href="guiqi/20213611-6.html" target="_blank">桂祺第六周作业</a></td>
-            </tr>
-			<tr>
-                <td align="center">桂祺</td>
-                <td align="center">20213611</td>
-                <td align="center"><a href="guiqi/20213611-7.html" target="_blank">桂祺第七周作业</a></td>
-            </tr>
-			<tr>
-                <td align="center">桂祺</td>
-                <td align="center">20213611</td>
-                <td align="center"><a href="guiqi/20213611-8.html" target="_blank">桂祺第八周作业</a></td>
-            </tr>
-			<tr>
-                <td align="center">桂祺</td>
-                <td align="center">20213611</td>
-                <td align="center"><a href="guiqi/20213611-9.html" target="_blank">桂祺第九周作业</a></td>
-            </tr>
-			<tr>
-                <td align="center">桂祺</td>
-                <td align="center">20213611</td>
-                <td align="center"><a href="guiqi/20213611-10.html" target="_blank">桂祺第十周作业</a></td>
-            </tr>
-			<tr>
-                <td align="center">桂祺</td>
-                <td align="center">20213611</td>
-                <td align="center"><a href="guiqi/20213611-11.html" target="_blank">桂祺第十一周作业</a></td>
-            </tr>
-			<tr>
-                <td align="center">桂祺</td>
-                <td align="center">20213611</td>
-                <td align="center"><a href="guiqi/20213611-12.html" target="_blank">桂祺第十二周作业</a></td>
-            </tr>
-			<tr>
-                <td align="center">桂祺</td>
-                <td align="center">20213611</td>
-                <td align="center"><a href="guiqi/20213611-13.html" target="_blank">桂祺第十三周作业</a></td>
-            </tr>
-			<tr>
-                <td align="center">桂祺</td>
-                <td align="center">20213611</td>
-                <td align="center"><a href="guiqi/20213611-14.html" target="_blank">桂祺第十四周作业</a></td>
-            </tr>
-			<tr>
-                <td align="center">桂祺</td>
-                <td align="center">20213611</td>
-                <td align="center"><a href="guiqi/20213611-15.html" target="_blank">桂祺第十五周作业</a></td>
-            </tr>
-			<tr>
-                <td align="center">桂祺</td>
-                <td align="center">20213611</td>
-                <td align="center"><a href="guiqi/20213611-16.html" target="_blank">桂祺第十六周作业</a></td>
-            </tr>
-        </tbody>
-    </table>
- </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>桂祺 20213611的主页</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;/*  padding和border的值不会再影响元素的宽高，相当于把padding和border的值都算在content里*/
+            font-family: 楷体;
+			color:rgba(50,134,150,10);
+        }
+
+        body {
+            text-align: center;
+            background-image: url("https://img1.baidu.com/it/u=2212535674,2599048559&fm=253&fmt=auto&app=138&f=JPEG?w=506&h=500");
+            background-repeat: no-repeat;
+			background-size: cover;/*使图片铺满整个屏幕*/
+            background-position: center;
+        }
+
+
+        header {
+            position: relative;
+            height: 20%;
+            white-space: pre-line;/*自动换行,合并所有空格为1个空格*/
+        }
+		/*固定诗人头像的位置和大小，使其适应屏幕*/
+        header img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 80%;
+        }
+
+        nav {
+            height: 37.9%;
+        }
+
+        article {
+            height: 20%;
+            font-size: 1.5em;
+			color:pink;
+        }
+		/*这是对动态标签的CSS设置*/
+        input {
+            width: 15%;
+            margin: 2px;
+            background-color: SlateGray;
+            border: none;
+            border-radius: 25px;
+            font-size: 0.85em;
+            outline: none;
+            cursor: pointer;
+			color:blue;
+            line-height: 250%;
+        }
+		input:hover {
+		 color: black;
+		}
+		input:active {
+		 color: red;
+		}
+        footer {
+            height: 22%;
+        }
+
+        footer p {
+            margin-top: 50px;
+			font-size:2em;
+			color:#FFDAB9;
+        }
+        header,
+        nav,
+        article,
+        footer {
+            border: thin solid SlateGray;
+            font-size: 2vw;/*制作响应式主题时，使得字体大小根据所需屏幕进行变化*/
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="header"></div>
+        <img src="" id="img">
+    </header>
+    <nav id="nav"></nav>
+    <article id="article"></article>
+    <footer id="Footer">
+        <p>桂祺 20213611 电话：18807095008 QQ：1131460408</p>
+    </footer>
+    <script>
+        // 设置body的高度为电脑/手机的高度
+        document.body.style.height = window.innerHeight + 'px';
+        var saying = ['入我相思门，知我相思苦，长相思兮长相忆，短相思兮无穷极，早知如此绊人心，何如当初莫相识。——李白《秋风词》', '人生若只如初见，何事秋风悲画扇?等闲变却故人心，却道故人心易变。——纳兰容若《木兰花令》', '我是人间惆怅客，知君何事泪纵横。断肠声里忆平生。——纳兰容若《浣溪沙》', '十年生死两茫茫。不思量,自难忘。千里孤坟,无处话凄凉。纵使相逢应不识,尘满面,鬓如霜。——苏轼《江城子·乙卯正月二十日夜记梦》', '衣带渐宽终不悔。为伊消得人憔悴。——柳永《蝶恋花·伫倚危楼风细细》', '系我一生心，负你千行泪。——柳永《忆帝京薄衾小枕凉天气》', '一日不思量，也攒眉千度。——柳永 《昼夜乐洞房记得初相遇》'];
+        var imgsrc = ['https://song.gushiwen.cn/authorimg/libai.jpg', 'https://bkimg.cdn.bcebos.com/pic/ca1349540923dd54be202489d509b3de9d824884?x-bce-process=image/resize,m_lfit,w_536,limit_1/format,f_jpg', 'https://bkimg.cdn.bcebos.com/pic/ca1349540923dd54be202489d509b3de9d824884?x-bce-process=image/resize,m_lfit,w_536,limit_1/format,f_jpg', 'https://img1.baidu.com/it/u=4112332613,1916913682&fm=253&fmt=auto&app=120&f=PNG?w=372&h=416', 'https://img1.baidu.com/it/u=551133622,2272063583&fm=253&fmt=auto&app=120&f=JPEG?w=750&h=500', 'https://img1.baidu.com/it/u=551133622,2272063583&fm=253&fmt=auto&app=120&f=JPEG?w=750&h=500', 'https://img1.baidu.com/it/u=551133622,2272063583&fm=253&fmt=auto&app=120&f=JPEG?w=750&h=500', 'https://img1.baidu.com/it/u=551133622,2272063583&fm=253&fmt=auto&app=120&f=JPEG?w=750&h=500', 'https://tse1-mm.cn.bing.net/th/id/R-C.f5b7364f00bb48deb4facd47db4b60d6?rik=IdkBa%2bu2nEjiEw&riu=http%3a%2f%2fwww.lunwenhz.com%2fuploads%2fallimg%2f191016%2f33-191016095141B4.png&ehk=pEp%2btfoPPdmWBjNaRqJTP5JvlU6wQjMxcruYhT3vgwg%3d&risl=&pid=imgRaw&r=0'];
+        var symbol = ['第一次作业', '第二次作业', '第三次作业', '第四次作业', '第五次作业', '第六次作业', '第七次作业', '第八次作业', '第九次作业', '第十次作业', '第十一次作业', '第十二次作业'];
+        var homeworkcontent = ['本次作业为本人的处女作，有很多瑕疵但是我不打算改善，希望给自己留下一个纪念。主要是介绍的我们寝室的夜宵目录，并且增加了自动播放的BGM和配套的图片与背景', '本次作业是链接小组所有成员的第一次作业，我使用了表格内嵌超链接的形式，背景是一套我喜欢的与青春有关的国产动漫电影《昨日青空》图，本人比较满意', '这次作业要求运用超链接的动态功能，我达到了基本要求但是做得很简陋，算是完成任务吧，不太满意。', '此次作业我做了一个简单的页面，主要内容是李白的静夜思，运用了各种CSS使得效果比较美观。并且加了李白的画像作为背景，更加契合主题。', '这次作业是白居易的古诗《草》，通过onclick实现了点击按钮出现内容的功能', '本次作业是上一次的改进2.0版本，将五首诗分开通过按钮实现翻页呈现的效果', '第七次作业是第五次作业的改进3.0版本，将古诗增加至299首（中途少了一首），先将299首古诗以每首诗标题前的数字为参照将其分为299首诗，再在每首诗中以\n为参照将每一句分开来，然后再将他们放到对应数组，赋予变量i值来表示各诗的标题和内容，最后通过onclick功能改变i的值来改变页面中呈现的内容，从而达到按按钮实现页面呈现不同古诗的功能。	', '第八次作业是第六次作业再进一步的改进3.0版本，先是补全了300首唐诗中缺少的那一部分，然后增加了if语句实现按钮闭环循环的效果', '第九次作业是第六次作业的4.0版本。补全了300首诗循环的bug', '第十次作业是第六次作业的最终版本，通过random函数增加了随机抽一首功能。', '第十一次作业是计算器外观设置，运用了大量CSS功能做成了一个好看的网页版计算器外观', '第十二次是考试，是第十一次作业计算器的改进，增加了运算功能', ];
+        var homeworksrc = ['guiqi/20213611-1.html', 'guiqi/20213611-2.html', 'guiqi/20213611-3.html', 'guiqi/20213611-4.html', 'guiqi/20213611-5.html', 'guiqi/20213611-6.html', 'guiqi/20213611-7.html', 'guiqi/20213611-8.html', 'guiqi/20213611-9.html', 'guiqi/20213611-10.html', 'guiqi/20213611-11.html', 'guiqi/20213611-12.html', 'guiqi/20213611-13.html', 'guiqi/20213611-14.html', 'guiqi/20213611-15.html', 'guiqi/20213611-16.html'];
+        var nav     = document.getElementById('nav');
+        var article = document.getElementById('article');
+        var header  = document.getElementById("header"); 
+		var img     = document.getElementById('img');
+		//这些是实现各个古诗、诗人图像自动循环播放的函数
+		function showDom() {
+            var m = Math.round(Math.random() * (saying.length - 1));
+            header.textContent = saying[m];
+            img.src = imgsrc[m];
+            window.setTimeout(showDom, 3000);
+        }
+        // 此处还要一个window.setTimeout是为了第一次的触发，之后进入循环
+        window.setTimeout(showDom, 1000);
+        // 动态设置12个按钮
+        for (var i = 0; i < 4; i++) {
+            var div = document.createElement("div");
+            for (var p = 0; p < 3; p++) {
+                var input = document.createElement("input");
+                input.type = "button";
+                input.value = symbol[i * 3 + p];
+                input.id = i * 3 + p;
+                div.appendChild(input);
+            }
+            nav.append(div);
+        }
+        var t0 = document.getElementById(0);
+        var t1 = document.getElementById(1);
+		var t2 = document.getElementById(2);
+		var t3 = document.getElementById(3);
+		var t4 = document.getElementById(4);
+		var t5 = document.getElementById(5);
+		var t6 = document.getElementById(6);
+		var t7 = document.getElementById(7);
+		var t8 = document.getElementById(8);
+		var t9 = document.getElementById(9);
+		var t10 = document.getElementById(10);
+		var t11 = document.getElementById(11);
+		var t12 = document.getElementById(12);
+		//这些是各个按钮的点击效果函数
+		t0.onclick = function () {
+            window.open(homeworksrc[0]);
+        }
+        t1.onclick = function () {
+            window.open(homeworksrc[1]);
+        }
+		t2.onclick = function () {
+            window.open(homeworksrc[2]);
+        }
+		t3.onclick = function () {
+            window.open(homeworksrc[3]);
+        }
+		t4.onclick = function () {
+            window.open(homeworksrc[4]);
+        }
+		t5.onclick = function () {
+            window.open(homeworksrc[5]);
+        }
+		t6.onclick = function () {
+            window.open(homeworksrc[6]);
+        }
+		t7.onclick = function () {
+            window.open(homeworksrc[7]);
+        }
+		t8.onclick = function () {
+            window.open(homeworksrc[8]);
+        }
+        t9.onclick = function () {
+            window.open(homeworksrc[9]);
+        }
+        t10.onclick = function () {
+            window.open(homeworksrc[10]);
+        }
+		
+        t11.onclick = function () {
+            window.open(homeworksrc[11]);
+        }
+        
+		
+        t0.onmouseover = function () {
+            article.textContent = homeworkcontent[0];
+        }
+        t1.onmouseover = function () {
+            article.textContent = homeworkcontent[1];
+        }
+        t2.onmouseover = function () {
+            article.textContent = homeworkcontent[2];
+        }
+        t3.onmouseover = function () {
+            article.textContent = homeworkcontent[3];
+        }
+        t4.onmouseover = function () {
+            article.textContent = homeworkcontent[4];
+        }
+        t5.onmouseover = function () {
+            article.textContent = homeworkcontent[5];
+        }
+        t6.onmouseover = function () {
+            article.textContent = homeworkcontent[6];
+        }
+        t7.onmouseover = function () {
+            article.textContent = homeworkcontent[7];
+        }
+        t8.onmouseover = function () {
+            article.textContent = homeworkcontent[8];
+        }
+        t9.onmouseover = function () {
+            article.textContent = homeworkcontent[9];
+        }
+        t10.onmouseover = function () {
+            article.textContent = homeworkcontent[10];
+        }
+        t11.onmouseover = function () {
+            article.textContent = homeworkcontent[11];
+        }
+        t12.onmouseover = function () {
+            article.textContent = homeworkcontent[12];
+        }
+		//这些是各个按钮在鼠标挪开后效果消失的函数
+        t0.onmouseout = function () {
+            article.textContent = '';
+        }
+        t1.onmouseout = function () {
+            article.textContent = '';
+        }
+        t2.onmouseout = function () {
+            article.textContent = '';
+        }
+        t3.onmouseout = function () {
+            article.textContent = '';
+        }
+        t4.onmouseout = function () {
+            article.textContent = '';
+        }
+        t5.onmouseout = function () {
+            article.textContent = '';
+        }
+        t6.onmouseout = function () {
+            article.textContent = '';
+        }
+        t7.onmouseout = function () {
+            article.textContent = '';
+        }
+        t8.onmouseout = function () {
+            article.textContent = '';
+        }
+        t9.onmouseout = function () {
+            article.textContent = '';
+        }
+        t10.onmouseout = function () {
+            article.textContent = '';
+        }
+        t11.onmouseout = function () {
+            article.textContent = '';
+        }
+        t12.onmouseout = function () {
+            article.textContent = '';
+        }
+		t12.onclick = function () {
+            window.open(homeworksrc[12]);
+        }
+    </script>
+</body>
+
 </html>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>个人主页</title>
     <style>
         * {
             padding: 0;
@@ -17,16 +17,17 @@
 
         body {
             text-align: center;
-            background-image: url("https://tse1-mm.cn.bing.net/th/id/R-C.1389171a70009ec8b098105b6e32f1cd?rik=iowF51I0jztnTg&riu=http%3a%2f%2fwww.qqaiqin.com%2fuploads%2fallimg%2f130918%2f4-13091R1563DH.jpg&ehk=8jCPDYLIexQaSIslCmjT1EFoAySyAJM7vTqTLkSulro%3d&risl=&pid=ImgRaw&r=0");
+            background-image: url("https://c-ssl.duitang.com/uploads/item/201901/08/20190108183421_hQwj4.thumb.1000_0.jpeg");
             background-repeat: no-repeat;
             background-position: center;
+            background-size: 100%;
         }
 
         header,
         nav,
         article,
         footer {
-            border: 1px solid gray;
+            border: 1px solid #1b6dcb;
             font-size: 1.3vw;
         }
 
@@ -34,36 +35,27 @@
             position: relative;
             height: 20%;
             white-space: pre-line;
-        }
-
-        header img {
-            position: absolute;
-            top: 0;
-            right: 0;
-            /* width: 10%; */
-            height: 80%;
+            font-size:20px;
         }
 
         header p {
             position: absolute;
             bottom: 0;
             right: 1%;
+            z-index: 2;
         }
-
         nav {
             height: 25%;
         }
-
         article {
             height: 40%;
             font-size: 1.5em;
         }
-
         input {
-            width: 6%;
+            width: 100px;
             margin: 2px;
             box-shadow: 2px 2px 2px gray;
-            background-color: #b490b8;
+            background-color: #1b6dcb;
             border: none;
             border-radius: 25px;
             font-size: 0.5em;
@@ -72,21 +64,15 @@
             cursor: pointer;
             line-height: 250%;
         }
-
         footer {
             height: 15%;
         }
-
         footer p {
             margin-top: 50px;
-        }
-
-        footer p a {
-            text-decoration: none;
+            font-size: 50px;
         }
     </style>
 </head>
-
 <body>
     <header>
         <div id="Header"></div>
@@ -96,33 +82,23 @@
     <nav id="Nav"></nav>
     <article id="Article"></article>
     <footer id="Footer">
-        <p>余泽亮 20213607 <a
-                href="https://youzelian.github.io/7/20213607.html">https://youzelian.github.io/7/20213607.html</a> </p>
+        <p>张子然 20213614</p>
     </footer>
     <script>
-        // 设置body的高度为电脑/手机的高度
         document.body.style.height = window.innerHeight + 'px';
         // 设置header部分的动态生成名人名言进行循环
-        var saying = ['人们说生命是很短促的，我认为是他们自己使生命那样短促的。由于他们不善于利用生命，所以他们反过来抱怨说时间过得太快；\n可是我认为，就他们那种生活来说，时间倒是过得太慢了。——卢梭', '每个人都有一定的理想，这种理想决定着他的努力和判断的方向。在这个意义上，我从来不把安逸和快乐看作是生活目的本身\n——这种伦理基础，我叫它猪栏式的理想。照亮我的道路，并且不断地给我新的勇气去愉快地正视生活的理想，是善、美和真。——爱因斯坦', '人的智慧掌握着三把钥匙，一把开启数字，一把开启字母，一把开启音符。知识、思想、幻想就在其中。——雨果'];
+        var saying = ['人需要真理，就像瞎子需要明快的引路人一样。\n——高尔基','人的美德的荣誉比他的财富的荣誉不知大多少倍。\n——达·芬奇','时间最不偏私，给任何人都是二十四小时；时间也最偏私，给任何人都不是二十四小时。\n——赫胥黎','人的天职在勇于探索真理。\n——哥白尼','恨不得挂长绳于青天，糸此西飞之白日。\n——李白','世界上最快而又最慢，最长而又最短，最平凡而又最珍贵，最易被忽视而又最令人后悔的就是时间。\n——高尔基','真正的敏捷是一件很有价值的事。因为时间是衡量事业的标准，如金钱是衡量货物的标准。\n——弗·培根','选择机会，就是节省时间。\n——培根','时间是我的财产，我的田亩是时间。\n——歌德','白日去如箭，达者惜今阳。\n——朱敦儒'];
         var header = document.getElementById("Header");
-        var imgsrc = ['https://pic2.zhimg.com/v2-21036a730a29f1dc9c79eb0a3d2778cf_1440w.jpg?source=172ae18b', 'https://tse1-mm.cn.bing.net/th/id/OIP-C.oIy8mQh9JKI-0EQFxNQvywHaLN?pid=ImgDet&rs=1', 'https://pic.baike.soso.com/ugc/baikepic2/2014/cut-20200525113316-196143840_jpg_436_545_26295.jpg/300'];
-        var img = document.getElementById('Img');
         var symbol = ['第一次作业', '第二次作业', '第三次作业', '第四次作业', '第五次作业', '第六次作业', '第七次作业', '第八次作业', '第九次作业', '第十次作业', '第十一次作业', '第十二次作业', '第十三次作业', '第十四次作业', '第十五次作业', '第十六次作业'];
         var nav = document.getElementById('Nav');
         var Article = document.getElementById('Article');
-
-        var homeworkcontent = ['第一次作业做的是一个对端午节的由来以及端午节为了纪念什么的介绍', '第二次作业是关于电影的介绍和推荐，主要使用了html中的表格', '第三次作业是个人简介，里面主要是对我的一些简短的介绍，使用了图片背景颜色和form表单等html,css标签', '第四次作业是自己写的一个王者的简陋页面，里面包含了背景颜色半透明的css和a标签的爱恨原则等基本html和css', '第五次作业讲的是李白的一首诗，通过按钮点击来实现一句一句诗的呈现，使用了input:button的onclick点击功能', '第六次作业是第四次作业的进阶版，将300首诗通过按钮实现上一首下一首的功能此时主要的功能由js来实现，抓取html中两个标题和五个p标签再将字符串中的一首首诗分成标题和内容分别赋给它们相应的值', '第七次作业是第六次作业的改进，暂时部分解决了古诗只能由七行的问题，这是通过减少标题标签和p标签而将标题部分和内容部分分开实现', '第八次作业是进一步的改进，将300首诗字符串进行修改和300首诗的闭合循环实现', '第九次作业补全了300首诗闭合循环的bug和css的进一步修改', '第十次作业是300首诗的最后修正版，删除了html中body里面的p标签，而在js中使用createElement动态创建p标签，有多少行就有多少p标签。完美解决了300首诗闭合循环。增加新的功能rand随机按钮，点击随机呈现一首古诗', '第十一次作业是计算器，使用大量js语言进行编写，其中主要的程序是两个嵌套的for循环动态创建4个div，每个div包含4个按钮，共16个按钮。以及数个特殊的按钮功能function的实现', '第十二次是考试，计算器的进一步改进，其中补全了许多bug也加了键盘事件(即小键盘上也能计算)', '第十三次也是考试，计算器的最终版。解决了计算次数只有一次和计算时小数计算出现bug的问题。实现了计算的算式和结果的同时呈现，同时修改了css使得页面更好看'];
-        var homeworksrc = ['yuzeliang/20213607-1.html', 'yuzeliang/20213607-2.html', 'yuzeliang/20213607-3.html', 'yuzeliang/20213607-4.html', 'yuzeliang/20213607-5.html', 'yuzeliang/20213607-6.html', 'yuzeliang/20213607-7.html', 'yuzeliang/20213607-8.html', 'yuzeliang/20213607-9.html', 'yuzeliang/20213607-10.html', 'yuzeliang/20213607-11.html', 'yuzeliang/20213607-12.html', 'yuzeliang/20213607-13.html', 'yuzeliang/20213607-14.html', 'yuzeliang/20213607-15.html', 'yuzeliang/20213607-16.html'];
+        var homeworkcontent = ['第一次作业就简单的将一首古诗放入其中（作业遗失）', '第二次作业就完成了一个简单的表格的制作', '第三次作业在原本调节古诗的摆放的基础上新加入了一个超链接，并通过css对超链接添加一下效果', '第四次作业在上一次的作业上加入了一个盒子，并改变了超链接的位置，还加入一张背景图', '第五次作业实现了按钮，使每点击一个按钮就可以跳出一句古诗', '第六次作业是加入了下一首和上一首的按钮，可以使得古诗切换。', '第七次作业是第六次作业的进阶版，可以实现300首古诗的切换，其中还运用了增值表达式', '第八次作业与上一次作业差不多，尝试换了一种方法实现300首古诗的切换并存在一些bug', '第九次作业在第八次的作业基础上增加了一个回环的功能，并修复了上次作业的bug', '第十次作业则是接着上一次的作业加入了一个随机抽取一首古诗的功能'];
+        var homeworksrc = ['zhangziran/20213614-1.html', 'zhangziran/20213614-2.html', 'zhangziran/20213614-3.html', 'zhangziran/20213614-4.html', 'zhangziran/20213614-5.html', 'zhangziran/20213614-6.html', 'zhangziran/20213614-7.html', 'zhangziran/20213614-8.html', 'zhangziran/20213614-9.html', 'zhangziran/20213614-10.html', 'zhangziran/20213614-11.html', 'yuzeliang/20213614-12.html', 'yuzeliang/20213614-13.html', 'yuzeliang/20213614-14.html', 'yuzeliang/20213614-15.html', 'yuzeliang/20213614-16.html'];
         function showDom() {
             // 名人名言
             var m = Math.round(Math.random() * (saying.length - 1));
             header.textContent = saying[m];
-            // 图片
-            img.src = imgsrc[m];
             window.setTimeout(showDom, 1000);
-            // 时间
-            var d = new Date();
-            document.getElementById("Time").innerHTML = d;
         }
         // 此处还要一个window.setTimeout是为了第一次的触发，之后进入循环
         window.setTimeout(showDom, 1000);
@@ -138,7 +114,6 @@
             }
             nav.append(div);
         }
-        // 定义点击按钮跳转到另一个页面功能和作业介绍,太难了没办法写循环抓取，只能硬编码
         var t0 = document.getElementById(0);
         t0.onclick = function () {
             window.open(homeworksrc[0]);
