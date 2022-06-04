@@ -1,29 +1,222 @@
-<!doctype html>
 <html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <title>20213619</title>
- </head>
- <body>
- <h1>
- 姓名：李登金扬
- 学号：20213619
- <p>
-   <a href="lidengjinyang/20213617-1.html">第一次作业</a><br/>
-  <a href="lidengjinyang/20213617-2.html">第二次作业</a><br/>
-  <a href="lidengjinyang/20213617-3.html">第三次作业</a><br/>
-  <a href="lidengjinyang/20213617-4.html">第四次作业</a><br/>
-  <a href="lidengjinyang/20213617-5.html">第五次作业</a><br/>
-  <a href="lidengjinyang/20213617-6.html">第六次作业</a><br/>
-  <a href="lidengjinyang/20213617-7.html">第七次作业</a><br/> 
-  <a href="lidengjinyang/20213617-8.html">第八次作业</a><br/>
-  <a href="lidengjinyang/20213617-9.html">第九次作业</a><br/>
-  <a href="lidengjinyang/20213617-10.html">第十次作业</a><br/>
-  <a href="lidengjinyang/20213617-11.html">第十一次作业</a><br/>
-  <a href="lidengjinyang/20213617-12.html">第十二次作业</a><br/>
-  <a href="lidengjinyang/20213617-13.html">第十三次作业</a><br/>
-  <a href="lidengjinyang/20213617-14.html">第十四次作业</a><br/>
-  <a href="lidengjinyang/20213617-15.html">第十五次作业</a><br/>
-  <a href="lidengjinyang/20213617-16.html">第十六次作业</a><br/>
- </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web作业</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            color: white;
+        }
+
+        body {
+            text-align: center;
+            background-image: url("https://p7.itc.cn/images01/20210319/4d44526edec348dba7f37378dc3ecf99.jpeg");
+            background-repeat: no-repeat;
+            background-position: center;
+			background-size: 100% 100%;
+        }
+        div#header {
+            position: relative;
+            height: 20%;
+            white-space: pre-line;
+			font-size: 50px;
+        }
+
+        div#nav {
+            height: 25%;
+			font-size: 40px;
+        }
+
+        div#article {
+            height: 40%;
+            font-size:30px;
+        }
+
+        input {
+            width: 20%;
+            margin: 5px;
+            background-color:rgb(182,255,255);
+            font-size: 0.5em;
+            color: black;
+            cursor: pointer;
+        }
+
+        div#footer {
+            height: 15%;
+			font-size: 30px;
+        }
+
+        div#footer p {
+            margin-top: 10px;
+			color:#000000;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div id="Header" class="">时间不在于你拥有多少，而在于你怎样使用——艾克</div>
+    <div id="nav"></div>
+    <div id="article"></div>
+    <div id="footer">
+        <p>李登金扬 20213619</br>UID:231045459</p>
+    </div>
+    <script>
+        document.body.style.height = window.innerHeight + 'px';
+        var symbol = ['第一次作业', '第二次作业', '第三次作业', '第四次作业', '第五次作业', '第六次作业', '第七次作业', '第八次作业', '第九次作业', '第十次作业', '第十一次作业', '第十二次作业', '第十三次作业', '第十四次作业', '第十五次作业', '第十六次作业'];
+        var nav = document.getElementById('nav');
+        var Article = document.getElementById('article');
+        var homeworkcontent = ['第一次作业是写了一首李白的诗歌', '第二次作业在第一次作业的基础上添加了背景图片和超链接', '第三次作业是在第二次的基础上对超链接进行了改进如边框，鼠标放在上面的样式及点击过后的样式等', '第四次作业主要是写了导航栏的功能能够连接小组其他成员的作品', '第五次作业用三个按钮实现了点击出现三首诗的功能', '第六次作业用上下翻页的功能呈现了三首诗歌', '第七次作业呈现了李白的五首诗歌，上下页按钮实现翻页', '第八次作业呈现了唐诗三百首 ，上下页实现翻页并且形成循环，但是做得不好有bug', '第九次作业修复了第九次出现数字的bug，但是出现bug只能上一页，诗并未完全呈现，前面部分形成了一个超长字符串', '第十次作业是300首诗的最终版，修复了第八第九版的bug', '第十一次作业是计算器，其中主要的是用for循环动态创建4个div，每个div包含4个按钮，共16个按钮。但无法进行计算', '第十二次作业则是考试，对上一次计算器的进一步改进，实现计算功能', '第十三次也是考试，计算器的最终版。解决了当鼠标放在一个按钮上时再点击Enter时输出按钮内容，并且添加了清空功能'];
+        var homeworksrc =['20213619/20213619.01.html','20213619/20213619.02.html','20213619/20213619.03.html','20213619/20213619.04.html','20213619/20213619.05.html','20213619/20213619.06.html','20213619/20213619.07.html','20213619/20213619.08.html','20213619/20213619.09.html','20213619/20213619.10.html','20213619/20213619.11.html','20213619/20213619.12.html','20213619/20213619.13.html',];
+        for (var i = 0; i < 4; i++) {
+            var div = document.createElement("div");
+            for (var p = 0; p < 4; p++) {
+                var input = document.createElement("input");
+                input.type = "button";
+                input.value = symbol[i * 4 + p];
+                input.id = i * 4 + p;
+                div.appendChild(input);
+            }
+            nav.appendChild(div);
+        }
+
+
+
+        var t0 = document.getElementById(0);
+        t0.onclick = function () {
+            window.open(homeworksrc[0]);
+        }
+        t0.onmouseover = function () {
+            Article.textContent = homeworkcontent[0];
+        }
+        t0.onmouseout = function () {
+            Article.textContent = '';
+        }
+        var t1 = document.getElementById(1);
+        t1.onclick = function () {
+            window.open(homeworksrc[1]);
+        }
+        t1.onmouseover = function () {
+            Article.textContent = homeworkcontent[1];
+        }
+        t1.onmouseout = function () {
+            Article.textContent = '';
+        }
+        var t2 = document.getElementById(2);
+        t2.onclick = function () {
+            window.open(homeworksrc[2]);
+        }
+        t2.onmouseover = function () {
+            Article.textContent = homeworkcontent[2];
+        }
+        t2.onmouseout = function () {
+            Article.textContent = '';
+        }
+        var t3 = document.getElementById(3);
+        t3.onclick = function () {
+            window.open(homeworksrc[3]);
+        }
+        t3.onmouseover = function () {
+            Article.textContent = homeworkcontent[3];
+        }
+        t3.onmouseout = function () {
+            Article.textContent = '';
+        }
+        var t4 = document.getElementById(4);
+        t4.onclick = function () {
+            window.open(homeworksrc[4]);
+        }
+        t4.onmouseover = function () {
+            Article.textContent = homeworkcontent[4];
+        }
+        t4.onmouseout = function () {
+            Article.textContent = '';
+        }
+        var t5 = document.getElementById(5);
+        t5.onclick = function () {
+            window.open(homeworksrc[5]);
+        }
+        t5.onmouseover = function () {
+            Article.textContent = homeworkcontent[5];
+        }
+        t5.onmouseout = function () {
+            Article.textContent = '';
+        }
+        var t6 = document.getElementById(6);
+        t6.onclick = function () {
+            window.open(homeworksrc[6]);
+        }
+        t6.onmouseover = function () {
+            Article.textContent = homeworkcontent[6];
+        }
+        t6.onmouseout = function () {
+            Article.textContent = '';
+        }
+        var t7 = document.getElementById(7);
+        t7.onclick = function () {
+            window.open(homeworksrc[7]);
+        }
+        t7.onmouseover = function () {
+            Article.textContent = homeworkcontent[7];
+        }
+        t7.onmouseout = function () {
+            Article.textContent = '';
+        }
+        var t8 = document.getElementById(8);
+        t8.onclick = function () {
+            window.open(homeworksrc[8]);
+        }
+        t8.onmouseover = function () {
+            Article.textContent = homeworkcontent[8];
+        }
+        t8.onmouseout = function () {
+            Article.textContent = '';
+        }
+        var t9 = document.getElementById(9);
+        t9.onclick = function () {
+            window.open(homeworksrc[9]);
+        }
+        t9.onmouseover = function () {
+            Article.textContent = homeworkcontent[9];
+        }
+        t9.onmouseout = function () {
+            Article.textContent = '';
+        }
+        var t10 = document.getElementById(10);
+        t10.onclick = function () {
+            window.open(homeworksrc[10]);
+        }
+        t10.onmouseover = function () {
+            Article.textContent = homeworkcontent[10];
+        }
+        t10.onmouseout = function () {
+            Article.textContent = '';
+        }
+        var t11 = document.getElementById(11);
+        t11.onclick = function () {
+            window.open(homeworksrc[11]);
+        }
+        t11.onmouseover = function () {
+            Article.textContent = homeworkcontent[11];
+        }
+        t11.onmouseout = function () {
+            Article.textContent = '';
+        }
+        var t12 = document.getElementById(12);
+        t12.onclick = function () {
+            window.open(homeworksrc[12]);
+        }
+        t12.onmouseover = function () {
+            Article.textContent = homeworkcontent[12];
+        }
+        t12.onmouseout = function () {
+            Article.textContent = '';
+        }
+    </script>
+</body>
+
 </html>
