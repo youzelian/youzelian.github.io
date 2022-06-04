@@ -1,97 +1,252 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>实训</title>
+        <style>
+            body{
+                /* border:1px solid aqua; */
+                
+            }
+            div#one{
+                /* border:1px solid red; */
+                height:20%;
+                text-align: center;     
+                font-size: 100px; 
+                color: rgb(10, 9, 9);
+                font-family: "宋体";
+                font-weight: 800;
+                color: rgb(61, 191, 246);
+            }div#two{
+                /* border:1px solid red; */
+                height:30%;
+            }div#three{
+                /* border:1px solid red; */
+                height:35%;
+                font-size: 50px;
+                color:rgb(61, 191, 246);
+            }div#four{
+                /* border:1px solid red; */
+                height:15%;
+                margin-left: 87%;
+            }
+            a{
+                /* border: 1px solid; */
+                display: inline-block;
+                width:12%;
+                height: 110px;
+                text-align: center;
+                line-height:110px;
+                background-color: aquamarine;
+                color: black;
+            }
+            a:hover{
+                color: reds;
+                background-color: aliceblue;
+            }
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>主页</title>
-    <style>
-        h1 {
-            text-align: center;
+            
+            
+
+
+        </style>
+        <script>
+            var head=['三思而后行。——孔子',' 知耻近乎勇。——孔丘','志当存高远。——诸葛亮'];
+            var homeworks=['第一周作业 《赠汪伦》1','第二周作业 《背影》1','第三周作业 《背影》2','第四周作业 《4399小游戏》','第五周作业 《背影》3','第六周作业 《背影》4','第七周作业 字符串2.0','第八周作业 唐诗三百首','第九周作业 唐诗三百首2.0','第十周作业 唐诗三百首3.0','第十一周作业 计算器外观','第十二周作业 计算机','第十三周作业','第十四周作业','第十五周作业','第十六周作业'];
+        </script>
+    </head>
+    <body>
+        <div id="one"></div>
+        <div id="two">
+            <a href="jiangguanlong/20213656-01/20213656-01.html" id="a1">第一周</a>
+            <a href="jiangguanlong/20213656-02/20213656-02.html" id="a2">第二周</a>
+            <a href="jiangguanlong/20213656-03/20213656-03.html" id="a3">第三周</a>
+            <a href="jiangguanlong/20213656-04/20213656-04.html" id="a4">第四周</a>
+            <a href="jiangguanlong/20213656-05/20213656-05.html" id="a5">第五周</a>
+            <a href="jiangguanlong/20213656-06/20213656-06.html" id="a6">第六周</a>
+            <a href="jiangguanlong/20213656-07/20213656-07.html" id="a7">第七周</a>
+            <a href="jiangguanlong/20213656-08/20213656-08.html" id="a8">第八周</a>
+            <a href="jiangguanlong/20213656-09/20213656-09.html" id="a9">第九周</a>
+            <a href="jiangguanlong/20213656-10/20213656-10.html" id="a10">第十周</a>
+            <a href="jiangguanlong/20213656-11/20213656-11.html" id="a11">第十一周</a>
+            <a href="" id="a12">第十二周</a>
+            <a href="" id="a13">第十三周</a>
+            <a href="" id="a14">第十四周</a>
+            <a href="" id="a15">第十五周</a>
+            <a href="" id="a16">第十六周</a>
+             
+            
+            
+        </div>
+        <div id="three">备注</div>
+        <div id="four">
+            <div>姓名：江冠龙</div>
+            <div>学号：20213656</div>
+            <div>联系方式：15532032860</div>
+        </div>
+    </body>
+    <script>
+        document.body.style.height=window.innerHeight+'px';
+        // ONE
+        var one=document.querySelector('div#one'),i=0;
+        function showhead(){
+            one.textContent=head[i];
+            if(i<head.length-1){
+                i++;
+            }
+            else{i=0;}
+            window.setTimeout(showhead,1000);
+        };
+        showhead();
+        // TWO
+        var two=document.querySelector('div#two');
+        var three=document.querySelector('div#three');
+        // var as=document.querySelectorAll('a');
+        // var j=0;
+        // for(j=0;j<16;j++){
+        //     as[j].onmouseover=function(){
+        //         three.textContent=homeworks[j];
+        //     }
+        //     as[j].onmouseout=function(){
+        //         three.textContent=' ';
+        //     }
+        // }
+        
+
+        var a1=document.querySelector('a#a1')
+        a1.onmouseover=function(){
+            three.textContent=homeworks[0];
         }
-
-        table {
-
-            text-align: center;
-            width: 60%;
-            height: 500px;
+        a1.onmouseout=function(){
+            three.textContent=' ';
         }
-        a:hover{
-            color:red;
+        // __________________
+        var a2=document.querySelector('a#a2')
+        a2.onmouseover=function(){
+            three.textContent=homeworks[1];
         }
-    </style>
-</head>
+        a2.onmouseout=function(){
+            three.textContent=' ';
+        }
+        // __________________
+        var a3=document.querySelector('a#a3')
+        a3.onmouseover=function(){
+            three.textContent=homeworks[2];
+        }
+        a3.onmouseout=function(){
+            three.textContent=' ';
+        }
+        // __________________
+        var a4=document.querySelector('a#a4')
+        a4.onmouseover=function(){
+            three.textContent=homeworks[3];
+        }
+        a4.onmouseout=function(){
+            three.textContent=' ';
+        }
+        // __________________
+        var a5=document.querySelector('a#a5')
+        a5.onmouseover=function(){
+            three.textContent=homeworks[4];
+        }
+        a5.onmouseout=function(){
+            three.textContent=' ';
+        }
+        // __________________
+        var a6=document.querySelector('a#a6')
+        a6.onmouseover=function(){
+            three.textContent=homeworks[5];
+        }
+        a6.onmouseout=function(){
+            three.textContent=' ';
+        }
+        // __________________
+        var a7=document.querySelector('a#a7')
+        a7.onmouseover=function(){
+            three.textContent=homeworks[6];
+        }
+        a7.onmouseout=function(){
+            three.textContent=' ';
+        }
+        // __________________
+        var a8=document.querySelector('a#a8')
+        a8.onmouseover=function(){
+            three.textContent=homeworks[7];
+        }
+        a8.onmouseout=function(){
+            three.textContent=' ';
+        }
+        // __________________
+        var a9=document.querySelector('a#a9')
+        a9.onmouseover=function(){
+            three.textContent=homeworks[8];
+        }
+        a9.onmouseout=function(){
+            three.textContent=' ';
+        }
+        // __________________
+        var a10=document.querySelector('a#a10')
+        a10.onmouseover=function(){
+            three.textContent=homeworks[9];
+        }
+        a10.onmouseout=function(){
+            three.textContent=' ';
+        }
+        // __________________
+        var a11=document.querySelector('a#a11')
+        a11.onmouseover=function(){
+            three.textContent=homeworks[10];
+        }
+        a11.onmouseout=function(){
+            three.textContent=' ';
+        }
+        // __________________
+        var a12=document.querySelector('a#a12')
+        a12.onmouseover=function(){
+            three.textContent=homeworks[11];
+        }
+        a12.onmouseout=function(){
+            three.textContent=' ';
+        }
+        // __________________
+        var a13=document.querySelector('a#a13')
+        a13.onmouseover=function(){
+            three.textContent=homeworks[12];
+        }
+        a13.onmouseout=function(){
+            three.textContent=' ';
+        }
+        // __________________
+        var a14=document.querySelector('a#a14')
+        a14.onmouseover=function(){
+            three.textContent=homeworks[13];
+        }
+        a14.onmouseout=function(){
+            three.textContent=' ';
+        }
+        // __________________
+        var a15=document.querySelector('a#a15')
+        a15.onmouseover=function(){
+            three.textContent=homeworks[14];
+        }
+        a15.onmouseout=function(){
+            three.textContent=' ';
+        }
+        // __________________
+        var a16=document.querySelector('a#a16')
+        a16.onmouseover=function(){
+            three.textContent=homeworks[15];
+        }
+        a16.onmouseout=function(){
+            three.textContent=' ';
+        }
+        // __________________
 
-<body background="background.jpg">
-    <h1>江冠龙的主页</h1>
-    <table border="1" align="center" cellspacing="0">
-        <tr>
-            <th>作业序号</th>
-            <th>作业链接</th>
-            <th>作业简介</th>
-        </tr>
-        <tr>
-            <td>2021365601</td>
-            <td><a href="jiangguanlong/2021365601/2021365601.html" target = "_blank">作业</a></td>
-            <td>《赠汪伦》1</td>
-        </tr>
-        <tr>
-            <td>2021365602</td>
-            <td><a href="jiangguanlong/2021365602/2021365602.html" target = "_blank">作业</a></td>
-            <td>《背影》1</td>
-        </tr>
-        <tr>
-            <td>2021365603</td>
-            <td><a href="jiangguanlong//2021365603/2021365603.html" target = "_blank">作业</a></td>
-            <td>《背影》2</td>
-        </tr>
-        <tr>
-            <td>2021365604</td>
-            <td><a href="jiangguanlong/2021365604/2021365604.html" target = "_blank">作业</a></td>
-            <td>《4399小游戏》</td>
-        </tr>
-        <tr>
-            <td>2021365605</td>
-            <td><a href="jiangguanlong/2021365605/2021365605.html" target = "_blank">作业</a></td>
-            <td>《背影》2</td>
-        </tr>
-        <tr>
-            <td>2021365606</td>
-            <td><a href="jiangguanlong/2021365606/2021365606.html" target = "_blank">作业</a></td>
-            <td>《背影》3</td>
-        </tr>
 
-        <tr>
-            <td>第七周作业</td>
-            <td> <a href = "jiangguanlong/20213656-07/20213656-07.html" target = "_blank">作业</a> </td>
-            <td>字符串2.0</td>
-        </tr>
 
-        <tr>
-            <td>第八周作业</td>
-            <td> <a href = "jiangguanlong/20213656-08/20213656-08.html" target = "_blank">作业</a> </td>
-            <td>唐诗三百首</td>
-        </tr>
 
-        <tr>
-            <td>第九周作业</td>
-            <td> <a href = "jiangguanlong/20213656-09/20213656-09.html" target = "_blank">作业</a> </td>
-            <td>唐诗三百首2.0</td>
-        </tr>
 
-        <tr>
-            <td>第十周作业</td>
-            <td> <a href = "jiangguanlong/20213656-10/20213656-10.html" target = "_blank">作业</a> </td>
-            <td>唐诗三百首3.0</td>
-        </tr>
 
-        <tr>
-            <td>第十一周作业</td>
-            <td> <a href = "jiangguanlong/20213656-11/20213656-11.html" target = "_blank">作业</a> </td>
-            <td>计算器外观</td>
-        </tr>
-    </table>
-</body>
 
+    </script>
 </html>

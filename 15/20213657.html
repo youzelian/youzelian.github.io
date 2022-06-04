@@ -1,125 +1,211 @@
-<!DOCTYPE html>
+
+<!DOCTYPE HTML>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>个人首页</title>
-    <style>
-        h1 {
+    <head>
+        <meta charset="UTF-8">
+        <title>20213657.html</title>
+        <style>
+            body{
+                 height: 100%;
+            text-align: center; 
+                
+            }
+            div#one{
+                border:1px solid rgb(0, 8, 255); 
+                font-size: 50px;
+            height: 20%;
             text-align: center;
+            }div#two{
+                 border:1px solid rgb(0, 8, 255); 
+                height:35%;
+            }div#three{
+                border:1px solid rgb(0, 8, 255); 
+                height:30%;
+                font-size: 50px;
+                color:rgb(0, 8, 255);
+            }div#four{
+                 border:1px solid rgb(0, 8, 255); 
+                 height: 20%;
+            font-size: 30px;
+            color: rgb(0, 8, 255);
+            margin: 5px;
+            }
+            a{
+                border: 1px solid; 
+                display: inline-block;
+                width:11%;
+                height: 100px;
+                text-align: center;
+                line-height:80px;
+                background-color: rgb(99, 99, 99);
+                color: rgb(50, 250, 0);
+            }
+            a:hover{
+                color: reds;
+                background-color: rgb(242, 244, 245);
+            }
+        </style>
+        <script>
+            var head=['心还在，希望便不会消失。——海伦·凯勒',' 国耳忘家，公耳忘私。——班固','前虑不定，后有大患。——史记'];
+            var works=['第一周作业 杜甫：梦李白二首之二','第二周作业 唐诗三百首简介','第三周作业 链接属性','第四周作业 巴黎圣母院简介','第五周作业 《相思》','第六周作业 两首五绝','第七周作业 四首唐诗','第八周作业 唐诗三百首','第九周作业 唐诗三百首2.0','第十周作业 唐诗三百首3.0','第十一周作业 计算器外观','第十二周作业 计算器','第十三周作业','第十四周作业','第十五周作业','第十六周作业'];
+        </script>
+    </head>
+    <body>
+        <div id="one"></div>
+        <div id="two">
+            <a href="wuyanqi/20213657-01/20213657-01.html" id="input1">第一周</a>
+            <a href="wuyanqi/20213657-02/20213657-02.html" id="input2">第二周</a>
+            <a href="wuyanqi/20213657-03/20213657-03.html" id="input3">第三周</a>
+            <a href="wuyanqi/20213657-04/20213657-04.html" id="input4">第四周</a>
+            <a href="wuyanqi/20213657-05/20213657-05.html" id="input5">第五周</a>
+            <a href="wuyanqi/20213657-06/20213657-06.html" id="input6">第六周</a>
+            <a href="wuyanqi/20213657-07/20213657-07.html" id="input7">第七周</a>
+            <a href="wuyanqi/20213657-08/20213657-08.html" id="input8">第八周</a>
+            <a href="wuyanqi/20213657-09/20213657-09.html" id="input9">第九周</a>
+            <a href="wuyanqi/20213657-10/20213657-10.html" id="input10">第十周</a>
+            <a href="wuyanqi/20213657-11/20213657-11.html" id="input11">第十一周</a>
+            <a href="wuyanqi/20213657-12/20213657-12.html" id="input12">第十二周</a>
+            <a href="wuyanqi/20213657-13/20213657-13.html" id="input13">第十三周</a>
+            <a href="" id="input14">第十四周</a>
+            <a href="" id="input15">第十五周</a>
+            <a href="" id="input16">第十六周</a>
+        </div>
+        <div id="three"></div>
+        <div id="four">
+            <div>姓名：吴艳祺</div>
+            <div>学号：20213657</div>
+            <div>联系电话：18279489131</div>
+        </div>
+    </body>
+    <script>
+        document.body.style.height=window.innerHeight+'px';
+        // ONE
+        var one=document.querySelector('div#one'),i=0;
+        function showhead(){
+            one.textContent=head[i];
+            if(i<head.length-1){
+                i++;
+            }
+            else{i=0;}
+            window.setTimeout(showhead,1000);
+        };
+        showhead();
+        // TWO
+        var two=document.querySelector('div#two');
+        var three=document.querySelector('div#three');
+        
+        var input1=document.querySelector('a#input1')
+        input1.onmouseover=function(){
+            three.textContent=works[0];
         }
-
-        table {
-            text-align: center;
-            margin: auto;
-            border: 2px solid black;
-            width: 50%;
-            height: 450px;
-            border-collapse: collapse;
-            /*将两个边框合成一个*/
-
+        input1.onmouseout=function(){
+            three.textContent=' ';
         }
-
-        table,
-        th,
-        td {
-            border: 2px solid black;
-            padding: 15px;
-            font-weight: bold;
-            font-family: "Micrsoft yahei";
+        
+        var input2=document.querySelector('a#input2')
+        input2.onmouseover=function(){
+            three.textContent=works[1];
         }
-
-        th {
-            height: 30px;
+        input2.onmouseout=function(){
+            three.textContent=' ';
         }
-
-        a {
-            text-decoration: none;
+        var input3=document.querySelector('a#input3')
+        input3.onmouseover=function(){
+            three.textContent=works[2];
         }
-    </style>
-</head>
-
-<body>
-    <h1>吴艳祺的个人首页</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>作业序号</th>
-                <th>作业链接</th>
-                <th>作业简介</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            <tr>
-                <td>第一周作业</td>
-                <td> <a href="wuyanqi/20213657-01/20213657-01.html" target="_blank">作业</a> </td>
-                <td>杜甫：梦李白二首之二</td>
-            </tr>
-
-            <tr>
-                <td>第二周作业</td>
-                <td> <a href="wuyanqi/20213657-02/20213657-02.html" target="_blank">作业</a> </td>
-                <td>唐诗三百首简介</td>
-            </tr>
-
-            <tr>
-                <td>第三周作业</td>
-                <td> <a href="wuyanqi/20213657-03/20213657-03.html" target="_blank">作业</a> </td>
-                <td>链接属性</td>
-            </tr>
-
-            <tr>
-                <td>第四周作业</td>
-                <td> <a href="wuyanqi/20213657-04/20213657-04.html" target="_blank">作业</a> </td>
-                <td>巴黎圣母院简介</td>
-            </tr>
-
-            <tr>
-                <td>第五周作业</td>
-                <td> <a href="wuyanqi/20213657-05/20213657-05.html" target="_blank">作业</a> </td>
-                <td>《相思》</td>
-            </tr>
-            <tr>
-                <td>第六周作业</td>
-                <td> <a href="wuyanqi/20213657-06/20213657-06.html" target="_blank">作业</a> </td>
-                <td>两首五绝</td>
-            </tr>
-
-
-            <tr>
-                <td>第七周作业</td>
-                <td> <a href="wuyanqi/20213657-07/20213657-07.html" target="_blank">作业</a> </td>
-                <td>字符串2.0</td>
-            </tr>
-
-            <tr>
-                <td>第八周作业</td>
-                <td> <a href="wuyanqi/20213657-08/20213657-08.html" target="_blank">作业</a> </td>
-                <td>唐诗三百首</td>
-            </tr>
-
-            <tr>
-                <td>第九周作业</td>
-                <td> <a href="wuyanqi/20213657-09/20213657-09.html" target="_blank">作业</a> </td>
-                <td>唐诗三百首2.0</td>
-            </tr>
-
-            <tr>
-                <td>第十周作业</td>
-                <td> <a href="wuyanqi/20213657-10/20213657-10.html" target="_blank">作业</a> </td>
-                <td>唐诗三百首3.0</td>
-            </tr>
-
-            <tr>
-                <td>第十一周作业</td>
-                <td> <a href="wuyanqi/20213657-11/20213657-11.html" target="_blank">作业</a> </td>
-                <td>计算器外观</td>
-            </tr>
-
-        </tbody>
-    </table>
-
-</body>
-
+        input3.onmouseout=function(){
+            three.textContent=' ';
+        }
+        var input4=document.querySelector('a#input4')
+        input4.onmouseover=function(){
+            three.textContent=works[3];
+        }
+        input4.onmouseout=function(){
+            three.textContent=' ';
+        }
+        var input5=document.querySelector('a#input5')
+        input5.onmouseover=function(){
+            three.textContent=works[4];
+        }
+        input5.onmouseout=function(){
+            three.textContent=' ';
+        }
+        var input6=document.querySelector('a#input6')
+        input6.onmouseover=function(){
+            three.textContent=works[5];
+        }
+        input6.onmouseout=function(){
+            three.textContent=' ';
+        }
+        var input7=document.querySelector('a#input7')
+        input7.onmouseover=function(){
+            three.textContent=works[6];
+        }
+        input7.onmouseout=function(){
+            three.textContent=' ';
+        }
+        var input8=document.querySelector('a#input8')
+        input8.onmouseover=function(){
+            three.textContent=works[7];
+        }
+        input8.onmouseout=function(){
+            three.textContent=' ';
+        }
+        var input9=document.querySelector('a#input9')
+        input9.onmouseover=function(){
+            three.textContent=works[8];
+        }
+        input9.onmouseout=function(){
+            three.textContent=' ';
+        }
+        var input10=document.querySelector('a#input10')
+        input10.onmouseover=function(){
+            three.textContent=works[9];
+        }
+        input10.onmouseout=function(){
+            three.textContent=' ';
+        }
+        var input11=document.querySelector('a#input11')
+        input11.onmouseover=function(){
+            three.textContent=works[10];
+        }
+        input11.onmouseout=function(){
+            three.textContent=' ';
+        }
+        var input12=document.querySelector('a#input12')
+        input12.onmouseover=function(){
+            three.textContent=works[11];
+        }
+        input12.onmouseout=function(){
+            three.textContent=' ';
+        }
+        var input13=document.querySelector('a#input13')
+        input13.onmouseover=function(){
+            three.textContent=works[12];
+        }
+        input13.onmouseout=function(){
+            three.textContent=' ';
+        }
+        var input14=document.querySelector('a#input14')
+        input14.onmouseover=function(){
+            three.textContent=works[13];
+        }
+        input14.onmouseout=function(){
+            three.textContent=' ';
+        }
+        var input15=document.querySelector('a#input15')
+        input15.onmouseover=function(){
+            three.textContent=works[14];
+        }
+        input15.onmouseout=function(){
+            three.textContent=' ';
+        }
+        var input16=document.querySelector('a#input16')
+        input16.onmouseover=function(){
+            three.textContent=works[15];
+        }
+        input16.onmouseout=function(){
+            three.textContent=' ';
+        }
+    </script>
 </html>

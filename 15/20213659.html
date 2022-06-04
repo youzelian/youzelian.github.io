@@ -2,115 +2,280 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>个人首页</title>
+    <title>项目实训</title>
     <style>
-        h1 {
+        body {
+            height: 100%;
             text-align: center;
         }
-        table {
-            text-align: center;
-            margin: auto;
-            border: 2px solid black;
-            width: 50%;
-            height: 450px;        
-            border-collapse: collapse;/*将两个边框合成一个*/
 
+        div {
+            border: 2px solid blue;
         }
-        table,th,td {
-            border: 2px solid black;
-            padding: 15px;
+
+        div#saying {
+            font-size: 50px;
+            height: 20%;
+            text-align: center;
+            font-size: 40px;
+            font-family: "仿宋";
             font-weight: bold;
-            font-family: "Micrsoft yahei";
-        }
-        th {
-            height: 30px;
-        }
-        a {
-            text-decoration: none;
         }
 
+        div#work {
+            height: 30%;
+        }
+
+        div#int {
+            height: 35%;
+            font-size: 45px;
+
+        }
+
+        div#footer {
+            height: 15%;
+            font-size: 45px;
+            color: rgb(0, 115, 255);
+        }
+
+        input {
+            border: outset 2px solid;
+            border-radius: 10px;
+            width: 10%;
+            height: 40%;
+            font-size: 40px;
+            color: rgb(231, 18, 18);
+            background-color: rgb(226, 131, 36);
+            cursor: pointer;
+            margin: 2px 2em;
+            box-shadow: 4px 4px rgb(51, 49, 55);
+            border: outset;
+        }
+
+      
+
+        
     </style>
+    <script>
+          var introduce = ["杜甫：佳人", "原神", "原神景色大赏", "原神角色介绍", "按钮的使用", "古诗翻页", "古诗翻页2.0", "唐诗三百首", "唐诗三百首2.0", "唐诗三百首3.0", "普教计算器", "第十二次作业", "第十三次作业", "第十四次作业", "第十五次作业", "第十六次作业"]
+    </script>
 </head>
+
 <body>
-    <h1>刘盛的个人首页</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>作业序号</th>
-                <th>作业链接</th>
-                <th>作业简介</th>
-            </tr>
-        </thead>
+    <div id="saying">
+        名人名言
+    </div>
 
-        <tbody>
-            <tr>
-                <td>第一周作业</td>
-                <td> <a href = "liusheng/20213659-01/20213659-01.html" target = "_blank">作业</a> </td>
-                <td>佳人--杜甫</td>
-            </tr>
+    <div id="work">
+    </div>
 
-            <tr>
-                <td>第二周作业</td>
-                <td> <a href = "liusheng/20213659-02/20213659-02.html" target = "_blank">作业</a> </td>
-                <td>原神景色大赏</td>
-            </tr>
+    <div id="int">
+    </div>
 
-            <tr>
-                <td>第三周作业</td>
-                <td> <a href = "liusheng/20213659-03/20213659-03.html" target = "_blank">作业</a> </td>
-                <td>原神景色大赏（注释）</td>
-            </tr>
+    <div id="footer">
+        姓名：刘盛
+        学号:20213659
+        联系电话:13330184048
+        QQ:1460517005
+    </div>
+    <script>
 
-            <tr>   
-                <td>第四周作业</td>
-                <td> <a href = "liusheng/20213659-04/20213659-04.html" target = "_blank">作业</a> </td>
-                <td>原神角色介绍</td>
-            </tr>
+        var oldsaying = ["阅读使人充实，会谈使人敏捷，写作使人精确。——培根", "阅读一切好书如同和过去最杰出的人谈话。——笛卡儿","要掌握书，莫被书掌握；要为生而读，莫为读而生。——布尔沃","卓越的人一大优点是：在不利与艰难的遭遇里百折不饶。——贝多芬","书不仅是生活，而且是现在、过去和未来文化生活的源泉。——库法耶夫"];
+        var s = document.querySelector("div#saying");
+        var i = 0;
 
-            <tr>
-                <td>第五周作业</td>
-                <td> <a href = "liusheng/20213659-05/20213659-05.html" target = "_blank">作业</a> </td>
-                <td>按钮的使用</td>
-            </tr>
-            <tr>
-                <td>第六周作业</td>
-                <td> <a href = "liusheng/20213659-06/20213659-06.html" target = "_blank">作业</a> </td>
-                <td>页面的切换</td>
-            </tr>
+        function show() {
+            s.textContent = oldsaying[i];
+            if (i < oldsaying.length - 1) {
+                i++;
+            }
+            else {
+                i = 0;
+            }
 
-            <tr>
-                <td>第七周作业</td>
-                <td> <a href = "liusheng/20213659-07/20213659-07.html" target = "_blank">作业</a> </td>
-                <td>字符串2.0</td>
-            </tr>
+            window.setTimeout(show, 1000);
 
-            <tr>
-                <td>第八周作业</td>
-                <td> <a href = "liusheng/20213659-08/20213659-08.html" target = "_blank">作业</a> </td>
-                <td>唐诗三百首</td>
-            </tr>
+        }
+        show();
 
-            <tr>
-                <td>第九周作业</td>
-                <td> <a href = "liusheng/20213659-09/20213659-09.html" target = "_blank">作业</a> </td>
-                <td>唐诗三百首2.0</td>
-            </tr>
+        var but = ["第一周", "第二周", "第三周", "第四周", "第五周", "第六周", "第七周", "第八周", "第九周", "第十周", "十一周", "十二周", "十三周", "十四周", "十五周", "十六周"];
+        var nav = document.getElementById("work");
+        for (var j = 0; j < 16; j++) {
+            var input = document.createElement('input');
+            input.type = "button";
+            input.value = but[j];
+            nav.appendChild(input);
+        }
+        var inputs = document.querySelectorAll('input');
+        inputs[0].onclick = function () {
+            window.location.href = "liusheng/20213659-01/20213659-01.html"
 
-            <tr>
-                <td>第十周作业</td>
-                <td> <a href = "liusheng/20213659-10/20213659-10.html" target = "_blank">作业</a> </td>
-                <td>唐诗三百首3.0</td>
-            </tr>
+        }
+        inputs[1].onclick = function () {
+            window.location.href = "liusheng/20213659-02/20213659-02.html"
 
-            <tr>
-                <td>第十一周作业</td>
-                <td> <a href = "liusheng/20213659-11/20213659-11.html" target = "_blank">作业</a> </td>
-                <td>计算器外观</td>
-            </tr>
+        }
+        inputs[2].onclick = function () {
+            window.location.href = "liusheng/20213659-03/20213659-03.html"
 
+        }
+        inputs[3].onclick = function () {
+            window.location.href = "liusheng/20213659-04/20213659-04.html"
 
-        </tbody>
-    </table>
-    
+        }
+        inputs[4].onclick = function () {
+            window.location.href = "liusheng/20213659-05/20213659-05.html"
+
+        }
+        inputs[5].onclick = function () {
+            window.location.href = "liusheng/20213659-06/20213659-06.html"
+
+        }
+        inputs[6].onclick = function () {
+            window.location.href = "liusheng/20213659-07/20213659-07.html"
+
+        }
+        inputs[7].onclick = function () {
+            window.location.href = "liusheng/20213659-08/20213659-08.html"
+
+        }
+        inputs[8].onclick = function () {
+            window.location.href = "liusheng/20213659-09/20213659-09.html"
+
+        }
+        inputs[9].onclick = function () {
+            window.location.href = "liusheng/20213659-10/20213659-10.html"
+
+        }
+        inputs[10].onclick = function () {
+            window.location.href = "liusheng/20213659-11/20213659-11.html"
+
+        }
+        inputs[11].onclick = function () {
+            window.location.href = "liusheng/20213659-12/20213659-12.html"
+
+        }
+        inputs[12].onclick = function () {
+            window.location.href = "liusheng/20213659-13/20213659-13.html"
+
+        }
+        inputs[13].onclick = function () {
+            window.location.href = "liusheng/20213659-14/20213659-14.html"
+
+        }
+        inputs[14].onclick = function () {
+            window.location.href = "liusheng/20213659-15/20213659-15.html"
+
+        }
+        inputs[15].onclick = function () {
+            window.location.href = "liusheng/20213659-16/20213659-16.html"
+
+        }
+
+        var content = document.querySelector('div#int');
+
+        inputs[0].onmouseover = function () {
+                 content.textContent = introduce[0];
+        }
+        inputs[0].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[1].onmouseover = function () {
+                 content.textContent = introduce[1];
+        }
+        inputs[1].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[2].onmouseover = function () {
+                 content.textContent = introduce[2];
+        }
+        inputs[2].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[3].onmouseover = function () {
+                 content.textContent = introduce[3];
+        }
+        inputs[3].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[4].onmouseover = function () {
+                 content.textContent = introduce[4];
+        }
+        inputs[4].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[5].onmouseover = function () {
+                 content.textContent = introduce[5];
+        }
+        inputs[5].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[6].onmouseover = function () {
+                 content.textContent = introduce[6];
+        }
+        inputs[6].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[7].onmouseover = function () {
+                 content.textContent = introduce[7];
+        }
+        inputs[7].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[8].onmouseover = function () {
+                 content.textContent = introduce[8];
+        }
+        inputs[8].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[9].onmouseover = function () {
+                 content.textContent = introduce[9];
+        }
+        inputs[9].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[10].onmouseover = function () {
+                 content.textContent = introduce[10];
+        }
+        inputs[10].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[11].onmouseover = function () {
+                 content.textContent = introduce[11];
+        }
+        inputs[11].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[12].onmouseover = function () {
+                 content.textContent = introduce[12];
+        }
+        inputs[12].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[13].onmouseover = function () {
+                 content.textContent = introduce[13];
+        }
+        inputs[13].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[14].onmouseover = function () {
+                 content.textContent = introduce[14];
+        }
+        inputs[14].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[15].onmouseover = function () {
+                 content.textContent = introduce[15];
+        }
+        inputs[15].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[16].onmouseover = function () {
+                 content.textContent = introduce[16];
+        }
+        inputs[16].onmouseoout = function () {
+                 content.textContent = "";
+        }
+    </script>
 </body>
 </html>

@@ -32,11 +32,22 @@
         a {
             text-decoration: none;
         }
+        div#header {
+            font-size: 40px;
+            height: 10%;
+            text-align: center;
+           
+        }
 
     </style>
 </head>
 <body>
     <h1>胡芮铜的个人首页</h1>
+
+    <div id="header">
+        名人名言
+
+    </div>
     <table>
         <thead>
             <tr>
@@ -116,5 +127,25 @@
         
 
     </table>
+
+    <script>
+           var mingyan = ["心还在，希望便不会消失。——海伦·凯勒","一个人至少拥有一个梦想，有一个理由去坚强。心若没有栖息的地方，到哪里都是在流浪。——三毛","我的努力求学没有得到别的好处，只不过是愈来愈发觉自己的无知。——笛卡儿"];
+        var s = document.querySelector("div#header");
+        var i = 0;
+
+        function showheader() {
+            s.textContent = mingyan[i];
+            if (i < mingyan.length - 1) {
+                i++;
+            }
+            else {
+                i = 0;
+            }
+
+            window.setTimeout(showheader, 1000);
+
+        }
+        showheader();
+    </script>
     </body>
 </html>

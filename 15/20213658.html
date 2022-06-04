@@ -1,119 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>个人首页</title>
+
+    <title>页面</title>
     <style>
-        h1 {
+        html,body {
+            height: 100%;
             text-align: center;
-            font-family: "SimSun";
-            font-weight: 800;
-        }
-        table {
-            text-align: center;
-            margin: auto;
-            border: 2px solid black;
-            width: 55%;
-            height: 450px;        
-            border-collapse: collapse;/*将两个边框合成一个*/
-            font-size: 20px;
-        }
-        table,th,td {
-            border: 2px solid black;
-            padding: 15px;
-            font-weight: bold;
-            font-family: "Micrsoft yahei";
-
-        }
-        th {
-            height: 30px;
-        }
-        a {
-            text-decoration: none;
         }
 
+      
+        div#header {
+            font-size: 50px;
+            height: 20%;
+            text-align: center;
+            font-family: "Simsun";
+           
+        }
+
+        div#nav {
+            height: 30%;
+
+        }
+
+        div#essay {
+            height: 30%;
+            font-size: 30px;
+            text-align: center;
+
+        }
+
+        div#footer {
+            height: 20%;
+            font-size: 45px;
+            color: rgb(0, 115, 255);
+            margin: 5px;
+
+        }
+
+        input {
+            border: outset 2px solid;
+            border-radius: 10px;
+            width: 10%;
+            height: 40%;
+            font-size: 40px;
+            margin: 0.8%;
+            color: rgb(183, 250, 0);
+            background-color: rgb(96, 138, 151);
+            cursor: pointe
+        }
+
+        input:hover{
+            border: inset 2px solid;
+            border-radius: 10px;
+            width: 10%;
+            height: 40%;
+            font-size: 40px;
+            color: rgb(255,255,255);
+            background-color: rgb(226, 169, 36);
+            cursor: pointer;
+            box-shadow: 4px 4px rgb(51, 49, 55);
+            border: outset;
+        }
     </style>
+    <script>
+          var introduce = ["送别--王维", "中国植树节", "注册页面", "新闻", "《行宫》", "三首七绝", "字符串2.0", "唐诗三百首", "唐诗三百首2.0", "唐诗三百首3.0", "计算器外观", "计算器", "13", "14", "15", "16"]
+    </script>
 </head>
+
 <body>
-    <h1>周志能的个人首页</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>作业序号</th>
-                <th>作业链接</th>
-                <th>作业简介</th>
-            </tr>
-        </thead>
+    <div id="header">
+        名人名言
 
-        <tbody>
-            <tr>
-                <td>第一周作业</td>
-                <td> <a href = "zhouzhineng/20213658-01/20213658-01.html" target = "_blank">作业</a> </td>
-                <td>送别--王维</td>
-            </tr>
+    </div>
+    <div id="nav">
 
-            <tr>
-                <td>第二周作业</td>
-                <td> <a href = "zhouzhineng/20213658-02/20213658-02.html" target = "_blank">作业</a> </td>
-                <td>中国植树节</td>
-            </tr>
 
-            <tr>
-                <td>第三周作业</td>
-                <td> <a href = "zhouzhineng/20213658-03/20213658-03.html" target = "_blank">作业</a> </td>
-                <td>注册页面</td>
-            </tr>
+    </div>
+    <div id="essay">
 
-            <tr>   
-                <td>第四周作业</td>
-                <td> <a href = "zhouzhineng/20213658-04/20213658-04.html" target = "_blank">作业</a> </td>
-                <td>新闻</td>
-            </tr>
+    </div>
+    <div id="footer">
+        姓名：周志能 学号:20213658 联系电话:187701564669
 
-            <tr>
-                <td>第五周作业</td>
-                <td> <a href = "zhouzhineng/20213658-05/20213658-05.html" target = "_blank">作业</a> </td>
-                <td>《行宫》</td>
-            </tr>
+    </div>
+    <script>
 
-            <tr>
-                <td>第六周作业</td>
-                <td> <a href = "zhouzhineng/20213658-06/20213658-06.html" target = "_blank">作业</a> </td>
-                <td>三首七绝</td>
-            </tr>
+        var oldsaying = ["进学致知，行方思远。--字严", "不学而知之，犹愿鱼而无网。--葛洪",
+            "书山有路勤为径，学海无涯苦作舟。--韩愈",
+            "不动笔墨不读读书。--徐特立"];
+        var s = document.querySelector("div#header");
+        var i = 0;
 
-            <tr>
-                <td>第七周作业</td>
-                <td> <a href = "zhouzhineng/20213658-07/20213658-07.html" target = "_blank">作业</a> </td>
-                <td>字符串2.0</td>
-            </tr>
+        function show() {
+            s.textContent = oldsaying[i];
+            if (i < oldsaying.length - 1) {
+                i++;
+            }
+            else {
+                i = 0;
+            }
 
-            <tr>
-                <td>第八周作业</td>
-                <td> <a href = "zhouzhineng/20213658-08/20213658-08.html" target = "_blank">作业</a> </td>
-                <td>唐诗三百首</td>
-            </tr>
+            window.setTimeout(show, 1000);
 
-            <tr>
-                <td>第九周作业</td>
-                <td> <a href = "zhouzhineng/20213658-09/20213658-09.html" target = "_blank">作业</a> </td>
-                <td>唐诗三百首2.0</td>
-            </tr>
+        }
+        show();
 
-            <tr>
-                <td>第十周作业</td>
-                <td> <a href = "zhouzhineng/20213658-10/20213658-10.html" target = "_blank">作业</a> </td>
-                <td>唐诗三百首3.0</td>
-            </tr>
+        var but = ["第一次", "第二次", "第三次", "第四次", "第五次", "第六次", "第七次", "第八次", "第九次", "第十次", "十一次", "十二次", "十三次", "十四次", "十五次", "十六次"];
+        var nav = document.getElementById("nav");
+        for (var j = 0; j < 16; j++) {
+            var input = document.createElement('input');
+            input.type = "button";
+            input.value = but[j];
+            nav.appendChild(input);
+        }
+        var inputs = document.querySelectorAll('input');
+        inputs[0].onclick = function () {
+            window.location.href = "zhouzhineng/20213658-01/20213658-01.html"
 
-            <tr>
-                <td>第十一周作业</td>
-                <td> <a href = "zhouzhineng/20213658-11/20213658-11.html" target = "_blank">作业</a> </td>
-                <td>计算器外观</td>
-            </tr>
-        </tbody>
+        }
+        inputs[1].onclick = function () {
+            window.location.href = "zhouzhineng/20213658-02/20213658-02.html"
+
+        }
+        inputs[2].onclick = function () {
+            window.location.href = "zhouzhineng/20213658-03/20213658-03.html"
+
+        }
+        inputs[3].onclick = function () {
+            window.location.href = "zhouzhineng/20213658-04/20213658-04.html"
+
+        }
+        inputs[4].onclick = function () {
+            window.location.href = "zhouzhineng/20213658-05/20213658-05.html"
+
+        }
+        inputs[5].onclick = function () {
+            window.location.href = "zhouzhineng/20213658-06/20213658-06.html"
+
+        }
+        inputs[6].onclick = function () {
+            window.location.href = "zhouzhineng/20213658-07/20213658-07.html"
+
+        }
+        inputs[7].onclick = function () {
+            window.location.href = "zhouzhineng/20213658-08/20213658-08.html"
+
+        }
+        inputs[8].onclick = function () {
+            window.location.href = "zhouzhineng/20213658-09/20213658-09.html"
+
+        }
+        inputs[9].onclick = function () {
+            window.location.href = "zhouzhineng/20213658-10/20213658-10.html"
+
+        }
+        inputs[10].onclick = function () {
+            window.location.href = "zhouzhineng/20213658-11/20213658-11.html"
+
+        }
+        inputs[11].onclick = function () {
+            window.location.href = "zhouzhineng/20213658-12/20213658-12.html"
+
+        }
+        inputs[12].onclick = function () {
+            window.location.href = "zhouzhineng/20213658-13/20213658-13.html"
+
+        }
+        inputs[13].onclick = function () {
+            window.location.href = "zhouzhineng/20213658-14/20213658-14.html"
+
+        }
+        inputs[14].onclick = function () {
+            window.location.href = "zhouzhineng/20213658-15/20213658-15.html"
+
+        }
+        inputs[15].onclick = function () {
+            window.location.href = "zhouzhineng/20213658-16/20213658-16.html"
+
+        }
+
+      
+        var content = document.querySelector('div#essay');
         
 
-    </table>
-    </body>
+
+        // for (var k = 0; k < 16; k++){
+        //     inputs[k].onmouseover = function () {
+        //         content.textContent = introduce[k];
+
+        //     }
+        //     inputs[k].onmouseoout = function () {
+        //         content.textContent = "";
+        //     }
+        // }  
+
+        inputs[0].onmouseover = function () {
+                 content.textContent = introduce[0];
+
+        }
+        inputs[0].onmouseoout = function () {
+                 content.textContent = "";
+        }
+
+        inputs[1].onmouseover = function () {
+                 content.textContent = introduce[1];
+
+        }
+        inputs[1].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[2].onmouseover = function () {
+                 content.textContent = introduce[2];
+
+        }
+        inputs[2].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[3].onmouseover = function () {
+                 content.textContent = introduce[3];
+
+        }
+        inputs[3].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[4].onmouseover = function () {
+                 content.textContent = introduce[4];
+
+        }
+        inputs[4].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[5].onmouseover = function () {
+                 content.textContent = introduce[5];
+
+        }
+        inputs[5].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[6].onmouseover = function () {
+                 content.textContent = introduce[6];
+
+        }
+        inputs[6].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[7].onmouseover = function () {
+                 content.textContent = introduce[7];
+
+        }
+        inputs[7].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[8].onmouseover = function () {
+                 content.textContent = introduce[8];
+
+        }
+        inputs[8].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[9].onmouseover = function () {
+                 content.textContent = introduce[9];
+
+        }
+        inputs[9].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[10].onmouseover = function () {
+                 content.textContent = introduce[10];
+
+        }
+        inputs[10].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[11].onmouseover = function () {
+                 content.textContent = introduce[11];
+
+        }
+        inputs[11].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[12].onmouseover = function () {
+                 content.textContent = introduce[12];
+
+        }
+        inputs[12].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[13].onmouseover = function () {
+                 content.textContent = introduce[13];
+
+        }
+        inputs[13].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[14].onmouseover = function () {
+                 content.textContent = introduce[14];
+
+        }
+        inputs[14].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[15].onmouseover = function () {
+                 content.textContent = introduce[15];
+
+        }
+        inputs[15].onmouseoout = function () {
+                 content.textContent = "";
+        }
+        inputs[16].onmouseover = function () {
+                 content.textContent = introduce[16];
+
+        }
+        inputs[16].onmouseoout = function () {
+                 content.textContent = "";
+        }
+
+
+    </script>
+
+
+
+
+</body>
+
 </html>

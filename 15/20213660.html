@@ -2,115 +2,203 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>个人首页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实训作业</title>
     <style>
-        h1 {
+        body{
+            border: 3px solid rgb(72, 204, 216);
+            font-size: 35px;
+            border:1px solid rgb(236, 29, 112); 
+        }
+        div#one{
+            height:30%;
             text-align: center;
+            font-family: fantasy;
+            border:1px solid rgb(236, 29, 112); 
         }
-        table {
+        div#two{
+            background-color: rgb(245, 228, 130);
+            height:20%;
+            border:1px solid rgb(236, 29, 112);
+        }
+        div#therr{
+            height:30%;
+            border:1px solid rgb(236, 29, 112);
+        }
+        div#four{
+            height:20%;
             text-align: center;
-            margin: auto;
-            border: 2px solid black;
-            width: 50%;
-            height: 450px;        
-            border-collapse: collapse;/*将两个边框合成一个*/
-
+            border:1px solid rgb(236, 29, 112);
         }
-        table,th,td {
-            border: 2px solid black;
-            padding: 15px;
-            font-weight: bold;
-            font-family: "Micrsoft yahei";
+        a{
+            border: 1px solid;
+            display: inline-block;
         }
-        th {
-            height: 30px;
+        a:hover{
+            color:cornflowerblue;
+            background-color: aqua;
         }
-        a {
-            text-decoration: none;
-        }
-
     </style>
 </head>
 <body>
-    <h1>高翔的个人首页</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>作业序号</th>
-                <th>作业链接</th>
-                <th>作业简介</th>
-            </tr>
-        </thead>
+    <div id="one"></div>
+    <script type="text/javascript">
+        document.body.style.height = window.innerHeight  + 'px';
+        var head = ['生活中唯一乐趣就是忘却。','决定一个人的一生，以及整个命运的，只是一瞬之间。','清晨的阳光不算温暖，瞬息的安逸不算幸福。'];
+        var one = document.querySelector("div#one");
+        var i = 0;
+        function showHead(){
+            one.textContent = head[i];
+            if(i < head.length){
+                i++;
+            }else{
+                i = 0;
+            }
+        window.setTimeout(showHead,1000);
+        }
+        showHead();
+        var two=document.querySelector('div#two');
+        var work= ['第一周','第二周','第三周','第四周','第五周','第六周','第七周','第八周','第九周','第十周','第十一周','第十二周','第十三周','第十四周','第十五周','第十六周'];
+        var three=document.querySelector('div#three');
+        
 
-        <tbody>
-            <tr>
-                <td>第一周作业</td>
-                <td> <a href = "gaoxiang/20213660-01/20213660.01.html" target = "_blank">作业</a> </td>
-                <td>章台柳</td>
-            </tr>
-
-            <tr>
-                <td>第二周作业</td>
-                <td> <a href = "gaoxiang/20213660-02/20213660.02.html" target = "_blank">作业</a> </td>
-                <td>永劫无间</td>
-            </tr>
-
-            <tr>
-                <td>第三周作业</td>
-                <td> <a href = "gaoxiang/20213660-03/20213660.03.html" target = "_blank">作业</a> </td>
-                <td>永劫无间-2.0</td>
-            </tr>
-
-            <tr>   
-                <td>第四周作业</td>
-                <td> <a href = "gaoxiang/20213660-04/20213660-4.html" target = "_blank">作业</a> </td>
-                <td>永劫无间盒子版</td>
-            </tr>
-
-            <tr>
-                <td>第五周作业</td>
-                <td> <a href = "gaoxiang/20213660-05/20213660.05.html" target = "_blank">作业</a> </td>
-                <td>古诗按钮1</td>
-            </tr>
-            <tr>
-                <td>第六周作业</td>
-                <td> <a href = "gaoxiang/20213660-06/20213660-06.html" target = "_blank">作业</a> </td>
-                <td>古诗按钮2</td>
-            </tr>
-
-            <tr>
-                <td>第七周作业</td>
-                <td> <a href = "gaoxiang/20213660-07/20213660-07.html" target = "_blank">作业</a> </td>
-                <td>字符串2.0</td>
-            </tr>
-
-            <tr>
-                <td>第八周作业</td>
-                <td> <a href = "gaoxiang/20213660-08/20213660-08.html" target = "_blank">作业</a> </td>
-                <td>唐诗三百首</td>
-            </tr>
-
-            <tr>
-                <td>第九周作业</td>
-                <td> <a href = "gaoxiang/20213660-09/20213660-09.html" target = "_blank">作业</a> </td>
-                <td>唐诗三百首2.0</td>
-            </tr>
-
-            <tr>
-                <td>第十周作业</td>
-                <td> <a href = "gaoxiang/20213660-10/20213660-10.html" target = "_blank">作业</a> </td>
-                <td>唐诗三百首3.0</td>
-            </tr>
-
-            
-            <tr>
-                <td>第十一周作业</td>
-                <td> <a href = "gaoxiang/20213660-11/20213660-11.html" target = "_blank">作业</a> </td>
-                <td>计算器外观</td>
-            </tr>
-
-        </tbody>
-    </table>
-    
+        var c1=document.querySelector('a#1')
+        c1.onmouseover=function(){
+            three.textContent = work[0];
+        }
+        c1.onmouseout=function(){
+            three.textContent=' ';
+        }
+        var c2=document.querySelector('c#2')
+        c2.onmouseover=function(){
+            three.textContent=work[1];
+        }
+        c2.onmouseout=function(){
+            three.textContent=' ';
+        }
+        var c3=document.querySelector('c#3')
+        c3.onmouseover=function(){
+            three.textContent=work[2];
+        }
+        a3.onmouseout=function(){
+            three.textContent=' ';
+        }
+        var c4=document.querySelector('c#4')
+        c4.onmouseover=function(){
+            three.textContent=work[3];
+        }
+        c4.onmouseout=function(){
+            three.textContent=' ';
+        }
+        var c5=document.querySelector('c#5')
+        c5.onmouseover=function(){
+            three.textContent=work[4];
+        }
+        c5.onmouseout=function(){
+            three.textContent=' ';
+        }
+        var c6=document.querySelector('c#6')
+        c6.onmouseover=function(){
+            three.textContent=work[5];
+        }
+        a6.onmouseout=function(){
+            three.textContent=' ';
+        }
+        var c7=document.querySelector('c#7')
+        c7.onmouseover=function(){
+            three.textContent=work[6];
+        }
+        c7.onmouseout=function(){
+            three.textContent=' ';
+        }
+        var c8=document.querySelector('c#8')
+        c8.onmouseover=function(){
+            three.textContent=work[7];
+        }
+        a8.onmouseout=function(){
+            three.textContent=' ';
+        }
+        var a9=document.querySelector('c#9')
+        a9.onmouseover=function(){
+            three.textContent=work[8];
+        }
+        a9.onmouseout=function(){
+            three.textContent=' ';
+        }
+        var c10=document.querySelector('c#10')
+        c10.onmouseover=function(){
+            three.textContent=work[9];
+        }
+        c10.onmouseout=function(){
+            three.textContent=' ';
+        }
+        var c11=document.querySelector('c#11')
+        c11.onmouseover=function(){
+            three.textContent=work[10];
+        }
+        c11.onmouseout=function(){
+            three.textContent=' ';
+        }
+        var c12=document.querySelector('c#12')
+        c12.onmouseover=function(){
+            three.textContent=work[11];
+        }
+        c12.onmouseout=function(){
+            three.textContent=' ';
+        }
+        var c13=document.querySelector('c#13')
+        c13.onmouseover=function(){
+            three.textContent=work[12];
+        }
+        a13.onmouseout=function(){
+            three.textContent=' ';
+        }
+        var c14=document.querySelector('c#14')
+        c14.onmouseover=function(){
+            three.textContent=work[13];
+        }
+        c14.onmouseout=function(){
+            three.textContent=' ';
+        }
+        var c15=document.querySelector('c#15')
+        c15.onmouseover=function(){
+            three.textContent=work[14];
+        }
+        c15.onmouseout=function(){
+            three.textContent=' ';
+        }
+        var c16=document.querySelector('c#16')
+        c16.onmouseover=function(){
+            three.textContent=work[15];
+        }
+        c16.onmouseout=function(){
+            three.textContent=' ';
+        }
+    </script>
+    <div id="two">
+        <a href="gaoxiang/20213660-01/20213660-01.html" id="c1">第一周作业</a>
+        <a href="gaoxiang/20213660-02/20213660-02.html" id="c2">第二周作业</a>
+        <a href="gaoxiang/20213660-03/20213660-03.html" id="c3">第三周作业</a>
+        <a href="gaoxiang/20213660-04/20213660-04.html" id="c4">第四周作业</a>
+        <a href="gaoxiang/20213660-05/20213660-05.html" id="c5">第五周作业</a>
+        <a href="gaoxiang/20213660-06/20213660-06.html" id="c6">第六周作业</a>
+        <a href="gaoxiang/20213660-07/20213660-07.html" id="c7">第七周作业</a>
+        <a href="gaoxiang/20213660-08/20213660-08.html" id="c8">第八周作业</a>
+        <a href="gaoxiang/20213660-09/20213660-09.html" id="c9">第九周作业</a>
+        <a href="gaoxiang/20213660-10/20213660-10.html" id="c10">第十周作业</a>
+        <a href="gaoxiang/20213660-11/20213660-11.html" id="c11">第十一周作业</a>
+        <a href="gaoxiang/20213660-12/20213660-12.html" id="c12">第十二周作业</a>
+        <a href="gaoxiang/20213660-13/20213660-13.html" id="c13">第十三周作业</a>
+        <a href="gaoxiang/20213660-14/20213660-14.html" id="c14">第十四周作业</a>
+        <a href="gaoxiang/20213660-15/20213660-15.html" id="c15">第十五周作业</a>
+        <a href="gaoxiang/20213660-16/20213660-16.html" id="c16">第十六周作业</a>
+    </div>
+    <div id="three">显示</div>
+    <div id="four">
+        <div>姓名：高翔</div>
+        <div>联系方式：15970065726</div>
+        <div>学号：20213660</div>
+    </div>  
 </body>
 </html>
