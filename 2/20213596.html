@@ -1,118 +1,109 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>20213596</title>
-		<style type="text/css">
-			body{
-				 background:rgba(255,255,255,1);
+<head>
+    <meta charset="UTF-8">
+    <title>20213596</title>
+    <style>
+        div{border:2px solid red;
+		    border-radius:10px/10px;
+		    font-family:楷体;
+		    text-align:center;
+			border-top:0px;}
+        div#header{height:20%;
+		           font-size:250%;
+				   color:rgb(205,133,0);
+				   border-top:2px solid red;
+				   }
+        div#list{height:45%;
+		        font-size:150%;
+				padding-left:40%;
 				}
-			p{
-				font-size:50px;
-				text-align:center;
-			 }
-			 a{
-				color:rgba(255,200,0,0.8);
-				text-decoration:none;
-			  }
-			 table{
-					font-size:50px;
-				  }
-			a:hover{
-					  background-color:blue;
-					  border:2px solid red;
-					  color:red;
-					  }
-		</style>
-	</head>
-	<body>
-		<table border="2px" align="center">
-			<tr>
-				<th width="250px">姓名</th>
-				<th width="350px">学号</th>
-				<th width="450px">作业</th>
-			</tr>
-			<tr>
-				<th>邹东楠</th>
-				<th>20213596</th>
-				<th><a href="20213596/20213596-01.html" target="_blank">20213596-01</a></th>
-			</tr>
-			<tr>
-				<th>邹东楠</th>
-				<th>20213596</th>
-				<th><a href="20213596/20213596-02.html" target="_blank">20213596-02</a></th>
-			</tr>
-			<tr>
-				<th>邹东楠</th>
-				<th>20213596</th>
-				<th ><a href="20213596/20213596-03.html" target="_blank">20213596-03</a></th>
-			</tr>
-			<tr>
-				<th>邹东楠</th>
-				<th>20213596</th>
-				<th ><a href="20213596/20213596-04.html" target="_blank">20213596-04</a></th>
-			</tr>
-			<tr>
-				<th>邹东楠</th>
-				<th>20213596</th>
-				<th ><a href="20213596/20213596-05.html" target="_blank">20213596-05</a></th>
-			</tr>
-			<tr>
-				<th>邹东楠</th>
-				<th>20213596</th>
-				<th ><a href="20213596/20213596-6.html" target="_blank">20213596-06</a></th>
-			</tr>
-			<tr>
-				<th>邹东楠</th>
-				<th>20213596</th>
-				<th ><a href="20213596/20213596-7.html" target="_blank">20213596-07</a></th>
-			</tr>
-			<tr>
-				<th>邹东楠</th>
-				<th>20213596</th>
-				<th ><a href="20213596/20213596-8.html" target="_blank">20213596-08</a></th>
-			</tr>
-			<tr>
-				<th>邹东楠</th>
-				<th>20213596</th>
-				<th ><a href="20213596/20213596-9.html" target="_blank">20213596-09</a></th>
-			</tr>
-			<tr>
-				<th>邹东楠</th>
-				<th>20213596</th>
-				<th ><a href="20213596/20213596-10.html" target="_blank">20213596-10</a></th>
-			</tr>
-			<tr>
-				<th>邹东楠</th>
-				<th>20213596</th>
-				<th ><a href="20213596/20213596-11.html" target="_blank">20213596-11</a></th>
-			</tr>
-			<tr>
-				<th>邹东楠</th>
-				<th>20213596</th>
-				<th ><a href="20213596/20213596-12.html" target="_blank">20213596-12</a></th>
-			</tr>
-			<tr>
-				<th>邹东楠</th>
-				<th>20213596</th>
-				<th ><a href="20213596/20213596-13.html" target="_blank">20213596-13</a></th>
-			</tr>
-			<tr>
-				<th>邹东楠</th>
-				<th>20213596</th>
-				<th ><a href="20213596/20213596-14.html" target="_blank">20213596-14</a></th>
-			</tr>
-			<tr>
-				<th>邹东楠</th>
-				<th>20213596</th>
-				<th ><a href="20213596/20213596-15.html" target="_blank">20213596-15</a></th>
-			</tr>
-			<tr>
-				<th>邹东楠</th>
-				<th>20213596</th>
-				<th ><a href="20213596/20213596-16.html" target="_blank">20213596-16</a></th>
-			</tr>
-		</table>
-			
-	</body>
+        table{height:100%;}
+        td{
+		   width:20%;
+		   margin-bottom:10px;
+		   text-align:left;}
+        div#article{height:25%;
+		            font-size:200%;
+					color:blue;}
+        div#footer{height:10%;
+		           font-size:200%}
+       a{text-decoration:none;}
+       a:link{color:red;}
+	   a:visited{color: gray ;}
+	   a:hover{color: yellow ;}
+	   a:active{color: white ;}
+    </style>   
+</head>
+<body>
+<div id="header"><p></p></div>
+<div id="list"></div>
+<div id="article">作业简介</div>
+<div id="footer"></div>
+<script>
+    document.body.style.height=window.innerHeight+'px';
+	document.body.style.width=window.innerWidth+'px';
+    var header=document.querySelector('div#header');
+	var p=document.querySelector('p');
+    var list=document.querySelector('div#list');
+    var article=document.querySelector('div#article');
+    var footer=document.querySelector('div#footer');
+    var saying=['没有所谓失败，除非你不再尝试','人生志气立，所贵功业勋','所谓光辉岁月，并不是以后闪耀的日子，而是无人问津时，你对梦想的偏执'];
+	var maz=['安装editplus，编写一个HTML文件','在页面上运用超链接','运用按钮和JavaScript改变页面内容','改进上次作业的按钮和JavaScript改变页面内容的编程逻辑和优化','熟练如何运用按钮和点击事件','多首唐诗进行按钮和点击事件配合循环刷新网页内容','改进和优化后的多首唐诗进行按钮和点击事件配合循环刷新网页内容','随机函数的运用与掌握，并编写出一个基本的小学生随机算数题训练页面','web知识的综合运用并运用serch()和substring()函数的运用进行唐诗三百首的按钮点击改变页面唐诗内容','改进和优化第九次作业上的逻辑错误和第175唐诗不存在所带来的问题','运用JavaScript布局出一个计算器的样貌','编写出一个功能完善的网页计算器','13','14','15','16']
+    var i=0;
+	var x=1;
+	
+    function changes() {
+             p.textContent=saying[i];
+             if(i<saying.length-1){
+                  i++;
+                  }
+             else{
+                  i=0;
+                  };
+             window.setTimeout(changes,2000);
+                  };
+   changes();
+   window.setTimeout(changes,2000);
+   var table=document.createElement('table');
+   list.appendChild(table);
+   for(i=0;i<8;i++,x++){
+	   var tr=document.createElement('tr');
+	   table.appendChild(tr);
+
+	   var td1=document.createElement('td');
+	   tr.appendChild(td1);
+       var createlink1=document.createElement('a');
+	   createlink1.href='20213596/20213596-'+(i+x)+'.html';
+	   createlink1.textContent='第'+(i+x)+'次作业';
+	   createlink1.id=i;
+	   td1.appendChild(createlink1);
+
+	   var td2=document.createElement('td');
+	   tr.appendChild(td2);
+       var createlink2=document.createElement('a');
+	   createlink2.href='20213596/20213596-'+(i+x+1)+'.html';
+	   createlink2.textContent='第'+(i+x+1)+'次作业';
+	   createlink2.id=i+2;
+       td2.appendChild(createlink2);
+   }
+   var alink=document.querySelectorAll('a');
+   var onover=[];
+   var onout=[];
+   
+for(k=0;k<16;k++){
+	articles(k);
+}
+function articles(k){
+		   alink[k].onmouseover=function (){
+			   article.textContent=maz[k];
+		   }
+		   alink[k].onmouseout=function (){
+			   article.textContent='作业简介';
+           }
+       }
+ var name='姓名：邹东楠\n学号：20213596\n联系方式：191****7786';
+ footer.textContent=name;
+</script>
+</body>
 </html>

@@ -2,61 +2,115 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>20213599</title>
+		<title>主页</title>
 		<style type="text/css">
-			body{
-				 background:rgba(255,255,255,1);
-				}
-			p{
-				font-size:50px;
+			body
+			{
+				
+			}
+			div#he
+			{
+				font-size:38px;
+
 				text-align:center;
-			 }
-			 a{
-				color:rgba(255,100,0,0.8);
+				color:rgba(100,200,100,1);
+			}
+			div#ac
+			{
+				text-align:center;
+				padding:55px;
+			}
+			div#bo
+			{
+				color:rgba(100,100,255,1);
+			}
+			div#fo
+			{
+				border-bottom:2px solid rgba(225,50,50,1);
+				white-space:pre-line;/* 换行 */
+			}
+			div
+			{
+				border:2px solid rgba(225,50,50,1);
+				border-bottom:0px;
+				font-size:38px;
+			}
+			a
+			{
+				font-size:38px;
+				color:rgba(255,100,80,1);
 				text-decoration:none;
-			  }
-			 table{
-					font-size:38px;
-				  }
-			a:hover{/*鼠标移动到链接时的颜色*/
-					  background-color:blue;
-					  border:2px solid red;
-					  color:red;
+				border:2px solid rgba(255,50,0,1);
+				margin:10px 20px;
+				background-color:rgba(255,215,0,0.5);
+			}
 		</style>
 	</head>
 	<body>
-		<table border="2px" align="center">
-			<tr>
-				<th width="200px">Web</th>
-				<th width="200px">郭理靖</th>
-				<th width="200px">20213599</th>
-				<th width="200px">(✪ω✪)</th>
-
-			</tr>
-			<tr>
-				<th><a href="20213599/20213599-01.html" target="_blank">01</a></th>
-				<th><a href="20213599/20213599-02/20213599-02.html" target="_blank">02</a></th>
-				<th><a href="20213599/20213599-03.html" target="_blank">03</a></th>
-				<th><a href="20213599/20213599-04.html" target="_blank">04</a></th>
-			</tr>
-			<tr>
-				<th><a href="20213599/20213599-05.html" target="_blank">05</a></th>
-				<th><a href="20213599/20213599-06.html" target="_blank">06</a></th>
-				<th><a href="20213599/20213599-07.html" target="_blank">07</a></th>
-				<th><a href="20213599/20213599-08.html" target="_blank">08</a></th>
-			</tr>
-			<tr>	
-				<th ><a href="20213599/20213599-09.html" target="_blank">09</a></th>
-				<th><a href="20213599/20213599-10.html" target="_blank">10</a></th>
-				<th><a href="20213599/20213599-11.html" target="_blank">11</a></th>
-				<th ><a href="20213599/20213599-12.html" target="_blank">12</a></th>
-			</tr>
-			<tr>
-				<th><a href="20213599/20213599-13.html" target="_blank">13</a></th>
-				<th><a href="20213599/20213599-14.html" target="_blank">14</a></th>
-				<th ><a href="20213599/20213599-15.html" target="_blank">15</a></th>
-				<th><a href="20213599/20213599-16.html" target="_blank">16</a></th>
-			</tr>
-		</table>
+		<script type="text/javascript">
+			document.body.style.height=window.innerHeight+'px';
+			document.body.style.width=window.innerWidth+'px';
+			var i,j,m,n,s=0;
+			var box=["既然选择远方，当不负青春，砥砺前行。","青春由磨砺而出彩，人生因奋斗而升华！","心态决定高度，细节决定成败。","成功的道路别自己一个人摸索，只有多问路才不会迷路。","当你想要放弃的时候想想当初为什么坚持到这里。"];
+			var abox=["he","ac","bo","fo"];
+			var bbox=['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16'];
+			var cbox=['一个基本页面','在页面上运用超链接','运用css改变超链接的样式','运用js改变页面上的某些元素','使用按钮触发事件','使用按钮实现古诗切换','使用按钮实现古诗切换，优化页面样式','运用js展示文本中300余首古诗，并用按钮实现切换','运用js展示文本中300余首古诗，并用按钮实现切换，解决程序因文本内容差错所引发的程序运行错误情况','运用js展示文本中300余首古诗，并用按钮实现切换，实现随机选择古诗和指定选择古诗','运用js在页面上做一个简易的计算器','','','','',''];
+			for(j=0;j<4;j++)
+				{
+					var adiv=document.createElement('div');
+					document.body.appendChild(adiv);
+					adiv.id=abox[j];
+				}
+			he.style.height="100px";
+			ac.style.height="70px";
+			bo.style.height="150px";
+			fo.style.height="200px";
+			for(j=0,i=1;j<16;j++,i++)
+				{
+					var atext=document.createTextNode(bbox[j]);
+					var aa=document.createElement('a');
+					aa.href="20213599/20213599-"+bbox[i]+".html";
+					aa.id="a"+i;
+					aa.appendChild(atext);
+					ac.appendChild(aa);
+				}
+			for(m=0,n=1;m<16;m++,n++)
+				{
+					var x="a"+n;
+					var ax=document.getElementById(x);
+					xa(n);
+				}
+			var i=0;
+			ch();
+			function ch()
+				{
+					he.textContent=box[i];
+					if(i<box.length-1)
+						{
+							i++;
+						}
+					else
+						{
+							i=0;
+						}	
+					window.setTimeout(ch,2000);
+				}
+			function xa(out)
+				{
+					var a=out;
+					var b="a"+a;
+					bx=document.getElementById(b);/*alert(b);*/
+					bx.onmouseover=function()
+						{
+							bo.textContent=cbox[a-1];
+						}
+					bx.onmouseout=function()
+						{
+							bo.textContent='内容概述';
+						}
+				}
+			bo.textContent="内容概述";
+			fo.textContent="班级：21计科1班\n姓名：郭理靖\n学号：20213599\n联系方式：131****5143";
+		</script>
 	</body>
 </html>

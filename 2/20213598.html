@@ -3,84 +3,178 @@
 <head>
     <meta charset="utf-8" />
     <style>
-         .z1 { 
+         .z1,.z2 { 
                 margin: 0 auto;/*居中*/
-                width: 300px;
+                width: 40%;
                 text-align: center;
-                font-size: 50px;
+                font-size: 1.25em;
                 text-shadow: 2px 5px 5px #f460bd;/*水平阴影的位置。垂直阴影的位置。允许负值。模糊的距离。*/
                 color: rgb(24, 188, 230);
                 border-color: aliceblue;
+               
               }
-         body{
+              
+              
+         body{ font-size: 50px;
                 background-color: rgb(23, 2, 2);
                 text-align: center;
              } 
             p{
-                color: rgb(236, 18, 18);
-                font-size: 75px;
+                color: rgb(58, 240, 240);
+                font-size: 0.75em;
                 text-shadow: 0px 3px 6px rgb(214, 214, 112);
              }
+            /* p#j2{
+                color: rgb(242, 95, 255);
+                text-shadow: 0px 5px -6px rgb(37, 221, 4);
+
+            } */
+            table#d4{
+                font-size: 0.75em;
+                color: rgb(37, 221, 4);
+                text-align: center;
+                margin: 0 auto;
+                top: 100%;
+                
+               
+            }
+            div#di4{
+                display: none;
+            }
+            input{background-color: rgb(0, 0, 0);
+            color: rgb(58, 240, 240);
+            font-size: 1em;
+            cursor: pointer;/*改变光标*/
+            border-radius:25%;
+
+            }
+            input:hover,input#start:hover,input#off:hover{  
+            background-color: rgb(58, 240, 240);
+            color: rgb(0, 0, 0);
+            font-size: 1em;
+        }  
+            
+            h1{color: rgb(236, 18, 18);
+                font-size: 0.5em;               
+
+            } 
+            a{
+                text-decoration: none;
+            }
              a:link{font-family: 楷体;color: rgb(24, 188, 230);} 
              a:visited{font-family: 楷体;color: rgb(24, 188, 230);} 
              a:hover{color: rgb(219, 23, 23);font-family: 楷体;}
              a:active {font-family: 楷体;color: rgb(24, 188, 230); }                   
     </style>             
 </head>
-<body>      
+<body>   
+    <div style="height: 25%;" id="di1">
+        <h1 id =he>123</h1>   
      <p>曾凌峰的主页</p> 
-     <table border="1" class="z1">
+         <script>
+            var box=["如果人们都能以同情慈善，以人道的行径来剔除祸根，则人生的灾患便可消灭过半。","即使在最聪明的人身上，本能也一定先于智慧。欢对于人来说，本能有时也许是更为理想的向导。","良好的健康状况和高度的身体训练，是有效的脑力劳动的重要条件。"]
+            var i=0;
+            ch();
+         function ch()//名言滚动函数
+            {
+                he.textContent=box[i];
+                if(i<box.length-1)
+                    {
+                        i++;
+                    }
+                else
+                    {
+                        i=0;
+                    }
+                window.setTimeout(ch,2000);
+            }
+         </script>
+    </div>
+<div style="height: 50%;" id="di2">
+    <table border="1" class="z2">
         <tr>
-            <th>作业编号</th>
+            <td>作业编号</td>
         </tr>
-        <tr>
-            <td><a href="20213598\01.html"target="_self" title="曾凌峰">01</a></td>
-        </tr>
-        <tr>
-           <td><a href="20213598\02\02.html"target="_self" title="曾凌峰">02</a></td>
+    </table>
+    <table border="1" class="z1">        
+        <tr>           
+            <td><a href="20213598\01.html"target="_self" title="曾凌峰" onmouseover="xs1(this)" onmouseout="bxs(this)">01</a></td>             
+            <td><a href="20213598\02\02.html"target="_self" title="曾凌峰" onmouseover="xs2(this)" onmouseout="bxs(this)">02</a></td>          
+            <td><a href="20213598\03.html"target="_self" title="曾凌峰" onmouseover="xs3(this)" onmouseout="bxs(this)">03</a></td>     
+            <td><a href="20213598\04.html"target="_self" title="曾凌峰" onmouseover="xs4(this)" onmouseout="bxs(this)">04</a></td>
        </tr>
-       <tr>
-           <td><a href="20213598\03.html"target="_self" title="曾凌峰">03</a></td>
-       </tr>
-       <tr>
-           <td><a href="20213598\04.html"target="_self" title="曾凌峰">04</a></td>
-       </tr>
-       <tr>
-           <td><a href="20213598\05.html"target="_self" title="曾凌峰">05</a></td>
-       </tr>
-       <tr>
-        <td><a href="20213598\06.html"target="_self" title="曾凌峰">06</a></td>
+       <tr>      
+           <td><a href="20213598\05.html"target="_self" title="曾凌峰"  onmouseover="xs5(this)" onmouseout="bxs(this)">05</a></td>            
+           <td><a href="20213598\06.html"target="_self" title="曾凌峰"  onmouseover="xs6(this)" onmouseout="bxs(this)">06</a></td>	   	  
+           <td><a href="20213598\07.html"target="_self" title="曾凌峰"  onmouseover="xs7(this)" onmouseout="bxs(this)">07</a></td>		 
+           <td><a href="20213598\08.html"target="_self" title="曾凌峰"  onmouseover="xs8(this)" onmouseout="bxs(this)">08</a></td>
+     </tr>
+     <tr>      
+           <td><a href="20213598\09.html"target="_self" title="曾凌峰"  onmouseover="xs9(this)" onmouseout="bxs(this)">09</a></td>	 
+           <td><a href="20213598\10.html"target="_self" title="曾凌峰"  onmouseover="xs10(this)" onmouseout="bxs(this)">10</a></td>	   	
+           <td><a href="20213598\11.html"target="_self" title="曾凌峰"  onmouseover="xs11(this)" onmouseout="bxs(this)">11</a></td>	
+           <td><a href="20213598\12.html"target="_self" title="曾凌峰"  onmouseover="xs12(this)" onmouseout="bxs(this)">12</a></td>
 	   </tr>
 	   <tr>
-        <td><a href="20213598\07.html"target="_self" title="曾凌峰">07</a></td>
-	   </tr>
-	   <tr>
-        <td><a href="20213598\08.html"target="_self" title="曾凌峰">08</a></td>
-	   </tr>
-	   <tr>
-        <td><a href="20213598\09.html"target="_self" title="曾凌峰">09</a></td>
-	   </tr>
-	   <tr>
-        <td><a href="20213598\10.html"target="_self" title="曾凌峰">10</a></td>
-	   </tr>
-	   <tr>
-        <td><a href="20213598\11.html"target="_self" title="曾凌峰">11</a></td>
-	   </tr>
-	   <tr>
-        <td><a href="20213598\12.html"target="_self" title="曾凌峰">12</a></td>
-	   </tr>
-	   <tr>
-        <td><a href="20213598\13.html"target="_self" title="曾凌峰">13</a></td>
-	   </tr>
-	   <tr>
-        <td><a href="20213598\14.html"target="_self" title="曾凌峰">14</a></td>
-	   </tr>
-	   <tr>
-        <td><a href="20213598\15.html"target="_self" title="曾凌峰">15</a></td>
-	   </tr>
-	   <tr>
-        <td><a href="20213598\16.html"target="_self" title="曾凌峰">16</a></td>
+           <td><a href="20213598\13.html"target="_self" title="曾凌峰"   onmouseover="xs13(this)" onmouseout="bxs(this)">13</a></td>	  
+           <td><a href="20213598\14.html"target="_self" title="曾凌峰"   onmouseover="xs14(this)" onmouseout="bxs(this)" >14</a></td>		 
+           <td><a href="20213598\15.html"target="_self" title="曾凌峰"   onmouseover="xs15(this)" onmouseout="bxs(this)">15</a></td>	
+           <td><a href="20213598\16.html"target="_self" title="曾凌峰"   onmouseover="xs16(this)" onmouseout="bxs(this)" >16</a></td>
 	   </tr>
     </table>   
+</div style="height: 75%;">
+
+
+<div id="di3">
+    
+    <p id="j2">作业简介</p>
+
+<script> 
+   function xs1() {j2.textContent="古诗关雎（图片未加上）";}     
+   function xs2() {j2.textContent="古诗关雎（添加图片）";}
+   function xs3() {j2.textContent="有关于特摄的介绍";}
+   function xs4() {j2.textContent="无（有一个返回键）";}
+   function xs5() {j2.textContent="古诗二选一";}
+   function xs6() {j2.textContent="多首古诗1.0（下上键选择古诗）";}
+   function xs7() {j2.textContent="多首古诗2.0（上下键可以循环了）";}
+   function xs8() {j2.textContent="多首古诗3.0（优化代码，实现超多首古诗）";}
+   function xs9() {j2.textContent="多首古诗3.1（优化界面）";}
+   function xs10() {j2.textContent="多首古诗3.2（添加随机按键，再次优化界面）";}
+   function xs11() {j2.textContent="计算器1.0（大致实现简单的运算）";}
+   function xs12() {j2.textContent="计算机最终（返回键出现问题）";}
+   function xs13() {j2.textContent="暂无";}
+   function xs14() {j2.textContent="暂无";}
+   function xs15() {j2.textContent="暂无";}
+   function xs16() {j2.textContent="暂无";}
+
+function bxs()
+{
+  j2.textContent="作业简介";
+  
+}
+</script>
+</div>
+<div id="di4" >
+    <table border="1" id="d4">
+         <tr><th>姓名 </th><td>曾凌峰</td></tr>
+         <tr> <th>学号</th ><td>20213598</td></tr>
+         <tr><th>性别</th><td>男</td> </tr>
+         <tr><th>联系方式</th><td>188xxxxxxxx</td></tr>
+    </table>
+    </div >
+
+    <div id="di5">
+        <input type="button" value="显示个人信息" id="start">
+    <script>
+        var start=document.querySelector("input#start");
+        start.onclick=function(){
+            document.getElementById("di4").style.display="block";
+            document.getElementById("di5").style.display="none";
+
+    
+            
+        }
+    </script>
+ </div>
 </body>       
 </html>
