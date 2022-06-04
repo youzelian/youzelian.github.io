@@ -1,116 +1,131 @@
-
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <title>20213637</title>
- </head>
-
-<style type="text/css">
-	body{
-		text-align:center ;
-		font-size:40px ;
-		font-family:楷体 ;
-	}
-	table{
-		margin:auto;
-		}
-</style>
-<body>
-    <h1>钟雅婷的个人主页</h1>
-	<table border = "1">
-	<tr>
-	<th>作业序号</th>
-	<th>作业链接</th>
-	<th>作业简介</th>
-	</tr>
-
-	<tr>
-		<td>第一次作业</td>
-		<td><a href="zhongyating/20213637-1.html"target="_blank">作业</a></td>
-		<td>励志句子</td>
-	<br>
-		
-	<tr>		
-		<td>第二次作业</td>
-		<td><a href="zhongyating/20213637-2.html"target="_blank">作业</a></td>
-		<td>阅读</td><br>
-	</tr>
-			
-	<tr>
-		<td>第三次作业</td>
-		<td><a href="zhongyating/20213637-3.html" target="_blank">作业</a></td>
-		<td>王安石</td><br>
-	</tr>
-	<tr>			
-		<td>第四次作业</td>
-		<td><a href="zhongyating/20213637-4.html" target="_blank">作业</a></td>
-		<td>古诗</td><br>
-	</tr>
-	<tr>					
-		<td>第五次作业</td>
-		<td><a href="zhongyating/20213637-5.html" target="_blank">作业</a></td>
-		<td>按钮显示古诗</td><br>
-	</tr>
-	<tr>
-		<td>第六次作业</td>
-		<td><a href="zhongyating/20213637-6.html"target="_blank">作业</a></td>
-		<td>按钮换页换诗</td>
-	</tr>
-	<tr>
-		<td>第七次作业</td>
-		<td><a href="zhongyating/20213637-1.html"target="_blank">作业</a></td>
-		<td>励志句子</td>
-	<br>
-		
-	<tr>		
-		<td>第八次作业</td>
-		<td><a href="zhongyating/20213637-2.html"target="_blank">作业</a></td>
-		<td>阅读</td><br>
-	</tr>
-			
-	<tr>
-		<td>第九次作业</td>
-		<td><a href="zhongyating/20213637-3.html" target="_blank">作业</a></td>
-		<td>王安石</td><br>
-	</tr>
-	<tr>			
-		<td>第十次作业</td>
-		<td><a href="zhongyating/20213637-4.html" target="_blank">作业</a></td>
-		<td>古诗</td><br>
-	</tr>
-	<tr>					
-		<td>第十一次作业</td>
-		<td><a href="zhongyating/20213637-5.html" target="_blank">作业</a></td>
-		<td>按钮显示古诗</td><br>
-	</tr>
-	<tr>
-		<td>第十二次作业</td>
-		<td><a href="zhongyating/20213637-6.html"target="_blank">作业</a></td>
-		<td>按钮换页换诗</td>
-	</tr>
-	<tr>
-		<td>第十三次作业</td>
-		<td><a href="zhongyating/20213637-1.html"target="_blank">作业</a></td>
-		<td>励志句子</td>
-	<br>
-		
-	<tr>		
-		<td>第十四次作业</td>
-		<td><a href="zhongyating/20213637-2.html"target="_blank">作业</a></td>
-		<td>阅读</td><br>
-	</tr>
-			
-	<tr>
-		<td>第十五次作业</td>
-		<td><a href="zhongyating/20213637-3.html" target="_blank">作业</a></td>
-		<td>王安石</td><br>
-	</tr>
-	<tr>			
-		<td>第十六次作业</td>
-		<td><a href="zhongyating/20213637-4.html" target="_blank">作业</a></td>
-		<td>古诗</td><br>
-	</tr>
-</body>
+<head>
+    <meta charset="utf-8">
+    <title>20213637</title>
+    <style>
+        html,body{
+            text-align: center;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        div#title{
+            height: 30%;
+            background-color: rgb(228, 138, 20);
+            font-size: 30px;
+            color: azure;
+        }
+        div#title>h1{
+        float:left;
+        }
+        div#content{
+            height: 30%;
+            background-color: burlywood;
+        } 
+        div#content>p{
+            width: 100%;line-height:350%;
+           
+        }
+        div#content>p>a{
+            text-decoration: none;
+            border: solid 1px;
+            line-height: 20px;
+            margin: 20px;
+        }
+        div#content>p>a:hover{
+            border: outset;
+        }
+        div#describe{
+            height: 30%;
+            background-color: rgb(173, 202, 92);
+            font-size: 50px;
+            color: aliceblue;
+        }
+        footer{
+            background-color: rgb(222, 242, 178);
+            height: 10%;
+        }
+    </style>
+    </head>
+    <body>
+        <hr>
+        <div id="title">  
+           <p></p>
+           <h1></h1>   
+        </div>
+        <script>
+          var p=document.querySelector("div#title>p");
+          var saying=["自己动手，丰衣足食！","长风破浪会有时，直挂云帆济沧海。","人要有毅力，否则将一事无成。","人的志向通常和他们的能力成正比！！！"]
+          var number=0;
+          function showSaying(){
+          number=Math.floor(Math.random()*4);
+          p.textContent=saying[number];
+          } 
+          var date=document.querySelector("div#title>h1");
+          function showTime(){
+          var dat=new Date();
+         var year=dat.getFullYear();
+         var month=dat.getMonth()+1;
+         var day=dat.getDay();
+         var hour=dat.getHours();
+         var min=dat.getMinutes();
+         date.textContent=year+"年"+month+"月"+day+"日"+hour+"时"+min+"分";
+          }
+          window.setInterval("showTime()",1000);
+          window.setInterval("showSaying()",1000);   
+       </script>
+        <hr>
+        <div id="content">
+           <p></p> 
+        </div>
+        <hr>
+        <div id="describe">
+            <p></p>
+        </div>
+        <hr>
+        <footer>
+            21计科3班 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp3261458337@qq.com</br>
+            &nbsp&nbsp&nbsp&nbsp&nbsp钟雅婷 &nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp 江西科技师范大学</br>
+            20213637 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp软件动漫学院</br>
+        </footer>
+    </body>
+    <script lang="javascript">
+    var content=document.querySelector("div#content>p");
+    var homeworknumber=[];
+   homeworknumber[0]='<a href="https://zyt20020915.github.io/web/20213637-1.html"target="_blank">20213637-1</a>'
+   homeworknumber[1]='<a href="https://zyt20020915.github.io/web/20213637-2.html"target="_blank">20213637-2</a>'
+   homeworknumber[2]='<a href="https://zyt20020915.github.io/web/20213637-3.html"target="_blank">20213637-3</a>'
+   homeworknumber[3]='<a href="https://zyt20020915.github.io/web/20213637-4.html"target="_blank">20213637-4</a>'
+   homeworknumber[4]='<a href="https://zyt20020915.github.io/web/20213637-5.html"target="_blank">20213627-5</a>'
+   homeworknumber[5]='<a href="https://zyt20020915.github.io/web/20213637-6.html"target="_blank">20213637-6</a>'
+   homeworknumber[6]='<a href="https://zyt20020915.github.io/web/20213637-7.html"target="_blank">20213637-7</a>'
+   homeworknumber[7]='<a href="https://zyt20020915.github.io/web/20213637-8.html"target="_blank">20213637-8</a>'
+   homeworknumber[8]='<a href="https://zyt20020915.github.io/web/20213637-9.html"target="_blank">20213637-9</a>'
+   homeworknumber[9]='<a href="https://zyt20020915.github.io/web/20213637-10.html"target="_blank">20213637-10</a>'
+   homeworknumber[10]='<a href="https://zyt20020915.github.io/web/20213637-11.html"target="_blank">20213637-11</a>'
+   homeworknumber[11]='<a href="https://zyt20020915.github.io/web/20213637-12.html"target="_blank">20213637-12</a>'
+   homeworknumber[12]='<a href="https://zyt20020915.github.io/web/20213637-13.html"target="_blank">20213637-13</a>'
+   homeworknumber[13]='<a href="https://zyt20020915.github.io/web/20213637-14.html"target="_blank">20213637-14</a>'
+   homeworknumber[14]='<a href="https://zyt20020915.github.io/web/20213637-15.html"target="_blank">20213637-15</a>'
+   homeworknumber[15]='<a href="https://zyt20020915.github.io/web/20213637-16.html"target="_blank">20213637-16</a>'
+     function showHomework(){
+           content.innerHTML=homeworknumber[0]+homeworknumber[1]+homeworknumber[2]+homeworknumber[3]+"</br>"+homeworknumber[4]+homeworknumber[5]+homeworknumber[6]+homeworknumber[7]+"</br>"+homeworknumber[8]+homeworknumber[9]+homeworknumber[10]+homeworknumber[11]+"</br>"+homeworknumber[12]+homeworknumber[13]+homeworknumber[14]+homeworknumber[15]
+   }
+   showHomework();
+   var a=document.querySelectorAll("div#content>p>a");
+   var p4=document.querySelector("div#describe>p");
+   var innercircle=0;
+   for(innercircle=0;innercircle<=15;innercircle++){
+       if(innercircle>=0&&innercircle<=12){
+   a[innercircle].onmouseover=function (event){
+      p4.innerHTML="这是一次作业";
+   }}
+    else {
+          a[innercircle].onmouseover=function (event){
+            p4.innerHTML="作业未布置"
+          }
+      }
+  }
+    </script>
 </html>

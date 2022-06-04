@@ -1,112 +1,248 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <title>朱红燕的个人首页</title>
- </head>
-<style type="text/css">
-	body
-	{
-        text-align:center ;
-        font-size:40px ;
-        font-family:仿宋 ;
-        color: white;
-        background-color: goldenrod;
-	}
-    table{
-        margin:auto;
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>朱红燕的个人主页</title>
+    <style>
+        body{
+            width: 1200px;
+            text-align: center;
+            margin: auto;
+            background-color: #5c5c5c;
+            font-family: 宋体;
+        }
+        div{
+            border:0px;
+            text-align: center; 
+            background-color: #DCAB9A;
+        }
+        div#header{
+            height: 25%;
+            background-color:#DCAB9A;
+            border:0px;
+            font-size: 50px;
+            padding: 30px;
+            color:#5c5c5c;
+            
+        }
+        div#nav{
+            height: 10%;
+            border:0px;
+        }
+        a{
+            background-color:#5c5c5c;
+            border-radius: 15px;
+            text-decoration:none ;
+            margin: 10px;
+            padding: 10px;
+            color: #DCAB9A;
+            border:5px solid #F2EBDA;
+        }
+        div#article{
+            height: 30%;
+            padding: 30px;
+            font-size: 50px;
+            padding-top: 100px;
+            padding-bottom: 0%;
+            color: #5c5c5c;
+        }
+        div#footer{
+            height: 25%;
+            background-color:#DCAB9A;
+            border: 0px;
+            padding-top: 50px;
+            font-size: 25px;
+            color:#5c5c5c;
+        }
+        div#main{
+            height: 10%;
+            font-size: 25px;
+            padding-top: 20px;
+            border: 2px solid #5c5c5c;
+            background-color: rgb(0, 0, 0, 0);
+        }
+    </style>
+</head>
+<body>  
+    <div id="main">  
+     <div id="show_time0" >
+        <script>
+         setInterval("show_time0.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);  
+        </script>
+        </div>
+        <div id="show_time">  
+        <script>  
+        setInterval("fun(show_time)",1);
+        function fun(timeID){ 
+        var date = new Date();  
+        var y = date.getFullYear();  
+        var m =date.getMonth()+1;
+        var d = date.getDate();
+        var w = date.getDay();
+        var ww = ' 星期'+'日一二三四五六'.charAt(new Date().getDay()) ;
+        var h = date.getHours();  
+        var minute = date.getMinutes() 
+        var s = date.getSeconds();
+        if(m<10){
+        m = "0"+m;
+        }
+        if(d<10){
+        d = "0"+d;
+        }
+        if(h<10){
+        h = "0"+h;
+        }
+        if(minute<10){
+        minute = "0"+minute;
+        }
+        if(s<10){
+        s = "0"+s;
+        }
     }
-</style>
-<body>
-    <h1>朱红燕的个人首页</h1>
-    <table border = "1">
-    <tr>
-    <th>作业序号</th>
-    <th>作业链接</th>
-    <th>作业简介</th>
-    </tr>
-    <tr>
-      <td>第一次作业</td>
-      <td><a href="zhuhongyan/20213648-1.html" target="_blank">作业</a></td>
-      <td>古诗</td>
-    </tr>
-    <br>
+        </script>  
+        </div>  
+    </div>  
+    <div id="header" class="">
+        朱红燕的个人主页
+    </div>
+    <div id="nav" class="">
+            <a href="https://youzelian.github.io/12/zhuhongyan/20213648-1.html" target="_blank" id="but1">第1周</a>
+            <a href="https://youzelian.github.io/12/zhuhongyan/20213648-2.html" target="_blank" id="but2">第2周</a>
+            <a href="https://youzelian.github.io/12/zhuhongyan/20213648-3.html" target="_blank" id="but3">第3周</a>
+            <a href="https://youzelian.github.io/12/zhuhongyan/20213648-4.html" target="_blank" id="but4">第4周</a>
+            <a href="https://youzelian.github.io/12/zhuhongyan/20213648-5.html" target="_blank" id="but5">第5周</a>
+            <a href="https://youzelian.github.io/12/zhuhongyan/20213648-6.html" target="_blank" id="but6">第6周</a>
+            <a href="https://youzelian.github.io/12/zhuhongyan/20213648-7.html" target="_blank" id="but7">第7周</a>
+            <a href="https://youzelian.github.io/12/zhuhongyan/20213648-8.html" target="_blank" id="but8">第8周</a>
+            <a href="https://youzelian.github.io/12/zhuhongyan/20213648-9.html" target="_blank" id="but9">第9周</a>
+            <a href="https://youzelian.github.io/12/zhuhongyan/20213648-10.html" target="_blank" id="but10">第10周</a>
+            <a href="https://youzelian.github.io/12/zhuhongyan/20213648-11.html" target="_blank" id="but11">第11周</a>
+    </div>
+    <div id="article" class="">
+        作业内容简介
+    </div>
+    <div id="footer" class="">
+        <p>creator：朱红燕</p>
+        <p>number：20213648</p>
+        <p>qq：2942503667</p>
+    </div>
 
-    <tr>
-      <td>第二次作业</td>
-      <td><a href="zhuhongyan/20213648-2.html" target="_blank">作业</a></td>
-      <td>首页</td><br>
-    </tr>
-
-    <tr>
-      <td>第三次作业</td>
-      <td><a href="zhuhongyan/20213648-3.html" target="_blank">作业</a></td>
-      <td>中秋节</td><br>
-    </tr>
-    <tr>
-      <td>第四次作业</td>
-      <td><a href="zhuhongyan/20213648-4.html" target="_blank">作业</a></td>
-      <td>盒装模型</td><br>
-    </tr>
-    <tr>
-      <td>第五次作业</td>
-      <td><a href="zhuhongyan/20213648-5.html" target="_blank">作业</a></td>
-      <td>按钮显示古诗</td><br>
-    </tr>
-    <tr>
-      <td>第六次作业</td>
-      <td><a href="zhuhongyan/20213648-6.html" target="_blank"">作业</a></td>
-		  <td>按钮换页换诗</td>
-	  </tr>
-	  <tr>
-		  <td>第七次作业</td>
-		  <td><a href=" zhuhongyan/20213648-7.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第八次作业</td>
-		  <td><a href=" zhuhongyan/20213648-8.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第九次作业</td>
-		  <td><a href=" zhuhongyan/20213648-9.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十次作业</td>
-		  <td><a href=" zhuhongyan/20213648-10.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十一次作业</td>
-		  <td><a href=" zhuhongyan/20213648-11.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十二次作业</td>
-		  <td><a href=" zhuhongyan/20213648-12.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十三次作业</td>
-		  <td><a href=" zhuhongyan/20213648-13.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十四次作业</td>
-		  <td><a href=" zhuhongyan/20213648-14.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十五次作业</td>
-		  <td><a href=" zhuhongyan/20213648-15.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十六次作业</td>
-		  <td><a href=" zhuhongyan/20213648-16.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
+    <script type="text/javascript">
+        document.body.style.height=window.innerHeight+'px';
+        var saying=['没有南墙，去成为光','直挂云帆济沧海','除却巫山不是云','满招损谦受益','绝知此事要躬行',];
+        var homeWorks=['Content','《自造》','感动中国人物-航天人','陶勇个人简介','杜甫诗三首','五言绝句','按钮实现切换古诗','唐诗300首1.0','唐诗300首2.0','唐诗300首3.0','唐诗300首4.0','计算器'];
+        var headerContent=document.querySelector("div#header");
+        var i=0;
+        function showHeader(){
+            headerContent.textContent=saying[i];
+            if (i<saying.length-1){
+                i++;
+            }else{
+                i=0;
+            }
+            window.setTimeout(showHeader,2000);
+        }
+        window.setTimeout(showHeader,2000);
+        var but1=document.querySelector("a#but1");
+        but1.onmouseover=function(){
+            var articleDom=document.querySelector('div#article');
+            articleDom.textContent=homeWorks[1];
+        };
+        but1.onmouseout=function(){
+            var articleDom=document.querySelector('div#article');
+            articleDom.textContent=homeWorks[0];
+        };
+        var but2=document.querySelector("a#but2");
+        but2.onmouseover=function(){
+            var articleDom=document.querySelector('div#article');
+            articleDom.textContent=homeWorks[2];
+        };
+        but2.onmouseout=function(){
+            var articleDom=document.querySelector('div#article');
+            articleDom.textContent=homeWorks[0];
+        };
+        var but3=document.querySelector("a#but3");
+        but3.onmouseover=function(){
+            var articleDom=document.querySelector('div#article');
+            articleDom.textContent=homeWorks[3];
+        };
+        but3.onmouseout=function(){
+            var articleDom=document.querySelector('div#article');
+            articleDom.textContent=homeWorks[0];
+        };
+        var but4=document.querySelector("a#but4");
+        but4.onmouseover=function(){
+            var articleDom=document.querySelector('div#article');
+            articleDom.textContent=homeWorks[4];
+        };
+        but4.onmouseout=function(){
+            var articleDom=document.querySelector('div#article');
+            articleDom.textContent=homeWorks[0];
+        };
+        var but5=document.querySelector("a#but5");
+        but5.onmouseover=function(){
+            var articleDom=document.querySelector('div#article');
+            articleDom.textContent=homeWorks[5];
+        };
+        but5.onmouseout=function(){
+            var articleDom=document.querySelector('div#article');
+            articleDom.textContent=homeWorks[0];
+        };
+        var but6=document.querySelector("a#but6");
+        but6.onmouseover=function(){
+            var articleDom=document.querySelector('div#article');
+            articleDom.textContent=homeWorks[6];
+        };
+        but6.onmouseout=function(){
+            var articleDom=document.querySelector('div#article');
+            articleDom.textContent=homeWorks[0];
+        };
+        var but7=document.querySelector("a#but7");
+        but7.onmouseover=function(){
+            var articleDom=document.querySelector('div#article');
+            articleDom.textContent=homeWorks[7];
+        };
+        but7.onmouseout=function(){
+            var articleDom=document.querySelector('div#article');
+            articleDom.textContent=homeWorks[0];
+        };
+        var but8=document.querySelector("a#but8");
+        but8.onmouseover=function(){
+            var articleDom=document.querySelector('div#article');
+            articleDom.textContent=homeWorks[8];
+        };
+        but8.onmouseout=function(){
+            var articleDom=document.querySelector('div#article');
+            articleDom.textContent=homeWorks[0];
+        };
+        var but9=document.querySelector("a#but9");
+        but9.onmouseover=function(){
+            var articleDom=document.querySelector('div#article');
+            articleDom.textContent=homeWorks[9];
+        };
+        but9.onmouseout=function(){
+            var articleDom=document.querySelector('div#article');
+            articleDom.textContent=homeWorks[0];
+        };
+        var but10=document.querySelector("a#but10");
+        but10.onmouseover=function(){
+            var articleDom=document.querySelector('div#article');
+            articleDom.textContent=homeWorks[10];
+        };
+        but10.onmouseout=function(){
+            var articleDom=document.querySelector('div#article');
+            articleDom.textContent=homeWorks[0];
+        };
+        var but11=document.querySelector("a#but11");
+        but11.onmouseover=function(){
+            var articleDom=document.querySelector('div#article');
+            articleDom.textContent=homeWorks[11];
+        };
+        but11.onmouseout=function(){
+            var articleDom=document.querySelector('div#article');
+            articleDom.textContent=homeWorks[0];
+        };
+    </script>
 </body>
 </html>

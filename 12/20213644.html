@@ -1,116 +1,191 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>个人首页</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            height: 600px;
+            border: none;
+            background: linear-gradient(rgb(151, 233, 228), rgb(74, 93, 239));
+            background-attachment: fixed;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 30px;
+            color: rgb(224, 66, 116);
+            line-height: 1.5em;
+            margin: 30px;
+            text-shadow: 4px 4px 4px rgb(85, 85, 238);
+            animation: animate 4s linear infinite;
+        }
+        
+        p {
+            font-size: 30px;
+            text-align: center;
+            line-height: 1.5em;
+            margin: 45px;
+        }
+        
+        @keyframes animate {
+            0%,
+            100% {
+                color: rgb(249, 242, 242);
+            }
+            5%,
+            95% {
+                color: palevioletred;
+            }
+        }
+        
+        div {
+            text-align: center;
+            margin: 5px;
+        }
+        
+        div#hdd {
+            height: 20%;
+        }
+        
+        div#header {
+            height: 25%;
+            border: 2px dashed yellow;
+        }
+        
+        div#nav {
+            height: 20%;
+            border: 2px dashed yellow;
+        }
+        
+        div#article {
+            height: 10%;
+            border: 2px dashed yellow;
+        }
+        
+        div#footer {
+            height: 25%;
+            border: 2px dashed yellow;
+        }
+        
+        a {
+            font-size: 20px;
+        }
+    </style>
 </head>
 
-<style type="text/css">
-  body {
-    text-align: center;
-    font-size: 40px;
-    font-family: 楷体;
-  }
-
-  table {
-    margin: auto;
-  }
-</style>
-
-
 <body>
+    <div id="hdd">
+        <h1>黄丹丹的首页&#128512</h1>
 
-  <table border="1">
-    <tr>
-      <th>作业序号</th>
-      <th>作业链接</th>
-      <th>作业简介</th>
-    </tr>
+    </div>
+    <div id="header" class="">
+        <p>学习了</p>
+    </div>
+    <div id="nav" class="">
+        <br>
+        <a href="20213644-1.html" id="but1">第一周</a>
+        <a href="20213644-2.html" id="but2">第二周</a>
+        <a href="20213644-3.html" id="but3">第三周</a>
+        <a href="20213644-4.html" id="but4">第四周</a>
+        <a href="20213644-5.html" id="but5">第五周</a>
+        <a href="20213644-6.html" id="but6">第六周</a><br>
+        <a href="20213644-7.html" id="but7">第七周</a>
+        <a href="20213644-8.html" id="but8">第八周</a>
+        <a href="20213644-9.html" id="but9">第九周</a>
+        <a href="20213644-10.html" id="but10">第十周</a>
+        <a href="20213644-11.html" id="but11">第十一周</a>
+        <a href="20213644-12.html" id="but12">第十二周</a>
+    </div>
+    <div id="article" class="">
+        <br>作业简介
+    </div>
+    <div id="footer" class="">
+        <br> 21计科3班 20213644黄丹丹 <br> email:1654231824@qq.com
 
-    <tr>
-      <td>第一次作业</td>
-      <td><a href="huangdandan/20213644-1.html" target="_blank">作业</a></td>
-      <td>古诗</td>
-    </tr>
-    <br>
+    </div>
+    <script type="text/javascript">
+        document.body.style.height = window.innerHeight - 30 + 'px';
+        var kouHao = ['今天不学习', '明天变垃圾', '别摸鱼发呆了！！！'];
+        var homeWorks = ['古诗', '朱生豪先生的书', '链接', '普罗旺斯', '按钮古诗', '古诗换页', '古诗循环', '古诗循环2', '古诗循环3', '随机抽', '计算器1', '计算器2'];
+        var headerDom = document.querySelector("p");
+        var i = 0;
 
-    <tr>
-      <td>第二次作业</td>
-      <td><a href="huangdandan/20213644-2.html" target="_blank">作业</a></td>
-      <td>首页</td><br>
-    </tr>
+        function showHeader() {
+            headerDom.textContent = kouHao[i];
+            if (i < kouHao.length - 1) {
+                i++;
+            } else {
+                i = 0;
+            }
+            window.setTimeout(showHeader, 1500);
+        }
+        window.setTimeout(showHeader, 1500);
 
-    <tr>
-      <td>第三次作业</td>
-      <td><a href="huangdandan/20213644-3.html" target="_blank">作业</a></td>
-      <td>中秋节</td><br>
-    </tr>
-    <tr>
-      <td>第四次作业</td>
-      <td><a href="huangdandan/20213644-4.html" target="_blank">作业</a></td>
-      <td>盒装模型</td><br>
-    </tr>
-    <tr>
-      <td>第五次作业</td>
-      <td><a href="huangdandan/20213644-5.html" target="_blank">作业</a></td>
-      <td>按钮显示古诗</td><br>
-    </tr>
-    <tr>
-      <td>第六次作业</td>
-      <td><a href="huangdandan/20213644-6.html" target="_blank"">作业</a></td>
-		  <td>按钮换页换诗</td>
-	  </tr>
-	  <tr>
-		  <td>第七次作业</td>
-		  <td><a href=" huangdandan/20213644-7.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第八次作业</td>
-		  <td><a href=" huangdandan/20213644-8.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第九次作业</td>
-		  <td><a href=" huangdandan/20213644-9.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十次作业</td>
-		  <td><a href=" huangdandan/20213644-10.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十一次作业</td>
-		  <td><a href=" huangdandan/20213644-11.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十二次作业</td>
-		  <td><a href=" huangdandan/20213644-12.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十三次作业</td>
-		  <td><a href=" huangdandan/20213644-13.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十四次作业</td>
-		  <td><a href=" huangdandan/20213644-14.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十五次作业</td>
-		  <td><a href=" huangdandan/20213644-15.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
-	  <tr>
-		  <td>第十六次作业</td>
-		  <td><a href=" huangdandan/20213644-16.html" target="_blank"">作业</a></td>
-		  <td>xxx</td>
-	  </tr>
+        var but1 = document.querySelector('a#but1');
+        but1.onmouseover = function() {
+            var articleDom = document.querySelector('div#article');
+            articleDom.textContent = homeWorks[0];
+        };
 
- </body>
+        but1.onmouseout = function() {
+            var articleDom = document.querySelector('div#article');
+            articleDom.textContent = homeWorks[1];
+        };
+        but2.onmouseout = function() {
+            var articleDom = document.querySelector('div#article');
+            articleDom.textContent = homeWorks[2];
+        };
+        but3.onmouseout = function() {
+            var articleDom = document.querySelector('div#article');
+            articleDom.textContent = homeWorks[3];
+        };
+        but4.onmouseout = function() {
+            var articleDom = document.querySelector('div#article');
+            articleDom.textContent = homeWorks[4];
+        };
+        but5.onmouseout = function() {
+            var articleDom = document.querySelector('div#article');
+            articleDom.textContent = homeWorks[5];
+        };
+        but6.onmouseout = function() {
+            var articleDom = document.querySelector('div#article');
+            articleDom.textContent = homeWorks[6];
+        };
+        but7.onmouseout = function() {
+            var articleDom = document.querySelector('div#article');
+            articleDom.textContent = homeWorks[7];
+        };
+        but8.onmouseout = function() {
+            var articleDom = document.querySelector('div#article');
+            articleDom.textContent = homeWorks[8];
+        };
+        but9.onmouseout = function() {
+            var articleDom = document.querySelector('div#article');
+            articleDom.textContent = homeWorks[9];
+        };
+        but10.onmouseout = function() {
+            var articleDom = document.querySelector('div#article');
+            articleDom.textContent = homeWorks[10];
+        };
+        but11.onmouseout = function() {
+            var articleDom = document.querySelector('div#article');
+            articleDom.textContent = homeWorks[11];
+        };
+        but12.onmouseout = function() {
+            var articleDom = document.querySelector('div#article');
+            articleDom.textContent = homeWorks[12];
+        };
+    </script>
+    </script>
+</body>
+
 </html>
