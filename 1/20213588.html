@@ -1,107 +1,134 @@
-<!doctype html>
-<html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <title>20213589</title>
- <style type="text/css">
-</head>
-body{
-    font-size:90px;
-    color: rgb(89, 202, 165);
-    text-align: center;
-    width: 600px;
-    line-height: 40px;
-    font-weight: 500;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-p{
-    font-size:90px;
-    color: rgb(89, 202, 165);
-    text-align: center;
-    width: 700px;
-    line-height: 80px;
-    font-weight: 500;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-table
-{border-collapse: collapse;}
-th,td
-{
-width: 500px;
-height: 40px;
-border:1px solid black;
-font-size: 40px;
-text-align: center;
-}
-</style>
-<body>
-<table>
-<p style="text-align:center">吴政霖个人主页
-</p>
-<tr> 
-<th>第一次作业</th>
-<td><a href="20213588-1.html" target="_blank">1</td>
-</tr>
-<tr> 
-<th>第二次作业</th>
-<td><a href="20213588-2.html"target="_blank">2</td>
-</tr>
-<tr> 
-<th>第三次作业</th>
-<td><a href="20213588-3.html"target="_blank">3</td>
-</tr>
-<tr>
-<th>第四次作业</th>
-<td><a href="20213588-4.html"target="_blank">4</td>
-</tr>
-<tr> 
-<th>第五次作业</th>
-<td><a href="20213588-5.html"target="_blank">5</td>
-</tr>
-<tr>
-<th>第六次作业</th>
-<td><a href="20213588-6.html"target="_blank">6</td>
-</tr>
-<tr> 
-<th>第七次作业</th>
-<td><a href="20213588-7.html"target="_blank">7</td>
-</tr>
-<tr>
-<th>第八次作业</th>
-<td><a href="20213588-8.html"target="_blank">8</td>
-</tr>
-<tr>
-<th>第九次作业</th>
-<td><a href="20213588-9.html"target="_blank">9</td>
-</tr>
-<tr>
-<th>第十次作业</th>
-<td><a href="20213588-10.html"target="_blank">10</td>
-</tr>
-<tr>
-<th>第十一次作业</th>
-<td><a href="20213588-11.html"target="_blank">11</td>
-</tr>
-<tr>
-<th>第十二次作业</th>
-<td><a href="20213588-12.html"target="_blank">12</td>
-</tr>
-<tr>
-<th>第十三次作业</th>
-<td><a href="20213588-13.html"target="_blank">13</td>
-</tr>
-<tr>
-<th>第十四次作业</th>
-<td><a href="20213588-14.html"target="_blank">14</td>
-</tr>
-<tr>
-<th>第十五次作业</th>
-<td><a href="20213588-15.html"target="_blank">15</td>
-</tr>
-<tr>
-<th>第十六次作业</th>
-<td><a href="20213588-16.html"target="_blank">16</td>
-</tr>
-</table>
-</body>
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <style>
+        html,body{
+            text-align: center;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        div#title{
+            height: 25%;
+            background-color: antiquewhite;
+            font-size: large;
+        }
+        div#title>h1{
+        float:center;
+        }		/*时间居中*/
+		div#title>p{
+        font-size: 50px;
+        }		/*标语大小*/
+        div#content{
+            height: 30%;
+            background-color: burlywood;
+        } 
+        div#content>p{
+            width: 100%;
+			line-height:350%
+        }
+        div#content>p>a{
+            text-decoration: none;
+            border: solid 1px;
+            line-height: 15px;
+            margin: 10px;
+        }
+        div#content>p>a:hover{
+            border: outset;
+        }
+        div#describe{
+            height: 30%;
+            background-color: antiquewhite;
+            font-size: 50px;
+        }
+        footer{
+            background-color: antiquewhite;
+            height: 15%;
+        }
+    </style>
+    <body>
+        <hr>
+        <div id="title">  
+           <p></p>
+           <h1></h1>   
+        </div>
+        <script>
+          var p=document.querySelector("div#title>p");
+          var saying=['life is but a span','never say die','learn and live']
+          var number=0;
+          function showSaying(){
+          number=Math.floor(Math.random()*3);
+          p.textContent=saying[number];
+          }			/*设置标语*/
+
+
+          var date=document.querySelector("div#title>h1");
+          function showTime(){
+          var dat=new Date();
+         var year=dat.getFullYear();
+         var month=dat.getMonth()+1;
+         var day=dat.getDay();
+         var hour=dat.getHours();
+         var min=dat.getMinutes();
+		 var sec=dat.getSeconds();
+         date.textContent=year+"年"+month+"月"+day+"日"+hour+"时"+min+"分"+sec+"秒";
+          }		/*显示现在时间*/
+          window.setInterval("showTime()",1000);
+          window.setInterval("showSaying()",1000);   
+       </script>
+        <hr>
+        <div id="content">
+           <p></p> 
+        </div>
+        <hr>
+        <div id="describe">
+            <p></p>
+        </div>
+        <hr>
+        <footer>
+            21计科1班 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</br>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp吴政霖 &nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp 江西科技师范大学</br>
+            20213588 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp软件动漫学院</br>
+        </footer>
+    </body>
+    <script lang="javascript">
+    var content=document.querySelector("div#content>p");
+    var homeworknumber=[];
+   homeworknumber[0]='<a href="https://youzelian.github.io/1/20213588/20213588-1.html">20213588-1</a>'
+   homeworknumber[1]='<a href="https://youzelian.github.io/1/20213588/20213588-2.html">20213588-2</a>'
+   homeworknumber[2]='<a href="https://youzelian.github.io/1/20213588/20213588-3.html">20213588-3</a>'
+   homeworknumber[3]='<a href="https://youzelian.github.io/1/20213588/20213588-4.html">20213588-4</a>'
+   homeworknumber[4]='<a href="https://youzelian.github.io/1/20213588/20213588-5.html">20213588-5</a>'
+   homeworknumber[5]='<a href="https://youzelian.github.io/1/20213588/20213588-6.html">20213588-6</a>'
+   homeworknumber[6]='<a href="https://youzelian.github.io/1/20213588/20213588-7.html">20213588-7</a>'
+   homeworknumber[7]='<a href="https://youzelian.github.io/1/20213588/20213588-8.html">20213588-8</a>'
+   homeworknumber[8]='<a href="https://youzelian.github.io/1/20213588/20213588-9.html">20213588-9</a>'
+   homeworknumber[9]='<a href="https://youzelian.github.io/1/20213588-10.html">20213588-10</a>'
+   homeworknumber[10]='<a href="https://youzelian.github.io/1/20213588-11.html">20213588-11</a>'
+   homeworknumber[11]='<a href="https://youzelian.github.io/1/20213588-12.html">20213588-12</a>'
+   homeworknumber[12]='<a href="https://youzelian.github.io/1/20213588-13.html">20213588-13</a>'
+   homeworknumber[13]='<a href="https://youzelian.github.io/1/20213588-14.html">20213588-14</a>'
+   homeworknumber[14]='<a href="https://youzelian.github.io/1/20213588-15.html">20213588-15</a>'
+   homeworknumber[15]='<a href="https://youzelian.github.io/1/20213588-16.html">20213588-16</a>'
+     function showHomework(){
+           content.innerHTML=homeworknumber[0]+homeworknumber[1]+homeworknumber[2]+homeworknumber[3]+"</br>"+homeworknumber[4]+homeworknumber[5]+homeworknumber[6]+homeworknumber[7]+"</br>"+homeworknumber[8]+homeworknumber[9]+homeworknumber[10]+homeworknumber[11]+"</br>"+homeworknumber[12]+homeworknumber[13]+homeworknumber[14]+homeworknumber[15]
+   }
+   showHomework();
+   var a=document.querySelectorAll("div#content>p>a");
+   var p4=document.querySelector("div#describe>p");
+   var innercircle=0;
+   for(innercircle=0;innercircle<=15;innercircle++){
+       if(innercircle>=3&&innercircle<=10){
+   a[innercircle].onmouseover=function (event){
+      p4.innerHTML="有该作业";
+   }}
+    else {
+          a[innercircle].onmouseover=function (event){
+            p4.innerHTML="未有该作业"
+          }
+      }
+  }
+    </script>
 </html>

@@ -1,66 +1,134 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-	</head>
-	<body>
-		<table border="1" align="center" cellpadding="20px" cellspacing="0">
-		<p style="text-align:center">飞宇个人主页
-			<tr>
-			<td>第1次</td>
-			<td><a href="20213586/20213586-1.html" target="_blank">20213586-1</td>
-			</tr>
-			<tr>
-			<td>第2次</td>
-			<td><a href="20213586/20213586-2.html" target="_blank">20213586-2
-			</td>
-			</tr>
-			<tr>
-			<td>第3次</td>
-			<td><a href="20213586/20213586-3.html" target="_blank">20213586-3</td>
-			</tr>
-			<tr>
-			<td>第4次</td>
-			<td><a href="20213586/20213586-4.html" target="_blue">20213586-4</td>
-			</tr><tr>
-			<td>第5次</td>
-			<td><a href="20213586/20213586-5.html" target="_blue">20213586-5</td>
-			</tr><tr>
-			<td>第6次</td>
-			<td><a href="20213586/20213586-6.html" target="_blue">20213586-6</td>
-			</tr><tr>
-			<td>第7次</td>
-			<td><a href="20213586/20213586-7.html" target="_blue">20213586-7<tr>
-			<td>第8次</td>
-			<td><a href="20213586/20213586-8.html" target="_blue">20213586-8</td>
-			</tr><tr>
-			<td>第9次</td>
-			<td><a href="20213586/20213586-9.html" target="_blue">20213586-9</td>
-			</tr><tr>
-			<td>第10次</td>
-			<td><a href="20213586/20213586-10.html" target="_blue">20213586-10</td>
-			</tr><tr>
-			<td>第11次</td>
-			<td><a href="20213586/20213586-11.html" target="_blue">20213586-11</td>
-			</tr><tr>
-			<td>第12次</td>
-			<td><a href="20213586/20213586-12.html" target="_blue">20213586-12</td>
-			</tr><tr>
-			<td>第13次</td>
-			<td><a href="20213586/20213586-13.html" target="_blue">20213586-13</td>
-			</tr><tr>
-			<td>第14次</td>
-			<td><a href="20213586/20213586-14.html" target="_blue">20213586-14</td>
-			</tr><tr>
-			<td>第15次</td>
-			<td><a href="20213586/20213586-15.html" target="_blue">20213586-15</td>
-			</tr>
-			<tr>
-			<td>第16次</td>
-			<td><a href="20213586/20213586-16.html" target="_blue">20213586-16</td>
-			</tr>
-		</table>
-	</body>
-</html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <style>
+        html,body{
+            text-align: center;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        div#title{
+            height: 40%;
+            background-color: blue;
+            font-size: large;
+        }
+        img{
+            float: right;
+            width: 30%;
+            height: 80%; 
+        }
+        div#title>h1{
+        float:right;
+		width:40%;
 
+        }
+        div#content{
+            height: 30%;
+            background-color: yellow;
+        } 
+        div#content>p{
+            width: 100%;line-height:350%
+        }
+        div#content>p>a{
+            text-decoration: none;
+            border: solid 1px;
+            line-height: 15px;
+            margin: 10px;
+        }
+        div#content>p>a:hover{
+            border: outset;
+        }
+        div#describe{
+            height: 30%;
+            background-color: blanchedalmond;
+            font-size: 50px;
+        }
+        footer{
+            background-color: darkgray;
+            height: 10%;
+        }
+    </style>
+    <body>
+        <hr>
+        <div id="title">  
+           <p></p>
+           
+           <h1></h1>   
+        </div>
+        <script>
+          var p=document.querySelector("div#title>p");
+          var saying=["人不能在他的历史中表现出他自己，他在历史中奋斗着露出头角！","具有伟大的理想，出以坚定的信心，施以努力的奋斗，才有惊人的成就。","古之成大事者,不惟有超士之才,亦有坚忍不拔之志"]
+          var number=0;
+          function showSaying(){
+          number=Math.floor(Math.random()*3);
+          p.textContent=saying[number];
+          } 
+          var date=document.querySelector("div#title>h1");
+          function showTime(){
+          var dat=new Date();
+         var year=dat.getFullYear();
+         var month=dat.getMonth()+1;
+         var day=dat.getDay();
+         var hour=dat.getHours();
+         var min=dat.getMinutes();
+         date.textContent="现在是北京时间"+year+"年"+month+"月"+day+"日"+hour+"时"+min+"分";
+          }
+          window.setInterval("showTime()",2000);
+          window.setInterval("showSaying()",2000);   
+       </script>
+        <hr>
+        <div id="content">
+           <p></p> 
+        </div>
+        <hr>
+        <div id="describe">
+            <p></p>
+        </div>
+        <hr>
+        <footer>
+            袁飞宇   20213586 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp未经允许禁止转载</br>
+            &nbsp&nbsp&nbsp&nbsp&nbsp 21计科（1）班 &nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp 江西科技师范大学软件动漫学院</br>
+        </footer>
+    </body>
+    <script lang="javascript">
+    var content=document.querySelector("div#content>p");
+    var homeworknumber=[];
+   homeworknumber[0]='<a href="https://youzelian.github.io/1/20213586/20213586-1.html">20213586-1</a>'
+   homeworknumber[1]='<a href="https://youzelian.github.io/1/20213586/20213586-2.html">20213586-2</a>'
+   homeworknumber[2]='<a href="https://youzelian.github.io/1/20213586/20213586-3.html">20213586-3</a>'
+   homeworknumber[3]='<a href="https://youzelian.github.io/1/20213586/20213586-4.html">20213586-4</a>'
+   homeworknumber[4]='<a href="https://youzelian.github.io/1/20213586/20213586-5.html">20213586-5</a>'
+   homeworknumber[5]='<a href="https://youzelian.github.io/1/20213586/20213586-6.html">20213586-6</a>'
+   homeworknumber[6]='<a href="https://youzelian.github.io/1/20213586/20213586-7.html">20213586-7</a>'
+   homeworknumber[7]='<a href="https://youzelian.github.io/1/20213586/20213586-8.html">20213586-8</a>'
+   homeworknumber[8]='<a href="https://youzelian.github.io/1/20213586/20213586-9.html">20213586-9</a>'
+   homeworknumber[9]='<a href="https://youzelian.github.io/1/20213586/20213586-10.html">20213586-10</a>'
+   homeworknumber[10]='<a href="https://youzelian.github.io/1/20213586/20213586-11.html">20213586-11</a>'
+   homeworknumber[11]='<a href="https://youzelian.github.io/1/20213586/20213586-12.html">20213586-12</a>'
+   homeworknumber[12]='<a href="https://youzelian.github.io/1/20213586/20213586-13.html">20213586-13</a>'
+   homeworknumber[13]='<a href="https://youzelian.github.io/1/20213586/20213586-14.html">20213586-14</a>'
+   homeworknumber[14]='<a href="https://youzelian.github.io/1/20213586/20213586-15.html">20213586-15</a>'
+   homeworknumber[15]='<a href="https://youzelian.github.io/1/20213586/20213586-16.html">20213586-16</a>'
+     function showHomework(){
+           content.innerHTML=homeworknumber[0]+homeworknumber[1]+homeworknumber[2]+homeworknumber[3]+"</br>"+homeworknumber[4]+homeworknumber[5]+homeworknumber[6]+homeworknumber[7]+"</br>"+homeworknumber[8]+homeworknumber[9]+homeworknumber[10]+homeworknumber[11]+"</br>"+homeworknumber[12]+homeworknumber[13]+homeworknumber[14]+homeworknumber[15]
+   }
+   showHomework();
+   var a=document.querySelectorAll("div#content>p>a");
+   var p4=document.querySelector("div#describe>p");
+   var innercircle=0;
+   for(innercircle=0;innercircle<=15;innercircle++){
+       if(innercircle>=0&&innercircle<=12){
+   a[innercircle].onmouseover=function (event){
+      p4.innerHTML="别点它，只是一个作业而已";
+   }}
+    else {
+          a[innercircle].onmouseover=function (event){
+            p4.innerHTML="喂，老师作业还没布置呢，点什么点！"
+          }
+      }
+  }
+    </script>
+</html>

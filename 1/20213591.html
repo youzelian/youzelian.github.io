@@ -1,107 +1,133 @@
-<!doctype html>
-<html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <title>20213591</title>
- <style type="text/css">
-</head>
-body{
-    font-size:90px;
-    color: rgb(89, 202, 165);
-    text-align: center;
-    width: 600px;
-    line-height: 40px;
-    font-weight: 500;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-p{
-    font-size:90px;
-    color: rgb(89, 202, 165);
-    text-align: center;
-    width: 700px;
-    line-height: 80px;
-    font-weight: 500;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-table
-{border-collapse: collapse;}
-th,td
-{
-width: 500px;
-height: 40px;
-border:1px solid black;
-font-size: 40px;
-text-align: center;
-}
-</style>
-<body>
-<table>
-<p style="text-align:center">林家豪个人主页
-</p>
-<tr> 
-<th>第一次作业</th>
-<td><a href="20213591/20213591-1.html" target="_blank">01</td>
-</tr>
-<tr> 
-<th>第二次作业</th>
-<td><a href="20213591/20213591-2.html"target="_blank">02</td>
-</tr>
-<tr> 
-<th>第三次作业</th>
-<td><a href="20213591/20213591-3.html"target="_blank">03</td>
-</tr>
-<tr>
-<th>第四次作业</th>
-<td><a href="20213591/20213591-4.html"target="_blank">04</td>
-</tr>
-<tr> 
-<th>第五次作业</th>
-<td><a href="20213591/20213591-5.html"target="_blank">05</td>
-</tr>
-<tr>
-<th>第六次作业</th>
-<td><a href="20213591/20213591-6.html"target="_blank">06</td>
-</tr>
-<tr> 
-<th>第七次作业</th>
-<td><a href="20213591/20213591-7.html"target="_blank">07</td>
-</tr>
-<tr>
-<th>第八次作业</th>
-<td><a href="20213591/20213591-8.html"target="_blank">08</td>
-</tr>
-<tr>
-<th>第九次作业</th>
-<td><a href="20213591/20213591-9.html"target="_blank">09</td>
-</tr>
-<tr>
-<th>第十次作业</th>
-<td><a href="20213591/20213591-10.html"target="_blank">10</td>
-</tr>
-<tr>
-<th>第十一次作业</th>
-<td><a href="20213591/20213591-11.html"target="_blank">11</td>
-</tr>
-<tr>
-<th>第十二次作业</th>
-<td><a href="20213591/20213591-12.html"target="_blank">12</td>
-</tr>
-<tr>
-<th>第十三次作业</th>
-<td><a href="20213591/20213591-13.html"target="_blank">13</td>
-</tr>
-<tr>
-<th>第十四次作业</th>
-<td><a href="20213591/20213591-14.html"target="_blank">14</td>
-</tr>
-<tr>
-<th>第十五次作业</th>
-<td><a href="20213591/20213591-15.html"target="_blank">15</td>
-</tr>
-<tr>
-<th>第十六次作业</th>
-<td><a href="20213591/20213591-16.html"target="_blank">16</td>
-</tr>
-</table>
-</body>
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <style>
+        html,body{
+            text-align: center;
+            height: 90%;
+            margin: 0;
+            padding: 0;
+        }
+        div#title{
+            height: 50%;
+            background-color: blue;
+            font-size: large;
+        }
+        img{
+            float: right;
+            width: 50%;
+            height: 90%;
+        }
+        div#title>h1{
+        float:left;
+        }
+        div#content{
+            height: 30%;
+            background-color: yellow;
+        } 
+        div#content>p{
+            width: 100%;line-height:300%
+        }
+        div#content>p>a{
+            text-decoration: none;
+            border: solid 2px;
+            line-height: 30px;
+            margin: 10px;
+        }
+        div#content>p>a:hover{
+            border: outset;
+        }
+        div#describe{
+            height: 30%;
+            background-color: blanchedalmond;
+            font-size: 50px;
+        }
+        footer{
+            background-color: darkgray;
+            height: 10%;
+        }
+    </style>
+    <body>
+        <hr>
+        <div id="title">  
+           <p></p>
+           <img src="https://scpic.chinaz.net/files/pic/pic7/xpic365.jpg" alt="">
+           <h1></h1>   
+        </div>
+        <script>
+          var p=document.querySelector("div#title>p");
+          var saying=["人生就像河流，只有找准了河流的轨迹，才能判断出河流未来的方向人生是一条船，每个人都想划到对岸，有人轻松就过了，有人中途落水，还有的快接近时却怎么也靠不了岸"]
+          var number=0;
+          function showSaying(){
+          number=Math.floor(Math.random()*3);
+          p.textContent=saying[number];
+          } 
+          var date=document.querySelector("div#title>h1");
+          function showTime(){
+          var dat=new Date();
+         var year=dat.getFullYear();
+         var month=dat.getMonth()+1;
+         var day=dat.getDay();
+         var hour=dat.getHours();
+         var min=dat.getMinutes();
+         date.textContent=year+"年"+month+"月"+day+"日"+hour+"时"+min+"分";
+          }
+          window.setInterval("showTime()",1000);
+          window.setInterval("showSaying()",1000);   
+       </script>
+        <hr>
+        <div id="content">
+           <p></p> 
+        </div>
+        <hr>
+        <div id="describe">
+            <p></p>
+        </div>
+        <hr>
+        <footer>
+            21计科1班 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</br>
+            &nbsp&nbsp&nbsp&nbsp&nbsp林家豪 &nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp 江西科技师范大学</br>
+            20213591 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp软件动漫学院</br>
+        </footer>
+    </body>
+    <script lang="javascript">
+    var content=document.querySelector("div#content>p");
+    var homeworknumber=[];
+   homeworknumber[0]='<a href="https://youzelian.github.io/1/20213591-1.html">20213591-1</a>'
+   homeworknumber[1]='<a href="https://youzelian.github.io/1/20213591-2.html">20213591-2</a>'
+   homeworknumber[2]='<a href="https://youzelian.github.io/1/20213591-3.html">20213591-3</a>'
+   homeworknumber[3]='<a href="https://youzelian.github.io/1/20213591/20213591-4.html">20213591-4</a>'
+   homeworknumber[4]='<a href="https://youzelian.github.io/1/20213591/20213591-5.html">20213591-5</a>'
+   homeworknumber[5]='<a href="https://youzelian.github.io/1/20213591/20213591-6.html">20213591-6</a>'
+   homeworknumber[6]='<a href="https://youzelian.github.io/1/20213591/20213591-7.html">20213591-7</a>'
+   homeworknumber[7]='<a href="https://youzelian.github.io/1/20213591/20213591-8.html">20213591-8</a>'
+   homeworknumber[8]='<a href="https://youzelian.github.io/1/20213591-9.html">20213591-9</a>'
+   homeworknumber[9]='<a href="https://youzelian.github.io/1/20213591-10.html">20213591-10</a>'
+   homeworknumber[10]='<a href="https://youzelian.github.io/1/20213591-11.html">20213591-11</a>'
+   homeworknumber[11]='<a href="https://youzelian.github.io/1/20213591-12.html">20213591-12</a>'
+   homeworknumber[12]='<a href="https://youzelian.github.io/1/20213591-13.html">20213591-13</a>'
+   homeworknumber[13]='<a href="https://youzelian.github.io/1/20213591/20213591-14.html">20213591-14</a>'
+   homeworknumber[14]='<a href="https://youzelian.github.io/1/20213591/20213591-15.html">20213591-15</a>'
+   homeworknumber[15]='<a href="https://youzelian.github.io/1/20213591/20213591-16.html">20213591-16</a>'
+     function showHomework(){
+           content.innerHTML=homeworknumber[0]+homeworknumber[1]+homeworknumber[2]+homeworknumber[3]+"</br>"+homeworknumber[4]+homeworknumber[5]+homeworknumber[6]+homeworknumber[7]+"</br>"+homeworknumber[8]+homeworknumber[9]+homeworknumber[10]+homeworknumber[11]+"</br>"+homeworknumber[12]+homeworknumber[13]+homeworknumber[14]+homeworknumber[15]
+   }
+   showHomework();
+   var a=document.querySelectorAll("div#content>p>a");
+   var p4=document.querySelector("div#describe>p");
+   var innercircle=0;
+   for(innercircle=0;innercircle<=15;innercircle++){
+       if(innercircle>=0&&innercircle<=12){
+   a[innercircle].onmouseover=function (event){
+      p4.innerHTML="这是一次作业";
+   }}
+    else {
+          a[innercircle].onmouseover=function (event){
+            p4.innerHTML="未有该作业"
+          }
+      }
+  }
+    </script>
 </html>

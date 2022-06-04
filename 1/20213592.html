@@ -1,61 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-</head>
-<style>
-    *{
-        margin: 0%;
-    }
-  h1{
-      font-size: large;
-      text-align: center;
-      color:brown;
-  }
- 
-  div{
-      text-align: center;
-      line-height: 45px;
-  } 
-  p{
-      margin: auto;
-      font-size: medium;
-      width: 100px ;
-      border: solid 1px;
-  }
-  input#number{
-      width: 60px;
-  }
-  span{
-      border: solid 1px;
-  }
-  a{
-      text-decoration: none;
-  }
-  a:hover{
-      background-color: crimson;
-      color: cornflowerblue;
-  }
-</style>
-
-<body>
-  <h1>梅松祥 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp20213592</h1><!--显示标题-->
-<div id="action"> 请输入您想查询的作业序号例如1,2...
-    <input type="text" id="number"><button id="bt">检测</button><!--主要样式和实现功能-->
-</br>
-  <input type="button" value="上一次" id="prew"><!--显示应有的按钮选着功能-->
-  <input type="button" value="下一次" id="next">
-</div>
-<div id="content"><!--将显示内容融进div盒子便于管理和区分-->
-   <span><a href="https://moonandwindy.github.io//20213592-1.html">20213592-1</a></span>
-</div>
-</body>
-
-<script>
-   var span=document.querySelector('span');//定义显示的作业的变量
-   var prew=document.querySelector('input#prew');//定义js里让按钮功能被实现的变量
-   var next=document.querySelector('input#next');
-   var homeworknumber=[];
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <style>
+        html,body{  /*定义适应所有电子设备*/
+            text-align: center;
+            height: 100%;
+            margin: 0;
+            padding: 0; 
+        }
+        /*css对文本修饰*/
+        div#title{  
+            height: 30%;
+            background-color: antiquewhite;
+            font-size: large;
+        }
+        img{
+            float: right;
+            width: 30%;
+            height: 80%; 
+        }
+        div#title>h1{
+        float:left;
+        }
+        div#content{
+            height: 30%;
+            background-color: burlywood;
+        } 
+        div#content>p{
+            width: 100%;line-height:350%
+        }
+        div#content>p>a{
+            text-decoration: none;
+            border: solid 1px;
+            line-height: 15px;
+            margin: 10px;
+        }
+        div#content>p>a:hover{
+            border: outset;
+        }
+        div#describe{
+            height: 30%;
+            background-color: blanchedalmond;
+            font-size: 50px;
+        }
+        footer{
+            background-color: darkgray;
+            height: 10%;
+        }
+    </style>
+    <body>
+        <hr>
+        <div id="title">    <!--定义四大基本结构title,content,describe,foonter-->
+           <p></p>图片实现
+           <img src="https:gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F1114%2F113020142315%2F201130142315-1-1200.jpg&amp;refer=http%3A%2F%2Fimg.jj20.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1656839042&amp;t=a5979c640a8486e13f0e0c7a8edde816" alt="">
+           <h1></h1>   
+        </div>
+        <script> 
+        //javascript对yitle里的内容补充文字,图片,时间等   
+          var p=document.querySelector("div#title>p");
+          var saying=["坚持爬过这座山，你就会发现不一样的风景，加油，相信自己！","别害怕，这不是你的错，只是你还在流浪而已，等到了家你就会发现一切都是值得的","只要还在这个世界，一切都还是有机会的，真正的英雄是认清生活后，依然热爱生活的人"]
+          var number=0;
+          function showSaying(){//文案实现
+          number=Math.floor(Math.random()*3);
+          p.textContent=saying[number];
+          } 
+          var date=document.querySelector("div#title>h1");
+          function showTime(){//时间实现
+          var dat=new Date();
+         var year=dat.getFullYear();
+         var month=dat.getMonth()+1;
+         var day=dat.getDay();
+         var hour=dat.getHours();
+         var min=dat.getMinutes();
+         date.textContent=year+"年"+month+"月"+day+"日"+hour+"时"+min+"分";
+          }
+          window.setInterval("showTime()",1000);
+          window.setInterval("showSaying()",1000);   
+       </script>
+        <hr>
+        <div id="content">
+           <p></p> 
+        </div>
+        <hr>
+        <div id="describe">
+            <p></p>
+        </div>
+        <hr>
+        <footer>
+            21计科1班 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp@copyright</br>
+            &nbsp&nbsp&nbsp&nbsp&nbsp梅松祥 &nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp 江西科技师范大学</br>
+            20213592 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp软件动漫学院</br>
+        </footer>
+    </body>
+    <script lang="javascript">
+    //javascript实现作业显示并且成功连接对应作业
+    var content=document.querySelector("div#content>p");
+    //作业数组显示
+    var homeworknumber=[];
    homeworknumber[0]='<a href="https://moonandwindy.github.io//20213592-1.html">20213592-1</a>'
    homeworknumber[1]='<a href="https://moonandwindy.github.io//20213592-2.html">20213592-2</a>'
    homeworknumber[2]='<a href="https://moonandwindy.github.io//20213592-3.html">20213592-3</a>'
@@ -72,31 +115,24 @@
    homeworknumber[13]='<a href="https://moonandwindy.github.io//20213592-14.html">20213592-14</a>'
    homeworknumber[14]='<a href="https://moonandwindy.github.io//20213592-15.html">20213592-15</a>'
    homeworknumber[15]='<a href="https://moonandwindy.github.io//20213592-16.html">20213592-16</a>'
-   var circlenumber=0,helpcirclenumber=0;
-   next.onclick=function(){
-   ++circlenumber;
-   if(circlenumber==16){
-   circlenumber=0;
+     function showHomework(){
+           content.innerHTML=homeworknumber[0]+homeworknumber[1]+homeworknumber[2]+homeworknumber[3]+"</br>"+homeworknumber[4]+homeworknumber[5]+homeworknumber[6]+homeworknumber[7]+"</br>"+homeworknumber[8]+homeworknumber[9]+homeworknumber[10]+homeworknumber[11]+"</br>"+homeworknumber[12]+homeworknumber[13]+homeworknumber[14]+homeworknumber[15]
    }
-   span.innerHTML=homeworknumber[circlenumber];
-   }
-   prew.onclick=function(){
-       --circlenumber;
-       if(circlenumber==-1){
-           circlenumber=15;
-       }
-  
-    span.innerHTML=homeworknumber[circlenumber];
-   }
-    var text=document.getElementById("number");//定义检索按钮,让文本栏里的内容可以成为显示
-    var button=document.querySelector("button#bt");
-    text.onchange=function(){
-        if(text.value>=1&&text.value<17){
-       span.innerHTML=homeworknumber[text.value-1];
-       }
-       else{
-           alert('梅松祥提醒您,小笨蛋请重新输入 ');
-       }
-    }
-</script>
+   showHomework();
+   //出现不同作业序号时,显示不同描述
+   var a=document.querySelectorAll("div#content>p>a");
+   var p4=document.querySelector("div#describe>p");
+   var innercircle=0;
+   for(innercircle=0;innercircle<=15;innercircle++){
+       if(innercircle>=0&&innercircle<=12){
+   a[innercircle].onmouseover=function (event){
+      p4.innerHTML="这是一次作业";
+   }}
+    else {
+          a[innercircle].onmouseover=function (event){
+            p4.innerHTML="这次作业未布置"
+          }
+      }
+  }
+    </script>
 </html>
